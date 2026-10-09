@@ -1,6 +1,6 @@
 # 百洑傳息｜Bioflumen & Xensor Lab
 
-> An interdisciplinary research laboratory at National Yang Ming Chiao Tung University (NYCU), Taiwan, led by Assistant Professor Chun-Hao Chang (張鈞豪). Research focuses on microfluidics, biosensing and in vitro diagnostics.
+> An interdisciplinary research laboratory at National Yang Ming Chiao Tung University (NYCU), Taiwan, led by Dr. Chun-Hao Chang (張鈞豪博士), Assistant Professor. Research focuses on microfluidics, biosensing and in vitro diagnostics.
 
 This is a factual directory of public website content. Updated 2026-10-09. The website presents Traditional Chinese and English together.
 
@@ -38,3 +38,7 @@ The four featured research stories describe work completed with the PI's partici
 
 ## Official source
 - [NYCU faculty profile](https://dmt.nycu.edu.tw/en/%E5%BC%B5%E9%88%9E%E8%B1%AA%E8%80%81%E5%B8%AB/): Public professional biography and publication list.
+
+## Lab pages
+- [Techniques](https://jimhaoch.github.io/techniques.html): Maskless laser microfluidic fabrication, micromilling, FDM/resin 3D printing, aseptic handling, microbial culture and shared cell culture facility.
+- [News](https://jimhaoch.github.io/news.html), [Instruments](https://jimhaoch.github.io/instruments.html), and [Lab moments](https://jimhaoch.github.io/moments.html): Page shells; content has not been added yet.

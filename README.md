@@ -38,3 +38,9 @@ Discovery files: canonical and social metadata, JSON-LD for the lab/PI/website a
 
 Provider documentation: https://formsubmit.co/documentation and https://formsubmit.co/help
 Search guidance: https://developers.google.com/search/docs/appearance/ai-features
+
+## Navigation and pages
+
+The shared script supports home sections and independent pages. Same-document hash clicks close menus before measuring the sticky header and explicitly scrolling, including repeated clicks on the same hash. Mobile navigation overlays the page without changing header height. Escape and outside clicks close menus; history navigation aligns anchors again. Paper figures reserve their intrinsic sizes to reduce layout changes during lazy loading.
+
+`news.html`, `instruments.html`, and `moments.html` are empty page shells (noindex until populated). `techniques.html` contains six bilingual technique introductions. Update the shared header/footer across pages together.
