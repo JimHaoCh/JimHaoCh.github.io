@@ -1,0 +1,54 @@
+{
+  "updated": "2026-10-09",
+  "faculty_profile": "https://dmt.nycu.edu.tw/en/%E5%BC%B5%E9%88%9E%E8%B1%AA%E8%80%81%E5%B8%AB/",
+  "research": [
+    {
+      "key": "ebc",
+      "title": "A Wearable Exhaled Breath Condensate (EBC) Collector with Controllable Condensation Microfluidics and a Branched Hydrophilic Film",
+      "doi": "10.1016/j.cej.2024.155994",
+      "year": "2024",
+      "figure": "Fig. 1, page 2; cropped for presentation",
+      "rights": "© 2024 Elsevier B.V.; original publication attribution",
+      "concept_diagram": "Original illustrative workflow; not experimental data"
+    },
+    {
+      "key": "acoustic",
+      "title": "Development of a Vertical Bubble Acoustic Microfluidic Sputum Liquefier for Improved Cancer Cell Detection",
+      "doi": "10.1016/j.snb.2023.134356",
+      "year": "2023",
+      "figure": "Fig. 1, page 2; cropped for presentation",
+      "rights": "© 2023 Elsevier B.V.; original publication attribution",
+      "concept_diagram": "Original illustrative workflow; not experimental data"
+    },
+    {
+      "key": "bacteria",
+      "title": "Rapid Detection of Live Bacteria in Water Using Nylon Filter Membrane-Integrated Centrifugal Microfluidics",
+      "doi": "10.1016/j.bios.2023.115403",
+      "year": "2023",
+      "figure": "Fig. 1, page 2; cropped for presentation",
+      "rights": "© 2023 Elsevier B.V.; original publication attribution",
+      "concept_diagram": "Original illustrative workflow; not experimental data"
+    },
+    {
+      "key": "ausic",
+      "title": "Au/SiC Microfluidic Devices Fabricated by Rapid Laser Cladding for Photocatalytic Degradation of Water Pollutants",
+      "doi": "10.1021/acssuschemeng.3c07451",
+      "year": "2024",
+      "figure": "Fig. 1, page 2; cropped for presentation",
+      "rights": "CC BY 4.0, Chang et al., ACS 2024",
+      "concept_diagram": "Original illustrative workflow; not experimental data"
+    }
+  ],
+  "students": [
+    {
+      "name": "鍾天晴",
+      "role": "Master’s student",
+      "cohort": "First cohort"
+    },
+    {
+      "name": "吳沛樺",
+      "role": "Master’s student",
+      "cohort": "First cohort"
+    }
+  ]
+}
