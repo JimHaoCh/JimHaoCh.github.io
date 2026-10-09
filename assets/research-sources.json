@@ -50,5 +50,29 @@
       "role": "Master’s student",
       "cohort": "First cohort"
     }
-  ]
+  ],
+  "undergraduates": [
+    {
+      "name": "張修瑀",
+      "role": "Undergraduate researcher"
+    },
+    {
+      "name": "張育嘉",
+      "role": "Undergraduate researcher"
+    },
+    {
+      "name": "謝珺涵",
+      "role": "Undergraduate researcher"
+    },
+    {
+      "name": "劉名峻",
+      "role": "Undergraduate researcher"
+    }
+  ],
+  "illustrations": {
+    "type": "AI-generated conceptual illustrations",
+    "tool": "image_gen",
+    "prompt_record": "assets/image-generation.json",
+    "note": "Original paper figures remain the reference for exact structures and experimental evidence."
+  }
 }
