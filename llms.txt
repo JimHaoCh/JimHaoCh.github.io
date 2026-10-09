@@ -1,0 +1,40 @@
+# 百洑傳息｜Bioflumen & Xensor Lab
+
+> An interdisciplinary research laboratory at National Yang Ming Chiao Tung University (NYCU), Taiwan, led by Assistant Professor Chun-Hao Chang (張鈞豪). Research focuses on microfluidics, biosensing and in vitro diagnostics.
+
+This is a factual directory of public website content. Updated 2026-10-09. The website presents Traditional Chinese and English together.
+
+## Identity and contact
+- Laboratory: 百洑傳息實驗室 / Bioflumen & Xensor Lab
+- Principal investigator: 張鈞豪 / Chun-Hao Chang, Assistant Professor
+- Department: 醫學生物技術暨檢驗學系 / Department of Biotechnology and Laboratory Science in Medicine
+- University: 國立陽明交通大學 / National Yang Ming Chiao Tung University
+- Email: jimhao@nycu.edu.tw
+- Location: Room 223, Biomedical Engineering Building, No. 155, Sec. 2, Li-Nong St., Beitou District, Taipei 112, Taiwan
+
+## Website sections
+- [Lab philosophy](https://jimhaoch.github.io/#about): Fluid science, life science and signal technology.
+- [Research](https://jimhaoch.github.io/#research): Exhaled breath condensate collection, acoustic microfluidics for sputum liquefaction, centrifugal live-bacteria detection and Au/SiC photocatalytic microfluidics.
+- [Principal investigator](https://jimhaoch.github.io/#pi): Education, experience, expertise and official faculty profile.
+- [Lab members](https://jimhaoch.github.io/#people): Master's students 鍾天晴、吳沛樺; undergraduate researchers 張修瑀、張育嘉、謝珺涵、劉名峻.
+- [Publications](https://jimhaoch.github.io/#publications): Selected publications with DOI links.
+- [Training and joining](https://jimhaoch.github.io/#join): Student training and inquiry information.
+- [Questions](https://jimhaoch.github.io/#questions): Research topics, collaboration and joining inquiries.
+- [Contact](https://jimhaoch.github.io/#contact): Industry–academia collaboration, research collaboration, joining the lab and student projects. The form requests name, email, organization, inquiry type and message.
+
+## Research context
+The four featured research stories describe work completed with the PI's participation before this lab was established. AI-generated conceptual illustrations are labeled on the website. Original paper figures and DOI-linked publications document exact device structures and experimental results.
+
+## Selected publications
+- [A Wearable Exhaled Breath Condensate (EBC) Collector with Controllable Condensation Microfluidics and a Branched Hydrophilic Film](https://doi.org/10.1016/j.cej.2024.155994) (2024).
+- [Development of a Vertical Bubble Acoustic Microfluidic Sputum Liquefier for Improved Cancer Cell Detection](https://doi.org/10.1016/j.snb.2023.134356) (2023).
+- [Rapid Detection of Live Bacteria in Water Using Nylon Filter Membrane-Integrated Centrifugal Microfluidics](https://doi.org/10.1016/j.bios.2023.115403) (2023).
+- [Au/SiC Microfluidic Devices Fabricated by Rapid Laser Cladding for Photocatalytic Degradation of Water Pollutants](https://doi.org/10.1021/acssuschemeng.3c07451) (2024).
+- [Deep-UV Silicon Polaritonic Metasurfaces for Enhancing Biomolecule Autofluorescence and Two-Dimensional Material Double-Resonance Raman Scattering](https://doi.org/10.1002/adfm.202420439) (2025).
+- [Hand-Powered Point-of-Care: Centrifugal Microfluidic Platform for Urine Routine Examination (μCUREX)](https://doi.org/10.1021/acs.langmuir.2c02923) (2023).
+- [NIR Laser Integration of Photodetector on 3D Printed Chamber for Colorimetric Biosensing](https://doi.org/10.1002/admt.202201026) (2023).
+- [Hand-Powered Centrifugal Microfluidic Disc with Magnetic Chitosan Bead-Based ELISA for Antibody Quantitation](https://doi.org/10.1016/j.snb.2020.128003) (2020).
+- [Rapid and Safe Isolation of Human Peripheral Blood B and T Lymphocytes through Spiral Microfluidic Channels](https://doi.org/10.1038/s41598-019-44677-3) (2019).
+
+## Official source
+- [NYCU faculty profile](https://dmt.nycu.edu.tw/en/%E5%BC%B5%E9%88%9E%E8%B1%AA%E8%80%81%E5%B8%AB/): Public professional biography and publication list.

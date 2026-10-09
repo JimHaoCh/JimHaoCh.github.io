@@ -29,3 +29,12 @@ Paper figures retain their original labels and scientific colors. Cropping remov
 ## Verification
 
 Check navigation at small widths, filter counts (9 / 4 / 5), figure-dialog opening and Escape closure, internal anchors, images and horizontal overflow. The site supports reduced motion and keyboard focus indicators.
+
+## Contact form and discovery
+
+The contact form posts to FormSubmit for jimhao@nycu.edu.tw, with its default CAPTCHA and a honeypot. First use sends an activation email to the owner; delivery requires the owner to confirm that email. Check spam if necessary. The `email` field sets Reply-To. No API key is stored. Provider processing is disclosed beside the form. `thanks.html` acknowledges submission to the provider, not verified inbox delivery.
+
+Discovery files: canonical and social metadata, JSON-LD for the lab/PI/website and nine cited articles, `robots.txt`, `sitemap.xml`, and the factual bilingual `llms.txt` directory. Visible collaboration Q&A matches the website facts. These files do not guarantee indexing or ranking. No instructions to override another AI's behavior are embedded. Submit the sitemap in Google Search Console when owner verification is available.
+
+Provider documentation: https://formsubmit.co/documentation and https://formsubmit.co/help
+Search guidance: https://developers.google.com/search/docs/appearance/ai-features

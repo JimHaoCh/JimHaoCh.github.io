@@ -92,3 +92,11 @@ window.addEventListener('scroll', scheduleScrollUpdate, {passive:true});
 window.addEventListener('resize', scheduleScrollUpdate);
 window.addEventListener('load', scheduleScrollUpdate);
 updateScrollUI();
+
+const contactMessage = document.querySelector('#contact-message');
+if (contactMessage) {
+  const updateMessageCount = () => { document.querySelector('#message-count').textContent = `${contactMessage.value.length} / ${contactMessage.maxLength}`; };
+  contactMessage.addEventListener('input', updateMessageCount);
+  window.addEventListener('pageshow', updateMessageCount);
+  updateMessageCount();
+}
