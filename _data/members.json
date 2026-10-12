@@ -1,0 +1,50 @@
+[
+  {
+    "name": "鍾天晴",
+    "role": "graduate",
+    "description": "第一屆碩士班學生",
+    "description_en": "Master’s student · First cohort",
+    "image": "",
+    "published": true
+  },
+  {
+    "name": "吳沛樺",
+    "role": "graduate",
+    "description": "第一屆碩士班學生",
+    "description_en": "Master’s student · First cohort",
+    "image": "",
+    "published": true
+  },
+  {
+    "name": "張修瑀",
+    "role": "undergraduate",
+    "description": "實驗室專題生",
+    "description_en": "Undergraduate researcher",
+    "image": "",
+    "published": true
+  },
+  {
+    "name": "張育嘉",
+    "role": "undergraduate",
+    "description": "實驗室專題生",
+    "description_en": "Undergraduate researcher",
+    "image": "",
+    "published": true
+  },
+  {
+    "name": "謝珺涵",
+    "role": "undergraduate",
+    "description": "實驗室專題生",
+    "description_en": "Undergraduate researcher",
+    "image": "",
+    "published": true
+  },
+  {
+    "name": "劉名峻",
+    "role": "undergraduate",
+    "description": "實驗室專題生",
+    "description_en": "Undergraduate researcher",
+    "image": "",
+    "published": true
+  }
+]

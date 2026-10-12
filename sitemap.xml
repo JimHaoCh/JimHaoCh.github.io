@@ -1,2 +1,5 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://jimhaoch.github.io/</loc><lastmod>2026-10-09</lastmod></url><url><loc>https://jimhaoch.github.io/techniques.html</loc><lastmod>2026-10-09</lastmod></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://jimhaoch.github.io/</loc></url><url><loc>https://jimhaoch.github.io/techniques.html</loc></url>{% assign sections = "news,instruments,moments" | split: "," %}{% for section in sections %}{% assign items = site.data[section] | where_exp: "item", "item.published != false" %}{% if items.size > 0 %}<url><loc>https://jimhaoch.github.io/{{ section }}.html</loc></url>{% endif %}{% endfor %}</urlset>

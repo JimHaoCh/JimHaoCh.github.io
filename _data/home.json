@@ -1,0 +1,178 @@
+{
+  "hero_zh": "從微尺度流動，\n解讀生命訊息。",
+  "hero_en": "Decoding life’s messagesthrough micro-scale flows.",
+  "blocks": {
+    "about_1": {
+      "zh": "「百洑傳息（Bioflumen &amp; Xensor）」是一個以微流體與生物感測為核心的跨領域研究團隊。我們的核心理念融合了流體科學、生命科學與訊號科技，致力於從微尺度的流動中解讀生命訊息。",
+      "en": "“Bioflumen &amp; Xensor” is an interdisciplinary research team centered on microfluidics and biosensing. Our core philosophy integrates fluid science, life science and signal technology, dedicating our efforts to decoding life’s messages from micro-scale flows."
+    },
+    "about_2": {
+      "zh": "「百洑」源於流體中的多重洑流與渦流，代表我們在微晶片中創造並精準控制多樣化的流動結構，促進生化反應與分子交互作用。英文 Bioflumen 由 Bio（生命）與 Flumen（拉丁文的河川）組成，亦與百洑諧音，寓意微流體宛如生命之河，在晶片中承載並轉化細胞與分子的生化資訊。",
+      "en": "“百洑” (Bai-fu) originates from undercurrents and vortices: diverse flow structures controlled within microchips to facilitate biochemical reactions and molecular interactions. Bioflumen combines “Bio” (life) and “Flumen” (Latin for river), symbolizing microfluidics as a river of life that carries and transforms the biochemical information of cells and molecules."
+    },
+    "about_3": {
+      "zh": "「傳息」代表我們將微觀的生物反應，轉化為可解析的宏觀數據。透過微流體與感測技術的整合，偵測、放大並傳遞生化訊號。英文 Xensor 將 Sensor 的首字母替換為 X，象徵跨領域（Cross-disciplinary）的協作與對未知（X）的探索，捕捉多重可能的生物訊號。",
+      "en": "“傳息” (Chuan-xi) expresses our mission to translate microscopic biological reactions into interpretable data. Integrating microfluidics with sensing enables biochemical signals to be detected, amplified and transmitted. Xensor replaces the “S” in Sensor with an “X”, representing cross-disciplinary collaboration and exploration of the unknown."
+    },
+    "about_4": {
+      "zh": "在微流體的「流」之中孕育反應，在感測技術的「傳」之中解析訊息，讓生命訊號得以被看見與理解，並轉化為實質的科學與應用價值。",
+      "en": "We nurture reactions within microfluidic flows and decode messages through sensing. Our aim is to make life signals visible and comprehensible, translating them into scientific and applied value."
+    },
+    "home_1": {
+      "zh": "我們將生醫微流體與半導體／微奈米製程導入醫學檢驗流程，發展體外診斷（IVD）與可攜式檢測系統。採檢、前處理、加樣反應、讀值與品管等醫檢知識，構成設計檢驗系統的起點。",
+      "en": "We integrate biomedical microfluidics and semiconductor / micro–nano fabrication into medical laboratory workflows to develop in vitro diagnostic (IVD) and portable testing systems. Sampling, pretreatment, reactions, readout and quality control provide the starting point for system design."
+    },
+    "home_2": {
+      "zh": "從臨床需求與檢驗痛點出發，我們將檢體前處理、分離濃縮、反應與偵測等步驟以微流體重新設計，並結合微奈米製程。研究主題涵蓋核酸與免疫檢測整合、樣本處理模組化、生物感測與訊號讀取，以及兼顧臨床轉譯的系統驗證。",
+      "en": "Starting from clinical needs and laboratory bottlenecks, we redesign specimen pretreatment, separation and enrichment, reaction and detection using microfluidics and micro/nanofabrication. Topics include integrated nucleic-acid and immunoassay testing, modular sample handling, biosensing, signal readout and system-level validation with translational considerations."
+    },
+    "home_3": {
+      "zh": "完整研發鏈涵蓋「檢驗需求 → 系統設計 → 製作與整合 → 效能驗證」，並把流程可行性、操作可靠度、干擾與可用性評估納入研究設計。",
+      "en": "Our development pipeline spans diagnostic needs, system design, fabrication and integration, and performance validation. Workflow feasibility, operational reliability, interference and usability are considered in the research design."
+    },
+    "research_1": {
+      "zh": "以下四項研究由主持人於實驗室成立前參與完成。圖文呈現各研究的設計、流程與驗證方式，作為本實驗室研究方向與技術背景的介紹。",
+      "en": "The following four studies were completed with the PI’s participation before this lab was established. Their designs, workflows and validation methods introduce the technical background informing our research directions."
+    },
+    "research_2": {
+      "zh": "呼氣冷凝液（EBC）提供呼吸道檢體與代謝物分析的途徑。這項研究將吸熱反應微流體與分枝狀仿生親水薄膜整合於口罩中：微流體控制水與硝酸銨接觸，產生降溫；薄膜引導冷凝液流向採集區，再以液相層析質譜（LC–MS）分析咖啡因與尼古丁。",
+      "en": "Exhaled breath condensate (EBC) offers a route to respiratory sampling and metabolite analysis. This work integrates endothermic microfluidics and a branched biomimetic hydrophilic film into a mask. Controlled contact between water and ammonium nitrate cools the collector; the patterned film guides condensate to the collection area. Collected samples were analyzed for caffeine and nicotine using liquid chromatography–mass spectrometry (LC–MS)."
+    },
+    "research_3": {
+      "zh": "研究連結微流體反應控制、表面潤濕設計與檢體採集。論文以人體採集及代謝物分析展示方法可行性，採集模組由吸熱反應提供冷卻。",
+      "en": "The study connects microfluidic reaction control, surface wetting and specimen collection. Human sampling and metabolite analysis demonstrate feasibility, with an endothermic reaction supplying cooling to the collection module."
+    },
+    "research_4": {
+      "zh": "痰液的高黏度會影響混合、轉移與細胞濃縮。研究在微流道中配置垂直氣泡陣列，以聲波激發氣泡產生微流，混合痰液與液化試劑；再整合液體輸送、聲波驅動與微控制器，完成自動化處理。液化後的檢體用於細胞濃縮與抹片觀察。",
+      "en": "High sputum viscosity complicates mixing, transfer and cell concentration. This study places vertical bubble arrays in a microchannel and drives the bubbles acoustically to create microstreaming that mixes sputum with liquefaction reagents. Liquid transport, acoustic actuation and a microcontroller were integrated into an automated system. Processed specimens were used for cell concentration and smear evaluation."
+    },
+    "research_5": {
+      "zh": "研究針對臨床檢體前處理設計封閉式混合模組，並以黏液模型及真實痰液測試液化與抹片表現。實驗結果呈現的是檢體處理與細胞觀察效能，臨床診斷效益仍需相應的臨床驗證。",
+      "en": "A closed mixing module addresses a clinical specimen-preparation step. Mucin models and real sputum were used to evaluate liquefaction and smear performance. The reported evidence concerns specimen processing and cellular observation; clinical diagnostic benefit requires corresponding clinical validation."
+    },
+    "research_6": {
+      "zh": "研究將尼龍濾膜嵌入離心微流體晶片，利用旋轉將水樣中的細菌集中於濾膜。活菌的代謝反應使 WST-8 生成橙色 formazan，訊號留在濾膜上，以目視或手機影像讀取。手持風扇提供旋轉驅動，充電式暖手器提供反應所需熱源，形成定點檢測平台。",
+      "en": "A nylon membrane is integrated into a centrifugal microfluidic chip to concentrate bacteria from water. Viable-cell metabolism converts WST-8 into orange formazan, which is retained on the membrane for visual or smartphone readout. A handheld fan drives centrifugation and a rechargeable hand warmer provides the reaction heat source, forming an on-site testing platform."
+    },
+    "research_7": {
+      "zh": "研究把濾膜濃縮、細胞代謝比色與離心操作整合在同一晶片。論文以大腸桿菌建立檢測範圍，並以校園水樣和 LB 平板、3M Petrifilm 菌落計數結果進行比較。",
+      "en": "The chip integrates membrane concentration, metabolic colorimetry and centrifugal handling. E. coli was used to establish the detection range, and campus water samples were evaluated against colony counts from LB agar plates and 3M Petrifilm."
+    },
+    "research_8": {
+      "zh": "研究利用半導體製程的 SiC 回收粉末，以雷射熔覆固定於玻璃，再透過鍍金與雷射退火形成奈米金／SiC 光催化板。金奈米結構的局域表面電漿共振參與可見光下的電荷轉移；將材料整合入微流道後，以亞甲藍溶液作為模型污染物評估光催化降解。",
+      "en": "Reclaimed SiC powder from semiconductor processing is laser-cladded onto glass, followed by gold deposition and laser annealing to form a nanogold/SiC photocatalytic plate. Localized surface plasmon resonance in the gold nanostructures contributes to charge transfer under visible light. Integration into microchannels was evaluated using methylene blue as a model pollutant."
+    },
+    "research_9": {
+      "zh": "研究連結半導體副產物再利用、雷射製程與微流體反應器。材料製備與模型污染物測試提供光催化系統的研究依據。",
+      "en": "The work connects reuse of semiconductor byproducts, laser processing and microfluidic reactors. Material fabrication and model-pollutant experiments provide evidence for the photocatalytic system."
+    },
+    "pi_1": {
+      "zh": "我的研究主軸聚焦於將可落地的工程技術導入醫學檢驗與體外診斷（IVD）應用。我的專長涵蓋生醫微流體（microfluidics）、生物感測器（biosensors）與微陣列（microarray）等複合技術，並強調從「臨床需求／檢驗流程」出發，完成從元件設計、製程製作、系統整合到效能驗證的完整研發鏈。",
+      "en": "My research focuses on translating deployable engineering technologies into medical laboratory workflows and in vitro diagnostics (IVD). My expertise spans integrated platforms combining biomedical microfluidics, biosensors and microarrays, with an end-to-end development pipeline—from identifying clinical needs and redesigning assay workflows to device design, fabrication, system integration and performance validation."
+    },
+    "pi_2": {
+      "zh": "我的訓練包含醫學檢驗、工程研究與生物晶片產業研發，具備醫事檢驗師資格。研究中重視檢體處理、流程設計、結果判讀與可用性評估，也將工程量產與醫材法規的核心概念納入系統規劃，目標是發展具有自動化、臨床轉譯與產品化潛力的診斷平台。",
+      "en": "My training combines medical laboratory science, engineering research and biochip R&amp;D in industry, supported by a Medical Laboratory Scientist license. I bring a laboratory integration perspective covering sample handling, workflow design, result interpretation and usability assessment. Engineering-scale production and medical-device regulatory fundamentals also inform the design of platforms intended for automation, clinical translation and product development."
+    },
+    "pi_3": {
+      "zh": "國立陽明交通大學 電機學院｜電機工程學系（生醫組）博士",
+      "en": "Ph.D. in Electrical Engineering (Biomedical Engineering Program), College of Electrical and Computer Engineering, National Yang Ming Chiao Tung University"
+    },
+    "pi_4": {
+      "zh": "國立交通大學 電機學院｜生醫工程研究所 碩士",
+      "en": "M.S. in Biomedical Engineering, College of Electrical and Computer Engineering, National Chiao Tung University"
+    },
+    "pi_5": {
+      "zh": "長庚大學 醫學院｜醫學生物技術暨檢驗學系 學士",
+      "en": "B.S. in Medical Biotechnology and Laboratory Science, College of Medicine, Chang Gung University"
+    },
+    "pi_6": {
+      "zh": "國立陽明交通大學 醫學生物技術暨檢驗學系 助理教授",
+      "en": "Assistant Professor, Department of Biotechnology and Laboratory Science in Medicine, National Yang Ming Chiao Tung University"
+    },
+    "pi_7": {
+      "zh": "國立陽明交通大學 智慧醫電工程研究所 博士後研究員",
+      "en": "Postdoctoral Researcher, Institute of Intelligent Biomedical Engineering, National Yang Ming Chiao Tung University"
+    },
+    "pi_8": {
+      "zh": "生捷科技股份有限公司 生物晶片研發工程師",
+      "en": "Biochip R&amp;D Engineer, Centrillion Technology"
+    },
+    "pi_9": {
+      "zh": "林口長庚醫院實習；取得醫事檢驗師國考證照",
+      "en": "Clinical internship at Linkou Chang Gung Memorial Hospital; Medical Laboratory Scientist national licensure"
+    },
+    "pi_10": {
+      "zh": "方賢齊 BioICT 博士論文研究獎｜國立陽明交通大學",
+      "en": "Xian-Qi Fang BioICT Ph.D. Research Thesis Award, National Yang Ming Chiao Tung University"
+    },
+    "pi_11": {
+      "zh": "台灣化學會年會｜台灣神隆分析化學論文獎首獎",
+      "en": "ScinoPharm Analytical Chemistry Thesis Award — Outstanding, Chemistry National Meeting, Taiwan Chemical Society"
+    },
+    "pi_12": {
+      "zh": "國立陽明交通大學 電機學院優秀畢業生獎；研究表現前 10%",
+      "en": "Outstanding Graduate Award, College of Electrical Engineering, NYCU; top 10% for research achievements"
+    },
+    "pi_13": {
+      "zh": "鴻海科技獎｜數位健康組；聲學微流體痰液液化技術",
+      "en": "Hon-Hai Technology Award — Digital Healthcare Group, Foxconn Education Foundation; acoustic microfluidic sputum liquefier for cancer-cell detection"
+    },
+    "pi_14": {
+      "zh": "鴻海–陽明交大聯合研究中心獎學金；連續獲獎",
+      "en": "Hon-Hai–NYCU Joint Research Center Scholarship; consecutive awards"
+    },
+    "pi_15": {
+      "zh": "顧子琨；鍾曜光；張鈞豪。微陣列及其成形方法。台灣專利 I688133（2020-03-11）。",
+      "en": "Tzu-Kun Ku; Yao-Kuang Chung; Chun-Hao Chang. Microarray and Method for Forming the Same. US Patent US10872924B2."
+    },
+    "pi_16": {
+      "zh": "指導教授：國立陽明交通大學 智慧醫電工程研究所 李博仁教授。<br/>學術師公：國立陽明交通大學 應用化學系 李耀坤教授。",
+      "en": "Doctoral advisor: Prof. Bor-Ran Li, Institute of Intelligent Biomedical Engineering, NYCU.<br/>Academic grand-advisor: Prof. Yaw-Kuen Li, Department of Applied Chemistry, NYCU."
+    },
+    "people_1": {
+      "zh": "從醫學檢驗出發，一起探索微流體、生物感測與診斷技術。",
+      "en": "Exploring microfluidics, biosensing and diagnostic technologies together."
+    },
+    "join_1": {
+      "zh": "醫學檢驗相關背景的學生，能從熟悉的採檢、前處理、反應、讀值與品管出發，把臨床需求轉成系統規格。我們重視從設計到製作、測試與驗證的實作訓練，並以體外診斷與可攜式檢測作為應用方向。",
+      "en": "Students with a Medical Laboratory Science background can build on sampling, pretreatment, reactions, readout and quality control to translate clinical requirements into system specifications. Training covers design, fabrication, testing and validation, with IVD and portable testing as application directions."
+    },
+    "join_2": {
+      "zh": "微流體操作原理、流程規劃、晶片測試與優化，將檢驗流程晶片化與自動化。",
+      "en": "Microfluidic operating principles, workflow planning, chip testing and optimization for miniaturized and automated laboratory procedures."
+    },
+    "join_3": {
+      "zh": "從設計到製作的微影、蝕刻、薄膜與表面處理實作，理解製程對檢測效能的影響。",
+      "en": "Design-to-fabrication concepts and practice in lithography, etching, thin films and surface processing, linking fabrication to assay performance."
+    },
+    "join_4": {
+      "zh": "把臨床需求轉成規格，再將規格轉成可量測、可判讀、可驗證的系統與數據。",
+      "en": "Translate clinical needs into specifications, then into measurable, interpretable and validated systems and data."
+    },
+    "join_5": {
+      "zh": "系統整合、可靠度與干擾評估、流程可行性，以及產品導向的驗證方法。",
+      "en": "System integration, reliability, interference evaluation, workflow feasibility and product-oriented verification."
+    },
+    "join_6": {
+      "zh": "也歡迎醫學工程背景的學生合作。若你的專長在感測器、電子／訊號處理、機構設計、材料與製程或系統整合，可與你及你的指導老師共同規劃專題研究，結合醫檢需求與工程實作。",
+      "en": "Biomedical Engineering students are welcome to collaborate. Projects can be planned with you and your primary supervisor through a co-advisor model, drawing on strengths in sensors, electronics and signal processing, mechanical design, materials and fabrication, or system integration."
+    },
+    "publications_1": {
+      "zh": "著作清單依系上教師介紹整理；期刊引用資訊以原論文為準。",
+      "en": "The publication list is compiled from the official faculty profile; bibliographic details follow the original papers."
+    },
+    "questions_1": {
+      "zh": "百洑傳息實驗室以微流體、生物感測與體外診斷為核心，網站介紹呼氣冷凝液採集、聲學微流體、離心式細菌檢測與 Au/SiC 光催化微流體等研究。",
+      "en": "Bioflumen &amp; Xensor Lab focuses on microfluidics, biosensing and in vitro diagnostics. Featured studies cover exhaled breath condensate collection, acoustic microfluidics, centrifugal bacterial detection and Au/SiC photocatalytic microfluidics."
+    },
+    "questions_2": {
+      "zh": "請在下方聯絡表單選擇產學合作或研究合作，填寫單位、聯絡 Email，以及研究問題或合作構想。亦可直接寄信至 jimhao@nycu.edu.tw。",
+      "en": "Select industry–academia or research collaboration in the contact form and provide your organization, email and project idea. You can also email jimhao@nycu.edu.tw."
+    },
+    "questions_3": {
+      "zh": "請在聯絡表單選擇加入實驗室或學生專題，簡述目前就讀單位、研究興趣與希望參與的時間，與張鈞豪助理教授聯繫。",
+      "en": "Select joining the lab or student project in the contact form. Introduce your current institution, research interests and intended timeframe to contact Assistant Professor Chun-Hao Chang."
+    }
+  }
+}

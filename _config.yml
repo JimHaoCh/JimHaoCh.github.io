@@ -1,0 +1,11 @@
+url: "https://jimhaoch.github.io"
+baseurl: ""
+timezone: Asia/Taipei
+encoding: utf-8
+theme: null
+exclude:
+  - README.md
+  - scripts
+  - tests
+  - Gemfile
+  - Gemfile.lock

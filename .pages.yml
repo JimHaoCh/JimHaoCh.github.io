@@ -1,0 +1,889 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+  rename: safe
+  categories:
+  - image
+  extensions:
+  - png
+  - jpg
+  - jpeg
+  - webp
+content:
+- name: news
+  label: 最新消息
+  type: file
+  path: _data/news.json
+  format: json
+  fields:
+  - &id001
+    name: title
+    label: 中文標題
+    type: string
+    required: true
+  - &id002
+    name: title_en
+    label: 英文標題
+    type: string
+  - name: date
+    label: 日期
+    type: date
+    options:
+      format: yyyy-MM-dd
+  - &id003
+    name: body
+    label: 中文內容
+    type: rich-text
+    options:
+      format: html
+      switcher: false
+  - &id004
+    name: body_en
+    label: 英文內容
+    type: rich-text
+    options:
+      format: html
+      switcher: false
+  - &id005
+    name: image
+    label: 封面照片
+    type: image
+  - &id006
+    name: image_alt
+    label: 照片說明 / 替代文字
+    type: string
+  - &id007
+    name: published
+    label: 在網站顯示
+    type: boolean
+    default: true
+    description: 開啟後，此項目會出現在公開網站。
+  list: true
+- name: instruments
+  label: 實驗儀器
+  type: file
+  path: _data/instruments.json
+  format: json
+  fields:
+  - *id001
+  - *id002
+  - name: model
+    label: 型號 / Model
+    type: string
+  - *id003
+  - *id004
+  - *id005
+  - *id006
+  - *id007
+  list: true
+- name: moments
+  label: 生活剪影
+  type: file
+  path: _data/moments.json
+  format: json
+  fields:
+  - *id001
+  - *id002
+  - name: date
+    label: 日期
+    type: date
+    options:
+      format: yyyy-MM-dd
+  - *id003
+  - *id004
+  - *id005
+  - *id006
+  - *id007
+  list: true
+- name: techniques
+  label: 技術簡介
+  type: file
+  path: _data/techniques.json
+  format: json
+  fields:
+  - *id001
+  - *id002
+  - *id003
+  - *id004
+  - *id005
+  - *id006
+  - *id007
+  list: true
+- name: members
+  label: 實驗室成員
+  type: file
+  path: _data/members.json
+  format: json
+  fields:
+  - name: name
+    label: 姓名
+    type: string
+    required: true
+  - name: role
+    label: 身分
+    type: select
+    required: true
+    options:
+      values:
+      - name: graduate
+        label: 碩士生
+      - name: undergraduate
+        label: 專題生
+  - name: description
+    label: 中文介紹
+    type: text
+  - name: description_en
+    label: 英文介紹
+    type: text
+  - name: image
+    label: 照片
+    type: image
+  - *id007
+  list: true
+- name: publications
+  label: 著作論文
+  type: file
+  path: _data/publications.json
+  format: json
+  fields:
+  - name: title
+    label: 論文題目
+    type: string
+    required: true
+  - name: year
+    label: 出版年
+    type: number
+    required: true
+    options:
+      min: 1900
+      max: 2100
+      step: 1
+  - name: type
+    label: 作者類型
+    type: select
+    required: true
+    options:
+      values:
+      - name: first
+        label: 第一作者
+      - name: co
+        label: 共同作者
+  - name: journal
+    label: 期刊與卷頁
+    type: text
+  - name: authors
+    label: 作者名單
+    type: text
+  - name: doi
+    label: DOI 完整網址
+    type: string
+    required: true
+    pattern:
+      regex: ^https://doi\.org/.+$
+      message: 請填寫 https://doi.org/ 開頭的完整 DOI 網址。
+  - *id007
+  list: true
+- name: home
+  label: 首頁與研究文字
+  type: file
+  path: _data/home.json
+  format: json
+  fields:
+  - name: hero_zh
+    label: 首頁中文標語
+    type: text
+  - name: hero_en
+    label: 首頁英文標語
+    type: text
+  - name: blocks
+    label: 各區段中英文內容
+    type: object
+    fields:
+    - name: about_1
+      label: 實驗室理念 · 段落 1
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: about_2
+      label: 實驗室理念 · 段落 2
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: about_3
+      label: 實驗室理念 · 段落 3
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: about_4
+      label: 實驗室理念 · 段落 4
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: home_1
+      label: home · 段落 1
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: home_2
+      label: home · 段落 2
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: home_3
+      label: home · 段落 3
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: research_1
+      label: 研究簡介 · 段落 1
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: research_2
+      label: 研究簡介 · 段落 2
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: research_3
+      label: 研究簡介 · 段落 3
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: research_4
+      label: 研究簡介 · 段落 4
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: research_5
+      label: 研究簡介 · 段落 5
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: research_6
+      label: 研究簡介 · 段落 6
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: research_7
+      label: 研究簡介 · 段落 7
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: research_8
+      label: 研究簡介 · 段落 8
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: research_9
+      label: 研究簡介 · 段落 9
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_1
+      label: 主持人介紹 · 段落 1
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_2
+      label: 主持人介紹 · 段落 2
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_3
+      label: 主持人介紹 · 段落 3
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_4
+      label: 主持人介紹 · 段落 4
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_5
+      label: 主持人介紹 · 段落 5
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_6
+      label: 主持人介紹 · 段落 6
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_7
+      label: 主持人介紹 · 段落 7
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_8
+      label: 主持人介紹 · 段落 8
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_9
+      label: 主持人介紹 · 段落 9
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_10
+      label: 主持人介紹 · 段落 10
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_11
+      label: 主持人介紹 · 段落 11
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_12
+      label: 主持人介紹 · 段落 12
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_13
+      label: 主持人介紹 · 段落 13
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_14
+      label: 主持人介紹 · 段落 14
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_15
+      label: 主持人介紹 · 段落 15
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: pi_16
+      label: 主持人介紹 · 段落 16
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: people_1
+      label: 成員區介紹 · 段落 1
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: join_1
+      label: 加入實驗室 · 段落 1
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: join_2
+      label: 加入實驗室 · 段落 2
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: join_3
+      label: 加入實驗室 · 段落 3
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: join_4
+      label: 加入實驗室 · 段落 4
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: join_5
+      label: 加入實驗室 · 段落 5
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: join_6
+      label: 加入實驗室 · 段落 6
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: publications_1
+      label: 著作區說明 · 段落 1
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: questions_1
+      label: 合作問答 · 段落 1
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: questions_2
+      label: 合作問答 · 段落 2
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: questions_3
+      label: 合作問答 · 段落 3
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false

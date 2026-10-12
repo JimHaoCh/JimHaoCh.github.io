@@ -44,3 +44,13 @@ Search guidance: https://developers.google.com/search/docs/appearance/ai-feature
 The shared script supports home sections and independent pages. Same-document hash clicks close menus before measuring the sticky header and explicitly scrolling, including repeated clicks on the same hash. Mobile navigation overlays the page without changing header height. Escape and outside clicks close menus; history navigation aligns anchors again. Paper figures reserve their intrinsic sizes to reduce layout changes during lazy loading.
 
 `news.html`, `instruments.html`, and `moments.html` are empty page shells (noindex until populated). `techniques.html` contains six bilingual technique introductions. Update the shared header/footer across pages together.
+
+## Pages CMS (October 2026)
+
+`.pages.yml` provides owner-only content editing through the hosted Pages CMS app. First sign-in requires installing its GitHub App for this repository; no credentials are embedded in the site. `admin.html` is an instruction/link page, and the editor itself requires authentication.
+
+Editable JSON lives in `_data/`: `home`, `members`, `publications`, `techniques`, `news`, `instruments`, and `moments`. Existing bilingual prose and member/publication records are preserved. `_includes/` renders these records during the native GitHub Pages Jekyll build. `.nojekyll` was removed so the existing main/root publishing source compiles the data into static HTML on every CMS save. Public pages need no JavaScript data fetch to display managed content. Published counts, page indexing, sitemap and publication citations are generated from the data.
+
+Rich-text fields output HTML. Home paragraph IDs are stable object keys; they are edited in place. Entry lists may be added to, reordered or removed. The `published` toggle controls website visibility. Content files are in the existing public GitHub repository.
+
+Only the owner is configured; no collaborators are added. FormSubmit contact routing remains unchanged. Desktop typography increases within a min-width:861px media query; existing phone typography is retained.
