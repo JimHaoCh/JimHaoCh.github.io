@@ -2,10 +2,11 @@ const menu = document.querySelector('.menu');
 const nav = document.querySelector('#nav');
 const moreMenu = document.querySelector('.nav-more');
 const pageHeader = document.querySelector('header');
+pageHeader?.classList.add('navigation-ready');
 function setMenu(open) {
   if (!menu || !nav) return;
   menu.setAttribute('aria-expanded', String(open));
-  menu.setAttribute('aria-label', open ? '關閉導覽選單' : '開啟導覽選單');
+  menu.setAttribute('aria-label', open ? '關閉全站選單' : '開啟全站選單，11 個入口');
   nav.classList.toggle('open', open);
   if (!open && moreMenu) moreMenu.open = false;
 }
@@ -164,8 +165,9 @@ if (contactMessage) {
 // Motion enhances visible content; no content is hidden while waiting for JavaScript.
 const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
 const motionAnimations = new Set();
+let motionPaused = motionPreference.matches;
 function animateItems(items) {
-  if (motionPreference.matches) return;
+  if (motionPaused || motionPreference.matches) return;
   items.forEach((item, index) => {
     if (!item.animate) return;
     const animation = item.animate([
@@ -186,8 +188,83 @@ if ('IntersectionObserver' in window && !motionPreference.matches) {
   document.querySelectorAll('.section-title,.story-head,.research-index>a,.page-cards>a,.managed-card,.tech-card,.student').forEach(item => entranceObserver.observe(item));
 }
 motionPreference.addEventListener('change', event => {
+  setMotionPaused(event.matches);
   if (event.matches) {
     entranceObserver?.disconnect();
     motionAnimations.forEach(animation => animation.cancel());
   }
 });
+
+
+// The visitor controls continuous motion and the guided workflow separately.
+let stopDemoTour = () => {};
+const motionToggle = document.querySelector('#motion-toggle');
+function setMotionPaused(paused) {
+  motionPaused = paused || motionPreference.matches;
+  document.body.classList.toggle('motion-paused', motionPaused);
+  if (motionPaused) {
+    motionAnimations.forEach(animation => animation.cancel());
+    stopDemoTour();
+  }
+  if (motionToggle) {
+    motionToggle.setAttribute('aria-pressed', String(motionPaused));
+    motionToggle.disabled = motionPreference.matches;
+    motionToggle.innerHTML = motionPreference.matches
+      ? '已減少動態<span lang="en">Reduced motion enabled</span>'
+      : motionPaused ? '▶ 恢復動態<span lang="en">Resume motion</span>' : 'Ⅱ 暫停動態<span lang="en">Pause motion</span>';
+  }
+}
+motionToggle?.addEventListener('click', () => setMotionPaused(!motionPaused));
+setMotionPaused(motionPreference.matches);
+
+const flowDemo = document.querySelector('#flow-demo');
+if (flowDemo) {
+  const stepButtons = [...flowDemo.querySelectorAll('[data-demo-step]')];
+  const panels = [...flowDemo.querySelectorAll('.demo-panel')];
+  const tourButton = document.querySelector('#demo-tour');
+  const stageNames = ['採樣 · Sampling', '流動 · Microfluidics', '感測 · Sensing', '讀值 · Readout'];
+  let selectedStep = 0;
+  let tourTimer = null;
+  let inView = !('IntersectionObserver' in window);
+  function chooseStep(index, announce = false) {
+    selectedStep = (index + stepButtons.length) % stepButtons.length;
+    flowDemo.dataset.step = String(selectedStep);
+    stepButtons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === selectedStep)));
+    flowDemo.querySelector('.demo-panel-list').setAttribute('aria-live', announce ? 'polite' : 'off');
+    panels.forEach((panel, i) => { panel.hidden = i !== selectedStep; });
+    document.querySelector('#demo-stage-number').textContent = String(selectedStep + 1).padStart(2, '0');
+    document.querySelector('#demo-stage-name').textContent = stageNames[selectedStep];
+    animateItems([panels[selectedStep]]);
+  }
+  function setTour(playing) {
+    clearInterval(tourTimer);
+    tourTimer = null;
+    const enabled = playing && !motionPaused && !motionPreference.matches;
+    tourButton.setAttribute('aria-pressed', String(enabled));
+    tourButton.innerHTML = enabled ? 'Ⅱ 停止導覽<span lang="en">Stop tour</span>' : '▶ 自動導覽<span lang="en">Play tour</span>';
+    if (enabled) tourTimer = setInterval(() => {
+      if (inView && !document.hidden) chooseStep(selectedStep + 1);
+    }, 5000);
+  }
+  stopDemoTour = () => setTour(false);
+  stepButtons.forEach((button, index) => button.addEventListener('click', () => { setTour(false); chooseStep(index, true); }));
+  tourButton.addEventListener('click', () => {
+    if (motionPreference.matches) return;
+    if (motionPaused) setMotionPaused(false);
+    setTour(tourTimer === null);
+  });
+  const syncTourAvailability = () => { tourButton.disabled = motionPreference.matches; };
+  syncTourAvailability();
+  motionPreference.addEventListener('change', syncTourAvailability);
+  if ('IntersectionObserver' in window) {
+    const demoObserver = new IntersectionObserver(entries => {
+      inView = entries[0].isIntersecting;
+      flowDemo.classList.toggle('demo-in-view', inView);
+    }, {threshold: 0.1});
+    demoObserver.observe(flowDemo);
+  } else flowDemo.classList.add('demo-in-view');
+  window.addEventListener('pagehide', () => setTour(false));
+  flowDemo.classList.add('demo-ready');
+  flowDemo.querySelector('.demo-controls').hidden = false;
+  chooseStep(0);
+}

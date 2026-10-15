@@ -172,6 +172,8 @@ content:
         label: 共同第一作者 / Co-first author
       - name: corresponding
         label: 通訊作者 / Corresponding author
+      - name: co-corresponding
+        label: 共同通訊作者 / Co-corresponding author
       - name: co
         label: 共同作者 / Co-author
     description: 依論文正式標示選擇；同篇可以同時具有共同第一作者、通訊作者等身分。
@@ -880,6 +882,38 @@ content:
           switcher: false
     - name: questions_3
       label: 合作問答 · 段落 3
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: microfluidics_qa
+      label: 科普問答 · 什麼是生醫微流體
+      type: object
+      fields:
+      - name: zh
+        label: 中文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+      - name: en
+        label: 英文
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+    - name: sensors_qa
+      label: 科普問答 · 什麼是感測器
       type: object
       fields:
       - name: zh

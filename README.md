@@ -62,3 +62,11 @@ Only the owner is configured; no collaborators are added. FormSubmit contact rou
 - 各頁統一載入 Noto Sans TC、Noto Serif TC 與 Source Serif 4 網頁字型。
 - Pages CMS 的「主持人的作者身分」可複選：第一作者、共同第一作者、通訊作者、共同作者。`type` 儲存為陣列，前台篩選支援同篇多重身分；舊單一字串仍可呈現。
 - 動畫尊重系統 reduced-motion 設定，文字預設保持可見。logo 使用原圖，移除 multiply 疊色與半透明底板，底色維持 #fef9f5。
+
+
+### 2026-10-15 手機導覽與互動科普
+
+- 手機顯示三個常用入口與「全站選單 · 11」按鈕；完整選單以兩欄展開，支援 Escape、點外側與選項選取後收合。
+- 作者身分加入 `co-corresponding`（共同通訊作者），可與其他身分複選。
+- 首頁 `_includes/interactive-flow.html` 提供四步驟的檢體到訊號概念圖；自動導覽每 5 秒切換，手動點選或暫停動態會停止導覽。離開畫面時停止圖形運動，尊重 reduced-motion。
+- 微流體與感測器的兩則雙語科普問答可在 Pages CMS 的首頁文字中編輯；頁面附 NIST、NIH、IUPAC 來源。

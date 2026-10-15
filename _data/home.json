@@ -173,6 +173,14 @@
     "questions_3": {
       "zh": "請在聯絡表單選擇加入實驗室或學生專題，簡述目前就讀單位、研究興趣與希望參與的時間，與張鈞豪助理教授聯繫。",
       "en": "Select joining the lab or student project in the contact form. Introduce your current institution, research interests and intended timeframe to contact Assistant Professor Chun-Hao Chang."
+    },
+    "microfluidics_qa": {
+      "zh": "<p>生醫微流體是在微小流道或腔室中，控制少量液體、細胞與分子的技術，應用於生物研究、檢體處理與檢測。你可以把它想成晶片上的液體路網：設計流道、閥門與反應區，讓檢體依序完成輸送、混合、分離或反應。</p><p>例如，讓細胞通過分流結構，或讓檢體與試劑在指定位置接觸，再接上感測與讀值。實際效果取決於流道設計、材料、流動條件與檢體特性。</p>",
+      "en": "<p>Biomedical microfluidics controls small amounts of liquid, cells and molecules in miniature channels or chambers for biological research, sample preparation and testing. Think of a liquid-routing network on a chip: channels, valves and reaction regions guide transport, mixing, separation and reactions.</p><p>Examples include routing cells through branching channels or bringing samples and reagents together before sensing. Performance depends on geometry, materials, flow conditions and sample properties.</p>"
+    },
+    "sensors_qa": {
+      "zh": "<p>感測器把溫度、壓力、光線或化學物質等變化，轉成可以量測與記錄的訊號。生醫應用會依目標選擇電流、電位、螢光、顏色或其他讀取方式。</p><p>生物感測器進一步利用酵素、抗體或核酸等生物辨識元件，結合訊號轉換機制來偵測目標。例如，酵素型血糖感測器以葡萄糖相關反應產生電化學訊號，再經校正換算濃度；微流體則能負責把檢體送到感測區。訊號是否具有足夠選擇性與準確度，需要以校正、干擾測試及實際檢體驗證。</p>",
+      "en": "<p>A sensor converts a change—such as temperature, pressure, light or chemical composition—into a measurable signal. Biomedical systems may read current, potential, fluorescence, color or other outputs, depending on the target.</p><p>A biosensor combines biological recognition, such as an enzyme, antibody or nucleic acid, with signal transduction. For example, an enzyme-based glucose sensor generates an electrochemical signal that is calibrated to concentration. Microfluidics can deliver the sample to the sensing region. Selectivity and accuracy require calibration, interference testing and validation with relevant samples.</p>"
     }
   }
 }
