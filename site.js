@@ -65,8 +65,11 @@ const papers = [...document.querySelectorAll('.paper')];
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('[data-filter]').forEach(other => other.setAttribute('aria-pressed', String(other === button)));
   let count = 0;
-  papers.forEach(paper => { paper.hidden = button.dataset.filter !== 'all' && paper.dataset.type !== button.dataset.filter; if (!paper.hidden) count++; });
+  papers.forEach(paper => { paper.hidden = button.dataset.filter !== 'all' && !(paper.dataset.type || '').split(/\s+/).includes(button.dataset.filter); if (!paper.hidden) count++; });
   document.querySelector('#paper-count').textContent = `顯示 ${count} 篇論文 / Showing ${count} publications`;
+  const empty = document.querySelector('#paper-empty');
+  if (empty) empty.hidden = count !== 0;
+  animateItems(papers.filter(paper => !paper.hidden).slice(0, 4));
   scheduleScrollUpdate();
 }));
 const members = [...document.querySelectorAll('[data-member-role]')];
@@ -156,3 +159,35 @@ if (contactMessage) {
   window.addEventListener('pageshow', updateMessageCount);
   updateMessageCount();
 }
+
+
+// Motion enhances visible content; no content is hidden while waiting for JavaScript.
+const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+const motionAnimations = new Set();
+function animateItems(items) {
+  if (motionPreference.matches) return;
+  items.forEach((item, index) => {
+    if (!item.animate) return;
+    const animation = item.animate([
+      {opacity: 0.35, transform: 'translateY(18px)'},
+      {opacity: 1, transform: 'translateY(0)'}
+    ], {duration: 520, delay: Math.min(index, 3) * 55, easing: 'cubic-bezier(.2,.65,.3,1)'});
+    motionAnimations.add(animation);
+    animation.onfinish = animation.oncancel = () => motionAnimations.delete(animation);
+  });
+}
+let entranceObserver;
+if ('IntersectionObserver' in window && !motionPreference.matches) {
+  entranceObserver = new IntersectionObserver(entries => {
+    const visible = entries.filter(entry => entry.isIntersecting);
+    animateItems(visible.map(entry => entry.target));
+    visible.forEach(entry => entranceObserver.unobserve(entry.target));
+  }, {threshold: 0.12});
+  document.querySelectorAll('.section-title,.story-head,.research-index>a,.page-cards>a,.managed-card,.tech-card,.student').forEach(item => entranceObserver.observe(item));
+}
+motionPreference.addEventListener('change', event => {
+  if (event.matches) {
+    entranceObserver?.disconnect();
+    motionAnimations.forEach(animation => animation.cancel());
+  }
+});

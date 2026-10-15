@@ -54,3 +54,11 @@ Editable JSON lives in `_data/`: `home`, `members`, `publications`, `techniques`
 Rich-text fields output HTML. Home paragraph IDs are stable object keys; they are edited in place. Entry lists may be added to, reordered or removed. The `published` toggle controls website visibility. Content files are in the existing public GitHub repository.
 
 Only the owner is configured; no collaborators are added. FormSubmit contact routing remains unchanged. Desktop typography increases within a min-width:861px media query; existing phone typography is retained.
+
+
+### 2026-10-15 介面與作者身分更新
+
+- 共用頂部導覽位於 `_includes/header.html`；11 個入口直接顯示，手機使用橫向捲動列。
+- 各頁統一載入 Noto Sans TC、Noto Serif TC 與 Source Serif 4 網頁字型。
+- Pages CMS 的「主持人的作者身分」可複選：第一作者、共同第一作者、通訊作者、共同作者。`type` 儲存為陣列，前台篩選支援同篇多重身分；舊單一字串仍可呈現。
+- 動畫尊重系統 reduced-motion 設定，文字預設保持可見。logo 使用原圖，移除 multiply 疊色與半透明底板，底色維持 #fef9f5。

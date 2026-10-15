@@ -159,15 +159,22 @@ content:
       max: 2100
       step: 1
   - name: type
-    label: 作者類型
+    label: 主持人的作者身分（可複選）
     type: select
     required: true
     options:
+      multiple: true
+      min: 1
       values:
       - name: first
-        label: 第一作者
+        label: 第一作者 / First author
+      - name: co-first
+        label: 共同第一作者 / Co-first author
+      - name: corresponding
+        label: 通訊作者 / Corresponding author
       - name: co
-        label: 共同作者
+        label: 共同作者 / Co-author
+    description: 依論文正式標示選擇；同篇可以同時具有共同第一作者、通訊作者等身分。
   - name: journal
     label: 期刊與卷頁
     type: text

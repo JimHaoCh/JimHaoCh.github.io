@@ -2,7 +2,9 @@
   {
     "title": "A Lightweight Off-Body Electrochemical Strategy for Sweat Lactate Monitoring During Swimming",
     "year": 2026,
-    "type": "first",
+    "type": [
+      "first"
+    ],
     "journal": "Sensors and Actuators B: Chemical · 140778",
     "authors": "HP Lin 1, CC Yang 1, CH Chang 1, SC Sheu, PA Chen, CY Li, YY Pai, PT Lin, BR Li",
     "doi": "https://doi.org/10.1016/j.snb.2026.140778",
@@ -11,7 +13,9 @@
   {
     "title": "A Wearable Exhaled Breath Condensate (EBC) Collector with Controllable Condensation Microfluidics and a Branched Hydrophilic Film",
     "year": 2024,
-    "type": "first",
+    "type": [
+      "first"
+    ],
     "journal": "Chemical Engineering Journal · 499, 155994",
     "authors": "Chang, C.-H.; Yu, Y.-H.; Lin, H.-P.; Tsou, P.-H.; Li, Y.-K.; Li, B.-R.",
     "doi": "https://doi.org/10.1016/j.cej.2024.155994",
@@ -20,7 +24,9 @@
   {
     "title": "Development of a Vertical Bubble Acoustic Microfluidic Sputum Liquefier for Improved Cancer Cell Detection",
     "year": 2023,
-    "type": "first",
+    "type": [
+      "first"
+    ],
     "journal": "Sensors and Actuators B: Chemical · 394, 134356",
     "authors": "Chang, C.-H.; Nien, H.-H.; Li, B.-R.",
     "doi": "https://doi.org/10.1016/j.snb.2023.134356",
@@ -29,7 +35,9 @@
   {
     "title": "Rapid Detection of Live Bacteria in Water Using Nylon Filter Membrane-Integrated Centrifugal Microfluidics",
     "year": 2023,
-    "type": "first",
+    "type": [
+      "first"
+    ],
     "journal": "Biosensors and Bioelectronics · 236, 115403",
     "authors": "Chang, C.-H.; Wang, C.-L.; Li, B.-R.",
     "doi": "https://doi.org/10.1016/j.bios.2023.115403",
@@ -38,7 +46,9 @@
   {
     "title": "Au/SiC Microfluidic Devices Fabricated by Rapid Laser Cladding for Photocatalytic Degradation of Water Pollutants",
     "year": 2024,
-    "type": "first",
+    "type": [
+      "first"
+    ],
     "journal": "ACS Sustainable Chemistry & Engineering · 12, 4486–4496",
     "authors": "Chang, C.-H.; Lin, H.-P.; Chen, C.-W.; Lu, Y.-C.; Hsiao, F.-H.; Hsieh, C.-H.; Lin, B.-C.; Yu, B.-Y.; Ma, D.-L.; Kuo, H.-C.; Tu, C.-C.; Li, B.-R.",
     "doi": "https://doi.org/10.1021/acssuschemeng.3c07451",
@@ -47,7 +57,9 @@
   {
     "title": "Deep-UV Silicon Polaritonic Metasurfaces for Enhancing Biomolecule Autofluorescence and Two-Dimensional Material Double-Resonance Raman Scattering",
     "year": 2025,
-    "type": "co",
+    "type": [
+      "co"
+    ],
     "journal": "Advanced Functional Materials · 35(14), 2420439",
     "authors": "Lee, B.-R.; Chiang, M.-F.; Ho, P.-Y.; Chen, K.-H.; Lee, J.-H.; Hsu, P.-H.; Peng, Y.-C.; Hou, J.-Y.; Chen, S.-C.; Lee, Q.-Y.; Chang, C.-H.; Li, B.-R.; Lin, T.-E.; Lin, C.-T.; Shih, M.-H.; Lien, D.-H.; Lin, Y.-C.; Horng, R.-H.; Kivshar, Y.; Tseng, M.-L.",
     "doi": "https://doi.org/10.1002/adfm.202420439",
@@ -56,7 +68,9 @@
   {
     "title": "Hand-Powered Point-of-Care: Centrifugal Microfluidic Platform for Urine Routine Examination (μCUREX)",
     "year": 2023,
-    "type": "co",
+    "type": [
+      "co"
+    ],
     "journal": "Langmuir · 39, 1897–1904",
     "authors": "Kuo, S.-H.; Peraro, A.; Lin, H.-P.; Chang, C.-H.; Li, B.-R.",
     "doi": "https://doi.org/10.1021/acs.langmuir.2c02923",
@@ -65,7 +79,9 @@
   {
     "title": "NIR Laser Integration of Photodetector on 3D Printed Chamber for Colorimetric Biosensing",
     "year": 2023,
-    "type": "co",
+    "type": [
+      "co"
+    ],
     "journal": "Advanced Materials Technologies · 8, 2201026",
     "authors": "Lin, C.-F.; Chang, C.-H.; Noël, L.; Li, B.-R.; Meng, H.-F.; Soppera, O.; Zan, H.-W.",
     "doi": "https://doi.org/10.1002/admt.202201026",
@@ -74,7 +90,9 @@
   {
     "title": "Hand-Powered Centrifugal Microfluidic Disc with Magnetic Chitosan Bead-Based ELISA for Antibody Quantitation",
     "year": 2020,
-    "type": "co",
+    "type": [
+      "co"
+    ],
     "journal": "Sensors and Actuators B: Chemical · 316, 128003",
     "authors": "Lin, C.-T.; Kou, S.-H.; Lin, P.-H.; Chiang, P.-H.; Lin, W.-H.; Chang, C.-H.; Tsou, P.-H.; Li, B.-R.",
     "doi": "https://doi.org/10.1016/j.snb.2020.128003",
@@ -83,7 +101,9 @@
   {
     "title": "Rapid and Safe Isolation of Human Peripheral Blood B and T Lymphocytes through Spiral Microfluidic Channels",
     "year": 2019,
-    "type": "co",
+    "type": [
+      "co"
+    ],
     "journal": "Scientific Reports · 9(1), 8145",
     "authors": "Chiu, P.-L.; Chang, C.-H.; Lin, Y.-L.; Tsou, P.-H.; Li, B.-R.",
     "doi": "https://doi.org/10.1038/s41598-019-44677-3",
