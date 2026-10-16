@@ -231,3 +231,19 @@ body, button, input, select, textarea { font-family: var(--sans); }
 .motion-paused .cv-details[open] > :not(summary), .motion-paused .inquiry-faq details[open] > :not(summary), .motion-paused .site-header #nav.open { animation: none !important; }
 @media (prefers-reduced-motion:reduce) { .sensor-halo { opacity: .6; transform: none; } .signal-readout { stroke-dashoffset: 0; } }
 @media print { .demo-controls, .demo-steps { display: none; } .demo-panel[hidden] { display: block !important; } .demo-panel { break-inside: avoid; margin-bottom: 20px; } }
+
+/* Bilingual instrument catalogue. */
+.instrument-intro { max-width: 1040px; margin: -8px 0 44px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+.instruments-grid { align-items: stretch; }
+.instruments-grid .managed-card { display: grid; grid-template-rows: auto 1fr; }
+.instruments-grid .managed-photo-link { background: linear-gradient(145deg,#fff 0%,#f4f7fa 100%); border-bottom: 1px solid var(--line); }
+.instruments-grid .managed-card img { aspect-ratio: 4/3; object-fit: contain; padding: 22px; background: transparent; }
+.instruments-grid .managed-card-body { display: flex; flex-direction: column; }
+.instruments-grid .managed-card h2 { margin-top: 0; margin-bottom: 12px; }
+.instruments-grid .instrument-model { margin: 0 0 18px; padding-bottom: 15px; border-bottom: 1px solid var(--line); font-weight: 600; letter-spacing: .02em; }
+.instruments-grid .managed-rich[lang=en] { margin-top: 14px; padding-top: 14px; border-top: 1px solid #dce3e980; }
+@media (max-width:860px) {
+  .instrument-intro { display: block; margin-bottom: 32px; padding-bottom: 24px; }
+  .instrument-intro > [lang=en] { margin-top: 16px; }
+  .instruments-grid .managed-card img { aspect-ratio: 5/4; padding: 14px; }
+}
