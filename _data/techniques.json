@@ -2,55 +2,45 @@
   {
     "title": "無光罩雷射微流體製程",
     "title_en": "Maskless laser microfluidic fabrication",
-    "body": "<p lang=\"zh-Hant\">利用雷射依照數位圖樣直接加工材料，製作微流道、孔洞與局部結構。製程開發著重材料選擇、加工條件與流道表面品質，銜接晶片封裝及流體測試。</p>",
-    "body_en": "<p lang=\"en\">Laser machining follows digital patterns to form microchannels, openings and local features. Process development considers the material, machining conditions and channel surface quality, followed by chip bonding and flow testing.</p>",
-    "image": "",
-    "image_alt": "",
+    "body": "<p>利用雷射依照數位圖樣直接加工材料，製作微流道、孔洞與局部結構。製程開發著重材料選擇、加工條件與流道表面品質，銜接晶片封裝及流體測試。</p>",
+    "body_en": "<p>Laser machining follows digital patterns to form microchannels, openings and local features. Process development considers the material, machining conditions and channel surface quality, followed by chip bonding and flow testing.</p>",
+    "image": "/assets/uploads/img2768.jpg",
     "published": true
   },
   {
     "title": "微銑切製程",
     "title_en": "Micromilling",
-    "body": "<p lang=\"zh-Hant\">將 CAD 設計轉換為刀具路徑，使用微小刀具加工微流道、模具與晶片零件。透過粗加工、精加工及表面檢查，建立適合原型製作的幾何結構。</p>",
-    "body_en": "<p lang=\"en\">CAD designs are converted into toolpaths for machining microchannels, molds and chip components with small cutting tools. Roughing, finishing and surface inspection support prototype fabrication.</p>",
-    "image": "",
-    "image_alt": "",
+    "body": "<p>將 CAD 設計轉換為刀具路徑，使用微小刀具加工微流道、模具與晶片零件。透過粗加工、精加工及表面檢查，建立適合原型製作的幾何結構。</p>",
+    "body_en": "<p>CAD designs are converted into toolpaths for machining microchannels, molds and chip components with small cutting tools. Roughing, finishing and surface inspection support prototype fabrication.</p>",
+    "image": "/assets/uploads/img2769.jpg",
     "published": true
   },
   {
     "title": "FDM／光固化 3D 列印",
     "title_en": "FDM & resin 3D printing",
-    "body": "<p lang=\"zh-Hant\">FDM 以熱塑性材料逐層成形，光固化列印則利用光照使樹脂固化。依尺寸、表面品質及材料需求選擇製程，用於載具、治具、封裝零件與研究原型。</p>",
-    "body_en": "<p lang=\"en\">FDM builds parts layer by layer from thermoplastics, while resin printing cures a photosensitive material with light. Process selection follows dimensional, surface and material requirements for holders, fixtures, packaging parts and research prototypes.</p>",
-    "image": "",
-    "image_alt": "",
+    "body": "<p>FDM 以熱塑性材料逐層成形，光固化列印則利用光照使樹脂固化。依尺寸、表面品質及材料需求選擇製程，用於載具、治具、封裝零件與研究原型。</p>",
+    "body_en": "<p>FDM builds parts layer by layer from thermoplastics, while resin printing cures a photosensitive material with light. Process selection follows dimensional, surface and material requirements for holders, fixtures, packaging parts and research prototypes.</p>",
     "published": true
   },
   {
     "title": "無菌操作實驗台",
     "title_en": "Aseptic handling workspace",
-    "body": "<p lang=\"zh-Hant\">進行樣本處理、培養液分裝與實驗前置作業，配合清潔流程與適當設備降低外來污染。操作方式與防護條件依樣本及實驗需求規劃。</p>",
-    "body_en": "<p lang=\"en\">The workspace supports sample handling, medium dispensing and experimental preparation. Cleaning practices and appropriate equipment help control contamination; handling and protection are planned for the samples and experiment.</p>",
-    "image": "",
-    "image_alt": "",
+    "body": "<p>進行樣本處理、培養液分裝與實驗前置作業，配合清潔流程與適當設備降低外來污染。操作方式與防護條件依樣本及實驗需求規劃。</p>",
+    "body_en": "<p>The workspace supports sample handling, medium dispensing and experimental preparation. Cleaning practices and appropriate equipment help control contamination; handling and protection are planned for the samples and experiment.</p>",
     "published": true
   },
   {
     "title": "微生物實驗培養",
     "title_en": "Microbial culture",
-    "body": "<p lang=\"zh-Hant\">依研究問題規劃微生物培養與檢測實驗，關注培養條件、污染控制及結果紀錄。培養與分析流程可銜接微流體平台及生物感測研究。</p>",
-    "body_en": "<p lang=\"en\">Microbial culture and detection experiments are planned around the research question, with attention to culture conditions, contamination control and documentation. Culture and analysis workflows connect with microfluidic and biosensing studies.</p>",
-    "image": "",
-    "image_alt": "",
+    "body": "<p>依研究問題規劃微生物培養與檢測實驗，關注培養條件、污染控制及結果紀錄。培養與分析流程可銜接微流體平台及生物感測研究。</p>",
+    "body_en": "<p>Microbial culture and detection experiments are planned around the research question, with attention to culture conditions, contamination control and documentation. Culture and analysis workflows connect with microfluidic and biosensing studies.</p>",
     "published": true
   },
   {
     "title": "共同細胞培養室",
     "title_en": "Shared cell culture facility",
-    "body": "<p lang=\"zh-Hant\">運用共同細胞培養空間進行細胞維護與實驗準備，銜接生物相容性評估、細胞反應觀察及生醫晶片研究。使用安排與操作流程依共同空間規範辦理。</p>",
-    "body_en": "<p lang=\"en\">The shared cell culture facility supports cell maintenance and experimental preparation for biocompatibility assessment, cellular response studies and biomedical chip research. Scheduling and procedures follow the shared facility guidelines.</p>",
-    "image": "",
-    "image_alt": "",
+    "body": "<p>運用共同細胞培養空間進行細胞維護與實驗準備，銜接生物相容性評估、細胞反應觀察及生醫晶片研究。使用安排與操作流程依共同空間規範辦理。</p>",
+    "body_en": "<p>The shared cell culture facility supports cell maintenance and experimental preparation for biocompatibility assessment, cellular response studies and biomedical chip research. Scheduling and procedures follow the shared facility guidelines.</p>",
     "published": true
   }
 ]
