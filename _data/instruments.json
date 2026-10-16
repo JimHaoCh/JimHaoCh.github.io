@@ -2,11 +2,10 @@
   {
     "title": "桌上型 CNC 精密加工機",
     "title_en": "Desktop Precision CNC Milling Machine",
-    "model": "Makera Carvera",
     "body": "<p>用於 PMMA、工程塑膠及其他可加工材料的精密切削，可製作微流道母模、治具、卡匣零件與裝置原型。數位加工流程可快速修改設計，支援微流體元件由 CAD 圖面進入實體測試。</p>",
     "body_en": "<p>Used for precision machining of PMMA, engineering plastics and other machinable materials. Typical applications include microchannel molds, fixtures, cartridge components and device prototypes. The digital workflow supports rapid design revisions from CAD models to physical tests.</p>",
     "image": "assets/instruments/makera-carvera-cnc.webp",
-    "image_alt": "Makera Carvera 桌上型 CNC 精密加工機示意圖",
+    "image_alt": "桌上型 CNC 精密加工機示意圖",
     "published": true
   },
   {
@@ -92,7 +91,7 @@
   {
     "title": "紫外雷射打標與直寫系統",
     "title_en": "UV Laser Marking and Direct-Writing System",
-    "model": "Mr.Carve M7 Pro · 355 nm UV",
+    "model": " 355 nm UV",
     "body": "<p>以 355 nm 紫外雷射進行非接觸式標記與圖案直寫，可用於聚合物基材加工、晶片識別、微結構試作及無光罩製程開發。數位路徑適合快速修改圖案與加工參數。</p>",
     "body_en": "<p>Uses a 355 nm ultraviolet laser for noncontact marking and direct pattern writing. Applications include polymer processing, chip identification, microstructure prototyping and maskless process development, with digitally editable paths and processing parameters.</p>",
     "image": "assets/instruments/uv-laser-marker.webp",
