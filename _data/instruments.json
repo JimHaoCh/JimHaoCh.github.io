@@ -1,1 +1,102 @@
-[]
+[
+  {
+    "title": "桌上型 CNC 精密加工機",
+    "title_en": "Desktop Precision CNC Milling Machine",
+    "model": "Makera Carvera",
+    "body": "<p>用於 PMMA、工程塑膠及其他可加工材料的精密切削，可製作微流道母模、治具、卡匣零件與裝置原型。數位加工流程可快速修改設計，支援微流體元件由 CAD 圖面進入實體測試。</p>",
+    "body_en": "<p>Used for precision machining of PMMA, engineering plastics and other machinable materials. Typical applications include microchannel molds, fixtures, cartridge components and device prototypes. The digital workflow supports rapid design revisions from CAD models to physical tests.</p>",
+    "image": "assets/instruments/makera-carvera-cnc.webp",
+    "image_alt": "Makera Carvera 桌上型 CNC 精密加工機示意圖",
+    "published": true
+  },
+  {
+    "title": "生物列印機",
+    "title_en": "Bioprinter",
+    "model": "Programmable multi-material deposition system",
+    "body": "<p>利用程式控制材料沉積位置與路徑，支援水膠、生物墨水及細胞相容材料的圖案化。可應用於組織工程模型、細胞微環境建構與生醫材料測試。</p>",
+    "body_en": "<p>Provides programmable control of material placement and printing paths for hydrogels, bioinks and cell-compatible materials. Applications include tissue-engineering models, engineered cellular microenvironments and biomaterial evaluation.</p>",
+    "image": "assets/instruments/bioprinter.webp",
+    "image_alt": "可程式控制的生物列印機示意圖",
+    "published": true
+  },
+  {
+    "title": "倒立式顯微鏡",
+    "title_en": "Inverted Microscope",
+    "model": "Olympus CKX53 platform",
+    "body": "<p>從培養容器或微流體晶片下方進行觀察，適合活細胞培養、細胞形態紀錄與晶片內動態影像。亦可搭配相機與移動載台進行時間序列擷取及影像分析。</p>",
+    "body_en": "<p>Observes samples through the bottom of culture vessels or microfluidic chips. It supports live-cell culture studies, morphology recording and dynamic imaging inside chips, with camera and stage integration for time-lapse acquisition and image analysis.</p>",
+    "image": "assets/instruments/inverted-microscope.webp",
+    "image_alt": "Olympus CKX53 平台倒立式顯微鏡示意圖",
+    "published": true
+  },
+  {
+    "title": "程式控制多通道微流體針筒泵浦",
+    "title_en": "Programmable Multichannel Microfluidic Syringe Pump System",
+    "model": "Custom integrated control system",
+    "body": "<p>以程式設定各通道的流速、注入體積、啟停時間與多段操作流程，支援同步或獨立控制。可建立連續灌流、濃度切換、藥物暴露與多試劑輸送等微流體實驗。</p>",
+    "body_en": "<p>Programs the flow rate, delivery volume, timing and multistep sequence of each channel with synchronized or independent control. It supports continuous perfusion, concentration switching, drug-exposure studies and multireagent delivery in microfluidic experiments.</p>",
+    "image": "assets/instruments/programmable-syringe-pumps.webp",
+    "image_alt": "程式控制多通道微流體針筒泵浦系統示意圖",
+    "published": true
+  },
+  {
+    "title": "正立複式顯微鏡",
+    "title_en": "Upright Compound Microscope",
+    "model": "Bright-field microscopy platform",
+    "body": "<p>用於玻片樣本的明場觀察，可檢視染色細胞、微生物、組織切片與材料表面。適合教學、例行樣本檢查及影像紀錄。</p>",
+    "body_en": "<p>Provides bright-field observation of slide-mounted specimens, including stained cells, microorganisms, tissue sections and material surfaces. It supports teaching, routine sample examination and image documentation.</p>",
+    "image": "assets/instruments/upright-microscope.webp",
+    "image_alt": "正立複式明場顯微鏡示意圖",
+    "published": true
+  },
+  {
+    "title": "氧電漿處理系統",
+    "title_en": "Oxygen Plasma Treatment System",
+    "model": "Low-pressure plasma platform",
+    "body": "<p>利用低壓氧電漿清潔並活化材料表面，可提升表面潤濕性，並協助 PDMS 與玻璃等基材進行接合。常用於微流體晶片封裝及表面改質前處理。</p>",
+    "body_en": "<p>Uses low-pressure oxygen plasma to clean and activate material surfaces. The treatment increases surface wettability and assists bonding between substrates such as PDMS and glass for microfluidic chip assembly and surface modification.</p>",
+    "image": "assets/instruments/oxygen-plasma-system.webp",
+    "image_alt": "低壓氧電漿處理系統示意圖",
+    "published": true
+  },
+  {
+    "title": "光固化 3D 列印機",
+    "title_en": "Vat Photopolymerization 3D Printer",
+    "model": "Phrozen Sonic Mighty Revo 16K",
+    "body": "<p>以光固化樹脂逐層製作高解析度零件，可快速生產微流體模具、晶片外殼、接頭、載具與實驗治具。適合設計驗證及小量原型製作。</p>",
+    "body_en": "<p>Builds high-resolution components layer by layer using photopolymer resin. It enables rapid fabrication of microfluidic molds, chip housings, connectors, holders and laboratory fixtures for design validation and small-batch prototyping.</p>",
+    "image": "assets/instruments/resin-3d-printer.webp",
+    "image_alt": "Phrozen Sonic Mighty Revo 16K 光固化 3D 列印機示意圖",
+    "published": true
+  },
+  {
+    "title": "無菌操作台",
+    "title_en": "Clean Bench for Aseptic Work",
+    "model": "HEPA-filtered clean workspace",
+    "body": "<p>提供經過濾氣流的潔淨操作區，用於培養基分裝、無菌耗材準備及對污染敏感的樣本操作。實驗人員依樣本性質、風險等級與管理規範選用合適的防護設備。</p>",
+    "body_en": "<p>Provides a filtered clean workspace for medium dispensing, preparation of sterile supplies and contamination-sensitive sample handling. The appropriate containment and protective equipment are selected according to sample type, risk level and laboratory procedures.</p>",
+    "image": "assets/instruments/clean-bench.webp",
+    "image_alt": "具過濾氣流之無菌操作台示意圖",
+    "published": true
+  },
+  {
+    "title": "生物實驗操作桌組",
+    "title_en": "Biological Laboratory Wet Bench",
+    "model": "General sample-preparation workspace",
+    "body": "<p>整合工作檯面、收納與基本實驗設備，支援樣本前處理、試劑配製、移液、離心及一般生化操作。依工作流程配置耗材與廢棄物管理區域，以維持操作效率與整潔。</p>",
+    "body_en": "<p>Combines bench space, storage and routine laboratory equipment for sample preparation, reagent formulation, pipetting, centrifugation and general biochemical procedures. Supplies and waste areas are arranged according to the workflow.</p>",
+    "image": "assets/instruments/wet-bench.webp",
+    "image_alt": "生物實驗操作桌組與基本實驗設備示意圖",
+    "published": true
+  },
+  {
+    "title": "紫外雷射打標與直寫系統",
+    "title_en": "UV Laser Marking and Direct-Writing System",
+    "model": "Mr.Carve M7 Pro · 355 nm UV",
+    "body": "<p>以 355 nm 紫外雷射進行非接觸式標記與圖案直寫，可用於聚合物基材加工、晶片識別、微結構試作及無光罩製程開發。數位路徑適合快速修改圖案與加工參數。</p>",
+    "body_en": "<p>Uses a 355 nm ultraviolet laser for noncontact marking and direct pattern writing. Applications include polymer processing, chip identification, microstructure prototyping and maskless process development, with digitally editable paths and processing parameters.</p>",
+    "image": "assets/instruments/uv-laser-marker.webp",
+    "image_alt": "355 nm 紫外雷射打標與直寫系統示意圖",
+    "published": true
+  }
+]
