@@ -1,6 +1,6 @@
 # Web-WBC Lite · 白血球分類鏡檢教學
 
-**Version:** 0.1 educational prototype  
+**Version:** 0.2 experimental AI teaching comparison  
 **Website:** https://jimhaoch.github.io/web-wbc-lite/  
 **Target:** NYCU Department of Medical Laboratory Science and Biotechnology — clinical hematology / microscopy teaching
 
@@ -33,11 +33,13 @@ Real-image fetch route: `https://datasets-server.huggingface.co/rows`, using que
 
 ## Technical stack
 
-Pure HTML, CSS, JavaScript, SVG, browser File API, Canvas and Blob downloads. No Pyodide, YOLO or server required for local tally, schematic practice and CSV. Internet is required to fetch external PBC images.
+Pure HTML, CSS, JavaScript, SVG, browser File API, Canvas and Blob downloads. v0.2 adds a handcrafted-feature, supervised k-nearest-neighbor (kNN) browser inference module (`ai.js`, `ai-compare.js`). No Pyodide, YOLO or server required for local tally, schematic practice and CSV. Internet is required to fetch external PBC images.
 
 - `index.html`: responsive course interface / accessibility
 - `style.css`: mobile and desktop layout
 - `app.js`: morphology learning, curated PBC API client, balanced 100-cell quiz, confusion matrix, mistake review, local smear markup, CSV export
+- `ai.js`: original browser-side training and prediction for supervised kNN on image-derived feature vectors
+- `ai-compare.js`: opt-in model training, independent prediction, and student/AI/expert comparison
 
 ## Before classroom release
 
@@ -48,3 +50,35 @@ Pure HTML, CSS, JavaScript, SVG, browser File API, Canvas and Blob downloads. No
 5. Consider an optional lightweight ONNX model *after* validating the paper, model weights, license and device memory consumption.
 
 **For educational use only, not clinical differential counting or diagnosis.**
+
+## v0.2: Student vs AI vs expert — experimental
+
+The optional `Experimental ML` panel is shown in the quiz setup. It offers:
+
+- **Offline schematic kNN:** trains a small supervised image-feature kNN on the site's programmatically generated schematic drawings. Intended **only as an interactive software demonstration**; these pictures are not blood cells. Do **not** cite its results as microscopy accuracy.
+- **PBC image-feature kNN:** requests a small number of explicitly labelled **training split** images from the PBC/MicroBench Dataset Viewer. With five-class coverage, it loads up to 12 source images per class, computes numerical brightness/color-region features from pixels in the current browser, and fits a weighted k-nearest-neighbor classifier. Quiz questions use the **test split**. No ground-truth test label is passed into inference. No model files or raw study images are uploaded to the lab server.
+- Model advice appears after the student clicks a class. The UI then independently compares student answer, model suggestion and expert dataset label. It summarizes how often the student's answer agreed with the model and the model agreed with the expert on successfully inferred questions.
+
+**Important limitations of the v0.2 baseline**
+
+1. The ML engine is **NOT WBC-NCA**, not an endorsed substitute for a trained clinical classifier, and not a CNN. It uses local RGB/HSV-like luminance/color signals and spatial features with supervised kNN. It has **not been benchmarked** against human teachers or a representative held-out sample.
+2. Nearest-neighbor weighted vote share is **not a calibrated probability**. Training set size is small. Results may overfit a staining/background condition or fail for immature or abnormal cells.
+3. PBC image access uses a third-party public API and image CDN. Browser CORS, request limits and external availability may prevent both loading and extracting pixels. In that case prediction fails **visibly**; the page does not manufacture a result or use expert labels as a replacement.
+4. The PBC train/test split is respected when preparing the lightweight baseline. This should not be confused with validated patient-level disjointness, external clinical validation, or a verified accuracy claim.
+5. Images uploaded to the separate manual-smear mode are never sent to the ML inference module; there is still no automatic full-smear leukocyte localization.
+6. The schematic model is only for matching schematic quiz content; the PBC model is only for PBC microscopy content. Domain mismatch disables suggestions.
+
+### WBC-NCA feasibility review
+
+**Paper:** Deutges M, Sadafi A, Navab N, Marr C. *Neural Cellular Automata for Lightweight, Robust and Explainable Classification of White Blood Cell Images*. MICCAI 2024. https://papers.miccai.org/miccai-2024/559-Paper3422.html
+
+**Upstream:** https://github.com/marrlab/WBC-NCA
+
+Inspection on 2026-10-25 confirmed:
+
+- The public model checkpoint `models/modelMax128chan64step_trained_on_AML` is approximately **350 KB**, but its name says **trained on AML**; `src/models/NCA.py` implements an output head of **13 logits**, not five.
+- Configuration shows 64 update steps at 64 × 64 input, 128 feature channels. Model size alone does not establish low computation/memory cost in iOS browsers.
+- Repository metadata has no explicit software license. Thus no WBC-NCA checkpoint or source code has been copied or redistributed in this website.
+- Before considering WBC-NCA for teaching, obtain permission/license, re-train/calibrate the correct five-class head against legally usable labelled images, convert to ONNX or another browser runtime, and measure accuracy & device performance against an independent test set.
+
+The current 0.2 implementation is an honest lightweight **ML feasibility prototype**. A WBC-NCA model can be swapped in later once those requirements are satisfied.
