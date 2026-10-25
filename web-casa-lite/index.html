@@ -4,22 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#11314a">
-  <meta name="description" content="Web-CASA Lite: experimental browser-based sperm motility microscopy learning lab.">
-  <title>Web-CASA Lite｜精子活動力鏡檢教學</title>
+  <meta name="description" content="陽明交通大學醫學檢驗暨生物技術學系鏡檢課專用 Web-CASA Lite：精子活動力影片辨識、軌跡追蹤與 CASA 教學分析工具（實驗原型）。">
+  <title>Web-CASA Lite｜醫技系鏡檢課專用教學工具</title>
   <link rel="stylesheet" href="./style.css">
   <script src="./app.js" type="module"></script>
 </head>
 <body>
   <header class="topbar">
-    <a href="../" class="backlink">← Bioflumen & Xensor Lab</a>
-    <span class="toplabel">NYCU · Medical Laboratory Science</span>
+    <a href="../courses.html" class="backlink">← 課程講義 / Course Materials</a>
+    <span class="toplabel">NYCU · 醫技系鏡檢課專用</span>
   </header>
   <main class="shell">
     <section class="hero">
       <div class="eyebrow">VIRTUAL MICROSCOPY LAB · PROTOTYPE 0.1</div>
       <h1>Web-CASA <span>Lite</span></h1>
-      <p class="lead">精子活動力鏡檢教學平台 <span class="muted">/ Sperm motility teaching lab</span></p>
-      <p>將短片交給瀏覽器分析：Python + OpenCV 偵測候選精子頭部、連結軌跡並計算基本 CASA 指標。運算在本機完成，影片不會上傳至網站伺服器。</p>
+      <p class="lead">醫技系鏡檢課專用｜精子活動力教學平台 <span class="muted">/ Sperm Motility Teaching Lab</span></p>
+      <p>本工具提供陽明交通大學醫學檢驗暨生物技術學系鏡檢課進行精子活動力觀察與 CASA 原理練習。上傳顯微鏡短片後，瀏覽器使用 Python + OpenCV 辨識精子頭部候選物件、追蹤運動軌跡，並估算 VCL、VSL、VAP、LIN、STR 等指標；影片於學生裝置本機處理。</p>
       <div class="notice"><strong>教學驗證原型</strong>｜辨識結果可能包含雜質；IM 為頭部低位移候選，無法可靠辨識僅有鞭毛擺動的 NP。不得用於臨床診斷或研究定量結論。</div>
     </section>
     <section class="workspace">
