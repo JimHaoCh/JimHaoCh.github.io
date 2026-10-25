@@ -1,0 +1,87 @@
+---
+layout: null
+permalink: /web-imagej/lab.html
+title: Web-Image Lab 原生影像分析工作台
+description: 陽明交通大學醫技系鏡檢教學用純瀏覽器影像分析工具，支援本機影像匯入、ROI、灰階量測、閾值分割、粒子計數與匯出。
+---
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  {% include page-head.html %}
+  <link rel="stylesheet" href="/web-imagej/lab.css?v=2">
+  <script defer src="/web-imagej/lab.js?v=2"></script>
+</head>
+<body>
+  <a href="#main" class="skip">跳至主要內容 / Skip to content</a>
+  {% include header.html %}
+  <main class="subpage" id="main">
+    <div class="wrap wi-wrap">
+      <nav class="wi-breadcrumb" aria-label="Breadcrumb">
+        <a href="/courses.html">線上工具</a><span aria-hidden="true">/</span><a href="/web-imagej/">ImageJ.JS 教學入口</a><span aria-hidden="true">/</span><span>本機分析工作台</span>
+      </nav>
+      <div class="wi-hero">
+        <div><p class="eyebrow">MEDTECH VIRTUAL LAB · ORIGINAL BROWSER TOOL v0.2</p>
+          <h1>Web-Image Lab</h1>
+          <p class="wi-sub">醫技系鏡檢影像分析 · Microscopy Image Analysis</p>
+          <p class="wi-lead">從相片匯入、ROI 選取到閾值分割與粒子計數，在您的瀏覽器內完成教學練習。此工作台為本站原創簡易影像分析工具，與 ImJoy 團隊的 ImageJ.JS 分開運作。</p>
+        </div>
+        <a class="wi-external" href="https://ij.imjoy.io/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">前往第三方完整 ImageJ.JS <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="wi-notice" role="note"><strong>本機處理 · 教學用途</strong><span>您選擇的影像由此頁的原生 JavaScript Canvas 在瀏覽器內處理；程式碼沒有影像上傳介面、遠端模型或外部函式庫。請避免使用可辨識病人身分的檔案。所有結果需人工驗證，不適用臨床診斷。上方外部連結將離開本站，依第三方服務政策處理。</span></div>
+      <div class="wi-grid">
+        <section class="wi-panel wi-controls" aria-labelledby="wi-input-head">
+          <h2 id="wi-input-head"><span class="wi-index">01</span> 影像與校正</h2>
+          <label class="wi-label" for="wi-file">讀入影像（PNG / JPEG / WebP）</label>
+          <input id="wi-file" class="wi-file" type="file" accept="image/png,image/jpeg,image/webp">
+          <div class="wi-row-buttons"><button id="wi-demo" class="wi-secondary" type="button">合成細胞示範</button><button id="wi-clear" class="wi-secondary" type="button">清除影像</button></div>
+          <p id="wi-meta" class="wi-help">尚未讀入影像。可先使用合成示範圖。</p>
+          <label class="wi-label" for="wi-scale">校正值：原始影像每像素的長度（µm/pixel）</label>
+          <input id="wi-scale" class="wi-input" type="number" min="0.000001" step="any" placeholder="留空＝只顯示 pixel／pixel²">
+          <p class="wi-help">請由顯微鏡比例尺或已知尺度自行校正；大圖為了效能可能縮圖分析，程式會換算回原始影像的像素尺度。</p>
+          <h2><span class="wi-index">02</span> ROI 與量測</h2>
+          <div class="wi-mode-group" role="group" aria-label="ROI 模式">
+            <button type="button" data-wi-mode="rect" class="active" aria-pressed="true">矩形 ROI</button>
+            <button type="button" data-wi-mode="line" aria-pressed="false">直線量測</button>
+            <button type="button" id="wi-all">全影像 ROI</button>
+          </div>
+          <p class="wi-help">在影像上以滑鼠或觸控拖曳。矩形 ROI 支援灰階統計及粒子計數；直線模式量測長度。一次顯示一個 ROI。</p>
+          <div class="wi-stats" id="wi-stats" aria-live="polite"><p>選取影像後顯示 ROI 統計。</p></div>
+          <h2><span class="wi-index">03</span> Threshold 與計數</h2>
+          <label class="wi-label" for="wi-threshold">閾值 <output id="wi-threshold-value" for="wi-threshold">145</output> / 255</label>
+          <input id="wi-threshold" class="wi-range" type="range" min="0" max="255" value="145">
+          <label class="wi-label" for="wi-polarity">目標像素</label>
+          <select class="wi-input" id="wi-polarity"><option value="dark">深色目標（灰階 ≤ 閾值）</option><option value="light">淺色目標（灰階 ≥ 閾值）</option></select>
+          <label class="wi-label wi-inline" for="wi-preview"><input id="wi-preview" type="checkbox" checked> 顯示二值化覆蓋層</label>
+          <label class="wi-label" for="wi-min-area">最小連通區面積（原始 pixel²）</label>
+          <input id="wi-min-area" class="wi-input" type="number" min="1" max="10000000" step="1" value="20">
+          <button type="button" id="wi-analyze" class="wi-primary" disabled>分析連通顆粒（8-connected）</button>
+          <div id="wi-count" class="wi-result" aria-live="polite">尚無計數結果</div>
+          <p class="wi-help">此演算法以灰階閾值及 8 鄰接連通區計數，適合基本教學；重疊細胞、雜訊與背景不均可能造成合併、漏計或誤計。</p>
+        </section>
+        <section class="wi-panel wi-viewer" aria-labelledby="wi-view-head">
+          <div class="wi-view-heading"><h2 id="wi-view-head"><span class="wi-index">04</span> 影像視野</h2><span class="wi-tag">LOCAL CANVAS</span></div>
+          <div id="wi-stage" class="wi-stage">
+            <div id="wi-placeholder" class="wi-placeholder">
+              <span aria-hidden="true">▧</span><p>請上傳影像或開啟合成示範</p><small>本工具不需要帳號與影像上傳服務</small>
+            </div>
+            <canvas id="wi-image" aria-label="已載入影像" hidden></canvas>
+            <canvas id="wi-overlay" aria-label="ROI 與分析結果互動層" hidden></canvas>
+          </div>
+          <div class="wi-legend"><span><i class="wi-dot wi-dot-blue"></i> ROI</span><span><i class="wi-dot wi-dot-orange"></i> Threshold</span><span><i class="wi-dot wi-dot-green"></i> 計數結果</span></div>
+          <canvas id="wi-hist" class="wi-hist" width="640" height="150" aria-label="ROI 灰階分布直方圖"></canvas>
+          <div id="wi-status" class="wi-status" role="status" aria-live="polite">尚未讀入影像。</div>
+          <div class="wi-downloads"><button type="button" id="wi-csv" class="wi-secondary" disabled>匯出 CSV</button><button type="button" id="wi-png" class="wi-secondary" disabled>下載標註 PNG</button></div>
+          <div class="wi-table-wrap"><table><caption>顆粒計數結果（最多顯示前 100 筆）</caption><thead><tr><th>#</th><th>面積（pixel²）</th><th>中心 X（pixel）</th><th>中心 Y（pixel）</th></tr></thead><tbody id="wi-rows"><tr><td colspan="4">尚無結果</td></tr></tbody></table></div>
+        </section>
+      </div>
+      <section class="wi-panel wi-refs">
+        <h2>功能範圍與進階分析</h2>
+        <p>目前支援瀏覽器可解碼的 PNG、JPEG、WebP。保留原始像素尺度的數值換算，分析與標註圖會以限制後的工作解析度計算及匯出。TIFF stack、Z-stack、ROI Manager、ImageJ Macro 與進階分割屬第三方完整版 ImageJ.JS 的功能範圍，請由外部網站入口操作。此工具沒有引入 ImageJ.JS、CheerpJ 或任何第三方程式碼。</p>
+        <p><a href="/web-imagej/">回到 ImageJ.JS 教學入口</a> · <a href="https://imagej.net/software/imagej-js" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">ImageJ.JS 專案介紹 ↗</a> · <a href="https://github.com/JimHaoCh/JimHaoCh.github.io/tree/main/web-imagej" target="_blank" rel="noopener noreferrer">本站原創程式碼 ↗</a></p>
+      </section>
+      <p class="wi-foot">Web-Image Lab v0.2 · NYCU Medical Laboratory Science · Educational browser-side tool</p>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>
