@@ -6,7 +6,8 @@
     "body_en": "<p>Used for precision machining of PMMA, engineering plastics and other machinable materials. Typical applications include microchannel molds, fixtures, cartridge components and device prototypes. The digital workflow supports rapid design revisions from CAD models to physical tests.</p>",
     "image": "assets/instruments/makera-carvera-cnc.webp",
     "image_alt": "桌上型 CNC 精密加工機示意圖",
-    "published": true
+    "published": true,
+    "icon": "gear"
   },
   {
     "title": "生物列印機",
@@ -16,7 +17,8 @@
     "body_en": "<p>Provides programmable control of material placement and printing paths for hydrogels, bioinks and cell-compatible materials. Applications include tissue-engineering models, engineered cellular microenvironments and biomaterial evaluation.</p>",
     "image": "assets/instruments/bioprinter.webp",
     "image_alt": "可程式控制的生物列印機示意圖",
-    "published": true
+    "published": true,
+    "icon": "cell"
   },
   {
     "title": "倒立式顯微鏡",
@@ -26,7 +28,8 @@
     "body_en": "<p>Observes samples through the bottom of culture vessels or microfluidic chips. It supports live-cell culture studies, morphology recording and dynamic imaging inside chips, with camera and stage integration for time-lapse acquisition and image analysis.</p>",
     "image": "assets/instruments/inverted-microscope.webp",
     "image_alt": "Olympus CKX53 平台倒立式顯微鏡示意圖",
-    "published": true
+    "published": true,
+    "icon": "microscope"
   },
   {
     "title": "程式控制多通道微流體針筒泵浦",
@@ -36,7 +39,8 @@
     "body_en": "<p>Programs the flow rate, delivery volume, timing and multistep sequence of each channel with synchronized or independent control. It supports continuous perfusion, concentration switching, drug-exposure studies and multireagent delivery in microfluidic experiments.</p>",
     "image": "assets/instruments/programmable-syringe-pumps.webp",
     "image_alt": "程式控制多通道微流體針筒泵浦系統示意圖",
-    "published": true
+    "published": true,
+    "icon": "syringe-pump"
   },
   {
     "title": "正立複式顯微鏡",
@@ -46,7 +50,8 @@
     "body_en": "<p>Provides bright-field observation of slide-mounted specimens, including stained cells, microorganisms, tissue sections and material surfaces. It supports teaching, routine sample examination and image documentation.</p>",
     "image": "assets/instruments/upright-microscope.webp",
     "image_alt": "正立複式明場顯微鏡示意圖",
-    "published": true
+    "published": true,
+    "icon": "microscope"
   },
   {
     "title": "氧電漿處理系統",
@@ -56,7 +61,8 @@
     "body_en": "<p>Uses low-pressure oxygen plasma to clean and activate material surfaces. The treatment increases surface wettability and assists bonding between substrates such as PDMS and glass for microfluidic chip assembly and surface modification.</p>",
     "image": "assets/instruments/oxygen-plasma-system.webp",
     "image_alt": "低壓氧電漿處理系統示意圖",
-    "published": true
+    "published": true,
+    "icon": "biosensor"
   },
   {
     "title": "光固化 3D 列印機",
@@ -66,7 +72,8 @@
     "body_en": "<p>Builds high-resolution components layer by layer using photopolymer resin. It enables rapid fabrication of microfluidic molds, chip housings, connectors, holders and laboratory fixtures for design validation and small-batch prototyping.</p>",
     "image": "assets/instruments/resin-3d-printer.webp",
     "image_alt": "Phrozen Sonic Mighty Revo 16K 光固化 3D 列印機示意圖",
-    "published": true
+    "published": true,
+    "icon": "gear"
   },
   {
     "title": "無菌操作台",
@@ -76,7 +83,8 @@
     "body_en": "<p>Provides a filtered clean workspace for medium dispensing, preparation of sterile supplies and contamination-sensitive sample handling. The appropriate containment and protective equipment are selected according to sample type, risk level and laboratory procedures.</p>",
     "image": "assets/instruments/clean-bench.webp",
     "image_alt": "具過濾氣流之無菌操作台示意圖",
-    "published": true
+    "published": true,
+    "icon": "validation"
   },
   {
     "title": "生物實驗操作桌組",
@@ -86,7 +94,8 @@
     "body_en": "<p>Combines bench space, storage and routine laboratory equipment for sample preparation, reagent formulation, pipetting, centrifugation and general biochemical procedures. Supplies and waste areas are arranged according to the workflow.</p>",
     "image": "assets/instruments/wet-bench.webp",
     "image_alt": "生物實驗操作桌組與基本實驗設備示意圖",
-    "published": true
+    "published": true,
+    "icon": "flask"
   },
   {
     "title": "紫外雷射打標與直寫系統",
@@ -96,6 +105,7 @@
     "body_en": "<p>Uses a 355 nm ultraviolet laser for noncontact marking and direct pattern writing. Applications include polymer processing, chip identification, microstructure prototyping and maskless process development, with digitally editable paths and processing parameters.</p>",
     "image": "assets/instruments/uv-laser-marker.webp",
     "image_alt": "355 nm 紫外雷射打標與直寫系統示意圖",
-    "published": true
+    "published": true,
+    "icon": "target"
   }
 ]

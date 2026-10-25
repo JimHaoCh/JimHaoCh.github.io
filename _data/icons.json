@@ -1,0 +1,122 @@
+[
+  {
+    "id": "microfluidic-chip",
+    "zh": "微流體晶片",
+    "en": "Microfluidic chip"
+  },
+  {
+    "id": "droplet",
+    "zh": "液滴",
+    "en": "Droplet"
+  },
+  {
+    "id": "dna",
+    "zh": "核酸",
+    "en": "DNA"
+  },
+  {
+    "id": "cell",
+    "zh": "細胞",
+    "en": "Cell"
+  },
+  {
+    "id": "bacterium",
+    "zh": "細菌",
+    "en": "Bacterium"
+  },
+  {
+    "id": "antibody",
+    "zh": "抗體",
+    "en": "Antibody"
+  },
+  {
+    "id": "pipette",
+    "zh": "移液操作",
+    "en": "Pipette"
+  },
+  {
+    "id": "flask",
+    "zh": "實驗方法",
+    "en": "Flask"
+  },
+  {
+    "id": "microscope",
+    "zh": "顯微鏡",
+    "en": "Microscope"
+  },
+  {
+    "id": "syringe-pump",
+    "zh": "針筒泵浦",
+    "en": "Syringe pump"
+  },
+  {
+    "id": "biosensor",
+    "zh": "生物感測器",
+    "en": "Biosensor"
+  },
+  {
+    "id": "droplet-junction",
+    "zh": "液滴產生",
+    "en": "Droplet junction"
+  },
+  {
+    "id": "document",
+    "zh": "論文與文件",
+    "en": "Document"
+  },
+  {
+    "id": "chart",
+    "zh": "結果與圖表",
+    "en": "Chart"
+  },
+  {
+    "id": "target",
+    "zh": "研究目標",
+    "en": "Target"
+  },
+  {
+    "id": "idea",
+    "zh": "構想與展望",
+    "en": "Idea"
+  },
+  {
+    "id": "gear",
+    "zh": "設備與設定",
+    "en": "Gear"
+  },
+  {
+    "id": "team",
+    "zh": "研究團隊",
+    "en": "Team"
+  },
+  {
+    "id": "globe",
+    "zh": "網站與國際合作",
+    "en": "Globe"
+  },
+  {
+    "id": "email",
+    "zh": "聯絡信箱",
+    "en": "Email"
+  },
+  {
+    "id": "link",
+    "zh": "連結",
+    "en": "Link"
+  },
+  {
+    "id": "calendar",
+    "zh": "時程與活動",
+    "en": "Calendar"
+  },
+  {
+    "id": "validation",
+    "zh": "驗證與結論",
+    "en": "Validation"
+  },
+  {
+    "id": "search",
+    "zh": "背景與問題",
+    "en": "Search"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "zh": "最新消息",
+    "en": "News",
+    "href": "/news.html",
+    "icon": "calendar"
+  },
+  {
+    "zh": "實驗室理念",
+    "en": "About",
+    "href": "/#about",
+    "icon": "idea"
+  },
+  {
+    "zh": "研究成果",
+    "en": "Research",
+    "href": "/#research",
+    "icon": "microfluidic-chip"
+  },
+  {
+    "zh": "主持人",
+    "en": "PI",
+    "href": "/#pi",
+    "icon": "microscope"
+  },
+  {
+    "zh": "成員",
+    "en": "People",
+    "href": "/#people",
+    "icon": "team"
+  },
+  {
+    "zh": "著作論文",
+    "en": "Publications",
+    "href": "/#publications",
+    "icon": "document"
+  },
+  {
+    "zh": "課程講義",
+    "en": "Courses",
+    "href": "/courses.html",
+    "icon": "document"
+  },
+  {
+    "zh": "技術簡介",
+    "en": "Techniques",
+    "href": "/techniques.html",
+    "icon": "flask"
+  },
+  {
+    "zh": "實驗儀器",
+    "en": "Instruments",
+    "href": "/instruments.html",
+    "icon": "gear"
+  },
+  {
+    "zh": "生活剪影",
+    "en": "Lab moments",
+    "href": "/moments.html",
+    "icon": "team"
+  },
+  {
+    "zh": "行事曆",
+    "en": "Calendar",
+    "href": "/calendar.html",
+    "icon": "calendar"
+  },
+  {
+    "zh": "加入實驗室",
+    "en": "Join",
+    "href": "/#join",
+    "icon": "target"
+  },
+  {
+    "zh": "聯絡我們",
+    "en": "Contact",
+    "href": "/#contact",
+    "icon": "email"
+  }
+]

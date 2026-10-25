@@ -1,4 +1,6 @@
 media:
+- name: images
+  label: 照片與圖片
   input: assets/uploads
   output: /assets/uploads
   rename: safe
@@ -9,7 +11,102 @@ media:
   - jpg
   - jpeg
   - webp
+- name: documents
+  label: 課程講義檔案
+  input: assets/handouts
+  output: /assets/handouts
+  rename: safe
+  extensions:
+  - pdf
+  - pptx
+  - ppt
+  - docx
+  - zip
 content:
+- name: courses
+  label: 課程講義
+  type: file
+  path: _data/courses.json
+  format: json
+  list: true
+  fields:
+  - name: title
+    label: 中文課程名稱
+    type: string
+    required: true
+  - name: title_en
+    label: 英文課程名稱
+    type: string
+  - name: code
+    label: 課號
+    type: string
+  - name: year
+    label: 學年度
+    type: string
+    description: 例如：115。相同課程於不同學期請建立新項目。
+  - name: semester
+    label: 學期
+    type: select
+    options:
+      values:
+      - name: '1'
+        label: 上學期 / Fall
+      - name: '2'
+        label: 下學期 / Spring
+      - name: summer
+        label: 暑期 / Summer
+  - name: description
+    label: 中文課程簡介
+    type: text
+  - name: description_en
+    label: 英文課程簡介
+    type: text
+  - name: materials
+    label: 講義與學習資源
+    type: object
+    list: true
+    fields:
+    - name: title
+      label: 中文單元名稱
+      type: string
+      required: true
+    - name: title_en
+      label: 英文單元名稱
+      type: string
+    - name: week
+      label: 週次
+      type: number
+    - name: updated
+      label: 更新日期
+      type: date
+      options:
+        format: yyyy-MM-dd
+    - name: file
+      label: 上傳講義
+      type: file
+      options:
+        media: documents
+        extensions:
+        - pdf
+        - pptx
+        - ppt
+        - docx
+        - zip
+      description: 上傳公開教材。若同時填寫外部連結，網站優先使用此檔案。
+    - name: url
+      label: 外部資源連結
+      type: string
+      description: 使用 https:// 開頭的完整網址。適用雲端教材或校務平台。
+    - name: published
+      label: 在網站顯示
+      type: boolean
+      default: true
+      description: 此開關控制頁面顯示。已上傳的公開檔案仍可透過原網址存取。
+  - name: published
+    label: 在網站顯示
+    type: boolean
+    default: true
+    description: 此開關控制頁面顯示。已上傳的公開檔案仍可透過原網址存取。
 - name: news
   label: 最新消息
   type: file
@@ -37,6 +134,7 @@ content:
     options:
       format: html
       switcher: false
+      media: images
   - &id004
     name: body_en
     label: 英文內容
@@ -44,15 +142,71 @@ content:
     options:
       format: html
       switcher: false
+      media: images
   - &id005
     name: image
     label: 封面照片
     type: image
+    options:
+      media: images
   - &id006
     name: image_alt
     label: 照片說明 / 替代文字
     type: string
-  - &id007
+  - name: icon
+    label: 裝飾圖示
+    type: select
+    options: &id007
+      values:
+      - name: microfluidic-chip
+        label: 微流體晶片 / Microfluidic chip
+      - name: droplet
+        label: 液滴 / Droplet
+      - name: dna
+        label: 核酸 / DNA
+      - name: cell
+        label: 細胞 / Cell
+      - name: bacterium
+        label: 細菌 / Bacterium
+      - name: antibody
+        label: 抗體 / Antibody
+      - name: pipette
+        label: 移液操作 / Pipette
+      - name: flask
+        label: 實驗方法 / Flask
+      - name: microscope
+        label: 顯微鏡 / Microscope
+      - name: syringe-pump
+        label: 針筒泵浦 / Syringe pump
+      - name: biosensor
+        label: 生物感測器 / Biosensor
+      - name: droplet-junction
+        label: 液滴產生 / Droplet junction
+      - name: document
+        label: 論文與文件 / Document
+      - name: chart
+        label: 結果與圖表 / Chart
+      - name: target
+        label: 研究目標 / Target
+      - name: idea
+        label: 構想與展望 / Idea
+      - name: gear
+        label: 設備與設定 / Gear
+      - name: team
+        label: 研究團隊 / Team
+      - name: globe
+        label: 網站與國際合作 / Globe
+      - name: email
+        label: 聯絡信箱 / Email
+      - name: link
+        label: 連結 / Link
+      - name: calendar
+        label: 時程與活動 / Calendar
+      - name: validation
+        label: 驗證與結論 / Validation
+      - name: search
+        label: 背景與問題 / Search
+  - &id008
     name: published
     label: 在網站顯示
     type: boolean
@@ -74,7 +228,11 @@ content:
   - *id004
   - *id005
   - *id006
-  - *id007
+  - name: icon
+    label: 裝飾圖示
+    type: select
+    options: *id007
+  - *id008
   list: true
 - name: moments
   label: 生活剪影
@@ -93,7 +251,11 @@ content:
   - *id004
   - *id005
   - *id006
-  - *id007
+  - name: icon
+    label: 裝飾圖示
+    type: select
+    options: *id007
+  - *id008
   list: true
 - name: techniques
   label: 技術簡介
@@ -107,7 +269,11 @@ content:
   - *id004
   - *id005
   - *id006
-  - *id007
+  - name: icon
+    label: 裝飾圖示
+    type: select
+    options: *id007
+  - *id008
   list: true
 - name: members
   label: 實驗室成員
@@ -138,7 +304,9 @@ content:
   - name: image
     label: 照片
     type: image
-  - *id007
+    options:
+      media: images
+  - *id008
   list: true
 - name: publications
   label: 著作論文
@@ -190,7 +358,7 @@ content:
     pattern:
       regex: ^https://doi\.org/.+$
       message: 請填寫 https://doi.org/ 開頭的完整 DOI 網址。
-  - *id007
+  - *id008
   list: true
 - name: home
   label: 首頁與研究文字
@@ -218,12 +386,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: about_2
       label: 實驗室理念 · 段落 2
       type: object
@@ -234,12 +404,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: about_3
       label: 實驗室理念 · 段落 3
       type: object
@@ -250,12 +422,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: about_4
       label: 實驗室理念 · 段落 4
       type: object
@@ -266,12 +440,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: home_1
       label: home · 段落 1
       type: object
@@ -282,12 +458,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: home_2
       label: home · 段落 2
       type: object
@@ -298,12 +476,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: home_3
       label: home · 段落 3
       type: object
@@ -314,12 +494,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: research_1
       label: 研究簡介 · 段落 1
       type: object
@@ -330,12 +512,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: research_2
       label: 研究簡介 · 段落 2
       type: object
@@ -346,12 +530,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: research_3
       label: 研究簡介 · 段落 3
       type: object
@@ -362,12 +548,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: research_4
       label: 研究簡介 · 段落 4
       type: object
@@ -378,12 +566,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: research_5
       label: 研究簡介 · 段落 5
       type: object
@@ -394,12 +584,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: research_6
       label: 研究簡介 · 段落 6
       type: object
@@ -410,12 +602,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: research_7
       label: 研究簡介 · 段落 7
       type: object
@@ -426,12 +620,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: research_8
       label: 研究簡介 · 段落 8
       type: object
@@ -442,12 +638,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: research_9
       label: 研究簡介 · 段落 9
       type: object
@@ -458,12 +656,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_1
       label: 主持人介紹 · 段落 1
       type: object
@@ -474,12 +674,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_2
       label: 主持人介紹 · 段落 2
       type: object
@@ -490,12 +692,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_3
       label: 主持人介紹 · 段落 3
       type: object
@@ -506,12 +710,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_4
       label: 主持人介紹 · 段落 4
       type: object
@@ -522,12 +728,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_5
       label: 主持人介紹 · 段落 5
       type: object
@@ -538,12 +746,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_6
       label: 主持人介紹 · 段落 6
       type: object
@@ -554,12 +764,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_7
       label: 主持人介紹 · 段落 7
       type: object
@@ -570,12 +782,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_8
       label: 主持人介紹 · 段落 8
       type: object
@@ -586,12 +800,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_9
       label: 主持人介紹 · 段落 9
       type: object
@@ -602,12 +818,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_10
       label: 主持人介紹 · 段落 10
       type: object
@@ -618,12 +836,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_11
       label: 主持人介紹 · 段落 11
       type: object
@@ -634,12 +854,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_12
       label: 主持人介紹 · 段落 12
       type: object
@@ -650,12 +872,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_13
       label: 主持人介紹 · 段落 13
       type: object
@@ -666,12 +890,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_14
       label: 主持人介紹 · 段落 14
       type: object
@@ -682,12 +908,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_15
       label: 主持人介紹 · 段落 15
       type: object
@@ -698,12 +926,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: pi_16
       label: 主持人介紹 · 段落 16
       type: object
@@ -714,12 +944,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: people_1
       label: 成員區介紹 · 段落 1
       type: object
@@ -730,12 +962,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: join_1
       label: 加入實驗室 · 段落 1
       type: object
@@ -746,12 +980,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: join_2
       label: 加入實驗室 · 段落 2
       type: object
@@ -762,12 +998,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: join_3
       label: 加入實驗室 · 段落 3
       type: object
@@ -778,12 +1016,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: join_4
       label: 加入實驗室 · 段落 4
       type: object
@@ -794,12 +1034,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: join_5
       label: 加入實驗室 · 段落 5
       type: object
@@ -810,12 +1052,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: join_6
       label: 加入實驗室 · 段落 6
       type: object
@@ -826,12 +1070,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: publications_1
       label: 著作區說明 · 段落 1
       type: object
@@ -842,12 +1088,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: questions_1
       label: 合作問答 · 段落 1
       type: object
@@ -858,12 +1106,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: questions_2
       label: 合作問答 · 段落 2
       type: object
@@ -874,12 +1124,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: questions_3
       label: 合作問答 · 段落 3
       type: object
@@ -890,12 +1142,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: microfluidics_qa
       label: 科普問答 · 什麼是生醫微流體
       type: object
@@ -906,12 +1160,14 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images
     - name: sensors_qa
       label: 科普問答 · 什麼是感測器
       type: object
@@ -922,9 +1178,11 @@ content:
         options:
           format: html
           switcher: false
+          media: images
       - name: en
         label: 英文
         type: rich-text
         options:
           format: html
           switcher: false
+          media: images

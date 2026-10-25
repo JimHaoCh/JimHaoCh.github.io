@@ -38,3 +38,7 @@ The four featured research stories describe work completed with the PI's partici
 - [Techniques](https://jimhaoch.github.io/techniques.html): Maskless laser microfluidic fabrication, micromilling, FDM/resin 3D printing, aseptic handling, microbial culture and shared cell culture facility.
 - [Instruments](https://jimhaoch.github.io/instruments.html): Makera Carvera CNC, bioprinter, inverted and upright microscopes, programmable multichannel syringe pumps, oxygen plasma, resin 3D printing, clean bench, wet bench, and UV laser marking/direct writing.
 - [News](https://jimhaoch.github.io/news.html) and [Lab moments](https://jimhaoch.github.io/moments.html): Managed through Pages CMS; empty sections remain blank until entries are added.
+
+## Teaching resources
+- [課程講義 / Course materials](https://jimhaoch.github.io/courses.html): Course notes, slides and learning resources organized by academic year and semester. The catalogue is prepared for future uploads.
+- [行事曆 / Calendar](https://jimhaoch.github.io/calendar.html): A reserved public schedule page. No calendar is embedded and no events are currently listed.

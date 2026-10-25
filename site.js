@@ -6,7 +6,7 @@ pageHeader?.classList.add('navigation-ready');
 function setMenu(open) {
   if (!menu || !nav) return;
   menu.setAttribute('aria-expanded', String(open));
-  menu.setAttribute('aria-label', open ? '關閉全站選單' : '開啟全站選單，11 個入口');
+  menu.setAttribute('aria-label', open ? '關閉全站選單' : `開啟全站選單，${nav.querySelectorAll('a').length} 個入口`);
   nav.classList.toggle('open', open);
   if (!open && moreMenu) moreMenu.open = false;
 }
@@ -267,4 +267,45 @@ if (flowDemo) {
   flowDemo.classList.add('demo-ready');
   flowDemo.querySelector('.demo-controls').hidden = false;
   chooseStep(0);
+}
+
+// Keep the mobile menu within the available viewport as fonts and widths change.
+if (pageHeader && 'ResizeObserver' in window) {
+  new ResizeObserver(() => document.documentElement.style.setProperty('--header-height', `${pageHeader.offsetHeight}px`)).observe(pageHeader);
+}
+
+// Course filters enhance the server-rendered catalogue. The full list works without JavaScript.
+const courseForm = document.querySelector('.course-filters');
+if (courseForm) {
+  const cards = [...document.querySelectorAll('[data-course]')];
+  const search = document.querySelector('#course-search');
+  const year = document.querySelector('#course-year');
+  const semester = document.querySelector('#course-semester');
+  const normalize = text => text.normalize('NFKC').toLocaleLowerCase().trim();
+  function filterCourses() {
+    const query = normalize(search.value);
+    let count = 0;
+    cards.forEach(card => {
+      const matches = (!query || normalize(card.dataset.search).includes(query)) &&
+        (year.value === 'all' || card.dataset.year === year.value) &&
+        (semester.value === 'all' || card.dataset.semester === semester.value);
+      card.hidden = !matches;
+      if (matches) count++;
+    });
+    document.querySelector('#course-count').textContent = `顯示 ${count} 門課程 / Showing ${count} courses`;
+    document.querySelector('#course-empty').hidden = count > 0;
+    scheduleScrollUpdate();
+  }
+  courseForm.hidden = false;
+  courseForm.addEventListener('submit', event => event.preventDefault());
+  courseForm.addEventListener('input', filterCourses);
+  courseForm.addEventListener('change', filterCourses);
+  courseForm.addEventListener('reset', event => {
+    event.preventDefault();
+    search.value = '';
+    year.value = 'all';
+    semester.value = 'all';
+    filterCourses();
+  });
+  filterCourses();
 }

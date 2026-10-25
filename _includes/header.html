@@ -1,1 +1,15 @@
-<header class="site-header"><div class="header-identity"><a aria-label="百洑傳息實驗室首頁" class="brand" href="/#home"><img alt="實驗室 logo" height="62" src="assets/lab-logo.png" width="62"><span>百洑傳息<span lang="en">BIOFLUMEN &amp; XENSOR LAB</span><span class="brand-pi">張鈞豪博士 · Dr. Chun-Hao Chang</span></span></a><p class="header-focus">微流體 · 生物感測 · 體外診斷<span lang="en">MICROFLUIDICS · BIOSENSING · IVD</span></p></div><div class="mobile-nav-bar" aria-label="常用入口"><a href="news.html">最新消息<span lang="en">News</span></a><a href="/#research">研究成果<span lang="en">Research</span></a><a href="techniques.html">技術簡介<span lang="en">Techniques</span></a><button class="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="開啟全站選單，11 個入口">全站選單 <b>11</b><span lang="en">All pages <i aria-hidden="true">＋</i></span></button></div><nav aria-label="主要導覽" id="nav"><a href="news.html"{% if page.url == "/news.html" %} aria-current="page"{% endif %}>最新消息<span lang="en">News</span></a><a href="/#about">實驗室理念<span lang="en">About</span></a><a href="/#research">研究成果<span lang="en">Research</span></a><a href="/#pi">主持人<span lang="en">PI</span></a><a href="/#people">成員<span lang="en">People</span></a><a href="/#publications">著作論文<span lang="en">Publications</span></a><a href="techniques.html"{% if page.url == "/techniques.html" %} aria-current="page"{% endif %}>技術簡介<span lang="en">Techniques</span></a><a href="instruments.html"{% if page.url == "/instruments.html" %} aria-current="page"{% endif %}>實驗儀器<span lang="en">Instruments</span></a><a href="moments.html"{% if page.url == "/moments.html" %} aria-current="page"{% endif %}>生活剪影<span lang="en">Lab moments</span></a><a href="/#join">加入實驗室<span lang="en">Join</span></a><a href="/#contact">聯絡我們<span lang="en">Contact</span></a></nav></header>
+<header class="site-header">
+  <div class="header-identity">
+    <a aria-label="百洑傳息實驗室首頁" class="brand" href="/#home"><img alt="實驗室 logo" height="62" src="/assets/lab-logo-small.webp" width="62"><span>百洑傳息<span lang="en">BIOFLUMEN &amp; XENSOR LAB</span><span class="brand-pi">張鈞豪博士 · Dr. Chun-Hao Chang</span></span></a>
+    <p class="header-focus">微流體 · 生物感測 · 體外診斷<span lang="en">MICROFLUIDICS · BIOSENSING · IVD</span></p>
+  </div>
+  <div class="mobile-nav-bar" aria-label="常用入口">
+    <a href="/news.html">最新消息<span lang="en">News</span></a>
+    <a href="/#research">研究成果<span lang="en">Research</span></a>
+    <a href="/courses.html">課程講義<span lang="en">Courses</span></a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="開啟全站選單，{{ site.data.navigation.size }} 個入口">全站選單 <b>{{ site.data.navigation.size }}</b><span lang="en">All pages <i aria-hidden="true">＋</i></span></button>
+  </div>
+  <nav aria-label="主要導覽" id="nav">
+    {% for link in site.data.navigation %}<a href="{{ link.href }}"{% if page.url == link.href %} aria-current="page"{% endif %}>{% include icon.html name=link.icon %}<span class="nav-copy">{{ link.zh }}<span lang="en">{{ link.en }}</span></span></a>{% endfor %}
+  </nav>
+</header>

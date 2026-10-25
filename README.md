@@ -15,7 +15,7 @@ Public website: https://jimhaoch.github.io/
 - Earlier SVGs are no longer referenced by the website.
 - `assets/research-sources.json`: research provenance, source DOIs and figure attribution.
 
-No build step, paid API, analytics or external font service is required. GitHub Pages deploys from `main` / repository root. `.nojekyll` keeps assets served directly.
+GitHub Pages builds Jekyll from `main` / repository root. Content is rendered from `_data` and shared `_includes`. No paid API or analytics is required. Google Fonts supplies the shared typefaces.
 
 ## Content provenance
 
@@ -70,3 +70,16 @@ Only the owner is configured; no collaborators are added. FormSubmit contact rou
 - 作者身分加入 `co-corresponding`（共同通訊作者），可與其他身分複選。
 - 首頁 `_includes/interactive-flow.html` 提供四步驟的檢體到訊號概念圖；自動導覽每 5 秒切換，手動點選或暫停動態會停止導覽。離開畫面時停止圖形運動，尊重 reduced-motion。
 - 微流體與感測器的兩則雙語科普問答可在 Pages CMS 的首頁文字中編輯；頁面附 NIST、NIH、IUPAC 來源。
+
+## 2026-10-25 Teaching resources, calendar and icons
+
+- `courses.html` renders published course records from `_data/courses.json`. It supports year/semester/search filters and per-unit document or HTTPS resource links. The initial catalogue is empty.
+- `calendar.html` is a bilingual placeholder. It has no iframe, Google Calendar connection or event data and remains `noindex` until populated.
+- `.pages.yml` adds the course editor and a separate `documents` media source in `assets/handouts`; existing image uploads retain their original path.
+- `_data/navigation.json` owns all 13 navigation entries. Desktop uses two visible rows; mobile has three shortcuts plus a two-column expandable menu. Menu counts are derived from the data.
+- `_includes/icon.html` uses an allowlist in `_data/icons.json`; 24 compact WebP icons live in `assets/icons`.
+- Shared color and typography variables are consolidated at the start of `style.css`. `enhancements.css` contains the navigation, icon and teaching-resource components.
+- Empty English rich-text blocks are omitted. Original Chinese news and lab-moment text is preserved.
+- Footer links are shared through `_includes/footer.html`.
+
+See [content management guide](docs/content-guide.md) for the upload workflow.
