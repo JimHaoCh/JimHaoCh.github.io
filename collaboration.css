@@ -3,3 +3,6 @@
 @media(max-width:1000px){.collab-hero,.collab-split{grid-template-columns:1fr}.collab-hero figure{max-width:720px}.collab-grid{gap:16px}.collab-card{padding:22px}.collab-materials{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.collab-hero{gap:24px;padding-top:32px;padding-bottom:32px}.collab-section{padding-top:40px;padding-bottom:40px}.collab-grid{grid-template-columns:1fr}.collab-card{padding:24px}.collab-materials{gap:18px}.collab-metric{font-size:38px}.collab-split{gap:12px}.collab-price{padding:24px}.collab-official{flex-direction:column;gap:16px}.collab-cta{padding:40px 0}.collab-email{margin-left:0;display:block}.collab-diagram{margin:24px 0}.collab-hero h1{font-size:32px}}
 @media(prefers-reduced-motion:no-preference){.collab-card{transition:transform .2s,border-color .2s}.collab-card:hover{transform:translateY(-3px);border-color:var(--blue)}}
+/* Keep bilingual CTA labels readable on both blue and white buttons. */
+.collaboration-page .button [lang=en]{color:inherit}
+.collaboration-page .site-header [lang=en],.collaboration-page footer [lang=en]{margin-top:0}
