@@ -64,3 +64,7 @@
 @media(max-width:990px){.wi-grid{grid-template-columns:1fr}.wi-hero{flex-direction:column;align-items:start}.wi-external{max-width:none}.wi-notice{flex-direction:column;gap:5px}}
 @media(max-width:630px){.wi-panel{padding:17px}.wi-hero h1{font-size:35px}.wi-mode-group{grid-template-columns:1fr 1fr 1fr}.wi-stage,.wi-placeholder{min-height:230px}.wi-breadcrumb{line-height:1.8}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+/* Keep the two canvas layers exactly aligned at every responsive width. */
+.wi-stage.wi-has-image{min-height:0}
+.wi-placeholder[hidden]{display:none!important}
