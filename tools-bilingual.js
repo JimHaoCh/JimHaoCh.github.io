@@ -148,6 +148,114 @@ CFU/mL = 菌落數 ÷（接種體積 [mL] × 原樣品稀釋比例） || CFU/mL 
 本版限制 || Version limitations
 初版採局部亮度差與連通區域計數。影像有強烈反光、色差、菌落黏連、透明菌落、大片菌膜或高密度 TNTC 情況時，可能產生漏檢與重複計數。MCount 等進階演算法留待後續比較驗證。 || This version uses local intensity contrast and connected-component counting. Glare, unusual colors, touching or translucent colonies, confluent growth and TNTC plates can produce missed or duplicate counts. Algorithms such as MCount require further evaluation.
 `);
+add("web-wbc-lite",`
+白血球分類與 100-Cell Differential Count || White blood cell classification and 100-cell differential count
+醫技系臨床血液學與鏡檢教學專用 || For clinical hematology and microscopy teaching
+觀察經專家標註的單一白血球顯微影像，練習五種成熟白血球分類、累計 100 顆細胞並檢查誤判。另提供不需上傳伺服器的血液抹片人工計數模式。 || Examine expert-labeled individual leukocyte images, practice classification of five mature WBC types, complete a 100-cell differential and review mistakes. A manual blood smear count mode processes user images locally.
+教學用途： || Educational use:
+PBC 是正常周邊血細胞的已裁切資料集，隨機平衡題庫的各類比例不代表病人血液 differential。此網站提供選用的實驗性 kNN AI 比較，但沒有 WBC-NCA 正式分類模型或整張抹片白血球定位功能；不得作為臨床檢驗依據。 || PBC comprises cropped images of normal peripheral blood cells. Balanced quiz categories do not represent an actual patient's differential. The optional kNN comparison is experimental; this version has neither a validated WBC-NCA classifier nor whole-smear WBC localization. It is unsuitable for clinical testing.
+01　細胞形態學習 || 01 Cell morphology learning
+02　Differential 練習 || 02 Differential practice
+03　抹片手動計數 || 03 Manual smear count
+細胞形態辨識 || Cell morphology identification
+依照細胞核、細胞質與顆粒特徵學習，再觀察 PBC 專家標註影像。 || Study nuclear, cytoplasmic and granule features, then examine expert-labeled PBC images.
+載入 PBC 真實影像 || Load real PBC images
+示意圖 · Schematic illustration || Schematic illustration
+Neutrophil · 嗜中性球 || Neutrophil
+預設顯示程式繪製之形態示意圖；若成功載入 PBC，才顯示真實顯微影像。 || Default images are programmatically drawn diagrams. Real microscopy images appear only after PBC data has loaded.
+每張影像判讀一種白血球；系統紀錄你的選擇並和專家標籤比較。 || Classify each single-cell image; your answers will be compared with expert labels.
+尚未開始 || Not started
+20 題（練習） || 20 questions (practice)
+50 題（練習） || 50 questions (practice)
+100 題（標準模式） || 100 questions (standard mode)
+載入 PBC 真實鏡檢題庫 || Load real PBC microscopy quiz
+使用形態示意圖練習 || Practice with schematic cells
+PBC 模式需連線至公開 Hugging Face Dataset Viewer API，影像由該資料來源提供；若外部服務無法連線，可使用內建示意題庫練習操作。 || PBC mode retrieves images via the public Hugging Face Dataset Viewer API. If that service is unavailable, use the built-in schematic quiz.
+目前正確率 — || Current accuracy —
+請判斷這顆白血球： || Identify this white blood cell:
+下一題 || Next question
+影像載入失敗：跳過此題 || Image failed to load: skip question
+鍵盤 1–5 可快速作答。題庫中不同類別的數量刻意平衡，方便練習辨識，不作為健康人群參考比例。 || Press 1–5 to answer. Categories are intentionally balanced for training and do not reflect reference leukocyte proportions.
+分類結果與錯題回顧 || Results and mistake review
+混淆矩陣（列：標準答案；欄：學生判斷） || Confusion matrix (rows: expert label; columns: student answer)
+需要複習的細胞 || Cells to review
+下載作答記錄 CSV || Download answer records (CSV)
+重新練習 || Restart practice
+整張抹片人工計數 || Manual whole-smear counting
+選擇本機血液抹片照片，點選細胞中心並指定類別。此模式沒有教師標準答案。 || Load a blood-smear image locally, click cell centers and assign classes. This mode has no expert answer key.
+先選擇要標記的細胞類型，再點選照片。最多可記錄 100 顆；點錯可「復原上一顆」。檢體照片僅保留於目前瀏覽器記憶體，重新整理即清除。 || Choose a cell class, then click the photograph. Up to 100 cells can be recorded; use Undo for mistakes. Sample images remain in this tab's memory and disappear on reload.
+目前標記類型 || Current annotation class
+復原上一顆 || Undo last cell
+重設計數 || Reset count
+網站已就緒。選擇學習、題庫或人工計數模式。 || Ready. Choose morphology learning, quiz or manual counting mode.
+資料來源與使用限制 || Sources and usage limitations
+. 原始資料由 Hospital Clínic de Barcelona 提供，CC BY 4.0。此工具使用 || The original dataset was provided by Hospital Clínic de Barcelona under CC BY 4.0. This tool uses
+Nirschl Lab / MicroBench 整理版本 || Nirschl Lab / MicroBench curated dataset
+，並另引用 || and also cites
+。圖片依來源授權標示歸屬。 || Image credits follow their respective source licenses.
+五類白血球：Neutrophil、Lymphocyte、Monocyte、Eosinophil、Basophil。PBC 另有 Immature Granulocyte、Erythroblast、Platelet，此版題目僅挑選五類成熟 WBC。完整血液分類應依臨床實驗室 SOP 對未成熟細胞、NRBC、異常細胞等另行處理。 || Five mature WBC types are included: neutrophils, lymphocytes, monocytes, eosinophils and basophils. PBC also contains immature granulocytes, erythroblasts and platelets; these are excluded from this quiz. Follow clinical laboratory SOPs for immature, nucleated red and atypical cells.
+`);
+add("web-hemocytometer",`
+血球計數盤互動分析 || Interactive hemocytometer analysis
+醫技系鏡檢課專用：上傳計數盤顯微鏡照片，框選指定大格，利用瀏覽器內的 Python/OpenCV 圈出候選細胞，手動修正後計算 cells/µL 與 cells/mL。支援 RBC、WBC、細胞培養計數練習。 || Built for microscopy teaching: upload a counting chamber image, select the relevant large square, identify cell candidates with browser-side Python/OpenCV, manually review them and calculate cells/µL and cells/mL. Supports RBC, WBC and cell culture exercises.
+教學驗證版本： || Educational validation prototype:
+自動辨識可能受格線、細胞重疊、染色和影像品質影響。所有候選細胞均須人工確認；僅作課堂練習及方法展示，不提供臨床檢驗或診斷結果。 || Gridlines, overlapping cells, stains and image quality affect detection. All candidates require manual verification. For coursework and demonstration only; no clinical testing or diagnosis.
+影像與計數設定 || Image and counting settings
+載入合成計數盤範例（可直接試用） || Load synthetic counting chamber demo
+計數盤模式 || Chamber counting mode
+Cell Culture｜1 個大格（1 mm²） || Cell culture · One large square (1 mm²)
+WBC｜1 個角落大格（1 mm²） || WBC · One corner large square (1 mm²)
+RBC｜中央 5 個中格（合計 0.20 mm²） || RBC · Five central medium squares (total 0.20 mm²)
+框選完整一個 1 × 1 mm 大格；可以逐張照片加入多個計數區。 || Select one complete 1 × 1 mm large square. Counting regions can be added from multiple photographs.
+目標與背景 || Target and background
+深色細胞・明亮背景 || Dark cells · Bright background
+明亮細胞・深色背景 || Bright cells · Dark background
+局部閾值偏移 || Local threshold offset
+最小細胞面積 (px²) || Minimum cell area (px²)
+最大細胞面積 (px²) || Maximum cell area (px²)
+線條抑制與圓形度篩選屬於初版影像處理策略；不同顯微鏡照片需調整參數。原始圖片僅在裝置上處理。 || Line suppression and circularity filtering are preliminary processing methods. Tune parameters for different images. Original images are processed only on-device.
+框選、辨識及修正 || Select, detect and correct
+先拖曳框選完整的 || First drag to select an entire
+。RBC 模式會自動顯示中央 5 × 5 區域，只計入四角和中央的五個中格。 || RBC mode displays a central 5 × 5 grid and includes the four corner and center medium squares.
+▢ 框選計數區 || ▢ Select counting region
+＋ 增加細胞 || + Add cell
+－ 刪除細胞 || − Remove cell
+自動圈選候選細胞 || Automatically identify candidate cells
+清空候選標記 || Clear candidate markers
+請上傳照片，或開啟合成範例。 || Upload a photo or load the synthetic demo.
+計入 || Included
+排除／不計入 || Excluded / not counted
+目前指定區域 || Active counting region
+計數盤與人工校對 || Counting chamber and manual verification
+手機操作：在「框選計數區」模式中，按住拖曳畫出大格；分析後可切換「增加細胞」或「刪除細胞」以觸控修正。 || On mobile, drag across the large square in the region-selection mode. After analysis, use Add cell or Remove cell to correct annotations.
+本視野納入細胞 || Included cells in this field
+排除或非目標區域 || Excluded or outside counting regions
+本視野計數面積 || Counting area for this field
+將這一格加入總計 || Add this square to the total
+下載標記影像 PNG || Download annotated PNG
+多視野統計與細胞濃度 || Multi-field summary and cell concentration
+同一個檢體可連續加入不同照片中的計數格。WBC 典型練習需計數四個角落大格；RBC 每一張可框選中央大格，程式自動選出五個中格。請避免重複拍攝同一區域。 || Combine counting squares from separate images of the same specimen. Typical WBC exercises count four corner large squares; RBC mode selects five central medium squares. Avoid counting the same region twice.
+累計細胞數 || Cumulative cell count
+計數視野 || Counting fields
+濃度公式：總細胞數 × 稀釋倍率 ÷（總計數面積 × 計數室深度）。 || Concentration = total cells × dilution factor / (total counted area × chamber depth).
+視野 || Field
+細胞數 || Cell count
+面積 (mm²) || Area (mm²)
+來源 || Source
+尚未加入計數視野 || No counting fields added yet
+移除最後一個視野 || Remove last field
+清空本次統計 || Clear current session
+下載統計 CSV || Download summary CSV
+Neubauer 計數規則 || Neubauer counting rules
+計數線上細胞採 || For cells touching boundary lines, use
+上、左納入；下、右排除 || include top and left; exclude bottom and right
+，避免在相鄰計數區重複計數。圖片中會以綠色標記納入的細胞，紅色標記排除的候選物件。 || to prevent double counting across adjacent areas. Green indicates included cells; red indicates excluded candidates.
+標準 Improved Neubauer 計數室深度為 0.1 mm。WBC 計四個 1 mm² 大格共 4 mm²；RBC 計中央五個 0.04 mm² 中格共 0.20 mm²。 || A standard Improved Neubauer chamber has a 0.1 mm depth. WBC exercises cover four 1 mm² large squares (4 mm² total), and RBC exercises cover five 0.04 mm² medium squares (0.20 mm² total).
+教學限制與下一版 || Educational limitations and planned work
+本版以手動選取格線確保計數面積，以 OpenCV 偵測細胞候選物件。細胞重疊、斷裂格線、非圓形細胞和 Trypan Blue 活死細胞分類尚未完成準確度驗證。 || Users select grid boundaries manually to establish counting area; OpenCV detects cell candidates. Accuracy for overlapping cells, broken gridlines, irregular cells and Trypan Blue viability has not been validated.
+預計下一版評估自動格線偵測、群聚細胞分割、Trypan Blue Live/Dead 判讀和教師評分模式。 || Future evaluations may include automatic grid detection, clustered-cell segmentation, Trypan Blue live/dead classification and instructor scoring.
+`);
+
 /* LOCALE_EXTRA */
 const slug=(location.pathname.split("/").filter(Boolean).find(p=>dict[p])||"common");
 const map=new Map([...(dict.common||new Map()),...(dict[slug]||new Map())]);
