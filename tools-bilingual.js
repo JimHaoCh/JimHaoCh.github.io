@@ -256,6 +256,116 @@ Neubauer 計數規則 || Neubauer counting rules
 預計下一版評估自動格線偵測、群聚細胞分割、Trypan Blue Live/Dead 判讀和教師評分模式。 || Future evaluations may include automatic grid detection, clustered-cell segmentation, Trypan Blue live/dead classification and instructor scoring.
 `);
 
+add("web-imagej",`
+鏡檢影像分析教學 || Microscopy image analysis teaching
+第三版在原創瀏覽器影像工作台中新增三種引導式教學練習：比例尺校正、12 顆合成粒子計數，以及目標／背景灰階比較；可保存本機量測紀錄並匯出 CSV。進階 ImageJ 功能仍以外部連結前往 ImJoy 團隊提供的 ImageJ.JS。 || Version 0.3 of our original browser-side image workspace offers guided exercises in scale calibration, counting 12 synthetic particles, and comparing target/background gray levels. Local measurement records can be exported as CSV. Advanced ImageJ functions are available through an external link to the ImJoy team's ImageJ.JS.
+使用前請留意 || Read before using
+本站自製 Web-Image Lab 採原生 JavaScript Canvas，影像在您的瀏覽器中處理，程式未加入影像上傳接口或第三方分析函式庫。完整 ImageJ.JS 由第三方 ImJoy 團隊提供；本網站沒有託管、修改、複製或嵌入 ImageJ.JS、CheerpJ 及其插件。點擊外部連結後會離開本站，資料處理方式依外部服務政策。 || The original Web-Image Lab workspace runs with native JavaScript Canvas in your browser and has no image-upload endpoint or third-party analysis library. The full ImageJ.JS is provided separately by the ImJoy team. This website does not host, modify, copy or embed ImageJ.JS, CheerpJ or their plugins. External sites apply their own data-processing policies.
+開啟第三版影像工作台 || Open v0.3 image workspace
+前往完整 ImageJ.JS || Open full ImageJ.JS (external)
+查看 ImageJ 專案介紹 || View the ImageJ project page
+本站工作台是教學用的簡易分析原型，支援桌面與觸控操作；瀏覽器差異仍需實機測試。學生量測結果需人工核對，合成基準圖的標準答案僅適用於該固定測試影像。 || This teaching prototype supports desktop and touch interaction; browser compatibility requires device testing. Verify student measurements manually. Reference answers for synthetic benchmarks apply only to the fixed example image.
+課堂操作流程 || Classroom workflow
+可先在本站工作台完成基本練習；以下提及的 ImageJ 選單名稱，則對應外部完整版 ImageJ.JS。 || Complete introductory exercises in the original workspace. ImageJ menu names below refer to the external full ImageJ.JS application.
+開啟網頁版 || Open the browser workspace
+點選上方「本站影像分析工作台」進行本機練習；進階功能可另開第三方 ImageJ.JS。 || Open the local image workspace above for exercises; use the separate ImageJ.JS link for advanced features.
+讀入練習影像 || Load an exercise image
+於本站使用「合成細胞示範」或上傳 PNG／JPEG／WebP；外部 ImageJ.JS 可以使用 File → Open。 || Use the synthetic cell demo or load PNG, JPEG or WebP files here; the external ImageJ.JS provides File → Open.
+設定比例與 ROI || Calibrate scale and ROI
+在本站輸入經確認的 µm/pixel，再拖曳矩形 ROI 或直線；外部 ImageJ 可使用 Analyze → Set Scale。 || Enter a verified µm/pixel value, then drag a rectangular ROI or line. In full ImageJ, use Analyze → Set Scale.
+量測與紀錄 || Measure and record
+在本站調整 Threshold 後執行連通區計數，再匯出 CSV／PNG；外部 ImageJ 可使用 Analyze → Measure 或 Analyze Particles。 || Adjust the threshold, count connected components and export CSV or PNG. Full ImageJ offers Analyze → Measure and Analyze Particles.
+建議教學練習 || Suggested classroom exercises
+細胞大小與形態量測 || Cell dimensions and morphology
+設定已知長度與 µm/pixel，以矩形 ROI 取得面積、灰階統計，或以直線工具量測長度。此版沒有單顆細胞自動周長與長軸估算。 || Calibrate a known distance in µm/pixel. A rectangular ROI provides area and grayscale statistics; a line tool measures length. Per-cell automated perimeter and major-axis estimates are not included.
+核心概念：Pixel-to-µm calibration · ROI || Key concepts: pixel-to-µm calibration and ROI
+細胞／顆粒計數 || Cell / particle counting
+利用 12 顆合成圓形基準圖調整 Threshold 與最小面積，觀察連通區數量與參數的關係。 || Use the 12-circle synthetic benchmark to test threshold and minimum area settings and observe changes in connected-component count.
+核心概念：Segmentation · Size filtering || Key concepts: segmentation and size filtering
+染色與影像強度 || Staining and image intensity
+分別擷取目標及背景 ROI 的平均灰階，計算兩者差值，討論曝光與背景的影響。 || Measure mean gray values in target and background ROIs; compare the difference and discuss exposure and background effects.
+核心概念：Mean gray value · Background || Key concepts: mean gray value and background
+資料使用、軟體來源與學術引用 || Data usage, attribution and scholarly citations
+資料保護與判讀界線 || Privacy and interpretation boundaries
+僅使用教師提供的範例、合成影像或確認可公開使用的素材。 || Use instructor-provided samples, synthetic examples or materials cleared for public use.
+請勿在第三方網頁上傳可識別病人身分的臨床檢體影像、病歷資訊或其他機敏資料。 || Do not upload identifiable clinical specimens, patient records or other sensitive data to third-party sites.
+外部服務與插件可能有各自的資料傳輸流程；使用前應確認其政策與功能。本站無法保證外部處理完全限於本機。 || External services and plugins may transfer data according to their own policies. Review these before use; this site cannot guarantee local-only processing by third parties.
+練習結果須人工檢查；本教學入口及外部軟體均未由本站驗證為臨床檢驗或診斷系統。 || Review all exercise results manually. Neither this portal nor the linked external software is validated by our laboratory for clinical diagnosis.
+專案來源與致謝 || Software attribution and acknowledgments
+由 || is developed by
+開發。本站自製工作台採原生瀏覽器程式碼；ImageJ.JS 部分僅提供名稱介紹、教學導引與對外連結，未使用對方的程式碼、商標圖像或截圖，也未表示雙方具有合作或官方認證關係。 || . Our original workspace uses native browser code. We refer to ImageJ.JS by name for educational guidance and external links; no ImageJ.JS source, logo or screenshots are incorporated, and no partnership or endorsement is implied.
+建議引用：Ouyang W, Mueller F, Hjelmare M, et al. || Suggested citation: Ouyang W, Mueller F, Hjelmare M, et al.
+ImageJ 專案頁面 ↗ || ImageJ project page
+ImageJ.JS 原始專案 ↗ || ImageJ.JS source repository
+原開發團隊網頁版 ↗ || Original team's web application
+線上工具 || Online tools
+ImageJ.JS 教學入口 || ImageJ.JS learning portal
+本機分析工作台 || Local image analysis workspace
+第三版增加三組引導式練習：比例尺校正、合成顆粒計數、目標與背景灰階差。每筆記錄附上分析參數，方便課堂討論、人工核對與匯出。所有影像分析留在目前瀏覽器分頁。 || Version 0.3 adds guided exercises in scale calibration, synthetic particle counting and target/background grayscale differences. Each measurement record includes analysis settings for review and export. Processing remains in this browser tab.
+前往第三方完整 ImageJ.JS || Open the external full ImageJ.JS
+影像由此頁原生 JavaScript Canvas 在瀏覽器內運算；本分析程式不包含影像上傳、遠端 AI 模型或外部影像處理函式庫。請使用合成影像或已去識別化教學資料，避免載入含病人個資的圖片。重新整理將清除目前的量測紀錄，請自行下載。分析結果需人工核對，不能作為臨床診斷依據。外部 ImageJ.JS 連結會離開本站。 || Images are processed locally with native JavaScript Canvas, without image uploads, remote AI models or external image-processing libraries. Use synthetic or de-identified teaching images. Reloading clears current records; export them first. Verify results manually; this software is not intended for clinical diagnosis. The external ImageJ.JS link leads to another website.
+引導式教學練習 || Guided classroom exercises
+選擇練習主題。流程提示只使用目前瀏覽器內的影像與量測結果，沒有線上評分或資料上傳。 || Choose an exercise topic. The guidance uses only images and results in this tab, without online scoring or upload.
+教學主題 || Exercise topic
+A · 比例尺與長度校正 || A · Scale and length calibration
+B · 12 顆合成粒子計數 || B · Count 12 synthetic particles
+C · 目標／背景灰階差 || C · Target / background grayscale difference
+1. 開啟合成示範圖或已知比例尺影像。2. 使用「直線量測」框出已知距離。3. 輸入距離（µm）後計算校正值，並保存量測紀錄。 || 1. Load the synthetic demo or an image with a known scale. 2. Draw a line over a known distance. 3. Enter its length in µm, calibrate and save a record.
+選取直線代表的已知長度（µm） || Actual length represented by the selected line (µm)
+依直線設定 µm/pixel || Calibrate µm/pixel from line
+載入基準圖（12 個深色圓形） || Load 12-dark-circle benchmark
+核對 12 顆基準答案 || Check reference count of 12
+記錄目前 ROI 為目標 || Record current ROI as target
+記錄目前 ROI 為背景 || Record current ROI as background
+清除灰階比較 || Clear intensity comparison
+完成一個步驟後，這裡會顯示操作結果與核對提醒。 || Completion feedback and review reminders appear here.
+讀入影像（PNG / JPEG / WebP） || Load image (PNG / JPEG / WebP)
+合成細胞示範 || Synthetic cell demo
+12 顆基準圖 || 12-particle benchmark
+尚未讀入影像。可先使用合成示範圖。 || No image loaded. You can start with the synthetic demo.
+校正值：原始影像每像素的長度（µm/pixel） || Scale: physical length per source-image pixel (µm/pixel)
+請由顯微鏡比例尺或已知尺度自行校正；大圖為了效能可能縮圖分析，程式會換算回原始影像的像素尺度。 || Calibrate from a microscope scale bar or known feature. Large images may be resized for performance, with measurements converted back to original-image pixel units.
+ROI 與量測 || ROI and measurements
+矩形 ROI || Rectangular ROI
+直線量測 || Line measurement
+全影像 ROI || Whole-image ROI
+在影像上以滑鼠或觸控拖曳。矩形 ROI 支援灰階統計及粒子計數；直線模式量測長度。一次顯示一個 ROI。 || Drag across the image with mouse or touch. Rectangular ROIs support grayscale statistics and particle counting; line mode measures distance. One ROI is displayed at a time.
+選取影像後顯示 ROI 統計。 || ROI statistics appear after selecting an image.
+Threshold 與計數 || Threshold and counting
+閾值 || Threshold
+目標像素 || Target pixel intensity
+深色目標（灰階 ≤ 閾值） || Dark targets (grayscale ≤ threshold)
+淺色目標（灰階 ≥ 閾值） || Light targets (grayscale ≥ threshold)
+顯示二值化覆蓋層 || Show binary threshold overlay
+最小連通區面積（原始 pixel²） || Minimum connected-component area (original pixel²)
+分析連通顆粒（8-connected） || Count 8-connected particles
+此演算法以灰階閾值及 8 鄰接連通區計數，適合基本教學；重疊細胞、雜訊與背景不均可能造成合併、漏計或誤計。 || This introductory algorithm uses grayscale thresholding and 8-connected components. Overlaps, noise and uneven backgrounds can merge particles or cause missed and false counts.
+請上傳影像或開啟合成示範 || Upload an image or start the synthetic demo
+本工具不需要帳號與影像上傳服務 || No account or image-upload service is required
+計數結果 || Counting result
+尚未讀入影像。 || No image loaded.
+顆粒計數結果（最多顯示前 100 筆） || Particle count results (first 100 records)
+面積（pixel²） || Area (pixel²)
+中心 X（pixel） || Centroid X (pixel)
+中心 Y（pixel） || Centroid Y (pixel)
+每筆記錄保存當下 ROI、校正、閾值或灰階結果的數值快照。切換影像會清除舊紀錄；沒有伺服器同步。 || Each record stores a snapshot of ROI, scale, threshold or grayscale settings and results. Switching images clears previous records; no server synchronization is used.
+記錄目前結果 || Save current result
+下載教學紀錄 CSV || Download classroom records CSV
+已自行核對目前 ROI、比例尺及可見目標（人工核對勾選，不代表軟體驗證通過） || I have manually reviewed the ROI, scale and visible targets (self-check only; no software validation implied)
+此分頁的量測快照（最多 50 筆） || Measurement snapshots in this tab (up to 50)
+序號 || Index
+量測類型 || Measurement type
+結果 || Result
+校正 || Calibration
+尚未保存量測紀錄 || No saved measurements yet
+為避免無意洩漏檢體資訊，教學紀錄不收集姓名、學號、檔名或圖片內容；下載 CSV 僅包含測量數值和設定。校正後的長度／面積須與真實比例尺相符才具物理意義。 || To limit disclosure, classroom records exclude names, student IDs, filenames and image content. CSV exports contain measurements and settings only. Physical length and area values require a valid scale calibration.
+功能範圍與進階分析 || Features and advanced analysis
+目前支援瀏覽器可解碼的 PNG、JPEG、WebP；另有本站程式自行繪製的 12 顆教學基準圖。像素尺度會換算回原始影像，但超過最大工作尺寸的影像經重取樣後，ROI 與連通區分析仍會受工作解析度影響；原始像素換算不能還原已損失的影像細節。分析與標註 PNG 使用工作解析度。TIFF stack、Z-stack、ROI Manager、ImageJ Macro 與進階分割屬第三方完整版 ImageJ.JS 的功能範圍，請由外部網站入口操作。此工具沒有引入 ImageJ.JS、CheerpJ 或任何第三方程式碼。 || Browser-decodable PNG, JPEG and WebP files are supported, along with an original 12-particle benchmark. Pixel dimensions are mapped to the original image, although resampling oversized inputs reduces working resolution and can affect ROI and particle results. Lost detail cannot be restored by coordinate conversion. Annotated PNGs use working resolution. TIFF stacks, Z-stacks, ROI Manager, ImageJ macros and advanced segmentation are features of the separate full ImageJ.JS; this workspace incorporates no ImageJ.JS, CheerpJ or third-party code.
+回到 ImageJ.JS 教學入口 || Return to ImageJ.JS learning portal
+ImageJ.JS 專案介紹 ↗ || ImageJ.JS project page
+本站原創程式碼 ↗ || Original site source code
+`);
+
 /* LOCALE_EXTRA */
 const slug=(location.pathname.split("/").filter(Boolean).find(p=>dict[p])||"common");
 const map=new Map([...(dict.common||new Map()),...(dict[slug]||new Map())]);
