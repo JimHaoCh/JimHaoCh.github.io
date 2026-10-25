@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#11314a">
+  <meta name="description" content="Web-CASA Lite: experimental browser-based sperm motility microscopy learning lab.">
+  <title>Web-CASA Lite｜精子活動力鏡檢教學</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" type="module"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../" class="backlink">← Bioflumen & Xensor Lab</a>
+    <span class="toplabel">NYCU · Medical Laboratory Science</span>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">VIRTUAL MICROSCOPY LAB · PROTOTYPE 0.1</div>
+      <h1>Web-CASA <span>Lite</span></h1>
+      <p class="lead">精子活動力鏡檢教學平台 <span class="muted">/ Sperm motility teaching lab</span></p>
+      <p>將短片交給瀏覽器分析：Python + OpenCV 偵測候選精子頭部、連結軌跡並計算基本 CASA 指標。運算在本機完成，影片不會上傳至網站伺服器。</p>
+      <div class="notice"><strong>教學驗證原型</strong>｜辨識結果可能包含雜質；IM 為頭部低位移候選，無法可靠辨識僅有鞭毛擺動的 NP。不得用於臨床診斷或研究定量結論。</div>
+    </section>
+    <section class="workspace">
+      <div class="panel control-panel">
+        <h2>01 <span>影片與校正</span></h2>
+        <label class="field" for="file">顯微鏡影片 / Microscopy video</label>
+        <input id="file" type="file" accept="video/mp4,video/quicktime,video/webm,video/*">
+        <p class="hint">建議先用 1–3 秒、固定視野、明亮背景且精子頭部呈深色的影片。iPhone MOV 是否可解析取決於瀏覽器支援的編碼。</p>
+        <video id="source" playsinline preload="auto" controls hidden></video>
+        <div class="twocol">
+          <label>空間校正 <small>µm / pixel</small>
+            <input id="scale" type="number" placeholder="請輸入實測數值" step="0.001" min="0.001" max="100">
+          </label>
+          <label>分析取樣率 <small>frames / second</small>
+            <select id="fps"><option value="10">10</option><option value="15">15</option><option value="20" selected>20</option></select>
+          </label>
+          <label>頭部閾值 <small>Adaptive threshold C</small>
+            <input id="contrast" type="number" min="1" max="20" step="1" value="8">
+          </label>
+          <label>最大位移 <small>pixels / frame</small>
+            <input id="jump" type="number" min="3" max="60" step="1" value="20">
+          </label>
+        </div>
+        <div class="actions">
+          <button id="analyze" class="primary" disabled>分析上傳影片</button>
+          <button id="demo" class="secondary">執行合成影片示範</button>
+        </div>
+        <div id="status" class="status" role="status" aria-live="polite">就緒。請選擇影片，或先執行合成示範。</div>
+        <progress id="progress" max="100" value="0" hidden></progress>
+      </div>
+      <div class="panel result-panel">
+        <div class="panelhead"><h2>02 <span>自動辨識與軌跡</span></h2><span class="chip">LOCAL PROCESSING</span></div>
+        <div class="viewer"><canvas id="resultsCanvas" width="640" height="480"></canvas><div class="viewer-tag">Trajectory overlay · 原型結果</div></div>
+        <p class="hint">軌跡顏色代表追蹤 ID。當沒有可靠 µm/pixel 校正值時，僅顯示像素速度；活動力分類停用。</p>
+        <div id="metrics" class="metric-grid"><div class="placeholder">完成分析後將顯示追蹤數量、速度與活動力估計值。</div></div>
+        <div class="actions">
+          <button id="csv" class="secondary" disabled>匯出軌跡與 CASA CSV</button>
+        </div>
+      </div>
+    </section>
+    <section class="info-grid">
+      <article class="panel">
+        <h2>03 <span>判讀說明</span></h2>
+        <dl><dt>VCL</dt><dd>總路徑長度 ÷ 追蹤時間</dd><dt>VSL</dt><dd>起終點距離 ÷ 追蹤時間</dd><dt>VAP</dt><dd>平滑平均路徑長度 ÷ 追蹤時間</dd><dt>LIN</dt><dd>VSL / VCL × 100%</dd><dt>STR</dt><dd>VSL / VAP × 100%</dd></dl>
+      </article>
+      <article class="panel">
+        <h2>04 <span>原型限制與下一步</span></h2>
+        <ul>
+          <li>只針對深色精子頭部／亮背景做傳統影像偵測；需以實際人類精子影片校正。</li>
+          <li>以時間點 seek 取樣影片，可能遺漏快速運動或短暫交錯事件。</li>
+          <li>測試用 PR／NP／IM 門檻：VAP ≥20 µm/s 且 STR ≥60% 為 PR；VCL ≥5 µm/s 為 NP；其餘是頭部低位移 IM 候選。</li>
+          <li>這些門檻是軟體測試參數，尚未依 WHO 標準或教師標記驗證。</li>
+        </ul>
+      </article>
+    </section>
+    <footer>Web-CASA Lite · Experimental educational software · <a href="https://github.com/JimHaoCh/JimHaoCh.github.io/tree/main/web-casa-lite">Source on GitHub</a></footer>
+  </main>
+  <canvas id="frameCanvas" hidden></canvas>
+</body>
+</html>
