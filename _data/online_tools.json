@@ -34,5 +34,14 @@
     "subtitle": "Disk Diffusion Analysis",
     "description": "上傳 Kirby–Bauer 平板照片，估算抑菌圈直徑並進行人工修正。",
     "url": "/web-ast/"
+  },
+  {
+    "slug": "web-hemocytometer",
+    "name": "Web-Hemocytometer Lite",
+    "category": "鏡檢學 · Microscopy",
+    "title": "血球計數盤與細胞濃度",
+    "subtitle": "Neubauer Chamber Cell Counting",
+    "description": "上傳顯微鏡照片，自動圈選候選細胞並以觸控修正；練習 WBC、RBC、細胞培養計數、格線邊界及濃度換算。",
+    "url": "/web-hemocytometer/"
   }
 ]
