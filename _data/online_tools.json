@@ -43,5 +43,14 @@
     "subtitle": "Neubauer Chamber Cell Counting",
     "description": "上傳顯微鏡照片，自動圈選候選細胞並以觸控修正；練習 WBC、RBC、細胞培養計數、格線邊界及濃度換算。",
     "url": "/web-hemocytometer/"
+  },
+  {
+    "slug": "web-imagej",
+    "name": "ImageJ.JS",
+    "category": "第三方教學資源 · External Tool",
+    "title": "顯微影像處理與定量分析",
+    "subtitle": "Image Analysis · Educational Gateway",
+    "description": "前往 ImJoy 團隊提供的網頁版 ImageJ；先閱讀教學操作與資料安全提醒，再開啟外部服務。",
+    "url": "/web-imagej/"
   }
 ]
