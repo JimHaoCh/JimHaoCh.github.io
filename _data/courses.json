@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "title": "醫技系鏡檢課專用教學資源",
+    "title_en": "Medical Laboratory Microscopy — Interactive Learning",
+    "description": "本區為醫學檢驗暨生物技術學系鏡檢課專用教學資源。Web-CASA Lite 提供精子活動力鏡檢練習：上傳顯微鏡影片後，由瀏覽器本機執行精子頭部候選辨識、運動軌跡追蹤及 VCL、VSL、VAP、LIN、STR 等 CASA 參數估算，協助理解前進運動（PR）、非前進運動（NP）與不活動（IM）的判讀概念。軟體仍為教學驗證原型，結果可能受影像品質及雜質影響，僅供課堂練習與方法展示，不作臨床診斷依據。",
+    "description_en": "Dedicated teaching resources for the Department of Medical Laboratory Science and Biotechnology microscopy course. Web-CASA Lite provides browser-based sperm motility practice using uploaded microscope videos, candidate sperm-head detection, trajectory tracking, and estimated CASA metrics (VCL, VSL, VAP, LIN, STR). It introduces PR, NP and IM motility concepts. This is an experimental educational prototype; results are not validated for clinical use.",
+    "published": true,
+    "materials": [
+      {
+        "title": "Web-CASA Lite｜精子活動力自動分析教學網站（實驗原型）",
+        "title_en": "Web-CASA Lite — Sperm Motility Teaching Tool (Experimental Prototype)",
+        "url": "https://jimhaoch.github.io/web-casa-lite/",
+        "updated": "2026-10-25",
+        "published": true
+      }
+    ]
+  }
+]
