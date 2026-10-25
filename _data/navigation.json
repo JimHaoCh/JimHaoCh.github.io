@@ -36,12 +36,6 @@
     "icon": "document"
   },
   {
-    "zh": "課程講義",
-    "en": "Courses",
-    "href": "/courses.html",
-    "icon": "document"
-  },
-  {
     "zh": "技術簡介",
     "en": "Techniques",
     "href": "/techniques.html",
@@ -70,6 +64,12 @@
     "en": "Join",
     "href": "/#join",
     "icon": "target"
+  },
+  {
+    "zh": "課程講義",
+    "en": "Courses",
+    "href": "/courses.html",
+    "icon": "document"
   },
   {
     "zh": "聯絡我們",

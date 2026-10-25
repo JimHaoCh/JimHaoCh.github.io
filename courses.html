@@ -14,8 +14,8 @@ description: 張鈞豪博士的課程講義與教學資源，依學年度、學�
   <main class="subpage" id="main">
     <div class="wrap">
       <a class="breadcrumb" href="/">首頁 / Home</a>
-      <div class="section-title icon-heading">
-        {% include icon.html name='document' class='heading-icon' %}
+      <div class="section-title">
+
         <p class="eyebrow">LEARN WITH BIOFLUMEN &amp; XENSOR LAB</p>
         <h1>課程講義<span lang="en">Course Materials</span></h1>
       </div>
@@ -31,7 +31,7 @@ description: 張鈞豪博士的課程講義與教學資源，依學年度、學�
       <div class="course-list">
         {% for course in courses %}
         <article class="course-card" data-course data-year="{{ course.year | escape }}" data-semester="{{ course.semester | escape }}" data-search="{{ course.title | escape }} {{ course.title_en | escape }} {{ course.code | escape }}">
-          <div class="course-heading">{% include icon.html name='document' %}<div>
+          <div class="course-heading"><div>
             <p class="course-meta">{% if course.year and course.year != '' %}{{ course.year | escape }} 學年度{% endif %}{% case course.semester %}{% when '1' %} · 上學期 / Fall{% when '2' %} · 下學期 / Spring{% when 'summer' %} · 暑期 / Summer{% endcase %}{% if course.code and course.code != '' %} · {{ course.code | escape }}{% endif %}</p>
             <h2>{{ course.title | escape }}{% if course.title_en and course.title_en != '' %}<span lang="en">{{ course.title_en | escape }}</span>{% endif %}</h2>
           </div></div>

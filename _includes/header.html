@@ -6,10 +6,10 @@
   <div class="mobile-nav-bar" aria-label="常用入口">
     <a href="/news.html">最新消息<span lang="en">News</span></a>
     <a href="/#research">研究成果<span lang="en">Research</span></a>
-    <a href="/courses.html">課程講義<span lang="en">Courses</span></a>
+    <a href="/instruments.html">實驗儀器<span lang="en">Instruments</span></a>
     <button class="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="開啟全站選單，{{ site.data.navigation.size }} 個入口">全站選單 <b>{{ site.data.navigation.size }}</b><span lang="en">All pages <i aria-hidden="true">＋</i></span></button>
   </div>
   <nav aria-label="主要導覽" id="nav">
-    {% for link in site.data.navigation %}<a href="{{ link.href }}"{% if page.url == link.href %} aria-current="page"{% endif %}>{% include icon.html name=link.icon %}<span class="nav-copy">{{ link.zh }}<span lang="en">{{ link.en }}</span></span></a>{% endfor %}
+    {% for link in site.data.navigation %}<a href="{{ link.href }}"{% if page.url == link.href %} aria-current="page"{% endif %}><span class="nav-copy">{{ link.zh }}<span lang="en">{{ link.en }}</span></span></a>{% endfor %}
   </nav>
 </header>

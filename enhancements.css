@@ -101,3 +101,14 @@
 }
 @media (prefers-reduced-motion:reduce) { .site-header #nav > a .lab-icon { transition: none; transform: none !important; } }
 @media print { .course-filters, .resource-links { display: none; } .course-card { break-inside: avoid; } .empty-state { border: 0; } }
+
+/* Text-first navigation and compact decorative states. */
+.site-header #nav > a { min-height: 48px; }
+.course-heading > div { min-width: 0; }
+.course-heading h2 { overflow-wrap: anywhere; }
+@media (max-width:860px) {
+  .empty-state .empty-art { display: none; }
+  .empty-state { gap: 0; }
+  .site-header #nav > a { font-size: 14px; }
+  .site-header #nav .nav-copy { overflow-wrap: anywhere; }
+}
