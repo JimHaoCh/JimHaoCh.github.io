@@ -12,7 +12,7 @@ def detect_heads(frame, contrast):
         cv2.THRESH_BINARY_INV, 25, int(contrast))
     binary = cv2.morphologyEx(binary, cv2.MORPH_OPEN,
                              np.ones((2, 2), dtype=np.uint8))
-    count, labels, stats, centroids = cv2.connectedComponentsWithStats(binary, 8)
+    count, labels, stats, centroids = cv2.connectedComponentsWithStats(binary, connectivity=8)
     detected = []
     for i in range(1, count):
         x, y, w, h, area = [int(v) for v in stats[i]]
