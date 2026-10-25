@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "web-casa-lite",
+    "name": "Web-CASA Lite",
+    "category": "鏡檢學 · Microscopy",
+    "title": "精子活動力與運動軌跡",
+    "subtitle": "Sperm Motility Analysis",
+    "description": "上傳顯微鏡影片，觀察精子候選追蹤軌跡與 CASA 速度參數。",
+    "url": "/web-casa-lite/"
+  },
+  {
+    "slug": "web-cfu-lite",
+    "name": "Web-CFU Lite",
+    "category": "微生物學 · Microbiology",
+    "title": "菌落計數與 CFU/mL",
+    "subtitle": "Colony Counting",
+    "description": "從培養皿照片辨識菌落，手動修正計數並練習稀釋換算。",
+    "url": "/web-cfu-lite/"
+  },
+  {
+    "slug": "web-wbc-lite",
+    "name": "Web-WBC Lite",
+    "category": "血液學 · Hematology",
+    "title": "白血球分類判讀",
+    "subtitle": "WBC Differential Training",
+    "description": "練習白血球形態辨識與 100-cell differential，查看教師標準答案與實驗性 AI 建議。",
+    "url": "/web-wbc-lite/"
+  },
+  {
+    "slug": "web-ast",
+    "name": "Web-AST Lite",
+    "category": "微生物學 · Microbiology",
+    "title": "抗生素抑菌圈量測",
+    "subtitle": "Disk Diffusion Analysis",
+    "description": "上傳 Kirby–Bauer 平板照片，估算抑菌圈直徑並進行人工修正。",
+    "url": "/web-ast/"
+  }
+]
