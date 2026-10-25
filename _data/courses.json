@@ -30,5 +30,21 @@
         "published": true
       }
     ]
+  },
+  {
+    "title": "醫技系臨床血液學與鏡檢｜白血球分類教學工具",
+    "title_en": "Clinical Hematology & Microscopy — WBC Differential Training",
+    "description": "醫學檢驗暨生物技術學系臨床血液學及鏡檢教學專用。Web-WBC Lite 提供五類成熟白血球（NEU、LYM、MON、EOS、BAS）的形態重點、PBC 專家標註細胞影像分類練習、100-cell differential、混淆矩陣與錯題回顧，以及學生自行上傳血液抹片照片進行人工計數。PBC 遠端影像需網路連線，另提供明確標示的形態示意圖練習。僅供教學，不作臨床診斷。",
+    "description_en": "An educational WBC differential tool for NYCU medical laboratory science. Learn morphology of five mature WBC classes and practice 100-cell classification with PBC expert-labelled single-cell images, answer review, confusion matrices, and manual counting on locally selected blood smear photos. PBC images require external data access; separately labelled schematic practice is available. For education only.",
+    "published": true,
+    "materials": [
+      {
+        "title": "Web-WBC Lite｜白血球分類與 100-Cell Differential（教學原型）",
+        "title_en": "Web-WBC Lite — WBC Morphology and 100-Cell Differential Practice",
+        "url": "https://jimhaoch.github.io/web-wbc-lite/",
+        "updated": "2026-10-25",
+        "published": true
+      }
+    ]
   }
 ]
