@@ -29,7 +29,7 @@ ImJoy paper: https://doi.org/10.1038/s41592-019-0627-0
 
 - JavaScript syntactic compilation: passed (V8 parser, 2026-10-25).
 - Simulated Canvas DOM and gray-image fixture: loading a 720x480 image, thresholding two isolated dark square regions, eight-connected counting (2), 0.25 µm/pixel area calculation, output table (2 rows): passed.
-- Review confirmed no `iframe`, external JavaScript import or remote image-analysis request on the new `lab.html` + `lab.js`.
+- Simulated DOM tests additionally verified a rectangle ROI restricted the count to one object; lowering the dark threshold excluded both objects; a 200-original-pixel line with 0.5 µm/pixel calibration produced 100 µm; CSV and PNG export event handlers were dispatched. Passed.\n- Static source review confirmed no `iframe`, external JavaScript import or remote image-analysis request on the new `lab.html` + `lab.js`.
 
 ## Manual compatibility acceptance checklist (pending physical devices)
 
