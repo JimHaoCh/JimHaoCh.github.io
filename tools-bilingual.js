@@ -371,12 +371,58 @@ for(const [group,cn,en] of extraTranslations)dict[group].set(cn,en);
 /* LOCALE_EXTRA */
 const slug=(location.pathname.split("/").filter(Boolean).find(p=>dict[p])||"common");
 const map=new Map([...(dict.common||new Map()),...(dict[slug]||new Map())]);
+
+const dynamicPatterns={
+ "web-ast":[
+  [/^已載入 (.+) 影像。自動量測後請逐個檢查抑菌圈邊界。$/,m=>"Loaded "+m[1]+" image. Check each inhibition-zone boundary after detection."],
+  [/^找到 (\d+) 個紙錠候選物件；(\d+) 個具有可量測的抑菌圈候選邊界。請逐一確認。$/,m=>"Found "+m[1]+" candidate disks and "+m[2]+" measurable zone boundaries. Verify each."],
+  [/^自動辨識失敗：(.+)$/,m=>"Automatic detection failed: "+m[1]],
+  [/^無法讀取影像：(.+)。若為 HEIC，請轉換成 JPG。$/,m=>"Cannot read image: "+m[1]+". Convert HEIC to JPG if needed."]
+ ],
+ "web-casa-lite":[
+  [/^解碼影片影格 (\d+) \/ (\d+)$/,m=>"Decoding frame "+m[1]+" / "+m[2]],
+  [/^分析失敗：(.+)$/,m=>"Analysis failed: "+m[1]],
+  [/^已選擇：(.+)（(.+) MiB）。讀取影片資訊…$/,m=>"Selected: "+m[1]+" ("+m[2]+" MiB). Reading metadata…"],
+  [/^已讀取 (\d+) × (\d+)；([\d.]+) 秒。可開始分析。$/,m=>"Loaded "+m[1]+" × "+m[2]+" video ("+m[3]+" s). Ready to analyze."],
+  [/^此格式可能無法被目前瀏覽器解碼：(.+)$/,m=>"Current browser may not decode this format: "+m[1]]
+ ],
+ "web-cfu-lite":[
+  [/^(.+)?辨識完成：(\d+) 個候選菌落。(.+)$/,m=>"Detection complete: "+m[2]+" candidate colonies. Verify and correct the markers."],
+  [/^自動辨識失敗：(.+)$/,m=>"Automatic detection failed: "+m[1]],
+  [/^讀取失敗：(.+)$/,m=>"File reading failed: "+m[1]]
+ ],
+ "web-wbc-lite":[
+  [/^目前正確率 ([\d.]+)%$/,m=>"Current accuracy: "+m[1]+"%"],
+  [/^已作答 (\d+) 題 · 正確率 ([\d.]+)%$/,m=>m[1]+" questions answered · Accuracy "+m[2]+"%"],
+  [/^練習完成，正確 (\d+)／(\d+) 題。可下載題目與判讀紀錄。$/,m=>"Practice completed: "+m[1]+"/"+m[2]+" correct. Download your records."],
+  [/^已取得 (\d+) 張 PBC 顯微圖像的題目索引。圖片於每題顯示時才載入。$/,m=>"Retrieved "+m[1]+" PBC image entries. Images load one question at a time."],
+  [/^PBC 題庫載入失敗：(.+)；目前仍提供內建示意圖。$/,m=>"PBC quiz could not load: "+m[1]+". Schematic exercises remain available."]
+ ],
+ "web-hemocytometer":[
+  [/^偵測 (\d+) 個候選物件，目前計入 (\d+) 個。(.+)$/,m=>"Detected "+m[1]+" candidates, with "+m[2]+" included. Review manually before saving."],
+  [/^已加入第 (\d+) 個視野，納入 (\d+) 個細胞。上傳下一張照片可繼續累計。$/,m=>"Field "+m[1]+" saved with "+m[2]+" cells. Upload the next field to continue."],
+  [/^已切換至 (.+)，請重新進行細胞標記。$/,m=>"Switched to "+m[1]+". Recheck cell markers."],
+  [/^自動偵測失敗：(.+)。仍可切換「增加細胞」手動計數。$/,m=>"Automatic detection failed: "+m[1]+". Manual counting remains available."]
+ ],
+ "web-imagej":[
+  [/^有效顆粒：([\d,.]+) 個 · 移除過小區塊：([\d,.]+) 個$/,m=>"Valid particles: "+m[1]+"; excluded small components: "+m[2]],
+  [/^已保存第 (\d+) 筆本機量測快照。(.+)$/,m=>"Local measurement "+m[1]+" saved. Export CSV before closing or reloading."],
+  [/^校正已設定：(.+)$/,m=>"Calibration set: "+m[1]],
+  [/^目標：(.+)$/,m=>"Target/background intensity comparison: "+m[1]]
+ ]
+};
+function getEnglish(cn){
+ const exact=map.get(cn);if(exact)return exact;
+ for(const [re,format] of dynamicPatterns[slug]||[]){const match=cn.match(re);if(match)return format(match);}
+ return null;
+}
+
 const seen=new WeakMap();
 const forbidden=node=>!node.parentElement||node.parentElement.closest("script,style,noscript,svg,.bf-en,[data-no-translate],textarea");
 function translateText(node){
  if(!node||node.nodeType!==3||forbidden(node))return;
- const cn=node.textContent.trim();const en=map.get(cn);
- if(!en)return;
+ const cn=node.textContent.trim();const en=getEnglish(cn);
+ if(!en){const old=seen.get(node);if(old&&old.span.isConnected)old.span.remove();seen.delete(node);return;}
  if(node.parentElement.tagName==="OPTION"||node.parentElement.tagName==="TITLE"){
    const updated=cn+" / "+en;
    if(node.textContent!==updated){node.textContent=node.textContent.replace(cn,updated);}
