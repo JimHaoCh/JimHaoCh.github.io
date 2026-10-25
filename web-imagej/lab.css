@@ -68,3 +68,31 @@
 /* Keep the two canvas layers exactly aligned at every responsive width. */
 .wi-stage.wi-has-image{min-height:0}
 .wi-placeholder[hidden]{display:none!important}
+
+/* v0.3 guided learning and in-memory measurement notebook */
+.wi-guide{margin-bottom:20px}
+.wi-guide-top,.wi-records-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.wi-guide-top h2,.wi-records-top h2{font-size:23px;margin:4px 0 8px}
+.wi-guide-top h2 small{font-size:12px;color:var(--muted);font-weight:600;vertical-align:middle}
+.wi-guide-top p:not(.eyebrow),.wi-records-top p:not(.eyebrow){color:#506c80;font-size:13px;line-height:1.8;margin:0}
+.wi-guide-picker{flex:0 0 260px;color:var(--ink);font-size:13px;font-weight:700;line-height:1.8}
+.wi-guide-picker select{margin-top:7px}
+.wi-guide-instructions{border-top:1px solid var(--line);margin:18px 0 15px;padding-top:15px;color:#305371;font-size:14px;line-height:1.9}
+.wi-guide-row{display:flex;gap:11px;flex-wrap:wrap;align-items:flex-end}
+.wi-guide-row[hidden]{display:none}
+.wi-guide-row label{flex:1 1 260px;max-width:390px;font-size:13px;color:var(--ink);line-height:1.7;font-weight:650}
+.wi-guide-row .wi-input{margin-top:6px}
+.wi-guide-row button,.wi-record-buttons button{font-size:13px;font-weight:700;line-height:1.5;padding:11px 15px;min-height:42px;cursor:pointer;border:1px solid #b8cad9;border-radius:8px}
+.wi-guide-row button:disabled,.wi-record-buttons button:disabled{opacity:.48;cursor:not-allowed}
+.wi-guide-row button:focus-visible,.wi-record-buttons button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.wi-guide-feedback{margin:15px 0 0;background:#f3f7fa;border:1px solid #e1e8ee;padding:13px 15px;border-radius:8px;color:#486376;font-size:13px;line-height:1.8}
+.wi-records{margin-top:22px}
+.wi-record-buttons{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:8px}
+.wi-review-label{display:flex;align-items:flex-start;gap:10px;margin:18px 0 12px;font-size:13px;color:#35536a;line-height:1.8}
+.wi-review-label input{flex:none;width:18px;height:18px;accent-color:var(--blue);margin-top:3px}
+.wi-record-table{max-height:340px}
+.wi-record-table table{min-width:540px}
+.wi-record-table td:not(:first-child),.wi-record-table th:not(:first-child){text-align:left}
+.wi-record-table td:first-child,.wi-record-table th:first-child{min-width:48px}
+@media(max-width:900px){.wi-guide-top,.wi-records-top{flex-direction:column;align-items:stretch}.wi-guide-picker{flex:0 1 auto;max-width:440px}.wi-record-buttons{justify-content:flex-start}}
+@media(max-width:560px){.wi-guide-row{flex-direction:column;align-items:stretch}.wi-guide-row label{flex:auto;max-width:none}.wi-guide-row button,.wi-record-buttons button{width:100%}.wi-record-buttons{flex-direction:column;align-items:stretch}}
