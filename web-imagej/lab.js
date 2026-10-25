@@ -59,7 +59,7 @@
   };
   const reset = () => {
     s.loadVersion++;s.w=0;s.h=0;s.origW=0;s.origH=0;s.gray=null;
-    s.selection=null;s.drag=false;s.start=null;training.image="none";resetNotebook();
+    s.selection=null;s.drag=false;s.start=null;training.image="none";scale.value="";resetNotebook();
     resetResults();bc.clearRect(0,0,canvas.width,canvas.height);
     oc.clearRect(0,0,overlay.width,overlay.height);
     meta.textContent="尚未讀入影像。可先使用合成示範圖。";
@@ -79,7 +79,7 @@
     s.w=w;s.h=h;s.origW=srcW;s.origH=srcH;s.gray=new Uint8Array(w*h);
     for(let i=0,j=0;i<d.length;i+=4,j++) s.gray[j]=Math.round(.299*d[i]+.587*d[i+1]+.114*d[i+2]);
     s.selection={type:"rect",x:0,y:0,w,h};s.drag=false;resetResults();
-    resetNotebook();training.image=origin;
+    scale.value="";resetNotebook();training.image=origin;
     setLoaded(true);
     meta.textContent=label+" · 原始影像 "+srcW+" × "+srcH+" px · 分析工作影像 "+w+" × "+h+" px"+(ratio<1?"（已縮圖）":"");
     render();announce("影像已在本機載入。可拖曳選取 ROI，或調整閾值並分析。");return true;
