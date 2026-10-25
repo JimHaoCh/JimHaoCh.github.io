@@ -322,7 +322,13 @@
   };
   const captureIntensity = kind => {
     if(!s.w||s.selection?.type!=="rect"){lessonFeedback.textContent="請先載入影像並框選矩形 ROI，再記錄灰階值。";return;}
-    const st=roiStats(),snapshot={mean:st.mean,area:st.n*factorX()*factorY()};
+    const st=roiStats(),b=st.b;
+    const region=[b.x,b.y,b.x2,b.y2].join(":");
+    const other=kind==="target"?"background":"target";
+    if(training[other]?.region===region){
+      lessonFeedback.textContent="目標與背景需要選取不同位置的 ROI；請移動框選範圍後再記錄。";return;
+    }
+    const snapshot={mean:st.mean,area:st.n*factorX()*factorY(),region};
     training[kind]=snapshot;invalidateReview();
     if(training.target&&training.background){
       const diff=training.target.mean-training.background.mean;
@@ -364,7 +370,7 @@
     const lines=[["Record","Measurement","Value","Unit","Scale_um_per_original_px","Self_reviewed","Source","Parameters"],
       ...training.records.map(rec=>[rec.number,rec.type,rec.result.toFixed(6),rec.unit,rec.calibration===null?"uncalibrated":rec.calibration.toFixed(9),rec.reviewed?"yes":"no",rec.source,rec.details])];
     const safeCsv = v => '"'+String(v??"").replace(/"/g,'""')+'"';
-    const output="\\uFEFF"+lines.map(line=>line.map(safeCsv).join(",")).join("\\r\\n");
+    const output="\uFEFF"+lines.map(line=>line.map(safeCsv).join(",")).join("\r\n");
     dl(new Blob([output],{type:"text/csv;charset=utf-8"}),"web-image-lab-teaching-records.csv");
   };
   file.addEventListener("change",()=>{
