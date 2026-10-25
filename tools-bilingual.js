@@ -445,14 +445,15 @@ function scan(root){
  for(const t of items)translateText(t);
 }
 const init=()=>{
- scan(document.body);
+ const container=document.querySelector('main')||document.body;
+ scan(container);
  const observer=new MutationObserver(changes=>{
   for(const change of changes){
    if(change.type==="characterData")translateText(change.target);
    else for(const node of change.addedNodes)scan(node);
   }
  });
- observer.observe(document.body,{subtree:true,childList:true,characterData:true});
+ observer.observe(container,{subtree:true,childList:true,characterData:true});
 };
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
 })();
