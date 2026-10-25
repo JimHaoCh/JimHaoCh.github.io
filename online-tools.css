@@ -1,0 +1,15 @@
+/* Online Tools catalogue. Keeps the shared Bioflumen typography and colors. */
+.tools-intro{max-width:780px;margin:-4px 0 32px;color:var(--muted);font-size:16px;line-height:1.9}
+.tools-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.tool-entry{min-width:0}
+.tool-link{height:100%;display:flex;flex-direction:column;gap:0;padding:28px 28px 24px;border:1px solid var(--line);border-radius:16px;background:#fff;text-decoration:none;box-shadow:0 7px 24px rgba(23,52,83,.045);transition:border-color .18s,transform .18s,box-shadow .18s}
+.tool-link:hover,.tool-link:focus-visible{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 12px 25px rgba(23,52,83,.1)}
+.tool-category{font-size:12px;font-weight:650;color:var(--blue);letter-spacing:.04em;margin-bottom:12px}
+.tool-name{font-family:var(--serif);font-weight:650;font-size:clamp(24px,2.6vw,30px);line-height:1.25;color:var(--ink);letter-spacing:-.025em}
+.tool-title{font-size:17px;line-height:1.5;font-weight:700;margin-top:11px;color:var(--ink)}
+.tool-subtitle{font-size:13px;color:var(--muted);line-height:1.55;margin-top:3px}
+.tool-summary{font-size:14px;color:#4c6579;line-height:1.8;margin:18px 0 22px;flex:1}
+.tool-action{font-size:13px;font-weight:700;color:var(--blue);border-top:1px solid var(--line);padding-top:15px;display:flex;justify-content:space-between;align-items:center}
+.tools-note{font-size:12px;line-height:1.8;color:var(--muted);margin:25px 0 0}
+@media(max-width:760px){.tools-grid{grid-template-columns:1fr;gap:13px}.tool-link{padding:22px 20px}.tools-intro{margin-bottom:25px}}
+@media(prefers-reduced-motion:reduce){.tool-link{transition:none}.tool-link:hover{transform:none}}
