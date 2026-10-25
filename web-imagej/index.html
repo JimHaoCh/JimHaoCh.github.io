@@ -1,8 +1,8 @@
 ---
 layout: null
 permalink: /web-imagej/
-title: ImageJ.JS 影像分析教學入口
-description: 醫技系鏡檢與科研影像分析教學入口，提供第三方 ImageJ.JS 官方執行網站、操作流程、原始專案及論文來源，並清楚說明資料與授權界線。
+title: Web-Image Lab 與 ImageJ.JS 教學入口
+description: 醫技系鏡檢影像分析教學入口，提供本站原創本機 Canvas 分析工作台與第三方 ImageJ.JS 外部連結，並說明資料與授權界線。
 ---
 <!doctype html>
 <html lang="zh-Hant">
@@ -17,28 +17,28 @@ description: 醫技系鏡檢與科研影像分析教學入口，提供第三方 
     <div class="wrap wj-shell">
       <a class="breadcrumb" href="/courses.html">← 線上工具 / Online Tools</a>
       <section class="wj-hero" aria-labelledby="wj-title">
-        <p class="eyebrow">MEDTECH VIRTUAL LAB · EXTERNAL EDUCATIONAL RESOURCE</p>
-        <h1 id="wj-title">ImageJ.JS <span>影像分析教學入口</span></h1>
+        <p class="eyebrow">MEDTECH VIRTUAL LAB · IMAGE ANALYSIS v0.2</p>
+        <h1 id="wj-title">Web-Image Lab <span>鏡檢影像分析教學</span></h1>
         <p class="wj-en" lang="en">Image Analysis · Microscopy · Quantitative Imaging</p>
-        <p class="wj-lead">以醫技系鏡檢與基礎影像分析教學為目的，提供學生前往 ImJoy 團隊開發的 ImageJ.JS 網頁版，練習影像校正、感興趣區域（ROI）選取、強度量測與粒子計數。</p>
+        <p class="wj-lead">第二版新增本站原創的純瀏覽器影像分析工作台，可直接在網站內操作 ROI、灰階量測、閾值分割、粒子計數與檔案匯出；需要進階 ImageJ 功能時，可另外前往 ImJoy 團隊開發的 ImageJ.JS 網頁版。</p>
         <div class="wj-notice" role="note">
           <strong>使用前請留意</strong>
-          <p>本頁為校內教學導引頁。ImageJ.JS 由第三方 ImJoy 團隊開發及提供服務，點擊下方連結後會離開本實驗室網站。本網站沒有託管、修改、複製或嵌入 ImageJ.JS、CheerpJ 及其插件，也沒有取得或傳送您的影像檔案。外部網站的資料處理方式、服務狀態與授權條件依其營運方規定。</p>
+          <p>本站自製 Web-Image Lab 採原生 JavaScript Canvas，影像在您的瀏覽器中處理，程式未加入影像上傳接口或第三方分析函式庫。完整 ImageJ.JS 由第三方 ImJoy 團隊提供；本網站沒有託管、修改、複製或嵌入 ImageJ.JS、CheerpJ 及其插件。點擊外部連結後會離開本站，資料處理方式依外部服務政策。</p>
         </div>
         <div class="wj-actions">
-          <a class="wj-button wj-button-primary" href="https://ij.imjoy.io/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="前往第三方 ImageJ.JS 網頁版（開啟新分頁）">前往 ImageJ.JS 網頁版 <span aria-hidden="true">↗</span></a>
+          <a class="wj-button wj-button-primary" href="/web-imagej/lab.html">開啟本站影像分析工作台 <span aria-hidden="true">→</span></a>\n          <a class="wj-button wj-button-secondary" href="https://ij.imjoy.io/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="前往第三方 ImageJ.JS 網頁版（開啟新分頁）">前往完整 ImageJ.JS <span aria-hidden="true">↗</span></a>
           <a class="wj-button wj-button-secondary" href="https://imagej.net/software/imagej-js" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">查看 ImageJ 專案介紹 <span aria-hidden="true">↗</span></a>
         </div>
-        <p class="wj-small">學生請先閱讀下方資料保護提醒，再前往外部服務。桌上型電腦適合進行完整 ImageJ 選單操作；手機端依瀏覽器與外部服務相容性而定。</p>
+        <p class="wj-small">本站工作台為教學用簡易分析原型，支援桌面與觸控操作；ImageJ Macro 與 TIFF Stack 等完整功能需另前往外部 ImageJ.JS，請先閱讀資料保護提醒。</p>
       </section>
 
       <section class="wj-section" aria-labelledby="wj-workflow">
-        <div class="wj-section-heading"><p class="eyebrow">GETTING STARTED</p><h2 id="wj-workflow">課堂操作流程</h2><p>以下是適合第一次使用 ImageJ 的基本練習；實際選單名稱及功能依外部網站版本而定。</p></div>
+        <div class="wj-section-heading"><p class="eyebrow">GETTING STARTED</p><h2 id="wj-workflow">課堂操作流程</h2><p>可先在本站工作台完成基本練習；以下提及的 ImageJ 選單名稱，則對應外部完整版 ImageJ.JS。</p></div>
         <ol class="wj-steps">
-          <li><span class="wj-step-num" aria-hidden="true">01</span><div><h3>開啟網頁版</h3><p>點選上方按鈕，在新分頁啟動 ImJoy 團隊提供的 ImageJ.JS。</p></div></li>
-          <li><span class="wj-step-num" aria-hidden="true">02</span><div><h3>讀入練習影像</h3><p>選擇 File → Open 或網站提供的 Select Local File，優先使用教師提供的合成、公開授權或已去識別化範例影像。</p></div></li>
-          <li><span class="wj-step-num" aria-hidden="true">03</span><div><h3>設定比例與 ROI</h3><p>若影像包含已知尺寸的比例尺，可使用 Analyze → Set Scale 校正；再用矩形、橢圓或自由選取工具建立 ROI。</p></div></li>
-          <li><span class="wj-step-num" aria-hidden="true">04</span><div><h3>量測與紀錄</h3><p>依練習題目選擇 Analyze → Measure，或進行 Threshold、Analyze Particles。記錄操作參數、校正值與人工核對結果。</p></div></li>
+          <li><span class="wj-step-num" aria-hidden="true">01</span><div><h3>開啟網頁版</h3><p>點選上方「本站影像分析工作台」進行本機練習；進階功能可另開第三方 ImageJ.JS。</p></div></li>
+          <li><span class="wj-step-num" aria-hidden="true">02</span><div><h3>讀入練習影像</h3><p>於本站使用「合成細胞示範」或上傳 PNG／JPEG／WebP；外部 ImageJ.JS 可以使用 File → Open。</p></div></li>
+          <li><span class="wj-step-num" aria-hidden="true">03</span><div><h3>設定比例與 ROI</h3><p>在本站輸入經確認的 µm/pixel，再拖曳矩形 ROI 或直線；外部 ImageJ 可使用 Analyze → Set Scale。</p></div></li>
+          <li><span class="wj-step-num" aria-hidden="true">04</span><div><h3>量測與紀錄</h3><p>在本站調整 Threshold 後執行連通區計數，再匯出 CSV／PNG；外部 ImageJ 可使用 Analyze → Measure 或 Analyze Particles。</p></div></li>
         </ol>
       </section>
 
@@ -65,7 +65,7 @@ description: 醫技系鏡檢與科研影像分析教學入口，提供第三方 
           </div>
           <div>
             <h3>專案來源與致謝</h3>
-            <p><strong>ImageJ.JS</strong> 由 <strong>ImJoy Team</strong> 開發。本網站僅提供名稱介紹、教學導引與對外連結，未使用對方的程式碼、商標圖像或截圖，也未表示雙方具有合作或官方認證關係。</p>
+            <p><strong>ImageJ.JS</strong> 由 <strong>ImJoy Team</strong> 開發。本站自製工作台採原生瀏覽器程式碼；ImageJ.JS 部分僅提供名稱介紹、教學導引與對外連結，未使用對方的程式碼、商標圖像或截圖，也未表示雙方具有合作或官方認證關係。</p>
             <p>建議引用：Ouyang W, Mueller F, Hjelmare M, et al. <em>ImJoy: an open-source computational platform for the deep learning era.</em> Nature Methods (2019). DOI: <a href="https://doi.org/10.1038/s41592-019-0627-0" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">10.1038/s41592-019-0627-0</a>.</p>
             <div class="wj-sources">
               <a href="https://imagej.net/software/imagej-js" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">ImageJ 專案頁面 ↗</a>
@@ -75,7 +75,7 @@ description: 醫技系鏡檢與科研影像分析教學入口，提供第三方 
           </div>
         </div>
       </section>
-      <p class="wj-footnote">Bioflumen &amp; Xensor Lab · NYCU Medical Laboratory Science Teaching Resources · Educational link directory only</p>
+      <p class="wj-footnote">Bioflumen &amp; Xensor Lab · NYCU Medical Laboratory Science · Original browser-side workspace and external resource directory</p>
     </div>
   </main>
   {% include footer.html %}
