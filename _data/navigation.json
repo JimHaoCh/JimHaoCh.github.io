@@ -42,6 +42,12 @@
     "icon": "flask"
   },
   {
+    "zh": "產學合作",
+    "en": "Industry collaboration",
+    "href": "/collaboration.html",
+    "icon": ""
+  },
+  {
     "zh": "實驗儀器",
     "en": "Instruments",
     "href": "/instruments.html",

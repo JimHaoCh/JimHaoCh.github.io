@@ -309,3 +309,11 @@ if (courseForm) {
   });
   filterCourses();
 }
+
+// Collaboration entry: preselect the existing inquiry category without overwriting user input.
+if (new URLSearchParams(location.search).get('inquiry') === 'industry') {
+  const inquiryType = document.querySelector('#contact-type');
+  if (inquiryType && !inquiryType.value) inquiryType.value = '產學合作 / Industry–academia collaboration';
+  const message = document.querySelector('#contact-message');
+  if (message) message.placeholder = '請提供用途、尺寸／線寬／深度、材料、數量、圖面準備狀態及預計時程。 / Application, dimensions, material, quantity, drawings and timeline.';
+}

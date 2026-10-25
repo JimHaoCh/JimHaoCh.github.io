@@ -1,0 +1,78 @@
+{
+  "headline": "讓生醫微流體構想，成為可測試的原型。",
+  "headline_en": "Turn a microfluidic idea into a testable prototype.",
+  "intro": "從生醫、診斷到器官晶片，協助規劃結構、選擇材料與製程，串接幫浦、閥件及電控，依需求完成原型與初步測試。",
+  "intro_en": "From biomedical and diagnostic microfluidics to organ-on-chip platforms, we support structural design, material and process selection, fluid handling, control integration and preliminary testing.",
+  "price": "圖面與規格明確的簡單加工案件，可由新臺幣數千元至數萬元啟動。涉及設計開發、製程試作、系統整合或生物測試者，依技術難度、材料、數量、修改輪次及交付項目另行報價。實際費用與合作方式以正式報價及校方程序為準。",
+  "price_en": "Straightforward fabrication with defined drawings and specifications can start at several thousand to tens of thousands of New Taiwan dollars. Design, process development, integration and biological testing are quoted according to scope, materials, quantity, revisions and deliverables. Final fees and arrangements follow the formal quotation and university procedures.",
+  "ip": "合作成果得依陽明交通大學相關規定與契約，洽議授權使用、共有，或經技術移轉由廠商取得所有權。具體安排依經費來源、研發貢獻及校方審核程序確認，並於契約中明定。",
+  "ip_en": "Licensing, joint ownership or company ownership through technology transfer may be negotiated under NYCU regulations and the project agreement. Arrangements depend on funding sources, research contributions and university approval, and are specified in the contract.",
+  "applications": [
+    {
+      "title": "生醫微流體",
+      "en": "Biomedical microfluidics",
+      "body": "依樣本、試劑與操作需求，規劃流道、混合、分離或反應結構。",
+      "body_en": "Channel, mixing, separation and reaction structures tailored to samples, reagents and operating requirements."
+    },
+    {
+      "title": "診斷用晶片",
+      "en": "Diagnostic chips",
+      "body": "協助檢體處理、加樣與反應模組設計，整合感測及讀值介面。",
+      "body_en": "Sample handling, loading and reaction modules with interfaces for sensing and readout."
+    },
+    {
+      "title": "器官晶片原型",
+      "en": "Organ-on-chip prototypes",
+      "body": "協助培養腔室、灌流與連接介面設計；細胞模型與功能驗證依合作需求另行界定。",
+      "body_en": "Culture chambers, perfusion and connection interfaces; cell models and functional validation are scoped separately."
+    }
+  ],
+  "processes": [
+    {
+      "title": "CNC 微銑切",
+      "en": "CNC micromilling",
+      "metric": "0.1 mm",
+      "detail": "100 μm · 最小特徵線寬參考",
+      "body": "依材料、加工深度、刀具與幾何形狀評估，適用流道原型與模具加工。",
+      "body_en": "Reference minimum feature width: 100 μm. Feasibility depends on material, depth, tooling and geometry."
+    },
+    {
+      "title": "晶圓級母模",
+      "en": "Wafer-level master molds",
+      "metric": "0.02 mm",
+      "detail": "20 μm · 特徵線寬參考",
+      "body": "依光罩、光阻厚度與製程條件規劃母模，供微結構轉印與翻模使用。",
+      "body_en": "Reference feature width: 20 μm. Master molds are planned around mask design, resist thickness and fabrication conditions."
+    },
+    {
+      "title": "3D 列印",
+      "en": "3D printing",
+      "metric": "3D",
+      "detail": "原型 · 接頭 · 治具 · 模具",
+      "body": "依結構、樹脂與後處理需求選擇製作方式，支援組裝與測試用零組件。",
+      "body_en": "Prototypes, connectors, fixtures and molds selected according to geometry, resin and post-processing requirements."
+    }
+  ],
+  "materials": [
+    {
+      "title": "壓克力 PMMA",
+      "body": "流道基板與透明原型",
+      "en": "Channel substrates and transparent prototypes"
+    },
+    {
+      "title": "PDMS",
+      "body": "彈性晶片與微結構翻模",
+      "en": "Elastomeric chips and microstructure replication"
+    },
+    {
+      "title": "鋁製模具",
+      "body": "依結構規劃成型與加工用模具",
+      "en": "Metal molds designed for the forming process"
+    },
+    {
+      "title": "耐高溫樹脂模具",
+      "body": "依溫度、壓力及重複使用條件評估",
+      "en": "Resin molds evaluated for temperature, pressure and reuse"
+    }
+  ]
+}

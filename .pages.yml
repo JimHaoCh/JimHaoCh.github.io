@@ -1186,3 +1186,87 @@ content:
           format: html
           switcher: false
           media: images
+- name: collaboration
+  label: 產學合作內容
+  type: file
+  path: _data/collaboration.json
+  format: json
+  fields:
+  - name: headline
+    label: headline
+    type: text
+  - name: headline_en
+    label: headline_en
+    type: text
+  - name: intro
+    label: intro
+    type: text
+  - name: intro_en
+    label: intro_en
+    type: text
+  - name: price
+    label: price
+    type: text
+  - name: price_en
+    label: price_en
+    type: text
+  - name: ip
+    label: ip
+    type: text
+  - name: ip_en
+    label: ip_en
+    type: text
+  - name: applications
+    label: applications
+    type: object
+    list: true
+    fields:
+    - name: title
+      label: title
+      type: text
+    - name: en
+      label: en
+      type: text
+    - name: body
+      label: body
+      type: text
+    - name: body_en
+      label: body_en
+      type: text
+  - name: processes
+    label: processes
+    type: object
+    list: true
+    fields:
+    - name: title
+      label: title
+      type: text
+    - name: en
+      label: en
+      type: text
+    - name: metric
+      label: metric
+      type: text
+    - name: detail
+      label: detail
+      type: text
+    - name: body
+      label: body
+      type: text
+    - name: body_en
+      label: body_en
+      type: text
+  - name: materials
+    label: materials
+    type: object
+    list: true
+    fields:
+    - name: title
+      label: title
+      type: text
+    - name: body
+      label: body
+      type: text
+    - name: en
+      label: en
+      type: text

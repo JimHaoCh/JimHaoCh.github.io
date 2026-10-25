@@ -42,3 +42,6 @@ The four featured research stories describe work completed with the PI's partici
 ## Teaching resources
 - [課程講義 / Course materials](https://jimhaoch.github.io/courses.html): Course notes, slides and learning resources organized by academic year and semester. The catalogue is prepared for future uploads.
 - [行事曆 / Calendar](https://jimhaoch.github.io/calendar.html): A reserved public schedule page. No calendar is embedded and no events are currently listed.
+
+Industry collaboration: https://jimhaoch.github.io/collaboration.html
+Biomedical microfluidic design, CNC and 3D-printed prototypes, wafer-level master molds, fluid handling and control integration. Scope, fees and IP are agreed per project under NYCU procedures.
