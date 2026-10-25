@@ -1,15 +1,15 @@
 ---
 layout: null
 permalink: /web-imagej/lab.html
-title: Web-Image Lab 原生影像分析工作台
-description: 陽明交通大學醫技系鏡檢教學用純瀏覽器影像分析工具，支援本機影像匯入、ROI、灰階量測、閾值分割、粒子計數與匯出。
+title: Web-Image Lab v0.3｜醫技系影像分析教學工作台
+description: 陽明交通大學醫技系鏡檢教學用純瀏覽器影像分析工具，支援本機影像匯入、ROI、比例尺校正、灰階與背景量測、閾值分割、粒子計數、引導式練習與紀錄匯出。
 ---
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/web-imagej/lab.css?v=2">
-  <script defer src="/web-imagej/lab.js?v=2"></script>
+  <link rel="stylesheet" href="/web-imagej/lab.css?v=3">
+  <script defer src="/web-imagej/lab.js?v=3"></script>
 </head>
 <body>
   <a href="#main" class="skip">跳至主要內容 / Skip to content</a>
@@ -20,20 +20,41 @@ description: 陽明交通大學醫技系鏡檢教學用純瀏覽器影像分析�
         <a href="/courses.html">線上工具</a><span aria-hidden="true">/</span><a href="/web-imagej/">ImageJ.JS 教學入口</a><span aria-hidden="true">/</span><span>本機分析工作台</span>
       </nav>
       <div class="wi-hero">
-        <div><p class="eyebrow">MEDTECH VIRTUAL LAB · ORIGINAL BROWSER TOOL v0.2</p>
+        <div><p class="eyebrow">MEDTECH VIRTUAL LAB · ORIGINAL BROWSER TOOL v0.3</p>
           <h1>Web-Image Lab</h1>
           <p class="wi-sub">醫技系鏡檢影像分析 · Microscopy Image Analysis</p>
-          <p class="wi-lead">從相片匯入、ROI 選取到閾值分割與粒子計數，在您的瀏覽器內完成教學練習。此工作台為本站原創簡易影像分析工具，與 ImJoy 團隊的 ImageJ.JS 分開運作。</p>
+          <p class="wi-lead">第三版增加三組引導式練習：比例尺校正、合成顆粒計數、目標與背景灰階差。每筆記錄附上分析參數，方便課堂討論、人工核對與匯出。所有影像分析留在目前瀏覽器分頁。</p>
         </div>
         <a class="wi-external" href="https://ij.imjoy.io/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">前往第三方完整 ImageJ.JS <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="wi-notice" role="note"><strong>本機處理 · 教學用途</strong><span>您選擇的影像由此頁的原生 JavaScript Canvas 在瀏覽器內處理；程式碼沒有影像上傳介面、遠端模型或外部函式庫。請避免使用可辨識病人身分的檔案。所有結果需人工驗證，不適用臨床診斷。上方外部連結將離開本站，依第三方服務政策處理。</span></div>
+      <div class="wi-notice" role="note"><strong>本機處理 · 教學用途</strong><span>影像由此頁原生 JavaScript Canvas 在瀏覽器內運算；本分析程式不包含影像上傳、遠端 AI 模型或外部影像處理函式庫。請使用合成影像或已去識別化教學資料，避免載入含病人個資的圖片。重新整理將清除目前的量測紀錄，請自行下載。分析結果需人工核對，不能作為臨床診斷依據。外部 ImageJ.JS 連結會離開本站。</span></div>
+      <section class="wi-panel wi-guide" aria-labelledby="wi-guide-head">
+        <div class="wi-guide-top"><div><p class="eyebrow">GUIDED CLASSROOM PRACTICE</p><h2 id="wi-guide-head">引導式教學練習 <small>v0.3</small></h2><p>選擇練習主題。流程提示只使用目前瀏覽器內的影像與量測結果，沒有線上評分或資料上傳。</p></div>
+        <label class="wi-guide-picker" for="wi-lesson">教學主題<select id="wi-lesson" class="wi-input">
+          <option value="calibrate">A · 比例尺與長度校正</option><option value="count">B · 12 顆合成粒子計數</option><option value="intensity">C · 目標／背景灰階差</option>
+        </select></label></div>
+        <p class="wi-guide-instructions" id="wi-lesson-steps" aria-live="polite">1. 開啟合成示範圖或已知比例尺影像。2. 使用「直線量測」框出已知距離。3. 輸入距離（µm）後計算校正值，並保存量測紀錄。</p>
+        <div id="wi-activity-calibrate" class="wi-guide-row">
+          <label for="wi-known-length">選取直線代表的已知長度（µm）<input class="wi-input" id="wi-known-length" type="number" min="0.000001" step="any" placeholder="例如：20"></label>
+          <button type="button" id="wi-calibrate" class="wi-secondary">依直線設定 µm/pixel</button>
+        </div>
+        <div id="wi-activity-count" class="wi-guide-row" hidden>
+          <button type="button" id="wi-open-benchmark" class="wi-secondary">載入基準圖（12 個深色圓形）</button>
+          <button type="button" id="wi-check-benchmark" class="wi-secondary">核對 12 顆基準答案</button>
+        </div>
+        <div id="wi-activity-intensity" class="wi-guide-row" hidden>
+          <button type="button" id="wi-save-target" class="wi-secondary">記錄目前 ROI 為目標</button>
+          <button type="button" id="wi-save-background" class="wi-secondary">記錄目前 ROI 為背景</button>
+          <button type="button" id="wi-reset-intensity" class="wi-secondary">清除灰階比較</button>
+        </div>
+        <p id="wi-lesson-feedback" class="wi-guide-feedback" aria-live="polite">完成一個步驟後，這裡會顯示操作結果與核對提醒。</p>
+      </section>
       <div class="wi-grid">
         <section class="wi-panel wi-controls" aria-labelledby="wi-input-head">
           <h2 id="wi-input-head"><span class="wi-index">01</span> 影像與校正</h2>
           <label class="wi-label" for="wi-file">讀入影像（PNG / JPEG / WebP）</label>
           <input id="wi-file" class="wi-file" type="file" accept="image/png,image/jpeg,image/webp">
-          <div class="wi-row-buttons"><button id="wi-demo" class="wi-secondary" type="button">合成細胞示範</button><button id="wi-clear" class="wi-secondary" type="button">清除影像</button></div>
+          <div class="wi-row-buttons"><button id="wi-demo" class="wi-secondary" type="button">合成細胞示範</button><button id="wi-benchmark" class="wi-secondary" type="button">12 顆基準圖</button><button id="wi-clear" class="wi-secondary" type="button">清除影像</button></div>
           <p id="wi-meta" class="wi-help">尚未讀入影像。可先使用合成示範圖。</p>
           <label class="wi-label" for="wi-scale">校正值：原始影像每像素的長度（µm/pixel）</label>
           <input id="wi-scale" class="wi-input" type="number" min="0.000001" step="any" placeholder="留空＝只顯示 pixel／pixel²">
@@ -74,12 +95,28 @@ description: 陽明交通大學醫技系鏡檢教學用純瀏覽器影像分析�
           <div class="wi-table-wrap"><table><caption>顆粒計數結果（最多顯示前 100 筆）</caption><thead><tr><th>#</th><th>面積（pixel²）</th><th>中心 X（pixel）</th><th>中心 Y（pixel）</th></tr></thead><tbody id="wi-rows"><tr><td colspan="4">尚無結果</td></tr></tbody></table></div>
         </section>
       </div>
+      <section class="wi-panel wi-records" aria-labelledby="wi-records-head">
+        <div class="wi-records-top"><div><p class="eyebrow">MEASUREMENT NOTEBOOK</p><h2 id="wi-records-head">本機量測紀錄</h2>
+          <p>每筆記錄保存當下 ROI、校正、閾值或灰階結果的數值快照。切換影像會清除舊紀錄；沒有伺服器同步。</p></div>
+          <div class="wi-record-buttons">
+            <button id="wi-record" type="button" class="wi-secondary" disabled>記錄目前結果</button>
+            <button id="wi-export-records" type="button" class="wi-secondary" disabled>下載教學紀錄 CSV</button>
+            <button id="wi-clear-records" type="button" class="wi-secondary" disabled>清除紀錄</button>
+          </div>
+        </div>
+        <label class="wi-review-label" for="wi-reviewed"><input type="checkbox" id="wi-reviewed"> 已自行核對目前 ROI、比例尺及可見目標（人工核對勾選，不代表軟體驗證通過）</label>
+        <div class="wi-table-wrap wi-record-table"><table><caption>此分頁的量測快照（最多 50 筆）</caption>
+          <thead><tr><th>序號</th><th>量測類型</th><th>結果</th><th>校正</th><th>人工核對</th></tr></thead>
+          <tbody id="wi-record-rows"><tr><td colspan="5">尚未保存量測紀錄</td></tr></tbody>
+        </table></div>
+        <p class="wi-help">為避免無意洩漏檢體資訊，教學紀錄不收集姓名、學號、檔名或圖片內容；下載 CSV 僅包含測量數值和設定。校正後的長度／面積須與真實比例尺相符才具物理意義。</p>
+      </section>
       <section class="wi-panel wi-refs">
         <h2>功能範圍與進階分析</h2>
-        <p>目前支援瀏覽器可解碼的 PNG、JPEG、WebP。保留原始像素尺度的數值換算，分析與標註圖會以限制後的工作解析度計算及匯出。TIFF stack、Z-stack、ROI Manager、ImageJ Macro 與進階分割屬第三方完整版 ImageJ.JS 的功能範圍，請由外部網站入口操作。此工具沒有引入 ImageJ.JS、CheerpJ 或任何第三方程式碼。</p>
+        <p>目前支援瀏覽器可解碼的 PNG、JPEG、WebP；另有本站程式自行繪製的 12 顆教學基準圖。像素尺度會換算回原始影像，但超過最大工作尺寸的影像經重取樣後，ROI 與連通區分析仍會受工作解析度影響；原始像素換算不能還原已損失的影像細節。分析與標註 PNG 使用工作解析度。TIFF stack、Z-stack、ROI Manager、ImageJ Macro 與進階分割屬第三方完整版 ImageJ.JS 的功能範圍，請由外部網站入口操作。此工具沒有引入 ImageJ.JS、CheerpJ 或任何第三方程式碼。</p>
         <p><a href="/web-imagej/">回到 ImageJ.JS 教學入口</a> · <a href="https://imagej.net/software/imagej-js" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">ImageJ.JS 專案介紹 ↗</a> · <a href="https://github.com/JimHaoCh/JimHaoCh.github.io/tree/main/web-imagej" target="_blank" rel="noopener noreferrer">本站原創程式碼 ↗</a></p>
       </section>
-      <p class="wi-foot">Web-Image Lab v0.2 · NYCU Medical Laboratory Science · Educational browser-side tool</p>
+      <p class="wi-foot">Web-Image Lab v0.3 · NYCU Medical Laboratory Science · Educational browser-side tool</p>
     </div>
   </main>
   {% include footer.html %}
