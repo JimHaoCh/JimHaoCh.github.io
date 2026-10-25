@@ -1,0 +1,66 @@
+/* Web-Image Lab: original interface, independent of ImageJ.JS and CheerpJ. */
+.wi-wrap{padding-bottom:50px}
+.wi-breadcrumb{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 18px;font-size:13px;color:var(--muted)}
+.wi-breadcrumb a{color:var(--blue)}
+.wi-hero{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:26px 0 20px}
+.wi-hero>div{max-width:850px}
+.wi-hero h1{font-size:clamp(36px,5vw,54px);letter-spacing:-.03em;line-height:1.2;margin:9px 0 6px;color:var(--ink)}
+.wi-sub{font-size:17px;color:var(--blue);font-weight:650;line-height:1.6;margin:0 0 12px}
+.wi-lead{font-size:14px;line-height:1.85;color:#405b70;margin:0}
+.wi-external{flex:none;max-width:270px;padding:13px 17px;border:1px solid #c4d4e2;border-radius:10px;background:#fff;color:var(--blue);font-size:13px;font-weight:750;text-decoration:none;line-height:1.6;text-align:center}
+.wi-notice{border:1px solid #d7e3eb;background:#f6f9fc;border-left:4px solid #64839b;border-radius:12px;padding:14px 18px;display:flex;gap:14px;font-size:13px;line-height:1.85;color:#415a6b;margin-bottom:24px}
+.wi-notice strong{color:var(--ink);white-space:nowrap}
+.wi-grid{display:grid;grid-template-columns:minmax(295px,375px) minmax(0,1fr);align-items:start;gap:18px}
+.wi-panel{border:1px solid var(--line);border-radius:15px;background:white;padding:24px;min-width:0;box-shadow:0 5px 17px rgba(19,45,68,.035)}
+.wi-panel h2{font-size:19px;line-height:1.45;color:var(--ink);margin:0 0 16px}
+.wi-controls h2:not(:first-child){border-top:1px solid var(--line);padding-top:23px;margin-top:25px}
+.wi-index{color:var(--blue);font-size:13px;margin-right:7px;font-weight:800;vertical-align:middle}
+.wi-label{display:block;font-size:13px;color:#304d65;font-weight:650;margin:15px 0 7px;line-height:1.7}
+.wi-input,.wi-file{display:block;width:100%;max-width:100%;padding:10px 11px;border:1px solid #bed0de;border-radius:8px;background:white;color:var(--ink);font-family:inherit;font-size:14px;min-height:42px}
+.wi-file{padding:10px}
+.wi-range{display:block;width:100%;margin:13px 0;accent-color:var(--blue)}
+.wi-inline{display:flex;align-items:center;gap:9px}
+.wi-inline input{width:17px;height:17px;accent-color:var(--blue)}
+.wi-help{font-size:12px;line-height:1.75;color:#607487;margin:10px 0 13px}
+.wi-row-buttons,.wi-downloads{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.wi-controls button,.wi-viewer button{cursor:pointer;font-family:inherit;font-size:13px;font-weight:650;padding:11px 13px;border-radius:8px;line-height:1.3;border:1px solid #b8cad9}
+.wi-controls button:focus-visible,.wi-viewer button:focus-visible,.wi-external:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.wi-controls button:disabled,.wi-viewer button:disabled{opacity:.45;cursor:not-allowed}
+.wi-secondary{color:var(--blue);background:white}
+.wi-primary{color:white;background:var(--blue);border-color:var(--blue)!important;display:block;width:100%;margin-top:17px;min-height:44px}
+.wi-mode-group{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.wi-mode-group button{padding:11px 6px;font-size:12px}
+.wi-mode-group button.active{color:white;background:var(--blue);border-color:var(--blue)}
+.wi-stats{border:1px solid #e3eaf0;background:#f8fafc;border-radius:10px;padding:12px 13px;font-variant-numeric:tabular-nums}
+.wi-stats p{font-size:13px;line-height:1.8;color:#445d72;margin:0}
+.wi-stats strong{color:var(--ink)}
+.wi-result{padding:13px;background:#eff6fb;border-radius:9px;color:#244b69;font-size:14px;line-height:1.7;font-variant-numeric:tabular-nums;margin-top:13px}
+.wi-view-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.wi-tag{display:inline-block;font-size:10px;letter-spacing:.08em;font-weight:800;color:#406b68;border:1px solid #bfd3cf;background:#f3fbf8;padding:5px 9px;border-radius:40px}
+.wi-stage{width:100%;min-height:300px;border-radius:10px;position:relative;overflow:hidden;background:#f1f5f8;border:1px solid #dce4e8}
+.wi-stage canvas#wi-image{width:100%;height:auto;display:block}
+.wi-stage canvas#wi-overlay{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
+.wi-stage canvas[hidden]{display:none!important}
+.wi-placeholder{min-height:300px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;color:#70859a}
+.wi-placeholder span{font-size:46px;color:#91a7b9}
+.wi-placeholder p{font-size:16px;margin:10px 0 5px;color:#456076}
+.wi-placeholder small{font-size:12px}
+.wi-legend{display:flex;flex-wrap:wrap;gap:14px;margin:13px 0 8px;font-size:12px;color:#536b7c}
+.wi-dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px}
+.wi-dot-blue{background:#2b61ab}.wi-dot-orange{background:#e8a050}.wi-dot-green{background:#3b9e8b}
+.wi-hist{display:block;width:100%;height:120px;background:#fff;border:1px solid #edf1f4;border-radius:8px}
+.wi-status{font-size:12px;color:#566e80;line-height:1.75;background:#f5f8fa;border-radius:8px;padding:10px 12px;margin-top:13px;overflow-wrap:anywhere}
+.wi-downloads{margin:16px 0}
+.wi-table-wrap{overflow:auto;max-height:320px}
+.wi-table-wrap table{border-collapse:collapse;width:100%;min-width:410px;font-size:12px;font-variant-numeric:tabular-nums}
+.wi-table-wrap caption{text-align:left;color:#5b7081;padding:9px 0;font-size:12px}
+.wi-table-wrap th,.wi-table-wrap td{text-align:right;padding:10px;border-bottom:1px solid #e5ebef}
+.wi-table-wrap th:first-child,.wi-table-wrap td:first-child{text-align:left}
+.wi-table-wrap th{background:#f5f8fa;position:sticky;top:0;font-weight:700;color:var(--ink)}
+.wi-refs{margin-top:22px}
+.wi-refs p{font-size:14px;line-height:1.9;color:#4c6579;margin:0 0 11px}
+.wi-refs a{color:var(--blue)}
+.wi-foot{font-size:12px;color:var(--muted);margin:26px 0}
+@media(max-width:990px){.wi-grid{grid-template-columns:1fr}.wi-hero{flex-direction:column;align-items:start}.wi-external{max-width:none}.wi-notice{flex-direction:column;gap:5px}}
+@media(max-width:630px){.wi-panel{padding:17px}.wi-hero h1{font-size:35px}.wi-mode-group{grid-template-columns:1fr 1fr 1fr}.wi-stage,.wi-placeholder{min-height:230px}.wi-breadcrumb{line-height:1.8}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
