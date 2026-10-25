@@ -5,17 +5,17 @@
 <meta name="theme-color" content="#15394d">
 <meta name="description" content="醫技系臨床血液學與鏡檢課專用 Web-WBC Lite：白血球形態學習、100-cell differential count、教師答案比對、錯題回顧。">
 <title>Web-WBC Lite｜醫技系白血球分類鏡檢教學</title>
-<link rel="stylesheet" href="./style.css"><script src="./app.js" defer></script>
+<link rel="stylesheet" href="./style.css"><script src="./app.js" defer></script><script src="./ai.js" defer></script><script src="./ai-compare.js" defer></script>
 </head>
 <body>
 <header class="topbar"><a href="../courses.html">← 課程講義 / Course Materials</a><span>Bioflumen &amp; Xensor Lab · NYCU</span></header>
 <main class="shell">
  <section class="hero">
- <p class="eyebrow">MEDTECH VIRTUAL LAB · EDUCATIONAL v0.1</p>
+ <p class="eyebrow">MEDTECH VIRTUAL LAB · EDUCATIONAL v0.2</p>
  <h1>Web-WBC <em>Lite</em></h1>
  <div class="heroline"><h2>白血球分類與 100-Cell Differential Count</h2><span class="pill">醫技系臨床血液學與鏡檢教學專用</span></div>
  <p class="lede">觀察經專家標註的單一白血球顯微影像，練習五種成熟白血球分類、累計 100 顆細胞並檢查誤判。另提供不需上傳伺服器的血液抹片人工計數模式。</p>
- <p class="notice"><b>教學用途：</b> PBC 是正常周邊血細胞的已裁切資料集，隨機平衡題庫的各類比例不代表病人血液 differential。此網站尚無 AI 自動分類或整張抹片白血球定位功能；不得作為臨床檢驗依據。</p>
+ <p class="notice"><b>教學用途：</b> PBC 是正常周邊血細胞的已裁切資料集，隨機平衡題庫的各類比例不代表病人血液 differential。此網站提供選用的實驗性 kNN AI 比較，但沒有 WBC-NCA 正式分類模型或整張抹片白血球定位功能；不得作為臨床檢驗依據。</p>
  </section>
  <nav class="tabs" aria-label="練習模式">
  <button class="tab active" data-tab="learn" aria-selected="true">01　細胞形態學習</button>
@@ -91,6 +91,6 @@
    <p>PBC peripheral blood cell dataset — Acevedo A, Merino A, Alférez S, et al. <i>Data in Brief</i>, 2020;30:105474. DOI: <a href="https://doi.org/10.1016/j.dib.2020.105474" target="_blank" rel="noopener noreferrer">10.1016/j.dib.2020.105474</a>. 原始資料由 Hospital Clínic de Barcelona 提供，CC BY 4.0。此工具使用 <a href="https://huggingface.co/datasets/nirschl-lab/acevedo_et_al_2020" target="_blank" rel="noopener noreferrer">Nirschl Lab / MicroBench 整理版本</a>，並另引用 <a href="https://arxiv.org/abs/2407.01791" target="_blank" rel="noopener noreferrer">MicroBench</a>。圖片依來源授權標示歸屬。</p>
    <p>五類白血球：Neutrophil、Lymphocyte、Monocyte、Eosinophil、Basophil。PBC 另有 Immature Granulocyte、Erythroblast、Platelet，此版題目僅挑選五類成熟 WBC。完整血液分類應依臨床實驗室 SOP 對未成熟細胞、NRBC、異常細胞等另行處理。</p>
  </section>
- <footer>Web-WBC Lite v0.1 · NYCU Medical Laboratory Science Teaching · <a href="https://github.com/JimHaoCh/JimHaoCh.github.io/tree/main/web-wbc-lite">GitHub Source</a></footer>
+ <footer>Web-WBC Lite v0.2 · NYCU Medical Laboratory Science Teaching · <a href="https://github.com/JimHaoCh/JimHaoCh.github.io/tree/main/web-wbc-lite">GitHub Source</a></footer>
 </main>
 </body></html>
