@@ -62,6 +62,7 @@
     s.selection=null;s.drag=false;s.start=null;training.image="none";scale.value="";resetNotebook();
     resetResults();bc.clearRect(0,0,canvas.width,canvas.height);
     oc.clearRect(0,0,overlay.width,overlay.height);
+    canvas.width=overlay.width=1;canvas.height=overlay.height=1;
     meta.textContent="尚未讀入影像。可先使用合成示範圖。";
     stats.textContent="選取影像後顯示 ROI 統計。";
     setLoaded(false);drawHistogram();chooseLesson();announce("已清除影像。");
@@ -342,18 +343,22 @@
     if(training.records.length>=50){announce("此分頁紀錄已達 50 筆上限，請匯出並清除後再記錄。");return;}
     const um=validScale(),line=lineLengthOriginal(),st=s.selection?.type==="line"?null:roiStats();
     let type,result,unit,details;
+    const rectangle = st?.b;
+    const rectLocation = rectangle ?
+      "roi_original_px="+[rectangle.x*factorX(),rectangle.y*factorY(),rectangle.x2*factorX(),rectangle.y2*factorY()].map(v=>v.toFixed(2)).join(":") : "";
     if(lesson.value==="intensity" && training.target && training.background){
       type="target-background gray";result=training.target.mean-training.background.mean;unit="gray (0-255)";
-      details="target="+training.target.mean.toFixed(3)+";background="+training.background.mean.toFixed(3);
+      details="target="+training.target.mean.toFixed(3)+";background="+training.background.mean.toFixed(3)+";target_work_roi="+training.target.region+";background_work_roi="+training.background.region;
     }else if(line!==null){
       type="line length";result=um===null?line:line*um;unit=um===null?"original px":"um";
-      details="line original px="+line.toFixed(3);
+      const a=s.selection;
+      details="line original px="+line.toFixed(3)+";endpoints_original_px="+[a.x1*factorX(),a.y1*factorY(),a.x2*factorX(),a.y2*factorY()].map(v=>v.toFixed(2)).join(":");
     }else if(s.analyzed){
       type="connected component count";result=s.components.length;unit="objects";
-      details="threshold="+threshold.value+";polarity="+polarity.value+";min original px2="+minArea.value;
+      details="threshold="+threshold.value+";polarity="+polarity.value+";min original px2="+minArea.value+";"+rectLocation;
     }else{
       type="ROI mean gray";result=st.mean;unit="gray (0-255)";
-      details="ROI area original px2="+(st.n*factorX()*factorY()).toFixed(3);
+      details="ROI area original px2="+(st.n*factorX()*factorY()).toFixed(3)+";"+rectLocation;
     }
     training.records.push({number:training.records.length+1,type,result,unit,calibration:um,reviewed:reviewed.checked,source:training.image,details});
     const tr=document.createElement("tr");
