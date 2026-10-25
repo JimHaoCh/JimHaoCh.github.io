@@ -117,9 +117,9 @@ function captureDemo(){
 async function runAnalysis(demo){
   if(running)return;busy(true);csvBtn.disabled=true;lastResult=null;progress(1);
   try{
-    if(demo&&!$("scale").value)$("scale").value="0.5";
+    // Synthetic demo calibration is passed only to the worker; never modifies the user field.
     status(demo?"建立合成運動測試影片…":"解析手機影片…");
-    const payload=demo?captureDemo():await captureUploadedVideo(),params=getParams();progress(65);
+    const payload=demo?captureDemo():await captureUploadedVideo(),params=getParams();if(demo)params.scale=0.5;progress(65);
     worker??=new Worker("./worker.js");
     const result=await new Promise((resolve,reject)=>{
       const timeout=setTimeout(()=>{worker.terminate();worker=null;reject(new Error("分析逾時；請使用較短影片或改用電腦。"));},180000);
