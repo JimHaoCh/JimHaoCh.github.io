@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123749">
+<meta name="description" content="陽明交大醫技系鏡檢教學專用 Web-Hemocytometer：Neubauer 計數盤細胞圈選、人工修正與濃度換算。">
+<title>Web-Hemocytometer｜醫技系血球計數盤互動教學</title>
+<link rel="stylesheet" href="./style.css?v=1">
+<script type="module" src="./app.js?v=1"></script>
+</head>
+<body>
+<header class="nav"><a href="../courses.html">← 線上工具 / Online Tools</a><span>NYCU · MEDTECH VIRTUAL LAB</span></header>
+<main>
+<section class="hero">
+  <div class="eyebrow">MEDICAL LABORATORY SCIENCE · V0.1 PROTOTYPE</div>
+  <h1>Web-<em>Hemocytometer</em></h1>
+  <p class="lead">血球計數盤互動分析 <span>／ Neubauer Chamber Counting Lab</span></p>
+  <p class="intro">醫技系鏡檢課專用：上傳計數盤顯微鏡照片，框選指定大格，利用瀏覽器內的 Python/OpenCV 圈出候選細胞，手動修正後計算 cells/µL 與 cells/mL。支援 RBC、WBC、細胞培養計數練習。</p>
+  <div class="warning"><strong>教學驗證版本：</strong>自動辨識可能受格線、細胞重疊、染色和影像品質影響。所有候選細胞均須人工確認；僅作課堂練習及方法展示，不提供臨床檢驗或診斷結果。</div>
+</section>
+<div class="main-grid">
+  <section class="panel left">
+    <div class="panel-heading"><span class="step">01</span><h2>影像與計數設定</h2></div>
+    <label class="field" for="photo">顯微鏡照片 / Microscopy photo</label>
+    <input id="photo" type="file" accept="image/*">
+    <button id="demo" class="btn secondary full" type="button">載入合成計數盤範例（可直接試用）</button>
+    <div class="field"><label for="preset">計數盤模式</label>
+      <select id="preset">
+        <option value="culture">Cell Culture｜1 個大格（1 mm²）</option>
+        <option value="wbc">WBC｜1 個角落大格（1 mm²）</option>
+        <option value="rbc">RBC｜中央 5 個中格（合計 0.20 mm²）</option>
+      </select>
+    </div>
+    <p id="presetHelp" class="help">框選完整一個 1 × 1 mm 大格；可以逐張照片加入多個計數區。</p>
+    <div class="two">
+      <div class="field"><label for="dilution">稀釋倍率 / Dilution factor</label><input id="dilution" type="number" min=".01" step=".01" value="2"></div>
+      <div class="field"><label for="depth">計數室深度 / Depth (mm)</label><input id="depth" type="number" min=".001" step=".001" value=".1"></div>
+    </div>
+    <details>
+      <summary>影像辨識參數 / Detection settings</summary>
+      <div class="two settings">
+        <div class="field"><label for="polarity">目標與背景</label><select id="polarity"><option value="dark">深色細胞・明亮背景</option><option value="light">明亮細胞・深色背景</option></select></div>
+        <div class="field"><label for="threshold">局部閾值偏移</label><input id="threshold" type="number" min="-20" max="30" step="1" value="7"></div>
+        <div class="field"><label for="minArea">最小細胞面積 (px²)</label><input id="minArea" type="number" min="2" max="5000" step="1" value="18"></div>
+        <div class="field"><label for="maxArea">最大細胞面積 (px²)</label><input id="maxArea" type="number" min="3" max="10000" step="1" value="1500"></div>
+      </div>
+      <p class="help">線條抑制與圓形度篩選屬於初版影像處理策略；不同顯微鏡照片需調整參數。原始圖片僅在裝置上處理。</p>
+    </details>
+    <div class="panel-heading small-top"><span class="step">02</span><h2>框選、辨識及修正</h2></div>
+    <p class="help">先拖曳框選完整的 <strong>1 × 1 mm 大格</strong>。RBC 模式會自動顯示中央 5 × 5 區域，只計入四角和中央的五個中格。</p>
+    <div class="tools">
+      <button id="roiTool" type="button" class="tool active">▢ 框選計數區</button>
+      <button id="addTool" type="button" class="tool">＋ 增加細胞</button>
+      <button id="removeTool" type="button" class="tool">－ 刪除細胞</button>
+    </div>
+    <div class="actions">
+      <button id="detect" class="btn primary" type="button" disabled>自動圈選候選細胞</button>
+      <button id="clearPoints" class="btn secondary" type="button" disabled>清空候選標記</button>
+    </div>
+    <div class="status" id="status" aria-live="polite">請上傳照片，或開啟合成範例。</div>
+    <progress id="progress" value="0" max="100" hidden></progress>
+    <div class="legend"><span class="swatch green"></span> 計入　<span class="swatch red"></span> 排除／不計入　<span class="swatch yellow"></span> 目前指定區域</div>
+  </section>
+  <section class="panel right">
+    <div class="panel-heading"><span class="step">03</span><h2>計數盤與人工校對</h2></div>
+    <div class="viewer"><canvas id="imageCanvas" width="900" height="600" aria-label="可互動的血球計數盤照片與細胞標記"></canvas></div>
+    <div class="viewer-help">手機操作：在「框選計數區」模式中，按住拖曳畫出大格；分析後可切換「增加細胞」或「刪除細胞」以觸控修正。</div>
+    <div class="metrics">
+      <div class="metric"><span>本視野納入細胞</span><strong id="fieldCount">—</strong></div>
+      <div class="metric"><span>排除或非目標區域</span><strong id="excludedCount">—</strong></div>
+      <div class="metric"><span>本視野計數面積</span><strong id="fieldArea">—</strong></div>
+    </div>
+    <div class="actions">
+      <button id="saveField" class="btn primary" disabled type="button">將這一格加入總計</button>
+      <button id="exportPNG" class="btn secondary" disabled type="button">下載標記影像 PNG</button>
+    </div>
+  </section>
+</div>
+<section class="panel summary-panel">
+  <div class="panel-heading"><span class="step">04</span><h2>多視野統計與細胞濃度</h2></div>
+  <p class="help">同一個檢體可連續加入不同照片中的計數格。WBC 典型練習需計數四個角落大格；RBC 每一張可框選中央大格，程式自動選出五個中格。請避免重複拍攝同一區域。</p>
+  <div class="summary-numbers">
+    <div><span>累計細胞數</span><strong id="totalCount">0</strong></div>
+    <div><span>計數視野</span><strong id="totalFields">0</strong></div>
+    <div><span>Cells/µL</span><strong id="cellsUL">—</strong></div>
+    <div><span>Cells/mL</span><strong id="cellsML">—</strong></div>
+  </div>
+  <p id="formula" class="formula">濃度公式：總細胞數 × 稀釋倍率 ÷（總計數面積 × 計數室深度）。</p>
+  <div class="table-wrap"><table><thead><tr><th>視野</th><th>細胞數</th><th>面積 (mm²)</th><th>來源</th></tr></thead><tbody id="fieldRows"><tr><td colspan="4">尚未加入計數視野</td></tr></tbody></table></div>
+  <div class="actions">
+    <button id="undoField" class="btn secondary" disabled type="button">移除最後一個視野</button>
+    <button id="clearSession" class="btn secondary" disabled type="button">清空本次統計</button>
+    <button id="exportCSV" class="btn primary" disabled type="button">下載統計 CSV</button>
+  </div>
+</section>
+<section class="info-grid">
+  <article class="panel"><h2>Neubauer 計數規則</h2><p>計數線上細胞採 <strong>上、左納入；下、右排除</strong>，避免在相鄰計數區重複計數。圖片中會以綠色標記納入的細胞，紅色標記排除的候選物件。</p><p>標準 Improved Neubauer 計數室深度為 0.1 mm。WBC 計四個 1 mm² 大格共 4 mm²；RBC 計中央五個 0.04 mm² 中格共 0.20 mm²。</p></article>
+  <article class="panel"><h2>教學限制與下一版</h2><p>本版以手動選取格線確保計數面積，以 OpenCV 偵測細胞候選物件。細胞重疊、斷裂格線、非圓形細胞和 Trypan Blue 活死細胞分類尚未完成準確度驗證。</p><p>預計下一版評估自動格線偵測、群聚細胞分割、Trypan Blue Live/Dead 判讀和教師評分模式。</p></article>
+</section>
+<footer>Web-Hemocytometer v0.1 · NYCU Medical Laboratory Science · <a href="https://github.com/JimHaoCh/JimHaoCh.github.io/tree/main/web-hemocytometer">GitHub source</a></footer>
+</main>
+</body>
+</html>
