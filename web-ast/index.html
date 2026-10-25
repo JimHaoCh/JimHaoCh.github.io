@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#103147"><meta name="description" content="陽明交通大學醫技系臨床微生物學實驗專用 Web-AST Lite，Kirby–Bauer 抑菌圈量測與人工修正教學工具。">
+<title>Web-AST Lite｜醫技系臨床微生物學實驗教學</title>
+<link rel="stylesheet" href="./style.css">
+<script src="./app.js" type="module"></script>
+</head>
+<body>
+<header class="site-header"><a href="../courses.html">← 課程講義 / Course Materials</a><span>NYCU · Medical Laboratory Science</span></header>
+<main class="layout">
+  <section class="hero">
+    <div class="eyebrow">MEDTECH VIRTUAL LAB / EXPERIMENTAL BUILD 0.1</div>
+    <h1>Web-AST <em>Lite</em></h1>
+    <p class="subtitle">抗生素感受性試驗｜Disk Diffusion Teaching Lab</p>
+    <p>專供醫學檢驗暨生物技術學系臨床微生物學實驗教學。上傳 Kirby–Bauer 培養皿照片，自動偵測紙錠與抑菌圈候選邊界，完成毫米量測與人工修正。所有照片均在本機瀏覽器內處理。</p>
+    <div class="warning"><strong>教學用途／未經驗證</strong>　抑菌圈邊界易受拍攝角度、陰影、重疊及菌落影響。請人工核對每個量測值。本版只輸出直徑，不自動產生 CLSI／EUCAST S／I／R 臨床解釋。</div>
+  </section>
+  <div class="columns">
+    <section class="panel controls" aria-labelledby="input-heading">
+      <h2 id="input-heading"><span class="step">01</span> 上傳照片與校正</h2>
+      <label class="field-label" for="file">Kirby–Bauer 培養皿照片</label>
+      <input id="file" type="file" accept="image/png,image/jpeg,image/webp,image/heic,image/heif,image/*">
+      <div class="actions"><button id="demo" class="quiet" type="button">開啟合成示範平板</button><button id="detect" class="primary" type="button" disabled>自動量測抑菌圈</button></div>
+      <p class="help">建議由正上方拍攝，平板完整入鏡，減少反光；iPhone HEIC 的支援依瀏覽器版本而異。若自動辨識失敗，仍可手動新增、移動紙錠或調整邊界。</p>
+      <div class="formgrid">
+        <label>紙錠實際直徑 <small>mm（常見為 6 mm）</small><input id="disk-mm" type="number" min="1" max="30" step="0.1" value="6"></label>
+        <label>手動比例校正 <small>pixels/mm，留空則由紙錠估算</small><input id="pxmm" type="number" min="0.1" step="0.01" placeholder="依紙錠自動計算"></label>
+        <label>紙錠偵測門檻 <small>亮度差／標準化後像素</small><input id="threshold" type="range" min="14" max="55" step="1" value="29"><output id="threshold-num">29</output></label>
+      </div>
+      <div class="status" id="status" role="status" aria-live="polite">請上傳平板照片，或先開啟合成示範平板。</div>
+      <h2><span class="step">02</span> 紙錠與抑菌圈修正</h2>
+      <div class="toolbar" role="group" aria-label="編輯工具">
+        <button type="button" data-mode="select" aria-pressed="true" class="selected">選取／拖曳</button>
+        <button type="button" data-mode="add" aria-pressed="false">新增紙錠</button>
+        <button type="button" data-mode="delete" aria-pressed="false">刪除紙錠</button>
+      </div>
+      <p class="help">選取模式：點選紙錠後可拖曳中心；拖曳抑菌圈邊界可調整半徑。觸控手機也可操作。新加入紙錠需人工確認。</p>
+      <div class="edit-fields">
+        <label>選取紙錠編號／名稱 <input id="disk-label" type="text" maxlength="26" placeholder="先選取紙錠" disabled></label>
+        <label>紙錠影像直徑 <small>pixels</small><input id="disk-px" type="number" min="4" max="160" step="0.5" disabled></label>
+        <label>抑菌圈直徑 <small>mm（未確認時為空白）</small><input id="zone-mm" type="number" min="0" max="90" step="0.1" disabled></label>
+      </div>
+      <div class="actions"><button id="clear-zone" class="quiet" disabled type="button">清除選取抑菌圈</button><button id="reset-detection" class="quiet" disabled type="button">重新偵測</button></div>
+    </section>
+    <section class="panel viewer-panel" aria-labelledby="viewer-heading">
+      <div class="viewer-head"><h2 id="viewer-heading"><span class="step">03</span> 分析視野</h2><span class="local">LOCAL ONLY</span></div>
+      <div class="image-stage" id="stage"><canvas id="image" width="880" height="620" aria-label="培養皿分析影像"></canvas><canvas id="overlay" width="880" height="620" aria-label="紙錠及抑菌圈互動標記"></canvas></div>
+      <div class="legend"><span><i class="dot green"></i>偵測紙錠</span><span><i class="dot orange"></i>自動抑菌圈候選</span><span><i class="dot blue"></i>人工確認</span></div>
+      <div class="summary" id="summary"><div class="summary-empty">讀取影像後顯示紙錠數量、校正比例及量測結果。</div></div>
+      <div class="table-wrap"><table aria-label="抑菌圈量測結果"><thead><tr><th>紙錠</th><th>直徑 (mm)</th><th>狀態</th></tr></thead><tbody id="measurements"><tr><td colspan="3">尚無量測結果</td></tr></tbody></table></div>
+      <div class="actions"><button id="csv" class="quiet" type="button" disabled>匯出 CSV</button><button id="png" class="quiet" type="button" disabled>下載標註圖片</button><button id="demo-answer" class="quiet" type="button" disabled>查看示範參考值</button></div>
+      <p id="reference" class="help" hidden></p>
+    </section>
+  </div>
+  <section class="bottom">
+    <article class="panel"><h2>量測流程 / Workflow</h2><ol><li>辨識圓形抗生素紙錠（影像對比及候選連通區）。</li><li>沿紙錠周圍進行環狀亮度分析，估計菌苔與透明抑菌區的交界。</li><li>以已知紙錠直徑或校正比例換算 mm，逐個檢查並手動修正。</li></ol></article>
+    <article class="panel"><h2>教學判讀 / Interpretation</h2><p>抑菌圈直徑需包含紙錠本身。S／I／R 依菌種、抗生素、紙錠含量及 CLSI／EUCAST 版本判定；本版先練習量測和誤差來源。遇到雙層抑菌圈、菌落侵入及非典型邊界，應依對應標準進行人工判讀。</p><p><a href="https://www.eucast.org/bacteria/methodology-and-instructions/disk-diffusion-and-quality-control/" target="_blank" rel="noopener noreferrer">EUCAST Disk Diffusion / Reading Guide</a></p></article>
+  </section>
+  <footer>Web-AST Lite · NYCU MLS Teaching Prototype · Original browser-side image analysis. Methods informed by ASTimp / AntibiogramJ publications; no third-party source code copied.</footer>
+</main>
+</body>
+</html>
