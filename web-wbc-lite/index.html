@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#15394d">
+<meta name="description" content="醫技系臨床血液學與鏡檢課專用 Web-WBC Lite：白血球形態學習、100-cell differential count、教師答案比對、錯題回顧。">
+<title>Web-WBC Lite｜醫技系白血球分類鏡檢教學</title>
+<link rel="stylesheet" href="./style.css"><script src="./app.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a href="../courses.html">← 課程講義 / Course Materials</a><span>Bioflumen &amp; Xensor Lab · NYCU</span></header>
+<main class="shell">
+ <section class="hero">
+ <p class="eyebrow">MEDTECH VIRTUAL LAB · EDUCATIONAL v0.1</p>
+ <h1>Web-WBC <em>Lite</em></h1>
+ <div class="heroline"><h2>白血球分類與 100-Cell Differential Count</h2><span class="pill">醫技系臨床血液學與鏡檢教學專用</span></div>
+ <p class="lede">觀察經專家標註的單一白血球顯微影像，練習五種成熟白血球分類、累計 100 顆細胞並檢查誤判。另提供不需上傳伺服器的血液抹片人工計數模式。</p>
+ <p class="notice"><b>教學用途：</b> PBC 是正常周邊血細胞的已裁切資料集，隨機平衡題庫的各類比例不代表病人血液 differential。此網站尚無 AI 自動分類或整張抹片白血球定位功能；不得作為臨床檢驗依據。</p>
+ </section>
+ <nav class="tabs" aria-label="練習模式">
+ <button class="tab active" data-tab="learn" aria-selected="true">01　細胞形態學習</button>
+ <button class="tab" data-tab="quiz" aria-selected="false">02　Differential 練習</button>
+ <button class="tab" data-tab="review" aria-selected="false">03　抹片手動計數</button>
+ </nav>
+ <section id="learnPanel" class="panel tab-panel">
+  <div class="heading"><div><h3>細胞形態辨識 <small>Morphology Learning</small></h3><p>依照細胞核、細胞質與顆粒特徵學習，再觀察 PBC 專家標註影像。</p></div><button id="loadLearning" class="secondary">載入 PBC 真實影像</button></div>
+  <div class="learn-layout">
+    <div class="morph-image"><img id="learnImage" alt="血球形態示意圖" loading="eager"><div id="learnImageNote" class="image-note">示意圖 · Schematic illustration</div></div>
+    <div class="morph-info">
+      <div id="learnTypes" class="type-switch" role="group" aria-label="白血球類別"></div>
+      <h4 id="learnTitle">Neutrophil · 嗜中性球</h4>
+      <p id="learnFeatures"></p>
+      <p id="learnTips" class="tip"></p>
+      <p class="caption" id="learnSource">預設顯示程式繪製之形態示意圖；若成功載入 PBC，才顯示真實顯微影像。</p>
+    </div>
+  </div>
+ </section>
+ <section id="quizPanel" class="panel tab-panel hidden">
+  <div class="heading"><div><h3>100-Cell Differential <small>Student Practice</small></h3><p>每張影像判讀一種白血球；系統紀錄你的選擇並和專家標籤比較。</p></div><span class="chip" id="quizSourceLabel">尚未開始</span></div>
+  <div class="setup" id="quizSetup">
+    <label>題數 / Questions
+      <select id="quizLength"><option value="20">20 題（練習）</option><option value="50">50 題（練習）</option><option value="100" selected>100 題（標準模式）</option></select>
+    </label>
+    <div class="actions"><button class="primary" id="startReal">載入 PBC 真實鏡檢題庫</button><button class="secondary" id="startDemo">使用形態示意圖練習</button></div>
+    <p class="tip">PBC 模式需連線至公開 Hugging Face Dataset Viewer API，影像由該資料來源提供；若外部服務無法連線，可使用內建示意題庫練習操作。</p>
+  </div>
+  <div id="quizGame" class="hidden">
+   <div class="progress-line"><strong id="questionNumber">1 / 100</strong><span id="correctSoFar">目前正確率 —</span></div>
+   <progress id="quizProgress" max="100" value="0"></progress>
+   <div class="quiz-layout">
+      <div class="question-image"><img id="questionImage" alt="待分類的單一白血球顯微影像"><div class="image-note" id="questionSource">資料來源</div></div>
+      <div class="question-side">
+       <p class="input-label">請判斷這顆白血球：</p>
+       <div id="answerButtons" class="answers"></div>
+       <div id="feedback" role="status" aria-live="polite" class="feedback hidden"></div>
+       <div class="actions"><button id="nextQuestion" class="primary hidden">下一題</button><button id="skipBadImage" class="secondary hidden">影像載入失敗：跳過此題</button></div>
+       <p class="tip">鍵盤 1–5 可快速作答。題庫中不同類別的數量刻意平衡，方便練習辨識，不作為健康人群參考比例。</p>
+      </div>
+    </div>
+  </div>
+  <div id="quizSummary" class="hidden">
+    <h3>分類結果與錯題回顧</h3>
+    <div id="summaryStats" class="summary-grid"></div>
+    <div id="quizDistribution"></div>
+    <h4>混淆矩陣（列：標準答案；欄：學生判斷）</h4>
+    <div id="confusionTable" class="table-scroll"></div>
+    <h4>需要複習的細胞</h4>
+    <div id="mistakeList" class="mistakes"></div>
+    <div class="actions"><button id="downloadQuiz" class="primary">下載作答記錄 CSV</button><button id="retryQuiz" class="secondary">重新練習</button></div>
+  </div>
+ </section>
+ <section id="reviewPanel" class="panel tab-panel hidden">
+  <div class="heading"><div><h3>整張抹片人工計數 <small>Manual Image Review</small></h3><p>選擇本機血液抹片照片，點選細胞中心並指定類別。此模式沒有教師標準答案。</p></div></div>
+  <div class="manual-layout">
+   <div>
+     <label class="field">上傳血液抹片照片 / Blood smear image <input id="smearFile" type="file" accept="image/*"></label>
+     <div class="image-canvas"><canvas id="smearCanvas" width="700" height="460" aria-label="血液抹片圖片與人工標記"></canvas></div>
+     <p class="tip">先選擇要標記的細胞類型，再點選照片。最多可記錄 100 顆；點錯可「復原上一顆」。檢體照片僅保留於目前瀏覽器記憶體，重新整理即清除。</p>
+   </div>
+   <div>
+      <p class="input-label">目前標記類型</p><div id="manualTypes" class="answers"></div>
+      <div id="manualTotal" class="counter-total">0 / 100</div>
+      <div id="manualCounts" class="manual-counts"></div>
+      <div class="actions"><button id="manualUndo" class="secondary">復原上一顆</button><button id="manualReset" class="secondary">重設計數</button><button id="downloadManual" class="secondary">下載 CSV</button></div>
+   </div>
+  </div>
+ </section>
+ <div id="status" role="status" aria-live="polite" class="status">網站已就緒。選擇學習、題庫或人工計數模式。</div>
+ <section class="panel reference">
+   <h3>資料來源與使用限制</h3>
+   <p>PBC peripheral blood cell dataset — Acevedo A, Merino A, Alférez S, et al. <i>Data in Brief</i>, 2020;30:105474. DOI: <a href="https://doi.org/10.1016/j.dib.2020.105474" target="_blank" rel="noopener noreferrer">10.1016/j.dib.2020.105474</a>. 原始資料由 Hospital Clínic de Barcelona 提供，CC BY 4.0。此工具使用 <a href="https://huggingface.co/datasets/nirschl-lab/acevedo_et_al_2020" target="_blank" rel="noopener noreferrer">Nirschl Lab / MicroBench 整理版本</a>，並另引用 <a href="https://arxiv.org/abs/2407.01791" target="_blank" rel="noopener noreferrer">MicroBench</a>。圖片依來源授權標示歸屬。</p>
+   <p>五類白血球：Neutrophil、Lymphocyte、Monocyte、Eosinophil、Basophil。PBC 另有 Immature Granulocyte、Erythroblast、Platelet，此版題目僅挑選五類成熟 WBC。完整血液分類應依臨床實驗室 SOP 對未成熟細胞、NRBC、異常細胞等另行處理。</p>
+ </section>
+ <footer>Web-WBC Lite v0.1 · NYCU Medical Laboratory Science Teaching · <a href="https://github.com/JimHaoCh/JimHaoCh.github.io/tree/main/web-wbc-lite">GitHub Source</a></footer>
+</main>
+</body></html>
