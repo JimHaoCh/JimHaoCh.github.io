@@ -2,7 +2,7 @@
 layout: null
 permalink: /courses.html
 title: 線上工具 Online Tools
-description: 陽明交通大學醫技系互動式線上教學工具，包含精子活動力、菌落計數、白血球分類、血球計數盤與抗生素抑菌圈分析。
+description: 陽明交通大學醫技系互動式線上教學工具與外部教學資源，包含鏡檢、菌落計數、血液學、抑菌圈與 ImageJ.JS 影像分析。
 ---
 {% assign tools = site.data.online_tools %}
 <!doctype html>
@@ -21,7 +21,7 @@ description: 陽明交通大學醫技系互動式線上教學工具，包含精�
         <p class="eyebrow">MEDTECH VIRTUAL LAB</p>
         <h1>線上工具<span lang="en">Online Tools</span></h1>
       </div>
-      <p class="tools-intro">醫技系專用互動式教學工具，涵蓋鏡檢、微生物、血液學與細胞計數。使用手機或電腦，直接開啟工具進行影像判讀、實驗數據分析與課堂練習。</p>
+      <p class="tools-intro">醫技系互動式教學工具與公開教學資源，涵蓋鏡檢、微生物、血液學、細胞計數及影像處理。本站自製工具可直接開啟操作；第三方資源另設來源說明與外部網站連結。</p>
       <section class="tools-grid" aria-label="線上教學工具 / Online learning tools">
         {% for tool in tools %}
         <article class="tool-entry">
@@ -36,7 +36,7 @@ description: 陽明交通大學醫技系互動式線上教學工具，包含精�
         </article>
         {% endfor %}
       </section>
-      <p class="tools-note">※ 本系列目前為教學與方法展示原型。自動辨識結果須經人工確認，不作為臨床檢驗或診斷依據。</p>
+      <p class="tools-note">※ 本站自製分析工具屬教學與方法展示原型，自動辨識結果須人工確認，不作為臨床檢驗或診斷依據。ImageJ.JS 為第三方 ImJoy 團隊提供的外部服務；本站僅提供介紹與連結，請留意其資料使用規定。</p>
     </div>
   </main>
   {% include footer.html %}
