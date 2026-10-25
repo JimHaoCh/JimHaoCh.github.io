@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153b58">
+  <meta name="description" content="Web-CFU Lite｜陽明交通大學醫技系臨床微生物學實驗專用：培養皿菌落影像自動計數、人工校正及 CFU/mL 計算。">
+  <title>Web-CFU Lite｜醫技系臨床微生物實驗教學</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./detector.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../courses.html">← 課程講義 / Course Materials</a>
+    <span>Bioflumen &amp; Xensor Lab · NYCU</span>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">MEDTECH VIRTUAL LAB · EXPERIMENTAL 0.1</p>
+      <div class="hero-head">
+        <div><h1>Web-CFU <em>Lite</em></h1><h2>菌落計數與 CFU/mL 教學平台</h2></div>
+        <span class="pill">醫技系臨床微生物學實驗專用</span>
+      </div>
+      <p class="lede">以手機拍攝培養皿照片，自動標示候選菌落、手動修正數量，並練習定量培養的稀釋倍率換算。全部影像運算於瀏覽器本機進行。</p>
+      <p class="caution"><strong>教學驗證原型：</strong>辨識結果可能受到光照、菌落重疊、培養基與雜質影響。請先檢查標記結果並依實驗室 SOP 判讀；本工具不作為臨床報告或正式檢驗數據依據。</p>
+    </section>
+
+    <div class="workspace">
+      <section class="panel controls" aria-label="影像與辨識設定">
+        <h3><span class="num">01</span> 影像輸入 <small>Image input</small></h3>
+        <label class="field-label" for="photo">培養皿照片（JPG、PNG 等）</label>
+        <input id="photo" type="file" accept="image/*">
+        <p class="tip">請盡量由正上方拍攝，避免強烈反光、陰影與斜角。HEIC 是否支援取決於裝置瀏覽器。</p>
+        <button type="button" class="subtle wide" id="demo">載入合成菌落示範圖（72 個）</button>
+
+        <hr>
+        <h3><span class="num">02</span> 自動辨識 <small>Detection settings</small></h3>
+        <label class="input-label" for="contrastMode">菌落相對培養基的明暗</label>
+        <select id="contrastMode">
+          <option value="dark">深色菌落／亮背景（預設）</option>
+          <option value="light">淺色菌落／暗背景</option>
+        </select>
+        <label class="input-label" for="sensitivity">辨識靈敏度 <output id="sensitivityValue">18</output></label>
+        <input id="sensitivity" type="range" min="6" max="46" value="18" step="1">
+        <p class="tip">數字越小，偵測到的局部差異越多，也可能增加雜點。</p>
+        <label class="input-label" for="minArea">最小菌落面積 <output id="minAreaValue">15</output> px²</label>
+        <input id="minArea" type="range" min="5" max="120" value="15" step="1">
+        <label class="input-label" for="maxArea">最大菌落面積（px²）</label>
+        <input id="maxArea" type="number" min="121" max="20000" value="2500" step="100">
+        <button id="detect" class="primary wide" type="button" disabled>開始自動圈選菌落</button>
+        <p class="tip">演算法使用局部亮度差、二值化及連通區域辨識。黏連菌落需人工分開計數。</p>
+
+        <hr>
+        <h3><span class="num">03</span> 人工修正 <small>Manual review</small></h3>
+        <div class="tool-grid" role="group" aria-label="影像工具">
+          <button type="button" class="tool active" data-mode="inspect" aria-pressed="true">檢視</button>
+          <button type="button" class="tool" data-mode="plate" aria-pressed="false">調整培養皿</button>
+          <button type="button" class="tool" data-mode="add" aria-pressed="false">＋ 新增菌落</button>
+          <button type="button" class="tool" data-mode="remove" aria-pressed="false">－ 刪除標記</button>
+        </div>
+        <p class="tip" id="toolHint">請先載入照片。綠色標記為手動新增的菌落。</p>
+        <div class="actions">
+          <button type="button" class="subtle" id="undo" disabled>復原上一步</button>
+          <label class="checkbox"><input id="showIds" type="checkbox"> 顯示編號</label>
+        </div>
+      </section>
+
+      <section class="panel preview-panel" aria-label="分析結果">
+        <div class="preview-header">
+          <h3><span class="num">04</span> 培養皿影像 <small>Colony map</small></h3>
+          <span class="pill thin">LOCAL · NO IMAGE UPLOAD</span>
+        </div>
+        <div class="stage">
+          <canvas id="plateCanvas" width="800" height="600" aria-label="培養皿照片與菌落標記圖"></canvas>
+          <div class="stage-label">青色＝自動偵測　綠色＝人工新增</div>
+        </div>
+        <div role="status" aria-live="polite" id="status" class="status">請上傳培養皿照片，或先按「載入合成菌落示範圖」。</div>
+        <div class="stat-grid">
+          <div class="stat"><small>目前總數</small><strong id="totalCount">—</strong><span>colonies</span></div>
+          <div class="stat"><small>自動辨識</small><strong id="autoCount">—</strong><span>detections</span></div>
+          <div class="stat"><small>手動修正</small><strong id="correctionCount">—</strong><span>net change</span></div>
+        </div>
+        <div class="actions">
+          <button id="exportPng" class="subtle" type="button" disabled>匯出標記照片 PNG</button>
+          <button id="exportCsv" class="subtle" type="button" disabled>匯出菌落座標 CSV</button>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel calculator" id="calculator">
+      <div class="calc-heading">
+        <div><p class="eyebrow">COLONY FORMING UNITS</p><h3>05　定量培養與 CFU/mL 計算</h3></div>
+        <p>適用於具已知稀釋倍數及接種體積的定量平板。</p>
+      </div>
+      <div class="calc-grid">
+        <label>培養方式 <small>Culture method</small>
+          <select id="cultureMethod">
+            <option value="">請先選擇培養方式</option>
+            <option value="quantitative">定量平板（塗布／傾注培養）</option>
+            <option value="streak">四區劃線／分離培養</option>
+          </select>
+        </label>
+        <label>樣品稀釋度 <small>10 的指數，例如 −4 代表 10⁻⁴</small>
+          <input id="dilution" type="number" value="-4" min="-15" max="0" step="1">
+        </label>
+        <label>接種體積 <small>Plated volume · mL</small>
+          <input id="volume" type="number" value="0.1" min="0.0001" max="10" step="any">
+        </label>
+        <div class="cfu-output">
+          <small>計算結果 / Colony forming units</small>
+          <strong id="cfuValue">—</strong>
+          <span id="cfuNote">請載入影像、完成菌落計數並選擇定量培養。</span>
+        </div>
+      </div>
+      <p class="formula">CFU/mL = 菌落數 ÷（接種體積 [mL] × 原樣品稀釋比例）</p>
+      <p class="tip" id="rangeNote">教學常見可計數範圍為每皿 30–300 個菌落；實際標準須依課程指定的方法及 SOP 判斷。四區劃線分離培養不適用此換算。</p>
+    </section>
+
+    <section class="panel footnotes">
+      <div>
+        <h3>教學操作建議</h3>
+        <p>① 載入照片與調整培養皿圓形範圍。② 使用自動辨識並觀察標記。③ 點擊「新增」或「刪除標記」修正重疊菌落和雜點。④ 確認定量培養方法及稀釋條件後計算 CFU/mL。</p>
+      </div>
+      <div>
+        <h3>本版限制</h3>
+        <p>初版採局部亮度差與連通區域計數。影像有強烈反光、色差、菌落黏連、透明菌落、大片菌膜或高密度 TNTC 情況時，可能產生漏檢與重複計數。MCount 等進階演算法留待後續比較驗證。</p>
+      </div>
+    </section>
+    <footer>Web-CFU Lite v0.1 · For NYCU medical laboratory science education · <a href="https://github.com/JimHaoCh/JimHaoCh.github.io/tree/main/web-cfu-lite">GitHub source</a></footer>
+  </main>
+</body>
+</html>
