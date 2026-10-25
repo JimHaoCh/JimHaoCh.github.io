@@ -1,49 +1,68 @@
-# Web-Image Lab v0.2 (original browser-side teaching tool)
+# Web-Image Lab v0.3 — NYCU MLS teaching prototype
 
-Part of the Bioflumen & Xensor Lab teaching resources at `/web-imagej/`.
+Public entry: `https://jimhaoch.github.io/web-imagej/`  
+Local workspace: `https://jimhaoch.github.io/web-imagej/lab.html`
 
-## Architecture and copyright boundary
+## Copyright and integration boundaries
 
-- `index.html`: educational gateway, attribution and links to third-party ImageJ.JS.
-- `lab.html`, `lab.css`, `lab.js`: original first-party teaching workspace written with browser-native Canvas and JavaScript. No imports, runtime CDN, copied ImageJ code, CheerpJ, ImageJ.JS or other third-party analysis libraries.
-- The external `https://ij.imjoy.io/` link opens as a separate page with `rel="noopener noreferrer"` and `referrerpolicy="no-referrer"`. No ImageJ.JS content is embedded in our page.
-- Avoid use of third-party ImageJ logos, screenshots, badges and redistributed bundles pending separately documented permission.
-- If academic-institution production embedding is reconsidered, secure appropriate CheerpJ/ImJoy legal permission and review the exact runtime version/third-party plugin terms **before** deploying it. The available CheerpJ commercial-licence guidance includes academic public projects: https://cheerpj.com/docs/licensing
+This website contains **original, first-party teaching code** in `lab.html`, `lab.css`, `lab.js` and a **separate hyperlink** to `https://ij.imjoy.io/`. There is no copied ImageJ source, CheerpJ runtime, ImJoy plugin, ImageJ.JS bundle, web-embedded ImageJ iframe, copyrighted scientific figure or third-party imaging library in the new workspace.
 
-ImageJ.JS upstream documentation: https://imagej.net/software/imagej-js
-Upstream repository: https://github.com/imjoy-team/imagej.js
-ImJoy paper: https://doi.org/10.1038/s41592-019-0627-0
+- ImageJ.JS is explicitly attributed to the ImJoy Team. The source code and official page are separately linked for reference.
+- External links to ImageJ.JS use `target="_blank"`, `rel="noopener noreferrer"` and `referrerpolicy="no-referrer"`.
+- Any future redistribution or iframe/API embedding of ImageJ.JS, CheerpJ or plugins requires **fresh, version-specific licensing review before publication**. Current licensing reference: https://cheerpj.com/docs/licensing.
+- The original website uses shared headers, analytics-free first-party assets and externally fetched Google Fonts. The local image analysis script makes **no network requests**, and no image data are intentionally uploaded by these new functions. External navigation is a separate action.
+- Independent legal review may still be appropriate before an institutional, commercial or clinical deployment; technical implementation alone does not certify legal compliance.
 
-## Functionality
+Sources: https://imagej.net/software/imagej-js · https://github.com/imjoy-team/imagej.js · https://doi.org/10.1038/s41592-019-0627-0
 
-- PNG, JPEG and WebP images only (as decoded by the browser); maximum input file size 25 MB.
-- Large images downsampled to a maximum working edge of 1280 px. Images over 35 megapixels or 16,000 px per axis rejected after decoding.
-- Rectangle ROI, line length (original pixel units, optional µm/pixel), gray intensity summary, histogram.
-- Bright/dark threshold and eight-connected binary component count, minimum area based on **original** pixel². Results represent connected regions, not validated cells.
-- CSV of metadata and particle centroids; annotated PNG at **working** resolution.
-- Synthetic demonstrator is generated locally with original code; not a real microscopy sample.
-- No image upload endpoint, third-party analysis library, remote model, cookies or local storage. All input is kept in the current browser tab memory unless user explicitly downloads output.
-- CSV fields are generated from controlled numeric and enumeration values; original file names are deliberately excluded.
+## Features
 
-## Evaluation completed
+### Existing v0.2
 
-- JavaScript syntactic compilation: passed (V8 parser, 2026-10-25).
-- Simulated Canvas DOM and gray-image fixture: loading a 720x480 image, thresholding two isolated dark square regions, eight-connected counting (2), 0.25 µm/pixel area calculation, output table (2 rows): passed.
-- Simulated DOM tests additionally verified a rectangle ROI restricted the count to one object; lowering the dark threshold excluded both objects; a 200-original-pixel line with 0.5 µm/pixel calibration produced 100 µm; CSV and PNG export event handlers were dispatched. Passed.\n- Static source review confirmed no `iframe`, external JavaScript import or remote image-analysis request on the new `lab.html` + `lab.js`.
+- Browser-native PNG/JPEG/WebP decoder, file limit 25 MB, max input 35 megapixels and 16,000 pixels on an axis. Analysis work image max 1280 pixels along the longest edge.
+- Rectangle ROI, line length, gray mean/min/max, intensity histogram, 8-connected gray threshold components, area filter, direct CSV and annotated PNG output.
+- No external processing library, paid API, backend upload, user account or persistent local storage.
+- Numeric scale refers to **original** pixels; area refers to original pixel², as estimated through the downsampled analysis image.
 
-## Manual compatibility acceptance checklist (pending physical devices)
+### New v0.3
 
-1. Windows Chrome, macOS Safari and iPhone Safari: file selection, synthetic image and visible overlay position.
-2. Draw a rectangle and a line using both mouse and finger; the overlay must align with the displayed canvas.
-3. Calibrate using a known scale; compare pixel and µm outputs to an independent reference.
-4. Analyze synthetic discrete objects under both threshold polarities; vary minimum pixel area; inspect oversegmentation.
-5. Export CSV and PNG. Verify the expected centroid coordinates and that PNG is at the working resolution.
-6. Test a >1280 px image and verify the displayed original versus working dimensions and converted measurements.
-7. Ensure external ImageJ.JS opens in its own tab and users understand its separate data handling and limitations.
-8. Confirm GitHub Pages build, mobile CSS at 320–430px widths, keyboard focus and reload behavior.
+1. Guided calibration lesson: students draw a line matching a **known physical distance**, enter µm and calculate µm/original px. A synthetic demonstration has **no inherent physical calibration**.
+2. Guided threshold/counting lesson: original code draws 12 non-touching dark circles on a light canvas with a known component count. Default threshold 145, dark polarity, 20 original pixel² minimum yields 12 components on the 720×430 reference.
+3. Guided background lesson: students capture two **different rectangular ROIs**, calculating target mean gray minus background mean gray. The signed difference may be negative and is not automatically normalized.
+4. In-memory measurement notebook (max 50 snapshots). Logs type, result, original-image calibration, self-review checkbox state, image-origin type, and method parameters. Downloadable as UTF-8 BOM CSV with CRLF; no student names, filenames, image bytes or external upload.
+5. New image and clear actions wipe previous notebook values **and reset spatial calibration** to prevent carrying an old µm/px into a new image. Threshold or ROI adjustments invalidate the current self-review checkbox but preserve earlier saved snapshots.
 
-No claim of Chrome/Safari/iOS device compatibility testing is made until these tests are completed.
+### Accuracy and safety boundaries
 
-## Known limitations
+- A known-count synthetic fixture is a **functional smoke test**, not a measurement accuracy validation with biological samples.
+- ROI data are sampled from a resized *working image*. Converting them to original pixel dimensions does not restore lost resolution, touching-cell boundaries, or photometric information.
+- No clinical diagnostic interpretation, automated cell identity classification, full TIFF/Z-stack support, ImageJ Macro interpreter or validated diagnostic-grade measurement.
+- Uploaded images remain in tab memory unless a user explicitly downloads an output. Avoid identifiable patient images. Reloading or closing this page removes notebook records.
 
-This does not reproduce desktop ImageJ: no TIFF-stack, macro interpreter, ImageJ plugins, ROI Manager, watershed splitting, cell classification or clinical performance validation. Grayscale conversion uses the standard weighted RGB formula; physical calibration is user-entered. Threshold masks are simple binary segmentation and eight-connected objects may merge if they touch. It is an educational prototype.
+## Verification performed in code-mode simulation
+
+Tests executed against actual `lab.js` fetched from the GitHub repository with a simulated browser DOM and deterministic synthetic grayscale fixture:
+
+- Loaded 720×430 reference consisting of 12 disjoint dark circular regions.
+- Threshold and 8-connected counting produced **12 objects**, and the guided comparison returned the expected benchmark answer.
+- Rectangle ROI restricted counting in earlier v0.2 fixtures (2 objects full-image vs 1 in a selected ROI); a changed threshold excluded candidates.
+- Target/background captures were tested with distinct ROIs, and an identical-ROI attempt was rejected.
+- A 200-original-pixel line with user-provided 50 µm real length yielded **0.25 µm/original pixel**, and the line reported 50 µm.
+- Saved count, intensity and calibration snapshots; exported CSV callback and checked actual generated text begins with UTF-8 BOM and uses CRLF.
+- Clear removed the stored notebook and disabled report export.
+- Source was statically checked for external imaging dependencies and third-party iframe embedding.
+- Additional fix: spatial calibration is cleared on each new image, preventing false physical-scale carryover.
+
+**Still outstanding**: real-device Chrome, Firefox, macOS Safari, iOS Safari QA; pointer/touch alignment, actual downloaded files, large real-image memory use, real microscope-image accuracy and repeatability. These have not been claimed or represented as completed.
+
+## Browser acceptance checklist
+
+- [ ] Desktop Chrome: open synthetic demo, drag ROI/line, threshold both polarities, verify 12 circle benchmark.
+- [ ] iPhone Safari (portrait): compare touch region and image coordinates.
+- [ ] Desktop Safari / Firefox: load real PNG, JPEG, WebP and confirm histogram and working-resolution PNG export.
+- [ ] Upload a source >1280 pixels wide and compare measured lengths before/after working-image downsampling.
+- [ ] Compare line measurements to a known ruler/scale bar and cell count results to manual evaluation.
+- [ ] Inspect downloaded CSV numeric values, CRLF and BOM in spreadsheet applications.
+- [ ] Confirm new image clears previous calibration and all notebook entries.
+- [ ] Confirm external ImageJ.JS hyperlink opens in a separate tab; review upstream service's policy before using any sensitive material.
+- [ ] Verify that published GitHub Pages build succeeds.
