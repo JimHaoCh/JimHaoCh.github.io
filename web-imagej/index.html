@@ -17,19 +17,20 @@ description: 醫技系鏡檢影像分析教學入口，提供本站原創本機 
     <div class="wrap wj-shell">
       <a class="breadcrumb" href="/courses.html">← 線上工具 / Online Tools</a>
       <section class="wj-hero" aria-labelledby="wj-title">
-        <p class="eyebrow">MEDTECH VIRTUAL LAB · IMAGE ANALYSIS v0.2</p>
+        <p class="eyebrow">MEDTECH VIRTUAL LAB · IMAGE ANALYSIS v0.3</p>
         <h1 id="wj-title">Web-Image Lab <span>鏡檢影像分析教學</span></h1>
         <p class="wj-en" lang="en">Image Analysis · Microscopy · Quantitative Imaging</p>
-        <p class="wj-lead">第二版新增本站原創的純瀏覽器影像分析工作台，可直接在網站內操作 ROI、灰階量測、閾值分割、粒子計數與檔案匯出；需要進階 ImageJ 功能時，可另外前往 ImJoy 團隊開發的 ImageJ.JS 網頁版。</p>
+        <p class="wj-lead">第三版在原創瀏覽器影像工作台中新增三種引導式教學練習：比例尺校正、12 顆合成粒子計數，以及目標／背景灰階比較；可保存本機量測紀錄並匯出 CSV。進階 ImageJ 功能仍以外部連結前往 ImJoy 團隊提供的 ImageJ.JS。</p>
         <div class="wj-notice" role="note">
           <strong>使用前請留意</strong>
           <p>本站自製 Web-Image Lab 採原生 JavaScript Canvas，影像在您的瀏覽器中處理，程式未加入影像上傳接口或第三方分析函式庫。完整 ImageJ.JS 由第三方 ImJoy 團隊提供；本網站沒有託管、修改、複製或嵌入 ImageJ.JS、CheerpJ 及其插件。點擊外部連結後會離開本站，資料處理方式依外部服務政策。</p>
         </div>
         <div class="wj-actions">
-          <a class="wj-button wj-button-primary" href="/web-imagej/lab.html">開啟本站影像分析工作台 <span aria-hidden="true">→</span></a>\n          <a class="wj-button wj-button-secondary" href="https://ij.imjoy.io/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="前往第三方 ImageJ.JS 網頁版（開啟新分頁）">前往完整 ImageJ.JS <span aria-hidden="true">↗</span></a>
+          <a class="wj-button wj-button-primary" href="/web-imagej/lab.html">開啟第三版影像工作台 <span aria-hidden="true">→</span></a>
+          <a class="wj-button wj-button-secondary" href="https://ij.imjoy.io/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="前往第三方 ImageJ.JS 網頁版（開啟新分頁）">前往完整 ImageJ.JS <span aria-hidden="true">↗</span></a>
           <a class="wj-button wj-button-secondary" href="https://imagej.net/software/imagej-js" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">查看 ImageJ 專案介紹 <span aria-hidden="true">↗</span></a>
         </div>
-        <p class="wj-small">本站工作台為教學用簡易分析原型，支援桌面與觸控操作；ImageJ Macro 與 TIFF Stack 等完整功能需另前往外部 ImageJ.JS，請先閱讀資料保護提醒。</p>
+        <p class="wj-small">本站工作台是教學用的簡易分析原型，支援桌面與觸控操作；瀏覽器差異仍需實機測試。學生量測結果需人工核對，合成基準圖的標準答案僅適用於該固定測試影像。</p>
       </section>
 
       <section class="wj-section" aria-labelledby="wj-workflow">
@@ -45,9 +46,9 @@ description: 醫技系鏡檢影像分析教學入口，提供本站原創本機 
       <section class="wj-section" aria-labelledby="wj-lessons">
         <div class="wj-section-heading"><p class="eyebrow">CLASSROOM EXERCISES</p><h2 id="wj-lessons">建議教學練習</h2></div>
         <div class="wj-cards">
-          <article class="wj-card"><span class="wj-kicker">01 · MORPHOMETRY</span><h3>細胞大小與形態量測</h3><p>依比例尺設定空間校正，框選單顆細胞 ROI，量測面積、周長與長軸尺寸。</p><p class="wj-key">核心概念：Pixel-to-µm calibration · ROI</p></article>
-          <article class="wj-card"><span class="wj-kicker">02 · PARTICLE ANALYSIS</span><h3>細胞／顆粒計數</h3><p>練習 Image → Adjust → Threshold 與 Analyze → Analyze Particles，觀察閾值對計數和黏連顆粒的影響。</p><p class="wj-key">核心概念：Segmentation · Size filtering</p></article>
-          <article class="wj-card"><span class="wj-kicker">03 · IMAGE INTENSITY</span><h3>染色與影像強度</h3><p>對背景及目標 ROI 進行平均灰階值量測，討論曝光、背景扣除與飽和訊號的影響。</p><p class="wj-key">核心概念：Mean gray value · Background</p></article>
+          <article class="wj-card"><span class="wj-kicker">01 · MORPHOMETRY</span><h3>細胞大小與形態量測</h3><p>設定已知長度與 µm/pixel，以矩形 ROI 取得面積、灰階統計，或以直線工具量測長度。此版沒有單顆細胞自動周長與長軸估算。</p><p class="wj-key">核心概念：Pixel-to-µm calibration · ROI</p></article>
+          <article class="wj-card"><span class="wj-kicker">02 · PARTICLE ANALYSIS</span><h3>細胞／顆粒計數</h3><p>利用 12 顆合成圓形基準圖調整 Threshold 與最小面積，觀察連通區數量與參數的關係。</p><p class="wj-key">核心概念：Segmentation · Size filtering</p></article>
+          <article class="wj-card"><span class="wj-kicker">03 · IMAGE INTENSITY</span><h3>染色與影像強度</h3><p>分別擷取目標及背景 ROI 的平均灰階，計算兩者差值，討論曝光與背景的影響。</p><p class="wj-key">核心概念：Mean gray value · Background</p></article>
         </div>
       </section>
 
