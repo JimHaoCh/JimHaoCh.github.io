@@ -1,0 +1,83 @@
+---
+layout: null
+permalink: /web-imagej/
+title: ImageJ.JS 影像分析教學入口
+description: 醫技系鏡檢與科研影像分析教學入口，提供第三方 ImageJ.JS 官方執行網站、操作流程、原始專案及論文來源，並清楚說明資料與授權界線。
+---
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  {% include page-head.html %}
+  <link rel="stylesheet" href="/web-imagej/style.css?v=1">
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
+  {% include header.html %}
+  <main id="main" class="subpage">
+    <div class="wrap wj-shell">
+      <a class="breadcrumb" href="/courses.html">← 線上工具 / Online Tools</a>
+      <section class="wj-hero" aria-labelledby="wj-title">
+        <p class="eyebrow">MEDTECH VIRTUAL LAB · EXTERNAL EDUCATIONAL RESOURCE</p>
+        <h1 id="wj-title">ImageJ.JS <span>影像分析教學入口</span></h1>
+        <p class="wj-en" lang="en">Image Analysis · Microscopy · Quantitative Imaging</p>
+        <p class="wj-lead">以醫技系鏡檢與基礎影像分析教學為目的，提供學生前往 ImJoy 團隊開發的 ImageJ.JS 網頁版，練習影像校正、感興趣區域（ROI）選取、強度量測與粒子計數。</p>
+        <div class="wj-notice" role="note">
+          <strong>使用前請留意</strong>
+          <p>本頁為校內教學導引頁。ImageJ.JS 由第三方 ImJoy 團隊開發及提供服務，點擊下方連結後會離開本實驗室網站。本網站沒有託管、修改、複製或嵌入 ImageJ.JS、CheerpJ 及其插件，也沒有取得或傳送您的影像檔案。外部網站的資料處理方式、服務狀態與授權條件依其營運方規定。</p>
+        </div>
+        <div class="wj-actions">
+          <a class="wj-button wj-button-primary" href="https://ij.imjoy.io/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="前往第三方 ImageJ.JS 網頁版（開啟新分頁）">前往 ImageJ.JS 網頁版 <span aria-hidden="true">↗</span></a>
+          <a class="wj-button wj-button-secondary" href="https://imagej.net/software/imagej-js" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">查看 ImageJ 專案介紹 <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="wj-small">學生請先閱讀下方資料保護提醒，再前往外部服務。桌上型電腦適合進行完整 ImageJ 選單操作；手機端依瀏覽器與外部服務相容性而定。</p>
+      </section>
+
+      <section class="wj-section" aria-labelledby="wj-workflow">
+        <div class="wj-section-heading"><p class="eyebrow">GETTING STARTED</p><h2 id="wj-workflow">課堂操作流程</h2><p>以下是適合第一次使用 ImageJ 的基本練習；實際選單名稱及功能依外部網站版本而定。</p></div>
+        <ol class="wj-steps">
+          <li><span class="wj-step-num" aria-hidden="true">01</span><div><h3>開啟網頁版</h3><p>點選上方按鈕，在新分頁啟動 ImJoy 團隊提供的 ImageJ.JS。</p></div></li>
+          <li><span class="wj-step-num" aria-hidden="true">02</span><div><h3>讀入練習影像</h3><p>選擇 File → Open 或網站提供的 Select Local File，優先使用教師提供的合成、公開授權或已去識別化範例影像。</p></div></li>
+          <li><span class="wj-step-num" aria-hidden="true">03</span><div><h3>設定比例與 ROI</h3><p>若影像包含已知尺寸的比例尺，可使用 Analyze → Set Scale 校正；再用矩形、橢圓或自由選取工具建立 ROI。</p></div></li>
+          <li><span class="wj-step-num" aria-hidden="true">04</span><div><h3>量測與紀錄</h3><p>依練習題目選擇 Analyze → Measure，或進行 Threshold、Analyze Particles。記錄操作參數、校正值與人工核對結果。</p></div></li>
+        </ol>
+      </section>
+
+      <section class="wj-section" aria-labelledby="wj-lessons">
+        <div class="wj-section-heading"><p class="eyebrow">CLASSROOM EXERCISES</p><h2 id="wj-lessons">建議教學練習</h2></div>
+        <div class="wj-cards">
+          <article class="wj-card"><span class="wj-kicker">01 · MORPHOMETRY</span><h3>細胞大小與形態量測</h3><p>依比例尺設定空間校正，框選單顆細胞 ROI，量測面積、周長與長軸尺寸。</p><p class="wj-key">核心概念：Pixel-to-µm calibration · ROI</p></article>
+          <article class="wj-card"><span class="wj-kicker">02 · PARTICLE ANALYSIS</span><h3>細胞／顆粒計數</h3><p>練習 Image → Adjust → Threshold 與 Analyze → Analyze Particles，觀察閾值對計數和黏連顆粒的影響。</p><p class="wj-key">核心概念：Segmentation · Size filtering</p></article>
+          <article class="wj-card"><span class="wj-kicker">03 · IMAGE INTENSITY</span><h3>染色與影像強度</h3><p>對背景及目標 ROI 進行平均灰階值量測，討論曝光、背景扣除與飽和訊號的影響。</p><p class="wj-key">核心概念：Mean gray value · Background</p></article>
+        </div>
+      </section>
+
+      <section class="wj-section wj-safeguards" aria-labelledby="wj-privacy">
+        <div class="wj-section-heading"><p class="eyebrow">PRIVACY &amp; ATTRIBUTION</p><h2 id="wj-privacy">資料使用、軟體來源與學術引用</h2></div>
+        <div class="wj-detail-grid">
+          <div>
+            <h3>資料保護與判讀界線</h3>
+            <ul>
+              <li>僅使用教師提供的範例、合成影像或確認可公開使用的素材。</li>
+              <li>請勿在第三方網頁上傳可識別病人身分的臨床檢體影像、病歷資訊或其他機敏資料。</li>
+              <li>外部服務與插件可能有各自的資料傳輸流程；使用前應確認其政策與功能。本站無法保證外部處理完全限於本機。</li>
+              <li>練習結果須人工檢查；本教學入口及外部軟體均未由本站驗證為臨床檢驗或診斷系統。</li>
+            </ul>
+          </div>
+          <div>
+            <h3>專案來源與致謝</h3>
+            <p><strong>ImageJ.JS</strong> 由 <strong>ImJoy Team</strong> 開發。本網站僅提供名稱介紹、教學導引與對外連結，未使用對方的程式碼、商標圖像或截圖，也未表示雙方具有合作或官方認證關係。</p>
+            <p>建議引用：Ouyang W, Mueller F, Hjelmare M, et al. <em>ImJoy: an open-source computational platform for the deep learning era.</em> Nature Methods (2019). DOI: <a href="https://doi.org/10.1038/s41592-019-0627-0" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">10.1038/s41592-019-0627-0</a>.</p>
+            <div class="wj-sources">
+              <a href="https://imagej.net/software/imagej-js" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">ImageJ 專案頁面 ↗</a>
+              <a href="https://github.com/imjoy-team/imagej.js" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">ImageJ.JS 原始專案 ↗</a>
+              <a href="https://ij.imjoy.io/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">原開發團隊網頁版 ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <p class="wj-footnote">Bioflumen &amp; Xensor Lab · NYCU Medical Laboratory Science Teaching Resources · Educational link directory only</p>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>
