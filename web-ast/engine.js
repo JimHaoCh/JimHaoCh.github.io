@@ -96,7 +96,9 @@ function analyze(rgba,w,h,settings={}) {
   const sat=integral(gray,w,h),radius=Math.round(clamp(Math.min(w,h)*.115,35,98));
   for(let y=1;y<h-1;y++)for(let x=1;x<w-1;x++){
     const i=y*w+x,lum=gray[i],avg=boxAverage(sat,w,h,x,y,radius);
-    if(lum>=188&&chroma[i]<=110&&lum-avg>=threshold)mask[i]=1;
+    // A conservative white-paper threshold avoids confusing a large bright halo with a disk.
+    // Dim/colored disks must be placed or corrected manually in this teaching prototype.
+    if(lum>=215&&chroma[i]<=110&&lum-avg>=threshold)mask[i]=1;
   }
   // Fill text and pinholes on paper disks without letting bright zones fill the scene.
   const dilated=new Uint8Array(n),closed=new Uint8Array(n);
