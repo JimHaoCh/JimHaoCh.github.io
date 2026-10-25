@@ -49,8 +49,8 @@
     "name": "Web-Image Lab",
     "category": "鏡檢與影像分析 · Image Processing",
     "title": "ROI、灰階量測與顆粒計數",
-    "subtitle": "Browser-side Image Analysis · ImageJ.JS Gateway",
-    "description": "在本站以純瀏覽器工具處理影像、框選 ROI、調整 Threshold、計數及匯出；另提供第三方 ImageJ.JS 進階入口。",
+    "subtitle": "Guided Microscopy Analysis · Local-only Measurements",
+    "description": "原創本機影像工具 v0.3：比例尺校正、12 顆合成基準圖、灰階差、ROI／粒子計數與 CSV 紀錄；另提供第三方 ImageJ.JS 外部連結。",
     "url": "/web-imagej/"
   }
 ]
