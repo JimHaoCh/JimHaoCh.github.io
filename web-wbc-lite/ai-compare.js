@@ -46,6 +46,7 @@ async function trainSchematic(){
  const tabs=[...$("learnTypes").querySelectorAll("button")],samples=[];
  for(let i=0;i<5;i++){
   tabs[i].click();
+  if(!$("learnImage").src.startsWith("data:image/svg+xml"))throw Error("已載入 PBC 真實影像，請重新整理頁面後再建立示意圖模型，以免混用資料。");
   const pic=await image($("learnImage").src);
   samples.push({label:AI.KEYS[i],features:AI.fromCanvas(pic)});
   for(let j=0;j<6;j++){
@@ -125,7 +126,7 @@ async function afterAnswer(e){
  if(source!==mode){show(chosen,expert,null,"來源不匹配","模型訓練資料與考題來源不同；請選擇相應的 AI 模式。");return;}
  compare.classList.remove("hidden");$("aiPredictions").textContent="模型正從圖片像素進行推論…";
  try{
-  const vec=AI.fromCanvas($("questionImage")),pred=AI.infer(model,vec);
+  const picture=await image($("questionImage").src);const vec=AI.fromCanvas(picture),pred=AI.infer(model,vec);
   if(q!==$("questionNumber").textContent||rev!==revision)return;
   show(chosen,expert,pred,source==="pbc"?"PBC kNN":"示意圖 kNN");
   predictions.push({question:q,student:chosen,expert,ai:pred.label,domain:mode,vote:pred.topVoteShare});
