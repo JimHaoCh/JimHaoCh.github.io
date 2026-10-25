@@ -13,3 +13,10 @@
 .tools-note{font-size:12px;line-height:1.8;color:var(--muted);margin:25px 0 0}
 @media(max-width:760px){.tools-grid{grid-template-columns:1fr;gap:13px}.tool-link{padding:22px 20px}.tools-intro{margin-bottom:25px}}
 @media(prefers-reduced-motion:reduce){.tool-link{transition:none}.tool-link:hover{transform:none}}
+
+/* Bilingual catalogue enhancements */
+.bilingual-tools-intro p{margin:0}
+.bilingual-tools-intro p[lang=en]{font-size:14px;line-height:1.8;color:var(--muted);margin-top:9px}
+.tool-summary span[lang=en]{font-size:13px;line-height:1.7;margin-top:9px;color:var(--muted)}
+.tool-action small[lang=en]{display:block;font-size:11px;font-weight:450;margin-top:1px;color:var(--muted)}
+.tools-note span[lang=en]{font-size:12px;line-height:1.8;margin-top:7px}
