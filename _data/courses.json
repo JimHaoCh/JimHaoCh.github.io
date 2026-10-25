@@ -18,14 +18,21 @@
   {
     "title": "醫技系臨床微生物學實驗｜互動教學工具",
     "title_en": "Clinical Microbiology Laboratory — Interactive Learning",
-    "description": "陽明交通大學醫學檢驗暨生物技術學系之臨床微生物實驗教學資源。Web-CFU Lite 可在手機或電腦上傳培養皿照片，使用瀏覽器自動圈選菌落，並以觸控手動新增或刪除誤判標記；定量培養時可輸入稀釋度及接種體積練習 CFU/mL 計算。現階段為教學驗證原型，仍需人工核對，結果不作為臨床檢驗或正式研究數據。",
-    "description_en": "An interactive resource for NYCU medical laboratory science clinical microbiology teaching. Web-CFU Lite provides on-device colony detection in plate photographs, touch-based manual corrections, and a dilution-plating CFU/mL calculator. The tool is an experimental educational prototype and requires manual verification.",
+    "description": "陽明交通大學醫學檢驗暨生物技術學系臨床微生物實驗教學資源。Web-CFU Lite 可上傳培養皿照片進行菌落計數及 CFU/mL 練習；Web-AST Lite 可上傳 Kirby–Bauer 平板照片，自動尋找抗生素紙錠與抑菌圈候選邊界，校正毫米尺寸並以觸控修正和匯出結果。兩項工具均為瀏覽器本機運算的教學原型，結果需人工核對，不作臨床診斷依據。",
+    "description_en": "Interactive NYCU clinical microbiology teaching tools: Web-CFU Lite estimates colony counts and CFU/mL; Web-AST Lite locates antibiotic disk candidates, estimates inhibition-zone diameters from plate photographs and supports touch-based manual corrections and export. Both are educational prototypes operating locally in the browser and require manual verification.",
     "published": true,
     "materials": [
       {
         "title": "Web-CFU Lite｜培養皿菌落自動計數與 CFU/mL 計算（教學原型）",
         "title_en": "Web-CFU Lite — Colony Counting and CFU/mL Calculator",
         "url": "https://jimhaoch.github.io/web-cfu-lite/",
+        "updated": "2026-10-25",
+        "published": true
+      },
+      {
+        "title": "Web-AST Lite｜Kirby–Bauer 抑菌圈自動量測與人工修正（教學原型）",
+        "title_en": "Web-AST Lite — Disk Diffusion Zone Measurement & Correction",
+        "url": "https://jimhaoch.github.io/web-ast/",
         "updated": "2026-10-25",
         "published": true
       }
