@@ -46,11 +46,11 @@
   },
   {
     "slug": "web-imagej",
-    "name": "ImageJ.JS",
-    "category": "第三方教學資源 · External Tool",
-    "title": "顯微影像處理與定量分析",
-    "subtitle": "Image Analysis · Educational Gateway",
-    "description": "前往 ImJoy 團隊提供的網頁版 ImageJ；先閱讀教學操作與資料安全提醒，再開啟外部服務。",
+    "name": "Web-Image Lab",
+    "category": "鏡檢與影像分析 · Image Processing",
+    "title": "ROI、灰階量測與顆粒計數",
+    "subtitle": "Browser-side Image Analysis · ImageJ.JS Gateway",
+    "description": "在本站以純瀏覽器工具處理影像、框選 ROI、調整 Threshold、計數及匯出；另提供第三方 ImageJ.JS 進階入口。",
     "url": "/web-imagej/"
   }
 ]
