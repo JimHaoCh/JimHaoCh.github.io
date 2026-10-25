@@ -21,7 +21,7 @@ description: 陽明交通大學醫技系互動式線上教學工具與外部教�
         <p class="eyebrow">MEDTECH VIRTUAL LAB</p>
         <h1>線上工具<span lang="en">Online Tools</span></h1>
       </div>
-      <p class="tools-intro">醫技系互動式教學工具與公開教學資源，涵蓋鏡檢、微生物、血液學、細胞計數及影像處理。本站自製工具可直接開啟操作；第三方資源另設來源說明與外部網站連結。</p>
+      <div class="tools-intro bilingual-tools-intro"><p>醫技系互動式教學工具與公開教學資源，涵蓋鏡檢、微生物、血液學、細胞計數及影像處理。本站自製工具可直接開啟操作；第三方資源另設來源說明與外部網站連結。</p><p lang="en">Interactive teaching tools and learning resources for Medical Laboratory Science, covering microscopy, microbiology, hematology, cell counting and image processing. Original tools run directly in your browser; third-party resources are identified and linked separately.</p></div>
       <section class="tools-grid" aria-label="線上教學工具 / Online learning tools">
         {% for tool in tools %}
         <article class="tool-entry">
@@ -30,13 +30,13 @@ description: 陽明交通大學醫技系互動式線上教學工具與外部教�
             <h2 class="tool-name">{{ tool.name | escape }}</h2>
             <p class="tool-title">{{ tool.title | escape }}</p>
             <p class="tool-subtitle" lang="en">{{ tool.subtitle | escape }}</p>
-            <p class="tool-summary">{{ tool.description | escape }}</p>
-            <span class="tool-action">開啟工具 <span aria-hidden="true">↗</span></span>
+            <p class="tool-summary">{{ tool.description | escape }}<span lang="en">{{ tool.description_en | escape }}</span></p>
+            <span class="tool-action"><span>開啟工具 <small lang="en">Open tool</small></span><span aria-hidden="true">↗</span></span>
           </a>
         </article>
         {% endfor %}
       </section>
-      <p class="tools-note">※ 本站自製分析工具屬教學與方法展示原型，自動辨識結果須人工確認，不作為臨床檢驗或診斷依據。ImageJ.JS 為第三方 ImJoy 團隊提供的外部服務；本站僅提供介紹與連結，請留意其資料使用規定。</p>
+      <p class="tools-note">※ 本站自製分析工具屬教學與方法展示原型，自動辨識結果須人工確認，不作為臨床檢驗或診斷依據。ImageJ.JS 為第三方 ImJoy 團隊提供的外部服務；本站僅提供介紹與連結，請留意其資料使用規定。<span lang="en">The original analysis tools are educational prototypes; automated detections require manual verification and are unsuitable for clinical diagnosis. ImageJ.JS is an external service provided by the ImJoy team and is subject to its own data policies.</span></p>
     </div>
   </main>
   {% include footer.html %}
