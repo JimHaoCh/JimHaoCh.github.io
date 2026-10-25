@@ -11,6 +11,20 @@
   const analyze = $("analyze"), count = $("count"), rows = $("rows"), status = $("status");
   const csv = $("csv"), png = $("png"), all = $("all");
   const modeButtons = Array.from(document.querySelectorAll("[data-wi-mode]"));
+  // v0.3 teaching extension: numeric snapshots only; no names, image content or storage.
+  const lesson = $("lesson"), lessonSteps = $("lesson-steps"), lessonFeedback = $("lesson-feedback");
+  const knownLength = $("known-length"), calibrateButton = $("calibrate"), benchmarkButton = $("benchmark");
+  const openBenchmark = $("open-benchmark"), checkBenchmark = $("check-benchmark");
+  const activityCalibrate = $("activity-calibrate"), activityCount = $("activity-count"), activityIntensity = $("activity-intensity");
+  const saveTarget = $("save-target"), saveBackground = $("save-background"), resetIntensity = $("reset-intensity");
+  const recordButton = $("record"), exportRecordsButton = $("export-records"), clearRecordsButton = $("clear-records");
+  const recordRows = $("record-rows"), reviewed = $("reviewed");
+  const training = {image:"none",records:[],target:null,background:null};
+  const lessonTips = {
+    calibrate:"1. 載入有已知尺度的影像，切換為「直線量測」。2. 沿已知長度拖曳直線。3. 輸入真實 µm 並設定校正值，再記錄結果；合成示範圖未具真實物理尺度。",
+    count:"1. 載入「12 顆基準圖」（原創合成圖）。2. 設為深色目標、閾值 145、最小面積 20 原始 pixel²。3. 分析連通顆粒、核對基準答案，再下載紀錄。",
+    intensity:"1. 載入影像，框選目標區域 ROI，按「記錄目前 ROI 為目標」。2. 框選背景 ROI 並記錄背景。3. 查看目標平均灰階－背景平均灰階，保存結果。"
+  };
   const s = {w:0,h:0,origW:0,origH:0,gray:null,selection:null,mode:"rect",drag:false,start:null,
              components:[],analyzed:false,loadVersion:0};
   const format = (n,d=2) => Number.isFinite(n) ? n.toLocaleString("en-US",{maximumFractionDigits:d}) : "—";
@@ -18,10 +32,17 @@
   const validScale = () => {const n=Number(scale.value);return scale.value.trim()!=="" && Number.isFinite(n) && n>0 ? n : null;};
   const factorX = () => s.origW/s.w, factorY=()=>s.origH/s.h;
   const announce = text => {status.textContent=text;};
+  const resetNotebook = () => {
+    training.records=[];training.target=null;training.background=null;reviewed.checked=false;
+    recordRows.innerHTML='<tr><td colspan="5">尚未保存量測紀錄</td></tr>';
+    exportRecordsButton.disabled=true;clearRecordsButton.disabled=true;recordButton.disabled=!s.w;
+    lessonFeedback.textContent="已清除目前影像的教學紀錄與灰階比較。";
+  };
+  const invalidateReview = () => {reviewed.checked=false;};
   const setLoaded = loaded => {
     placeholder.hidden=loaded;canvas.hidden=!loaded;overlay.hidden=!loaded;
     stage.classList.toggle("wi-has-image",loaded);
-    analyze.disabled=!loaded;csv.disabled=!loaded;png.disabled=!loaded;
+    analyze.disabled=!loaded;csv.disabled=!loaded;png.disabled=!loaded;recordButton.disabled=!loaded;
   };
   const bounds = () => {
     if (!s.w) return null;
@@ -38,15 +59,15 @@
   };
   const reset = () => {
     s.loadVersion++;s.w=0;s.h=0;s.origW=0;s.origH=0;s.gray=null;
-    s.selection=null;s.drag=false;s.start=null;
+    s.selection=null;s.drag=false;s.start=null;training.image="none";resetNotebook();
     resetResults();bc.clearRect(0,0,canvas.width,canvas.height);
     oc.clearRect(0,0,overlay.width,overlay.height);
     meta.textContent="尚未讀入影像。可先使用合成示範圖。";
     stats.textContent="選取影像後顯示 ROI 統計。";
-    setLoaded(false);drawHistogram();announce("已清除影像。");
+    setLoaded(false);drawHistogram();chooseLesson();announce("已清除影像。");
     file.value="";
   };
-  const ingest = (source,srcW,srcH,label) => {
+  const ingest = (source,srcW,srcH,label,origin="uploaded") => {
     if (!srcW||!srcH||srcW>16000||srcH>16000||srcW*srcH>35000000) {
       announce("影像像素數過大或尺寸無效。請先縮小至 3,500 萬像素內。");return false;
     }
@@ -58,6 +79,7 @@
     s.w=w;s.h=h;s.origW=srcW;s.origH=srcH;s.gray=new Uint8Array(w*h);
     for(let i=0,j=0;i<d.length;i+=4,j++) s.gray[j]=Math.round(.299*d[i]+.587*d[i+1]+.114*d[i+2]);
     s.selection={type:"rect",x:0,y:0,w,h};s.drag=false;resetResults();
+    resetNotebook();training.image=origin;
     setLoaded(true);
     meta.textContent=label+" · 原始影像 "+srcW+" × "+srcH+" px · 分析工作影像 "+w+" × "+h+" px"+(ratio<1?"（已縮圖）":"");
     render();announce("影像已在本機載入。可拖曳選取 ROI，或調整閾值並分析。");return true;
@@ -78,6 +100,24 @@
     }
     return c;
   };
+  const generateBenchmark = () => {
+    const c=document.createElement("canvas");c.width=720;c.height=430;
+    const x=c.getContext("2d");x.fillStyle="#eeeeee";x.fillRect(0,0,c.width,c.height);
+    // Exactly twelve disjoint dark components: deterministic synthetic reference.
+    for(let row=0;row<3;row++)for(let col=0;col<4;col++){
+      const index=row*4+col,px=96+col*156,py=85+row*128,r=14+(index%4)*2;
+      const shade=40+(index%5)*12;
+      x.beginPath();x.arc(px,py,r,0,Math.PI*2);
+      x.fillStyle="rgb("+shade+","+shade+","+shade+")";x.fill();
+    }
+    return c;
+  };
+  const loadBenchmark = () => {
+    s.loadVersion++;file.value="";
+    threshold.value="145";thresholdValue.value="145";polarity.value="dark";minArea.value="20";preview.checked=true;
+    const c=generateBenchmark();ingest(c,c.width,c.height,"12 顆原創合成基準圖","benchmark");
+    lessonFeedback.textContent="已載入 12 顆互不接觸的合成圓形。請執行連通區計數後核對結果。";
+  };
   const coords = ev => {
     const r=overlay.getBoundingClientRect();
     return {x:Math.max(0,Math.min(s.w,(ev.clientX-r.left)/r.width*s.w)),
@@ -85,7 +125,7 @@
   };
   const selectMode = mode => {
     s.mode=mode;modeButtons.forEach(b=>{const active=b.dataset.wiMode===mode;b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active));});
-    resetResults();render();
+    resetResults();invalidateReview();render();
   };
   const pointerDown = ev => {
     if(!s.w||!ev.isPrimary)return;
@@ -104,7 +144,7 @@
     pointerMove(ev);s.drag=false;s.start=null;
     if(s.selection?.type==="rect"&&(s.selection.w<2||s.selection.h<2)) s.selection=null;
     if(s.selection?.type==="line"&&Math.hypot(s.selection.x2-s.selection.x1,s.selection.y2-s.selection.y1)<2) s.selection=null;
-    resetResults();render();
+    resetResults();invalidateReview();render();
     if(overlay.hasPointerCapture(ev.pointerId))overlay.releasePointerCapture(ev.pointerId);
   };
   const selected = (i) => polarity.value==="dark" ? s.gray[i]<=Number(threshold.value) : s.gray[i]>=Number(threshold.value);
@@ -209,7 +249,7 @@
     for(const [i,p] of items.slice(0,100).entries()){
       const tr=document.createElement("tr");[i+1,format(p.area),format(p.x),format(p.y)].forEach(v=>{const td=document.createElement("td");td.textContent=String(v);tr.appendChild(td);});rows.appendChild(tr);
     }
-    announce("本機連通區分析已完成；請人工核對重疊顆粒及非均勻背景。");render();
+    invalidateReview();announce("本機連通區分析已完成；請人工核對重疊顆粒及非均勻背景。");render();
   };
   const dl=(blob,name)=>{
     const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;
@@ -247,6 +287,86 @@
     ctx.drawImage(canvas,0,0);ctx.drawImage(overlay,0,0);
     c.toBlob(blob=>{if(blob)dl(blob,"web-image-lab-annotated.png");else announce("PNG 匯出失敗，請確認瀏覽器功能。");},"image/png");
   };
+  const chooseLesson = () => {
+    const type=lesson.value;
+    activityCalibrate.hidden=type!=="calibrate";
+    activityCount.hidden=type!=="count";
+    activityIntensity.hidden=type!=="intensity";
+    lessonSteps.textContent=lessonTips[type]||lessonTips.calibrate;
+    lessonFeedback.textContent="請按照上述步驟操作。所有分析與記錄皆在目前瀏覽器分頁進行。";
+  };
+  const lineLengthOriginal = () => {
+    if(!s.w||s.selection?.type!=="line")return null;
+    const a=s.selection;
+    return Math.hypot((a.x2-a.x1)*factorX(),(a.y2-a.y1)*factorY());
+  };
+  const setCalibratedScale = () => {
+    const linePx=lineLengthOriginal(),known=Number(knownLength.value);
+    if(linePx===null||linePx<3){lessonFeedback.textContent="請先在影像上切換至「直線量測」，畫出至少 3 原始 px 的已知長度。";return;}
+    if(knownLength.value.trim()===""||!Number.isFinite(known)||known<=0){
+      lessonFeedback.textContent="請輸入正確的已知長度（µm）；合成圖沒有天然的真實比例尺。";return;
+    }
+    const next=known/linePx;
+    if(next<0.000001||next>100000){lessonFeedback.textContent="計算出的 µm/pixel 超出教學工具接受的範圍，請核對輸入。";return;}
+    scale.value=String(Number(next.toPrecision(10)));
+    invalidateReview();refreshStats();
+    lessonFeedback.textContent="校正已設定："+format(next,6)+" µm/原始 px（已知 "+format(known,3)+" µm ÷ "+format(linePx,3)+" 原始 px）。請確認選線確實對應影像的實際尺度。";
+  };
+  const checkReferenceCount = () => {
+    if(training.image!=="benchmark"){lessonFeedback.textContent="請先載入本站提供的 12 顆合成基準圖，其他影像沒有固定標準答案。";return;}
+    if(!s.analyzed){lessonFeedback.textContent="請先在「Threshold 與計數」區按下連通顆粒分析。";return;}
+    const observed=s.components.length;
+    lessonFeedback.textContent=observed===12 ?
+      "與合成基準答案一致：12 顆。這只驗證目前設定對此特定合成影像的連通區計數，其他顯微影像仍須人工核對。":
+      "目前計數 "+observed+" 顆；合成基準為 12 顆。請檢查 ROI 是否涵蓋整張圖、閾值、深淺方向及最小面積。";
+  };
+  const captureIntensity = kind => {
+    if(!s.w||s.selection?.type!=="rect"){lessonFeedback.textContent="請先載入影像並框選矩形 ROI，再記錄灰階值。";return;}
+    const st=roiStats(),snapshot={mean:st.mean,area:st.n*factorX()*factorY()};
+    training[kind]=snapshot;invalidateReview();
+    if(training.target&&training.background){
+      const diff=training.target.mean-training.background.mean;
+      lessonFeedback.textContent="目標："+format(training.target.mean,3)+"；背景："+format(training.background.mean,3)+"；Δgray（目標－背景）＝"+format(diff,3)+" / 255。此值可能為負，反映兩區域的相對亮度差。";
+    }else{
+      lessonFeedback.textContent=(kind==="target"?"目標":"背景")+" ROI 平均灰階 "+format(snapshot.mean,3)+" 已暫存；請另外框選另一個區域。";
+    }
+  };
+  const recordCurrent = () => {
+    if(!s.w)return;
+    if(training.records.length>=50){announce("此分頁紀錄已達 50 筆上限，請匯出並清除後再記錄。");return;}
+    const um=validScale(),line=lineLengthOriginal(),st=s.selection?.type==="line"?null:roiStats();
+    let type,result,unit,details;
+    if(lesson.value==="intensity" && training.target && training.background){
+      type="target-background gray";result=training.target.mean-training.background.mean;unit="gray (0-255)";
+      details="target="+training.target.mean.toFixed(3)+";background="+training.background.mean.toFixed(3);
+    }else if(line!==null){
+      type="line length";result=um===null?line:line*um;unit=um===null?"original px":"um";
+      details="line original px="+line.toFixed(3);
+    }else if(s.analyzed){
+      type="connected component count";result=s.components.length;unit="objects";
+      details="threshold="+threshold.value+";polarity="+polarity.value+";min original px2="+minArea.value;
+    }else{
+      type="ROI mean gray";result=st.mean;unit="gray (0-255)";
+      details="ROI area original px2="+(st.n*factorX()*factorY()).toFixed(3);
+    }
+    training.records.push({number:training.records.length+1,type,result,unit,calibration:um,reviewed:reviewed.checked,source:training.image,details});
+    const tr=document.createElement("tr");
+    [training.records.length,type,format(result,3)+" "+unit,um===null?"未校正":format(um,6)+" µm/px",reviewed.checked?"學生自我核對":"尚未核對"].forEach(v=>{
+      const td=document.createElement("td");td.textContent=String(v);tr.appendChild(td);
+    });
+    if(training.records.length===1)recordRows.textContent="";
+    recordRows.appendChild(tr);
+    exportRecordsButton.disabled=false;clearRecordsButton.disabled=false;
+    lessonFeedback.textContent="已保存第 "+training.records.length+" 筆本機量測快照。請下載 CSV 留存；關閉或重新整理頁面會清除。";
+  };
+  const exportNotebook = () => {
+    if(!training.records.length)return;
+    const lines=[["Record","Measurement","Value","Unit","Scale_um_per_original_px","Self_reviewed","Source","Parameters"],
+      ...training.records.map(rec=>[rec.number,rec.type,rec.result.toFixed(6),rec.unit,rec.calibration===null?"uncalibrated":rec.calibration.toFixed(9),rec.reviewed?"yes":"no",rec.source,rec.details])];
+    const safeCsv = v => '"'+String(v??"").replace(/"/g,'""')+'"';
+    const output="\\uFEFF"+lines.map(line=>line.map(safeCsv).join(",")).join("\\r\\n");
+    dl(new Blob([output],{type:"text/csv;charset=utf-8"}),"web-image-lab-teaching-records.csv");
+  };
   file.addEventListener("change",()=>{
     const f=file.files?.[0];if(!f)return;
     if(!["image/png","image/jpeg","image/webp"].includes(f.type)){announce("請選擇 PNG、JPEG 或 WebP 格式影像。");return;}
@@ -257,7 +377,20 @@
     img.src=url;
     announce("正在本機解碼影像…");
   });
-  demo.addEventListener("click",()=>{s.loadVersion++;file.value="";const c=generateDemo();ingest(c,c.width,c.height,"合成教學影像（非真實檢體）");});
+  demo.addEventListener("click",()=>{s.loadVersion++;file.value="";const c=generateDemo();ingest(c,c.width,c.height,"合成教學影像（非真實檢體）","demo");});
+  benchmarkButton.addEventListener("click",loadBenchmark);
+  openBenchmark.addEventListener("click",loadBenchmark);
+  checkBenchmark.addEventListener("click",checkReferenceCount);
+  lesson.addEventListener("change",chooseLesson);
+  calibrateButton.addEventListener("click",setCalibratedScale);
+  saveTarget.addEventListener("click",()=>captureIntensity("target"));
+  saveBackground.addEventListener("click",()=>captureIntensity("background"));
+  resetIntensity.addEventListener("click",()=>{
+    training.target=null;training.background=null;lessonFeedback.textContent="已清除目前影像的目標與背景灰階比較。";
+  });
+  recordButton.addEventListener("click",recordCurrent);
+  exportRecordsButton.addEventListener("click",exportNotebook);
+  clearRecordsButton.addEventListener("click",resetNotebook);
   clear.addEventListener("click",reset);
   modeButtons.forEach(b=>b.addEventListener("click",()=>selectMode(b.dataset.wiMode)));
   all.addEventListener("click",()=>{if(!s.w)return;selectMode("rect");s.selection={type:"rect",x:0,y:0,w:s.w,h:s.h};render();});
@@ -265,11 +398,11 @@
   overlay.addEventListener("pointermove",pointerMove);
   overlay.addEventListener("pointerup",pointerEnd);
   overlay.addEventListener("pointercancel",()=>{s.drag=false;s.start=null;render();});
-  scale.addEventListener("input",refreshStats);
+  scale.addEventListener("input",()=>{invalidateReview();refreshStats();});
   [threshold,polarity,preview].forEach(el=>el.addEventListener("input",()=>{
-    thresholdValue.value=threshold.value;resetResults();render();
+    thresholdValue.value=threshold.value;resetResults();invalidateReview();render();
   }));
-  minArea.addEventListener("input",()=>{resetResults();render();});
+  minArea.addEventListener("input",()=>{resetResults();invalidateReview();render();});
   analyze.addEventListener("click",countParticles);
   csv.addEventListener("click",exportCsv);
   png.addEventListener("click",exportPng);
