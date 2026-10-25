@@ -1,0 +1,58 @@
+/* Bioflumen & Xensor Lab — shared teaching-tool visual system (2026-10). */
+:root {
+  --blue:#2b61ab;--deep:#183a65;--orange:#ffad55;--cream:#fef9f5;
+  --ink:#173453;--muted:#5b6e83;--line:#dce4ec;
+  --navy:#183a65;--teal:#2b61ab;--teal2:#183a65;--accent:#2b61ab;
+  --text:#173453;--light:#fef9f5;--bg:#fef9f5;--edge:#dce4ec;
+}
+html{background:var(--cream);scroll-behavior:smooth}
+body.bf-tool{background:var(--cream);color:var(--ink);font-family:"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.7}
+body.bf-tool *,body.bf-tool *::before,body.bf-tool *::after{box-sizing:border-box}
+body.bf-tool :is(.topbar,.nav,header.site-header):not(.site-header:has(.header-identity)){
+  background:var(--cream);color:var(--ink);border-bottom:1px solid var(--line);
+  padding-top:11px;padding-bottom:11px;align-items:center;gap:18px;box-shadow:0 2px 10px #17345308;
+}
+body.bf-tool :is(.topbar,.nav,header.site-header):not(.site-header:has(.header-identity)) > a:not(.bf-brand){color:var(--blue);font-weight:650}
+.bf-brand{display:inline-flex;gap:11px;align-items:center;flex-shrink:0;color:var(--ink)!important;text-decoration:none!important;font-size:13px;line-height:1.35;font-weight:800}
+.bf-brand img{width:42px;height:42px;object-fit:contain}
+.bf-brand small{display:block;color:var(--blue);font-size:10px;letter-spacing:.045em;font-weight:600}
+body.bf-tool :is(.shell,.layout,main:not(.subpage)){width:min(1200px,100%);margin-inline:auto}
+body.bf-tool .hero h1,body.bf-tool h1{color:var(--deep)}
+body.bf-tool :is(h1 em,h1>span:not([lang]),.eyebrow,.step,.num,.wi-index){color:var(--blue)}
+body.bf-tool .eyebrow{color:var(--blue);letter-spacing:.13em}
+body.bf-tool :is(.panel,.wi-panel,.wj-card,.wj-steps li){border-color:var(--line);background:#fff;box-shadow:0 5px 18px #1734530a}
+body.bf-tool :is(.primary,.btn.primary,.wi-primary,.wj-button-primary,button#wi-analyze){background:var(--blue)!important;border-color:var(--blue)!important;color:#fff!important}
+body.bf-tool :is(.primary,.btn.primary,.wi-primary,.wj-button-primary):not(:disabled):hover{background:var(--deep)!important}
+body.bf-tool :is(.secondary,.btn.secondary,.quiet,.subtle,.wi-secondary,.wj-button-secondary){background:#f0f4f8;color:var(--deep);border-color:#cedbec}
+body.bf-tool :is(.tab.active,.tool.active,.toolbar button.selected,.wi-mode-group button.active){background:#eaf1fb;color:var(--blue);border-color:#94b2dc}
+body.bf-tool :is(.pill,.chip,.local,.wi-tag){background:#eaf1fb;color:var(--blue)}
+body.bf-tool input[type=range],body.bf-tool progress{accent-color:var(--blue)}
+body.bf-tool :is(a,button,input,select,textarea,summary):focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+body.bf-tool :is(.notice,.warning,.caution){border-left-color:var(--orange);background:#fff8ed;color:#694e2a}
+body.bf-tool :is(.status,.wi-status,.wi-result){border-color:var(--line)}
+body.bf-tool :is(.panel,.wi-panel){min-width:0}
+body.bf-tool :is(button,input,select){max-width:100%}
+body.bf-tool table{width:100%}
+body.bf-tool :is(.table-wrap,.table-scroll,.wi-table-wrap){max-width:100%;overflow-x:auto}
+body.bf-tool footer{border-top:1px solid var(--line);padding-top:16px;margin-top:28px;color:var(--muted);font-size:12px}
+/* English line paired with the Chinese text. Text is added only for translated phrases. */
+.bf-en{display:block;color:var(--muted);font-size:.84em;line-height:1.5;font-weight:450;letter-spacing:0;margin-top:3px;overflow-wrap:anywhere}
+:is(h1,h2,h3,h4)>.bf-en{font-size:.68em;color:var(--blue);line-height:1.5;font-weight:500;margin-top:4px;letter-spacing:0}
+:is(button,.tab,.tool,a.wj-button)>.bf-en{font-size:.77em;color:inherit;opacity:.85;font-weight:500;line-height:1.35}
+label>.bf-en,small>.bf-en,th>.bf-en,dt>.bf-en{font-size:.83em;margin:2px 0 4px}
+:is(.hero,.wj-hero,.wi-hero) p>.bf-en{font-size:.88em;line-height:1.75;margin-top:7px}
+:is(.notice,.warning,.caution,.wi-notice,.wj-notice) .bf-en{color:inherit;opacity:.88;margin-top:6px}
+.bf-en-inline{display:inline;color:var(--muted);font-size:.84em}
+.bf-tool :is(.tab,.tool,.toolbar button,.wi-mode-group button){min-height:44px}
+.bf-tool :is(.primary,.secondary,.quiet,.subtle,.btn,.wi-primary,.wi-secondary){min-height:44px}
+@media(max-width:760px){
+  .bf-brand img{width:34px;height:34px}
+  .bf-brand{font-size:12px}
+  body.bf-tool :is(.topbar,.nav,header.site-header):not(.site-header:has(.header-identity)){flex-wrap:wrap;gap:9px;padding:10px 14px}
+  body.bf-tool :is(.topbar,.nav,header.site-header):not(.site-header:has(.header-identity))>span{display:none}
+  body.bf-tool :is(.workspace,.columns,.main-grid,.wi-grid){grid-template-columns:minmax(0,1fr)}
+  body.bf-tool :is(.shell,.layout,main:not(.subpage)){padding-left:13px;padding-right:13px}
+  body.bf-tool :is(.panel,.wi-panel){padding:17px}
+  .bf-en{font-size:.83em}
+}
+@media(prefers-reduced-motion:reduce){body.bf-tool *,body.bf-tool *::before,body.bf-tool *::after{scroll-behavior:auto!important;transition:none!important}}
