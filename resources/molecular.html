@@ -2,19 +2,20 @@
 layout: null
 permalink: /resources/molecular.html
 resource_group: molecular
-title: 分子檢驗與引子設計 Molecular Testing & Primer Design
+title: 分子檢驗與恆溫擴增資源 Molecular & Isothermal Primer Resources
 title_zh: 分子檢驗與生物資訊
 title_en: Molecular Testing & Bioinformatics
 section_label: MOLECULAR DIAGNOSTICS & NUCLEIC ACID DESIGN
-description: PCR、qPCR、LAMP、RPA/RAA 線上引子設計、NUPACK DNA circuit、RNAfold 核酸結構分析及 NCBI 序列驗證資源。
-intro_zh: 整合一般 PCR／qPCR、LAMP 與 RPA 恆溫擴增引子設計、核酸二級結構預測與 NUPACK 多股反應設計。依方法選擇工具，再評估專一性、二聚體及反應條件。
-intro_en: Online resources for PCR/qPCR, isothermal LAMP and RPA primers, RNA/DNA secondary structures and NUPACK multistrand design. Select the method, check specificity and interactions, then validate experimentally.
+description: PCR/qPCR、LAMP、RPA/RAA、NASBA/TMA、RCA/Padlock、HDA/SDA 引子設計與 NUPACK 核酸結構工具、開源程式及官方指南。
+intro_zh: 整合 PCR／qPCR、LAMP、RPA／RAA、NASBA／TMA、RCA／Padlock 與 HDA／SDA 的核酸設計資源，並保留 NUPACK 和二級結構工具。依實際功能分辨網頁設計器、開源程式、資料庫及原廠指南。
+intro_en: Design resources for PCR/qPCR, LAMP, RPA/RAA, NASBA/TMA, RCA/padlock probes, HDA/SDA and NUPACK. Clearly labeled web tools, local-install source projects, curated databases and manufacturer guidance.
 ---
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261026-6">
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-7">
+  <script defer src="/assets/js/molecular-filter.js?v=20261026-1"></script>
 </head>
 <body>
   <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
@@ -42,11 +43,28 @@ intro_en: Online resources for PCR/qPCR, isothermal LAMP and RPA primers, RNA/DN
         </div>
       </div>
 
+
+      <div class="molecular-resource-filter">
+        <div>
+          <label for="molecular-type-filter">依資源類型篩選 <small lang="en">Filter by resource type</small></label>
+          <select id="molecular-type-filter">
+            <option value="all">全部資源 / All resources</option>
+            <option value="web">線上設計器 / Web tools</option>
+            <option value="code">開源程式（需安裝） / Source projects</option>
+            <option value="guide">指南與文件 / Design guides</option>
+            <option value="database">已驗證引子資料庫 / Primer databases</option>
+            <option value="analysis">核酸結構分析 / Structure analysis</option>
+          </select>
+        </div>
+        <p id="molecular-filter-count" role="status" aria-live="polite">請選擇資源類型，或使用上方方法捷徑。</p>
+      </div>
+      <noscript><p class="tools-note">此頁在未啟用 JavaScript 時仍完整列出所有資源。<span lang="en">All resources remain visible without JavaScript.</span></p></noscript>
+
       {% for method in site.data.molecular_methods %}
       {% assign design_tools = site.data.molecular_design_tools | where: "method", method.id %}
       <section class="functional-section molecular-method-section" id="molecular-{{ method.id | escape }}" aria-labelledby="molecular-heading-{{ method.id | escape }}">
         <div class="catalogue-heading">
-          <p class="eyebrow">{% if method.id == 'pcr' %}PCR &amp; OLIGO VALIDATION{% elsif method.id == 'lamp' %}LOOP-MEDIATED ISOTHERMAL AMPLIFICATION{% elsif method.id == 'rpa' %}RECOMBINASE-BASED ISOTHERMAL AMPLIFICATION{% else %}NUCLEIC ACID STRUCTURES &amp; DNA CIRCUITS{% endif %}</p>
+          <p class="eyebrow">{% if method.id == 'pcr' %}PCR &amp; OLIGO VALIDATION{% elsif method.id == 'lamp' %}LOOP-MEDIATED ISOTHERMAL AMPLIFICATION{% elsif method.id == 'rpa' %}RECOMBINASE-BASED ISOTHERMAL AMPLIFICATION{% elsif method.id == 'nasba' %}RNA ISOTHERMAL AMPLIFICATION{% elsif method.id == 'rca' %}ROLLING CIRCLE &amp; PADLOCK DESIGN{% elsif method.id == 'hda_sda' %}HELICASE / STRAND DISPLACEMENT GUIDES{% else %}NUCLEIC ACID STRUCTURES &amp; DNA CIRCUITS{% endif %}</p>
           <h2 id="molecular-heading-{{ method.id | escape }}">{{ method.name_zh | escape }}<span lang="en">{{ method.name_en | escape }}</span></h2>
           <p>{{ method.description_zh | escape }}<span lang="en" class="molecular-section-en">{{ method.description_en | escape }}</span></p>
         </div>
@@ -54,7 +72,7 @@ intro_en: Online resources for PCR/qPCR, isothermal LAMP and RPA primers, RNA/DN
           {% if method.id == 'pcr' %}
             {% assign initial_pcr = site.data.professional_resources | where: "slug", "primer-blast" %}
             {% for item in initial_pcr %}
-              {% include resource-professional-card.html item=item %}
+              {% include resource-professional-card.html item=item molecular_kind="web" %}
             {% endfor %}
           {% endif %}
           {% for tool in design_tools %}
@@ -73,12 +91,12 @@ intro_en: Online resources for PCR/qPCR, isothermal LAMP and RPA primers, RNA/DN
         {% assign sequence_tools = site.data.professional_resources | where: "slug", "blast" %}
         <div class="reference-grid">
           {% for item in sequence_tools %}
-            {% include resource-professional-card.html item=item %}
+            {% include resource-professional-card.html item=item molecular_kind="web" %}
           {% endfor %}
         </div>
       </section>
 
-      <p class="tools-note">※ 所有連結均前往第三方原始網站，本站不託管其設計演算法或使用者提交的核酸序列。NUPACK 的新計算工作目前需要有效訂閱，IDT 工具需帳號；Eiken PrimerExplorer 已搬遷至新的官方域名，請勿使用遭原廠警告的舊址。預測得到的 primers、probes、hairpins 與多股設計均須依目標生物、反應體系及實驗品質要求進行驗證。本頁供研究與教學使用，非臨床試驗驗證平台。<span lang="en">All links open independent providers. NUPACK currently requires an active subscription to run new jobs; IDT tools require sign-in. Eiken has moved PrimerExplorer away from its unsafe former domain. In-silico primers, probes and strand systems require experimental validation. Research and teaching use only.</span></p>
+      <p class="tools-note">※ 所有連結均前往原始維護單位，本站不託管第三方演算法或序列。請特別區分可即用的「線上設計器」、須安裝套件的「開源程式」、只提供設計原則的「指南」，以及不能產生新引子的「資料庫」。公開 GitHub 程式碼不必然表示允許重製，移植前請查驗授權。NUPACK 新工作可能需要訂閱，IDT 需登入；Eiken PrimerExplorer 請勿使用已遭仿冒警告的舊網址。任何 primer、probe、padlock 與多股設計均需實驗驗證，不作為臨床診斷依據。<span lang="en">All resources link to their original providers. Browser designers, locally installed code, method guides and curated primer databases are distinct. Public code is not automatically redistribution-licensed. NUPACK jobs may require a subscription; IDT requires login; use Eiken's current official domain. All designs require experimental validation and are not clinical diagnostic tools.</span></p>
     </div>
   </main>
   {% include footer.html %}
