@@ -1,0 +1,55 @@
+---
+layout: null
+permalink: /resources/templates.html
+resource_group: templates
+title: 研究簡報與海報 Research Templates
+title_zh: 研究簡報與海報
+title_en: Presentation & Poster Templates
+section_label: ACADEMIC COMMUNICATION
+description: 百洑傳息實驗室研究簡報及學術海報 PowerPoint 模板免費下載。
+intro_zh: 可直接下載並編輯的 PowerPoint 素材，適用實驗室報告、研究計畫簡報與學術會議海報。
+intro_en: Downloadable and editable PowerPoint templates for lab meetings, research presentations and scientific posters.
+---
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  {% include page-head.html %}
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-4">
+  <script defer src="/online-resources.js?v=20261026-2"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
+  {% include header.html %}
+  <main class="subpage" id="main">
+    <div class="wrap">
+      {% include resource-page-hero.html %}
+
+      {% assign presentation_resources = site.data.download_resources | where: "group", "presentation" %}
+      {% assign poster_resources = site.data.download_resources | where: "group", "poster" %}
+      <section class="functional-section" aria-labelledby="templates-slides-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">RESEARCH SLIDES</p>
+          <h2 id="templates-slides-heading">研究簡報模板<span lang="en">Presentation Templates</span></h2>
+          <p>含研究動機、方法、成果、圖表、致謝與可重複使用的生醫圖示版型。</p>
+        </div>
+        <div class="resource-grid">
+          {% for item in presentation_resources %}{% include resource-template-card.html item=item %}{% endfor %}
+        </div>
+      </section>
+      <section class="functional-section" aria-labelledby="templates-posters-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">SCIENTIFIC POSTERS</p>
+          <h2 id="templates-posters-heading">學術海報模板<span lang="en">Scientific Poster Templates</span></h2>
+          <p>90 × 120 cm 直式海報，提供不同視覺結構與研究敘事排列方式。</p>
+        </div>
+        <div class="resource-grid">
+          {% for item in poster_resources %}{% include resource-template-card.html item=item %}{% endfor %}
+        </div>
+      </section>
+      <p class="tools-note">模板供研究、教學與學術交流，請依會議規範調整尺寸、品牌與圖表內容；勿將內含佔位素材誤認為正式研究數據。<span lang="en">Adapt templates to the requirements of your course or conference. Placeholder graphics do not represent actual experimental data.</span></p>
+
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>
