@@ -14,7 +14,7 @@ intro_en: Learn cell identification, counting, tracking and image measurements u
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261026-4">
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-5">
   <script defer src="/online-resources.js?v=20261026-2"></script>
 </head>
 <body>
@@ -46,6 +46,18 @@ intro_en: Learn cell identification, counting, tracking and image measurements u
         </div>
         <div class="software-grid">
           {% for app in imaging_software %}{% include resource-software-card.html app=app %}{% endfor %}
+        </div>
+      </section>
+
+      {% assign references = site.data.professional_resources | where: "function_group", "imaging" %}
+      <section class="functional-section" aria-labelledby="imaging-reference-title">
+        <div class="catalogue-heading">
+          <p class="eyebrow">PROFESSIONAL IMAGE &amp; LAB REFERENCES</p>
+          <h2 id="imaging-reference-title">血球形態與影像圖譜<span lang="en">Blood Cell Morphology References</span></h2>
+          <p>提供原始出版者連結供學生交叉比對；請勿未經授權在公開網站轉載圖庫影像。</p>
+        </div>
+        <div class="reference-grid">
+          {% for item in references %}{% include resource-professional-card.html item=item %}{% endfor %}
         </div>
       </section>
       <p class="tools-note">本站影像分析工具以教學示範為目的，並未作為臨床診斷軟體驗證。請勿上傳含可識別個人資訊的檢體影像至第三方服務。<span lang="en">Educational tools are not clinically validated. Do not upload identifiable patient data to external services.</span></p>
