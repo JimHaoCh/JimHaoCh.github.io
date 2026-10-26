@@ -282,6 +282,10 @@
     if (!window.confirm('要清除此裝置的錯題紀錄嗎？')) return;
     wrongIds.clear(); persist(); wrongCount();
   });
+  function populateSubjects(select){
+    select.replaceChildren(new Option('全部六科 / All subjects',''));
+    for(const subject of SUBJECTS)select.add(new Option(subject.name,subject.name));
+  }
   populateSubjects($('practice-subject'));
   fetch('/assets/data/mls_practice.json', {cache:'no-cache'})
     .then(response => {if (!response.ok) throw new Error('HTTP ' + response.status); return response.json();})
