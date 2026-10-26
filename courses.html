@@ -9,7 +9,7 @@ description: 醫事檢驗師國考與歷屆試題、專業圖譜、顯微影像�
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261026-7">
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-eng1">
 </head>
 <body>
   <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
@@ -32,7 +32,7 @@ description: 醫事檢驗師國考與歷屆試題、專業圖譜、顯微影像�
         {% assign grouped_references = site.data.professional_resources | where: "function_group", category.id %}
         {% assign number_items = grouped_tools.size | plus: grouped_software.size | plus: grouped_references.size %}
         {% if category.id == 'molecular' %}{% assign number_items = number_items | plus: site.data.molecular_design_tools.size %}{% endif %}
-        {% if category.id == 'engineering' %}{% assign number_items = number_items | plus: site.data.lab_software.size %}{% endif %}
+        {% if category.id == 'engineering' %}{% assign number_items = number_items | plus: site.data.lab_software.size | plus: site.data.engineering_resources.size | plus: 1 %}{% endif %}
         {% if category.id == 'exam' %}{% assign number_items = number_items | plus: 2 %}{% endif %}
         {% if category.id == 'templates' %}{% assign number_items = site.data.download_resources.size %}{% endif %}
         <a class="resource-hub-card" href="{{ category.href | escape }}" aria-label="進入 {{ category.name_zh | escape }}，{{ number_items }} 項資源">
