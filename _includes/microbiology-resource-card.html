@@ -1,0 +1,18 @@
+<article class="microbiology-resource-card">
+  <div class="microbiology-resource-card-top">
+    <span class="microbiology-kind microbiology-kind--{{ include.item.mode | escape }}">{{ include.item.kind_zh | escape }}<small lang="en">{{ include.item.kind_en | escape }}</small></span>
+    {% if include.item.priority == 'secondary' %}<span class="microbiology-reference-tier">延伸學習 <small lang="en">Further reading</small></span>{% endif %}
+  </div>
+  <h3>{{ include.item.name | escape }}</h3>
+  <p class="microbiology-resource-provider">{{ include.item.provider | escape }}</p>
+  <p class="microbiology-resource-summary">{{ include.item.description_zh | escape }}<span lang="en">{{ include.item.description_en | escape }}</span></p>
+  <p class="microbiology-resource-caveat">{{ include.item.note_zh | escape }}<span lang="en">{{ include.item.note_en | escape }}</span></p>
+  <div class="microbiology-resource-links">
+    <a href="{{ include.item.url | escape }}" target="_blank" rel="noopener noreferrer external">
+      {% if include.item.mode == 'desktop' %}前往官方下載{% elsif include.item.mode == 'source' %}查看開源專案{% elsif include.item.mode == 'guide' %}閱讀官方指南{% elsif include.item.mode == 'database' %}前往資料庫{% else %}開啟線上工具{% endif %}
+      <small lang="en">{% if include.item.mode == 'desktop' %}Official download{% elsif include.item.mode == 'source' %}Source project{% elsif include.item.mode == 'guide' %}Official guide{% elsif include.item.mode == 'database' %}Open database{% else %}Open learning tool{% endif %} ↗</small>
+    </a>
+    {% if include.item.source and include.item.source != include.item.url %}<a href="{{ include.item.source | escape }}" target="_blank" rel="noopener noreferrer external">原始程式 <small lang="en">Source ↗</small></a>{% endif %}
+    {% if include.item.research %}<a href="{{ include.item.research | escape }}" target="_blank" rel="noopener noreferrer external">研究論文 <small lang="en">Publication ↗</small></a>{% endif %}
+  </div>
+</article>
