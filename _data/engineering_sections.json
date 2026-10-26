@@ -1,0 +1,42 @@
+[
+  {
+    "id": "mechanical",
+    "name_zh": "機械 CAD 與參數化建模",
+    "name_en": "Mechanical CAD & Parametric Modeling",
+    "eyebrow": "PARAMETRIC 3D DESIGN",
+    "intro_zh": "從尺寸拘束、3D 零件到治具與模具，支援可重複調整的設計流程。",
+    "intro_en": "Dimension-driven 3D modeling for fixtures, enclosures and molds."
+  },
+  {
+    "id": "microfabrication",
+    "name_zh": "微流體與光罩版圖",
+    "name_en": "Microfluidics & Mask Layout",
+    "eyebrow": "MICROFLUIDICS & LITHOGRAPHY",
+    "intro_zh": "微流體 CAD 與 GDSII／OASIS 微奈米光罩佈局，銜接 CNC 和晶圓製程。",
+    "intro_en": "Microfluidic design and micro/nanofabrication layouts from CAD to GDSII."
+  },
+  {
+    "id": "manufacturing",
+    "name_zh": "加工製造與 CAM",
+    "name_en": "CAM & Digital Fabrication",
+    "eyebrow": "TOOLPATHS & FABRICATION",
+    "intro_zh": "用瀏覽器體驗 CNC、雷射與 3D 列印刀具路徑；產生的 G-code 必須依實際機台驗證。",
+    "intro_en": "Browser toolpaths for CNC, laser cutting and 3D printing; machine validation is essential."
+  },
+  {
+    "id": "simulation",
+    "name_zh": "流體、光學與電路模擬",
+    "name_en": "Fluid, Optics & Circuit Simulation",
+    "eyebrow": "ENGINEERING SIMULATION",
+    "intro_zh": "由免安裝的教學模擬到需要專業設定的 CFD，清楚區分定性示範與工程計算。",
+    "intro_en": "Interactive educational simulators and engineering CFD, with clear limits of quantitative accuracy."
+  },
+  {
+    "id": "automation",
+    "name_zh": "電子設計與儀器自動化",
+    "name_en": "Electronics & Lab Automation",
+    "eyebrow": "INSTRUMENTATION & CONTROL",
+    "intro_zh": "PCB 設計、流程控制、顯微鏡硬體與開源科學儀器，適合結合微流體系統。",
+    "intro_en": "Circuit boards, flow-based control, microscopy hardware and open instrumentation."
+  }
+]
