@@ -1,4 +1,4 @@
-# Web-Gram Stain Lite · 教學版 v0.1
+# Web-Gram Stain Lite · 教學版 v0.1.1
 
 Client-side Gram-stain microscopy training utility for NYCU Medical Laboratory Science teaching.
 
@@ -17,14 +17,16 @@ Client-side Gram-stain microscopy training utility for NYCU Medical Laboratory S
 - 8-neighbor connected components filtered by pixel area.
 - Provisional round/elongated shape from second central moments and principal-axis ratio.
 - Uncertain connected components sent to **Review**.
-- Suggested view-level Gram reaction and morphology determined from candidate-count proportions; the 80% cutoff is solely a teaching interface heuristic.
+- Suggested view-level Gram reaction and morphology determined from candidate-count proportions; the 80% cutoff is solely a teaching interface heuristic. Fewer than 5 classifiable candidates yield an uncertain result (an interface precaution, not a clinically validated cutoff).
 - Three self-generated schematic microscopy examples for student practice.
+- Detection stops at 1,200 components and explicitly warns when the view is truncated.
+- Local uploads accept JPEG, PNG, and WebP, with a 35 MB file-size limit and a 50 MP source-image guard. The working image is resized to fit within 1,100 × 770 pixels; fine bacteria may be lost after downsampling.
 
 **No deep-learning model, reference microscopy images, externally sourced weights or third-party analysis code is distributed in this folder.** The CSS follows the lab's preexisting teaching-tool style. Images do not leave the browser via this tool's code.
 
 ## Scope and limitations / 限制
 
-This is a proof of concept, not an analytical performance claim. No sensitivity, specificity, clinical agreement, or real-image segmentation benchmark has been completed. Background stain, precipitates, eukaryotic cells, dense bacterial groups, optical blur, imaging compression and camera color correction create false detections and missed detections. Candidate components must not be interpreted as verified bacterial counts. Manual review is required. Arrangement, species identification, Gram-variable organisms, fungi and differential diagnosis are outside v0.1 scope.
+This is a proof of concept, not an analytical performance claim. No sensitivity, specificity, clinical agreement, or real-image segmentation benchmark has been completed. Background stain, precipitates, eukaryotic cells, dense bacterial groups, optical blur, imaging compression and camera color correction create false detections and missed detections. Candidate components must not be interpreted as verified bacterial counts. Manual review is required. Arrangement, species identification, Gram-variable organisms, fungi and differential diagnosis are outside v0.1.1 scope.
 
 **Educational and research use only. Not for diagnosis, patient-specific identification, reporting, or antimicrobial treatment decisions.** Use de-identified or authorized teaching images.
 
@@ -38,5 +40,6 @@ These sources are cited for context. Their released data and models have not bee
 ## Verification snapshot
 
 - Confirmed: all HTML identifiers used by JavaScript exist; no duplicate HTML identifiers; JavaScript syntax compilation passes.
-- Confirmed: mocked browser-runtime smoke sequence covers initialization, synthetic example, student submission, detection invocation, and result reveal.
+- Confirmed: 13/13 scripted fixture and mocked-browser regression cases passed after bug fixes, including Gram-positive cocci, Gram-negative bacilli, mixed image, blank image, fewer than 5 candidates, marker editing, undo, erase, CSV click handler, ROI answer reset, threshold invalidation, and 1,200-candidate cap. These are not real-browser or clinical-image validation.
+- Fixed: stale student selections after ROI changes; detection loop exceeding cap; false-positive categorical suggestions with fewer than five candidates; silent truncation at cap; unsupported format acceptance.
 - Still needed: independent browser validation on iOS Safari/Chrome and actual microscope Gram-stain photos; performance and GitHub Pages publication should be checked on the live site.
