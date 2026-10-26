@@ -10,6 +10,6 @@
     <button class="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="開啟全站選單，{{ site.data.navigation.size }} 個入口">全站選單 <b>{{ site.data.navigation.size }}</b><span lang="en">All pages <i aria-hidden="true">＋</i></span></button>
   </div>
   <nav aria-label="主要導覽" id="nav">
-    {% for link in site.data.navigation %}<a href="{{ link.href }}"{% if page.url == link.href %} aria-current="page"{% endif %}><span class="nav-copy">{{ link.zh }}<span lang="en">{{ link.en }}</span></span></a>{% endfor %}
+    {% for link in site.data.navigation %}<a href="{{ link.href }}"{% if page.url == link.href or page.resource_group and link.href == '/courses.html' %} aria-current="page"{% endif %}><span class="nav-copy">{{ link.zh }}<span lang="en">{{ link.en }}</span></span></a>{% endfor %}
   </nav>
 </header>
