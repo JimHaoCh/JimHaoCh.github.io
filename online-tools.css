@@ -65,3 +65,31 @@
   .catalogue-heading h2{font-size:28px}
 }
 @media(prefers-reduced-motion:reduce){.resource-download{transition:none}.resource-download:hover{transform:none}}
+
+
+/* External official software directory: distinct from local template downloads. */
+.software-section{margin:10px 0 54px;padding:30px 0 4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.software-intro-en{max-width:760px;margin-top:6px!important;font-size:12.5px!important;line-height:1.8!important;color:var(--muted)}
+.software-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.software-card{display:flex;flex-direction:column;min-width:0;padding:23px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 7px 24px rgba(23,52,83,.045)}
+.software-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:17px}
+.software-site-label{padding:6px 9px;border-radius:7px;background:#eaf3fc;color:var(--blue);font-size:11px;font-weight:750;line-height:1.4}
+.software-site-label small[lang=en]{display:block;font-size:10px;font-weight:500;margin-top:1px}
+.software-card-provider{font-size:11px;line-height:1.5;color:var(--muted)}
+.software-card h3{font-family:var(--serif);font-size:clamp(22px,2vw,27px);line-height:1.25;letter-spacing:-.025em;color:var(--ink);margin:0 0 8px}
+.software-kind{color:var(--blue);font-size:12.5px;font-weight:700;line-height:1.55}
+.software-kind span[lang=en]{display:block;font-weight:500;color:var(--muted);font-size:11px}
+.software-summary{color:#4c6579;font-size:13.5px;line-height:1.75;margin:17px 0 20px;flex:1}
+.software-summary span[lang=en],.software-legal-body span[lang=en],.software-disclaimer span[lang=en]{display:block;margin-top:7px;font-size:12px;line-height:1.7;color:var(--muted)}
+.software-conditions{padding:15px 0 13px;border-top:1px solid var(--line)}
+.software-platform{color:#536d80;font-size:11.5px;font-weight:650;line-height:1.6;margin-bottom:13px}
+.software-platform span[lang=en]{display:block;font-size:11px;font-weight:450;color:var(--muted)}
+.software-legal-label{font-size:12px;font-weight:750;color:var(--ink);margin-bottom:5px}
+.software-legal-label span[lang=en]{display:block;font-weight:500;font-size:11px;color:var(--muted)}
+.software-legal-body{font-size:12.5px;color:#4c6579;line-height:1.7;margin:0 0 11px}
+.software-terms-link{font-size:11.5px;line-height:1.7;color:var(--blue);text-decoration:underline;text-underline-offset:2px}
+.software-terms-link span[lang=en]{display:block;font-size:10.5px}
+.software-download{margin-top:auto;min-height:56px}
+.software-disclaimer{margin:18px 0 31px;color:var(--muted);font-size:12px;line-height:1.8}
+@media(max-width:1040px){.software-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.software-section{margin-bottom:42px;padding-top:24px}.software-grid{grid-template-columns:1fr;gap:13px}.software-card{padding:20px}}
