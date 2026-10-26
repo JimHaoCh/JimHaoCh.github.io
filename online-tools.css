@@ -268,3 +268,20 @@
 .molecular-tool-action{margin-top:auto}
 @media(max-width:1050px){.molecular-guide-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.molecular-tools-grid,.molecular-guide-steps{grid-template-columns:1fr}.molecular-design-guide{padding:19px}.molecular-tool-card{padding:20px}.molecular-jump-nav{gap:7px}.molecular-jump-nav>a{padding:9px 11px}.molecular-jump-nav>a small[lang=en]{font-size:9.5px}}
+
+/* Isothermal catalogue: distinguish installed code, web services, published databases and guides. */
+.molecular-kind{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin:0 0 9px;font-size:11px;font-weight:750;color:#336a9a;line-height:1.4}
+.molecular-kind>span[lang=en]{display:inline;font-size:10.5px;font-weight:500;color:var(--muted)}
+.molecular-kind--code{color:#6d5378}
+.molecular-kind--guide{color:#5c7051}
+.molecular-kind--database{color:#8c6631}
+.molecular-access--install{background:#f4f0f8;border-color:#e3dbea;color:#69567d}
+.molecular-access--install small[lang=en]{color:#83788a}
+.molecular-resource-filter{display:flex;align-items:end;justify-content:space-between;gap:15px;flex-wrap:wrap;margin:19px 0 28px;padding:17px 20px;border-radius:13px;border:1px solid var(--line);background:#f8fafc}
+.molecular-resource-filter>div{min-width:210px;max-width:370px;flex:1 1 220px}
+.molecular-resource-filter label{display:block;margin:0 0 7px;font-size:13px;font-weight:700;color:var(--ink)}
+.molecular-resource-filter label small[lang=en]{display:block;font-size:11px;font-weight:500;color:var(--muted)}
+.molecular-resource-filter select{display:block;width:100%;min-height:42px;padding:9px 12px;border:1px solid #cbd8e5;border-radius:9px;background:#fff;color:var(--ink);font:inherit;font-size:13px}
+.molecular-resource-filter>p{font-size:12px;line-height:1.8;color:var(--muted);margin:0 0 3px}
+.molecular-tool-card[hidden],.molecular-tools-grid>.reference-card[hidden],.molecular-method-section[hidden]{display:none!important}
+@media(max-width:760px){.molecular-resource-filter{padding:15px}.molecular-resource-filter>div{max-width:none}}
