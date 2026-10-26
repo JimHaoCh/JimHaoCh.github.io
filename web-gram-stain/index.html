@@ -5,9 +5,9 @@
 <meta name="theme-color" content="#fef9f5">
 <meta name="description" content="Web-Gram Stain Lite：陽明交通大學醫技系鏡檢教學用革蘭氏染色影像分析、菌形候選判斷、學生判讀比較及人工校正；照片僅在瀏覽器處理。">
 <title>Web-Gram Stain Lite｜革蘭氏染色鏡檢判讀 · Gram Stain Microscopy</title>
-<link rel="stylesheet" href="./style.css?v=1">
+<link rel="stylesheet" href="./style.css?v=2">
 <link rel="stylesheet" href="/tools-common.css?v=20261026">
-<script defer src="./app.js?v=1"></script>
+<script defer src="./app.js?v=2"></script>
 </head>
 <body class="bf-tool">
 <a class="skip-link" href="#workspace">跳至操作工具 / Skip to analyzer</a>
@@ -17,7 +17,7 @@
 </header>
 <main id="workspace" class="shell">
 <section class="hero">
-<p class="eyebrow">MICROBIOLOGY · MICROSCOPY · EDUCATIONAL v0.1</p>
+<p class="eyebrow">MICROBIOLOGY · MICROSCOPY · EDUCATIONAL v0.1.1</p>
 <h1>Web-<em>Gram Stain</em> Lite</h1>
 <p class="subtitle">革蘭氏染色影像分析 <span>Gram Stain Microscopy Teaching Analyzer</span></p>
 <p class="intro">先觀察染色反應與菌形，提交你的判讀；再以瀏覽器內的色彩分割及形態特徵分析顯微鏡照片，揭示系統建議，並逐一校正候選標記。適用醫技系臨床微生物學與鏡檢課的操作示範。<span class="en">Interpret Gram reaction and morphology before revealing rule-based suggestions. This browser-only teaching tool detects stained regions, measures simple shape features, and supports manual marker review and export.</span></p>
@@ -26,8 +26,8 @@
 <div class="layout">
 <section class="panel controls">
 <h2><span class="step">01</span> 載入染色影像 <small>Upload &amp; Demo</small></h2>
-<label class="field">上傳顯微鏡照片 <span class="en">Gram-stained image · JPG, PNG or WebP · up to 35 MB</span><input id="upload" type="file" accept="image/jpeg,image/png,image/webp,image/*"></label>
-<p class="hint">建議使用油鏡清晰視野、白色或淡色背景、光線均勻的照片。輸入影像在瀏覽器內縮放至最長邊 1,100 px，原始檔不會傳至本站伺服器。<span class="en">Use a sharp, evenly lit oil-immersion image with a pale background. Processing is local; images are resized to a maximum of 1,100 × 770 px.</span></p>
+<label class="field">上傳顯微鏡照片 <span class="en">Gram-stained image · JPG, PNG or WebP · up to 35 MB</span><input id="upload" type="file" accept="image/jpeg,image/png,image/webp"></label>
+<p class="hint">建議使用油鏡清晰視野、白色或淡色背景、光線均勻的照片。輸入影像在瀏覽器內縮放至最多 1,100 × 770 px；細小菌體可能在縮放後失去影像特徵。原始檔不會傳至本站伺服器。<span class="en">Use a sharp, evenly lit oil-immersion image with a pale background. Processing is local; images are resized to fit within 1,100 × 770 px, and tiny organisms may lose detail.</span></p>
 <div class="demo-grid" role="group" aria-label="內建合成練習影像">
 <button id="demoPos" class="secondary" type="button">合成範例 A <small>Synthetic sample A</small></button>
 <button id="demoNeg" class="secondary" type="button">合成範例 B <small>Synthetic sample B</small></button>
@@ -87,7 +87,7 @@
 </div>
 <div class="comparison"><div><span class="metric-label">推估染色反應 / Suggested Gram reaction</span><strong id="gramResult">—</strong></div><div><span class="metric-label">推估菌形 / Suggested morphology</span><strong id="shapeResult">—</strong></div></div>
 <p id="compareMessage" class="comparison-message"></p><p id="demoTruth" class="hint"></p>
-<p class="hint">統計僅代表符合分色與形態條件的候選連通色塊。相鄰菌體可能合併，染色沉澱可能被計入；不適合據此報告菌量或推導臨床菌種。<span class="en">Counts reflect segmentation components, not verified bacterial cell counts. Nearby cells may merge and stain artifacts may be counted. The 80% predominance rule is an interface heuristic, not a clinical criterion.</span></p>
+<p class="hint">有效候選少於 5 個時顯示「候選數不足」，偵測達 1,200 個候選時停止掃描。統計僅代表符合分色與形態條件的候選連通色塊。相鄰菌體可能合併，染色沉澱可能被計入；不適合據此報告菌量或推導臨床菌種。<span class="en">Counts reflect segmentation components, not verified bacterial cell counts. Nearby cells may merge and stain artifacts may be counted. The 80% predominance rule is an interface heuristic, not a clinical criterion.</span></p>
 </section>
 <section class="explainer">
 <article class="panel"><h2>判讀原理 <small>Method</small></h2><p>本版根據 RGB 色差尋找紫色及粉紅色色塊，再用連通區面積及二階矩（major/minor axis ratio）粗略區分球形與桿形。形狀臨界區與過大候選會標示待確認；結果隨門檻、背景及染色而變動。<span class="en">RGB chromatic contrast detects purple/pink pixels. Connected components and second-moment axis ratios offer provisional cocci/rod suggestions. Ambiguous shapes are flagged for review.</span></p></article>
@@ -99,7 +99,7 @@
 <p><em>An annotated dataset of Gram stains from positive blood cultures.</em> <em>Scientific Data</em> (2026). <a href="https://doi.org/10.1038/s41597-026-06651-3" target="_blank" rel="noopener noreferrer">DOI</a> · <a href="https://figshare.com/articles/dataset/_i_An_annotated_dataset_of_gram_stains_from_positive_blood_cultures_i_/26004610" target="_blank" rel="noopener noreferrer">CC BY 4.0 dataset</a>.</p>
 <p>這些文獻提供後續模型訓練及教學影像標註的研究參考。本站 V0.1 採原創 JavaScript 程式與程式生成的合成示範圖，未引入上述論文的影像、模型權重或第三方演算法原始碼。<span class="en">The references inform future validation and model research. This original JavaScript prototype includes no externally sourced microscopy image, pretrained model, or copied third-party algorithm.</span></p>
 </section>
-<footer>Web-Gram Stain Lite v0.1 · NYCU Medical Laboratory Science · <a href="https://github.com/JimHaoCh/JimHaoCh.github.io/tree/main/web-gram-stain">GitHub source</a></footer>
+<footer>Web-Gram Stain Lite v0.1.1 · NYCU Medical Laboratory Science · <a href="https://github.com/JimHaoCh/JimHaoCh.github.io/tree/main/web-gram-stain">GitHub source</a></footer>
 </main>
 </body>
 </html>
