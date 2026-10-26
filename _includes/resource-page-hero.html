@@ -1,0 +1,11 @@
+  <a class="breadcrumb" href="/">首頁 / Home</a>
+  <div class="resource-sub-breadcrumb"><a href="/courses.html">線上資源 / Online Resources</a><span aria-hidden="true">›</span><span>{{ page.title_zh }} / {{ page.title_en }}</span></div>
+  <div class="section-title">
+    <p class="eyebrow">{{ page.section_label }}</p>
+    <h1>{{ page.title_zh }}<span lang="en">{{ page.title_en }}</span></h1>
+  </div>
+  <div class="tools-intro bilingual-tools-intro">
+    <p>{{ page.intro_zh }}</p>
+    <p lang="en">{{ page.intro_en }}</p>
+  </div>
+  {% include resource-category-nav.html %}
