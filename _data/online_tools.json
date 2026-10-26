@@ -40,6 +40,16 @@
     "description_en": "Measure inhibition-zone diameters from Kirby–Bauer plate images and manually review disk and zone boundaries."
   },
   {
+    "slug": "web-gram-stain",
+    "name": "Web-Gram Stain Lite",
+    "category": "微生物學 · Microbiology",
+    "title": "革蘭氏染色與菌形判讀",
+    "subtitle": "Gram Stain Microscopy · Student vs Rule-based Suggestions",
+    "description": "上傳 Gram stain 顯微照片，先完成學生判讀，再查看染色反應與菌形的規則式建議；支援 ROI、人工校正與標註匯出。教學原型，未經臨床驗證。",
+    "url": "/web-gram-stain/",
+    "description_en": "Interpret Gram-stained microscopy images before revealing rule-based suggestions. Local color/shape analysis with ROI, manual review and exports; educational prototype, not clinically validated."
+  },
+  {
     "slug": "web-hemocytometer",
     "name": "Web-Hemocytometer Lite",
     "category": "鏡檢學 · Microscopy",
