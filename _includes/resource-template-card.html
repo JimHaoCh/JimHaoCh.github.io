@@ -1,0 +1,19 @@
+<article class="resource-card">
+  <div class="resource-card-top">
+    <span class="resource-filetype">PPTX</span>
+    <span class="resource-kind">{{ include.item.kind_zh | escape }} · {{ include.item.kind_en | escape }}</span>
+  </div>
+  <h3 class="resource-card-title">{{ include.item.title_zh | escape }}<span lang="en">{{ include.item.title_en | escape }}</span></h3>
+  <p>{{ include.item.description_zh | escape }}<span lang="en">{{ include.item.description_en | escape }}</span></p>
+  <div class="resource-meta"><span>{{ include.item.meta | escape }}</span><span>{{ include.item.size | escape }}</span></div>
+  {% if include.item.chunks %}
+  <button class="resource-download resource-download-chunked" type="button"
+    data-filename="{{ include.item.filename | escape }}" data-chunks="{{ include.item.chunks | join: '|' | escape }}">
+    <span>下載 PowerPoint<small lang="en">Download PPTX</small></span><span aria-hidden="true">↓</span>
+  </button>
+  {% else %}
+  <a class="resource-download" href="{{ include.item.file | escape }}" download="{{ include.item.filename | escape }}">
+    <span>下載 PowerPoint<small lang="en">Download PPTX</small></span><span aria-hidden="true">↓</span>
+  </a>
+  {% endif %}
+</article>
