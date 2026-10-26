@@ -16,22 +16,6 @@
     "meta": "35 slides · PPTX"
   },
   {
-    "group": "presentation",
-    "kind_zh": "教學簡報",
-    "kind_en": "Course Deck",
-    "title_zh": "Microarray 教學簡報模板與內容範例",
-    "title_en": "Microarray Course Presentation Template & Example",
-    "description_zh": "80 頁寡核酸 Microarray 課程簡報，可作為雙語教學簡報的頁面編排、圖像化說明與文獻整合範例。",
-    "description_en": "80-slide oligonucleotide microarray course deck for bilingual teaching layouts, visual explanations and literature-integrated slide design.",
-    "filename": "Microarray_Course_80slides.pptx",
-    "chunks": [
-      "/downloads/chunks/Microarray_Course_80slides.part1",
-      "/downloads/chunks/Microarray_Course_80slides.part2"
-    ],
-    "size": "4.9 MB",
-    "meta": "80 slides · PPTX"
-  },
-  {
     "group": "poster",
     "kind_zh": "海報模板",
     "kind_en": "Poster Template",
