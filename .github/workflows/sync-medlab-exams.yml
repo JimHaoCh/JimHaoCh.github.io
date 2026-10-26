@@ -1,0 +1,33 @@
+name: Refresh MLS official past-paper index
+on:
+  push:
+    paths:
+      - "scripts/sync_medlab_exam.py"
+      - ".github/workflows/sync-medlab-exams.yml"
+  schedule:
+    - cron: "27 20 * * 0"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: refresh-mls-exam-index
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch MOEX open index 170565 and validate source
+        run: python scripts/sync_medlab_exam.py
+      - name: Commit metadata only when the validated index changed
+        run: |
+          if git diff --quiet -- assets/data/moex_medlab.json; then
+            echo "No metadata changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/moex_medlab.json
+          git commit -m "Update official MOEX MLS link metadata [skip ci]"
+          git push
