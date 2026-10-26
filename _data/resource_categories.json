@@ -50,9 +50,9 @@
     "href": "/resources/engineering.html",
     "icon": "⌘",
     "eyebrow": "DESIGN & INSTRUMENTATION",
-    "intro_zh": "微流體 CAD、3D 設計／製造軟體與實驗儀器控制程式。",
-    "intro_en": "Microfluidic CAD, 3D design/manufacturing software and laboratory control programs.",
-    "sample_zh": "3DuF · Flui3d · SOLIDWORKS · Fusion · NE-501"
+    "intro_zh": "開源機械 CAD、微流體與光罩版圖、CNC、CFD、光電模擬、儀器控制及自製計算器。",
+    "intro_en": "Open CAD, microfluidic/mask layouts, CNC, optics, CFD, electronics, automation and original calculators.",
+    "sample_zh": "FreeCAD · KLayout · Kiri:Moto · Falstad · NE-501"
   },
   {
     "id": "templates",
