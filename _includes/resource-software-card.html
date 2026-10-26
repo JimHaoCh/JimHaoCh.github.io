@@ -1,0 +1,18 @@
+<article class="software-card">
+  <div class="software-card-top">
+    <span class="software-site-label">官方外部連結<small lang="en">Official external site</small></span>
+    <span class="software-card-provider">{{ include.app.provider | escape }}</span>
+  </div>
+  <h3>{{ include.app.name | escape }}</h3>
+  <p class="software-kind">{{ include.app.type_zh | escape }}<span lang="en">{{ include.app.type_en | escape }}</span></p>
+  <p class="software-summary">{{ include.app.summary_zh | escape }}<span lang="en">{{ include.app.summary_en | escape }}</span></p>
+  <div class="software-conditions">
+    <p class="software-platform">{{ include.app.platform_zh | escape }}<span lang="en">{{ include.app.platform_en | escape }}</span></p>
+    <p class="software-legal-label">授權與使用限制<span lang="en">License &amp; conditions</span></p>
+    <p class="software-legal-body">{{ include.app.license_zh | escape }}<span lang="en">{{ include.app.license_en | escape }}</span></p>
+    <a class="software-terms-link" href="{{ include.app.terms_url | escape }}" target="_blank" rel="noopener noreferrer external">查看官方授權與資格說明<span lang="en">Official terms &amp; eligibility ↗</span></a>
+  </div>
+  <a class="software-download resource-download" href="{{ include.app.url | escape }}" target="_blank" rel="noopener noreferrer external">
+    <span>{{ include.app.action_zh | escape }}<small lang="en">{{ include.app.action_en | escape }} · External site</small></span><span aria-hidden="true">↗</span>
+  </a>
+</article>
