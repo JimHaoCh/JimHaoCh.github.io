@@ -1,0 +1,60 @@
+[
+  {
+    "group": "presentation",
+    "kind_zh": "簡報模板",
+    "kind_en": "Presentation Template",
+    "title_zh": "百洑傳息實驗室研究簡報模板",
+    "title_en": "Bioflumen & Xensor Lab Research Presentation Template",
+    "description_zh": "35 頁研究簡報版型，包含封面、章節頁、研究背景、方法、結果、圖表、時程、致謝與生醫圖示素材庫。",
+    "description_en": "35-slide research presentation template with title pages, section dividers, methods, results, charts, timelines, acknowledgements and biomedical icon libraries.",
+    "filename": "Bioflumen_Lab_Presentation_Template_v3_35slides.pptx",
+    "chunks": [
+      "/downloads/chunks/Bioflumen_Lab_Presentation_Template_v3_35slides.part1",
+      "/downloads/chunks/Bioflumen_Lab_Presentation_Template_v3_35slides.part2"
+    ],
+    "size": "4.9 MB",
+    "meta": "35 slides · PPTX"
+  },
+  {
+    "group": "presentation",
+    "kind_zh": "教學簡報",
+    "kind_en": "Course Deck",
+    "title_zh": "Microarray 教學簡報模板與內容範例",
+    "title_en": "Microarray Course Presentation Template & Example",
+    "description_zh": "80 頁寡核酸 Microarray 課程簡報，可作為雙語教學簡報的頁面編排、圖像化說明與文獻整合範例。",
+    "description_en": "80-slide oligonucleotide microarray course deck for bilingual teaching layouts, visual explanations and literature-integrated slide design.",
+    "filename": "Microarray_Course_80slides.pptx",
+    "chunks": [
+      "/downloads/chunks/Microarray_Course_80slides.part1",
+      "/downloads/chunks/Microarray_Course_80slides.part2"
+    ],
+    "size": "4.9 MB",
+    "meta": "80 slides · PPTX"
+  },
+  {
+    "group": "poster",
+    "kind_zh": "海報模板",
+    "kind_en": "Poster Template",
+    "title_zh": "Bioflumen 幾何式研究海報模板",
+    "title_en": "Bioflumen Geometric Research Poster Template",
+    "description_zh": "90 × 120 cm 直式研究海報模板，提供圖像主導、標準三欄與中央大圖等研究敘事版型。",
+    "description_en": "90 × 120 cm portrait scientific poster template with image-led, three-column and central-figure research layouts.",
+    "filename": "Bioflumen_Poster_Template_02_Geometric.pptx",
+    "file": "/downloads/Bioflumen_Poster_Template_02_Geometric.pptx",
+    "size": "3.0 MB",
+    "meta": "90 × 120 cm · PPTX"
+  },
+  {
+    "group": "poster",
+    "kind_zh": "海報模板",
+    "kind_en": "Poster Template",
+    "title_zh": "Bioflumen & Xensor 圖示型研究海報模板",
+    "title_en": "Bioflumen & Xensor Icon Research Poster Template",
+    "description_zh": "90 × 120 cm 直式研究海報模板，整合實驗室品牌圖示、研究流程區塊、結果圖框與圖示素材庫。",
+    "description_en": "90 × 120 cm portrait research poster template with lab-branded icons, workflow blocks, result panels and reusable visual assets.",
+    "filename": "Bioflumen_Xensor_Poster_Template_Icons_v2.pptx",
+    "file": "/downloads/Bioflumen_Xensor_Poster_Template_Icons_v2.pptx",
+    "size": "3.0 MB",
+    "meta": "90 × 120 cm · PPTX"
+  }
+]

@@ -1,15 +1,19 @@
 ---
 layout: null
 permalink: /courses.html
-title: 線上工具 Online Tools
-description: 陽明交通大學醫技系互動式線上教學工具與外部教學資源，包含鏡檢、菌落計數、電泳、側向層析與其他醫技系線上分析工具。
+title: 線上資源 Online Resources
+description: 陽明交通大學醫技系線上資源，包含可下載的研究簡報與海報模板，以及鏡檢、微生物、血液學、細胞計數、電泳與側向層析等互動式教學工具。
 ---
 {% assign tools = site.data.online_tools %}
+{% assign resources = site.data.download_resources %}
+{% assign presentation_resources = resources | where: "group", "presentation" %}
+{% assign poster_resources = resources | where: "group", "poster" %}
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261026">
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-2">
+  <script defer src="/online-resources.js?v=20261026-1"></script>
 </head>
 <body>
   <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
@@ -18,34 +22,108 @@ description: 陽明交通大學醫技系互動式線上教學工具與外部教�
     <div class="wrap">
       <a class="breadcrumb" href="/">首頁 / Home</a>
       <div class="section-title">
-        <p class="eyebrow">MEDTECH VIRTUAL LAB</p>
-        <h1>線上工具<span lang="en">Online Tools</span></h1>
+        <p class="eyebrow">MEDTECH DIGITAL RESOURCES</p>
+        <h1>線上資源<span lang="en">Online Resources</span></h1>
       </div>
-      <div class="tools-intro bilingual-tools-intro"><p>醫技系互動式教學工具與公開教學資源，涵蓋鏡檢、微生物、血液學、細胞計數、電泳、免疫層析及影像處理。本站自製工具可直接開啟操作；第三方資源另設來源說明與外部網站連結。</p><p lang="en">Interactive teaching tools and learning resources for Medical Laboratory Science, covering microscopy, microbiology, hematology, cell counting and image processing. Original tools run directly in your browser; third-party resources are identified and linked separately.</p></div>
-      <section class="tools-grid" aria-label="線上教學工具 / Online learning tools">
-        {% for tool in tools %}
-        <article class="tool-entry">
-          <a class="tool-link" href="{{ tool.url | escape }}" {% if tool.external %}target="_blank" rel="noopener noreferrer external"{% endif %} aria-label="{% if tool.external %}前往第三方網站{% else %}開啟{% endif %} {{ tool.name | escape }}：{{ tool.title | escape }}">
-            <p class="tool-category">{{ tool.category | escape }}</p>
-            {% if tool.external %}<p class="tool-provider">第三方公開工具 · {{ tool.provider | escape }} <span lang="en">External provider</span></p>{% endif %}
-            <h2 class="tool-name">{{ tool.name | escape }}</h2>
-            <p class="tool-title">{{ tool.title | escape }}</p>
-            <p class="tool-subtitle" lang="en">{{ tool.subtitle | escape }}</p>
-            <p class="tool-summary">{{ tool.description | escape }}<span lang="en">{{ tool.description_en | escape }}</span></p>
-            <span class="tool-action"><span>{% if tool.external %}前往外部網站 <small lang="en">Visit external tool</small>{% else %}開啟工具 <small lang="en">Open tool</small>{% endif %}</span><span aria-hidden="true">↗</span></span>
-          </a>
-          {% if tool.external %}
-          <div class="tool-extra-links" aria-label="{{ tool.name | escape }} 補充資源">
-            <span>參考：</span>
-            {% if tool.source %}<a href="{{ tool.source | escape }}" target="_blank" rel="noopener noreferrer">開源程式</a>{% endif %}
-            {% if tool.research %}<a href="{{ tool.research | escape }}" target="_blank" rel="noopener noreferrer">延伸研究</a>{% endif %}
-            {% if tool.fallback %}<a href="{{ tool.fallback | escape }}" target="_blank" rel="noopener noreferrer">原作者使用指南</a>{% endif %}
+      <div class="tools-intro bilingual-tools-intro">
+        <p>整合醫技系互動式教學工具、研究與教學模板，以及公開學習資源。PowerPoint 模板可直接下載後編輯；本站自製工具可直接在瀏覽器操作。</p>
+        <p lang="en">A collection of interactive Medical Laboratory Science tools, downloadable research and teaching templates, and open learning resources. PowerPoint files can be downloaded and edited directly, while original web tools run in the browser.</p>
+      </div>
+
+      <section class="resource-section" aria-labelledby="template-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">DOWNLOADABLE TEMPLATES</p>
+          <h2 id="template-heading">簡報與海報模板<span lang="en">Presentation &amp; Poster Templates</span></h2>
+          <p>實驗室研究、學生報告與學術會議可直接套用的 PowerPoint 資源。</p>
+        </div>
+
+        <div class="resource-group">
+          <div class="resource-group-head">
+            <h3>簡報模板<span lang="en">Presentation Templates</span></h3>
+            <span>{{ presentation_resources | size }} files</span>
           </div>
-          {% endif %}
-        </article>
-        {% endfor %}
+          <div class="resource-grid">
+            {% for item in presentation_resources %}
+            <article class="resource-card">
+              <div class="resource-card-top">
+                <span class="resource-filetype">PPTX</span>
+                <span class="resource-kind">{{ item.kind_zh }} · {{ item.kind_en }}</span>
+              </div>
+              <h4>{{ item.title_zh }}<span lang="en">{{ item.title_en }}</span></h4>
+              <p>{{ item.description_zh }}<span lang="en">{{ item.description_en }}</span></p>
+              <div class="resource-meta"><span>{{ item.meta }}</span><span>{{ item.size }}</span></div>
+              {% if item.chunks %}
+              <button class="resource-download resource-download-chunked" type="button"
+                data-filename="{{ item.filename | escape }}"
+                data-chunks="{{ item.chunks | join: '|' | escape }}">
+                <span>下載 PowerPoint<small lang="en">Download PPTX</small></span><span aria-hidden="true">↓</span>
+              </button>
+              {% else %}
+              <a class="resource-download" href="{{ item.file | escape }}" download="{{ item.filename | escape }}">
+                <span>下載 PowerPoint<small lang="en">Download PPTX</small></span><span aria-hidden="true">↓</span>
+              </a>
+              {% endif %}
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="resource-group">
+          <div class="resource-group-head">
+            <h3>海報模板<span lang="en">Poster Templates</span></h3>
+            <span>{{ poster_resources | size }} files</span>
+          </div>
+          <div class="resource-grid">
+            {% for item in poster_resources %}
+            <article class="resource-card">
+              <div class="resource-card-top">
+                <span class="resource-filetype">PPTX</span>
+                <span class="resource-kind">{{ item.kind_zh }} · {{ item.kind_en }}</span>
+              </div>
+              <h4>{{ item.title_zh }}<span lang="en">{{ item.title_en }}</span></h4>
+              <p>{{ item.description_zh }}<span lang="en">{{ item.description_en }}</span></p>
+              <div class="resource-meta"><span>{{ item.meta }}</span><span>{{ item.size }}</span></div>
+              <a class="resource-download" href="{{ item.file | escape }}" download="{{ item.filename | escape }}">
+                <span>下載 PowerPoint<small lang="en">Download PPTX</small></span><span aria-hidden="true">↓</span>
+              </a>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
       </section>
-      <p class="tools-note">※ 本站自製分析工具屬教學與方法展示原型，分析結果須人工確認，不作為臨床檢驗或診斷依據。Web-Gel（Tembrica）、Web-LFA（LFApp）及 ImageJ.JS 均為第三方資源；本站提供來源與連結，服務可用性、功能及影像資料政策由各提供者管理；請僅使用已去識別化或取得授權的教學影像。<span lang="en">The original analysis tools are educational prototypes and are unsuitable for clinical diagnosis. Tembrica Gel Analyzer, LFApp and ImageJ.JS are independently maintained external services with their own availability, functionality and data policies. Upload only authorized or de-identified teaching images.</span></p>
+
+      <section class="tools-catalogue" aria-labelledby="tools-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">INTERACTIVE LEARNING TOOLS</p>
+          <h2 id="tools-heading">互動式線上工具<span lang="en">Interactive Online Tools</span></h2>
+          <p>鏡檢、微生物、血液學、細胞計數、電泳、免疫層析與影像分析教學工具。</p>
+        </div>
+        <div class="tools-grid" aria-label="線上教學工具 / Online learning tools">
+          {% for tool in tools %}
+          <article class="tool-entry">
+            <a class="tool-link" href="{{ tool.url | escape }}" {% if tool.external %}target="_blank" rel="noopener noreferrer external"{% endif %} aria-label="{% if tool.external %}前往第三方網站{% else %}開啟{% endif %} {{ tool.name | escape }}：{{ tool.title | escape }}">
+              <p class="tool-category">{{ tool.category | escape }}</p>
+              {% if tool.external %}<p class="tool-provider">第三方公開工具 · {{ tool.provider | escape }} <span lang="en">External provider</span></p>{% endif %}
+              <h3 class="tool-name">{{ tool.name | escape }}</h3>
+              <p class="tool-title">{{ tool.title | escape }}</p>
+              <p class="tool-subtitle" lang="en">{{ tool.subtitle | escape }}</p>
+              <p class="tool-summary">{{ tool.description | escape }}<span lang="en">{{ tool.description_en | escape }}</span></p>
+              <span class="tool-action"><span>{% if tool.external %}前往外部網站 <small lang="en">Visit external tool</small>{% else %}開啟工具 <small lang="en">Open tool</small>{% endif %}</span><span aria-hidden="true">↗</span></span>
+            </a>
+            {% if tool.external %}
+            <div class="tool-extra-links" aria-label="{{ tool.name | escape }} 補充資源">
+              <span>參考：</span>
+              {% if tool.source %}<a href="{{ tool.source | escape }}" target="_blank" rel="noopener noreferrer">開源程式</a>{% endif %}
+              {% if tool.research %}<a href="{{ tool.research | escape }}" target="_blank" rel="noopener noreferrer">延伸研究</a>{% endif %}
+              {% if tool.fallback %}<a href="{{ tool.fallback | escape }}" target="_blank" rel="noopener noreferrer">原作者使用指南</a>{% endif %}
+            </div>
+            {% endif %}
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <p class="tools-note">※ PowerPoint 模板供研究、教學與學術交流使用，下載後請依實際會議或課程需求調整尺寸、字型與內容。本站自製分析工具屬教學與方法展示原型，分析結果須人工確認，不作為臨床檢驗或診斷依據。Web-Gel（Tembrica）、Web-LFA（LFApp）及 ImageJ.JS 均為第三方資源；本站提供來源與連結，服務可用性、功能及影像資料政策由各提供者管理；請僅使用已去識別化或取得授權的教學影像。<span lang="en">PowerPoint templates are provided for research, teaching and academic communication; adapt dimensions, fonts and content to the relevant event or course. Original analysis tools are educational prototypes and are unsuitable for clinical diagnosis. Tembrica Gel Analyzer, LFApp and ImageJ.JS are independently maintained external services with their own availability, functionality and data policies. Upload only authorized or de-identified teaching images.</span></p>
     </div>
   </main>
   {% include footer.html %}
