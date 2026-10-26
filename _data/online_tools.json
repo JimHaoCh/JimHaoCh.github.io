@@ -106,5 +106,34 @@
     "research": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8947044/",
     "source": "https://github.com/fpaskali/LFApp",
     "fallback": "https://fpaskali.github.io/LFApp/"
+  },
+  {
+    "slug": "microfluidic-cad-3duf-external",
+    "name": "3DuF · Microfluidic CAD",
+    "category": "微流體設計 · Microfluidic CAD",
+    "title": "線上微流道繪製與晶片佈局",
+    "subtitle": "Interactive Continuous-Flow Microfluidic Design",
+    "description": "前往 CIDAR Lab 開發的 3DuF 開源設計平台：使用元件庫繪製微流道、進出口、混合器與多層配置；可依平台版本匯出 JSON、DXF、SVG 等設計檔。適合微流道版型與 CNC／雷射加工教學。",
+    "description_en": "Open-source browser CAD by CIDAR Lab for continuous-flow microfluidics. Draw channels, ports, mixers and multilayer layouts; exports such as JSON, DXF and SVG are documented for the current project branch. Suitable for chip-layout and fabrication teaching.",
+    "url": "https://3duf.org/",
+    "external": true,
+    "provider": "CIDAR Lab · 3DuF (BSD 2-Clause)",
+    "source": "https://github.com/CIDARLAB/3DuF",
+    "research": "https://doi.org/10.1038/s41598-019-45623-z",
+    "fallback": "https://www.cidarlab.org/3duf"
+  },
+  {
+    "slug": "microfluidic-cad-flui3d-external",
+    "name": "Flui3d · 3D Microfluidic CAD",
+    "category": "微流體設計 · Microfluidic CAD",
+    "title": "3D 列印微流體晶片線上設計",
+    "subtitle": "Parametric Microfluidic Design for 3D Printing",
+    "description": "前往慕尼黑工業大學的 Flui3d 開源平台：利用參數化元件配置多層微流體結構，並以 STL 模型銜接 3D 列印。適合教學示範及晶片原型設計；STL 產生需要原站後端服務。",
+    "description_en": "Open-source browser design tool by TUM for multilayer 3D-printed microfluidic chips. Use parametric components and generate STL models through the external provider's backend service.",
+    "url": "https://flui3d.org/",
+    "external": true,
+    "provider": "TUM-EDA · Flui3d (Apache 2.0)",
+    "source": "https://github.com/TUM-EDA/Flui3d",
+    "research": "https://doi.org/10.1038/s44172-024-00217-0"
   }
 ]
