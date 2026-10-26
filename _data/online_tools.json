@@ -68,5 +68,18 @@
     "description": "原創本機影像工具 v0.3：比例尺校正、12 顆合成基準圖、灰階差、ROI／粒子計數與 CSV 紀錄；另提供第三方 ImageJ.JS 外部連結。",
     "url": "/web-imagej/",
     "description_en": "Original local image analysis workspace for scale calibration, ROI statistics, grayscale comparison, particle counting and CSV export. A separate link leads to third-party ImageJ.JS."
+  },
+  {
+    "slug": "web-gel-external",
+    "name": "Web-Gel · Gel Analyzer",
+    "category": "電泳與分子檢驗 · Gel Electrophoresis",
+    "title": "DNA／蛋白質電泳影像與 Band 定量",
+    "subtitle": "Gel Band Analysis · External Learning Tool",
+    "description": "前往 Tembrica Gel Analyzer（第三方網站）：上傳電泳照片、辨識 Lane／Band、選用 DNA／蛋白質 Ladder、查看強度分布並匯出分析結果。外部網站功能與使用條款由提供者管理。",
+    "description_en": "External Tembrica Gel Analyzer: upload a gel image, detect lanes and bands, calibrate with DNA or protein ladders, and export analysis results. Subject to the external provider's terms.",
+    "url": "https://tembrica.com/en/gel-analyzer",
+    "external": true,
+    "provider": "Tembrica",
+    "research": "https://www.nature.com/articles/s41467-025-59189-0"
   }
 ]
