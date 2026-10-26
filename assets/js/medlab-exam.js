@@ -20,6 +20,7 @@
   const clean = value => String(value || "").trim();
   const sourceUrl = value => {
     const url = clean(value);
+    if (!url) return "";
     try {
       const u = new URL(url,"https://wwwq.moex.gov.tw");
       if (u.protocol !== "https:" && u.protocol !== "http:") return "";
