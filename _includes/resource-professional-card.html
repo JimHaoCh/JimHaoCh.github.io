@@ -1,4 +1,4 @@
-<article class="reference-card">
+<article class="reference-card"{% if include.molecular_kind %} data-molecular-kind="{{ include.molecular_kind | escape }}"{% endif %}>
   <div class="reference-card-top">
     <span class="reference-external-badge">外部專業資源 <small lang="en">External reference</small></span>
     <span class="reference-provider">{{ include.item.provider | escape }}</span>
