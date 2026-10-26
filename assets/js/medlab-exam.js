@@ -95,6 +95,8 @@
   function renderYearResult(){
     const selected=entries.filter(e=>e.year===selectedYear&&sessionOf(e)===selectedSession&&filterText(e));
     $('exam-result-title').textContent='民國 '+selectedYear+' 年'+selectedSession+' · 六大考科';
+    const sourceRecord=selected.find(record=>record.source_page);
+    $('exam-external-official').href=Core.officialUrl(sourceRecord?.source_page)||'https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx';
     const panel=$('exam-results');panel.replaceChildren();
     const bySubject=new Map();
     for(const record of selected){
@@ -119,6 +121,7 @@
     $('exam-more').hidden=true;
   }
   function renderSubjectResult(){
+    $('exam-external-official').href='https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx';
     const item=SUBJECTS.find(s=>s.id===selectedSubject);
     $('exam-result-title').textContent=item.short+' · 歷年考古題';
     const matching=entries.filter(e=>subjectId(e)===selectedSubject&&filterText(e))
@@ -201,7 +204,7 @@
   $('exam-import').addEventListener('change',event=>{void importCSV(event.target.files?.[0]);});
   fetch('/assets/data/moex_medlab.json',{cache:'no-cache'})
     .then(response=>{if(!response.ok)throw new Error('HTTP '+response.status);return response.json();})
-    .then(data=>{initialLoaded=true;loadedAt=data.retrieved_at_utc||'';setEntries(data.entries||[]);})
+    .then(data=>{initialLoaded=true;loadedAt=data.curated_on||data.retrieved_at_utc||'';setEntries(data.entries||[]);})
     .catch(()=>{render();updateIndexStatus();});
   render();
   // Original study questions: deliberately separate from official exam PDFs.
