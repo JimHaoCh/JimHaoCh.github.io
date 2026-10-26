@@ -14,9 +14,9 @@ intro_en: Quick access to official MOEX past papers, answer keys and corrections
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261026-exam8">
+  <link rel="stylesheet" href="/online-tools.css?v=20261027-exam11">
   <script defer src="/assets/js/moex-core.js?v=20261026-exam7"></script>
-  <script defer src="/assets/js/medlab-exam.js?v=20261027-exam10"></script>
+  <script defer src="/assets/js/medlab-exam.js?v=20261027-exam11"></script>
 </head>
 <body>
   <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
@@ -71,14 +71,30 @@ intro_en: Quick access to official MOEX past papers, answer keys and corrections
               <a href="https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx" target="_blank" rel="noopener noreferrer external">官方歷屆試題查詢 <span lang="en">Official MOEX archive ↗</span></a>
               <a href="https://data.gov.tw/dataset/170565" target="_blank" rel="noopener noreferrer external">資料集 170565 <span lang="en">Open data ↗</span></a>
             </div>
-            <div class="exam-import-panel">
-              <h3>自行加入更多年份 <span lang="en">Optional historical CSV import</span></h3>
-              <p>通常不需要匯入：此功能是官方索引更新失敗時的備用方式。可下載官方 CSV 並在此頁本機讀取，檔案不會上傳本站。</p>
-              <div class="exam-import-actions">
-                <a href="https://wwwc.moex.gov.tw/main/Exam/wHandExamQandA_CSV.ashx" target="_blank" rel="noopener noreferrer external">下載官方 CSV <small lang="en">Download ↗</small></a>
-                <label class="exam-import-label" for="exam-import">選取 CSV <small lang="en">Import locally</small></label>
-                <input id="exam-import" type="file" accept=".csv,text/csv">
-              </div>
+            <div class="exam-import-panel" aria-labelledby="exam-import-title">
+              <h3 id="exam-import-title">匯入較早年度考古題 <span lang="en">Import earlier official past papers</span></h3>
+              <p>想找本站尚未收錄的年份？依照下面 3 個步驟操作即可。<strong>目前已收錄的年份可以直接在上方查詢，無須下載 CSV。</strong></p>
+              <ol class="exam-import-guide" aria-label="CSV 匯入三步驟">
+                <li>
+                  <div class="exam-import-step-heading"><span class="exam-import-step-no" aria-hidden="true">1</span><strong>下載考選部資料 <small lang="en">Download official CSV</small></strong></div>
+                  <p>按下「下載官方 CSV」，將檔案存到手機的「檔案」或電腦的「下載」資料夾。請保留下載後的原始檔案。</p>
+                  <a class="exam-import-action" href="https://wwwc.moex.gov.tw/main/Exam/wHandExamQandA_CSV.ashx" target="_blank" rel="noopener noreferrer external">下載官方 CSV <small lang="en">Download from MOEX ↗</small></a>
+                </li>
+                <li>
+                  <div class="exam-import-step-heading"><span class="exam-import-step-no" aria-hidden="true">2</span><strong>選擇剛下載的檔案 <small lang="en">Choose the saved file</small></strong></div>
+                  <p>點下面的「選擇檔案」，找到剛下載的 CSV。選好後網站會自動讀取，不用額外按匯入按鈕。</p>
+                  <label class="exam-import-file-label" for="exam-import">選取 CSV 檔案 / Choose CSV file</label>
+                  <input id="exam-import" type="file" accept=".csv,text/csv,.ashx" aria-describedby="exam-import-file-help exam-import-status">
+                  <p class="exam-import-helper" id="exam-import-file-help">選擇考選部下載的原始 CSV（部分裝置可能將檔案顯示為 .ashx）。</p>
+                </li>
+                <li>
+                  <div class="exam-import-step-heading"><span class="exam-import-step-no" aria-hidden="true">3</span><strong>查看匯入結果 <small lang="en">Browse imported exam papers</small></strong></div>
+                  <p>成功後會顯示收錄筆數，接著回到上方的年度或科目清單，點選「試題」或「答案」開啟官方 PDF。</p>
+                  <p id="exam-import-status" class="exam-import-status" role="status" aria-live="polite">尚未選擇檔案 / No file selected.</p>
+                  <a id="exam-import-view" class="exam-import-action" href="#exam-browser" hidden>查看已匯入考古題 <small lang="en">View imported papers ↑</small></a>
+                </li>
+              </ol>
+              <p class="exam-import-privacy">資料僅在目前開啟的瀏覽器分頁合併顯示，不會上傳本站；重新整理頁面後，如需查詢匯入的資料，請再次選取檔案。</p>
             </div>
           </div>
         </details>
