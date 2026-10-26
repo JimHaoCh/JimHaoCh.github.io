@@ -2,9 +2,10 @@
 layout: null
 permalink: /courses.html
 title: 線上資源 Online Resources
-description: 陽明交通大學醫技系線上資源，包含可下載的研究簡報與海報模板，以及鏡檢、微生物、血液學、細胞計數、電泳與側向層析等互動式教學工具。
+description: 陽明交通大學醫技系線上資源：研究簡報與海報模板、ImageJ／SOLIDWORKS／Autodesk Fusion 官方外部下載連結，以及鏡檢、微生物與影像分析互動教學工具。
 ---
 {% assign tools = site.data.online_tools %}
+{% assign software_downloads = site.data.external_software %}
 {% assign resources = site.data.download_resources %}
 {% assign presentation_resources = resources | where: "group", "presentation" %}
 {% assign poster_resources = resources | where: "group", "poster" %}
@@ -12,7 +13,7 @@ description: 陽明交通大學醫技系線上資源，包含可下載的研究�
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261026-2">
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-3">
   <script defer src="/online-resources.js?v=20261026-1"></script>
 </head>
 <body>
@@ -26,8 +27,8 @@ description: 陽明交通大學醫技系線上資源，包含可下載的研究�
         <h1>線上資源<span lang="en">Online Resources</span></h1>
       </div>
       <div class="tools-intro bilingual-tools-intro">
-        <p>整合醫技系互動式教學工具、研究與教學模板，以及公開學習資源。PowerPoint 模板可直接下載後編輯；本站自製工具可直接在瀏覽器操作。</p>
-        <p lang="en">A collection of interactive Medical Laboratory Science tools, downloadable research and teaching templates, and open learning resources. PowerPoint files can be downloaded and edited directly, while original web tools run in the browser.</p>
+        <p>整合醫技系互動式教學工具、研究簡報與海報模板，以及官方軟體下載資源。PowerPoint 模板可直接下載編輯；第三方軟體請依各原廠授權規範申請與使用。</p>
+        <p lang="en">Medical Laboratory Science teaching tools, editable research templates and official external software access. Download the PowerPoint templates directly; apply for and use third-party software only under its provider’s applicable license.</p>
       </div>
 
       <section class="resource-section" aria-labelledby="template-heading">
@@ -90,6 +91,38 @@ description: 陽明交通大學醫技系線上資源，包含可下載的研究�
             {% endfor %}
           </div>
         </div>
+      </section>
+
+      <section class="software-section" aria-labelledby="software-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">OFFICIAL SOFTWARE DOWNLOADS</p>
+          <h2 id="software-heading">外部軟體下載資源<span lang="en">External Software Downloads</span></h2>
+          <p>以下連結均導向軟體原廠或官方專案網站，由提供者管理下載、帳號申請、教育資格驗證及授權。本站不提供安裝檔，也不代為授權。</p>
+          <p class="software-intro-en" lang="en">Links lead to the official providers for downloads, accounts, educational eligibility verification and license terms. This website does not host installers or grant software licenses.</p>
+        </div>
+        <div class="software-grid">
+          {% for app in software_downloads %}
+          <article class="software-card">
+            <div class="software-card-top">
+              <span class="software-site-label">官方外部連結 <small lang="en">Official external site</small></span>
+              <span class="software-card-provider">{{ app.provider | escape }}</span>
+            </div>
+            <h3>{{ app.name | escape }}</h3>
+            <p class="software-kind">{{ app.type_zh | escape }} <span lang="en">{{ app.type_en | escape }}</span></p>
+            <p class="software-summary">{{ app.summary_zh | escape }}<span lang="en">{{ app.summary_en | escape }}</span></p>
+            <div class="software-conditions">
+              <p class="software-platform">{{ app.platform_zh | escape }} <span lang="en">{{ app.platform_en | escape }}</span></p>
+              <p class="software-legal-label">授權與使用限制 <span lang="en">License &amp; use restrictions</span></p>
+              <p class="software-legal-body">{{ app.license_zh | escape }}<span lang="en">{{ app.license_en | escape }}</span></p>
+              <a class="software-terms-link" href="{{ app.terms_url | escape }}" target="_blank" rel="noopener noreferrer external">查看官方授權／資格說明 <span lang="en">Official terms &amp; eligibility ↗</span></a>
+            </div>
+            <a class="software-download resource-download" href="{{ app.url | escape }}" target="_blank" rel="noopener noreferrer external" aria-label="前往 {{ app.name | escape }} 官方外部網站，{{ app.action_zh | escape }}">
+              <span>{{ app.action_zh | escape }}<small lang="en">{{ app.action_en | escape }} · External site</small></span><span aria-hidden="true">↗</span>
+            </a>
+          </article>
+          {% endfor %}
+        </div>
+        <p class="software-disclaimer">※ 本區為外部官方下載／申請入口，不代表本站或陽明交通大學與軟體公司具有合作、保證免費資格或提供技術支援。使用者須自行確認最新授權條款、所在地適用方案、申請資格及安裝需求。學生個人教育授權不應直接用於產學合作、商業委託或學校共用電腦，除非該授權明確允許。<span lang="en">These independent official links do not imply affiliation, guaranteed free access or technical support. Verify current license terms, regional availability, eligibility and system requirements. Do not assume individual educational licenses authorize industry projects, commercial work or shared lab computers.</span></p>
       </section>
 
       <section class="tools-catalogue" aria-labelledby="tools-heading">
