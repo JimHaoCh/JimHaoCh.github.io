@@ -1,0 +1,53 @@
+[
+  {
+    "slug": "imagej-nih",
+    "name": "ImageJ",
+    "provider": "ImageJ / NIH origin",
+    "type_zh": "免費影像分析軟體",
+    "type_en": "Public-domain Image Analysis",
+    "platform_zh": "Windows · macOS · Linux",
+    "platform_en": "Desktop software",
+    "summary_zh": "原始 ImageJ（ImageJ 1.x）官方下載頁。可用於顯微影像處理、面積與顆粒分析、灰階定量及 ROI 量測；請依作業系統選擇合適安裝版本。",
+    "summary_en": "Official original ImageJ (1.x) downloads for microscopy image processing, ROI measurements, particle analysis and densitometry. Choose the package for your operating system.",
+    "license_zh": "ImageJ 原始程式屬公有領域（Public Domain）；另行安裝的外掛、套件或其他發行版可能有不同授權。請查閱來源說明及個別授權。",
+    "license_en": "Original ImageJ is public-domain software. Third-party plugins and other distributions may have different licenses; verify their individual terms.",
+    "url": "https://imagej.net/ij/download.html",
+    "terms_url": "https://imagej.net/ij/disclaimer.html",
+    "action_zh": "前往 ImageJ 官方下載",
+    "action_en": "Official ImageJ downloads"
+  },
+  {
+    "slug": "solidworks-students",
+    "name": "SOLIDWORKS for Students",
+    "provider": "Dassault Systèmes SOLIDWORKS",
+    "type_zh": "學生版 3D CAD",
+    "type_en": "Student 3D CAD Access",
+    "platform_zh": "Windows · 須具學生資格",
+    "platform_en": "Eligibility required",
+    "summary_zh": "前往 SOLIDWORKS 官方學生方案，申請／下載 Design Standard for Students；官方另提供付費進階學生方案。適合零件、組合件與工程圖設計。",
+    "summary_en": "Visit the official student program for access to SOLIDWORKS Design Standard for Students, with optional paid advanced student editions. Designed for parts, assemblies and drawings.",
+    "license_zh": "免費 Design Standard 僅供符合資格的個別學生申請；學生授權限個人學習，並非學校教室或實驗室授權，亦不得直接視為商業／產學用途許可。以官方當期條款及所在地適用方案為準。",
+    "license_en": "Free Design Standard is for eligible individual students; a student license is not a school lab/classroom license and does not confer commercial-use rights. Follow current official terms and regional eligibility.",
+    "url": "https://www.solidworks.com/product/students/design-standard",
+    "terms_url": "https://files.solidworks.com/eula/education/eulastudent_ENG.htm",
+    "action_zh": "前往 SOLIDWORKS 學生申請",
+    "action_en": "SOLIDWORKS student access"
+  },
+  {
+    "slug": "autodesk-fusion-education",
+    "name": "Autodesk Fusion for Education",
+    "provider": "Autodesk",
+    "type_zh": "教育版 CAD／CAM／CAE",
+    "type_en": "Educational CAD/CAM/CAE",
+    "platform_zh": "Windows · macOS · 需教育資格驗證",
+    "platform_en": "Education verification",
+    "summary_zh": "前往 Autodesk Fusion 官方教育申請頁。適用於 3D 建模、微流體元件設計及 CNC／3D 列印製造流程；符合資格的學生及教職員可申請教育存取權限。",
+    "summary_en": "Official Autodesk Fusion educational access for 3D design, microfluidic components, CNC and additive-manufacturing workflows. Eligibility verification is required.",
+    "license_zh": "教育授權須符合學生／教職員資格與驗證要求；原則上提供一年免費教育存取並可依資格續期。僅限官方允許的教育用途，不得用於商業、專業或營利用途。",
+    "license_en": "Educational access requires verified eligibility, is generally renewable annually, and is limited to permitted educational purposes—not commercial, professional or for-profit work.",
+    "url": "https://www.autodesk.com/education/edu-software/fusion",
+    "terms_url": "https://www.autodesk.com/support/account/education/students-educators/overview",
+    "action_zh": "前往 Fusion 教育版申請",
+    "action_en": "Fusion education access"
+  }
+]
