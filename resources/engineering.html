@@ -69,8 +69,9 @@ intro_en: Resources from microfluidic CAD and 3D modeling to fabrication plannin
           <p class="lab-software-warning">{{ app.safety_zh }}<span lang="en">{{ app.safety_en }}</span></p>
           {% if app.file %}
           <a href="{{ app.file | escape }}" class="resource-download lab-software-download" download="{{ app.filename | escape }}">
-            <span>下載 NE-501 原始碼與說明文件<small lang="en">Download source package &amp; documentation (ZIP)</small></span><span aria-hidden="true">↓</span>
+            <span>下載原始碼與雙語文字說明<small lang="en">Download source &amp; bilingual text guides (ZIP)</small></span><span aria-hidden="true">↓</span>
           </a>
+          <p class="lab-software-checksum">SHA-256：{{ app.sha256 }} · {{ app.size }} · ZIP</p>
           {% else %}
           <p class="lab-software-pending">完整原始碼及雙語文件已整理；公開下載檔尚在檢查與部署中。<span lang="en">The complete source and bilingual manuals are archived; public download is pending packaging and deployment.</span></p>
           {% endif %}
