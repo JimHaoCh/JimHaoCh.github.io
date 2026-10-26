@@ -1,0 +1,131 @@
+---
+layout: null
+permalink: /web-mic-checkerboard/
+resource_group: diagnostics
+title: Web-MIC & Checkerboard｜微生物藥敏與雙藥交互作用教學
+title_zh: MIC 與 Checkerboard 教學
+title_en: Web-MIC & Checkerboard
+section_label: CLINICAL MICROBIOLOGY · ANTIMICROBIAL SUSCEPTIBILITY
+description: 免費純瀏覽器模擬 96-well broth microdilution、單藥 MIC、雙藥 Checkerboard 與 FICI，另以獨立的菌落存活數範例解釋 MBC。
+intro_zh: 操作 8 × 12 的虛構 Checkerboard 微孔盤，練習判讀生長、抑制、單藥 MIC 與雙藥 FICI，並用另一份存活菌落資料學習 MBC。所有資料與計算均在本機瀏覽器，不涉及患者與真實病原菌。
+intro_en: Interactive synthetic 8 × 12 checkerboard of growth calls, independent MIC axes, FICI interpretation and a separate viable-count exercise for MBC. Runs locally without patient or experimental data.
+---
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  {% include page-head.html %}
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-mic1">
+  <link rel="stylesheet" href="/web-mic-checkerboard/mic-checkerboard.css?v=20261026-mic1">
+  <script defer src="/assets/js/mic-checkerboard-core.js?v=20261026-mic1"></script>
+  <script defer src="/assets/js/mic-checkerboard-app.js?v=20261026-mic1"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
+  {% include header.html %}
+  <main class="subpage" id="main">
+    <div class="wrap">
+      {% include resource-page-hero.html %}
+      <p class="mic-back"><a href="/resources/diagnostics.html">← 返回微生物與檢驗判讀 <span lang="en">Microbiology resources</span></a></p>
+      <section class="mic-intro" aria-label="教學定位">
+        <div><p class="eyebrow">BROWSER-ONLY · SYNTHETIC TEACHING DATA</p><h2>抑菌，不等於殺菌<span lang="en">Growth inhibition is not bacterial killing</span></h2></div>
+        <div class="mic-intro-points">
+          <div><strong>96</strong><span>個可編輯孔位<small lang="en">Interactive wells</small></span></div>
+          <div><strong>3</strong><span>組合成情境<small lang="en">Synthetic scenarios</small></span></div>
+          <div><strong>2</strong><span>獨立教學模組<small lang="en">MIC/FICI · MBC</small></span></div>
+        </div>
+        <p>這是自行設計的<strong>教學模擬器</strong>，不是儀器數據分析服務、臨床藥敏系統或用藥建議。所有孔位和存活菌落數都是虛構範例，不能推論任何實際細菌或抗生素的效果。</p>
+        <p lang="en">This is an original educational simulation, not a validated susceptibility testing system, medical device, or treatment recommendation. No real pathogens, patients or antibiotic responses are represented.</p>
+      </section>
+
+      <section class="functional-section" aria-labelledby="mic-checker-title" id="mic-checkerboard">
+        <div class="catalogue-heading">
+          <p class="eyebrow">01 · BROTH MICRODILUTION &amp; DRUG INTERACTIONS</p>
+          <h2 id="mic-checker-title">96 孔 Checkerboard 教學板<span lang="en">MIC and fractional inhibitory concentration index</span></h2>
+          <p>橫軸為藥物 B（12 欄），縱軸為藥物 A（8 列），單位皆為 mg/L（數值亦等同 μg/mL）。第一列 B-only、第一欄 A-only；左上角是無藥物的生長對照。</p>
+        </div>
+        <div class="mic-controls">
+          <label for="mic-scenario">選擇虛構反應型態 <small lang="en">Synthetic interaction preset</small>
+            <select id="mic-scenario">
+              <option value="synergy">案例 A：協同示例 / Synergy</option>
+              <option value="indifferent">案例 B：無明確交互作用 / Indifference</option>
+              <option value="antagonism">案例 C：拮抗示例 / Antagonism</option>
+              <option value="blank">空白板：學生自行判讀 / Blank plate</option>
+            </select>
+          </label>
+          <button type="button" id="mic-load">載入情境<small lang="en">Load preset</small></button>
+          <button type="button" id="mic-export" class="mic-secondary">匯出 CSV<small lang="en">Export local CSV</small></button>
+          <div class="mic-learning-control"><label><input type="checkbox" id="mic-hide-answer"> 課堂練習：先隱藏數值與結論<span lang="en">Hide calculation until reveal</span></label><button type="button" id="mic-reveal" class="mic-secondary" hidden>揭曉計算結果 <small lang="en">Reveal analysis</small></button></div>
+        </div>
+        <div class="mic-legend" aria-label="孔位判讀圖例">
+          <span><b class="mic-legend-dot mic-growth">G</b> 可見生長 <small lang="en">Growth</small></span>
+          <span><b class="mic-legend-dot mic-inhibited">I</b> 未見生長 <small lang="en">No visible growth</small></span>
+          <span><b class="mic-legend-dot mic-unknown">?</b> 未判讀 <small lang="en">Unread</small></span>
+          <p>點選或用鍵盤啟動孔位，即循序切換「生長 → 未見生長 → 未判讀」。<span lang="en">Click or press Enter/Space to cycle well state.</span></p>
+        </div>
+        <div class="mic-plate-scroller" role="region" tabindex="0" aria-label="96 孔 Checkerboard，可橫向捲動">
+          <table class="mic-plate" id="mic-plate">
+            <caption>Drug A ↓（列 A–H）；Drug B →（欄 1–12），濃度 mg/L</caption>
+            <thead id="mic-plate-head"></thead>
+            <tbody id="mic-plate-body"></tbody>
+          </table>
+        </div>
+        <p class="mic-hint" id="mic-well-detail" role="status">點選任一孔位可查看濃度與判讀狀態。<span lang="en">Select any well for its concentrations and growth call.</span></p>
+        <div id="mic-analysis" class="mic-analysis" aria-live="polite">
+          <p>正在初始化虛構孔位資料… <span lang="en">Initializing synthetic checkerboard data…</span></p>
+        </div>
+        <p class="mic-interpretation-note">FICI = (組合中的 A 濃度 / A 單用 MIC) + (組合中的 B 濃度 / B 單用 MIC)。此教學使用觀察到的<strong>最低 FICI</strong>；以 ≤ 0.5 為協同、&gt; 0.5 至 ≤ 4 為無明確交互作用、&gt; 4 為拮抗的常用研究慣例。不同文獻的中間區間及拮抗門檻可能不同；結果需要正確的生長對照、完整的單藥 MIC 軸及實驗驗證。<span lang="en">An example of common research cutoffs, not standardized clinical breakpoints. Lowest observed FICI is sensitive to assay conditions and missing wells.</span></p>
+      </section>
+
+      <section class="functional-section" aria-labelledby="mic-mbc-title" id="mic-mbc">
+        <div class="catalogue-heading">
+          <p class="eyebrow">02 · VIABLE-CELL FOLLOW-UP (SEPARATE DATA)</p>
+          <h2 id="mic-mbc-title">MBC 與存活菌落數<span lang="en">Minimum Bactericidal Concentration (MBC)</span></h2>
+          <p>此區使用**另一份虛構存活菌落數資料**。只有 Checkerboard「未見可見生長」，無法直接推論 99.9% 殺菌效果。MBC 需要獨立的存活數／再培養證據。</p>
+        </div>
+        <div class="mic-mbc-panel">
+          <div class="mic-mbc-controls">
+            <label for="mic-mbc-agent">單藥示例 <small lang="en">Separate single-agent synthetic series</small>
+              <select id="mic-mbc-agent">
+                <option value="A">藥物 A / Agent A</option>
+                <option value="B">藥物 B / Agent B</option>
+              </select>
+            </label>
+            <label for="mic-mbc-baseline">起始活菌數 (CFU/mL) <small lang="en">Baseline viable count</small>
+              <input id="mic-mbc-baseline" type="number" min="1" step="any" value="1000000" inputmode="decimal">
+            </label>
+          </div>
+          <div class="mic-mbc-table-wrap">
+            <table class="mic-mbc-table">
+              <caption>示例濃度與獨立存活菌數 / Synthetic viable-count series</caption>
+              <thead><tr><th scope="col">濃度<br><small>mg/L</small></th><th scope="col">存活 CFU/mL<br><small>Viable count</small></th><th scope="col">與起始量比較<br><small>Relative viability</small></th></tr></thead>
+              <tbody id="mic-mbc-rows"></tbody>
+            </table>
+          </div>
+          <div id="mic-mbc-output" class="mic-mbc-output" aria-live="polite"></div>
+          <p class="mic-hint">依本教學採用的定義，MBC 是讓存活菌數相較初始活菌數下降 ≥99.9%（≥3 log₁₀）的最低測試濃度。資料為演示用途，未模擬檢出極限、藥物殘留、再培養回收效率或試驗誤差。<span lang="en">MBC here is ≥99.9% reduction in viable CFU from the initial inoculum, as a separate defined assay. Analytical detection and carry-over are not modeled.</span></p>
+        </div>
+      </section>
+
+      <section class="functional-section" aria-labelledby="mic-method-title">
+        <div class="catalogue-heading">
+          <p class="eyebrow">LIMITATIONS &amp; SOURCES</p>
+          <h2 id="mic-method-title">原理與判讀限制<span lang="en">Teaching interpretation, not clinical reporting</span></h2>
+        </div>
+        <div class="mic-learning-grid">
+          <article><h3>MIC 與 MBC 的差別 <span lang="en">Inhibition vs killing</span></h3><p>MIC 是無可見生長的最低測試濃度；MBC 涉及另外評估存活 CFU。即使兩者數值接近，也不能互相取代。</p></article>
+          <article><h3>FICI 不能直接作為用藥結論 <span lang="en">Not a treatment metric</span></h3><p>Checkerboard 依 Loewe additivity 相關概念建立，無法捕捉所有時間相依與方向性作用。教學中的協同、拮抗示例均為人為生成。</p></article>
+          <article><h3>缺少資料時不硬算 <span lang="en">Missing results stay missing</span></h3><p>若單藥 MIC 超出盤面範圍、對照無效、孔位未知，工具會標示限制，不用臆測的 MIC 將結果強行換算為 FICI。</p></article>
+          <article><h3>本機運算與素材來源 <span lang="en">Local-only and independent</span></h3><p>不需上傳任何真實臨床資料，使用本站原創的 JavaScript 與虛構反應矩陣。匯出的 CSV 只包含目前畫面上由學生編輯的孔位狀態。</p></article>
+        </div>
+        <p class="mic-citations">文獻延伸閱讀 / Further reading：
+          <a target="_blank" rel="noopener noreferrer external" href="https://doi.org/10.1093/jac/dkae233">JAC 2024 · Beyond the FIC index</a>；
+          <a target="_blank" rel="noopener noreferrer external" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7913650/">Combination testing &amp; FICI conventions</a>；
+          <a target="_blank" rel="noopener noreferrer external" href="https://doi.org/10.1111/j.1469-0691.1998.tb00061.x">Methods &amp; MBC terminology</a>。
+        </p>
+      </section>
+      <p class="tools-note">所有資料僅為合成教學範例，沒有臨床敏感性／特異性驗證，不能用於診療決策、真實抗生素組合選擇或細菌實驗參數最佳化。<span lang="en">Synthetic educational scenarios only. Not for clinical diagnosis, real susceptibility reporting or antibiotic treatment decisions.</span></p>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>
