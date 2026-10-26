@@ -7,7 +7,8 @@
     "subtitle": "Sperm Motility Analysis",
     "description": "上傳顯微鏡影片，觀察精子候選追蹤軌跡與 CASA 速度參數。",
     "url": "/web-casa-lite/",
-    "description_en": "Upload a microscopy video to visualize candidate sperm tracks and explore CASA motility and velocity parameters."
+    "description_en": "Upload a microscopy video to visualize candidate sperm tracks and explore CASA motility and velocity parameters.",
+    "function_group": "imaging"
   },
   {
     "slug": "web-cfu-lite",
@@ -17,7 +18,8 @@
     "subtitle": "Colony Counting",
     "description": "從培養皿照片辨識菌落，手動修正計數並練習稀釋換算。",
     "url": "/web-cfu-lite/",
-    "description_en": "Detect colonies in a plate photograph, correct annotations manually and practice dilution-based CFU/mL calculations."
+    "description_en": "Detect colonies in a plate photograph, correct annotations manually and practice dilution-based CFU/mL calculations.",
+    "function_group": "diagnostics"
   },
   {
     "slug": "web-wbc-lite",
@@ -27,7 +29,8 @@
     "subtitle": "WBC Differential Training",
     "description": "練習白血球形態辨識與 100-cell differential，查看教師標準答案與實驗性 AI 建議。",
     "url": "/web-wbc-lite/",
-    "description_en": "Learn leukocyte morphology, complete a 100-cell differential and compare student judgments with expert labels and experimental AI suggestions."
+    "description_en": "Learn leukocyte morphology, complete a 100-cell differential and compare student judgments with expert labels and experimental AI suggestions.",
+    "function_group": "imaging"
   },
   {
     "slug": "web-ast",
@@ -37,7 +40,8 @@
     "subtitle": "Disk Diffusion Analysis",
     "description": "上傳 Kirby–Bauer 平板照片，估算抑菌圈直徑並進行人工修正。",
     "url": "/web-ast/",
-    "description_en": "Measure inhibition-zone diameters from Kirby–Bauer plate images and manually review disk and zone boundaries."
+    "description_en": "Measure inhibition-zone diameters from Kirby–Bauer plate images and manually review disk and zone boundaries.",
+    "function_group": "diagnostics"
   },
   {
     "slug": "web-gram-stain",
@@ -47,7 +51,8 @@
     "subtitle": "Gram Stain Microscopy · Student vs Rule-based Suggestions",
     "description": "上傳 Gram stain 顯微照片，先完成學生判讀，再查看染色反應與菌形的規則式建議；支援 ROI、人工校正與標註匯出。教學原型，未經臨床驗證。",
     "url": "/web-gram-stain/",
-    "description_en": "Interpret Gram-stained microscopy images before revealing rule-based suggestions. Local color/shape analysis with ROI, manual review and exports; educational prototype, not clinically validated."
+    "description_en": "Interpret Gram-stained microscopy images before revealing rule-based suggestions. Local color/shape analysis with ROI, manual review and exports; educational prototype, not clinically validated.",
+    "function_group": "diagnostics"
   },
   {
     "slug": "web-hemocytometer",
@@ -57,7 +62,8 @@
     "subtitle": "Neubauer Chamber Cell Counting",
     "description": "上傳顯微鏡照片，自動圈選候選細胞並以觸控修正；練習 WBC、RBC、細胞培養計數、格線邊界及濃度換算。",
     "url": "/web-hemocytometer/",
-    "description_en": "Count cells in a Neubauer chamber image, edit candidate detections and calculate WBC, RBC or cell-culture concentrations."
+    "description_en": "Count cells in a Neubauer chamber image, edit candidate detections and calculate WBC, RBC or cell-culture concentrations.",
+    "function_group": "imaging"
   },
   {
     "slug": "web-trypan-blue",
@@ -67,7 +73,8 @@
     "subtitle": "Live/Dead Cell Viability Analysis",
     "description": "顯微鏡照片自動圈選活、死與待確認細胞，人工修正後計算存活率；支援 ROI、濃度換算與標記匯出。",
     "url": "/web-trypan-blue/",
-    "description_en": "Detect and manually review live, dead and uncertain cells in Trypan Blue microscopy images; calculate viability and export annotations."
+    "description_en": "Detect and manually review live, dead and uncertain cells in Trypan Blue microscopy images; calculate viability and export annotations.",
+    "function_group": "imaging"
   },
   {
     "slug": "web-imagej",
@@ -77,7 +84,8 @@
     "subtitle": "Guided Microscopy Analysis · Local-only Measurements",
     "description": "原創本機影像工具 v0.3：比例尺校正、12 顆合成基準圖、灰階差、ROI／粒子計數與 CSV 紀錄；另提供第三方 ImageJ.JS 外部連結。",
     "url": "/web-imagej/",
-    "description_en": "Original local image analysis workspace for scale calibration, ROI statistics, grayscale comparison, particle counting and CSV export. A separate link leads to third-party ImageJ.JS."
+    "description_en": "Original local image analysis workspace for scale calibration, ROI statistics, grayscale comparison, particle counting and CSV export. A separate link leads to third-party ImageJ.JS.",
+    "function_group": "imaging"
   },
   {
     "slug": "web-gel-external",
@@ -90,7 +98,8 @@
     "url": "https://tembrica.com/en/gel-analyzer",
     "external": true,
     "provider": "Tembrica",
-    "research": "https://www.nature.com/articles/s41467-025-59189-0"
+    "research": "https://www.nature.com/articles/s41467-025-59189-0",
+    "function_group": "diagnostics"
   },
   {
     "slug": "web-lfa-external",
@@ -105,7 +114,8 @@
     "provider": "LFApp · Paskali et al.",
     "research": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8947044/",
     "source": "https://github.com/fpaskali/LFApp",
-    "fallback": "https://fpaskali.github.io/LFApp/"
+    "fallback": "https://fpaskali.github.io/LFApp/",
+    "function_group": "diagnostics"
   },
   {
     "slug": "microfluidic-cad-3duf-external",
@@ -120,7 +130,8 @@
     "provider": "CIDAR Lab · 3DuF (BSD 2-Clause)",
     "source": "https://github.com/CIDARLAB/3DuF",
     "research": "https://doi.org/10.1038/s41598-019-45623-z",
-    "fallback": "https://www.cidarlab.org/3duf"
+    "fallback": "https://www.cidarlab.org/3duf",
+    "function_group": "engineering"
   },
   {
     "slug": "microfluidic-cad-flui3d-external",
@@ -134,6 +145,7 @@
     "external": true,
     "provider": "TUM-EDA · Flui3d (Apache 2.0)",
     "source": "https://github.com/TUM-EDA/Flui3d",
-    "research": "https://doi.org/10.1038/s44172-024-00217-0"
+    "research": "https://doi.org/10.1038/s44172-024-00217-0",
+    "function_group": "engineering"
   }
 ]
