@@ -1,0 +1,116 @@
+---
+layout: null
+permalink: /web-biochemical/
+resource_group: diagnostics
+title: Web-Biochemical Identification | 微生物生化鑑定教學
+title_zh: 微生物生化鑑定教學
+title_en: Web-Biochemical Identification
+section_label: CLINICAL MICROBIOLOGY · RULE-BASED TRAINING
+description: 免費純瀏覽器的微生物生化鑑定教學工具。以 Gram stain、菌形、Catalase、Coagulase、Oxidase、Indole、Urease 等模擬結果比較典型反應，練習菌種鑑定推理。
+intro_zh: 自行輸入革蘭氏染色、菌形與生化試驗結果，觀察候選菌如何隨資料改變；或選擇虛構未知菌案例，練習決定下一項檢驗、解釋矛盾結果及提出候選菌。只供教學使用，非臨床菌種鑑定系統。
+intro_en: Explore classic Gram stain and biochemical-test patterns, compare teaching profiles and choose discriminating follow-up tests. Eight synthetic cases support independent student reasoning. Educational use only—not a clinical identification service.
+---
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  {% include page-head.html %}
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-bio1">
+  <link rel="stylesheet" href="/web-biochemical/biochemical.css?v=20261026-bio1">
+  <script defer src="/assets/js/biochemical-engine.js?v=20261026-bio1"></script>
+  <script defer src="/assets/js/biochemical-app.js?v=20261026-bio1"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
+  {% include header.html %}
+  <main class="subpage" id="main">
+    <div class="wrap">
+      {% include resource-page-hero.html %}
+      <div class="bio-back"><a href="/resources/diagnostics.html">← 返回微生物與檢驗判讀 <span lang="en">Microbiology resources</span></a></div>
+
+      <section class="bio-context" aria-label="教學範圍與使用聲明">
+        <div><p class="eyebrow">ORIGINAL, LOCAL-ONLY TEACHING TOOL</p><h2>從觀察到鑑別推理 <span lang="en">From observation to differential reasoning</span></h2></div>
+        <div class="bio-context-grid">
+          <p><strong>10</strong><span>種典型範例菌 <small lang="en">Reference profiles</small></span></p>
+          <p><strong>14</strong><span>項觀察／試驗 <small lang="en">Observations &amp; tests</small></span></p>
+          <p><strong>8</strong><span>組虛構案例 <small lang="en">Synthetic cases</small></span></p>
+        </div>
+        <p>判讀引擎依有限的「典型反應」比較，不使用機器學習，也不表示統計機率。部分生化反應在不同菌株間可能變異，符合目前範例<strong>不等於確定菌種</strong>，不適用於臨床檢驗、抗生素處方或未知病原的實際鑑定。</p>
+        <p lang="en">Rule-based comparisons within a limited teaching panel, not probabilistic identification. Actual isolates vary; no result is valid for diagnosis, treatment, or definitive species identification.</p>
+      </section>
+
+      <section id="bio-app" class="bio-workspace" aria-labelledby="bio-workspace-title">
+        <div class="catalogue-heading">
+          <p class="eyebrow">PRACTICE &amp; FREE EXPLORATION</p>
+          <h2 id="bio-workspace-title">模擬未知菌與自由判讀<span lang="en">Synthetic Cases &amp; Exploratory Testing</span></h2>
+          <p>自由模式可修改每一個檢驗結果；案例模式則可逐步揭曉「虛構」檢驗結果並練習說明理由。</p>
+        </div>
+        <div class="bio-case-toolbar">
+          <label for="bio-case-select">虛構案例 <small lang="en">Synthetic unknown case</small></label>
+          <select id="bio-case-select"><option value="">自由探索（不設定答案） / Free exploration</option></select>
+          <button type="button" id="bio-load-case" disabled>載入案例 <small lang="en">Load case</small></button>
+          <button type="button" id="bio-reset" class="bio-button-light" disabled>清除重設 <small lang="en">Clear all</small></button>
+        </div>
+        <p id="bio-status" role="status" aria-live="polite" class="bio-status">正在載入簡化菌種與虛構練習資料… <span lang="en">Loading teaching profiles…</span></p>
+        <div class="bio-case-intro" id="bio-case-intro">完成載入後可自行輸入結果，或選擇一個虛構案例。</div>
+
+        <div class="bio-main-grid">
+          <div class="bio-input-area">
+            <section aria-labelledby="bio-initial-title">
+              <h3 id="bio-initial-title">1. 基礎觀察 <span lang="en">Initial morphology</span></h3>
+              <div class="bio-input-grid" id="bio-initial"></div>
+            </section>
+            <section aria-labelledby="bio-biochem-title">
+              <h3 id="bio-biochem-title">2. 生化試驗 <span lang="en">Biochemical reactions</span></h3>
+              <p class="bio-section-note">未執行的項目保留空白。不要以「未知」誤填成陰性；請以實驗紀錄為準。</p>
+              <div class="bio-input-grid" id="bio-biochem"></div>
+            </section>
+          </div>
+          <aside class="bio-result-area" aria-labelledby="bio-matching-heading">
+            <h3 id="bio-matching-heading">3. 典型反應比較 <span lang="en">Reference-pattern comparison</span></h3>
+            <p id="bio-match-count" class="bio-match-count" aria-live="polite">正在準備候選菌資料…</p>
+            <div id="bio-candidates" class="bio-candidates"></div>
+            <div class="bio-recommendation">
+              <h4>下一項建議試驗 <span lang="en">Discriminating next test</span></h4>
+              <div id="bio-next-test" aria-live="polite">完成初步觀察後，會顯示規則式建議。</div>
+              <button type="button" id="bio-reveal" class="bio-reveal" disabled>揭曉案例的下一項虛構結果 <small lang="en">Reveal next synthetic test result</small></button>
+            </div>
+          </aside>
+        </div>
+
+        <section class="bio-quiz" aria-labelledby="bio-quiz-title">
+          <h3 id="bio-quiz-title">4. 提出鑑別判斷 <span lang="en">Propose your identification</span></h3>
+          <p>只在「虛構案例」模式檢查預設答案。請至少參考兩項生化試驗，並留意課堂範例以外還可能有其他菌種。</p>
+          <div class="bio-quiz-controls">
+            <label for="bio-guess">我認為的菌種 <small lang="en">My proposed organism</small></label>
+            <select id="bio-guess"><option value="">請選擇 / Select an organism</option></select>
+            <button type="button" id="bio-check-guess" disabled>檢查學習判讀 <small lang="en">Check teaching answer</small></button>
+          </div>
+          <div id="bio-case-feedback" class="bio-case-feedback" role="status" aria-live="polite" hidden></div>
+        </section>
+      </section>
+
+      <section class="functional-section bio-learning" aria-labelledby="bio-reference-title">
+        <div class="catalogue-heading">
+          <p class="eyebrow">INTERPRETATION &amp; REFERENCES</p>
+          <h2 id="bio-reference-title">了解判讀邏輯與限制<span lang="en">Interpretation &amp; Reference Sources</span></h2>
+        </div>
+        <div class="bio-learning-grid">
+          <article><h3>「無衝突」不是陽性鑑定 <span lang="en">Compatible ≠ identified</span></h3><p>表格中未定義、可變或未做的生化試驗不作為排除依據。系統只是比較範例檔案，不會提供臨床鑑定的可信度百分比。</p></article>
+          <article><h3>如何挑選下一項試驗 <span lang="en">Next-test selection</span></h3><p>當至少有兩個未出現明確衝突的範例菌，依其典型正、負反應分組平衡度排序，優先建議較能區分候選的試驗。</p></article>
+          <article><h3>菌株變異與判讀限制 <span lang="en">Strain variability</span></h3><p>單一菌種可能有不典型反應。部分菌株的 Urease、Citrate、H₂S 等設為「可變」，不作為正反兩值的強制判定。</p></article>
+          <article><h3>資訊與隱私 <span lang="en">Data &amp; privacy</span></h3><p>程式、參考菌及虛構案例均從本站靜態檔案載入，計算在使用者瀏覽器執行，不要求登入、帳號或上傳檢體資料。</p></article>
+        </div>
+        <p class="bio-source-links">教材參考：
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7151863/" target="_blank" rel="noopener noreferrer external">臨床微生物常用生化反應總覽</a>、
+          <a href="https://www.ncbi.nlm.nih.gov/books/NBK8035/" target="_blank" rel="noopener noreferrer external">NCBI Medical Microbiology：腸道菌生化特徵</a>、
+          <a href="https://www.uwyo.edu/molb2210_lect/lab/info/biochemical_tests.htm" target="_blank" rel="noopener noreferrer external">University of Wyoming：生化試驗總表</a>；
+          延伸教具：<a href="https://microid.netlify.app/" target="_blank" rel="noopener noreferrer external">MicroID Lab Guide</a>。
+          本工具另行撰寫程式與虛構案例，沒有直接移植上述網站或其受保護素材。
+        </p>
+      </section>
+      <p class="tools-note">教學提示：這 10 個範例菌並不構成完整微生物鑑定資料庫。任何可能的病原菌仍須依合格實驗室 SOP、菌株確認、適當系統與教師監督進行；本工具不處理抗藥性判讀。<span lang="en">Teaching-only profiles. Not a complete microbial taxonomy, validated laboratory workflow, antimicrobial susceptibility system or substitute for professional judgement.</span></p>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>
