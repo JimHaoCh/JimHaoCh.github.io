@@ -1,0 +1,26 @@
+name: Verify MLS past-paper navigation
+on:
+  push:
+    paths:
+      - "resources/exam.html"
+      - "assets/js/medlab-exam.js"
+      - "scripts/sync_medlab_exam.py"
+      - "assets/data/moex_medlab.json"
+      - "tests/medlab-exam-nav.test.cjs"
+      - ".github/workflows/test-mls-exam-nav.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check syntax of search and optional practice
+        run: |
+          node --check assets/js/medlab-exam.js
+          python -m py_compile scripts/sync_medlab_exam.py
+      - name: Test year-subject UI and source safety
+        run: |
+          node --test tests/medlab-core.test.cjs
+          node --test tests/medlab-exam-nav.test.cjs
