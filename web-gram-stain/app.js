@@ -113,7 +113,7 @@ function detect(){
   if(found.length>=1200)break scan;
  }
  marks=found;history=[];detected=true;revealed=false;
- u.detectInfo.textContent="偵測 "+marks.length+" 個候選區域；篩除 "+skipped+" 個過小或過大的色塊。此數字屬色塊分割結果，無法視為已確認菌數。 / "+marks.length+" candidate components; "+skipped+" filtered. Counts are unverified.";
+ u.detectInfo.textContent="偵測 "+marks.length+" 個候選區域；篩除 "+skipped+" 個過小或過大的色塊。"+(marks.length>=1200?" 已達 1,200 上限，掃描提前終止，結果只涵蓋部分視野。":"")+"此數字屬色塊分割結果，無法視為已確認菌數。 / "+marks.length+" candidate components; "+skipped+" filtered."+(marks.length>=1200?" Reached the 1,200-marker limit; scanning ended early and only part of the field was assessed.":"")+" Counts are unverified.";
  say("規則式偵測完成。請先提交學生判讀，再揭示系統建議。","Rule-based detection complete. Submit your interpretation to reveal the results.");
  updateControls();draw();
 }
