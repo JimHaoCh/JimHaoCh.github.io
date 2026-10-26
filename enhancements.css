@@ -112,3 +112,28 @@
   .site-header #nav > a { font-size: 14px; }
   .site-header #nav .nav-copy { overflow-wrap: anywhere; }
 }
+
+/* Align the Chinese and English labels in every shared header navigation item. */
+.site-header #nav > a {
+  justify-content: center;
+  text-align: center;
+}
+.site-header #nav > a > .nav-copy {
+  width: 100%;
+  text-align: center;
+}
+.site-header #nav > a > .nav-copy > span[lang="en"] {
+  display: block;
+  text-align: center;
+}
+@media (max-width: 860px) {
+  .site-header #nav > a {
+    justify-content: center;
+  }
+  .mobile-nav-bar > a,
+  .mobile-nav-bar .menu,
+  .mobile-nav-bar > a > span[lang="en"],
+  .mobile-nav-bar .menu > span[lang="en"] {
+    text-align: center;
+  }
+}
