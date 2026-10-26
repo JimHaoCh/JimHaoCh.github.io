@@ -2,19 +2,19 @@
 layout: null
 permalink: /resources/molecular.html
 resource_group: molecular
-title: 分子檢驗與生物資訊 Molecular Testing & Bioinformatics
+title: 分子檢驗與引子設計 Molecular Testing & Primer Design
 title_zh: 分子檢驗與生物資訊
 title_en: Molecular Testing & Bioinformatics
-section_label: MOLECULAR DIAGNOSTICS & BIOINFORMATICS
-description: NCBI Primer-BLAST 與 BLAST 分子檢驗和生物資訊免費線上資源。
-intro_zh: 以 NCBI 官方平台進行 PCR 引子設計、核酸與蛋白質序列比對；適合分子檢驗與核酸技術的課前練習。
-intro_en: Official NCBI tools for PCR primer design, nucleic acid and protein sequence comparison, and introductory molecular laboratory exercises.
+section_label: MOLECULAR DIAGNOSTICS & NUCLEIC ACID DESIGN
+description: PCR、qPCR、LAMP、RPA/RAA 線上引子設計、NUPACK DNA circuit、RNAfold 核酸結構分析及 NCBI 序列驗證資源。
+intro_zh: 整合一般 PCR／qPCR、LAMP 與 RPA 恆溫擴增引子設計、核酸二級結構預測與 NUPACK 多股反應設計。依方法選擇工具，再評估專一性、二聚體及反應條件。
+intro_en: Online resources for PCR/qPCR, isothermal LAMP and RPA primers, RNA/DNA secondary structures and NUPACK multistrand design. Select the method, check specificity and interactions, then validate experimentally.
 ---
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261026-5">
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-6">
 </head>
 <body>
   <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
@@ -22,18 +22,63 @@ intro_en: Official NCBI tools for PCR primer design, nucleic acid and protein se
   <main class="subpage" id="main">
     <div class="wrap">
       {% include resource-page-hero.html %}
-      {% assign references = site.data.professional_resources | where: "function_group", "molecular" %}
-      <section class="functional-section" aria-labelledby="molecular-tools-heading">
-        <div class="catalogue-heading">
-          <p class="eyebrow">NCBI ONLINE TOOLS</p>
-          <h2 id="molecular-tools-heading">序列設計與資料庫分析<span lang="en">Sequence Design &amp; Database Analysis</span></h2>
-          <p>均連結 NCBI 官方網站，設計及比對結果仍需依實驗目的進行驗證。</p>
+
+      <nav class="molecular-jump-nav" aria-label="核酸設計方法快速定位 / Jump to design method">
+        <span class="molecular-jump-heading">依方法快速瀏覽 <small lang="en">Explore by method</small></span>
+        {% for method in site.data.molecular_methods %}
+        <a href="#molecular-{{ method.id | escape }}">{{ method.name_zh | escape }} <small lang="en">{{ method.name_en | escape }}</small></a>
+        {% endfor %}
+        <a href="#molecular-sequence">序列資料庫 <small lang="en">Sequence references</small></a>
+      </nav>
+
+      <div class="molecular-design-guide">
+        <p class="eyebrow">RECOMMENDED DESIGN WORKFLOW</p>
+        <h2>從候選引子到實驗驗證 <span lang="en">From in-silico design to assay validation</span></h2>
+        <div class="molecular-guide-steps" role="list">
+          <div role="listitem"><strong>01</strong><span>選擇擴增方法<small lang="en">Select an assay type</small></span></div>
+          <div role="listitem"><strong>02</strong><span>產生候選引子／探針<small lang="en">Generate primer / probe sets</small></span></div>
+          <div role="listitem"><strong>03</strong><span>檢查結構與專一性<small lang="en">Check folding &amp; specificity</small></span></div>
+          <div role="listitem"><strong>04</strong><span>進行實際反應驗證<small lang="en">Validate experimentally</small></span></div>
         </div>
-        <div class="reference-grid">
-          {% for item in references %}{% include resource-professional-card.html item=item %}{% endfor %}
+      </div>
+
+      {% for method in site.data.molecular_methods %}
+      {% assign design_tools = site.data.molecular_design_tools | where: "method", method.id %}
+      <section class="functional-section molecular-method-section" id="molecular-{{ method.id | escape }}" aria-labelledby="molecular-heading-{{ method.id | escape }}">
+        <div class="catalogue-heading">
+          <p class="eyebrow">{% if method.id == 'pcr' %}PCR &amp; OLIGO VALIDATION{% elsif method.id == 'lamp' %}LOOP-MEDIATED ISOTHERMAL AMPLIFICATION{% elsif method.id == 'rpa' %}RECOMBINASE-BASED ISOTHERMAL AMPLIFICATION{% else %}NUCLEIC ACID STRUCTURES &amp; DNA CIRCUITS{% endif %}</p>
+          <h2 id="molecular-heading-{{ method.id | escape }}">{{ method.name_zh | escape }}<span lang="en">{{ method.name_en | escape }}</span></h2>
+          <p>{{ method.description_zh | escape }}<span lang="en" class="molecular-section-en">{{ method.description_en | escape }}</span></p>
+        </div>
+        <div class="molecular-tools-grid">
+          {% if method.id == 'pcr' %}
+            {% assign initial_pcr = site.data.professional_resources | where: "slug", "primer-blast" %}
+            {% for item in initial_pcr %}
+              {% include resource-professional-card.html item=item %}
+            {% endfor %}
+          {% endif %}
+          {% for tool in design_tools %}
+            {% include molecular-tool-card.html tool=tool %}
+          {% endfor %}
         </div>
       </section>
-      <p class="tools-note">本站僅提供外部專業資源入口。若提交研究尚未公開的序列或資料，請先確認相關機構的資料保護及使用政策。<span lang="en">External tools are provided as references. Review data policies before submitting confidential or unpublished sequences.</span></p>
+      {% endfor %}
+
+      <section class="functional-section molecular-method-section" id="molecular-sequence" aria-labelledby="molecular-sequence-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">DATABASE SEARCH &amp; SPECIFICITY</p>
+          <h2 id="molecular-sequence-heading">序列檢索與比對<span lang="en">Sequence Search &amp; Validation</span></h2>
+          <p>透過公共序列資料庫比對核酸或蛋白質序列；相似性查詢不能單獨證明臨床診斷專一性。</p>
+        </div>
+        {% assign sequence_tools = site.data.professional_resources | where: "slug", "blast" %}
+        <div class="reference-grid">
+          {% for item in sequence_tools %}
+            {% include resource-professional-card.html item=item %}
+          {% endfor %}
+        </div>
+      </section>
+
+      <p class="tools-note">※ 所有連結均前往第三方原始網站，本站不託管其設計演算法或使用者提交的核酸序列。NUPACK 的新計算工作目前需要有效訂閱，IDT 工具需帳號；Eiken PrimerExplorer 已搬遷至新的官方域名，請勿使用遭原廠警告的舊址。預測得到的 primers、probes、hairpins 與多股設計均須依目標生物、反應體系及實驗品質要求進行驗證。本頁供研究與教學使用，非臨床試驗驗證平台。<span lang="en">All links open independent providers. NUPACK currently requires an active subscription to run new jobs; IDT tools require sign-in. Eiken has moved PrimerExplorer away from its unsafe former domain. In-silico primers, probes and strand systems require experimental validation. Research and teaching use only.</span></p>
     </div>
   </main>
   {% include footer.html %}
