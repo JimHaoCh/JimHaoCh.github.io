@@ -444,3 +444,28 @@
 .exam-more-years a{display:flex;flex-direction:column;gap:3px;flex:1 1 190px;padding:11px 13px;border:1px solid #c6d8eb;border-radius:9px;background:white;color:#2d6798;font-size:12px;font-weight:750;line-height:1.5;text-decoration:none}
 .exam-more-years a small[lang=en]{font-weight:450;font-size:10px;color:var(--muted)}
 .exam-more-years a:hover,.exam-more-years a:focus-visible{border-color:var(--blue);background:#edf6ff}
+
+/* Official exam CSV beginner guide, 2026-10-27 */
+.exam-import-guide{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:17px 0 12px;padding:0;counter-reset:none}
+.exam-import-guide>li{min-width:0;padding:16px 15px;border:1px solid #d6e2ef;border-radius:13px;background:white}
+.exam-import-step-heading{display:flex;gap:9px;align-items:flex-start;margin-bottom:10px}
+.exam-import-step-no{display:grid;place-items:center;flex:0 0 31px;height:31px;background:#e7f1fd;color:#225c93;border-radius:50%;font-size:15px;font-weight:800}
+.exam-import-step-heading strong{font-size:13px;color:#244d72;line-height:1.5}
+.exam-import-step-heading small[lang=en]{display:block;color:#70899c;font-size:10px;font-weight:450}
+.exam-import-guide li>p{margin:9px 0;font-size:11.5px;line-height:1.75;color:#516d81}
+.exam-import-guide .exam-import-helper{font-size:10.5px;margin:7px 0 0;color:#718899}
+.exam-import-action{display:inline-flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;text-align:center;min-height:43px;padding:9px 12px;border:1px solid #bed4e9;border-radius:9px;background:#edf5fe;color:#235f95;text-decoration:none;font-weight:750;font-size:12px;line-height:1.4}
+.exam-import-action small{font-size:10px;color:#637f9b;font-weight:450}
+.exam-import-action:hover,.exam-import-action:focus-visible{background:#e1f0ff;border-color:#6c9dc9}
+.exam-import-file-label{display:block;font-size:12px;font-weight:750;color:#315d7d;margin:10px 0 4px}
+.exam-import-guide input[type=file]{width:100%;max-width:100%;min-width:0;padding:5px 0;font:inherit;font-size:11px;color:#55738b;cursor:pointer}
+.exam-import-guide input[type=file]::file-selector-button{border:1px solid #bfcfdf;border-radius:7px;background:#eef5fb;padding:8px 11px;margin:0 9px 0 0;color:#245c90;font:inherit;font-size:11px;font-weight:700;cursor:pointer}
+.exam-import-guide input[type=file]:focus-visible{outline:2px solid #24609c;outline-offset:2px}
+.exam-import-guide .exam-import-status{border-radius:9px;background:#f1f6fb;color:#52728b;border:1px solid #d2e1ec;padding:10px 11px;font-size:11.5px;line-height:1.75;overflow-wrap:anywhere}
+.exam-import-guide .exam-import-status.is-success{background:#f0f8f4;color:#2a6651;border-color:#b8dacb}
+.exam-import-guide .exam-import-status.is-error{background:#fcf4f0;color:#874938;border-color:#e7c9ba}
+.exam-import-privacy{border-top:1px solid #e1e9f1;padding-top:12px!important;margin-top:12px!important;color:#577489!important;font-size:11.5px!important;line-height:1.8}
+.exam-import-guide #exam-import-view{margin-top:7px}
+.exam-import-panel [hidden]{display:none!important}
+@media(max-width:960px){.exam-import-guide{grid-template-columns:1fr}}
+@media(max-width:600px){.exam-import-panel{padding:17px 14px}.exam-import-guide>li{padding:15px 13px}.exam-import-action{width:100%}}
