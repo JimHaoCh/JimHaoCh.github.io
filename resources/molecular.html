@@ -1,0 +1,41 @@
+---
+layout: null
+permalink: /resources/molecular.html
+resource_group: molecular
+title: 分子檢驗與生物資訊 Molecular Testing & Bioinformatics
+title_zh: 分子檢驗與生物資訊
+title_en: Molecular Testing & Bioinformatics
+section_label: MOLECULAR DIAGNOSTICS & BIOINFORMATICS
+description: NCBI Primer-BLAST 與 BLAST 分子檢驗和生物資訊免費線上資源。
+intro_zh: 以 NCBI 官方平台進行 PCR 引子設計、核酸與蛋白質序列比對；適合分子檢驗與核酸技術的課前練習。
+intro_en: Official NCBI tools for PCR primer design, nucleic acid and protein sequence comparison, and introductory molecular laboratory exercises.
+---
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  {% include page-head.html %}
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-5">
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
+  {% include header.html %}
+  <main class="subpage" id="main">
+    <div class="wrap">
+      {% include resource-page-hero.html %}
+      {% assign references = site.data.professional_resources | where: "function_group", "molecular" %}
+      <section class="functional-section" aria-labelledby="molecular-tools-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">NCBI ONLINE TOOLS</p>
+          <h2 id="molecular-tools-heading">序列設計與資料庫分析<span lang="en">Sequence Design &amp; Database Analysis</span></h2>
+          <p>均連結 NCBI 官方網站，設計及比對結果仍需依實驗目的進行驗證。</p>
+        </div>
+        <div class="reference-grid">
+          {% for item in references %}{% include resource-professional-card.html item=item %}{% endfor %}
+        </div>
+      </section>
+      <p class="tools-note">本站僅提供外部專業資源入口。若提交研究尚未公開的序列或資料，請先確認相關機構的資料保護及使用政策。<span lang="en">External tools are provided as references. Review data policies before submitting confidential or unpublished sequences.</span></p>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>
