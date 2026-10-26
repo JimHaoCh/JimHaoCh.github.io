@@ -26,6 +26,14 @@
     "icon": "gear"
   },
   {
+    "title": "生物表面嫁接技術",
+    "title_en": "Bioconjugation & surface functionalization",
+    "body": "<p>本實驗室與國立陽明交通大學智慧醫電工程研究所<a href=\"https://ibe.nycu.edu.tw/ibe/ch/app/artwebsite/view?id=6774&amp;module=artwebsite&amp;serno=55c3439e-190c-4e55-a4e0-bc32fbe2905d\" target=\"_blank\" rel=\"noopener noreferrer\">李博仁教授</a>、應用化學系<a href=\"https://dac.nycu.edu.tw/portfolio-item/%E6%9D%8E%E8%80%80%E5%9D%A4-yaw-kuen-li/\" target=\"_blank\" rel=\"noopener noreferrer\">李耀坤退休教授</a>及林修本博士具有研究合作關係，結合多種生物偶聯與表面功能化技術。</p><p>可依晶片基材及檢測需求，進行抗體、醣類、蛋白質、核酸與抗沾黏分子等的表面固定化及改質，建構具有生物辨識能力且能降低非專一性吸附的檢測介面，應用於微流體晶片與生物感測平台。</p>",
+    "body_en": "<p>Our laboratory collaborates with <a href=\"https://ibe.nycu.edu.tw/ibe/en/app/artwebsite/view?id=40971&amp;module=artwebsite&amp;serno=947bb53c-a311-4e6d-ae69-403f7eb5a148\" target=\"_blank\" rel=\"noopener noreferrer\">Prof. Bor-Ran Li</a> of NYCU's Institute of Biomedical Engineering, retired <a href=\"https://dac.nycu.edu.tw/portfolio-item/%E6%9D%8E%E8%80%80%E5%9D%A4-yaw-kuen-li/\" target=\"_blank\" rel=\"noopener noreferrer\">Prof. Yaw-Kuen Li</a> of the Department of Applied Chemistry, and Dr. Lin (林修本) on bioconjugation and surface functionalization approaches.</p><p>Depending on the substrate and assay requirements, our surface modification strategies can immobilize antibodies, carbohydrates, proteins, nucleic acids and antifouling molecules. These approaches support biorecognition interfaces with reduced nonspecific adsorption for microfluidic devices and biosensing platforms.</p>",
+    "published": true,
+    "icon": "antibody"
+  },
+  {
     "title": "無菌操作實驗台",
     "title_en": "Aseptic handling workspace",
     "body": "<p>進行樣本處理、培養液分裝與實驗前置作業，配合清潔流程與適當設備降低外來污染。操作方式與防護條件依樣本及實驗需求規劃。</p>",
