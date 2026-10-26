@@ -20,3 +20,12 @@
 .tool-summary span[lang=en]{font-size:13px;line-height:1.7;margin-top:9px;color:var(--muted)}
 .tool-action small[lang=en]{display:block;font-size:11px;font-weight:450;margin-top:1px;color:var(--muted)}
 .tools-note span[lang=en]{font-size:12px;line-height:1.8;margin-top:7px}
+
+/* Third-party research tools: clear provenance and accessible fallbacks. */
+.tool-entry{display:flex;flex-direction:column}
+.tool-entry .tool-link{height:auto;flex:1}
+.tool-provider{margin:-5px 0 10px;font-size:12px;color:#536d80;font-weight:650;line-height:1.5}
+.tool-provider span[lang=en]{display:block;font-size:11px;font-weight:450;color:var(--muted)}
+.tool-extra-links{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:11px 19px 13px;border:1px solid var(--line);border-top:0;border-radius:0 0 13px 13px;background:#f8fbfc;color:var(--muted);font-size:12px}
+.tool-extra-links a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
+.tool-entry:has(.tool-extra-links) .tool-link{border-radius:16px 16px 0 0}
