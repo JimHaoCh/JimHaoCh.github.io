@@ -1,0 +1,42 @@
+[
+  {
+    "id": "identification",
+    "name_zh": "菌種鑑定與生化判讀",
+    "name_en": "Bacterial Identification & Biochemical Tests",
+    "eyebrow": "BACTERIAL IDENTIFICATION",
+    "intro_zh": "從 Gram stain、培養觀察與生化反應出發，透過互動式教具與菌種資料庫訓練推理。",
+    "intro_en": "Interpret microscopy, cultures and biochemical tests using guided identification exercises and strain databases."
+  },
+  {
+    "id": "culture",
+    "name_zh": "培養基、菌種命名與標準方法",
+    "name_en": "Culture Media, Taxonomy & Laboratory Methods",
+    "eyebrow": "CULTURE & CLASSIFICATION",
+    "intro_zh": "查詢培養基配方、菌種分類與官方實驗程序；培養條件應依實驗室 SOP 決定。",
+    "intro_en": "Look up culture media, taxonomy and procedural standards; use laboratory SOPs for actual practice."
+  },
+  {
+    "id": "ast",
+    "name_zh": "抗生素感受性與抗藥性",
+    "name_en": "Antimicrobial Susceptibility & Resistance",
+    "eyebrow": "AST & ANTIMICROBIAL RESISTANCE",
+    "intro_zh": "MIC 分布、AST 判讀標準、品質管制及醫院 antibiogram，並明確區分表型與基因型。",
+    "intro_en": "MIC distributions, AST standards, quality control, antibiograms and genotype-versus-phenotype interpretation."
+  },
+  {
+    "id": "microscopy",
+    "name_zh": "黴菌、寄生蟲與顯微影像",
+    "name_en": "Mycology, Parasitology & Image Atlases",
+    "eyebrow": "MYCOLOGY & MICROSCOPY",
+    "intro_zh": "醫學黴菌鑑定、寄生蟲圖譜與微生物教學影像；使用前須注意著作權。",
+    "intro_en": "Fungal identification, parasite atlases and public-health microscopy collections; respect image licenses."
+  },
+  {
+    "id": "genomics",
+    "name_zh": "病原菌基因體與分子流行病學",
+    "name_en": "Pathogen Genomics & Molecular Epidemiology",
+    "eyebrow": "PATHOGEN GENOMICS",
+    "intro_zh": "抗藥基因、MLST、菌株群集與演化圖譜，適合進階微生物及分子診斷課程。",
+    "intro_en": "Resistance genes, MLST, outbreak clusters and phylogenomic visualization for advanced laboratory courses."
+  }
+]
