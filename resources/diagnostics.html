@@ -5,16 +5,16 @@ resource_group: diagnostics
 title: 微生物與檢驗判讀 Microbiology & Diagnostic Analysis
 title_zh: 微生物與檢驗判讀
 title_en: Microbiology & Diagnostic Analysis
-section_label: DIAGNOSTIC LEARNING
-description: CFU 菌落計數、抗生素抑菌圈、Gram stain、凝膠電泳和 LFA 定量教學資源。
-intro_zh: 集合微生物與分子檢驗常見的影像判讀工作，含菌落、抑菌圈、革蘭氏染色、凝膠電泳及側向層析試紙。
-intro_en: Educational image-based workflows for colonies, inhibition zones, Gram-stained microscopy, electrophoresis gels and lateral flow tests.
+section_label: CLINICAL MICROBIOLOGY & DIAGNOSTIC LEARNING
+description: 臨床微生物線上學習、MicroID 菌種鑑定、生化試驗、BacDive、培養基、黴菌、EUCAST MIC、WHONET 與抗藥性研究資源。
+intro_zh: 整合 Web-CFU、Web-AST 與革蘭氏染色等既有教學工具，並加入互動菌種鑑定、生化試驗、培養基資料庫、AST 與抗藥性監測、醫學黴菌及病原菌基因體等外部專業資源。
+intro_en: Lab-developed CFU, AST and Gram-stain tools, complemented by interactive bacterial identification, biochemical references, culture media, antimicrobial resistance, medical mycology and pathogen genomics.
 ---
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261026-5">
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-micro1">
   <script defer src="/online-resources.js?v=20261026-2"></script>
 </head>
 <body>
@@ -24,33 +24,54 @@ intro_en: Educational image-based workflows for colonies, inhibition zones, Gram
     <div class="wrap">
       {% include resource-page-hero.html %}
 
-      {% assign grouped_tools = site.data.online_tools | where: "function_group", "diagnostics" %}
-      <section class="functional-section" aria-labelledby="diagnostics-tools-heading">
-        <div class="catalogue-heading">
-          <p class="eyebrow">MICROBIOLOGY &amp; DIAGNOSTICS</p>
-          <h2 id="diagnostics-tools-heading">影像判讀與定量工具<span lang="en">Diagnostic Image Interpretation &amp; Quantification</span></h2>
-          <p>本站工具與第三方研究服務均清楚標示來源；實際檢驗判定應以合格程序與人工覆核為準。</p>
-        </div>
-      <div class="tools-grid" aria-label="教學工具 / Teaching tools">
-        {% for tool in grouped_tools %}
-          {% include resource-tool-card.html tool=tool %}
+      <nav class="microbiology-jump-nav" aria-label="微生物資源導覽 / Microbiology learning categories">
+        <a href="#microbiology-lab-tools">本站影像教學工具 <small lang="en">Lab image tools</small></a>
+        {% for section in site.data.microbiology_sections %}
+        <a href="#microbiology-{{ section.id | escape }}">{{ section.name_zh | escape }}<small lang="en">{{ section.name_en | escape }}</small></a>
         {% endfor %}
-      </div>
-      </section>
+      </nav>
 
-      {% assign references = site.data.professional_resources | where: "function_group", "diagnostics" %}
-      <section class="functional-section" aria-labelledby="diagnostics-reference-title">
+      {% assign grouped_tools = site.data.online_tools | where: "function_group", "diagnostics" %}
+      <section class="functional-section" id="microbiology-lab-tools" aria-labelledby="diagnostics-tools-heading">
         <div class="catalogue-heading">
-          <p class="eyebrow">PROFESSIONAL IMAGE &amp; LAB REFERENCES</p>
-          <h2 id="diagnostics-reference-title">臨床微生物與檢驗標準<span lang="en">Microbiology & Diagnostic References</span></h2>
-          <p>疾管署、CDC 與 EUCAST 提供的專業資源；判讀時以最新適用版本及本地實驗室作業規範為準。</p>
+          <p class="eyebrow">LAB-DEVELOPED &amp; EXTERNAL IMAGE TOOLS</p>
+          <h2 id="diagnostics-tools-heading">影像判讀與定量工具<span lang="en">Diagnostic Image Interpretation &amp; Quantification</span></h2>
+          <p>原有 CFU、AST、Gram Stain、凝膠與側向層析工具完整保留；各卡片會區分本站教學原型與外部網站。</p>
         </div>
-        <div class="reference-grid">
-          {% for item in references %}{% include resource-professional-card.html item=item %}{% endfor %}
+        <div class="tools-grid" aria-label="影像判讀與定量工具 / Diagnostic tools">
+          {% for tool in grouped_tools %}
+            {% include resource-tool-card.html tool=tool %}
+          {% endfor %}
         </div>
       </section>
-      <p class="tools-note">CFU、AST、Gram Stain 等本站功能屬教學原型；Gel Analyzer 與 LFApp 為第三方研究工具，連線狀態及資料政策由提供者管理。不得將本頁結果直接作為臨床診斷依據。<span lang="en">Lab prototypes and third-party research tools are intended for learning. Do not use outputs as standalone clinical diagnostic decisions; external providers control availability and data policies.</span></p>
 
+      {% assign existing_refs = site.data.professional_resources | where: "function_group", "diagnostics" %}
+      {% for section in site.data.microbiology_sections %}
+      {% assign section_resources = site.data.microbiology_resources | where: "group", section.id %}
+      {% assign section_refs = existing_refs | where: "micro_group", section.id %}
+      <section class="functional-section microbiology-category-section" id="microbiology-{{ section.id | escape }}" aria-labelledby="microbiology-heading-{{ section.id | escape }}">
+        <div class="catalogue-heading">
+          <p class="eyebrow">{{ section.eyebrow | escape }}</p>
+          <h2 id="microbiology-heading-{{ section.id | escape }}">{{ section.name_zh | escape }}<span lang="en">{{ section.name_en | escape }}</span></h2>
+          <p>{{ section.intro_zh | escape }}<span class="microbiology-category-en" lang="en">{{ section.intro_en | escape }}</span></p>
+        </div>
+        <div class="microbiology-resource-grid">
+          {% for item in section_resources %}
+            {% include microbiology-resource-card.html item=item %}
+          {% endfor %}
+          {% for item in section_refs %}
+            {% include resource-professional-card.html item=item %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+
+      <section class="microbiology-source-note" aria-labelledby="microbiology-source-heading">
+        <h2 id="microbiology-source-heading">資料來源與使用限制 <span lang="en">Sources, attribution &amp; limitations</span></h2>
+        <p>所有新增專業資源均連結原發布單位，不在本站重製第三方圖譜、影片、程式或菌種資料。MicroID 及 Ontario Tech 的互動工具適合課堂練習，不是經臨床驗證的菌種鑑定系統。WHONET 為免費 Windows 軟體，不等於開源；BacDive 顯示菌株資料不保證與教科書典型特徵一致。</p>
+        <p>EUCAST MIC 分布不能當作各地抗藥率，抗藥基因分析亦不代表實際藥敏表型。查詢臨床 AST 時，應使用符合當期菌種、抗生素與版本的適用 CLSI／EUCAST 等標準。上傳檢體資料至任何外部平台前，須移除個資與可識別臨床資訊。</p>
+        <p lang="en">All resources link to their maintainers. Educational bacterial ID tools are not clinical devices. Free WHONET is not necessarily open-source; strain-level and MIC distribution data are not standalone clinical identification or resistance-rate estimates. Review current applicable AST standards and data policies before use.</p>
+      </section>
     </div>
   </main>
   {% include footer.html %}
