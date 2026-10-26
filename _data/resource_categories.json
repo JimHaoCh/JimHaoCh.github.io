@@ -28,9 +28,9 @@
     "href": "/resources/diagnostics.html",
     "icon": "✚",
     "eyebrow": "DIAGNOSTIC LEARNING",
-    "intro_zh": "菌種鑑定、生化檢驗、培養基、AST／抗藥性、黴菌圖譜與病原菌基因體資源。",
-    "intro_en": "Bacterial identification, biochemical tests, culture media, AST, mycology and pathogen genomics.",
-    "sample_zh": "MicroID · BacDive · MediaDive · EUCAST · WHONET"
+    "intro_zh": "菌種生化鑑定、MIC 與雙藥交互作用、培養基、AST／抗藥性及病原菌資料庫。",
+    "intro_en": "Biochemical ID, MIC/checkerboard, culture media, AST, AMR and pathogen references.",
+    "sample_zh": "CFU · Gram · 生化鑑定 · MIC／Checkerboard · AST"
   },
   {
     "id": "molecular",
