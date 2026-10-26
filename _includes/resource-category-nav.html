@@ -1,0 +1,6 @@
+<nav class="resource-category-nav" aria-label="資源功能分類 / Resource categories">
+  <a class="resource-nav-home" href="/courses.html"{% if page.resource_group == 'home' %} aria-current="page"{% endif %}>分類首頁 <small lang="en">All resources</small></a>
+  {% for category in site.data.resource_categories %}
+  <a href="{{ category.href }}"{% if page.resource_group == category.id %} aria-current="page"{% endif %}>{{ category.name_zh }}<small lang="en">{{ category.name_en }}</small></a>
+  {% endfor %}
+</nav>
