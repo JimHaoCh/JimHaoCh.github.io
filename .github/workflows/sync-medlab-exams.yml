@@ -1,11 +1,7 @@
 name: Refresh MLS official past-paper index
+# Manually run when the external MOEX CSV source becomes accessible from GitHub runners.
+# Automatic runs are paused because the official host rejected outbound runner traffic.
 on:
-  push:
-    paths:
-      - "scripts/sync_medlab_exam.py"
-      - ".github/workflows/sync-medlab-exams.yml"
-  schedule:
-    - cron: "27 20 * * 0"
   workflow_dispatch:
 permissions:
   contents: write
