@@ -1,0 +1,58 @@
+/* Web-Biochemical v1: original, bilingual clinical microbiology teaching app. */
+.bio-back{margin:0 0 21px}.bio-back a{color:var(--blue);text-decoration:underline;font-size:13px;font-weight:700}.bio-back span[lang=en]{display:inline;font-size:11px;color:var(--muted)}
+.bio-context{border:1px solid #d3e1ed;background:linear-gradient(125deg,#f7fbff,#fff);border-radius:16px;padding:25px 27px;margin-bottom:34px}
+.bio-context .eyebrow{margin:0 0 7px}.bio-context h2{font-family:var(--serif);font-size:clamp(23px,3vw,29px);line-height:1.4;margin:0 0 19px;color:var(--ink)}.bio-context h2 span[lang=en]{display:block;font-size:14px;color:var(--muted);font-weight:400}
+.bio-context-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:17px}
+.bio-context-grid p{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:#edf4fc;min-width:0}
+.bio-context-grid strong{font-size:26px;font-family:var(--serif);color:var(--blue)}.bio-context-grid p span{font-size:12px;line-height:1.5;font-weight:750}.bio-context-grid small[lang=en]{display:block;font-size:10px;font-weight:400;color:var(--muted)}
+.bio-context>p:not(.eyebrow){color:#4c6475;font-size:13px;line-height:1.85;margin:9px 0 0}.bio-context>p[lang=en]{font-size:12px!important;color:var(--muted)!important}
+.bio-workspace>.catalogue-heading{margin:0 0 20px}.bio-case-toolbar{display:flex;align-items:end;gap:11px;flex-wrap:wrap;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:#f7fafc}
+.bio-case-toolbar>label{flex:1 1 280px;min-width:0;font-size:13px;font-weight:750;color:var(--ink)}
+.bio-case-toolbar>label small[lang=en]{display:block;font-size:11px;font-weight:450;color:var(--muted)}
+.bio-case-toolbar select{display:block;width:100%;min-height:43px;font:inherit;font-size:13px;padding:9px 11px;border:1px solid #cbd7e4;border-radius:9px;background:white;color:var(--ink);margin-top:7px}
+.bio-case-toolbar button,.bio-quiz-controls button,.bio-reveal{border:1px solid var(--blue);border-radius:9px;background:var(--blue);padding:10px 15px;color:white;min-height:44px;font-size:12.5px;font-weight:750;line-height:1.35;cursor:pointer}
+.bio-case-toolbar button small[lang=en],.bio-quiz-controls button small[lang=en],.bio-reveal small[lang=en]{display:block;font-size:10px;font-weight:450;opacity:.86}
+.bio-case-toolbar .bio-button-light{color:var(--blue);border-color:#c5d7e8;background:#f0f6fc}
+.bio-case-toolbar button:disabled,.bio-quiz-controls button:disabled,.bio-reveal:disabled{opacity:.48;cursor:not-allowed}
+.bio-status{margin:14px 0;font-size:12px;color:#4e728c;background:#f3f8fd;border-left:3px solid #8eafca;padding:10px 13px;line-height:1.75}
+.bio-case-intro{padding:17px 18px;border:1px solid #e2e9f0;border-radius:12px;background:white;margin:0 0 19px;font-size:13px;line-height:1.8}
+.bio-case-intro strong{font-size:15px;color:var(--ink)}.bio-case-intro p{margin:4px 0 0;color:#4c6477}.bio-case-intro .bio-case-en{font-size:12px;color:var(--muted)}
+.bio-main-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);align-items:start;gap:19px}
+.bio-input-area>section,.bio-result-area,.bio-quiz{border:1px solid var(--line);border-radius:15px;padding:22px 23px;background:white;min-width:0}
+.bio-input-area>section+section{margin-top:15px}
+.bio-input-area h3,.bio-result-area>h3,.bio-quiz>h3{font-family:var(--serif);font-size:20px;line-height:1.4;color:var(--ink);margin:0 0 17px}
+.bio-input-area h3 span[lang=en],.bio-result-area>h3 span[lang=en],.bio-quiz>h3 span[lang=en]{font-size:12px;font-family:var(--sans);font-weight:450;color:var(--muted);margin-top:3px}
+.bio-input-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.bio-field{display:block;min-width:0;padding:12px;border:1px solid #e3ebf3;border-radius:10px;background:#fafcfe}
+.bio-field strong{display:block;font-size:13px;color:var(--ink);line-height:1.5}.bio-field strong small{display:block;font-size:10.5px;color:var(--muted);font-weight:450}
+.bio-select{display:block;width:100%;min-width:0;margin-top:9px;border:1px solid #cbd9e6;padding:9px 7px;border-radius:8px;background:white;color:#1a3f61;font:inherit;font-size:12px;min-height:42px}
+.bio-field-help{display:block;margin-top:10px;color:#63798a;font-size:11px;line-height:1.75}.bio-field-help small{display:block;color:#8395a1;font-size:10px;line-height:1.65;margin-top:3px}
+.bio-section-note{font-size:12px;color:var(--muted);line-height:1.8;margin:-5px 0 15px}
+.bio-match-count{font-size:12px;color:#315b7d;margin:0 0 13px;line-height:1.65}
+.bio-candidates{display:flex;flex-direction:column;gap:10px}.bio-candidate{min-width:0;border:1px solid #e1e9f2;background:#f9fcff;border-radius:10px;padding:13px 14px}
+.bio-candidate-top{display:flex;flex-wrap:wrap;align-items:start;gap:7px;justify-content:space-between}
+.bio-candidate h4{font-size:14px;color:var(--ink);line-height:1.4;margin:0;font-family:var(--serif);font-weight:750;overflow-wrap:anywhere}
+.bio-match-pill{font-size:10.5px;color:#496c84;background:#e7f1f9;border-radius:6px;padding:4px 6px;line-height:1.5}
+.bio-candidate-zh{font-size:11.5px;color:#45647d;margin:4px 0 6px}.bio-candidate-note,.bio-variability,.bio-conflict{font-size:11.5px;color:var(--muted);line-height:1.75;margin:6px 0 0}
+.bio-conflict{color:#9e5346}.bio-variability{color:#887249}
+.bio-result-empty{font-size:12px;line-height:1.8;color:var(--muted);padding:14px;border:1px dashed #c8d6e3;border-radius:9px}
+.bio-disagreements{padding:12px 14px;border:1px solid #dfd7cc;border-radius:9px;background:#fffcf8}.bio-disagreements summary{cursor:pointer;font-size:12px;font-weight:750;color:#745a36;margin-bottom:9px}
+.bio-recommendation{margin:17px 0 0;padding:15px 17px;background:#f2f7fc;border:1px solid #d6e5f2;border-radius:11px}
+.bio-recommendation h4{font-size:15px;color:var(--ink);margin:0 0 11px}.bio-recommendation h4 span[lang=en]{font-size:11px;color:var(--muted);font-weight:450}
+.bio-next-test,#bio-next-test{font-size:12px;color:#456783;line-height:1.8;margin-bottom:12px}
+#bio-next-test strong{display:block;color:#245989;font-size:13px}#bio-next-test p{font-size:11.5px;line-height:1.75}
+.bio-reveal{width:100%;min-height:48px}
+.bio-quiz{margin-top:18px}.bio-quiz>p{font-size:12px;color:var(--muted);line-height:1.8;margin:0 0 16px}
+.bio-quiz-controls{display:flex;align-items:end;gap:12px;flex-wrap:wrap}.bio-quiz-controls>label{flex:1 1 260px;font-size:12.5px;color:var(--ink);font-weight:750}
+.bio-quiz-controls>label small[lang=en]{display:block;color:var(--muted);font-size:11px;font-weight:450}
+.bio-quiz-controls select{width:100%;min-height:44px;border:1px solid #cbd9e6;border-radius:9px;padding:9px 11px;font:inherit;font-size:12px;color:var(--ink);margin-top:7px;background:white}
+.bio-case-feedback{margin:16px 0 0;padding:16px 18px;border:1px solid #cbddec;background:#f6fafc;border-radius:12px;font-size:12px;line-height:1.8;color:#44637b}
+.bio-case-feedback h4{font-size:15px;color:var(--ink);margin:0 0 7px}.bio-case-feedback p{margin:5px 0}.bio-case-feedback .bio-case-en{font-size:11.5px;color:var(--muted)}
+.bio-learning-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.bio-learning-grid article{padding:21px;border:1px solid var(--line);border-radius:12px;background:white;min-width:0}
+.bio-learning-grid h3{font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.5;margin:0 0 11px}.bio-learning-grid h3 span[lang=en]{font-size:11px;color:var(--muted);font-family:var(--sans);font-weight:450}
+.bio-learning-grid p{font-size:12px;color:#516c80;line-height:1.85}.bio-source-links{margin:16px 0 0;color:var(--muted);font-size:12px;line-height:2}.bio-source-links a{color:var(--blue)}
+.bio-input-area select:focus-visible,.bio-quiz select:focus-visible,.bio-case-toolbar select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+@media(max-width:1050px){.bio-main-grid{grid-template-columns:1fr}.bio-context-grid{gap:9px}}
+@media(max-width:760px){.bio-context{padding:20px}.bio-context-grid{grid-template-columns:1fr 1fr}.bio-input-area>section,.bio-result-area,.bio-quiz{padding:19px}.bio-learning-grid{grid-template-columns:1fr}.bio-case-toolbar{padding:15px}.bio-case-toolbar button{flex:1 1 110px}}
+@media(max-width:470px){.bio-context-grid{grid-template-columns:1fr}.bio-input-grid{grid-template-columns:1fr}.bio-quiz-controls button{width:100%}}
