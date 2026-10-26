@@ -1,0 +1,94 @@
+---
+layout: null
+permalink: /resources/exam.html
+resource_group: exam
+title: 醫事檢驗師國考與專業學習 MLS National Exam & Study
+title_zh: 醫檢師國考與專業學習
+title_en: MLS National Exam & Study
+section_label: NATIONAL EXAMINATION & PROFESSIONAL LEARNING
+description: 考選部醫事檢驗師歷屆試題和答案，依年度與六大考科查詢；附官方 CSV 匯入、原創模擬練習與本機錯題紀錄。
+intro_zh: 從考選部歷屆試題與標準答案的原始連結開始準備醫檢師國考。可依年度、考次、六大考科查詢；另提供本站原創練習題與本機錯題複習。
+intro_en: Official MOEX exam papers and answer keys, organized by year and the six MLS exam subjects. Includes browser-local CSV import, original practice questions and on-device incorrect-answer review.
+---
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  {% include page-head.html %}
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-5">
+  <script defer src="/assets/js/medlab-exam.js?v=20261026-1"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
+  {% include header.html %}
+  <main class="subpage" id="main">
+    <div class="wrap">
+      {% include resource-page-hero.html %}
+      <section class="functional-section" aria-labelledby="exam-index-title" id="exam-index">
+        <div class="catalogue-heading">
+          <p class="eyebrow">OFFICIAL EXAM PAPERS &amp; ANSWER KEYS</p>
+          <h2 id="exam-index-title">歷屆醫檢師試題查詢<span lang="en">Past Papers &amp; Official Answer Keys</span></h2>
+          <p>索引僅提供官方試題、標準答案 PDF 連結，不在本站重製考題與圖片；若官方公布更正答案，請以最新公告為準。</p>
+        </div>
+        <div class="exam-official-bar">
+          <a href="https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx" target="_blank" rel="noopener noreferrer external">考選部官方考畢試題查詢<span lang="en">MOEX official exam search ↗</span></a>
+          <a href="https://data.gov.tw/dataset/170565" target="_blank" rel="noopener noreferrer external">政府開放資料集 170565<span lang="en">Official open dataset ↗</span></a>
+        </div>
+        <div class="exam-controls">
+          <div><label for="exam-year">考試年度 <small lang="en">Year</small></label><select id="exam-year"><option value="">全部年度 / All years</option></select></div>
+          <div><label for="exam-subject">考試科目 <small lang="en">Subject</small></label><select id="exam-subject"><option value="">全部六大考科 / All subjects</option></select></div>
+          <div><label for="exam-keyword">考次／關鍵字 <small lang="en">Session or keyword</small></label><input type="search" id="exam-keyword" placeholder="例：第一次／微生物"></div>
+        </div>
+        <div class="exam-controls-footer">
+          <button class="exam-soft-button" type="button" id="exam-reset">清除篩選 <small lang="en">Reset filters</small></button>
+          <span id="exam-match-count" role="status">正在讀取試卷索引…</span>
+        </div>
+        <p class="exam-source-status" id="exam-source-status" role="status" aria-live="polite">正在載入經核對的官方試題連結…</p>
+        <div id="exam-results" class="exam-results" aria-live="polite"></div>
+        <button id="exam-more" class="exam-soft-button" type="button" hidden>顯示更多試卷 <small lang="en">Show more results</small></button>
+        <div class="exam-import-panel">
+          <h3>查詢更多歷史年度 <span lang="en">Browse additional years</span></h3>
+          <p>本站先提供已核對的民國 114–115 年部分考次。若要查詢民國 101 年以來其他年度，可從考選部開放資料下載 CSV，使用下方功能在自己的瀏覽器匯入，立即依年度／科目篩選。**資料不會上傳到本站。**</p>
+          <p lang="en">Verified links for selected ROC 114–115 exam sessions are preloaded. To query other years (available from ROC 101 onward), download the official CSV and import it locally. Files stay in your browser.</p>
+          <div class="exam-import-actions">
+            <a href="https://wwwc.moex.gov.tw/main/Exam/wHandExamQandA_CSV.ashx" target="_blank" rel="noopener noreferrer external">取得官方 CSV <small lang="en">MOEX CSV download ↗</small></a>
+            <label class="exam-import-label" for="exam-import">匯入 CSV 篩選 <small lang="en">Import local CSV</small></label>
+            <input id="exam-import" type="file" accept=".csv,text/csv">
+          </div>
+        </div>
+      </section>
+      <section class="functional-section" aria-labelledby="practice-title">
+        <div class="catalogue-heading">
+          <p class="eyebrow">ORIGINAL LEARNING EXERCISES</p>
+          <h2 id="practice-title">原創模擬練習與錯題複習<span lang="en">Original Practice &amp; Review</span></h2>
+          <p>與官方考古題分開：此題庫由本站自行撰寫，僅供概念複習，並非考選部試題或正式國考模擬成績。</p>
+        </div>
+        <div id="practice-app" class="practice-app practice-loading">
+          <div class="practice-actions">
+            <label for="practice-subject">練習科目 <small lang="en">Practice subject</small></label>
+            <select id="practice-subject"></select>
+            <button type="button" id="practice-start">開始練習</button>
+            <button type="button" id="practice-review" class="practice-light-button">只複習錯題</button>
+          </div>
+          <p id="practice-wrong-count" class="practice-wrong-count">錯題紀錄：讀取中…</p>
+          <div id="practice-question" class="practice-question" aria-live="polite">正在準備練習題…</div>
+          <div class="practice-footer"><button type="button" id="practice-next" hidden>下一題 →</button><button type="button" id="practice-clear" class="practice-clear">清除本機錯題紀錄</button></div>
+          <p class="practice-privacy">練習選擇與錯題僅記錄在目前瀏覽器的本機儲存空間。清除瀏覽器資料後將無法復原；本站不建立學生帳號，也不蒐集測驗成績。<span lang="en">Practice history stays in browser local storage; no account or server-side grading.</span></p>
+        </div>
+      </section>
+      {% assign study_resources = site.data.professional_resources | where: "function_group", "exam" %}
+      <section class="functional-section" aria-labelledby="exam-reference-title">
+        <div class="catalogue-heading">
+          <p class="eyebrow">PROFESSIONAL REFERENCES</p>
+          <h2 id="exam-reference-title">國考相關專業學習資源<span lang="en">Professional Learning References</span></h2>
+          <p>補充實驗室技能與品質管理概念；各網站均由原發布機構管理。</p>
+        </div>
+        <div class="reference-grid">
+          {% for item in study_resources %}{% include resource-professional-card.html item=item %}{% endfor %}
+        </div>
+      </section>
+      <p class="tools-note">來源：考選部考畢試題查詢平台及政府資料開放平臺資料集 170565。題目／答案更正與考試日期以官方當期版本為準。本站為獨立教學整理，非考選部官方服務；外部網站需遵循其授權規範。<span lang="en">Official source: MOEX exam search and government dataset 170565. This is an independent teaching index, not an official MOEX service. Consult MOEX for corrections and current records.</span></p>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>
