@@ -21,6 +21,27 @@
     "description_en": "Design RPA/RAA primer/probe candidates or consult literature-validated pairs. Follow your specific reagent platform's requirements."
   },
   {
+    "id": "nasba",
+    "name_zh": "NASBA／TMA RNA 恆溫擴增",
+    "name_en": "NASBA / TMA RNA Isothermal Amplification",
+    "description_zh": "設計含 T7 promoter 的 NASBA／TMA 引子，參考實作指南及具 NASBA 設定的桌面程式；目前沒有將這類指南誤標成完整線上設計器。",
+    "description_en": "Learn promoter-tailed NASBA/TMA primer design from method guides and desktop software. Guidance is not presented as a fully automatic web designer."
+  },
+  {
+    "id": "rca",
+    "name_zh": "RCA／Padlock Probe 設計",
+    "name_en": "RCA / Padlock Probe Design",
+    "description_zh": "查找 padlock probe 辨識臂、連接位點、條碼與多重設計流程；這類工具設計的是探針，不等於直接最佳化整套 RCA 酵素反應。",
+    "description_en": "Select padlock probe arms, ligation sites, barcodes and multiplex panels. Probe design alone does not optimize the full RCA chemistry."
+  },
+  {
+    "id": "hda_sda",
+    "name_zh": "HDA／SDA／NEAR 設計指南",
+    "name_en": "HDA / SDA / NEAR Design Guides",
+    "description_zh": "以原廠指南為主，說明 HDA 雙引子與 SDA／NEAR 的 nicking-site 引子尾端；沒有已確認可靠的專用網頁設計器。",
+    "description_en": "Manufacturer guidelines for HDA primer pairs and SDA/NEAR nicking-site tails; dedicated validated web designers are not established."
+  },
+  {
     "id": "structure",
     "name_zh": "核酸二級結構與 DNA Circuit",
     "name_en": "Nucleic Acid Structures & DNA Circuits",
