@@ -1,0 +1,19 @@
+[
+  {
+    "slug": "ne501-multi-pump-controller",
+    "name": "NE-501 Multi Pump Controller",
+    "version": "v1.0.0",
+    "description_zh": "本實驗室開發的 Windows 桌面控制程式，供 New Era NE-501 OEM 針筒幫浦四通道 RS-232 操作與教學使用。",
+    "description_en": "Lab-developed Windows desktop software for teaching and research with four New Era NE-501 OEM syringe pumps over RS-232.",
+    "features_zh": "四台獨立控制、針筒內徑驗證、Prime 五段速度、流量與方向設定、群組 RUN／STOP、模擬模式及 CSV 通訊紀錄。",
+    "features_en": "Four independent pump panels, syringe diameter read-back, five Prime presets, flow and direction settings, grouped run/stop, simulation mode and CSV command logs.",
+    "requirements_zh": "此公開檔為原始碼及中英文文字說明 ZIP，不含 Windows .exe 或圖文版 DOCX／PDF。需在 Windows 安裝 Python、PySide6、pyserial 和 USB-RS-232 驅動；可依內附腳本執行與建置。原始碼未附通用開源授權。",
+    "requirements_en": "This compact ZIP contains source and bilingual text documentation, not a compiled EXE or image-rich DOCX/PDF manuals. Requires Windows, Python, PySide6, pyserial and a USB-RS-232 driver. No general open-source license is declared.",
+    "safety_zh": "注意：程式的 Emergency Stop 依賴電腦與序列通訊，不能取代硬體急停；Prime 速度預設不等於壓力保護。本公開打包版本尚未重新進行實機驗證，請先以模擬模式及安全管路檢查。",
+    "safety_en": "Safety: software emergency stop depends on PC/serial communications; it does not replace a physical E-stop. Prime presets are not pressure limits. This public source archive has not been revalidated on real hardware.",
+    "filename": "NE501_Multi_Pump_Controller_v1.0.0_Source_Docs.zip",
+    "file": "/downloads/NE501_Multi_Pump_Controller_v1.0.0_Source_Docs.zip",
+    "size": "87 KB",
+    "sha256": "f0a06f022cb7822d84898b5d18f5e51c98c22bc1cbff8a76f097be0e62a87b5f"
+  }
+]
