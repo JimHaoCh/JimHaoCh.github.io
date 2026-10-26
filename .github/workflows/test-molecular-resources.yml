@@ -1,0 +1,24 @@
+name: Validate molecular learning resources
+on:
+  push:
+    paths:
+      - "_data/molecular_methods.json"
+      - "_data/molecular_design_tools.json"
+      - "resources/molecular.html"
+      - "_includes/molecular-tool-card.html"
+      - "_includes/resource-professional-card.html"
+      - "assets/js/molecular-filter.js"
+      - "tests/molecular-resources.test.cjs"
+      - ".github/workflows/test-molecular-resources.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check JavaScript syntax
+        run: node --check assets/js/molecular-filter.js
+      - name: Validate resource schema, safety notes, method grouping and links
+        run: node --test tests/molecular-resources.test.cjs
