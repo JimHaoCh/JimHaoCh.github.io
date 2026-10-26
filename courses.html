@@ -1,20 +1,15 @@
 ---
 layout: null
 permalink: /courses.html
+resource_group: home
 title: 線上資源 Online Resources
-description: 陽明交通大學醫技系線上資源：研究簡報與海報模板、ImageJ／SOLIDWORKS／Autodesk Fusion 官方外部下載連結，以及鏡檢、微生物與影像分析互動教學工具。
+description: 百洑傳息實驗室及陽明交通大學醫技系資源入口，依顯微影像、臨床檢驗、微流體工程與學術簡報用途分類。
 ---
-{% assign tools = site.data.online_tools %}
-{% assign software_downloads = site.data.external_software %}
-{% assign resources = site.data.download_resources %}
-{% assign presentation_resources = resources | where: "group", "presentation" %}
-{% assign poster_resources = resources | where: "group", "poster" %}
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261026-3">
-  <script defer src="/online-resources.js?v=20261026-1"></script>
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-4">
 </head>
 <body>
   <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
@@ -26,137 +21,34 @@ description: 陽明交通大學醫技系線上資源：研究簡報與海報模�
         <p class="eyebrow">MEDTECH DIGITAL RESOURCES</p>
         <h1>線上資源<span lang="en">Online Resources</span></h1>
       </div>
-      <div class="tools-intro bilingual-tools-intro">
-        <p>整合醫技系互動式教學工具、研究簡報與海報模板，以及官方軟體下載資源。PowerPoint 模板可直接下載編輯；第三方軟體請依各原廠授權規範申請與使用。</p>
-        <p lang="en">Medical Laboratory Science teaching tools, editable research templates and official external software access. Download the PowerPoint templates directly; apply for and use third-party software only under its provider’s applicable license.</p>
+      <div class="resource-hub-intro">
+        <p>依你想完成的工作選擇分類：分析顯微影像、判讀檢驗結果、設計微流體與工程系統，或下載研究簡報素材。本站教學工具、第三方網站與下載程式均在各分類內清楚標示。</p>
+        <span lang="en">Choose by task: microscopy and image analysis, diagnostic interpretation, microfluidic engineering, or research presentation assets. Lab-developed tools, third-party sites and downloadable software are clearly distinguished within each category.</span>
       </div>
-
-      <section class="resource-section" aria-labelledby="template-heading">
-        <div class="catalogue-heading">
-          <p class="eyebrow">DOWNLOADABLE TEMPLATES</p>
-          <h2 id="template-heading">簡報與海報模板<span lang="en">Presentation &amp; Poster Templates</span></h2>
-          <p>實驗室研究、學生報告與學術會議可直接套用的 PowerPoint 資源。</p>
-        </div>
-
-        <div class="resource-group">
-          <div class="resource-group-head">
-            <h3>簡報模板<span lang="en">Presentation Templates</span></h3>
-            <span>{{ presentation_resources | size }} files</span>
+      <section class="resource-hub-grid" aria-label="線上資源功能分類 / Resource categories">
+        {% for category in site.data.resource_categories %}
+        {% assign grouped_tools = site.data.online_tools | where: "function_group", category.id %}
+        {% assign grouped_software = site.data.external_software | where: "function_group", category.id %}
+        {% assign number_items = grouped_tools.size | plus: grouped_software.size %}
+        {% if category.id == 'engineering' %}{% assign number_items = number_items | plus: site.data.lab_software.size %}{% endif %}
+        {% if category.id == 'templates' %}{% assign number_items = site.data.download_resources.size %}{% endif %}
+        <a class="resource-hub-card" href="{{ category.href | escape }}" aria-label="進入 {{ category.name_zh | escape }}，{{ number_items }} 項資源">
+          <div class="resource-hub-top">
+            <span class="resource-hub-glyph" aria-hidden="true">{{ category.icon }}</span>
+            <span class="resource-hub-count">{{ number_items }} 項資源 <span lang="en">· {{ number_items }} resources</span></span>
           </div>
-          <div class="resource-grid">
-            {% for item in presentation_resources %}
-            <article class="resource-card">
-              <div class="resource-card-top">
-                <span class="resource-filetype">PPTX</span>
-                <span class="resource-kind">{{ item.kind_zh }} · {{ item.kind_en }}</span>
-              </div>
-              <h4>{{ item.title_zh }}<span lang="en">{{ item.title_en }}</span></h4>
-              <p>{{ item.description_zh }}<span lang="en">{{ item.description_en }}</span></p>
-              <div class="resource-meta"><span>{{ item.meta }}</span><span>{{ item.size }}</span></div>
-              {% if item.chunks %}
-              <button class="resource-download resource-download-chunked" type="button"
-                data-filename="{{ item.filename | escape }}"
-                data-chunks="{{ item.chunks | join: '|' | escape }}">
-                <span>下載 PowerPoint<small lang="en">Download PPTX</small></span><span aria-hidden="true">↓</span>
-              </button>
-              {% else %}
-              <a class="resource-download" href="{{ item.file | escape }}" download="{{ item.filename | escape }}">
-                <span>下載 PowerPoint<small lang="en">Download PPTX</small></span><span aria-hidden="true">↓</span>
-              </a>
-              {% endif %}
-            </article>
-            {% endfor %}
-          </div>
-        </div>
-
-        <div class="resource-group">
-          <div class="resource-group-head">
-            <h3>海報模板<span lang="en">Poster Templates</span></h3>
-            <span>{{ poster_resources | size }} files</span>
-          </div>
-          <div class="resource-grid">
-            {% for item in poster_resources %}
-            <article class="resource-card">
-              <div class="resource-card-top">
-                <span class="resource-filetype">PPTX</span>
-                <span class="resource-kind">{{ item.kind_zh }} · {{ item.kind_en }}</span>
-              </div>
-              <h4>{{ item.title_zh }}<span lang="en">{{ item.title_en }}</span></h4>
-              <p>{{ item.description_zh }}<span lang="en">{{ item.description_en }}</span></p>
-              <div class="resource-meta"><span>{{ item.meta }}</span><span>{{ item.size }}</span></div>
-              <a class="resource-download" href="{{ item.file | escape }}" download="{{ item.filename | escape }}">
-                <span>下載 PowerPoint<small lang="en">Download PPTX</small></span><span aria-hidden="true">↓</span>
-              </a>
-            </article>
-            {% endfor %}
-          </div>
-        </div>
+          <h2>{{ category.name_zh | escape }}<span lang="en">{{ category.name_en | escape }}</span></h2>
+          <p class="resource-hub-summary">{{ category.intro_zh | escape }}<span lang="en">{{ category.intro_en | escape }}</span></p>
+          <p class="resource-hub-samples">{{ category.sample_zh | escape }}</p>
+          <span class="resource-hub-action"><span>查看這類資源 <small lang="en">Explore resources</small></span><span aria-hidden="true">→</span></span>
+        </a>
+        {% endfor %}
       </section>
-
-      <section class="software-section" aria-labelledby="software-heading">
-        <div class="catalogue-heading">
-          <p class="eyebrow">OFFICIAL SOFTWARE DOWNLOADS</p>
-          <h2 id="software-heading">外部軟體下載資源<span lang="en">External Software Downloads</span></h2>
-          <p>以下連結均導向軟體原廠或官方專案網站，由提供者管理下載、帳號申請、教育資格驗證及授權。本站不提供安裝檔，也不代為授權。</p>
-          <p class="software-intro-en" lang="en">Links lead to the official providers for downloads, accounts, educational eligibility verification and license terms. This website does not host installers or grant software licenses.</p>
-        </div>
-        <div class="software-grid">
-          {% for app in software_downloads %}
-          <article class="software-card">
-            <div class="software-card-top">
-              <span class="software-site-label">官方外部連結 <small lang="en">Official external site</small></span>
-              <span class="software-card-provider">{{ app.provider | escape }}</span>
-            </div>
-            <h3>{{ app.name | escape }}</h3>
-            <p class="software-kind">{{ app.type_zh | escape }} <span lang="en">{{ app.type_en | escape }}</span></p>
-            <p class="software-summary">{{ app.summary_zh | escape }}<span lang="en">{{ app.summary_en | escape }}</span></p>
-            <div class="software-conditions">
-              <p class="software-platform">{{ app.platform_zh | escape }} <span lang="en">{{ app.platform_en | escape }}</span></p>
-              <p class="software-legal-label">授權與使用限制 <span lang="en">License &amp; use restrictions</span></p>
-              <p class="software-legal-body">{{ app.license_zh | escape }}<span lang="en">{{ app.license_en | escape }}</span></p>
-              <a class="software-terms-link" href="{{ app.terms_url | escape }}" target="_blank" rel="noopener noreferrer external">查看官方授權／資格說明 <span lang="en">Official terms &amp; eligibility ↗</span></a>
-            </div>
-            <a class="software-download resource-download" href="{{ app.url | escape }}" target="_blank" rel="noopener noreferrer external" aria-label="前往 {{ app.name | escape }} 官方外部網站，{{ app.action_zh | escape }}">
-              <span>{{ app.action_zh | escape }}<small lang="en">{{ app.action_en | escape }} · External site</small></span><span aria-hidden="true">↗</span>
-            </a>
-          </article>
-          {% endfor %}
-        </div>
-        <p class="software-disclaimer">※ 本區為外部官方下載／申請入口，不代表本站或陽明交通大學與軟體公司具有合作、保證免費資格或提供技術支援。使用者須自行確認最新授權條款、所在地適用方案、申請資格及安裝需求。學生個人教育授權不應直接用於產學合作、商業委託或學校共用電腦，除非該授權明確允許。<span lang="en">These independent official links do not imply affiliation, guaranteed free access or technical support. Verify current license terms, regional availability, eligibility and system requirements. Do not assume individual educational licenses authorize industry projects, commercial work or shared lab computers.</span></p>
+      <section class="resource-home-faq" aria-labelledby="resources-how-heading">
+        <h2 id="resources-how-heading">使用與授權須知 <span lang="en">Usage &amp; Licensing</span></h2>
+        <p>本站開發的影像分析工具僅供教學與研究示範，不作為臨床診斷依據。使用第三方網站時請遵循其服務條款，並避免上傳未授權或含可識別資訊的臨床影像。<span lang="en">Lab-developed image tools are educational prototypes, not clinical devices. Follow third-party service terms and avoid uploading identifiable or unauthorized clinical images.</span></p>
+        <p>學生與教育版 CAD 軟體須依原廠規範申請授權；研究模板與 NE-501 軟體下載另附使用範圍、安全限制或檔案版本說明。<span lang="en">Educational CAD licenses are subject to their provider's eligibility and use restrictions. Downloadable templates and the NE-501 package have separate use and version notes.</span></p>
       </section>
-
-      <section class="tools-catalogue" aria-labelledby="tools-heading">
-        <div class="catalogue-heading">
-          <p class="eyebrow">INTERACTIVE LEARNING TOOLS</p>
-          <h2 id="tools-heading">互動式線上工具<span lang="en">Interactive Online Tools</span></h2>
-          <p>鏡檢、微生物、血液學、細胞計數、電泳、免疫層析與影像分析教學工具。</p>
-        </div>
-        <div class="tools-grid" aria-label="線上教學工具 / Online learning tools">
-          {% for tool in tools %}
-          <article class="tool-entry">
-            <a class="tool-link" href="{{ tool.url | escape }}" {% if tool.external %}target="_blank" rel="noopener noreferrer external"{% endif %} aria-label="{% if tool.external %}前往第三方網站{% else %}開啟{% endif %} {{ tool.name | escape }}：{{ tool.title | escape }}">
-              <p class="tool-category">{{ tool.category | escape }}</p>
-              {% if tool.external %}<p class="tool-provider">第三方公開工具 · {{ tool.provider | escape }} <span lang="en">External provider</span></p>{% endif %}
-              <h3 class="tool-name">{{ tool.name | escape }}</h3>
-              <p class="tool-title">{{ tool.title | escape }}</p>
-              <p class="tool-subtitle" lang="en">{{ tool.subtitle | escape }}</p>
-              <p class="tool-summary">{{ tool.description | escape }}<span lang="en">{{ tool.description_en | escape }}</span></p>
-              <span class="tool-action"><span>{% if tool.external %}前往外部網站 <small lang="en">Visit external tool</small>{% else %}開啟工具 <small lang="en">Open tool</small>{% endif %}</span><span aria-hidden="true">↗</span></span>
-            </a>
-            {% if tool.external %}
-            <div class="tool-extra-links" aria-label="{{ tool.name | escape }} 補充資源">
-              <span>參考：</span>
-              {% if tool.source %}<a href="{{ tool.source | escape }}" target="_blank" rel="noopener noreferrer">開源程式</a>{% endif %}
-              {% if tool.research %}<a href="{{ tool.research | escape }}" target="_blank" rel="noopener noreferrer">延伸研究</a>{% endif %}
-              {% if tool.fallback %}<a href="{{ tool.fallback | escape }}" target="_blank" rel="noopener noreferrer">原作者使用指南</a>{% endif %}
-            </div>
-            {% endif %}
-          </article>
-          {% endfor %}
-        </div>
-      </section>
-
-      <p class="tools-note">※ PowerPoint 模板供研究、教學與學術交流使用，下載後請依實際會議或課程需求調整尺寸、字型與內容。本站自製分析工具屬教學與方法展示原型，分析結果須人工確認，不作為臨床檢驗或診斷依據。Web-Gel（Tembrica）、Web-LFA（LFApp）及 ImageJ.JS 均為第三方資源；本站提供來源與連結，服務可用性、功能及影像資料政策由各提供者管理；請僅使用已去識別化或取得授權的教學影像。<span lang="en">PowerPoint templates are provided for research, teaching and academic communication; adapt dimensions, fonts and content to the relevant event or course. Original analysis tools are educational prototypes and are unsuitable for clinical diagnosis. Tembrica Gel Analyzer, LFApp and ImageJ.JS are independently maintained external services with their own availability, functionality and data policies. Upload only authorized or de-identified teaching images.</span></p>
     </div>
   </main>
   {% include footer.html %}
