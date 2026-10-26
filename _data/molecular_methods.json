@@ -1,0 +1,30 @@
+[
+  {
+    "id": "pcr",
+    "name_zh": "PCR、qPCR 與引子品質",
+    "name_en": "PCR, qPCR & Primer Quality",
+    "description_zh": "先完成候選引子設計，再評估 Tm、GC%、hairpin、自身或異源二聚體及可能的非專一性擴增。",
+    "description_en": "Design primer candidates and evaluate Tm, GC%, hairpins, homo-/heterodimers, and possible off-target amplification."
+  },
+  {
+    "id": "lamp",
+    "name_zh": "LAMP 恆溫擴增",
+    "name_en": "LAMP Isothermal Amplification",
+    "description_zh": "針對 F3／B3、FIP／BIP 及 LF／LB 等多引子組合設計；不同平台演算法不相同，需以實驗比較候選組。",
+    "description_en": "Design multiple coordinated LAMP primers (F3/B3, FIP/BIP, LF/LB). Compare candidate sets experimentally because algorithms differ."
+  },
+  {
+    "id": "rpa",
+    "name_zh": "RPA／RAA 恆溫擴增",
+    "name_en": "RPA / RAA Isothermal Amplification",
+    "description_zh": "RPA／RAA 引子與探針候選設計、文獻已驗證序列檢索；須自行確認所選試劑系統的設計規範。",
+    "description_en": "Design RPA/RAA primer/probe candidates or consult literature-validated pairs. Follow your specific reagent platform's requirements."
+  },
+  {
+    "id": "structure",
+    "name_zh": "核酸二級結構與 DNA Circuit",
+    "name_en": "Nucleic Acid Structures & DNA Circuits",
+    "description_zh": "評估 RNA／DNA hairpin、交互作用、雙分子配對與多股系統，適合 HCR、toehold 及 DNA strand displacement 概念設計。",
+    "description_en": "Analyze RNA/DNA hairpins, intermolecular interactions, bimolecular folding and multistrand systems for HCR, toehold and strand-displacement designs."
+  }
+]
