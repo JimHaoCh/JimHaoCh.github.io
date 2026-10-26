@@ -199,11 +199,54 @@
   .site-header .header-identity .brand > span > span[lang="en"] { font-size: 10px; line-height: 1.4; }
   .site-header .header-identity .brand > span > .brand-pi { font-size: 10.5px; margin-top: 5px; }
 }
+@media (max-width: 860px) {
+  /* The mobile header should remain prominent alongside the three quick links. */
+  .site-header .header-identity { padding: 14px 16px; }
+  .site-header .header-identity .brand { gap: 13px; min-width: 0; }
+  .site-header .header-identity .brand img {
+    width: 78px;
+    height: 78px;
+    flex: 0 0 78px;
+  }
+  .site-header .header-identity .brand > span {
+    min-width: 0;
+    font-size: 28px;
+    line-height: 1.27;
+    letter-spacing: .04em;
+  }
+  .site-header .header-identity .brand > span > span[lang="en"] {
+    font-size: 12.5px;
+    line-height: 1.45;
+    letter-spacing: .055em;
+  }
+  .site-header .header-identity .brand > span > .brand-pi {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 7px;
+  }
+}
 @media (max-width: 420px) {
-  .site-header .header-identity { padding: 10px 12px; }
-  .site-header .header-identity .brand { gap: 10px; }
-  .site-header .header-identity .brand img { width: 50px; height: 50px; flex-basis: 50px; }
-  .site-header .header-identity .brand > span { font-size: 19px; }
-  .site-header .header-identity .brand > span > span[lang="en"] { font-size: 9px; letter-spacing: .055em; }
-  .site-header .header-identity .brand > span > .brand-pi { font-size: 9.5px; }
+  /* Fluid sizes preserve the header's proportions on 320–420px phones. */
+  .site-header .header-identity { padding: 12px; }
+  .site-header .header-identity .brand { gap: 11px; }
+  .site-header .header-identity .brand img {
+    width: clamp(68px, 19vw, 80px);
+    height: clamp(68px, 19vw, 80px);
+    flex: 0 0 clamp(68px, 19vw, 80px);
+  }
+  .site-header .header-identity .brand > span {
+    font-size: clamp(25px, 7vw, 29px);
+    letter-spacing: .03em;
+  }
+  .site-header .header-identity .brand > span > span[lang="en"] {
+    font-size: clamp(11px, 3.1vw, 13px);
+    letter-spacing: .035em;
+  }
+  .site-header .header-identity .brand > span > .brand-pi {
+    font-size: clamp(10.5px, 3.1vw, 13px);
+  }
+}
+@media (max-width: 359px) {
+  .site-header .header-identity .brand { gap: 9px; }
+  .site-header .header-identity .brand > span > span[lang="en"] { letter-spacing: 0; }
 }
