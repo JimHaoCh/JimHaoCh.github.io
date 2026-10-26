@@ -1,0 +1,19 @@
+<article class="tool-entry">
+  <a class="tool-link" href="{{ include.tool.url | escape }}"{% if include.tool.external %} target="_blank" rel="noopener noreferrer external"{% endif %} aria-label="{% if include.tool.external %}前往外部工具{% else %}開啟工具{% endif %}：{{ include.tool.name | escape }}">
+    <p class="tool-category">{{ include.tool.category | escape }}</p>
+    {% if include.tool.external %}<p class="tool-provider">第三方網站 · {{ include.tool.provider | escape }}<span lang="en">External provider</span></p>{% else %}<p class="tool-provider">本站開發 · 教學原型<span lang="en">Lab-developed educational tool</span></p>{% endif %}
+    <h3 class="tool-name">{{ include.tool.name | escape }}</h3>
+    <p class="tool-title">{{ include.tool.title | escape }}</p>
+    <p class="tool-subtitle" lang="en">{{ include.tool.subtitle | escape }}</p>
+    <p class="tool-summary">{{ include.tool.description | escape }}<span lang="en">{{ include.tool.description_en | escape }}</span></p>
+    <span class="tool-action"><span>{% if include.tool.external %}前往外部網站 <small lang="en">Visit external site</small>{% else %}開始使用 <small lang="en">Open teaching tool</small>{% endif %}</span><span aria-hidden="true">{% if include.tool.external %}↗{% else %}→{% endif %}</span></span>
+  </a>
+  {% if include.tool.external %}
+    <div class="tool-extra-links">
+      <span>延伸資源：</span>
+      {% if include.tool.source %}<a href="{{ include.tool.source | escape }}" target="_blank" rel="noopener noreferrer external">開源程式</a>{% endif %}
+      {% if include.tool.research %}<a href="{{ include.tool.research | escape }}" target="_blank" rel="noopener noreferrer external">研究論文</a>{% endif %}
+      {% if include.tool.fallback %}<a href="{{ include.tool.fallback | escape }}" target="_blank" rel="noopener noreferrer external">使用說明</a>{% endif %}
+    </div>
+  {% endif %}
+</article>
