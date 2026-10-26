@@ -177,6 +177,11 @@
   async function importCSV(file){
     if(!file)return;
     const input=$('exam-import');input.disabled=true;
+    const importStatus=$('exam-import-status');
+    const view=$('exam-import-view');
+    view.hidden=true;
+    importStatus.classList.remove('is-success','is-error');
+    importStatus.textContent='正在讀取「'+file.name+'」… / Reading CSV file…';
     status('正在瀏覽器本機讀取官方 CSV…');
     try{
       if(file.size>65_000_000)throw new Error('CSV 超過 65 MB 限制');
@@ -196,9 +201,32 @@
       const columns=parser.finish();
       if(!columns.includes('考試年度')||!columns.includes('類科組別')||!columns.includes('科目全名'))throw new Error('CSV 不是考選部資料集 170565 的格式');
       if(!incoming.length)throw new Error('沒有找到醫事檢驗師的官方索引資料');
+      const oldCount=entries.length;
+      const oldYears=new Set(entries.map(record=>record.year));
       importedCount+=incoming.length;
       setEntries(incoming);
-    }catch(error){status('匯入失敗：'+(error?.message||'格式無法讀取'),true);}
+      const added=entries.length-oldCount;
+      const newYears=currentYears().filter(year=>!oldYears.has(year));
+      if(added>0){
+        // Switch to a newly available year so the student can immediately inspect what changed.
+        mode='year';
+        selectedYear=newYears[0]||Math.max(...incoming.map(record=>record.year));
+        selectedSession='';
+        $('exam-keyword').value='';
+        render();
+      }
+      const yearHint=newYears.length?'新增年度：民國 '+newYears.join('、')+' 年。':'';
+      importStatus.textContent=added>0
+        ?'匯入成功：新增 '+added+' 份試卷索引。'+yearHint+' 已更新上方的年度與科目清單。'
+        :'CSV 已讀取：目前資料均已收錄，沒有新增試卷。可在上方直接查詢。';
+      importStatus.classList.add('is-success');
+      view.hidden=false;
+    }catch(error){
+      const message=error?.message||'格式無法讀取';
+      importStatus.textContent='匯入失敗：'+message+'。請確認檔案來自考選部官方 CSV，再重新選擇。';
+      importStatus.classList.add('is-error');
+      status('匯入失敗：'+message,true);
+    }
     finally{input.disabled=false;input.value='';}
   }
   $('exam-mode-year').addEventListener('click',()=>{mode='year';render();});
