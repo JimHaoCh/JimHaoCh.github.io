@@ -60,8 +60,8 @@
     for(const y of years) year.add(new Option("民國 "+y+" 年（"+(y+1911)+"）",String(y)));
     if(years.includes(Number(old)))year.value=old;
     const subject=$("exam-subject");
-    if(!subject.options.length){
-      subject.add(new Option("全部六大考科 / All subjects",""));
+    if(subject.options.length<2){
+      subject.replaceChildren(new Option("全部六大考科 / All subjects",""));
       for(const s of SUBJECTS)subject.add(new Option(s,s));
     }
   }
