@@ -1,0 +1,46 @@
+[
+  {
+    "id": "imaging",
+    "name_zh": "顯微與影像分析",
+    "name_en": "Microscopy & Image Analysis",
+    "href": "/resources/imaging.html",
+    "icon": "◎",
+    "eyebrow": "IMAGE & CELL ANALYSIS",
+    "intro_zh": "細胞計數、白血球分類、精子運動、存活率與影像定量。",
+    "intro_en": "Cell counting, WBC differential, sperm motion, viability and image measurements.",
+    "sample_zh": "顯微鏡影像 · 細胞分析 · ImageJ"
+  },
+  {
+    "id": "diagnostics",
+    "name_zh": "微生物與檢驗判讀",
+    "name_en": "Microbiology & Diagnostic Analysis",
+    "href": "/resources/diagnostics.html",
+    "icon": "✚",
+    "eyebrow": "DIAGNOSTIC LEARNING",
+    "intro_zh": "菌落計數、抑菌圈、革蘭氏染色、電泳與快篩定量。",
+    "intro_en": "Colony counting, inhibition zones, Gram stains, gel bands and rapid tests.",
+    "sample_zh": "CFU · AST · Gram · Gel · LFA"
+  },
+  {
+    "id": "engineering",
+    "name_zh": "微流體與工程設計",
+    "name_en": "Microfluidics & Engineering",
+    "href": "/resources/engineering.html",
+    "icon": "⌘",
+    "eyebrow": "DESIGN & INSTRUMENTATION",
+    "intro_zh": "微流體 CAD、3D 設計／製造軟體與實驗儀器控制程式。",
+    "intro_en": "Microfluidic CAD, 3D design/manufacturing software and laboratory control programs.",
+    "sample_zh": "3DuF · Flui3d · SOLIDWORKS · Fusion · NE-501"
+  },
+  {
+    "id": "templates",
+    "name_zh": "研究簡報與海報",
+    "name_en": "Presentation & Poster Templates",
+    "href": "/resources/templates.html",
+    "icon": "▤",
+    "eyebrow": "ACADEMIC TEMPLATES",
+    "intro_zh": "可編輯的研究簡報與學術海報 PowerPoint 模板。",
+    "intro_en": "Editable PowerPoint templates for presentations and academic posters.",
+    "sample_zh": "Research slides · Scientific posters"
+  }
+]
