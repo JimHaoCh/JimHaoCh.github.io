@@ -1,5 +1,16 @@
 [
   {
+    "id": "exam",
+    "name_zh": "醫檢師國考與專業學習",
+    "name_en": "MLS National Exam & Study",
+    "href": "/resources/exam.html",
+    "icon": "✓",
+    "eyebrow": "NATIONAL EXAMS & STUDY",
+    "intro_zh": "歷屆醫檢師國考試題、標準答案、年度科目查詢及專業學習資源。",
+    "intro_en": "Official medical laboratory scientist exam paper links, answer keys, year/subject filters and study references.",
+    "sample_zh": "考選部 · 歷屆試題 · 標準答案 · 原創測驗"
+  },
+  {
     "id": "imaging",
     "name_zh": "顯微與影像分析",
     "name_en": "Microscopy & Image Analysis",
@@ -20,6 +31,17 @@
     "intro_zh": "菌落計數、抑菌圈、革蘭氏染色、電泳與快篩定量。",
     "intro_en": "Colony counting, inhibition zones, Gram stains, gel bands and rapid tests.",
     "sample_zh": "CFU · AST · Gram · Gel · LFA"
+  },
+  {
+    "id": "molecular",
+    "name_zh": "分子檢驗與生物資訊",
+    "name_en": "Molecular Testing & Bioinformatics",
+    "href": "/resources/molecular.html",
+    "icon": "⌁",
+    "eyebrow": "MOLECULAR & BIOINFORMATICS",
+    "intro_zh": "核酸引子設計、序列鑑定與開放式分子生物資訊工具。",
+    "intro_en": "PCR primer design, molecular sequence identification and public bioinformatics tools.",
+    "sample_zh": "NCBI BLAST · Primer-BLAST"
   },
   {
     "id": "engineering",
