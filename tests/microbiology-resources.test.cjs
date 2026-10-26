@@ -70,5 +70,5 @@ test('WHONET and other resources are not misrepresented as open source or clinic
  const mic=added.find(x=>x.slug==='eucast-mic-distributions');
  assert.ok(mic.note_zh.includes('不代表抗藥率'));
  const page=read('resources/diagnostics.html');
- assert.ok(page.includes('不可'));
+ assert.ok(page.includes('EUCAST MIC 分布不能當作各地抗藥率'));
 });
