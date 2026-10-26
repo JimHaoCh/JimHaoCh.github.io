@@ -29,6 +29,8 @@ test('Mock quizzes are retained but never compete with the first-screen paper in
  assert.ok(page.includes('id="practice-app"'));
  assert.ok(page.includes('id="practice-start"'));
  assert.ok(js.includes('function startQuiz('));
+ assert.ok(js.includes('function populateSubjects(select)'));
+ assert.ok(js.includes("populateSubjects($('practice-subject'))"));
  assert.ok(page.includes('exam-secondary-practice'));
 });
 test('Initial page data accurately documents coverage rather than inventing sessions',()=>{
