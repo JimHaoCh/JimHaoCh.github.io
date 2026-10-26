@@ -1,0 +1,24 @@
+name: Validate Web-Biochemical identification
+on:
+  push:
+    paths:
+      - "assets/data/biochemical-*.json"
+      - "assets/js/biochemical-*.js"
+      - "web-biochemical/**"
+      - "_data/online_tools.json"
+      - "tests/web-biochemical.test.cjs"
+      - ".github/workflows/test-web-biochemical.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate browser code syntax
+        run: |
+          node --check assets/js/biochemical-engine.js
+          node --check assets/js/biochemical-app.js
+      - name: Run reference profiles, clinical warning, navigation and synthetic-case regression tests
+        run: node --test tests/web-biochemical.test.cjs
