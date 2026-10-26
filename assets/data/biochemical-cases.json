@@ -1,0 +1,128 @@
+{
+  "version": "1.0",
+  "description": "Fictional teaching scenarios; no patient, isolate or identifiable clinical records.",
+  "cases": [
+    {
+      "id": "case-staph",
+      "title_zh": "案例 A｜葡萄串狀球菌",
+      "title_en": "Case A · Clustered cocci",
+      "target": "saureus",
+      "intro_zh": "虛構純培養：紫色球菌呈葡萄串狀，Catalase 反應陽性。請選下一個鑑別試驗。",
+      "intro_en": "Synthetic isolate: clustered Gram-positive cocci and a positive catalase test. Choose the next discriminating test.",
+      "initial": {
+        "gram": "+",
+        "shape": "coccus",
+        "arrangement": "clusters",
+        "catalase": "+"
+      }
+    },
+    {
+      "id": "case-coag-neg",
+      "title_zh": "案例 B｜凝固酶陰性球菌",
+      "title_en": "Case B · Coagulase-negative cocci",
+      "target": "sepidermidis",
+      "intro_zh": "虛構純培養：革蘭氏陽性球菌、Catalase(+)、Coagulase(−)。注意其他同群菌也可能具有此型態。",
+      "intro_en": "Synthetic G+ clustered cocci, catalase+ and coagulase−. Other similar staphylococci exist beyond this small panel.",
+      "initial": {
+        "gram": "+",
+        "shape": "coccus",
+        "arrangement": "clusters",
+        "catalase": "+",
+        "coagulase": "-"
+      }
+    },
+    {
+      "id": "case-enterococcus",
+      "title_zh": "案例 C｜鏈狀球菌",
+      "title_en": "Case C · Cocci in chains",
+      "target": "efaecalis",
+      "intro_zh": "虛構純培養：Gram(+) 球菌呈鏈狀、Catalase(−)、PYR(+)。選擇下一項生化試驗。",
+      "intro_en": "Synthetic G+ cocci in chains, catalase− and PYR+. Choose an additional differentiating test.",
+      "initial": {
+        "gram": "+",
+        "shape": "coccus",
+        "arrangement": "chains",
+        "catalase": "-",
+        "pyr": "+"
+      }
+    },
+    {
+      "id": "case-coliform",
+      "title_zh": "案例 D｜乳糖發酵性桿菌",
+      "title_en": "Case D · Lactose-fermenting rod",
+      "target": "ecoli",
+      "intro_zh": "虛構純培養：Gram(−) 桿菌、Oxidase(−)、乳糖發酵(+)。請選擇 Indole、Citrate 或其他試驗。",
+      "intro_en": "Synthetic G− rod, oxidase− and lactose+. Compare indole/citrate to distinguish coliform candidates.",
+      "initial": {
+        "gram": "-",
+        "shape": "rod",
+        "arrangement": "single",
+        "oxidase": "-",
+        "lactose": "+"
+      }
+    },
+    {
+      "id": "case-klebsiella",
+      "title_zh": "案例 E｜不具運動性的桿菌",
+      "title_en": "Case E · Nonmotile rod",
+      "target": "kpneumoniae",
+      "intro_zh": "虛構純培養：革蘭氏陰性桿菌、Oxidase(−)、乳糖發酵(+)，運動性陰性。",
+      "intro_en": "Synthetic G− rod, oxidase−, lactose+ and nonmotile.",
+      "initial": {
+        "gram": "-",
+        "shape": "rod",
+        "arrangement": "single",
+        "oxidase": "-",
+        "lactose": "+",
+        "motility": "-"
+      }
+    },
+    {
+      "id": "case-urease",
+      "title_zh": "案例 F｜尿素酶陽性桿菌",
+      "title_en": "Case F · Urease-positive rod",
+      "target": "pmirabilis",
+      "intro_zh": "虛構純培養：Gram(−) 桿菌、乳糖不發酵、Urease(+)、Oxidase(−)。",
+      "intro_en": "Synthetic G− rod, lactose−, urease+ and oxidase−.",
+      "initial": {
+        "gram": "-",
+        "shape": "rod",
+        "arrangement": "single",
+        "oxidase": "-",
+        "lactose": "-",
+        "urease": "+"
+      }
+    },
+    {
+      "id": "case-oxidase",
+      "title_zh": "案例 G｜氧化酶陽性桿菌",
+      "title_en": "Case G · Oxidase-positive rod",
+      "target": "paeruginosa",
+      "intro_zh": "虛構純培養：Gram(−) 桿菌、Oxidase(+)、乳糖不發酵。",
+      "intro_en": "Synthetic G− rod, oxidase+ and lactose nonfermenting.",
+      "initial": {
+        "gram": "-",
+        "shape": "rod",
+        "arrangement": "single",
+        "oxidase": "+",
+        "lactose": "-"
+      }
+    },
+    {
+      "id": "case-salmonella",
+      "title_zh": "案例 H｜不發酵乳糖的腸道菌",
+      "title_en": "Case H · Non-lactose fermenter",
+      "target": "salmonella",
+      "intro_zh": "虛構純培養：Gram(−) 桿菌、Oxidase(−)、乳糖不發酵、Urease(−)；仍需其他鑑別資料。",
+      "intro_en": "Synthetic G− rod, oxidase−, lactose− and urease−. More information is needed.",
+      "initial": {
+        "gram": "-",
+        "shape": "rod",
+        "arrangement": "single",
+        "oxidase": "-",
+        "lactose": "-",
+        "urease": "-"
+      }
+    }
+  ]
+}
