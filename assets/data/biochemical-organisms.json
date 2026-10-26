@@ -1,0 +1,178 @@
+{
+  "version": "1.0",
+  "description": "Small simplified reference panel; +/− typical, v variable, omitted not assessed. Not a clinical database.",
+  "organisms": [
+    {
+      "id": "saureus",
+      "name": "Staphylococcus aureus",
+      "name_zh": "金黃色葡萄球菌",
+      "note_zh": "典型：Gram(+) 球菌、葡萄串排列、Catalase(+)、Coagulase(+)。",
+      "note_en": "Typical G+ cocci in clusters; catalase+ and coagulase+.",
+      "profile": {
+        "gram": "+",
+        "shape": "coccus",
+        "arrangement": "clusters",
+        "catalase": "+",
+        "coagulase": "+"
+      }
+    },
+    {
+      "id": "sepidermidis",
+      "name": "Staphylococcus epidermidis",
+      "name_zh": "表皮葡萄球菌",
+      "note_zh": "典型：Gram(+) 球菌、Catalase(+)、Coagulase(−)。仍須與其他凝固酶陰性葡萄球菌鑑別。",
+      "note_en": "Typical G+ cocci, catalase+, coagulase−; other coagulase-negative species may resemble it.",
+      "profile": {
+        "gram": "+",
+        "shape": "coccus",
+        "arrangement": "clusters",
+        "catalase": "+",
+        "coagulase": "-"
+      }
+    },
+    {
+      "id": "spyogenes",
+      "name": "Streptococcus pyogenes",
+      "name_zh": "化膿性鏈球菌",
+      "note_zh": "典型：Gram(+) 鏈狀球菌、Catalase(−)、PYR(+)、Bile esculin(−)。",
+      "note_en": "Typical G+ cocci in chains, catalase−, PYR+, bile esculin−.",
+      "profile": {
+        "gram": "+",
+        "shape": "coccus",
+        "arrangement": "chains",
+        "catalase": "-",
+        "bile_esculin": "-",
+        "pyr": "+"
+      }
+    },
+    {
+      "id": "efaecalis",
+      "name": "Enterococcus faecalis",
+      "name_zh": "糞腸球菌",
+      "note_zh": "典型：Gram(+) 球菌、Catalase(−)、PYR(+)、Bile esculin(+)。",
+      "note_en": "Typical G+ cocci, catalase−, PYR+, bile esculin+.",
+      "profile": {
+        "gram": "+",
+        "shape": "coccus",
+        "arrangement": "chains",
+        "catalase": "-",
+        "bile_esculin": "+",
+        "pyr": "+"
+      }
+    },
+    {
+      "id": "ecoli",
+      "name": "Escherichia coli",
+      "name_zh": "大腸桿菌",
+      "note_zh": "典型：Gram(−) 桿菌、Oxidase(−)、Indole(+)、乳糖發酵(+)、Citrate(−)。",
+      "note_en": "Typical G− rod, oxidase−, indole+, lactose fermenter, citrate−.",
+      "profile": {
+        "gram": "-",
+        "shape": "rod",
+        "arrangement": "single",
+        "oxidase": "-",
+        "indole": "+",
+        "urease": "-",
+        "lactose": "+",
+        "citrate": "-",
+        "motility": "+",
+        "h2s": "-"
+      }
+    },
+    {
+      "id": "kpneumoniae",
+      "name": "Klebsiella pneumoniae",
+      "name_zh": "肺炎克雷伯氏菌",
+      "note_zh": "典型：Gram(−) 桿菌、Oxidase(−)、乳糖發酵(+)、不具運動性、Citrate(+)；Urease 依菌株與時程而異。",
+      "note_en": "Typical G− rod, oxidase−, lactose+, nonmotile, citrate+; urease timing can vary.",
+      "profile": {
+        "gram": "-",
+        "shape": "rod",
+        "arrangement": "single",
+        "oxidase": "-",
+        "indole": "-",
+        "urease": "v",
+        "lactose": "+",
+        "citrate": "+",
+        "motility": "-",
+        "h2s": "-"
+      }
+    },
+    {
+      "id": "ecloacae",
+      "name": "Enterobacter cloacae complex",
+      "name_zh": "陰溝腸桿菌複合群",
+      "note_zh": "常見：Gram(−) 桿菌、Oxidase(−)、Indole(−)、Citrate(+)、Motility(+)；乳糖與尿素酶可能有變異。",
+      "note_en": "Commonly G− rod, oxidase−, indole−, citrate+, motile; lactose and urease vary.",
+      "profile": {
+        "gram": "-",
+        "shape": "rod",
+        "arrangement": "single",
+        "oxidase": "-",
+        "indole": "-",
+        "urease": "v",
+        "lactose": "v",
+        "citrate": "+",
+        "motility": "+",
+        "h2s": "-"
+      }
+    },
+    {
+      "id": "pmirabilis",
+      "name": "Proteus mirabilis",
+      "name_zh": "奇異變形桿菌",
+      "note_zh": "典型：Gram(−) 桿菌、乳糖不發酵、Urease(+)、運動性(+)；H₂S 通常陽性。",
+      "note_en": "Typical G− non-lactose-fermenting rod, urease+, motile; often H₂S+.",
+      "profile": {
+        "gram": "-",
+        "shape": "rod",
+        "arrangement": "single",
+        "oxidase": "-",
+        "indole": "-",
+        "urease": "+",
+        "lactose": "-",
+        "citrate": "v",
+        "motility": "+",
+        "h2s": "+"
+      }
+    },
+    {
+      "id": "salmonella",
+      "name": "Salmonella enterica (non-typhoidal, typical)",
+      "name_zh": "沙門氏菌（典型非傷寒菌株）",
+      "note_zh": "通常：Gram(−) 桿菌、乳糖不發酵、Urease(−)、運動性(+)、H₂S 常呈陽性；例外菌株存在。",
+      "note_en": "Common non-typhoidal G− rods, lactose−, urease−, motile and often H₂S+; exceptions occur.",
+      "profile": {
+        "gram": "-",
+        "shape": "rod",
+        "arrangement": "single",
+        "oxidase": "-",
+        "indole": "-",
+        "urease": "-",
+        "lactose": "-",
+        "citrate": "v",
+        "motility": "+",
+        "h2s": "v"
+      }
+    },
+    {
+      "id": "paeruginosa",
+      "name": "Pseudomonas aeruginosa",
+      "name_zh": "綠膿桿菌",
+      "note_zh": "典型：Gram(−) 桿菌、Oxidase(+)、乳糖不發酵；仍需其他試驗與培養特徵確認。",
+      "note_en": "Typical G− rod, oxidase+, lactose nonfermenter; confirm with other tests and culture features.",
+      "profile": {
+        "gram": "-",
+        "shape": "rod",
+        "arrangement": "single",
+        "oxidase": "+",
+        "indole": "-",
+        "urease": "-",
+        "lactose": "-",
+        "citrate": "v",
+        "motility": "+",
+        "h2s": "-"
+      }
+    }
+  ]
+}
