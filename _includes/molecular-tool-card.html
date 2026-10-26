@@ -1,0 +1,19 @@
+<article class="molecular-tool-card">
+  <div class="molecular-tool-card-top">
+    <span class="molecular-method-tag">{{ include.tool.purpose_zh | escape }}</span>
+    <span class="molecular-access molecular-access--{{ include.tool.access_kind | escape }}">{{ include.tool.access_zh | escape }}<small lang="en">{{ include.tool.access_en | escape }}</small></span>
+  </div>
+  <h3>{{ include.tool.name | escape }}</h3>
+  <p class="molecular-provider">{{ include.tool.provider | escape }}</p>
+  <p class="molecular-description">{{ include.tool.description_zh | escape }}<span lang="en">{{ include.tool.description_en | escape }}</span></p>
+  <p class="molecular-usage-note">{{ include.tool.notice_zh | escape }}<span lang="en">{{ include.tool.notice_en | escape }}</span></p>
+  {% if include.tool.source_url or include.tool.help_url %}
+  <div class="molecular-support-links">
+    {% if include.tool.source_url %}<a href="{{ include.tool.source_url | escape }}" target="_blank" rel="noopener noreferrer external">開源程式 <span lang="en">Source code ↗</span></a>{% endif %}
+    {% if include.tool.help_url %}<a href="{{ include.tool.help_url | escape }}" target="_blank" rel="noopener noreferrer external">官方說明 <span lang="en">Help / notice ↗</span></a>{% endif %}
+  </div>
+  {% endif %}
+  <a class="resource-download molecular-tool-action" href="{{ include.tool.url | escape }}" target="_blank" rel="noopener noreferrer external" aria-label="前往 {{ include.tool.name | escape }} 第三方網站">
+    <span>前往線上平台<small lang="en">Open external design site</small></span><span aria-hidden="true">↗</span>
+  </a>
+</article>
