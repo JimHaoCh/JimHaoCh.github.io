@@ -39,9 +39,9 @@
     "href": "/resources/molecular.html",
     "icon": "⌁",
     "eyebrow": "MOLECULAR & BIOINFORMATICS",
-    "intro_zh": "核酸引子設計、序列鑑定與開放式分子生物資訊工具。",
-    "intro_en": "PCR primer design, molecular sequence identification and public bioinformatics tools.",
-    "sample_zh": "NCBI BLAST · Primer-BLAST"
+    "intro_zh": "PCR／qPCR、LAMP／RPA 恆溫擴增、NUPACK 核酸結構與 DNA circuit 設計。",
+    "intro_en": "PCR/qPCR, isothermal LAMP/RPA primer design, NUPACK and DNA/RNA structural analysis.",
+    "sample_zh": "Primer3Plus · LAMP · RPA · NUPACK · RNAfold"
   },
   {
     "id": "engineering",
