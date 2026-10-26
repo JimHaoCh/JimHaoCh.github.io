@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fef9f5">
+<meta name="description" content="Web-Trypan Blue：醫技系細胞培養教學專用的本機 Trypan Blue 影像分析、活死細胞標記、人工校正、細胞存活率與血球計數盤濃度計算。">
+<title>Web-Trypan Blue｜細胞存活率影像分析 · Cell Viability Analyzer</title>
+<link rel="stylesheet" href="./style.css?v=1">
+<link rel="stylesheet" href="/tools-common.css?v=20261026">
+<script defer src="./app.js?v=1"></script>
+</head>
+<body class="bf-tool">
+<a class="skip-link" href="#workspace">跳至分析工具 / Skip to analyzer</a>
+<header class="topbar">
+<a class="bf-brand" href="/" aria-label="百洑傳息實驗室首頁 / Bioflumen & Xensor Lab Home"><img src="/assets/lab-logo-small.webp" width="42" height="42" alt=""><span>百洑傳息<small>BIOFLUMEN &amp; XENSOR LAB</small></span></a>
+<a href="../courses.html">← 線上工具 / Online Tools</a><span>NYCU · MEDTECH VIRTUAL LAB</span>
+</header>
+<main id="workspace" class="shell">
+<section class="hero">
+<p class="eyebrow">CELL CULTURE · MICROSCOPY · EDUCATIONAL v0.1</p>
+<h1>Web-<em>Trypan Blue</em></h1>
+<p class="subtitle">細胞存活率影像分析 <span>Cell Viability Image Analyzer</span></p>
+<p class="intro">上傳 Trypan Blue 染色的明視野顯微鏡照片，辨識候選細胞並依藍色染色特徵初步分類；逐顆人工覆核後計算存活率。支援選取 ROI、計數盤濃度換算，以及標註圖片與 CSV 匯出。<span class="en">Upload a brightfield Trypan Blue image, detect candidate cells, inspect staining-based classifications, correct each marker, and calculate cell viability. ROI selection, optional chamber concentration and local exports are included.</span></p>
+<div class="notice"><strong>教學原型 · Educational prototype</strong><span class="en">影像辨識採自行開發的傳統影像處理法，尚未經準確度驗證。染色、離焦、群聚與格線可能導致誤判；所有計數需人工確認。不得用於診斷、製程放行或臨床決策。<br>Rule-based computer vision; accuracy has not been validated. Focus, staining, overlap and grid lines may affect results. Manually verify all counts. Not for diagnosis or clinical decisions.</span></div>
+</section>
+<div class="layout">
+<section class="panel controls" aria-labelledby="setup-title">
+<h2 id="setup-title"><span class="step">01</span> 載入與設定 <small>Upload &amp; Settings</small></h2>
+<label class="field">顯微鏡影像 <span class="en">Brightfield microscopy image (JPG / PNG)</span><input id="upload" type="file" accept="image/png,image/jpeg,image/webp,image/*"></label>
+<button id="demo" class="secondary full" type="button">開啟合成教學範例 <small>Load synthetic demo (48 live / 12 dead)</small></button>
+<div class="twocol">
+<label class="field">最小半徑 (px) <span class="en">Minimum radius</span><input id="minR" type="number" value="6" min="2" max="100" step="1"></label>
+<label class="field">最大半徑 (px) <span class="en">Maximum radius</span><input id="maxR" type="number" value="24" min="3" max="180" step="1"></label>
+<label class="field">局部暗度門檻 <span class="en">Local contrast threshold</span><input id="contrast" type="range" min="4" max="50" value="12"><output id="contrastVal">12</output></label>
+<label class="field">藍色判定門檻 <span class="en">Blue score (B − R)</span><input id="blue" type="range" min="6" max="90" value="25"><output id="blueVal">25</output></label>
+</div>
+<p class="hint">首次分析建議先用合成範例。深色染色細胞、背景亮度及相機白平衡都會影響判斷。<span class="en">Try the synthetic reference first. Results depend on dye appearance, illumination, and white balance.</span></p>
+<div class="actions"><button id="detect" class="primary" type="button" disabled>辨識候選細胞 <small>Detect candidates</small></button><button id="resetROI" class="secondary" type="button" disabled>重設分析範圍 <small>Reset ROI</small></button></div>
+<h2><span class="step">02</span> 人工覆核 <small>Manual Review</small></h2>
+<div class="modes" role="group" aria-label="編輯工具 / Editing modes">
+<button type="button" class="mode active" data-mode="roi" aria-pressed="true">▢ 選取 ROI <small>Draw region</small></button>
+<button type="button" class="mode" data-mode="live" aria-pressed="false">＋ 活細胞 <small>Mark live</small></button>
+<button type="button" class="mode" data-mode="dead" aria-pressed="false">＋ 死細胞 <small>Mark dead</small></button>
+<button type="button" class="mode" data-mode="erase" aria-pressed="false">－ 刪除 <small>Remove</small></button>
+<button type="button" class="mode" data-mode="review" aria-pressed="false">？ 待確認 <small>Flag for review</small></button>
+</div>
+<p class="hint">ROI 模式拖曳矩形指定分析區；其餘模式點選既有標記可重新分類，點選空白處可新增標記。<span class="en">Drag to draw a rectangular ROI. In annotation modes, tap a marker to reclassify it or tap empty space to add a cell.</span></p>
+<div class="actions"><button id="undo" class="secondary" disabled type="button">復原 <small>Undo edit</small></button><button id="clearMarks" class="secondary" disabled type="button">清空標記 <small>Clear markers</small></button></div>
+<p id="status" class="status" role="status" aria-live="polite">請上傳影像，或開啟合成示範。<span class="en">Upload an image or load the synthetic demo.</span></p>
+</section>
+<section class="panel imagepanel" aria-labelledby="viewer-title">
+<h2 id="viewer-title"><span class="step">03</span> 顯微影像 <small>Microscopy Viewer</small></h2>
+<div class="imageframe"><canvas id="viewer" width="960" height="640" aria-label="可互動的顯微影像與細胞標記 / Interactive image with cell markers"></canvas></div>
+<div class="legend"><span><i class="dot live"></i>活細胞 / Live</span><span><i class="dot dead"></i>死細胞 / Dead</span><span><i class="dot review"></i>待確認 / Review</span><span><i class="dot roi"></i>ROI</span></div>
+<p id="demoNote" class="hint"></p>
+<div class="actions"><button id="png" class="secondary" disabled type="button">下載標註 PNG <small>Export annotated image</small></button><button id="csv" class="secondary" disabled type="button">下載細胞 CSV <small>Export cell records</small></button></div>
+</section>
+</div>
+<section class="panel results" aria-labelledby="results-title">
+<h2 id="results-title"><span class="step">04</span> 統計與計算 <small>Results &amp; Calculations</small></h2>
+<div class="metrics"><div><span>活細胞 <small>Live</small></span><strong id="liveCount">0</strong></div><div><span>死細胞 <small>Dead</small></span><strong id="deadCount">0</strong></div><div><span>待確認 <small>Review</small></span><strong id="reviewCount">0</strong></div><div><span>細胞存活率 <small>Viability</small></span><strong id="viability">—</strong></div></div>
+<p class="formula">Cell viability (%) = Live ÷ (Live + Dead) × 100</p>
+<p class="hint" id="reviewMessage">待確認細胞不納入存活率分母；若存在待確認標記，數值為暫定結果。<span class="en">Unreviewed markers are excluded from the denominator. Results remain provisional until all markers are reviewed.</span></p>
+<details class="concentration">
+<summary>選用：計數盤濃度換算 <small>Optional: Hemocytometer concentration</small></summary>
+<p class="hint">請先框選實際已知計數面積；完整 Neubauer 1 × 1 mm 大格，面積 1 mm²，標準深度 0.1 mm。若照片未校正計數區，請勿將結果作為細胞濃度。<span class="en">Select a physically known count area. A full Neubauer large square is 1 mm² at 0.1 mm depth. Uncalibrated fields cannot provide defensible cell concentrations.</span></p>
+<div class="twocol">
+<label class="field">計數面積 (mm²) <span class="en">Selected region area</span><input id="area" type="number" value="1" min=".0001" step=".01"></label>
+<label class="field">計數室深度 (mm) <span class="en">Chamber depth</span><input id="depth" type="number" value=".1" min=".001" step=".01"></label>
+<label class="field">總稀釋倍率 <span class="en">Dilution factor (e.g. 2 for 1:1)</span><input id="dilution" type="number" value="2" min=".0001" step=".1"></label>
+<label class="field check"><input type="checkbox" id="calibrated"><span>已確認 ROI 對應上述面積 <small>I confirm the ROI represents the entered area</small></span></label>
+</div>
+<div class="metrics mini"><div><span>活細胞濃度 <small>Viable cells / mL</small></span><strong id="liveML">—</strong></div><div><span>總細胞濃度 <small>Total cells / mL</small></span><strong id="totalML">—</strong></div></div>
+<p class="formula">cells/mL = Count × dilution factor × 1000 ÷ (area [mm²] × depth [mm])</p>
+</details>
+</section>
+<section class="explainer">
+<article class="panel"><h2>染色原理 <small>Principle</small></h2><p>完整細胞膜可排除 Trypan Blue；膜完整性受損的細胞呈藍色。此方法量測的是染劑排除能力，結果受染色時間、細胞種類及顯微影像品質影響。<span class="en">Trypan Blue exclusion reflects membrane integrity. Dye uptake, cell type, staining time and imaging conditions affect classification.</span></p></article>
+<article class="panel"><h2>方法與限制 <small>Method &amp; Limitations</small></h2><p>使用局部亮度閾值、形態學與連通區篩選尋找候選細胞，再以中心區域 B−R 色差推估藍色染色。相鄰細胞、離焦、染色沉澱及格線可能造成漏計或誤計；人工標記會保留在匯出檔。<span class="en">Local contrast, morphology and connected components detect candidates. Central blue chroma supports provisional classification. Overlaps, defocus, debris and grid lines remain sources of error.</span></p></article>
+</section>
+<section class="sources"><h2>文獻與程式說明 <small>References &amp; Source</small></h2><p>Kuijpers L et al. <em>PLoS ONE</em> (2023), <a href="https://doi.org/10.1371/journal.pone.0291625" target="_blank" rel="noopener noreferrer">doi:10.1371/journal.pone.0291625</a>；NIST <a href="https://www.nist.gov/mml/bbd/biomaterials/addressing-sources-error-cell-viability-measurement-process" target="_blank" rel="noopener noreferrer">Sources of error in cell viability measurement</a>；<a href="https://www.thermofisher.com/de/en/home/references/gibco-cell-culture-basics/cell-culture-protocols/trypan-blue-exclusion.html" target="_blank" rel="noopener noreferrer">Trypan Blue Exclusion protocol</a>.</p><p>本站採原創前端實作，未複製上述研究的模型、標註資料或第三方 ImageJ 巨集。<span class="en">Original browser-only implementation. No third-party model, dataset or ImageJ macro is bundled.</span></p></section>
+<footer>Web-Trypan Blue v0.1 · NYCU Medical Laboratory Science · <a href="https://github.com/JimHaoCh/JimHaoCh.github.io/tree/main/web-trypan-blue">GitHub source</a></footer>
+</main>
+</body>
+</html>
