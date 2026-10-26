@@ -46,7 +46,7 @@ function draw(){
 }
 function resetAnalysis(keepStudent=true){
  marks=[];history=[];detected=false;revealed=false;u.detectInfo.textContent="";u.demoTruth.textContent="";u.compareMessage.textContent="";
- if(!keepStudent){studentSaved=null;u.studentGram.disabled=false;u.studentShape.disabled=false;u.studentArrangement.disabled=false;u.studentSummary.textContent="尚未提交學生判讀 / No student response yet.";}
+ if(!keepStudent){studentSaved=null;u.studentGram.value="";u.studentShape.value="";u.studentArrangement.value="unknown";u.studentGram.disabled=false;u.studentShape.disabled=false;u.studentArrangement.disabled=false;u.studentSummary.textContent="尚未提交學生判讀 / No student response yet.";}
  updateControls();draw();
 }
 function load(image,name,demo=""){
@@ -91,7 +91,7 @@ function detect(){
   else if(negative)mask[i]=2;
  }
  const queue=new Int32Array(N),found=[];let skipped=0;
- for(let y=ymin;y<ymax;y++)for(let x=xmin;x<xmax;x++){
+ scan: for(let y=ymin;y<ymax;y++)for(let x=xmin;x<xmax;x++){
   const p=y*W+x,klass=mask[p];if(!klass||klass>2)continue;
   let head=0,tail=1;queue[0]=p;mask[p]=3;
   let count=0,sx=0,sy=0,sxx=0,syy=0,sxy=0,l=x,rr=x,top=y,bottom=y;
@@ -110,7 +110,7 @@ function detect(){
   const uncertain=ratio>1.55&&ratio<2.15||count>max*.80||rr-l>Math.sqrt(max)*3;
   const shape=ratio>=2.15?"r":"c";
   found.push({x:cx,y:cy,r:clamp(Math.sqrt(count/Math.PI)+1,5,32),kind:uncertain?"review":(klass===1?"p":"n")+shape,source:"rule"});
-  if(found.length>=1200)break;
+  if(found.length>=1200)break scan;
  }
  marks=found;history=[];detected=true;revealed=false;
  u.detectInfo.textContent="偵測 "+marks.length+" 個候選區域；篩除 "+skipped+" 個過小或過大的色塊。此數字屬色塊分割結果，無法視為已確認菌數。 / "+marks.length+" candidate components; "+skipped+" filtered. Counts are unverified.";
@@ -121,7 +121,7 @@ function stats(){
  const n={pc:0,nc:0,pr:0,nr:0,review:0};marks.forEach(m=>n[m.kind]++);
  ["pc","nc","pr","nr","review"].forEach(k=>u[k==="pc"?"posC":k==="nc"?"negC":k==="pr"?"posR":k==="nr"?"negR":"review"].textContent=n[k]);
  const p=n.pc+n.pr,g=n.nc+n.nr,c=n.pc+n.nc,b=n.pr+n.nr;
- function label(a,z,lA,lZ){const total=a+z;if(!total)return{key:"uncertain",text:"無足夠候選 / Insufficient evidence"};if(a/total>=.8)return{key:lA,text:lA==="pos"?"偏向革蘭氏陽性 / Predominantly Gram-positive":"偏向球菌 / Predominantly cocci"};if(z/total>=.8)return{key:lZ,text:lZ==="neg"?"偏向革蘭氏陰性 / Predominantly Gram-negative":"偏向桿菌 / Predominantly bacilli"};return{key:"mixed",text:"混合候選型態 / Mixed candidate classes"};}
+ function label(a,z,lA,lZ){const total=a+z;if(total<5)return{key:"uncertain",text:"候選數不足（少於 5）/ Too few candidates (<5)"};if(a/total>=.8)return{key:lA,text:lA==="pos"?"偏向革蘭氏陽性 / Predominantly Gram-positive":"偏向球菌 / Predominantly cocci"};if(z/total>=.8)return{key:lZ,text:lZ==="neg"?"偏向革蘭氏陰性 / Predominantly Gram-negative":"偏向桿菌 / Predominantly bacilli"};return{key:"mixed",text:"混合候選型態 / Mixed candidate classes"};}
  const gram=label(p,g,"pos","neg"),shape=label(c,b,"cocci","bacilli");
  u.gramResult.textContent=gram.text;u.shapeResult.textContent=shape.text;
  const guess=studentSaved;
