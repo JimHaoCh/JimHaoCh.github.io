@@ -14,7 +14,7 @@ intro_en: Educational image-based workflows for colonies, inhibition zones, Gram
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261026-4">
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-5">
   <script defer src="/online-resources.js?v=20261026-2"></script>
 </head>
 <body>
@@ -36,6 +36,18 @@ intro_en: Educational image-based workflows for colonies, inhibition zones, Gram
           {% include resource-tool-card.html tool=tool %}
         {% endfor %}
       </div>
+      </section>
+
+      {% assign references = site.data.professional_resources | where: "function_group", "diagnostics" %}
+      <section class="functional-section" aria-labelledby="diagnostics-reference-title">
+        <div class="catalogue-heading">
+          <p class="eyebrow">PROFESSIONAL IMAGE &amp; LAB REFERENCES</p>
+          <h2 id="diagnostics-reference-title">臨床微生物與檢驗標準<span lang="en">Microbiology & Diagnostic References</span></h2>
+          <p>疾管署、CDC 與 EUCAST 提供的專業資源；判讀時以最新適用版本及本地實驗室作業規範為準。</p>
+        </div>
+        <div class="reference-grid">
+          {% for item in references %}{% include resource-professional-card.html item=item %}{% endfor %}
+        </div>
       </section>
       <p class="tools-note">CFU、AST、Gram Stain 等本站功能屬教學原型；Gel Analyzer 與 LFApp 為第三方研究工具，連線狀態及資料政策由提供者管理。不得將本頁結果直接作為臨床診斷依據。<span lang="en">Lab prototypes and third-party research tools are intended for learning. Do not use outputs as standalone clinical diagnostic decisions; external providers control availability and data policies.</span></p>
 
