@@ -1,0 +1,133 @@
+{
+  "source": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx",
+  "dataset": "https://data.gov.tw/dataset/170565",
+  "retrieved_at_utc": "2026-10-26T00:00:00+00:00",
+  "records": 12,
+  "years": [
+    115,
+    114
+  ],
+  "entries": [
+    {
+      "year": 115,
+      "subject": "臨床生理學與病理學",
+      "exam": "115年第二次專門職業及技術人員高等考試（醫事檢驗師）",
+      "session": "第二次",
+      "question": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=115090&q=1&s=0103&t=Q",
+      "answer": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=115090&q=1&s=0103&t=S",
+      "correction": "",
+      "source_page": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=115090&y=2026"
+    },
+    {
+      "year": 115,
+      "subject": "臨床血液學與血庫學",
+      "exam": "115年第二次專門職業及技術人員高等考試（醫事檢驗師）",
+      "session": "第二次",
+      "question": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=115090&q=1&s=0501&t=Q",
+      "answer": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=115090&q=1&s=0501&t=S",
+      "correction": "",
+      "source_page": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=115090&y=2026"
+    },
+    {
+      "year": 115,
+      "subject": "醫學分子檢驗學與臨床鏡檢學（包括寄生蟲學）",
+      "exam": "115年第二次專門職業及技術人員高等考試（醫事檢驗師）",
+      "session": "第二次",
+      "question": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=115090&q=1&s=0502&t=Q",
+      "answer": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=115090&q=1&s=0502&t=S",
+      "correction": "",
+      "source_page": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=115090&y=2026"
+    },
+    {
+      "year": 115,
+      "subject": "微生物學與臨床微生物學（包括細菌與黴菌）",
+      "exam": "115年第二次專門職業及技術人員高等考試（醫事檢驗師）",
+      "session": "第二次",
+      "question": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=115090&q=1&s=0503&t=Q",
+      "answer": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=115090&q=1&s=0503&t=S",
+      "correction": "",
+      "source_page": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=115090&y=2026"
+    },
+    {
+      "year": 115,
+      "subject": "生物化學與臨床生化學",
+      "exam": "115年第二次專門職業及技術人員高等考試（醫事檢驗師）",
+      "session": "第二次",
+      "question": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=115090&q=1&s=0504&t=Q",
+      "answer": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=115090&q=1&s=0504&t=S",
+      "correction": "",
+      "source_page": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=115090&y=2026"
+    },
+    {
+      "year": 115,
+      "subject": "臨床血清免疫學與臨床病毒學",
+      "exam": "115年第二次專門職業及技術人員高等考試（醫事檢驗師）",
+      "session": "第二次",
+      "question": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=115090&q=1&s=0505&t=Q",
+      "answer": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=115090&q=1&s=0505&t=S",
+      "correction": "",
+      "source_page": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=115090&y=2026"
+    },
+    {
+      "year": 114,
+      "subject": "臨床生理學與病理學",
+      "exam": "114年第一次專門職業及技術人員高等考試（醫事檢驗師）",
+      "session": "第一次",
+      "question": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0107&t=Q",
+      "answer": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0107&t=S",
+      "correction": "",
+      "source_page": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=114020&y=2025"
+    },
+    {
+      "year": 114,
+      "subject": "臨床血液學與血庫學",
+      "exam": "114年第一次專門職業及技術人員高等考試（醫事檢驗師）",
+      "session": "第一次",
+      "question": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0501&t=Q",
+      "answer": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0501&t=S",
+      "correction": "",
+      "source_page": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=114020&y=2025"
+    },
+    {
+      "year": 114,
+      "subject": "醫學分子檢驗學與臨床鏡檢學（包括寄生蟲學）",
+      "exam": "114年第一次專門職業及技術人員高等考試（醫事檢驗師）",
+      "session": "第一次",
+      "question": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0502&t=Q",
+      "answer": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0502&t=S",
+      "correction": "",
+      "source_page": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=114020&y=2025"
+    },
+    {
+      "year": 114,
+      "subject": "微生物學與臨床微生物學（包括細菌與黴菌）",
+      "exam": "114年第一次專門職業及技術人員高等考試（醫事檢驗師）",
+      "session": "第一次",
+      "question": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0503&t=Q",
+      "answer": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0503&t=S",
+      "correction": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0503&t=M",
+      "source_page": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=114020&y=2025"
+    },
+    {
+      "year": 114,
+      "subject": "生物化學與臨床生化學",
+      "exam": "114年第一次專門職業及技術人員高等考試（醫事檢驗師）",
+      "session": "第一次",
+      "question": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0504&t=Q",
+      "answer": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0504&t=S",
+      "correction": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0504&t=M",
+      "source_page": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=114020&y=2025"
+    },
+    {
+      "year": 114,
+      "subject": "臨床血清免疫學與臨床病毒學",
+      "exam": "114年第一次專門職業及技術人員高等考試（醫事檢驗師）",
+      "session": "第一次",
+      "question": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0505&t=Q",
+      "answer": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=114020&q=1&s=0505&t=S",
+      "correction": "",
+      "source_page": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=114020&y=2025"
+    }
+  ],
+  "note": "Two official exam sessions manually indexed from MOEX listings; not the complete historical dataset. Other years can be searched on the official platform or imported from the MOEX open CSV."
+}
