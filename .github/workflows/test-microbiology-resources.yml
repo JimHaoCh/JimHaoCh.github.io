@@ -1,0 +1,21 @@
+name: Validate clinical microbiology resources
+on:
+  push:
+    paths:
+      - "_data/microbiology_sections.json"
+      - "_data/microbiology_resources.json"
+      - "_data/professional_resources.json"
+      - "resources/diagnostics.html"
+      - "_includes/microbiology-resource-card.html"
+      - "tests/microbiology-resources.test.cjs"
+      - ".github/workflows/test-microbiology-resources.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm microbiology resource metadata, sections, links and safeguards
+        run: node --test tests/microbiology-resources.test.cjs
