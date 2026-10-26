@@ -1,0 +1,23 @@
+name: Validate Web-MIC and Checkerboard
+on:
+  push:
+    paths:
+      - "assets/js/mic-checkerboard-*.js"
+      - "web-mic-checkerboard/**"
+      - "tests/web-mic-checkerboard.test.cjs"
+      - "_data/online_tools.json"
+      - ".github/workflows/test-web-mic-checkerboard.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify browser JavaScript syntax
+        run: |
+          node --check assets/js/mic-checkerboard-core.js
+          node --check assets/js/mic-checkerboard-app.js
+      - name: Verify MIC boundaries, independent MBC and safety notes
+        run: node --test tests/web-mic-checkerboard.test.cjs
