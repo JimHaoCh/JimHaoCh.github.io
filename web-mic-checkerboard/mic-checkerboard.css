@@ -1,0 +1,71 @@
+/* Bioflumen v1: bilingual, low-resource, synthetic MIC/checkerboard teaching UI. */
+.mic-back{font-size:13px;margin:0 0 22px}.mic-back a{color:var(--blue);font-weight:700;text-decoration:underline}.mic-back span[lang=en]{color:var(--muted);font-size:11px}
+.mic-intro{border:1px solid #d8e5f1;border-radius:17px;background:linear-gradient(120deg,#f5faff,#fff);padding:25px;margin:0 0 34px}
+.mic-intro h2{font-family:var(--serif);font-size:clamp(23px,2.7vw,31px);color:var(--ink);line-height:1.4;margin:7px 0 18px}
+.mic-intro h2 span[lang=en]{display:block;color:var(--muted);font-size:13px;font-weight:450;margin-top:4px}
+.mic-intro-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.mic-intro-points>div{display:flex;align-items:center;gap:12px;padding:12px;background:#edf4fb;border-radius:10px}
+.mic-intro-points strong{font-size:26px;font-family:var(--serif);color:var(--blue)}
+.mic-intro-points span{font-size:12px;color:#3f5c73;line-height:1.5;font-weight:700}.mic-intro-points small[lang=en]{display:block;font-size:10px;color:var(--muted);font-weight:450}
+.mic-intro>p{font-size:12.5px;color:#475e70;line-height:1.85;margin:9px 0 0}.mic-intro>p[lang=en]{font-size:11.5px;color:var(--muted)}
+.mic-controls{display:flex;align-items:end;gap:12px;flex-wrap:wrap;padding:16px 18px;border-radius:13px;border:1px solid var(--line);background:#f8fbfe;margin:19px 0 15px}
+.mic-controls>label,.mic-mbc-controls>label{flex:1 1 260px;min-width:0;display:flex;flex-direction:column;font-size:12.5px;font-weight:750;color:var(--ink);gap:5px}
+.mic-controls label small,.mic-mbc-controls label small{font-size:11px;color:var(--muted);font-weight:450}
+.mic-controls select,.mic-mbc-controls select,.mic-mbc-controls input{width:100%;min-height:43px;min-width:0;padding:9px 11px;background:white;border:1px solid #cfdae5;border-radius:9px;color:var(--ink);font:inherit;font-size:13px}
+.mic-controls button{min-height:43px;padding:9px 14px;color:white;background:var(--blue);border:1px solid var(--blue);border-radius:9px;font:inherit;font-size:12px;font-weight:750;cursor:pointer}
+.mic-controls button small{display:block;font-size:10px;font-weight:450}
+.mic-controls .mic-secondary{background:white;color:var(--blue);border-color:#c8d8e8}
+.mic-learning-control{flex:1 1 100%;display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:12px;color:#42637e}
+.mic-learning-control label{display:flex;flex-direction:column;line-height:1.6}
+.mic-learning-control input{margin-right:8px}
+.mic-learning-control span[lang=en]{display:block;font-size:11px;color:var(--muted)}
+.mic-legend{display:flex;align-items:center;flex-wrap:wrap;gap:12px 16px;font-size:12px;color:#3b5b74;margin:16px 0 10px}
+.mic-legend>span{display:flex;gap:6px;align-items:center}.mic-legend small[lang=en]{color:var(--muted);font-size:10px}
+.mic-legend p{flex:1 1 100%;font-size:11.5px;color:var(--muted);line-height:1.65;margin:3px 0}
+.mic-legend p span[lang=en]{display:block;font-size:10px;color:var(--muted)}
+.mic-legend-dot{display:grid;place-items:center;width:23px;height:23px;border-radius:6px;font-size:12px}
+.mic-growth{background:#f6e8e5;color:#8f473d}.mic-inhibited{background:#e5f3ee;color:#276850}.mic-unknown{background:#edf1f5;color:#506176}
+.mic-plate-scroller{overflow-x:auto;overscroll-behavior-x:contain;border-radius:13px;border:1px solid #d4e0eb;background:#fff;margin:13px 0}
+.mic-plate{border-collapse:separate;border-spacing:5px;width:100%;min-width:1040px;font-size:12px;text-align:center;padding:10px}
+.mic-plate caption{text-align:left;padding:2px 6px 9px;color:#42617b;font-size:12px;font-weight:700}
+.mic-plate th{padding:8px 5px;font-size:12px;color:#536f86;background:#f3f7fb;white-space:nowrap;border-radius:5px}
+.mic-plate th span{display:block;font-size:10px;font-weight:450;color:var(--muted);margin-top:2px}
+.mic-plate th:first-child{position:sticky;left:0;background:#eaf1f8;z-index:2;min-width:85px}
+.mic-plate td{padding:0;min-width:57px}
+.mic-well{position:relative;display:flex;align-items:center;justify-content:center;gap:3px;width:100%;min-height:49px;padding:4px;border:2px solid transparent;border-radius:8px;font:inherit;font-size:13px;font-weight:800;cursor:pointer}
+.mic-well span{font-size:10px;font-weight:450;opacity:.85}
+.mic-well--growth{background:#faeae7;color:#91493f}.mic-well--inhibited{background:#e1f3e9;color:#27654d}.mic-well--unknown{background:#eef1f4;color:#667b8b}
+.mic-well--best{border-color:#b88c40;box-shadow:inset 0 0 0 1px #fff}
+.mic-well:hover{filter:brightness(.96)}.mic-well:focus-visible{outline:3px solid #2b61ab;outline-offset:2px}
+.mic-well--control{box-shadow:inset 0 0 0 2px #9bb1c5}.mic-well--axis{outline:1px solid #d8e5ef;outline-offset:1px}
+.mic-hint{color:#627b8f;font-size:12px;line-height:1.8;margin:8px 0 15px}
+.mic-hint span[lang=en]{display:block;font-size:11px;color:var(--muted)}
+.mic-analysis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:16px 0}
+.mic-analysis-card{padding:17px 18px;border:1px solid #d8e3ed;border-radius:12px;background:#f8fbfd;min-width:0}
+.mic-analysis-card .mic-label{font-size:12px;color:#4f6b81;font-weight:750;line-height:1.45}
+.mic-analysis-card .mic-label small{display:block;color:var(--muted);font-size:10.5px;font-weight:450;margin-top:3px}
+.mic-analysis-card strong{display:block;font-family:var(--serif);font-size:clamp(19px,2vw,24px);color:var(--blue);line-height:1.45;margin:8px 0 4px;overflow-wrap:anywhere}
+.mic-analysis-card p{font-size:11.5px;color:var(--muted);line-height:1.7;margin:5px 0 0}
+.mic-analysis-note{grid-column:1/-1;padding:13px 15px;border-left:3px solid #a6c2d8;border-radius:5px;background:#f3f7fb;font-size:12px;color:#466a84;line-height:1.85}
+.mic-analysis-note--warning{border-color:#d0a27d;background:#fbf7f0;color:#8b5e3d}
+.mic-interpretation-note{font-size:12px;color:#556f80;line-height:1.9;padding:16px 18px;border:1px solid #e1e8ef;border-radius:10px}
+.mic-interpretation-note span[lang=en]{display:block;margin-top:7px;color:var(--muted);font-size:11px}
+.mic-mbc-panel{border:1px solid var(--line);border-radius:15px;background:white;padding:22px}
+.mic-mbc-controls{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.mic-mbc-table-wrap{overflow-x:auto}
+.mic-mbc-table{border-collapse:collapse;width:100%;min-width:390px;font-size:12px;color:#426074}
+.mic-mbc-table caption{text-align:left;font-size:12px;color:var(--muted);margin-bottom:7px}
+.mic-mbc-table th,.mic-mbc-table td{border-bottom:1px solid #e0e9f1;padding:11px 10px;text-align:left}
+.mic-mbc-table th{background:#f4f8fc;font-weight:750;color:var(--ink)}
+.mic-mbc-table th small{font-size:10px;color:var(--muted);font-weight:450}
+.mic-mbc-table input{border:1px solid #c8d8e8;border-radius:8px;padding:8px 11px;width:100%;max-width:230px;font:inherit;font-size:13px;color:var(--ink)}
+.mic-mbc-output{margin-top:15px;padding:15px 17px;border:1px solid #d9e5ef;background:#f5f9fd;border-radius:11px;color:#325e81;font-size:13px;line-height:1.85}
+.mic-mbc-output strong{display:block;font-family:var(--serif);font-size:22px;color:var(--blue)}
+.mic-learning-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.mic-learning-grid article{padding:21px;background:white;border:1px solid var(--line);border-radius:12px;min-width:0}
+.mic-learning-grid h3{font-family:var(--serif);font-size:17px;color:var(--ink);margin:0 0 10px;line-height:1.5}
+.mic-learning-grid h3 span[lang=en]{display:block;font-family:var(--sans);font-size:11px;color:var(--muted);font-weight:450}
+.mic-learning-grid p,.mic-citations{font-size:12px;color:#587184;line-height:1.85}.mic-citations{margin:17px 0 0}.mic-citations a{color:var(--blue);text-decoration:underline}
+@media(max-width:820px){.mic-analysis{grid-template-columns:repeat(2,minmax(0,1fr))}.mic-learning-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.mic-intro{padding:18px}.mic-intro-points{grid-template-columns:1fr}.mic-controls{padding:14px}.mic-controls>label{flex-basis:100%}.mic-analysis{grid-template-columns:1fr}.mic-mbc-panel{padding:15px}.mic-learning-grid article{padding:17px}}
+@media(prefers-reduced-motion:reduce){.mic-well{transition:none}}
