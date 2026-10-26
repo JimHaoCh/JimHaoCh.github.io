@@ -14,7 +14,8 @@
     "url": "https://imagej.net/ij/download.html",
     "terms_url": "https://imagej.net/ij/disclaimer.html",
     "action_zh": "前往 ImageJ 官方下載",
-    "action_en": "Official ImageJ downloads"
+    "action_en": "Official ImageJ downloads",
+    "function_group": "imaging"
   },
   {
     "slug": "solidworks-students",
@@ -31,7 +32,8 @@
     "url": "https://www.solidworks.com/product/students/design-standard",
     "terms_url": "https://files.solidworks.com/eula/education/eulastudent_ENG.htm",
     "action_zh": "前往 SOLIDWORKS 學生申請",
-    "action_en": "SOLIDWORKS student access"
+    "action_en": "SOLIDWORKS student access",
+    "function_group": "engineering"
   },
   {
     "slug": "autodesk-fusion-education",
@@ -48,6 +50,7 @@
     "url": "https://www.autodesk.com/education/edu-software/fusion",
     "terms_url": "https://www.autodesk.com/support/account/education/students-educators/overview",
     "action_zh": "前往 Fusion 教育版申請",
-    "action_en": "Fusion education access"
+    "action_en": "Fusion education access",
+    "function_group": "engineering"
   }
 ]
