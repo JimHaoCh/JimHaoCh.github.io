@@ -5,7 +5,7 @@ layout: null
 
 > An interdisciplinary research laboratory at National Yang Ming Chiao Tung University (NYCU), Taiwan, led by Dr. Chun-Hao Chang (張鈞豪博士), Assistant Professor. Research focuses on microfluidics, biosensing and in vitro diagnostics.
 
-This is a factual directory of public website content. Updated 2026-10-09. The website presents Traditional Chinese and English together.
+This is a factual directory of public website content. Updated 2026-10-26. The website presents Traditional Chinese and English together.
 
 ## Identity and contact
 - Laboratory: 百洑傳息實驗室 / Bioflumen & Xensor Lab
@@ -40,7 +40,9 @@ The four featured research stories describe work completed with the PI's partici
 - [News](https://jimhaoch.github.io/news.html) and [Lab moments](https://jimhaoch.github.io/moments.html): Managed through Pages CMS; empty sections remain blank until entries are added.
 
 ## Teaching resources
-- [課程講義 / Course materials](https://jimhaoch.github.io/courses.html): Course notes, slides and learning resources organized by academic year and semester. The catalogue is prepared for future uploads.
+- [線上資源 / Online Resources](https://jimhaoch.github.io/courses.html): Bilingual hub organized by workflow, distinguishing lab-developed applications, external research sites and downloadable resources.
+{% for category in site.data.resource_categories %}- [{{ category.name_zh }} / {{ category.name_en }}](https://jimhaoch.github.io{{ category.href }}): {{ category.intro_en }}
+{% endfor %}- [NE-501 Multi Pump Controller v1.0.0](https://jimhaoch.github.io/resources/engineering.html): Lab-developed Windows RS-232 four-pump controller, with a downloadable compact source ZIP and bilingual text documentation; no compiled EXE.
 - [行事曆 / Calendar](https://jimhaoch.github.io/calendar.html): A reserved public schedule page. No calendar is embedded and no events are currently listed.
 
 Industry collaboration: https://jimhaoch.github.io/collaboration.html
