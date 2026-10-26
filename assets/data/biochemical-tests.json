@@ -1,0 +1,132 @@
+{
+  "version": "1.0",
+  "description": "Original bilingual educational test definitions; not clinical protocols.",
+  "tests": [
+    {
+      "id": "gram",
+      "section": "initial",
+      "zh": "革蘭氏染色",
+      "en": "Gram reaction",
+      "kind": "binary",
+      "help_zh": "陽性：紫色；陰性：粉紅色。先確認菌落是否為純培養。",
+      "help_en": "Gram-positive (purple) or Gram-negative (pink); verify a pure isolate."
+    },
+    {
+      "id": "shape",
+      "section": "initial",
+      "zh": "菌體形狀",
+      "en": "Cell morphology",
+      "kind": "shape",
+      "help_zh": "球菌或桿菌。實際顯微形態可能受菌齡和條件影響。",
+      "help_en": "Coccus or rod; actual appearance depends on culture conditions."
+    },
+    {
+      "id": "arrangement",
+      "section": "initial",
+      "zh": "排列方式",
+      "en": "Cell arrangement",
+      "kind": "arrangement",
+      "help_zh": "葡萄串／鏈狀／單個或不規則；並非所有菌種都有固定排列。",
+      "help_en": "Clusters, chains or single/irregular; arrangement is not definitive."
+    },
+    {
+      "id": "catalase",
+      "section": "biochem",
+      "zh": "Catalase",
+      "en": "Catalase",
+      "kind": "binary",
+      "help_zh": "過氧化氫產生氣泡為陽性。可先區分常見葡萄球菌與鏈球菌／腸球菌。",
+      "help_en": "Bubble production; helps distinguish staphylococci from streptococci/enterococci."
+    },
+    {
+      "id": "coagulase",
+      "section": "biochem",
+      "zh": "Coagulase",
+      "en": "Coagulase",
+      "kind": "binary",
+      "help_zh": "經典凝固酶反應，可輔助鑑別 S. aureus 與典型凝固酶陰性葡萄球菌。",
+      "help_en": "Classic coagulase test supporting S. aureus vs coagulase-negative staphylococci."
+    },
+    {
+      "id": "oxidase",
+      "section": "biochem",
+      "zh": "Oxidase",
+      "en": "Oxidase",
+      "kind": "binary",
+      "help_zh": "氧化酶試驗有助於區分部分革蘭氏陰性桿菌；須按規定時間判讀。",
+      "help_en": "Differentiates certain Gram-negative rods; read within the validated time."
+    },
+    {
+      "id": "indole",
+      "section": "biochem",
+      "zh": "Indole",
+      "en": "Indole",
+      "kind": "binary",
+      "help_zh": "以色胺酸酶產生吲哚；可用於常見腸道菌的生化鑑別。",
+      "help_en": "Tryptophan metabolism to indole; useful for selected enteric bacteria."
+    },
+    {
+      "id": "urease",
+      "section": "biochem",
+      "zh": "Urease",
+      "en": "Urease",
+      "kind": "binary",
+      "help_zh": "尿素水解使培養基鹼化；陽性速度與菌株、培養時間相關。",
+      "help_en": "Urea hydrolysis increases pH; rate varies with strain and incubation."
+    },
+    {
+      "id": "lactose",
+      "section": "biochem",
+      "zh": "Lactose fermentation",
+      "en": "Lactose fermentation",
+      "kind": "binary",
+      "help_zh": "如 MacConkey 乳糖發酵反應。延遲或弱反應可能影響判讀。",
+      "help_en": "E.g. MacConkey lactose fermentation; delayed/weak reactions may differ."
+    },
+    {
+      "id": "citrate",
+      "section": "biochem",
+      "zh": "Simmons citrate",
+      "en": "Citrate utilization",
+      "kind": "binary",
+      "help_zh": "檸檬酸鹽利用試驗需配合適當培養條件與接種量。",
+      "help_en": "Citrate use must be read under appropriate medium and inoculum conditions."
+    },
+    {
+      "id": "motility",
+      "section": "biochem",
+      "zh": "Motility",
+      "en": "Motility",
+      "kind": "binary",
+      "help_zh": "運動性試驗可能因溫度、培養基及菌株而不同。",
+      "help_en": "Motility can vary with temperature, medium and isolate."
+    },
+    {
+      "id": "h2s",
+      "section": "biochem",
+      "zh": "H₂S production",
+      "en": "Hydrogen sulfide",
+      "kind": "binary",
+      "help_zh": "如 TSI／SIM 的黑色沉澱；反應可能因培養時間與菌株而異。",
+      "help_en": "Blackening in TSI/SIM; may vary with strain and culture time."
+    },
+    {
+      "id": "bile_esculin",
+      "section": "biochem",
+      "zh": "Bile esculin",
+      "en": "Bile esculin",
+      "kind": "binary",
+      "help_zh": "膽汁七葉苷試驗可輔助腸球菌與部分鏈球菌群的鑑別。",
+      "help_en": "Helps distinguish enterococci and selected streptococcal groups."
+    },
+    {
+      "id": "pyr",
+      "section": "biochem",
+      "zh": "PYR",
+      "en": "PYR",
+      "kind": "binary",
+      "help_zh": "PYR 水解反應常見於 E. faecalis 與 S. pyogenes，仍需其他試驗區分。",
+      "help_en": "PYR can be positive in E. faecalis and S. pyogenes; not sufficient alone."
+    }
+  ]
+}
