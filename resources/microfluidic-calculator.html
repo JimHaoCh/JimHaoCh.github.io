@@ -1,0 +1,78 @@
+---
+layout: null
+permalink: /resources/microfluidic-calculator.html
+resource_group: engineering
+title: 微流體計算器 Microfluidic Calculator
+title_zh: 微流體參數計算器
+title_en: Web-Microfluidic Calculator
+section_label: BIOFLUMEN ENGINEERING TEACHING TOOL
+description: 以矩形微流道參數計算平均流速、Reynolds number、水力直徑、流阻、壓降、停留時間及擴散時間的免費教學工具。
+intro_zh: 在瀏覽器輸入矩形微流道尺寸、流量、黏度與擴散係數，理解幾何、流體物性及壓降的關係。所有運算於本機進行，不需上傳資料。
+intro_en: Explore the dependence of rectangular microchannel flow, Reynolds number, hydraulic resistance, pressure drop and diffusion time on geometry and fluid properties. All computations run locally.
+---
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  {% include page-head.html %}
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-eng1">
+  <script defer src="/assets/js/microfluidic-physics.js?v=20261026-eng1"></script>
+  <script defer src="/assets/js/microfluidic-calculator.js?v=20261026-eng1"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
+  {% include header.html %}
+  <main class="subpage" id="main">
+    <div class="wrap">
+      {% include resource-page-hero.html %}
+      <div class="engineering-tool-back"><a href="/resources/engineering.html">← 工程資源首頁 <span lang="en">Engineering resources</span></a></div>
+      <section class="functional-section" aria-label="矩形微流道教學計算器">
+        <div class="catalogue-heading">
+          <p class="eyebrow">RECTANGULAR MICROCHANNEL MODEL</p>
+          <h2>矩形微流道流體參數<span lang="en">Rectangular-channel flow calculator</span></h2>
+          <p>預設示例以類似水的流體、剛性直流道及穩態層流計算。調整任何參數即可看到數值變化。</p>
+        </div>
+        <div class="engineering-calc-layout">
+          <form id="microfluidic-form" class="engineering-calc-form" novalidate>
+            <h3>輸入幾何與流體參數 <span lang="en">Inputs</span></h3>
+            <div class="engineering-calc-input-grid">
+              <label>流道寬度 <small lang="en">Width, µm</small><input name="widthUm" type="number" inputmode="decimal" value="200" min="0.001" step="any" required></label>
+              <label>流道高度 <small lang="en">Height, µm</small><input name="heightUm" type="number" inputmode="decimal" value="50" min="0.001" step="any" required></label>
+              <label>流道長度 <small lang="en">Length, mm</small><input name="lengthMm" type="number" inputmode="decimal" value="20" min="0.001" step="any" required></label>
+              <label>體積流率 <small lang="en">Volumetric flow, µL/min</small><input name="flowUlMin" type="number" inputmode="decimal" value="5" min="0.001" step="any" required></label>
+              <label>動力黏度 <small lang="en">Dynamic viscosity, mPa·s</small><input name="viscosityMpas" type="number" inputmode="decimal" value="1" min="0.001" step="any" required></label>
+              <label>流體密度 <small lang="en">Density, kg/m³</small><input name="densityKgM3" type="number" inputmode="decimal" value="997" min="0.001" step="any" required></label>
+              <label>擴散係數 <small lang="en">Diffusivity, µm²/s</small><input name="diffusionUm2S" type="number" inputmode="decimal" value="500" min="0.001" step="any" required></label>
+            </div>
+            <div class="engineering-calc-controls">
+              <button type="submit">重新計算 <span lang="en">Calculate</span></button>
+              <button type="button" id="microfluidic-reset">回復示例 <span lang="en">Reset example</span></button>
+            </div>
+            <p id="microfluidic-error" class="engineering-calc-error" role="alert" hidden></p>
+          </form>
+          <div class="engineering-calc-output">
+            <h3>計算結果 <span lang="en">Calculated results</span></h3>
+            <div class="engineering-calc-results" id="microfluidic-results" aria-live="polite">
+              <p>請啟用 JavaScript 以使用本機即時計算。<span lang="en">Enable JavaScript for local calculations.</span></p>
+            </div>
+            <p id="microfluidic-advisory" class="engineering-calc-advisory" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+      <section class="functional-section" aria-labelledby="microfluidic-method-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">MODEL ASSUMPTIONS &amp; FORMULAE</p>
+          <h2 id="microfluidic-method-heading">公式與適用限制<span lang="en">Model assumptions &amp; limitations</span></h2>
+        </div>
+        <div class="engineering-formula-grid">
+          <article><h3>水力直徑 <span lang="en">Hydraulic diameter</span></h3><p><code>D<sub>h</sub> = 2wh / (w + h)</code></p><p>矩形截面寬、高不必相同。</p></article>
+          <article><h3>平均速度與 Re <span lang="en">Mean velocity &amp; Reynolds number</span></h3><p><code>U = Q/(wh)</code>；<code>Re = ρUD<sub>h</sub>/μ</code></p><p>用於理解流量、截面與慣性／黏性比。</p></article>
+          <article><h3>壓降與水力流阻 <span lang="en">Pressure &amp; resistance</span></h3><p><code>ΔP = QR</code>；<code>R = 12μL/(wh³F)</code></p><p>使用矩形流道的奇數項雙曲正切級數修正 <code>F</code>，並自動將寬高排序為 <code>w ≥ h</code>。</p></article>
+          <article><h3>停留與擴散時間 <span lang="en">Transit &amp; diffusion</span></h3><p><code>t<sub>res</sub> = L/U</code>；<code>t<sub>diff</sub> ≈ H²/(2D)</code></p><p><code>H</code> 是輸入的流道高度。此擴散時間僅為單一方向特徵尺度，不代表已完全混合。</p></article>
+        </div>
+        <p class="tools-note">假設：單相牛頓流體、筆直且剛性的矩形微流道、定常且已充分發展的層流、無壁面滑移。未計入入口效應、局部流阻、彎道、接頭、重力、非牛頓性、流道變形及實際泵浦誤差。結果僅供教學與初步估算，不可作為裝置耐壓或人身安全依據。<span lang="en">Assumptions: steady, fully developed laminar Newtonian flow through a straight rigid rectangular channel, no slip. Entrance losses, bends, tubing, compliance and pump errors are excluded. For teaching and preliminary estimates only.</span></p>
+      </section>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>
