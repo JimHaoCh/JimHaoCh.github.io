@@ -66,6 +66,17 @@
     "function_group": "diagnostics"
   },
   {
+    "slug": "web-mic-checkerboard",
+    "name": "Web-MIC & Checkerboard",
+    "category": "微生物學 · 抗生素感受性",
+    "title": "MIC、雙藥 FICI 與 MBC 教學分析",
+    "subtitle": "Synthetic 96-Well Checkerboard · FICI · Separate Viable-Count MBC",
+    "description": "可操作虛構 96 孔 Checkerboard，計算 A／B 單用 MIC、雙藥 FICI，另以獨立存活 CFU 資料示範 MBC。支援逐孔編輯、課堂隱藏答案與 CSV 匯出，僅供教學。",
+    "url": "/web-mic-checkerboard/",
+    "description_en": "Interactive synthetic 96-well checkerboard with single-agent MICs, FICI convention, local CSV export, hidden-answer practice and a separate viable-count exercise for MBC.",
+    "function_group": "diagnostics"
+  },
+  {
     "slug": "web-hemocytometer",
     "name": "Web-Hemocytometer Lite",
     "category": "鏡檢學 · Microscopy",
