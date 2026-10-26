@@ -1,0 +1,27 @@
+name: Validate engineering resources and calculator
+on:
+  push:
+    paths:
+      - "_data/engineering_sections.json"
+      - "_data/engineering_resources.json"
+      - "resources/engineering.html"
+      - "resources/microfluidic-calculator.html"
+      - "assets/js/microfluidic-physics.js"
+      - "assets/js/microfluidic-calculator.js"
+      - "_includes/engineering-reference-card.html"
+      - "tests/engineering-resources.test.cjs"
+      - ".github/workflows/test-engineering-resources.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check standalone JavaScript syntax
+        run: |
+          node --check assets/js/microfluidic-physics.js
+          node --check assets/js/microfluidic-calculator.js
+      - name: Verify physics, resource schema, and existing links
+        run: node --test tests/engineering-resources.test.cjs
