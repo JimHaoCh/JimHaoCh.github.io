@@ -81,5 +81,20 @@
     "external": true,
     "provider": "Tembrica",
     "research": "https://www.nature.com/articles/s41467-025-59189-0"
+  },
+  {
+    "slug": "web-lfa-external",
+    "name": "Web-LFA · LFApp",
+    "category": "免疫分析與 POCT · Lateral Flow",
+    "title": "側向層析試紙 C／T 線訊號定量",
+    "subtitle": "Lateral Flow Assay Quantification · External Research Tool",
+    "description": "前往 LFApp Mobile（第三方研究網站）：試紙照片 ROI、C／T 線強度、背景校正與校正曲線。原作者公開的 Shiny 服務目前無法由本站確認連線狀態；若無法載入，可查看專案使用指南。",
+    "description_en": "External LFApp Mobile (R Shiny) for LFA image regions, control/test signal extraction, background correction and calibration. Its Shiny hosting availability has not been independently confirmed.",
+    "url": "https://lfapp.shinyapps.io/mobile_app/",
+    "external": true,
+    "provider": "LFApp · Paskali et al.",
+    "research": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8947044/",
+    "source": "https://github.com/fpaskali/LFApp",
+    "fallback": "https://fpaskali.github.io/LFApp/"
   }
 ]
