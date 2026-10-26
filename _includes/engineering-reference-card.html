@@ -1,0 +1,14 @@
+<article class="engineering-ref-card">
+  <div class="engineering-ref-top">
+    <span class="engineering-ref-mode">{{ include.item.mode_zh | escape }}<small lang="en">{{ include.item.mode_en | escape }}</small></span>
+    <span class="engineering-ref-license">{{ include.item.license | escape }}</span>
+  </div>
+  <h3>{{ include.item.name | escape }}</h3>
+  <p class="engineering-ref-provider">{{ include.item.provider | escape }}</p>
+  <p class="engineering-ref-description">{{ include.item.description_zh | escape }}<span lang="en">{{ include.item.description_en | escape }}</span></p>
+  <p class="engineering-ref-note">{{ include.item.notice_zh | escape }}</p>
+  <div class="engineering-ref-actions">
+    <a href="{{ include.item.url | escape }}" target="_blank" rel="noopener noreferrer external">開啟官方網站 <small lang="en">Official site ↗</small></a>
+    {% if include.item.source and include.item.source != include.item.url %}<a href="{{ include.item.source | escape }}" target="_blank" rel="noopener noreferrer external">原始碼／專案 <small lang="en">Source / project ↗</small></a>{% endif %}
+  </div>
+</article>
