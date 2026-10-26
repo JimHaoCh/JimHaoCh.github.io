@@ -94,6 +94,7 @@
   }
   function renderYearResult(){
     const selected=entries.filter(e=>e.year===selectedYear&&sessionOf(e)===selectedSession&&filterText(e));
+    const hasKeyword=$('exam-keyword').value.trim().length>0;
     $('exam-result-title').textContent='民國 '+selectedYear+' 年'+selectedSession+' · 六大考科';
     const sourceRecord=selected.find(record=>record.source_page);
     $('exam-external-official').href=Core.officialUrl(sourceRecord?.source_page)||'https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx';
@@ -104,8 +105,12 @@
       if(key==='other')continue;
       if(!bySubject.has(key))bySubject.set(key,record);
     }
-    $('exam-match-count').textContent='已收錄 '+bySubject.size+' / 6 科 · 點「試題」直接開啟考選部 PDF';
+    $('exam-match-count').textContent=hasKeyword
+      ? '符合關鍵字的 '+bySubject.size+' 科 · 清除關鍵字可回到六科列表'
+      : '已收錄 '+bySubject.size+' / 6 科 · 點「試題」直接開啟考選部 PDF';
+    if(hasKeyword&&!bySubject.size)panel.append(el('p','exam-empty','目前沒有符合關鍵字的試卷，請清除搜尋條件。'));
     for(const item of SUBJECTS){
+      if(hasKeyword&&!bySubject.has(item.id))continue;
       const record=bySubject.get(item.id);
       const row=el('article','exam-subject-row'+(!record?' exam-subject-missing':''));
       const name=el('div','exam-subject-description');
