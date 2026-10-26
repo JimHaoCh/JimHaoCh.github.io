@@ -36,7 +36,8 @@
     "provider": "Taiwan CDC",
     "url": "https://www.cdc.gov.tw/Category/Page/rASiGJwOv2GVqJ9jMdjbvw",
     "notice_zh": "教學參考請標示來源；轉載內容前確認官方使用規範。",
-    "notice_en": "Credit the source and verify redistribution terms."
+    "notice_en": "Credit the source and verify redistribution terms.",
+    "micro_group": "microscopy"
   },
   {
     "slug": "cdc-dpdx",
@@ -49,7 +50,8 @@
     "provider": "US CDC",
     "url": "https://www.cdc.gov/dpdx/",
     "notice_zh": "網站部分素材另有第三方著作權，引用前需個別確認。",
-    "notice_en": "Some images have third-party copyrights; check case-by-case."
+    "notice_en": "Some images have third-party copyrights; check case-by-case.",
+    "micro_group": "microscopy"
   },
   {
     "slug": "eucast",
@@ -62,7 +64,8 @@
     "provider": "EUCAST",
     "url": "https://www.eucast.org/bacteria/clinical-breakpoints-and-interpretation/clinical-breakpoint-tables/",
     "notice_zh": "使用前確認現行版本、菌種、藥物及適用的標準系統。",
-    "notice_en": "Confirm current version, organism, agent and applicable standard."
+    "notice_en": "Confirm current version, organism, agent and applicable standard.",
+    "micro_group": "ast"
   },
   {
     "slug": "twcdc-manual",
@@ -75,7 +78,8 @@
     "provider": "Taiwan CDC",
     "url": "https://www.cdc.gov.tw/Category/Page/4pQgzB07prAqzxE_zUDOGw",
     "notice_zh": "以主管機關最新版本及實驗室品質文件為準。",
-    "notice_en": "Check the most recent applicable official version."
+    "notice_en": "Check the most recent applicable official version.",
+    "micro_group": "culture"
   },
   {
     "slug": "primer-blast",
