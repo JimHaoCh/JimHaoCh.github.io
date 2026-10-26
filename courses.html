@@ -38,14 +38,14 @@ description: 陽明交通大學醫技系互動式線上教學工具與外部教�
           <div class="tool-extra-links" aria-label="{{ tool.name | escape }} 補充資源">
             <span>參考：</span>
             {% if tool.source %}<a href="{{ tool.source | escape }}" target="_blank" rel="noopener noreferrer">開源程式</a>{% endif %}
-            {% if tool.research %}<a href="{{ tool.research | escape }}" target="_blank" rel="noopener noreferrer">相關論文</a>{% endif %}
+            {% if tool.research %}<a href="{{ tool.research | escape }}" target="_blank" rel="noopener noreferrer">延伸研究</a>{% endif %}
             {% if tool.fallback %}<a href="{{ tool.fallback | escape }}" target="_blank" rel="noopener noreferrer">原作者使用指南</a>{% endif %}
           </div>
           {% endif %}
         </article>
         {% endfor %}
       </section>
-      <p class="tools-note">※ 本站自製分析工具屬教學與方法展示原型，分析結果須人工確認，不作為臨床檢驗或診斷依據。Web-Gel（Tembrica）、Web-LFA（LFApp）及 ImageJ.JS 均為第三方資源；本站提供來源與連結，服務可用性、功能及影像資料政策由各提供者管理。<span lang="en">The original analysis tools are educational prototypes and are unsuitable for clinical diagnosis. Tembrica Gel Analyzer, LFApp and ImageJ.JS are independently maintained external services with their own availability, functionality and data policies.</span></p>
+      <p class="tools-note">※ 本站自製分析工具屬教學與方法展示原型，分析結果須人工確認，不作為臨床檢驗或診斷依據。Web-Gel（Tembrica）、Web-LFA（LFApp）及 ImageJ.JS 均為第三方資源；本站提供來源與連結，服務可用性、功能及影像資料政策由各提供者管理；請僅使用已去識別化或取得授權的教學影像。<span lang="en">The original analysis tools are educational prototypes and are unsuitable for clinical diagnosis. Tembrica Gel Analyzer, LFApp and ImageJ.JS are independently maintained external services with their own availability, functionality and data policies. Upload only authorized or de-identified teaching images.</span></p>
     </div>
   </main>
   {% include footer.html %}
