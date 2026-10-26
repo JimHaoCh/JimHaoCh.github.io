@@ -55,6 +55,17 @@
     "function_group": "diagnostics"
   },
   {
+    "slug": "web-biochemical",
+    "name": "Web-Biochemical Identification",
+    "category": "微生物學 · 菌種生化鑑定",
+    "title": "菌種生化試驗與鑑別推理",
+    "subtitle": "Gram Stain → Biochemical Tests → Differential Identification",
+    "description": "自行輸入 Gram stain、Catalase、Coagulase、Oxidase、Indole、Urease 等結果，逐步比較候選菌；另有 8 組虛構案例與下一項鑑別試驗建議。",
+    "url": "/web-biochemical/",
+    "description_en": "Original browser-only teaching tool comparing Gram stain and biochemical results against simplified organism profiles, with synthetic cases, conflicting-reaction alerts and next-test suggestions.",
+    "function_group": "diagnostics"
+  },
+  {
     "slug": "web-hemocytometer",
     "name": "Web-Hemocytometer Lite",
     "category": "鏡檢學 · Microscopy",
