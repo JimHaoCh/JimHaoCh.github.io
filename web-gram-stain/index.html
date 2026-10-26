@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fef9f5">
+<meta name="description" content="Web-Gram Stain Lite：陽明交通大學醫技系鏡檢教學用革蘭氏染色影像分析、菌形候選判斷、學生判讀比較及人工校正；照片僅在瀏覽器處理。">
+<title>Web-Gram Stain Lite｜革蘭氏染色鏡檢判讀 · Gram Stain Microscopy</title>
+<link rel="stylesheet" href="./style.css?v=1">
+<link rel="stylesheet" href="/tools-common.css?v=20261026">
+<script defer src="./app.js?v=1"></script>
+</head>
+<body class="bf-tool">
+<a class="skip-link" href="#workspace">跳至操作工具 / Skip to analyzer</a>
+<header class="topbar">
+<a class="bf-brand" href="/" aria-label="百洑傳息實驗室首頁 / Bioflumen &amp; Xensor Lab"><img src="/assets/lab-logo-small.webp" width="42" height="42" alt=""><span>百洑傳息<small>BIOFLUMEN &amp; XENSOR LAB</small></span></a>
+<a href="../courses.html">← 線上工具 / Online Tools</a><span>NYCU · MEDTECH VIRTUAL LAB</span>
+</header>
+<main id="workspace" class="shell">
+<section class="hero">
+<p class="eyebrow">MICROBIOLOGY · MICROSCOPY · EDUCATIONAL v0.1</p>
+<h1>Web-<em>Gram Stain</em> Lite</h1>
+<p class="subtitle">革蘭氏染色影像分析 <span>Gram Stain Microscopy Teaching Analyzer</span></p>
+<p class="intro">先觀察染色反應與菌形，提交你的判讀；再以瀏覽器內的色彩分割及形態特徵分析顯微鏡照片，揭示系統建議，並逐一校正候選標記。適用醫技系臨床微生物學與鏡檢課的操作示範。<span class="en">Interpret Gram reaction and morphology before revealing rule-based suggestions. This browser-only teaching tool detects stained regions, measures simple shape features, and supports manual marker review and export.</span></p>
+<div class="notice"><strong>教學研究原型 · Educational prototype</strong><span class="en">本版使用傳統影像處理規則，沒有載入 AI 模型，也尚未完成真實臨床影像的敏感度、特異度或計數驗證。染色沉澱、宿主細胞、菌體群聚與焦距可能產生偽陽性或漏判。系統建議須由教師或檢驗人員複核，勿作診斷、菌種鑑定或用藥依據。<br>Rule-based image segmentation; no deployed AI model or clinical accuracy validation. Stain precipitate, host cells, overlapping organisms and focus can distort results. Educational and research use only; never use for clinical diagnosis or treatment decisions.</span></div>
+</section>
+<div class="layout">
+<section class="panel controls">
+<h2><span class="step">01</span> 載入染色影像 <small>Upload &amp; Demo</small></h2>
+<label class="field">上傳顯微鏡照片 <span class="en">Gram-stained image · JPG, PNG or WebP · up to 35 MB</span><input id="upload" type="file" accept="image/jpeg,image/png,image/webp,image/*"></label>
+<p class="hint">建議使用油鏡清晰視野、白色或淡色背景、光線均勻的照片。輸入影像在瀏覽器內縮放至最長邊 1,100 px，原始檔不會傳至本站伺服器。<span class="en">Use a sharp, evenly lit oil-immersion image with a pale background. Processing is local; images are resized to a maximum of 1,100 × 770 px.</span></p>
+<div class="demo-grid" role="group" aria-label="內建合成練習影像">
+<button id="demoPos" class="secondary" type="button">合成範例 A <small>Synthetic sample A</small></button>
+<button id="demoNeg" class="secondary" type="button">合成範例 B <small>Synthetic sample B</small></button>
+<button id="demoMixed" class="secondary" type="button">合成範例 C <small>Synthetic sample C</small></button>
+</div>
+<h2><span class="step">02</span> 學生先行判讀 <small>Student Interpretation</small></h2>
+<p class="hint">先選擇你觀察到的主要染色反應與菌形；提交後鎖定答案，待分析完成才顯示系統建議。<span class="en">Record your interpretation first. Your answer is locked when submitted, enabling a side-by-side comparison after analysis.</span></p>
+<label class="field">Gram stain 染色反應 <span class="en">Gram reaction</span>
+<select id="studentGram"><option value="">請選擇 / Select</option><option value="pos">革蘭氏陽性 / Gram-positive</option><option value="neg">革蘭氏陰性 / Gram-negative</option><option value="mixed">混合菌相 / Mixed</option><option value="uncertain">無法判定 / Uncertain</option></select></label>
+<label class="field">主要菌形 <span class="en">Morphology</span>
+<select id="studentShape"><option value="">請選擇 / Select</option><option value="cocci">球菌 / Cocci</option><option value="bacilli">桿菌 / Bacilli</option><option value="mixed">混合菌形 / Mixed</option><option value="uncertain">無法判定 / Uncertain</option></select></label>
+<label class="field">排列型態（人工觀察） <span class="en">Arrangement · manually assessed</span>
+<select id="studentArrangement"><option value="unknown">待判斷 / Uncertain</option><option value="cluster">葡萄串狀 / Clusters</option><option value="chain">鏈狀 / Chains</option><option value="pair">成雙 / Pairs</option><option value="single">單散 / Singles</option><option value="mixed">混合 / Mixed</option></select></label>
+<button id="saveAnswer" class="primary full" type="button" disabled>儲存學生判讀 <small>Lock student interpretation</small></button>
+<p id="studentSummary" class="hint">尚未提交學生判讀 / No student response yet.</p>
+<h2><span class="step">03</span> 分色與候選分析 <small>Rule-based Detection</small></h2>
+<div class="twocol">
+<label class="field">染色色差門檻 <span class="en">Chromatic contrast</span><input id="contrast" type="range" min="12" max="80" value="28" step="1"><output id="contrastVal">28</output></label>
+<label class="field">最小候選面積 (px²) <span class="en">Minimum object area</span><input id="minSize" type="range" min="3" max="120" step="1" value="14"><output id="minSizeVal">14</output></label>
+<label class="field">最大候選面積 (px²) <span class="en">Maximum object area</span><input id="maxSize" type="range" min="100" max="1500" value="380" step="10"><output id="maxSizeVal">380</output></label>
+</div>
+<div class="actions"><button id="detect" class="primary" type="button" disabled>分析候選區域 <small>Detect candidates</small></button><button id="roiReset" class="secondary" type="button" disabled>清除 ROI <small>Full image</small></button></div>
+<p id="detectInfo" class="hint"></p>
+<button id="reveal" class="secondary full" type="button" disabled>揭示系統建議與比較 <small>Reveal suggestions &amp; compare</small></button>
+<h2><span class="step">04</span> 標註覆核 <small>Manual Annotation</small></h2>
+<div class="modes" role="group" aria-label="影像標註工具">
+<button type="button" class="mode active" data-mode="roi" aria-pressed="true">▢ 選 ROI <small>Select region</small></button>
+<button type="button" class="mode" data-mode="pc" disabled>＋ G+ 球菌 <small>Positive cocci</small></button>
+<button type="button" class="mode" data-mode="nc" disabled>＋ G− 球菌 <small>Negative cocci</small></button>
+<button type="button" class="mode" data-mode="pr" disabled>＋ G+ 桿菌 <small>Positive rods</small></button>
+<button type="button" class="mode" data-mode="nr" disabled>＋ G− 桿菌 <small>Negative rods</small></button>
+<button type="button" class="mode" data-mode="review" disabled>？ 待確認 <small>Needs review</small></button>
+<button type="button" class="mode" data-mode="erase" disabled>－ 刪除 <small>Erase</small></button>
+</div>
+<p class="hint">ROI 模式在圖上拖曳框選分析視野；提交學生判讀並揭示結果後，選擇類別點擊標記可改類型，點空白可新增標記，刪除模式可移除標記。更換 ROI 會清除原有分析及作答。<span class="en">Drag a rectangle to select an ROI. After revealing results, tap to relabel or add a marker; Erase removes it. Changing the ROI resets the analysis and student response.</span></p>
+<div class="actions"><button id="undo" class="secondary" type="button" disabled>復原 <small>Undo</small></button><button id="clear" class="secondary" type="button" disabled>清空標記 <small>Clear all</small></button></div>
+<p class="status" id="status" role="status" aria-live="polite">請上傳染色影像或載入合成範例。<span class="en">Upload a Gram stain image or load a synthetic example.</span></p>
+</section>
+<section class="panel imagepanel">
+<h2><span class="step">05</span> 顯微影像 <small>Image Workspace</small></h2>
+<div class="imageframe"><canvas id="viewer" width="1000" height="630" aria-label="革蘭氏染色照片與可互動菌體候選標註 / Interactive Gram stain image"></canvas></div>
+<div class="legend">
+<span><i class="dot gc-pos"></i>G+ 球菌</span><span><i class="dot gc-neg"></i>G− 球菌</span><span><i class="dot gr-pos"></i>G+ 桿菌</span><span><i class="dot gr-neg"></i>G− 桿菌</span><span><i class="dot review"></i>待確認</span>
+</div>
+<p class="hint">色圈表示程式篩出的候選連通色塊，大小與位置僅供人工覆核。排列方式、菌種、G-variable 與 yeast 尚無可靠自動分類。<span class="en">Colored outlines represent candidate connected components only. Arrangement, species, Gram-variable reactions, and yeasts are not automatically classified.</span></p>
+<div class="actions"><button id="png" class="secondary" disabled type="button">下載標註 PNG <small>Export image</small></button><button id="csv" class="secondary" disabled type="button">下載 CSV <small>Export markers</small></button></div>
+</section>
+</div>
+<section class="panel results" id="resultPanel" hidden>
+<h2><span class="step">06</span> 系統建議與學生比較 <small>Rule-based Results &amp; Comparison</small></h2>
+<div class="metrics five">
+<div><span>G+ 球菌 <small>Positive cocci</small></span><strong id="posC">0</strong></div>
+<div><span>G− 球菌 <small>Negative cocci</small></span><strong id="negC">0</strong></div>
+<div><span>G+ 桿菌 <small>Positive bacilli</small></span><strong id="posR">0</strong></div>
+<div><span>G− 桿菌 <small>Negative bacilli</small></span><strong id="negR">0</strong></div>
+<div><span>待確認 <small>Uncertain</small></span><strong id="review">0</strong></div>
+</div>
+<div class="comparison"><div><span class="metric-label">推估染色反應 / Suggested Gram reaction</span><strong id="gramResult">—</strong></div><div><span class="metric-label">推估菌形 / Suggested morphology</span><strong id="shapeResult">—</strong></div></div>
+<p id="compareMessage" class="comparison-message"></p><p id="demoTruth" class="hint"></p>
+<p class="hint">統計僅代表符合分色與形態條件的候選連通色塊。相鄰菌體可能合併，染色沉澱可能被計入；不適合據此報告菌量或推導臨床菌種。<span class="en">Counts reflect segmentation components, not verified bacterial cell counts. Nearby cells may merge and stain artifacts may be counted. The 80% predominance rule is an interface heuristic, not a clinical criterion.</span></p>
+</section>
+<section class="explainer">
+<article class="panel"><h2>判讀原理 <small>Method</small></h2><p>本版根據 RGB 色差尋找紫色及粉紅色色塊，再用連通區面積及二階矩（major/minor axis ratio）粗略區分球形與桿形。形狀臨界區與過大候選會標示待確認；結果隨門檻、背景及染色而變動。<span class="en">RGB chromatic contrast detects purple/pink pixels. Connected components and second-moment axis ratios offer provisional cocci/rod suggestions. Ambiguous shapes are flagged for review.</span></p></article>
+<article class="panel"><h2>臨床限制 <small>Scope &amp; Limitations</small></h2><p>這個簡化模型對真實抹片的染色沉澱、厚薄差、背景細胞與密集群聚缺乏驗證。學生仍需辨識菌體大小、排列、染色品質及檢體背景。未包含病原菌種、Gram-variable、真菌、混合菌群的可靠推論，亦未提供染色品質分數。<span class="en">The detector lacks validation on clinical smears. Precipitates, dense growth, cell debris, and variations in stain quality can confound predictions. Manual microscope review remains essential.</span></p></article>
+</section>
+<section class="sources">
+<h2>相關文獻與公開資料 <small>Research &amp; Open Data</small></h2>
+<p>Wang X et al. (2024). <em>A Clinical Bacterial Dataset for Deep Learning in Microbiological Rapid On-Site Evaluation.</em> <em>Scientific Data</em> 11:608. <a href="https://doi.org/10.1038/s41597-024-03370-5" target="_blank" rel="noopener noreferrer">DOI</a> · <a href="https://github.com/Quanlab-Bioimage/Clinical-Bacteria-DataSet" target="_blank" rel="noopener noreferrer">Public dataset</a>.</p>
+<p><em>An annotated dataset of Gram stains from positive blood cultures.</em> <em>Scientific Data</em> (2026). <a href="https://doi.org/10.1038/s41597-026-06651-3" target="_blank" rel="noopener noreferrer">DOI</a> · <a href="https://figshare.com/articles/dataset/_i_An_annotated_dataset_of_gram_stains_from_positive_blood_cultures_i_/26004610" target="_blank" rel="noopener noreferrer">CC BY 4.0 dataset</a>.</p>
+<p>這些文獻提供後續模型訓練及教學影像標註的研究參考。本站 V0.1 採原創 JavaScript 程式與程式生成的合成示範圖，未引入上述論文的影像、模型權重或第三方演算法原始碼。<span class="en">The references inform future validation and model research. This original JavaScript prototype includes no externally sourced microscopy image, pretrained model, or copied third-party algorithm.</span></p>
+</section>
+<footer>Web-Gram Stain Lite v0.1 · NYCU Medical Laboratory Science · <a href="https://github.com/JimHaoCh/JimHaoCh.github.io/tree/main/web-gram-stain">GitHub source</a></footer>
+</main>
+</body>
+</html>
