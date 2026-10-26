@@ -1,0 +1,13 @@
+<article class="reference-card">
+  <div class="reference-card-top">
+    <span class="reference-external-badge">外部專業資源 <small lang="en">External reference</small></span>
+    <span class="reference-provider">{{ include.item.provider | escape }}</span>
+  </div>
+  <h3>{{ include.item.name | escape }}</h3>
+  <p class="reference-title">{{ include.item.title_zh | escape }}<span lang="en">{{ include.item.title_en | escape }}</span></p>
+  <p class="reference-description">{{ include.item.description_zh | escape }}<span lang="en">{{ include.item.description_en | escape }}</span></p>
+  <p class="reference-license">{{ include.item.notice_zh | escape }}<span lang="en">{{ include.item.notice_en | escape }}</span></p>
+  <a class="resource-download" href="{{ include.item.url | escape }}" target="_blank" rel="noopener noreferrer external">
+    <span>前往官方資源<small lang="en">Visit official source · External site</small></span><span aria-hidden="true">↗</span>
+  </a>
+</article>
