@@ -28,9 +28,9 @@
     "href": "/resources/diagnostics.html",
     "icon": "✚",
     "eyebrow": "DIAGNOSTIC LEARNING",
-    "intro_zh": "菌落計數、抑菌圈、革蘭氏染色、電泳與快篩定量。",
-    "intro_en": "Colony counting, inhibition zones, Gram stains, gel bands and rapid tests.",
-    "sample_zh": "CFU · AST · Gram · Gel · LFA"
+    "intro_zh": "菌種鑑定、生化檢驗、培養基、AST／抗藥性、黴菌圖譜與病原菌基因體資源。",
+    "intro_en": "Bacterial identification, biochemical tests, culture media, AST, mycology and pathogen genomics.",
+    "sample_zh": "MicroID · BacDive · MediaDive · EUCAST · WHONET"
   },
   {
     "id": "molecular",
