@@ -63,7 +63,7 @@
     }else{
       article.append(make('p','bio-candidate-note',record.note_zh));
     }
-    if(record.variable.length)article.append(make('p','bio-variability','可變反應 / Variable：'+record.variable.map(id=>state.tests.find(t=>t.id===id)?.zh||id).join('、'));
+    if(record.variable.length)article.append(make('p','bio-variability','可變反應 / Variable：'+record.variable.map(id=>state.tests.find(t=>t.id===id)?.zh||id).join('、')));
     parent.append(article);
   }
   function render(){
