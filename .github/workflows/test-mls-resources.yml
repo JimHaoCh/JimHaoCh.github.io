@@ -1,0 +1,22 @@
+name: Test MLS resource tools
+on:
+  push:
+    paths:
+      - "assets/js/moex-core.js"
+      - "assets/js/medlab-exam.js"
+      - "tests/medlab-core.test.cjs"
+      - ".github/workflows/test-mls-resources.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate syntax
+        run: |
+          node --check assets/js/moex-core.js
+          node --check assets/js/medlab-exam.js
+      - name: Run MOEX parsing and safety tests
+        run: node --test tests/medlab-core.test.cjs
