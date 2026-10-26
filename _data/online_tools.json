@@ -50,6 +50,16 @@
     "description_en": "Count cells in a Neubauer chamber image, edit candidate detections and calculate WBC, RBC or cell-culture concentrations."
   },
   {
+    "slug": "web-trypan-blue",
+    "name": "Web-Trypan Blue",
+    "category": "細胞培養 · Cell Culture",
+    "title": "Trypan Blue 細胞存活率影像分析",
+    "subtitle": "Live/Dead Cell Viability Analysis",
+    "description": "顯微鏡照片自動圈選活、死與待確認細胞，人工修正後計算存活率；支援 ROI、濃度換算與標記匯出。",
+    "url": "/web-trypan-blue/",
+    "description_en": "Detect and manually review live, dead and uncertain cells in Trypan Blue microscopy images; calculate viability and export annotations."
+  },
+  {
     "slug": "web-imagej",
     "name": "Web-Image Lab",
     "category": "鏡檢與影像分析 · Image Processing",
