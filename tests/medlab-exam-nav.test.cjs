@@ -71,3 +71,19 @@ test('MOEX refresh script reads official CSV and never publishes unvalidated dat
  assert.ok(py.includes('session = exam_session('));
  assert.ok(py.includes('SUBJECT_PREFIXES'));
 });
+
+test('Optional CSV import is a three-step bilingual mobile guide with local feedback',()=>{
+ const labels=['下載考選部資料','選擇剛下載的檔案','查看匯入結果'];
+ for(const label of labels)assert.ok(page.includes(label),'Missing guide step: '+label);
+ assert.equal((page.match(/class="exam-import-step-no"/g)||[]).length,3);
+ for(const id of ['exam-import','exam-import-status','exam-import-view'])assert.ok(page.includes('id="'+id+'"'));
+ assert.ok(page.includes('aria-live="polite"'));
+ assert.ok(page.includes('type="file"'));
+ assert.ok(page.includes('檔案不會上傳')||page.includes('不會上傳本站'));
+ assert.ok(js.includes('importStatus.textContent=added>0'));
+ assert.ok(js.includes("importStatus.classList.add('is-error')"));
+ assert.ok(js.includes('const added=entries.length-oldCount'));
+ assert.ok(style.includes('.exam-import-guide{'));
+ assert.ok(style.includes('.exam-import-panel [hidden]{display:none!important}'));
+ assert.ok(style.includes('@media(max-width:960px){.exam-import-guide{grid-template-columns:1fr}}'));
+});
