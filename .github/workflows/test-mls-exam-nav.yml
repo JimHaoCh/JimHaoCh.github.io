@@ -8,6 +8,9 @@ on:
       - "assets/data/moex_medlab.json"
       - "tests/medlab-exam-nav.test.cjs"
       - "tests/medlab-exam-smoke.test.cjs"
+      - "_data/medical_lab_credential_links.json"
+      - "_includes/exam-credential-card.html"
+      - "online-tools.css"
       - ".github/workflows/test-mls-exam-nav.yml"
   workflow_dispatch:
 permissions:
