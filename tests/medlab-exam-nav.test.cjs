@@ -87,3 +87,37 @@ test('Optional CSV import is a three-step bilingual mobile guide with local feed
  assert.ok(style.includes('.exam-import-panel [hidden]{display:none!important}'));
  assert.ok(style.includes('@media(max-width:960px){.exam-import-guide{grid-template-columns:1fr}}'));
 });
+
+test('Credential directory includes official resources for Taiwan, international certifications and six nearby jurisdictions',()=>{
+ const cards=JSON.parse(read('_data/medical_lab_credential_links.json'));
+ const include=read('_includes/exam-credential-card.html');
+ assert.equal(cards.length,17,'17 curated resource entries expected');
+ assert.deepEqual([...new Set(cards.map(x=>x.group))].sort(),['asia','global','tw']);
+ assert.equal(cards.filter(x=>x.group==='tw').length,5);
+ assert.equal(cards.filter(x=>x.group==='global').length,6);
+ assert.equal(cards.filter(x=>x.group==='asia').length,6);
+ for(const slug of ['asia-jp','asia-kr','asia-hk','asia-my','asia-sg','asia-ph','global-ascpi','tw-tamt','tw-tslm'])
+  assert.ok(cards.some(x=>x.slug===slug),'Missing resource '+slug);
+ const slugs=new Set();
+ for(const item of cards){
+  assert.ok(!slugs.has(item.slug),'Duplicate slug '+item.slug);
+  slugs.add(item.slug);
+  for(const key of ['name','name_en','summary','summary_en','note','note_en'])
+   assert.ok(typeof item[key]==='string'&&item[key].trim(),item.slug+' missing '+key);
+  assert.ok(item.links.length>0);
+  for(const link of item.links){
+   const url=new URL(link.url);
+   assert.equal(url.protocol,'https:','External resources must use HTTPS');
+   assert.ok(link.zh&&link.en);
+   assert.ok(!/^(localhost|127\\.|0\\.)/.test(url.hostname));
+  }
+ }
+ assert.ok(page.includes('site.data.medical_lab_credential_links'));
+ assert.ok(page.includes('exam-credential-card.html'));
+ for(const id of ['exam-professional-links','exam-credentials-tw','exam-credentials-global','exam-credentials-asia'])
+  assert.ok(page.includes('id="'+id+'"'),id);
+ assert.ok(include.includes('rel="noopener noreferrer external"'));
+ assert.ok(include.includes('href="{{ link.url | escape }}"'));
+ assert.ok(style.includes('.exam-credential-grid{'));
+ assert.ok(style.includes('@media(max-width:760px){.exam-credential-grid{grid-template-columns:1fr'));
+});
