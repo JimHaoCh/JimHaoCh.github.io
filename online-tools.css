@@ -469,3 +469,36 @@
 .exam-import-panel [hidden]{display:none!important}
 @media(max-width:960px){.exam-import-guide{grid-template-columns:1fr}}
 @media(max-width:600px){.exam-import-panel{padding:17px 14px}.exam-import-guide>li{padding:15px 13px}.exam-import-action{width:100%}}
+
+/* MLS licensing and regional credentials directory — 2026-10-27 */
+.exam-credentials{scroll-margin-top:26px}
+.exam-credential-heading-en{font-size:12px;line-height:1.8;color:var(--muted);margin:6px 0 0}
+.exam-credential-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0 28px}
+.exam-credential-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:0;min-height:64px;padding:12px 8px;text-align:center;text-decoration:none;border:1px solid #cddfed;border-radius:11px;background:#f5f9fe;color:#285c88;font-size:13px;font-weight:750;line-height:1.5}
+.exam-credential-nav a small[lang=en]{font-size:10px;font-weight:450;color:var(--muted)}
+.exam-credential-nav a:hover,.exam-credential-nav a:focus-visible{border-color:var(--blue);background:#e9f3fd}
+.exam-credential-region{scroll-margin-top:26px;margin:29px 0 33px}
+.exam-credential-region>h3{font-family:var(--serif);font-size:clamp(21px,2.1vw,26px);line-height:1.4;color:var(--ink);margin:0 0 16px}
+.exam-credential-region>h3 span[lang=en]{display:block;font:450 12px/1.65 var(--sans);color:var(--muted);margin-top:4px}
+.exam-credential-region-intro{font-size:12px;line-height:1.85;color:#597287;margin:0 0 15px}
+.exam-credential-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.exam-credential-card{min-width:0;display:flex;flex-direction:column;padding:20px 21px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 6px 20px rgba(23,52,83,.04)}
+.exam-credential-top{display:flex;justify-content:space-between;align-items:start;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.exam-credential-tag{font-size:11px;line-height:1.5;font-weight:700;color:#2d5f8a;background:#edf5fc;border:1px solid #d5e5f1;border-radius:6px;padding:5px 8px}
+.exam-credential-external{font-size:10.5px;color:#68839a;line-height:1.4}
+.exam-credential-external small[lang=en]{display:block;font-size:10px}
+.exam-credential-card h4{font-family:var(--serif);font-weight:750;font-size:18px;line-height:1.45;color:var(--ink);margin:0 0 10px;overflow-wrap:anywhere}
+.exam-credential-card h4 span[lang=en]{display:block;font:450 12px/1.5 var(--sans);color:#6d879a;margin-top:5px}
+.exam-credential-summary{font-size:13px;line-height:1.8;color:#415f74;margin:0 0 14px;flex:1}
+.exam-credential-summary span[lang=en],.exam-credential-note span[lang=en]{display:block;margin-top:6px;font-size:11.5px;line-height:1.7;color:#688296}
+.exam-credential-note{font-size:12px;line-height:1.8;color:#5b7181;background:#f7fafd;border:1px solid #e3edf3;border-radius:9px;padding:11px 12px;margin:0 0 14px}
+.exam-credential-note strong{display:block;color:#365b76;font-size:11px;margin-bottom:4px}
+.exam-credential-note strong small[lang=en]{font-size:10px;font-weight:450;color:#71899d}
+.exam-credential-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.exam-credential-links a{flex:1 1 155px;min-width:0;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 12px;border:1px solid #cbdfee;border-radius:9px;background:#f1f7fd;text-decoration:none;color:#215e90;font-size:12px;font-weight:750;line-height:1.4;overflow-wrap:anywhere}
+.exam-credential-links a small[lang=en]{display:block;font-size:10px;font-weight:450;color:#6c859a;margin-top:3px}
+.exam-credential-links a:hover,.exam-credential-links a:focus-visible{border-color:var(--blue);background:#e6f2ff}
+.exam-credential-disclaimer{padding:15px 17px;border-top:1px solid var(--line);background:#f8fbfd;border-radius:10px;font-size:11.5px;line-height:1.8;color:#5e798c}
+.exam-credential-disclaimer span[lang=en]{display:block;font-size:11px;color:var(--muted);margin-top:5px}
+@media(max-width:760px){.exam-credential-grid{grid-template-columns:1fr;gap:13px}.exam-credential-card{padding:19px 17px}.exam-credential-nav{gap:6px}.exam-credential-nav a{font-size:12px;padding:10px 5px}.exam-credential-links a{flex-basis:130px}}
+@media(max-width:380px){.exam-credential-nav a{font-size:11px}.exam-credential-nav a small[lang=en]{font-size:9px}}
