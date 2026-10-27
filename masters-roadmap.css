@@ -29,3 +29,13 @@
 .inquiry-faq .student-faq>details p[lang=en]{margin-top:9px;color:var(--muted);font-size:16px;line-height:1.8}
 @media(max-width:1000px){.roadmap-stages{grid-template-columns:repeat(2,minmax(0,1fr))}.roadmap-stages li::after{display:none}}
 @media(max-width:700px){.roadmap-focus{grid-template-columns:1fr;gap:16px}.roadmap-stages{grid-template-columns:1fr;gap:16px}.roadmap-focus article,.roadmap-stages li{padding:22px}.masters-roadmap h3,.student-faq h3{font-size:23px}.roadmap-heading>p:last-child{font-size:17px}}
+
+/* Restored detailed milestones */
+.roadmap-deliverables{margin-top:30px;padding:26px;background:#fff;border-top:3px solid var(--orange)}
+.roadmap-deliverables h4{margin:0 0 20px;font-size:20px;line-height:1.5}
+.roadmap-deliverables h4 span[lang=en]{display:block;margin-top:6px;color:var(--blue);font:400 17px/1.5 var(--serif)}
+.roadmap-checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.roadmap-checks p{font-size:17px;line-height:1.8}
+.roadmap-checks strong{display:block;color:var(--blue);font-weight:700}
+.roadmap-checks span[lang=en]{display:block;margin-top:10px;color:var(--muted);font-size:15px;line-height:1.75}
+@media(max-width:700px){.roadmap-checks{grid-template-columns:1fr;gap:22px}.roadmap-deliverables{padding:22px}}
