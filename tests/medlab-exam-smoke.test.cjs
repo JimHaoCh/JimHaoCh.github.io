@@ -106,3 +106,33 @@ test('Latest official metadata includes two exam sessions per year but no invent
     }
   }
 });
+
+test('Executable smoke test: selecting official CSV displays success and jumps to the added year',async()=>{
+ const x=environment();await settled();
+ const url='https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=308&code=113020&q=1&s=0501&t=Q';
+ const csv='考試年度,考試名稱,類科組別,節次,科目全名,試題型態,試題網址,測驗式試題答案網址,備註\\n'
+ +'113,113年第一次專技高考,高等考試_醫事檢驗師,一,臨床血液學與血庫學,測驗,'
+ +url+','+url.replace('t=Q','t=S')+',\\n';
+ const bytes=new TextEncoder().encode(csv);
+ const file={name:'moex.csv',size:bytes.length,slice:(from,to)=>({
+  arrayBuffer:async()=>bytes.slice(from,to).buffer
+ })};
+ const picker=x.get('exam-import');
+ picker.listeners.change({target:{files:[file]}});
+ await new Promise(resolve=>setTimeout(resolve,25));
+ assert.match(x.get('exam-import-status').textContent,/匯入成功：新增 1 份/);
+ assert.equal(x.get('exam-import-view').hidden,false);
+ assert.match(x.get('exam-result-title').textContent,/113 年第一次/);
+ assert.equal(x.get('exam-year-tabs').children.length,3);
+});
+test('Executable smoke test: invalid CSV produces a visible local error',async()=>{
+ const x=environment();await settled();
+ const bytes=new TextEncoder().encode('wrong,format\\nabc,123\\n');
+ const file={name:'wrong.csv',size:bytes.length,slice:(from,to)=>({
+  arrayBuffer:async()=>bytes.slice(from,to).buffer
+ })};
+ x.get('exam-import').listeners.change({target:{files:[file]}});
+ await new Promise(resolve=>setTimeout(resolve,25));
+ assert.match(x.get('exam-import-status').textContent,/匯入失敗/);
+ assert.equal(x.get('exam-import-view').hidden,true);
+});
