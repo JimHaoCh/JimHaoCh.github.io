@@ -203,9 +203,10 @@
       if(!incoming.length)throw new Error('沒有找到醫事檢驗師的官方索引資料');
       const oldCount=entries.length;
       const oldYears=new Set(entries.map(record=>record.year));
-      importedCount+=incoming.length;
       setEntries(incoming);
       const added=entries.length-oldCount;
+      importedCount+=added;
+      updateIndexStatus();
       const newYears=currentYears().filter(year=>!oldYears.has(year));
       if(added>0){
         // Switch to a newly available year so the student can immediately inspect what changed.
