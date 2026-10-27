@@ -1,0 +1,17 @@
+/* Master's training and student FAQ | 2026-10-27 */
+.masters-roadmap{margin:clamp(2.5rem,5vw,4.5rem) 0 2.5rem;padding:clamp(1.2rem,3.5vw,2.4rem);border:1px solid #dce6ef;border-radius:24px;background:linear-gradient(140deg,#f8fbff,#fffaf4)}
+.masters-roadmap h3,.student-faq h3{font-size:clamp(1.5rem,2.6vw,2.2rem);margin:.2rem 0 1rem;color:#214e83}
+.masters-roadmap [lang="en"],.student-faq summary [lang="en"]{display:block;font-size:.76em;font-weight:400;line-height:1.5;opacity:.8}
+.roadmap-heading>p:last-child{max-width:850px;line-height:1.8}.roadmap-heading>p:last-child [lang="en"]{margin-top:.2rem}
+.roadmap-focus{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.8rem 0 2rem}
+.roadmap-focus article{padding:1.3rem;border:1px solid #dbe6ef;border-radius:16px;background:#fff;min-width:0}
+.roadmap-focus h4{margin:.5rem 0;font-size:1.1rem;color:#24568b}.roadmap-focus p{font-size:.92rem;line-height:1.7;margin:0}
+.focus-icon{display:inline-grid;place-items:center;width:2.6rem;height:2.6rem;border-radius:14px;background:#e5f0ff;color:#285f9b;font-size:1.4rem}
+.roadmap-stages{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.roadmap-stages li{position:relative;min-width:0;border-top:4px solid #2b61ab;background:#fff;border-radius:12px;padding:1.2rem 1rem;box-shadow:0 2px 14px rgba(29,73,117,.07)}
+.roadmap-stages li:not(:last-child)::after{content:'→';position:absolute;top:43%;right:-.85rem;color:#2b61ab;font-weight:700;z-index:1}
+.stage-time{font-weight:700;color:#2b61ab}.roadmap-stages h4{margin:.65rem 0;color:#273d56;font-size:1.02rem}
+.roadmap-stages p{font-size:.9rem;line-height:1.7;margin:0}.roadmap-note{font-size:.86rem;line-height:1.75;margin:1.25rem 0 0;color:#526477}
+.student-faq{margin-top:2.2rem;padding-top:1.5rem;border-top:1px solid #dce6ef}.student-faq>details{padding:0}.student-faq>details p{line-height:1.85;margin:.8rem 1.2rem}.student-faq>details p[lang="en"]{opacity:.8;margin-top:0}
+@media(max-width:850px){.roadmap-focus{grid-template-columns:1fr}.roadmap-stages{grid-template-columns:repeat(2,minmax(0,1fr))}.roadmap-stages li::after{display:none}}
+@media(max-width:560px){.masters-roadmap{padding:1.15rem;border-radius:17px}.roadmap-stages{grid-template-columns:1fr}.roadmap-stages li{padding:1rem}.roadmap-focus{gap:.75rem}.roadmap-focus article{padding:1rem}.student-faq>details p{margin:.8rem .6rem}}
