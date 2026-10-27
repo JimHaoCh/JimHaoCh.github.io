@@ -14,7 +14,7 @@ intro_en: Quick access to official MOEX past papers, answer keys and corrections
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261027-exam11">
+  <link rel="stylesheet" href="/online-tools.css?v=20261027-exam12">
   <script defer src="/assets/js/moex-core.js?v=20261026-exam7"></script>
   <script defer src="/assets/js/medlab-exam.js?v=20261027-exam11"></script>
 </head>
@@ -120,6 +120,43 @@ intro_en: Quick access to official MOEX past papers, answer keys and corrections
         </div>
       </section>
       </details>
+      {% assign credential_items = site.data.medical_lab_credential_links %}
+      <section class="functional-section exam-credentials" id="exam-professional-links" aria-labelledby="exam-credentials-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">TAIWAN PROFESSIONAL NETWORKS · INTERNATIONAL CREDENTIALS · REGIONAL LICENSURE</p>
+          <h2 id="exam-credentials-heading">醫檢師專業證照與國際執業資源<span lang="en">MLS Professional Credentials &amp; International Practice</span></h2>
+          <p>整理臺灣專業組織、國際醫檢師認證及亞洲鄰近地區的官方資格規定。各地採行國考、證照或職業註冊等不同制度；有意赴海外執業者，請先查核學歷、實習、語言、工作資格及簽證要求。</p>
+          <p class="exam-credential-heading-en" lang="en">Official entry points for professional associations, certification, foreign qualification recognition and practice registration. Check current eligibility and immigration requirements with each authority.</p>
+        </div>
+        <nav class="exam-credential-nav" aria-label="醫檢專業資源分類">
+          <a href="#exam-credentials-tw">臺灣專業資源<small lang="en">Taiwan</small></a>
+          <a href="#exam-credentials-global">國際資格與認證<small lang="en">International</small></a>
+          <a href="#exam-credentials-asia">亞洲鄰近地區<small lang="en">Asia–Pacific</small></a>
+        </nav>
+        <div class="exam-credential-region" id="exam-credentials-tw">
+          <h3>臺灣｜國考、學會與執業 <span lang="en">Taiwan · Exam, Associations &amp; Practice</span></h3>
+          <div class="exam-credential-grid">
+            {% assign tw_credentials = credential_items | where: "group", "tw" %}
+            {% for item in tw_credentials %}{% include exam-credential-card.html item=item %}{% endfor %}
+          </div>
+        </div>
+        <div class="exam-credential-region" id="exam-credentials-global">
+          <h3>國際｜認證與資格評估 <span lang="en">International · Certification &amp; Credential Assessment</span></h3>
+          <div class="exam-credential-grid">
+            {% assign global_credentials = credential_items | where: "group", "global" %}
+            {% for item in global_credentials %}{% include exam-credential-card.html item=item %}{% endfor %}
+          </div>
+        </div>
+        <div class="exam-credential-region" id="exam-credentials-asia">
+          <h3>亞洲鄰近地區｜執照與註冊規定 <span lang="en">Asia–Pacific · Licensing &amp; Registration</span></h3>
+          <p class="exam-credential-region-intro">日本、韓國、香港、馬來西亞、新加坡及菲律賓的制度分別列示。相關資格是否被承認、以及外國人是否可以執業，由當地主管機關審核。</p>
+          <div class="exam-credential-grid">
+            {% assign asia_credentials = credential_items | where: "group", "asia" %}
+            {% for item in asia_credentials %}{% include exam-credential-card.html item=item %}{% endfor %}
+          </div>
+        </div>
+        <p class="exam-credential-disclaimer">資料最後核對：2026-10-27。本站僅連結各主管機關及專業組織，並提供教學用制度摘要；資格、法規、申請費用與頁面網址均可能更新。國際認證、資格評估、職業註冊、雇用與工作簽證為不同程序。<span lang="en">Last reviewed: 27 October 2026. Educational summaries only. Always confirm current requirements and decisions with the official authorities.</span></p>
+      </section>
       {% assign study_resources = site.data.professional_resources | where: "function_group", "exam" %}
       <section class="functional-section" aria-labelledby="exam-reference-title">
         <div class="catalogue-heading">
