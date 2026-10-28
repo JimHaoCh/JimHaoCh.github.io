@@ -64,5 +64,16 @@
     "intro_zh": "可編輯的研究簡報與學術海報 PowerPoint 模板。",
     "intro_en": "Editable PowerPoint templates for presentations and academic posters.",
     "sample_zh": "Research slides · Scientific posters"
+  },
+  {
+    "id": "apps",
+    "name_zh": "生命科學手機 App",
+    "name_en": "Life Science Mobile Apps",
+    "href": "/resources/apps.html",
+    "icon": "▣",
+    "eyebrow": "MOBILE LEARNING & SCIENCE APPS",
+    "intro_zh": "精選細胞、解剖、分子結構、實驗計算與研究用 App，以及生命科學主題遊戲。",
+    "intro_en": "Curated mobile apps for biology learning, bench calculations, research and science games.",
+    "sample_zh": "學習 Learning · 工具 Tools · 遊戲 Games"
   }
 ]
