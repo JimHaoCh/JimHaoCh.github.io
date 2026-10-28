@@ -6,9 +6,9 @@ title: 科學研究學遊App Science Apps for Research, Learning & Play
 title_zh: 科學研究學遊App
 title_en: Science Apps for Research, Learning & Play
 section_label: LIFE SCIENCE · ENGINEERING · CHEMISTRY · SENSING · GAMES
-description: 精選生命科學、微流體工程、化學分析、感測量測、通用實驗工具及科學遊戲，提供 Android、iOS 及網頁版連結。
-intro_zh: 六大類手機資源：生命科學學習、微流體與工程、化學分析、感測與量測、實驗研究工具及科學遊戲。提供官方商店和行動網頁連結。
-intro_en: Six curated categories for mobile learning, microfluidics and engineering, chemistry, sensor measurements, general research tools and science games, with original store and web links.
+description: 精選適用 Android 手機及 Apple iPhone 的生命科學、工程、化學、感測、實驗研究與科學遊戲 App，提供官方應用程式商店連結。
+intro_zh: 本專區僅收錄 Android 與 iPhone 可下載的原生 App，依生命科學、工程、化學、感測、實驗工具及科學遊戲分類。免安裝的瀏覽器工具另收錄於本站線上資源其他專區。
+intro_en: Native Android and iPhone apps only, grouped by life sciences, engineering, chemistry, sensing, laboratory research and science games. Browser-based tools are listed in other Online Resources categories.
 ---
 <!doctype html>
 <html lang="zh-Hant">
@@ -26,8 +26,8 @@ intro_en: Six curated categories for mobile learning, microfluidics and engineer
       {% include resource-page-hero.html %}
       <div class="mobile-apps-screening" aria-label="App 收錄原則 / Selection criteria">
         <strong>收錄原則 <span lang="en">Selection criteria</span></strong>
-        <p>優先收錄一般學生可獨立操作的手機 App 與行動網頁工具。無須指定廠牌儀器、外接 BLE 裝置、特定試劑產品或機構專屬授權；允許手機內建相機與感測器，並清楚標示付費、網路及相容性限制。</p>
-        <p lang="en">Selected for standalone use without proprietary laboratory hardware, external BLE devices, vendor-specific reagents or institutional licenses. Built-in phone sensors, optional accounts and disclosed purchases are allowed.</p>
+        <p>僅收錄 Android／iPhone 原生 App，並優先選擇不依賴指定儀器、外接 BLE 裝置、特定試劑或機構授權的工具；允許使用手機內建相機與感測器。各類免安裝網頁軟體請至「線上資源」其他專區查找。</p>
+        <p lang="en">Native Android and iPhone apps only. No required proprietary laboratory hardware, external BLE devices, vendor-specific reagents or institutional licenses; browser-only tools are catalogued separately.</p>
       </div>
       {% assign learning_apps = site.data.mobile_apps | where: "category", "learning" %}
       {% assign engineering_apps = site.data.mobile_apps | where: "category", "engineering" %}
@@ -54,7 +54,6 @@ intro_en: Six curated categories for mobile learning, microfluidics and engineer
             <option value="all">全部平台 / All platforms</option>
             <option value="android">Android / Google Play</option>
             <option value="ios">iOS / App Store</option>
-            <option value="web">網頁版 / Web app</option>
           </select>
         </div>
         <p class="mobile-apps-filter-result" id="mobile-app-filter-result" role="status" aria-live="polite">共 {{ site.data.mobile_apps.size }} 款 App <span lang="en">· {{ site.data.mobile_apps.size }} apps</span></p>
@@ -65,7 +64,7 @@ intro_en: Six curated categories for mobile learning, microfluidics and engineer
         {% assign current_apps = site.data.mobile_apps | where: "category", group %}
         {% case group %}
           {% when "learning" %}{% assign group_zh = "生命科學學習" %}{% assign group_en = "Life Science Learning" %}{% assign group_intro = "細胞、組織、血液學、微生物及分子生物學的互動學習與圖譜。" %}{% assign group_eyebrow = "LIFE SCIENCE LEARNING" %}
-          {% when "engineering" %}{% assign group_zh = "工程設計與微流體" %}{% assign group_en = "Engineering & Microfluidics" %}{% assign group_intro = "微流道壓降與流阻、流體公式、參數式 CAD，以及通用電子電路模擬。" %}{% assign group_eyebrow = "MICROFLUIDICS · CAD · ELECTRONICS" %}
+          {% when "engineering" %}{% assign group_zh = "工程設計與微流體" %}{% assign group_en = "Engineering & Microfluidics" %}{% assign group_intro = "流體工程公式、參數式 CAD，以及通用電子電路模擬；微流體網頁計算器請見工程資源專區。" %}{% assign group_eyebrow = "MICROFLUIDICS · CAD · ELECTRONICS" %}
           {% when "chemistry" %}{% assign group_zh = "化學與分析計算" %}{% assign group_en = "Chemistry & Analytical Calculations" %}{% assign group_intro = "溶液濃度、稀釋、酸鹼、Buffer、分析化學與實驗數據計算。" %}{% assign group_eyebrow = "CHEMISTRY · SOLUTIONS · QUANTITATION" %}
           {% when "sensing" %}{% assign group_zh = "感測與訊號量測" %}{% assign group_en = "Sensors & Measurements" %}{% assign group_intro = "手機相機比色、內建感測器、訊號擷取及頻譜分析；使用時注意校正。" %}{% assign group_eyebrow = "SENSORS · COLORIMETRY · DATA ACQUISITION" %}
           {% when "tools" %}{% assign group_zh = "一般實驗與研究工具" %}{% assign group_en = "Laboratory & Research Utilities" %}{% assign group_intro = "PCR 與稀釋計算、細胞計數、細菌鑑定、分子資料庫及文獻管理。" %}{% assign group_eyebrow = "LAB BENCH · DATA · RESEARCH" %}
@@ -79,7 +78,7 @@ intro_en: Six curated categories for mobile learning, microfluidics and engineer
           </div>
           <div class="mobile-app-grid">
             {% for item in current_apps %}
-            <article class="mobile-app-card" data-app-card data-platform="{% if item.android_url and item.android_url != "" %} android{% endif %}{% if item.ios_url and item.ios_url != "" %} ios{% endif %}{% if item.web_url and item.web_url != "" %} web{% endif %}">
+            <article class="mobile-app-card" data-app-card data-platform="{% if item.android_url and item.android_url != "" %} android{% endif %}{% if item.ios_url and item.ios_url != "" %} ios{% endif %}">
               <div class="mobile-app-card-top">
                 <span class="mobile-app-symbol" aria-hidden="true">{% if group == 'learning' %}◈{% elsif group == 'engineering' %}⌘{% elsif group == 'chemistry' %}⚗{% elsif group == 'sensing' %}◉{% elsif group == 'tools' %}＋{% else %}✦{% endif %}</span>
                 <span class="mobile-app-provider">{{ item.provider | escape }}</span>
@@ -95,19 +94,17 @@ intro_en: Six curated categories for mobile learning, microfluidics and engineer
                 {% if item.ios_url and item.ios_url != "" %}
                 <a href="{{ item.ios_url | escape }}" target="_blank" rel="noopener noreferrer external" aria-label="{{ item.name | escape }} — App Store">App Store <span aria-hidden="true">↗</span></a>
                 {% endif %}
-                {% if item.web_url and item.web_url != "" %}
-                <a href="{{ item.web_url | escape }}" target="_blank" rel="noopener noreferrer external" aria-label="{{ item.name | escape }} — Web App">網頁版 Web <span aria-hidden="true">↗</span></a>
-                {% endif %}
               </div>
             </article>
             {% endfor %}
           </div>
         </section>
       {% endfor %}
+      <p class="tools-note">需要免安裝微流體計算器、流道壓降估算或線上電路模擬？請至 <a href="/resources/engineering.html#engineering-simulation">微流體與工程設計 / Microfluidics &amp; Engineering</a>；細胞解謎網頁版請見 <a href="/resources/exam.html#exam-reference-title">專業學習資源 / Professional Learning</a>。</p>
       <div class="mobile-apps-notice">
         <h2>使用與教學提醒 <span lang="en">Notes on Use</span></h2>
-        <p>本站索引第三方 App 官方商店與官方網頁工具連結，不重新發布安裝檔。免費下載可能包含訂閱、廣告或內購；實際價格及裝置相容性以使用者所在區域的商店資訊為準。PWA 網頁工具可從瀏覽器選擇「加入主畫面」。</p>
-        <p lang="en">Links go to third-party store listings. Availability, prices, subscriptions, in-app purchases and device support vary by platform and region.</p>
+        <p>本站僅索引第三方 Android 與 iPhone 原生 App 的官方商店連結，不重新發布安裝檔。免費下載可能包含訂閱、廣告或內購；實際價格及裝置相容性以所在地商店資訊為準。瀏覽器版工具收錄於本站其他線上資源分類。</p>
+        <p lang="en">Links go to official Android and iOS store listings only. Browser apps are listed elsewhere on this website; prices, subscriptions and device support vary by region.</p>
         <p>模擬遊戲中的傳染病、演化與病理機制經過娛樂化簡化，應搭配教科書與科學文獻進行討論；實驗計算結果需核對單位、試劑規格與原廠操作指引。</p>
         <p lang="en">Game mechanics simplify real biology and should be discussed critically. Verify laboratory calculations, units and reagent specifications before use.</p>
       </div>
