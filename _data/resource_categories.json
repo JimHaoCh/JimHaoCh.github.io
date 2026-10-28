@@ -50,9 +50,9 @@
     "href": "/resources/engineering.html",
     "icon": "⌘",
     "eyebrow": "DESIGN & INSTRUMENTATION",
-    "intro_zh": "開源機械 CAD、微流體與光罩版圖、CNC、CFD、光電模擬、儀器控制及自製計算器。",
-    "intro_en": "Open CAD, microfluidic/mask layouts, CNC, optics, CFD, electronics, automation and original calculators.",
-    "sample_zh": "FreeCAD · KLayout · Kiri:Moto · Falstad · NE-501"
+    "intro_zh": "開源 CAD、微流體網頁計算器、流道壓降與流阻、CNC、CFD、光電模擬、儀器控制及自製工具。",
+    "intro_en": "CAD, browser-based microfluidic calculators, hydraulic resistance, CNC, CFD, electronics, instrument control and original web tools.",
+    "sample_zh": "微流體壓降 · Web 工具 · FreeCAD · KLayout · Falstad"
   },
   {
     "id": "templates",
@@ -71,9 +71,9 @@
     "name_en": "Science Apps for Research, Learning & Play",
     "href": "/resources/apps.html",
     "icon": "▣",
-    "eyebrow": "SCIENCE · RESEARCH · LEARNING · PLAY",
-    "intro_zh": "依生命科學學習、工程與微流體、化學分析、感測量測、實驗研究工具及科學遊戲分區，收錄可獨立使用的手機 App 與行動網頁工具。",
-    "intro_en": "Standalone mobile apps and web tools organized into learning, engineering, chemistry, sensing, lab utilities and science games.",
+    "eyebrow": "ANDROID · iPHONE · SCIENCE APPS",
+    "intro_zh": "只收錄 Android 手機及 iPhone 原生 App；按生命科學、工程、化學、感測、研究工具與科學遊戲分類。瀏覽器工具請至其他線上資源專區。",
+    "intro_en": "Native Android and iPhone apps only: learning, engineering, chemistry, sensors, lab tools and games. Browser-only resources are listed in other categories.",
     "sample_zh": "生命科學 · 工程／微流體 · 化學 · 感測 · 實驗工具 · 遊戲"
   }
 ]
