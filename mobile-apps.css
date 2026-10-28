@@ -43,3 +43,11 @@
 .mobile-app-recommended{display:inline-block;margin-left:6px;color:#557389;font-size:11px;font-weight:600;line-height:1.5}
 .mobile-app-recommended small[lang=en]{font-size:10px;font-weight:450}
 @media(max-width:680px){.mobile-apps-filter{grid-template-columns:1fr;padding:18px 19px;gap:14px;margin-bottom:27px}.mobile-apps-filter-result{grid-column:1}.mobile-apps-filter input,.mobile-apps-filter select{font-size:16px}}
+
+/* Standalone-use criteria. Same restrained typography as the Resources hub. */
+.mobile-apps-screening{padding:18px 23px;margin:0 0 24px;border-left:3px solid var(--blue);background:#f8fbff;border-radius:0 12px 12px 0}
+.mobile-apps-screening>strong{display:block;color:var(--ink);font-size:15px;margin-bottom:8px}
+.mobile-apps-screening strong span[lang=en]{font-size:12px;color:var(--muted);font-weight:500;margin-left:6px}
+.mobile-apps-screening p{margin:5px 0;color:#4c6579;line-height:1.8;font-size:13px}
+.mobile-apps-screening p[lang=en]{font-size:12px;color:var(--muted)}
+@media(max-width:680px){.mobile-apps-screening{padding:16px 18px}}
