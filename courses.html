@@ -10,6 +10,8 @@ description: 醫技專業學習、臨床檢驗資源、顯微影像分析、微�
 <head>
   {% include page-head.html %}
   <link rel="stylesheet" href="/online-tools.css?v=20261026-micro1">
+  <link rel="stylesheet" href="/resource-search.css?v=20261028-1">
+  <script defer src="/resource-search.js?v=20261028-1"></script>
 </head>
 <body>
   <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
@@ -25,6 +27,55 @@ description: 醫技專業學習、臨床檢驗資源、顯微影像分析、微�
         <p>依學習與研究目的選擇資源：醫事檢驗師國考、顯微影像與血球形態、臨床微生物、分子檢驗、微流體工程、研究簡報及科學研究學遊App。本站工具、外部專業資源與下載素材均清楚標示來源。</p>
         <span lang="en">Choose resources by purpose: MLS national exams, microscopy and hematology, microbiology, molecular testing, engineering, research presentation assets or science apps for research, learning and play. Official references, lab-developed applications and downloads are labeled by origin.</span>
       </div>
+      <section class="resource-search-panel" id="resource-search" aria-labelledby="resource-search-heading">
+        <div class="resource-search-heading">
+          <p class="eyebrow">FIND YOUR TOOL · SMART RESOURCE SEARCH</p>
+          <h2 id="resource-search-heading">直接搜尋想做的事<span lang="en">Search all scientific resources</span></h2>
+          <p>輸入工具名稱、研究需求或中英文關鍵字，跨七大分類找到對應的工具、軟體、App、資料庫與研究模板。<span lang="en">Describe a task or enter a keyword to find relevant resources across all categories.</span></p>
+        </div>
+        <div class="resource-search-controls" role="search" aria-label="全站線上資源搜尋 / Resource search">
+          <div class="resource-search-field">
+            <label for="resource-search-input">想找什麼？<span lang="en">What are you looking for?</span></label>
+            <input id="resource-search-input" type="search" autocomplete="off" enterkeyhint="search" placeholder="例如：我要計算微流道壓降、WBC、PCR 引子…" aria-controls="resource-search-results">
+          </div>
+          <div class="resource-search-field">
+            <label for="resource-search-category">專業領域 <span lang="en">Topic</span></label>
+            <select id="resource-search-category" aria-controls="resource-search-results">
+              <option value="all">所有領域 / All topics</option>
+              {% for item in site.data.resource_categories %}
+              <option value="{{ item.id | escape }}">{{ item.name_zh | escape }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="resource-search-field">
+            <label for="resource-search-type">資源形式 <span lang="en">Resource type</span></label>
+            <select id="resource-search-type" aria-controls="resource-search-results">
+              <option value="all">全部類型 / All types</option>
+              <option value="web">線上即用 / Web tools</option>
+              <option value="app">手機 App / Mobile apps</option>
+              <option value="software">安裝軟體 / Software</option>
+              <option value="reference">專業資料 / References</option>
+              <option value="download">下載資源 / Downloads</option>
+            </select>
+          </div>
+        </div>
+        <div class="resource-search-examples" aria-label="常見搜尋需求 / Example searches">
+          <span>試試搜尋 <small lang="en">Try:</small></span>
+          <button type="button" data-resource-query="微流道壓降">微流道壓降</button>
+          <button type="button" data-resource-query="白血球分類">白血球分類</button>
+          <button type="button" data-resource-query="菌落計數">菌落計數</button>
+          <button type="button" data-resource-query="PCR 引子">PCR 引子</button>
+          <button type="button" data-resource-query="手機比色">手機比色</button>
+          <button type="button" data-resource-query="學術海報">學術海報</button>
+        </div>
+        <div class="resource-search-result-head">
+          <p class="resource-search-status" id="resource-search-status" role="status" aria-live="polite">正在準備搜尋資料；下方仍可依分類瀏覽所有資源。</p>
+          <button type="button" class="resource-search-clear" id="resource-search-clear" hidden>清除條件</button>
+        </div>
+        <div class="resource-search-results" id="resource-search-results" aria-label="搜尋結果 / Search results"></div>
+        <button type="button" class="resource-search-more" id="resource-search-more" hidden>顯示更多結果</button>
+        <small class="resource-search-footer">搜尋於瀏覽器中執行，不會上傳你的查詢內容。結果依名稱、功能與中英文關鍵詞相關性排序，並非 AI 診斷或專業判定。<span lang="en">Private, browser-local search. Results are ranked by keyword relevance, not AI or clinical judgment.</span></small>
+      </section>
       <section class="resource-hub-grid" aria-label="線上資源功能分類 / Resource categories">
         {% for category in site.data.resource_categories %}
         {% assign grouped_tools = site.data.online_tools | where: "function_group", category.id %}
