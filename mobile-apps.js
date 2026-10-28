@@ -34,6 +34,19 @@
       noResults.hidden = total !== 0;
       status.textContent = "符合條件 " + total + " 款 App · " + total + " matching apps";
     };
+    // When navigating to a section, clear any filter hiding its cards.
+    const nav = document.querySelector(".mobile-apps-jump");
+    if (nav) {
+      nav.addEventListener("click", event => {
+        const link = event.target.closest("a[href^='#mobile-']");
+        if (!link) return;
+        if (search.value || platform.value !== "all") {
+          search.value = "";
+          platform.value = "all";
+          update();
+        }
+      });
+    }
     search.addEventListener("input", update);
     platform.addEventListener("change", update);
     update();
