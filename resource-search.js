@@ -74,15 +74,15 @@
     const exactSegments=[fields.title,fields.subtitle,fields.tags,fields.description,fields.provider];
     const clean=stopWords.reduce((v,w) => v.replaceAll(w," "),q).replace(/\s+/g," ").trim();
     let score=0;
-    if(fields.title.includes(q)) score+=170;
-    if(fields.subtitle.includes(q)) score+=120;
-    if(fields.tags.includes(q)) score+=80;
-    if(fields.description.includes(q)) score+=45;
+    if(hasTerm(fields.title,q)) score+=170;
+    if(hasTerm(fields.subtitle,q)) score+=120;
+    if(hasTerm(fields.tags,q)) score+=80;
+    if(hasTerm(fields.description,q)) score+=45;
     if(clean.length>=2 && clean!==q) {
-      if(fields.title.includes(clean)) score+=100;
-      if(fields.subtitle.includes(clean)) score+=80;
-      if(fields.tags.includes(clean)) score+=45;
-      if(fields.description.includes(clean)) score+=28;
+      if(hasTerm(fields.title,clean)) score+=100;
+      if(hasTerm(fields.subtitle,clean)) score+=80;
+      if(hasTerm(fields.tags,clean)) score+=45;
+      if(hasTerm(fields.description,clean)) score+=28;
     }
     const matchedGroups=aliasGroups.filter(group => group.some(term => term.length>=2 && (hasTerm(q,term) || (term.includes(q) && q.length>=3))));
     let hits=0;
