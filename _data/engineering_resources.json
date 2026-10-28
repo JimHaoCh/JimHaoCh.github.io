@@ -236,5 +236,57 @@
     "url": "https://openflexure.org/",
     "source": "https://openflexure.org/projects/microscope/",
     "notice_zh": "需自行採購、組裝與校正硬體；研究性能需依自製規格測試。"
+  },
+  {
+    "slug": "elveflow-microfluidic-calculator",
+    "group": "simulation",
+    "name": "Elveflow Microfluidic Calculator",
+    "provider": "Elveflow",
+    "mode_zh": "瀏覽器即用",
+    "mode_en": "Browser · no install",
+    "license": "依網站服務條款",
+    "description_zh": "輸入流體性質與流道尺寸，估算微流道流阻、流速、壓降與壁面剪應力；適用於微流體設計與參數教學。",
+    "description_en": "Web calculator for microchannel flow, resistance, pressure drop and wall shear stress based on channel geometry and fluid properties.",
+    "url": "https://elveflow.com/microfluidic-calculator/",
+    "notice_zh": "工程初估用途；需確認幾何、黏度、層流假設，並以實際流量／壓力驗證，不需 Elveflow 儀器。"
+  },
+  {
+    "slug": "semitree-microfluidic-tools",
+    "group": "simulation",
+    "name": "Semitree Microfluidics Tools",
+    "provider": "Semitree",
+    "mode_zh": "瀏覽器即用",
+    "mode_en": "Browser · no install",
+    "license": "依網站服務條款",
+    "description_zh": "包含 Reynolds number、流阻、擴散時間、液滴單細胞 Poisson loading、注射幫浦設定等微流體計算工具。",
+    "description_en": "Browser tools for microfluidic flow resistance, Reynolds number, diffusion time, droplet Poisson loading and syringe pump settings.",
+    "url": "https://semitree.in/tools/",
+    "notice_zh": "請逐項核對輸入單位及公式假設；手機介面與網站可用性可能隨版本調整。"
+  },
+  {
+    "slug": "conductscience-microfluidic-pressure",
+    "group": "simulation",
+    "name": "ConductScience Microfluidic Flow Planner",
+    "provider": "ConductScience",
+    "mode_zh": "瀏覽器即用",
+    "mode_en": "Browser · no install",
+    "license": "依網站服務條款",
+    "description_zh": "以矩形微流道或圓管參數估算水力流阻、壓降、Reynolds number，作為微流體泵浦與流道選型參考。",
+    "description_en": "Microfluidic browser calculator for rectangular channels and round tubing: flow resistance, pressure drop and Reynolds number.",
+    "url": "https://conductscience.com/tools/microfluidic-pressure-drop-calculator",
+    "notice_zh": "僅供前期工程規劃；實際管接頭、液滴、漏液及晶片耐壓需另行量測。"
+  },
+  {
+    "slug": "everycircuit-web",
+    "group": "simulation",
+    "name": "EveryCircuit Web",
+    "provider": "MuseMaze",
+    "mode_zh": "瀏覽器即用",
+    "mode_en": "Browser · no install",
+    "license": "免費版有限制；完整功能需付費",
+    "description_zh": "使用網頁瀏覽器模擬 RC、濾波、運算放大器等讀出電路，動態顯示電壓與電流。另提供 Android／iOS App。",
+    "description_en": "Browser-based interactive simulation of RC filters, op-amps and sensor readout circuits; Android and iOS apps also available.",
+    "url": "https://everycircuit.com/",
+    "notice_zh": "基本版可用元件數受限；屬理想化電路模擬，實作須另外考慮雜訊與寄生效應。"
   }
 ]
