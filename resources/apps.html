@@ -1,0 +1,83 @@
+---
+layout: null
+permalink: /resources/apps.html
+resource_group: apps
+title: 生命科學手機 App Life Science Mobile Apps
+title_zh: 生命科學手機 App
+title_en: Life Science Mobile Apps
+section_label: MOBILE LEARNING · LAB TOOLS · SCIENCE GAMES
+description: 精選生命科學與醫技系相關的手機 App，包含學習、實驗工具及生物科學遊戲，提供官方 Android 與 iOS 連結。
+intro_zh: 從細胞與蛋白質的立體學習、實驗計算及文獻管理，到生化代謝與傳染病模擬遊戲。依實際用途分類，並提供原始商店下載連結。
+intro_en: Curated mobile apps for life science and medical laboratory science: interactive learning, practical lab tools and science-themed games, with links to official app stores.
+---
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  {% include page-head.html %}
+  <link rel="stylesheet" href="/online-tools.css?v=20261026-4">
+  <link rel="stylesheet" href="/mobile-apps.css?v=20261028-1">
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
+  {% include header.html %}
+  <main class="subpage" id="main">
+    <div class="wrap">
+      {% include resource-page-hero.html %}
+      {% assign learning_apps = site.data.mobile_apps | where: "category", "learning" %}
+      {% assign tool_apps = site.data.mobile_apps | where: "category", "tools" %}
+      {% assign game_apps = site.data.mobile_apps | where: "category", "games" %}
+      <nav class="mobile-apps-jump" aria-label="App 用途分類 / App categories">
+        <a href="#mobile-learning">學習 <span lang="en">Learning</span><small>{{ learning_apps.size }}</small></a>
+        <a href="#mobile-tools">工具 <span lang="en">Tools</span><small>{{ tool_apps.size }}</small></a>
+        <a href="#mobile-games">遊戲 <span lang="en">Games</span><small>{{ game_apps.size }}</small></a>
+      </nav>
+      {% assign groups = "learning,tools,games" | split: "," %}
+      {% for group in groups %}
+        {% assign current_apps = site.data.mobile_apps | where: "category", group %}
+        {% case group %}
+          {% when "learning" %}{% assign group_zh = "學習類 App" %}{% assign group_en = "Learning & Visual Exploration" %}{% assign group_intro = "適合生物學、生物化學、結構生物學及人體解剖學課堂與自主複習。" %}{% assign group_eyebrow = "INTERACTIVE LIFE SCIENCE LEARNING" %}
+          {% when "tools" %}{% assign group_zh = "實驗與研究工具" %}{% assign group_en = "Laboratory & Research Tools" %}{% assign group_intro = "實驗配製、PCR 設計、結構資料庫查詢與研究文獻管理。" %}{% assign group_eyebrow = "PRACTICAL BENCH & RESEARCH APPS" %}
+          {% when "games" %}{% assign group_zh = "生物科學遊戲" %}{% assign group_en = "Science-themed Games" %}{% assign group_intro = "將代謝、分子、演化及疾病模擬轉換為遊戲體驗；適合延伸思考與課堂討論。" %}{% assign group_eyebrow = "PLAY · DISCOVER · DISCUSS" %}
+        {% endcase %}
+        <section class="functional-section mobile-apps-section" id="mobile-{{ group }}" aria-labelledby="mobile-{{ group }}-heading">
+          <div class="catalogue-heading">
+            <p class="eyebrow">{{ group_eyebrow }}</p>
+            <h2 id="mobile-{{ group }}-heading">{{ group_zh }}<span lang="en">{{ group_en }}</span></h2>
+            <p>{{ group_intro }}</p>
+          </div>
+          <div class="mobile-app-grid">
+            {% for item in current_apps %}
+            <article class="mobile-app-card">
+              <div class="mobile-app-card-top">
+                <span class="mobile-app-symbol" aria-hidden="true">{% if group == 'learning' %}◈{% elsif group == 'tools' %}⌘{% else %}✦{% endif %}</span>
+                <span class="mobile-app-provider">{{ item.provider | escape }}</span>
+              </div>
+              <h3>{{ item.name | escape }}<span>{{ item.name_zh | escape }}</span></h3>
+              <p class="mobile-app-topic">{{ item.topic | escape }}</p>
+              <p class="mobile-app-summary">{{ item.summary_zh | escape }}<span lang="en">{{ item.summary_en | escape }}</span></p>
+              <p class="mobile-app-access"><span aria-hidden="true">ⓘ</span> {{ item.access_zh | escape }}</p>
+              <div class="mobile-app-platforms" aria-label="官方商店連結 / Official app stores">
+                {% if item.android_url and item.android_url != "" %}
+                <a href="{{ item.android_url | escape }}" target="_blank" rel="noopener noreferrer external" aria-label="{{ item.name | escape }} — Google Play">Google Play <span aria-hidden="true">↗</span></a>
+                {% endif %}
+                {% if item.ios_url and item.ios_url != "" %}
+                <a href="{{ item.ios_url | escape }}" target="_blank" rel="noopener noreferrer external" aria-label="{{ item.name | escape }} — App Store">App Store <span aria-hidden="true">↗</span></a>
+                {% endif %}
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </section>
+      {% endfor %}
+      <div class="mobile-apps-notice">
+        <h2>使用與教學提醒 <span lang="en">Notes on Use</span></h2>
+        <p>本站僅整理第三方 App 官方商店連結，沒有提供或重新發布安裝檔。免費下載可能包含訂閱、廣告或內購；實際可下載狀態、價格及裝置相容性，以使用者所在區域的商店資訊為準。</p>
+        <p lang="en">Links go to third-party store listings. Availability, prices, subscriptions, in-app purchases and device support vary by platform and region.</p>
+        <p>模擬遊戲中的傳染病、演化與病理機制經過娛樂化簡化，應搭配教科書與科學文獻進行討論；實驗計算結果需核對單位、試劑規格與原廠操作指引。</p>
+        <p lang="en">Game mechanics simplify real biology and should be discussed critically. Verify laboratory calculations, units and reagent specifications before use.</p>
+      </div>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>
