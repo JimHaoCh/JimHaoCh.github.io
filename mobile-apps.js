@@ -1,4 +1,4 @@
-/* Progressive enhancement for the public Life Science Mobile Apps directory.
+/* Progressive enhancement for the public Science Apps for Research, Learning & Play directory.
    No cookies, telemetry, remote APIs or saved user data. */
 (() => {
   "use strict";
