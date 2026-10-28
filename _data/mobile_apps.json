@@ -53,20 +53,6 @@
   },
   {
     "category": "learning",
-    "name": "MicroID Lab Guide",
-    "name_zh": "細菌未知菌鑑定手機網頁 App",
-    "provider": "MicroID Lab Guide / JMBE 2026",
-    "topic": "Unknown Bacteria · Biochemical Identification",
-    "summary_zh": "由 2026 年微生物教學論文介紹的開源 PWA，提供未知菌鑑定流程，可加入手機主畫面。",
-    "summary_en": "Open-source mobile-installable web app for stepwise unknown-bacteria identification in microbiology teaching labs.",
-    "access_zh": "免費 PWA；需要瀏覽器，僅供教學與練習",
-    "android_url": "",
-    "ios_url": "",
-    "web_url": "https://microid.netlify.app/",
-    "featured": true
-  },
-  {
-    "category": "learning",
     "name": "Virtual Slide: Leukocytes",
     "name_zh": "虛擬血液抹片與白血球分類",
     "provider": "Bioferreira",
@@ -162,18 +148,6 @@
     "access_zh": "免費；主要課程以英文為主",
     "android_url": "https://play.google.com/store/apps/details?id=org.khanacademy.android",
     "ios_url": "https://apps.apple.com/tw/app/khan-academy/id469863705"
-  },
-  {
-    "category": "learning",
-    "name": "Labster",
-    "name_zh": "虛擬實驗室模擬",
-    "provider": "Labster Ltd",
-    "topic": "實驗課程 · Virtual Labs",
-    "summary_zh": "操作情境式虛擬實驗，涵蓋生命科學基礎概念與實驗步驟；須具授權帳號。",
-    "summary_en": "Story-based virtual science lab simulations; an active institutional or purchased license is required.",
-    "access_zh": "需學校或個人購買使用權；平板體驗為主",
-    "android_url": "https://play.google.com/store/apps/details?id=com.labster.mobile.standalone",
-    "ios_url": "https://apps.apple.com/tw/app/labster/id1600663267"
   },
   {
     "category": "learning",
@@ -278,31 +252,6 @@
   },
   {
     "category": "tools",
-    "name": "nRF Connect for Mobile",
-    "name_zh": "BLE 生醫感測器連線與 GATT 偵錯",
-    "provider": "Nordic Semiconductor",
-    "topic": "無線感測器 · Bluetooth LE · GATT",
-    "summary_zh": "掃描 BLE、讀寫 GATT 特徵、檢查通知與訊號強度，適合無線生物感測器原型測試。",
-    "summary_en": "Scan Bluetooth LE devices and inspect GATT services, characteristics, notifications and RSSI for prototype debugging.",
-    "access_zh": "免費；需支援 BLE 的感測器裝置",
-    "android_url": "https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp",
-    "ios_url": "https://apps.apple.com/tw/app/nrf-connect-for-mobile/id1054362403",
-    "featured": true
-  },
-  {
-    "category": "tools",
-    "name": "Octara Microfluidic Studio",
-    "name_zh": "微流體流路網路模擬",
-    "provider": "Octara",
-    "topic": "微流體 · Microfluidics · Hydraulic Network",
-    "summary_zh": "組合流道、分歧、混合器與腔室，建立定常單相不可壓縮流路模型，計算各節點壓力及流量。",
-    "summary_en": "Build a steady-state, single-phase hydraulic network from channels, junctions and mixers; calculate pressure and flow distribution.",
-    "access_zh": "免費瀏覽器基礎版；精細流場、混合及液滴需其他模型；手機觸控操作待實測",
-    "web_url": "https://www.octara.org/microfluidics/studio",
-    "featured": true
-  },
-  {
-    "category": "tools",
     "name": "PhotoMetrix PRO",
     "name_zh": "手機比色與化學計量多變量分析",
     "provider": "Gilson Augusto Helfer",
@@ -341,31 +290,6 @@
   },
   {
     "category": "tools",
-    "name": "PStouch",
-    "name_zh": "PalmSens 電化學分析儀手機控制",
-    "provider": "PalmSens BV",
-    "topic": "電化學感測 · Electrochemistry · Potentiostat",
-    "summary_zh": "透過 USB OTG 或藍牙控制相容的 PalmSens／EmStat／Sensit 電化學分析儀，執行量測與峰值分析。",
-    "summary_en": "Android measurement and peak-analysis app for compatible PalmSens, EmStat and Sensit potentiostats via USB OTG or Bluetooth.",
-    "access_zh": "免費；需相容硬體；Google Play 評分偏低，實驗前需驗證連線與量測",
-    "android_url": "https://play.google.com/store/apps/details?id=com.palmsens.pstouch",
-    "featured": true
-  },
-  {
-    "category": "tools",
-    "name": "QIAGEN App",
-    "name_zh": "核酸實驗工作台",
-    "provider": "QIAGEN GmbH",
-    "topic": "核酸操作 · PCR / NGS",
-    "summary_zh": "提供實驗室計時、稀釋與試劑計算、產品資訊及 QIAGEN 實驗流程文件。",
-    "summary_en": "Laboratory timers, practical calculations, product information and QIAGEN protocol references.",
-    "access_zh": "免費；原廠產品流程依適用試劑核對",
-    "android_url": "",
-    "ios_url": "https://apps.apple.com/tw/app/qiagen-app/id392583246",
-    "featured": true
-  },
-  {
-    "category": "tools",
     "name": "Semitree Microfluidics Tools",
     "name_zh": "微流道與液滴計算器合集",
     "provider": "Semitree",
@@ -375,18 +299,6 @@
     "access_zh": "免費網頁工具；須確認幾何假設與單位；手機顯示待實測",
     "web_url": "https://semitree.in/tools/",
     "featured": true
-  },
-  {
-    "category": "tools",
-    "name": "Arduino IoT Cloud Remote",
-    "name_zh": "感測器儀表板與遠端監控",
-    "provider": "Arduino",
-    "topic": "感測器系統 · IoT · Data Dashboard",
-    "summary_zh": "從手機查看 Arduino IoT Cloud 的即時數值、圖表與控制元件，適合研究原型監測。",
-    "summary_en": "Monitor sensor data, charts and controls from Arduino IoT Cloud dashboards on a phone.",
-    "access_zh": "免費；需 Arduino IoT Cloud 專案及支援的硬體／網路設定",
-    "android_url": "https://play.google.com/store/apps/details?id=cc.arduino.cloudiot",
-    "ios_url": "https://apps.apple.com/tw/app/arduino-iot-cloud-remote/id1514358431"
   },
   {
     "category": "tools",
@@ -410,30 +322,6 @@
     "summary_en": "Quick lab calculators for PCR mixes, dilutions, primer Tm and hemocytometer cell counts.",
     "access_zh": "新開發工具；結果須以人工計算與標準流程核對",
     "android_url": "https://play.google.com/store/apps/details?id=com.hkraftlabs.benchmate",
-    "ios_url": ""
-  },
-  {
-    "category": "tools",
-    "name": "BrightLab – Lab Inventory",
-    "name_zh": "研究室庫存與試劑管理",
-    "provider": "Merck KGaA",
-    "topic": "Inventory · Laboratory Management",
-    "summary_zh": "掃描試劑條碼、查詢存量、批號與有效日期，需搭配 BrightLab 管理帳號。",
-    "summary_en": "Merck-backed inventory tool for barcode scanning, reagent location and stock tracking.",
-    "access_zh": "需註冊並確認服務可用區域；部分項目須帳戶設定",
-    "android_url": "https://play.google.com/store/apps/details?id=de.merck.brightlab.googleplay",
-    "ios_url": ""
-  },
-  {
-    "category": "tools",
-    "name": "ChemiSphere",
-    "name_zh": "Merck 生命科學產品數位資料",
-    "provider": "Merck KGaA / EMD Digital",
-    "topic": "Reagent Reference · Product Information",
-    "summary_zh": "掃描 Millipore、Sigma-Aldrich 等試劑與耗材標籤，查詢產品相關文件與資訊。",
-    "summary_en": "Scan supported Merck life-science products and access their digital product information.",
-    "access_zh": "免費；主要服務 Merck 旗下產品",
-    "android_url": "https://play.google.com/store/apps/details?id=com.emddigital.chemisphere",
     "ios_url": ""
   },
   {
@@ -516,42 +404,6 @@
     "access_zh": "免費下載；部分廣告與內購",
     "android_url": "https://play.google.com/store/apps/details?id=com.chrostudios.labhacks",
     "ios_url": "https://apps.apple.com/tw/app/lab-hacks/id1462593060"
-  },
-  {
-    "category": "tools",
-    "name": "LabArchives ELN",
-    "name_zh": "行動電子實驗紀錄本",
-    "provider": "LabArchives",
-    "topic": "實驗紀錄 · Electronic Lab Notebook",
-    "summary_zh": "記錄研究筆記、實驗影像及檔案並同步雲端電子實驗紀錄本。",
-    "summary_en": "Access and update research notes, images and files in a synchronized electronic lab notebook.",
-    "access_zh": "需 LabArchives 服務與帳號；檢查機構授權與資料政策",
-    "android_url": "https://play.google.com/store/apps/details?id=com.labarchives.android_twa_us",
-    "ios_url": ""
-  },
-  {
-    "category": "tools",
-    "name": "LightBlue Bluetooth LE",
-    "name_zh": "藍牙低功耗感測器通訊測試",
-    "provider": "Punch Through Design",
-    "topic": "感測器通訊 · BLE Debugging · Wireless",
-    "summary_zh": "掃描藍牙裝置、模擬虛擬周邊、讀寫 GATT 資料與匯出事件紀錄。",
-    "summary_en": "Discover and debug BLE peripherals, simulate virtual devices, inspect and write GATT characteristics and log events.",
-    "access_zh": "免費；無線連線功能需裝置支援",
-    "android_url": "https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer",
-    "ios_url": "https://apps.apple.com/tw/app/lightblue/id557428110"
-  },
-  {
-    "category": "tools",
-    "name": "NEBtools",
-    "name_zh": "PCR 與限制酶實驗助手",
-    "provider": "New England Biolabs",
-    "topic": "PCR · Restriction Enzymes",
-    "summary_zh": "限制酶查詢、雙酶切條件、NEB 專用引子 Tm 計算及核酸定量換算。",
-    "summary_en": "NEB restriction enzyme lookups, double digests, primer Tm and nucleic-acid calculations.",
-    "access_zh": "免費；Tm 計算適用範圍請依 NEB 說明",
-    "android_url": "https://play.google.com/store/apps/details?id=com.neb.nebtools",
-    "ios_url": "https://apps.apple.com/tw/app/neb-tools/id350346827"
   },
   {
     "category": "tools",
