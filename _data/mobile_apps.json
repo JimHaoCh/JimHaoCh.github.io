@@ -166,5 +166,29 @@
     "access_zh": "免費下載；廣告／內購；偏化學基礎",
     "android_url": "https://play.google.com/store/apps/details?id=com.beewist.chemlab",
     "ios_url": ""
+  },
+  {
+    "category": "learning",
+    "name": "Total Biochem",
+    "name_zh": "生物化學題庫與臨床推理",
+    "provider": "Sinter Labs",
+    "topic": "生化代謝 · Enzyme Kinetics",
+    "summary_zh": "包含代謝路徑、酵素動力學、先天代謝異常等練習與模擬測驗，另有臨床情境解謎。",
+    "summary_en": "Biochemistry lessons, practice questions and mock exams, plus clinical case puzzles about metabolic disorders.",
+    "access_zh": "免費試用；完整內容一次性內購",
+    "android_url": "https://play.google.com/store/apps/details?id=com.sinterlabs.totalbiochem",
+    "ios_url": "https://apps.apple.com/tw/app/total-biochem/id6809552525"
+  },
+  {
+    "category": "games",
+    "name": "MetaboCraft",
+    "name_zh": "糖解與 TCA 代謝路徑拼圖",
+    "provider": "Standouda / Groupe Curious",
+    "topic": "Glycolysis · TCA Cycle",
+    "summary_zh": "辨認代謝中間物的結構，將酵素及分子放回糖解作用與檸檬酸循環的正確步驟。",
+    "summary_en": "Match metabolites, enzymes and reactions in glycolysis and the Krebs cycle through quizzes and pathway construction.",
+    "access_zh": "免費；主題集中於糖解作用與 TCA 循環",
+    "android_url": "https://play.google.com/store/apps/details?id=com.groupe_curious.metabocraft",
+    "ios_url": "https://apps.apple.com/us/app/metabocraft/id1580358854"
   }
 ]
