@@ -187,18 +187,6 @@
   },
   {
     "category": "engineering",
-    "name": "Elveflow Microfluidic Calculator",
-    "name_zh": "微流體流阻／流速／剪應力計算",
-    "provider": "Elveflow",
-    "topic": "微流體 · Microfluidics · Pressure Drop · Shear Stress",
-    "summary_zh": "依流體黏度、密度、管路與晶片流道幾何，估算流量、壓降、流阻及壁面剪應力。",
-    "summary_en": "Estimate flow, pressure drop, hydraulic resistance and wall shear stress from fluid properties, tubing and chip channel geometry.",
-    "access_zh": "免費網頁工具；結果為初步工程估算，需依實測校正",
-    "web_url": "https://elveflow.com/microfluidic-calculator/",
-    "featured": true
-  },
-  {
-    "category": "engineering",
     "name": "EveryCircuit",
     "name_zh": "生物感測讀出電路模擬",
     "provider": "MuseMaze",
@@ -208,31 +196,7 @@
     "access_zh": "免費可自建最多 5 個元件的電路；大型電路需內購",
     "android_url": "https://play.google.com/store/apps/details?id=com.everycircuit.free",
     "ios_url": "https://apps.apple.com/tw/app/everycircuit/id797157761",
-    "web_url": "https://everycircuit.com/",
     "featured": true
-  },
-  {
-    "category": "engineering",
-    "name": "Semitree Microfluidics Tools",
-    "name_zh": "微流道與液滴計算器合集",
-    "provider": "Semitree",
-    "topic": "微流體 · Microfluidics · Droplet · Diffusion",
-    "summary_zh": "8 個微流體計算器，含 Reynolds number、流阻、擴散時間、單細胞液滴 Poisson loading 與注射幫浦設定。",
-    "summary_en": "Eight browser calculators for Reynolds number, flow resistance, diffusion time, Poisson droplet loading and syringe-pump settings.",
-    "access_zh": "免費網頁工具；須確認幾何假設與單位；手機顯示待實測",
-    "web_url": "https://semitree.in/tools/",
-    "featured": true
-  },
-  {
-    "category": "engineering",
-    "name": "ConductScience Microfluidic Flow Planner",
-    "name_zh": "矩形微流道壓降與泵浦估算",
-    "provider": "ConductScience",
-    "topic": "微流體 · Microfluidics · Flow Resistance",
-    "summary_zh": "估算矩形流道或圓管的流阻、壓降及雷諾數，並提供泵浦類型與流量敏感度參考。",
-    "summary_en": "Browser-based planning calculator for rectangular microchannels and circular tubes, including resistance, pressure drop and Reynolds number.",
-    "access_zh": "免費網頁工具；初步規劃用途；需查核模型與實際設備耐壓",
-    "web_url": "https://conductscience.com/tools/microfluidic-pressure-drop-calculator"
   },
   {
     "category": "engineering",
@@ -502,7 +466,6 @@
     "access_zh": "免費；藝術化細胞場景，需搭配課程解說",
     "android_url": "https://play.google.com/store/apps/details?id=com.BeataScienceArt.Microscopya",
     "ios_url": "https://apps.apple.com/tw/app/microscopya/id1601301566",
-    "web_url": "https://microscopya.com/play/",
     "featured": true
   },
   {
