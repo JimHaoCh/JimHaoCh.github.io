@@ -22,8 +22,8 @@ description: 醫事檢驗師國考與歷屆試題、專業圖譜、顯微影像�
         <h1>線上資源<span lang="en">Online Resources</span></h1>
       </div>
       <div class="resource-hub-intro">
-        <p>依學習與研究目的選擇資源：醫事檢驗師國考、顯微影像與血球形態、臨床微生物、分子檢驗、微流體工程及研究簡報。本站工具、外部專業資源與下載素材均清楚標示來源。</p>
-        <span lang="en">Choose resources by purpose: MLS national exams, microscopy and hematology, microbiology, molecular testing, engineering or research presentation assets. Official references, lab-developed applications and downloads are labeled by origin.</span>
+        <p>依學習與研究目的選擇資源：醫事檢驗師國考、顯微影像與血球形態、臨床微生物、分子檢驗、微流體工程、研究簡報及生命科學手機 App。本站工具、外部專業資源與下載素材均清楚標示來源。</p>
+        <span lang="en">Choose resources by purpose: MLS national exams, microscopy and hematology, microbiology, molecular testing, engineering, research presentation assets or mobile science apps. Official references, lab-developed applications and downloads are labeled by origin.</span>
       </div>
       <section class="resource-hub-grid" aria-label="線上資源功能分類 / Resource categories">
         {% for category in site.data.resource_categories %}
@@ -36,6 +36,7 @@ description: 醫事檢驗師國考與歷屆試題、專業圖譜、顯微影像�
         {% if category.id == 'engineering' %}{% assign number_items = number_items | plus: site.data.lab_software.size | plus: site.data.engineering_resources.size | plus: 1 %}{% endif %}
         {% if category.id == 'exam' %}{% assign number_items = number_items | plus: 2 %}{% endif %}
         {% if category.id == 'templates' %}{% assign number_items = site.data.download_resources.size %}{% endif %}
+        {% if category.id == 'apps' %}{% assign number_items = site.data.mobile_apps.size %}{% endif %}
         <a class="resource-hub-card" href="{{ category.href | escape }}" aria-label="進入 {{ category.name_zh | escape }}，{{ number_items }} 項資源">
           <div class="resource-hub-top">
             <span class="resource-hub-glyph" aria-hidden="true">{{ category.icon }}</span>
