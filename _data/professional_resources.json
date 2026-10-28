@@ -132,5 +132,18 @@
     "url": "https://www.who.int/publications/i/item/9789241548274",
     "notice_zh": "WHO 內容仍受著作權保護；本站僅連結官方資源。",
     "notice_en": "WHO content is copyrighted; external link only."
+  },
+  {
+    "slug": "microscopya-browser",
+    "function_group": "exam",
+    "name": "Microscopya — Browser Game",
+    "title_zh": "細胞內部互動解謎（網頁版）",
+    "title_en": "Cell Biology Interactive Browser Game",
+    "description_zh": "以細胞器、微管與分子機制為題材的互動解謎網頁版，適合細胞生物學與分子生物學課前討論；另有 Android／iOS 版。",
+    "description_en": "Browser-based cell biology puzzle adventure covering organelles, microtubules and molecular mechanisms; Android and iOS apps are listed separately.",
+    "provider": "Beata Science Art",
+    "url": "https://microscopya.com/play/",
+    "notice_zh": "屬科學教育遊戲；應搭配課程內容辨別模型與真實機制，遊戲素材著作權歸原開發者。",
+    "notice_en": "Educational game; mechanics simplify biology. Content belongs to its publisher."
   }
 ]
