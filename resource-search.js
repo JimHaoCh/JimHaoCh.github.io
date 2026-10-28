@@ -47,6 +47,8 @@
   };
   const stopWords = ["我想要", "我想", "我要", "幫我", "有沒有", "有什麼", "可以", "如何", "怎麼", "請問", "哪裡", "尋找", "請幫我", "推薦", "我要用", "想找", "想要找", "一個", "工具", "軟體", "網站", "我", "找", "用", "算"];
   const aliasGroups = GROUPS.map(terms => terms.map(norm));
+  // Short scientific abbreviations must match whole tokens: AST must not match BLAST, MIC must not match microfluidics.
+  const hasTerm = (text,term) => /^[a-z0-9]{2,4}$/.test(term) ? text.split(/[^a-z0-9]+/).includes(term) : text.includes(term);
   const keyParts = item => ({
     title: norm(item.title), subtitle: norm(item.subtitle), tags: norm(item.tags),
     description: norm(item.description) + " " + norm(item.description_en),
@@ -82,26 +84,34 @@
       if(fields.tags.includes(clean)) score+=45;
       if(fields.description.includes(clean)) score+=28;
     }
-    const matchedGroups=aliasGroups.filter(group => group.some(term => term.length>=2 && (q.includes(term) || (term.includes(q) && q.length>=3))));
+    const matchedGroups=aliasGroups.filter(group => group.some(term => term.length>=2 && (hasTerm(q,term) || (term.includes(q) && q.length>=3))));
     let hits=0;
     for (const group of matchedGroups) {
       let weight=0;
       for (const term of group) {
         if(term.length<2) continue;
-        if(fields.title.includes(term)) weight=Math.max(weight,75);
-        if(fields.subtitle.includes(term) || fields.tags.includes(term)) weight=Math.max(weight,60);
-        if(fields.description.includes(term)) weight=Math.max(weight,28);
+        if(hasTerm(fields.title,term)) weight=Math.max(weight,75);
+        if(hasTerm(fields.subtitle,term) || hasTerm(fields.tags,term)) weight=Math.max(weight,60);
+        if(hasTerm(fields.description,term)) weight=Math.max(weight,28);
       }
       if(weight) {score+=weight;hits++;}
+      const requested=group.filter(term=>term.length>=2 && hasTerm(q,term));
+      let specific=0;
+      for(const term of requested){
+        if(hasTerm(fields.title,term))specific=Math.max(specific,34);
+        else if(hasTerm(fields.subtitle,term) || hasTerm(fields.tags,term))specific=Math.max(specific,27);
+        else if(hasTerm(fields.description,term))specific=Math.max(specific,10);
+      }
+      score+=specific;
     }
     if(matchedGroups.length>1) {
       score+=hits===matchedGroups.length ? 65 : -22*(matchedGroups.length-hits);
     }
     const englishTerms=(q.match(/[a-z][a-z0-9-]{2,}/g)||[]).filter(t=>!["the","for","and","app","how","what","tool","tools","use","find","with"].includes(t));
     for(const term of englishTerms) {
-      if(fields.title.includes(term))score+=55;
-      else if(fields.subtitle.includes(term)||fields.tags.includes(term))score+=36;
-      else if(fields.description.includes(term))score+=14;
+      if(hasTerm(fields.title,term))score+=55;
+      else if(hasTerm(fields.subtitle,term)||hasTerm(fields.tags,term))score+=36;
+      else if(hasTerm(fields.description,term))score+=14;
       else if(fields.title.split(/[^a-z0-9]+/).some(word=>editDistanceOne(term,word)))score+=20;
     }
     const hanChunks=(clean.match(/[\u3400-\u9fff]{2,}/g)||[]);
