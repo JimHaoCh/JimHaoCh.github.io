@@ -67,11 +67,11 @@
   },
   {
     "id": "apps",
-    "name_zh": "生命科學手機 App",
-    "name_en": "Life Science Mobile Apps",
+    "name_zh": "科學研究學遊App",
+    "name_en": "Science Apps for Research, Learning & Play",
     "href": "/resources/apps.html",
     "icon": "▣",
-    "eyebrow": "MOBILE LIFE SCIENCE & ENGINEERING APPS",
+    "eyebrow": "SCIENCE · RESEARCH · LEARNING · PLAY",
     "intro_zh": "依生命科學學習、工程與微流體、化學分析、感測量測、實驗研究工具及科學遊戲分區，收錄可獨立使用的手機 App 與行動網頁工具。",
     "intro_en": "Standalone mobile apps and web tools organized into learning, engineering, chemistry, sensing, lab utilities and science games.",
     "sample_zh": "生命科學 · 工程／微流體 · 化學 · 感測 · 實驗工具 · 遊戲"
