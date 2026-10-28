@@ -1,0 +1,48 @@
+---
+layout: null
+permalink: /resources/search-index.json
+---
+[
+{% for item in site.data.online_tools %}
+{"id":"tool-{{ forloop.index }}","category":{{ item.function_group | jsonify }},"type":"web","title":{{ item.name | jsonify }},"subtitle":{{ item.title | jsonify }},"description":{{ item.description | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.category | append: " · " | append: item.subtitle | jsonify }},"provider":{{ item.provider | default: "Bioflumen & Xensor Lab" | jsonify }},"url":{{ item.url | jsonify }},"path":{{ item.url | jsonify }}},
+{% endfor %}
+{% for item in site.data.professional_resources %}
+{"id":"ref-{{ forloop.index }}","category":{{ item.function_group | jsonify }},"type":"reference","title":{{ item.name | jsonify }},"subtitle":{{ item.title_zh | jsonify }},"description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.title_en | jsonify }},"provider":{{ item.provider | jsonify }},"url":{{ item.url | jsonify }},"path":{{ item.url | jsonify }}},
+{% endfor %}
+{% for item in site.data.microbiology_resources %}
+{% assign search_type = "reference" %}{% if item.mode == "web" %}{% assign search_type = "web" %}{% elsif item.mode == "desktop" %}{% assign search_type = "software" %}{% endif %}
+{"id":"micro-{{ forloop.index }}","category":"diagnostics","type":{{ search_type | jsonify }},"title":{{ item.name | jsonify }},"subtitle":{{ item.kind_zh | jsonify }},"description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.kind_en | jsonify }},"provider":{{ item.provider | jsonify }},"url":{{ item.url | jsonify }},"path":{{ item.url | jsonify }}},
+{% endfor %}
+{% for item in site.data.molecular_design_tools %}
+{% assign search_type = "reference" %}{% if item.kind == "web" or item.kind == "analysis" %}{% assign search_type = "web" %}{% elsif item.kind == "code" %}{% assign search_type = "software" %}{% endif %}
+{"id":"mol-{{ forloop.index }}","category":"molecular","type":{{ search_type | jsonify }},"title":{{ item.name | jsonify }},"subtitle":{{ item.purpose_zh | jsonify }},"description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.purpose_en | append: " · " | append: item.method | jsonify }},"provider":{{ item.provider | jsonify }},"url":{{ item.url | jsonify }},"path":{{ item.url | jsonify }}},
+{% endfor %}
+{% for item in site.data.engineering_resources %}
+{% assign search_type = "software" %}{% if item.mode_zh contains "瀏覽器" %}{% assign search_type = "web" %}{% endif %}
+{"id":"eng-{{ forloop.index }}","category":"engineering","type":{{ search_type | jsonify }},"title":{{ item.name | jsonify }},"subtitle":{{ item.mode_zh | jsonify }},"description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.group | append: " · " | append: item.mode_en | jsonify }},"provider":{{ item.provider | jsonify }},"url":{{ item.url | jsonify }},"path":{{ item.url | jsonify }}},
+{% endfor %}
+{% for item in site.data.external_software %}
+{"id":"software-{{ forloop.index }}","category":{{ item.function_group | jsonify }},"type":"software","title":{{ item.name | jsonify }},"subtitle":{{ item.type_zh | jsonify }},"description":{{ item.summary_zh | jsonify }},"description_en":{{ item.summary_en | jsonify }},"tags":{{ item.platform_zh | append: " · " | append: item.type_en | jsonify }},"provider":{{ item.provider | jsonify }},"url":{{ item.url | jsonify }},"path":{{ item.url | jsonify }}},
+{% endfor %}
+{% for item in site.data.mobile_apps %}
+{% assign app_path = "/resources/apps.html#mobile-" | append: item.category %}
+{% assign app_primary_url = item.android_url | default: item.ios_url %}
+{"id":"app-{{ forloop.index }}","category":"apps","type":"app","title":{{ item.name | jsonify }},"subtitle":{{ item.name_zh | jsonify }},"description":{{ item.summary_zh | jsonify }},"description_en":{{ item.summary_en | jsonify }},"tags":{{ item.topic | jsonify }},"provider":{{ item.provider | jsonify }},"url":{{ app_primary_url | jsonify }},"path":{{ app_path | jsonify }},"android_url":{{ item.android_url | jsonify }},"ios_url":{{ item.ios_url | jsonify }}},
+{% endfor %}
+{% for item in site.data.download_resources %}
+{% assign download_url = item.file | default: "/resources/templates.html" %}
+{"id":"download-{{ forloop.index }}","category":"templates","type":"download","title":{{ item.title_zh | jsonify }},"subtitle":{{ item.title_en | jsonify }},"description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.kind_zh | append: " · " | append: item.kind_en | append: " · " | append: item.meta | jsonify }},"provider":"Bioflumen & Xensor Lab","url":{{ download_url | jsonify }},"path":"/resources/templates.html"},
+{% endfor %}
+{% for item in site.data.lab_software %}
+{% assign software_url = item.file | default: "/resources/engineering.html#lab-software-heading" %}
+{"id":"lab-software-{{ forloop.index }}","category":"engineering","type":"download","title":{{ item.name | jsonify }},"subtitle":"實驗室儀器控制程式","description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.features_zh | jsonify }},"provider":"Bioflumen & Xensor Lab","url":{{ software_url | jsonify }},"path":"/resources/engineering.html#lab-software-heading"},
+{% endfor %}
+{% for item in site.data.medical_lab_credential_links %}
+{% for link in item.links %}
+{"id":"credential-{{ forloop.parentloop.index }}-{{ forloop.index }}","category":"exam","type":"reference","title":{{ item.name | jsonify }},"subtitle":{{ link.zh | jsonify }},"description":{{ item.summary | jsonify }},"description_en":{{ item.summary_en | jsonify }},"tags":{{ item.name_en | append: " · " | append: item.tag | append: " · " | append: link.en | jsonify }},"provider":{{ item.name | jsonify }},"url":{{ link.url | jsonify }},"path":"/resources/exam.html#exam-credentials-heading"},
+{% endfor %}
+{% endfor %}
+{"id":"inhouse-microfluidic-calculator","category":"engineering","type":"web","title":"Web-Microfluidic Calculator","subtitle":"矩形微流道參數計算器","description":"本站瀏覽器端矩形微流道計算器，可估算流量、Reynolds number、壓降、流阻、停留時間與擴散尺度。","description_en":"Browser-local rectangular microchannel calculator for pressure drop, hydraulic resistance, Reynolds number, residence time and diffusion.","tags":"微流體 · microfluidics · 壓差 · 水力阻力 · flow resistance · pressure drop","provider":"Bioflumen & Xensor Lab","url":"/resources/microfluidic-calculator.html","path":"/resources/microfluidic-calculator.html"},
+{"id":"exam-archive","category":"exam","type":"reference","title":"醫事檢驗師國考歷屆試題","subtitle":"年度／考次／科目查詢與官方答案","description":"依年度、考次與科目查找臺灣醫事檢驗師國家考試歷屆試題、標準答案和更正資訊。","description_en":"Find Taiwan MLS licensing examination past papers, official answer keys and corrections by year and subject.","tags":"醫檢師 · 國考 · 考古題 · 標準答案 · medical laboratory scientist · moex","provider":"Bioflumen & Xensor Lab","url":"/resources/exam.html#exam-index","path":"/resources/exam.html#exam-index"},
+null
+]
