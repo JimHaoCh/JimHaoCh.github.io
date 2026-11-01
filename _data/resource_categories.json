@@ -11,6 +11,17 @@
     "sample_zh": "考選部 · 歷屆試題 · 標準答案 · 原創測驗"
   },
   {
+    "id": "career",
+    "name_zh": "專科職涯與進階學習",
+    "name_en": "Specialized Careers & Advanced Learning",
+    "href": "/resources/careers.html",
+    "icon": "◈",
+    "eyebrow": "SPECIALIZED CAREERS & ADVANCED LEARNING",
+    "intro_zh": "細胞醫檢師、胚胎師、數位病理、輸血醫學、流式細胞與臨床遺傳的職涯及進修入口。",
+    "intro_en": "Career pathways, credentials and learning materials in cytotechnology, embryology, pathology, transfusion, cytometry and clinical genetics.",
+    "sample_zh": "細胞醫檢 · 胚胎師 · 數位病理 · 輸血醫學 · 流式細胞 · 遺傳"
+  },
+  {
     "id": "imaging",
     "name_zh": "顯微與影像分析",
     "name_en": "Microscopy & Image Analysis",
