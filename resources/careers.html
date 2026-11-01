@@ -1,0 +1,84 @@
+---
+layout: null
+permalink: /resources/careers.html
+resource_group: career
+title: 專科職涯與進階學習 Specialized Careers & Advanced Learning
+title_zh: 專科職涯與進階學習
+title_en: Specialized Careers & Advanced Learning
+section_label: SPECIALIZED CAREERS & ADVANCED LEARNING
+description: 醫技系進階專業職涯與學習入口，涵蓋細胞醫檢師、胚胎師、數位病理、血庫輸血、流式細胞與臨床遺傳，附官方訓練管道與學習網站。
+intro_zh: 以醫技專業知識為起點，認識不同專科工作、臺灣培訓途徑、國際認證與自主學習材料。依領域選擇官方入口，核對現行資格並開始學習。
+intro_en: Explore specialist pathways beyond foundational medical laboratory training. Find Taiwan training information, international credentials, public learning sites and case-based resources.
+---
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  {% include page-head.html %}
+  <link rel="stylesheet" href="/online-tools.css?v=20261101-career1">
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
+  {% include header.html %}
+  <main class="subpage" id="main">
+    <div class="wrap">
+      {% include resource-page-hero.html %}
+      <section class="functional-section career-overview" aria-labelledby="career-overview-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">CAREER PATHWAYS · WHERE TO START</p>
+          <h2 id="career-overview-heading">從專業認識到實際培訓<span lang="en">From career exploration to professional training</span></h2>
+          <p>每個領域整理工作主題、入門順序與官方學習資源。職業名稱、訓練資格、國際證書和法定執業資格各有規範，請以對應主管機關現行公告為準。</p>
+          <p lang="en" class="career-overview-en">Explore the work, follow a suggested learning pathway and review original sources. Check statutory eligibility and institution-specific training requirements separately from international professional credentials.</p>
+        </div>
+        <div class="career-feature-grid">
+          <article class="career-feature">
+            <span class="career-feature-kicker">FOCUS 01 · CYTOTECHNOLOGY</span>
+            <h3>細胞醫檢師<span lang="en">Cytotechnologist</span></h3>
+            <p>從細胞形態判讀與篩檢著手，再查詢台灣病理學會當年度甄訓公告。國際 IAC 認證另有工作年資與考試規定。</p>
+            <p lang="en">Begin with cytomorphology and screening, then review current Taiwan training announcements. IAC certification has separate eligibility requirements.</p>
+            <a href="#career-cytology">查看學習路徑 <small lang="en">Explore cytotechnology</small> ↗</a>
+          </article>
+          <article class="career-feature">
+            <span class="career-feature-kicker">FOCUS 02 · CLINICAL EMBRYOLOGY</span>
+            <h3>胚胎師<span lang="en">Clinical Embryologist</span></h3>
+            <p>從生殖細胞、胚胎培養及精液檢驗認識人工生殖實驗室，再查詢國健署認定的技術員訓練機構及現行法規。</p>
+            <p lang="en">Study gametes and embryo culture, then review HPA-recognized training centres and Taiwanese ART laboratory rules.</p>
+            <a href="#career-embryology">查看學習路徑 <small lang="en">Explore embryology</small> ↗</a>
+          </article>
+        </div>
+      </section>
+      <nav class="career-jump-nav" aria-label="專科職涯類別 / Career specializations">
+        {% for section in site.data.career_sections %}
+          <a href="#career-{{ section.id | escape }}"><strong>{{ section.name_zh | escape }}</strong><small lang="en">{{ section.name_en | escape }}</small></a>
+        {% endfor %}
+      </nav>
+      {% assign career_references = site.data.professional_resources | where: "function_group", "career" %}
+      {% for section in site.data.career_sections %}
+        {% assign section_references = career_references | where: "career_group", section.id %}
+        <section class="functional-section career-section" id="career-{{ section.id | escape }}" aria-labelledby="career-heading-{{ section.id | escape }}">
+          <div class="catalogue-heading">
+            <p class="eyebrow">SPECIALIST LEARNING PATH · {{ forloop.index | prepend: "0" | slice: -2, 2 }}</p>
+            <h2 id="career-heading-{{ section.id | escape }}">{{ section.name_zh | escape }}<span lang="en">{{ section.name_en | escape }}</span></h2>
+            <p>{{ section.intro_zh | escape }}</p>
+            <p class="career-section-en" lang="en">{{ section.intro_en | escape }}</p>
+          </div>
+          <div class="career-pathway">
+            <strong>建議學習順序 <small lang="en">Suggested learning sequence</small></strong>
+            <p>{{ section.path_zh | escape }}<span lang="en">{{ section.path_en | escape }}</span></p>
+            {% if section.note_zh %}<p class="career-pathway-note">{{ section.note_zh | escape }}</p>{% endif %}
+          </div>
+          <div class="reference-grid career-reference-grid" aria-label="{{ section.name_zh | escape }} 學習與官方資源">
+            {% for item in section_references %}
+              {% include resource-career-card.html item=item %}
+            {% endfor %}
+          </div>
+        </section>
+      {% endfor %}
+      <p class="tools-note career-disclaimer">
+        資源最後核對：2026-11-01。本站僅提供官方或原出版者入口及教育性摘要；外部網站的課程費用、訓練名額與資格可能更新。國際學會證書不自動取得臺灣執業資格。任何臨床資訊、影像或案例使用都應遵守個資及著作權規範。
+        <span lang="en">Links checked: 1 Nov 2026. Verify current access, training places, regulations and fees with each provider. International certification does not automatically confer Taiwanese authorization to practise. Respect patient privacy and publisher copyright.</span>
+      </p>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>
