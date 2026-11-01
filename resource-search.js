@@ -28,10 +28,16 @@
     ["國考", "考古題", "歷屆試題", "moex", "national exam", "licensing", "醫檢師"],
     ["3d cad", "cad", "機構設計", "微影", "製程", "光罩", "gds", "cnc", "mold"],
     ["遊戲", "game", "趣味", "解謎", "學遊"],
-    ["細胞", "cell", "cell biology", "細胞器", "organelle"]
+    ["細胞", "cell", "cell biology", "細胞器", "organelle"],
+    ["細胞醫檢師", "細胞病理", "細胞診斷", "細胞學", "細胞抹片", "cytology", "cytopathology", "cytotechnologist", "pap smear"],
+    ["胚胎師", "人工生殖", "胚胎培養", "試管嬰兒", "臨床胚胎", "embryology", "embryologist", "fertility", "ivf", "assisted reproduction"],
+    ["數位病理", "組織病理", "組織學", "虛擬玻片", "digital pathology", "histology", "pathology", "whole slide"],
+    ["輸血醫學", "血庫", "交叉試驗", "transfusion", "blood bank", "immunohematology"],
+    ["流式細胞", "流式細胞儀", "免疫表型", "flow cytometry", "facs", "immunophenotyping"],
+    ["臨床遺傳", "基因變異", "變異判讀", "clingen", "clinvar", "variant interpretation"]
   ];
   const CATEGORIES = {
-    exam: "國考與專業學習", imaging: "顯微與影像分析",
+    exam: "國考與專業學習", career: "專科職涯與進階學習", imaging: "顯微與影像分析",
     diagnostics: "微生物與檢驗判讀", molecular: "分子檢驗與生物資訊",
     engineering: "微流體與工程設計", templates: "簡報與海報",
     apps: "科學研究學遊App"
