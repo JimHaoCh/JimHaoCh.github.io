@@ -1,0 +1,58 @@
+[
+  {
+    "id": "cytology",
+    "name_zh": "細胞醫檢師與細胞病理學",
+    "name_en": "Cytotechnology & Cytopathology",
+    "intro_zh": "探索細胞形態篩檢、子宮頸抹片及非婦科細胞學工作，從臺灣培訓公告延伸到免費圖譜與國際認證。",
+    "intro_en": "Explore diagnostic cytology, specimen morphology, Taiwan training announcements, free atlases and international credentials.",
+    "path_zh": "認識工作內容 → 查詢台灣病理學會當年度甄訓公告 → 依資格參加培訓與能力評核 → 累積閱片經驗及持續進修。",
+    "path_en": "Understand the role → review Taiwan Society of Pathology announcements → complete eligible training and assessment → build professional experience and continue education.",
+    "note_zh": "培訓及閱片資格依台灣病理學會當年度規定；IAC 證書另有工作年資及報考條件。"
+  },
+  {
+    "id": "embryology",
+    "name_zh": "胚胎師與人工生殖實驗室",
+    "name_en": "Clinical Embryology & ART Laboratories",
+    "intro_zh": "從精液分析與受精原理，延伸到卵子／胚胎操作、培養、分級及冷凍保存；先了解臺灣訓練機構及相關法規。",
+    "intro_en": "Learn andrology, gamete and embryo handling, culture, grading and cryopreservation, beginning with Taiwanese training institutions and regulations.",
+    "path_zh": "確認生物相關學歷及法規資格 → 查詢國健署認定訓練機構 → 完成符合規定的實務訓練與紀錄 → 持續進修與評估國際認證。",
+    "path_en": "Check eligible degrees and rules → identify HPA-recognized centres → complete required practical training and logs → continue professional learning and evaluate international certification.",
+    "note_zh": "臺灣《人工生殖機構許可辦法》第 4 條：人工生殖機構專任技術員需符合至少一年認定機構實務訓練，訓練期間至少二十人次體外受精操作等規定。ESHRE 為另一套國際認證制度。"
+  },
+  {
+    "id": "pathology",
+    "name_zh": "數位病理與組織病理",
+    "name_en": "Digital Pathology & Histology",
+    "intro_zh": "運用數位全玻片、虛擬顯微鏡與臨床案例，理解正常組織、病變形態及病理檢驗流程。",
+    "intro_en": "Practice with whole-slide images, virtual microscopes and clinicopathological cases.",
+    "path_zh": "先練習正常組織辨識 → 比對病理切片與臨床案例 → 學習玻片掃描與數位影像品質。",
+    "path_en": "Start with normal histology → compare pathological slides and cases → learn digital-slide quality considerations."
+  },
+  {
+    "id": "transfusion",
+    "name_zh": "輸血醫學與血庫",
+    "name_en": "Transfusion Medicine & Blood Banking",
+    "intro_zh": "針對血型抗原、抗體篩檢、交叉試驗、血液製品及輸血反應建立臨床學習路徑。",
+    "intro_en": "Study blood groups, antibody screens, crossmatching, components and transfusion reactions.",
+    "path_zh": "複習 ABO／Rh → 學習交叉試驗和不規則抗體 → 判讀輸血反應案例。",
+    "path_en": "Review ABO/Rh → explore crossmatching and antibodies → study transfusion reaction cases."
+  },
+  {
+    "id": "flow",
+    "name_zh": "流式細胞與免疫表型",
+    "name_en": "Flow Cytometry & Immunophenotyping",
+    "intro_zh": "認識流式細胞儀、補償、門控及臨床免疫表型，適合血液與免疫檢驗延伸學習。",
+    "intro_en": "Explore cytometer fundamentals, compensation, gating and clinical immunophenotyping.",
+    "path_zh": "儀器原理 → 螢光與補償 → Gating／圖譜解讀 → 臨床免疫表型案例。",
+    "path_en": "Instrument basics → fluorescence and compensation → gating → clinical applications."
+  },
+  {
+    "id": "genetics",
+    "name_zh": "臨床遺傳與變異判讀",
+    "name_en": "Clinical Genetics & Variant Interpretation",
+    "intro_zh": "整合 ClinGen 教學及 ClinVar 資料庫，練習基因疾病關聯、變異證據評讀與品質判斷。",
+    "intro_en": "Use ClinGen educational materials and ClinVar to learn evidence-based clinical genomic interpretation.",
+    "path_zh": "先學習變異標註及 HGVS → 檢索 ClinVar → 檢查證據、分類與衝突 → 理解報告限制。",
+    "path_en": "Start with HGVS and annotation → search ClinVar → evaluate evidence and conflicts → recognize reporting limitations."
+  }
+]
