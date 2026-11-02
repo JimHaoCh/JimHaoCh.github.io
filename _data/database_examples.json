@@ -1,0 +1,58 @@
+[
+  {
+    "id": "flow-fcs",
+    "group": "flow",
+    "title_zh": "Flow｜公開 FCS 檔與控制組",
+    "title_en": "Public FCS files and unstained controls",
+    "provider": "Zenodo · Cap1 Flow Cytometry Data (2026)",
+    "url": "https://zenodo.org/records/19058466",
+    "formats": "FCS",
+    "access_zh": "公開下載；個別檔案",
+    "access_en": "Public individual FCS downloads",
+    "task_zh": "下載一個 unstained control（約 0.7 MB）及一個處理組，觀察 FSC/SSC 散點圖和螢光強度分布。",
+    "task_en": "Download an unstained-control FCS and a treated sample; compare FSC/SSC and fluorescence histograms.",
+    "note_zh": "此研究樣本用途與臨床淋巴球分型不同；開始分析前先讀原始實驗說明。"
+  },
+  {
+    "id": "image-idr",
+    "group": "imaging",
+    "title_zh": "顯微影像｜HeLa 染色體凝縮螢光資料",
+    "title_en": "HeLa chromosome-condensation microscopy",
+    "provider": "IDR · idr0002",
+    "url": "https://idr.openmicroscopy.org/study/idr0002/",
+    "formats": "Microscopy / annotation CSV",
+    "access_zh": "公開瀏覽及下載",
+    "access_en": "Public browse and downloads",
+    "task_zh": "從 idr0002 選取少量影像和註記，練習細胞核分割、面積與形態比較。",
+    "task_en": "Select image subsets and annotations; compare nuclear segmentation and morphology.",
+    "note_zh": "全資料集容量可能很大；先使用單張影像及原站提供的影像選擇功能。"
+  },
+  {
+    "id": "amr-ast",
+    "group": "micro",
+    "title_zh": "AST｜細菌表型敏感性資料匯出",
+    "title_en": "Isolate-level phenotypic MIC and disk diffusion",
+    "provider": "NCBI · Pathogen Detection AST Browser",
+    "url": "https://www.ncbi.nlm.nih.gov/pathogens/ast/",
+    "formats": "CSV / TSV",
+    "access_zh": "公開匯出表格",
+    "access_en": "Public tabular export",
+    "task_zh": "依菌種與藥物篩選，匯出 MIC／抑菌圈資料，練習欄位整理與不等號量測值處理。",
+    "task_en": "Filter species and drug, export MIC/zone results, and inspect inequality signs and missing values.",
+    "note_zh": "提交者資料未經逐筆方法驗證，不適合直接推估地區抗藥率。"
+  },
+  {
+    "id": "ptbxl-ecg",
+    "group": "signals",
+    "title_zh": "ECG｜PTB-XL 12 導程心電圖",
+    "title_en": "PTB-XL 12-lead 10-second ECG recordings",
+    "provider": "PhysioNet · PTB-XL v1.0.3",
+    "url": "https://physionet.org/content/ptb-xl/1.0.3/",
+    "formats": "WFDB / CSV",
+    "access_zh": "公開資料・CC BY 4.0",
+    "access_en": "Public dataset; CC BY 4.0",
+    "task_zh": "先下載 metadata CSV 及單筆 records100 波形，繪製 12 導程訊號並理解病人分組切分。",
+    "task_en": "Start with the metadata CSV and one records100 tracing; plot 12 leads and learn patient-wise splitting.",
+    "note_zh": "資料集未壓縮約 3 GB，可先下載小量資料，避免整包下載。"
+  }
+]
