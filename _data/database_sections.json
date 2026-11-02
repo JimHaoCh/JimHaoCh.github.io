@@ -29,10 +29,10 @@
   },
   {
     "id": "proteins",
-    "name_zh": "蛋白質體與分子結構",
-    "name_en": "Proteomics & Structures",
-    "intro_zh": "質譜原始檔、蛋白序列、功能註解和實驗解析三維結構。",
-    "intro_en": "Mass-spectrometry studies, protein sequences, functional annotations and experimental structures."
+    "name_zh": "蛋白質體、結構與藥物活性",
+    "name_en": "Proteomics, Structures & Drug Bioactivity",
+    "intro_zh": "原始質譜、蛋白序列、實驗／AI 預測結構及藥物分子生物活性，需核對證據類型與 assay 條件。",
+    "intro_en": "Raw mass spectrometry, protein sequences, experimental and predicted structures, and drug bioactivity; inspect evidence types and assay conditions."
   },
   {
     "id": "metabolomics",
