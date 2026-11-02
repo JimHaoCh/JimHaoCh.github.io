@@ -720,22 +720,22 @@
     "tags": "EnteroBase Salmonella Ecoli cgMLST wgMLST outbreak"
   },
   {
-    "id": "pathogenwatch",
+    "id": "clever-arg",
     "group": "micro",
-    "name": "Pathogenwatch",
-    "title_zh": "病原體基因組及耐藥預測",
-    "title_en": "Genomic pathogen surveillance platform",
-    "url": "https://pathogen.watch/",
+    "name": "CLEVER Antibiotic Resistance Database",
+    "title_zh": "已驗證與預測抗藥基因變異資料庫",
+    "title_en": "Verified and predicted antimicrobial resistance variants",
+    "url": "https://microbiology.se/clever/",
     "access_type": "open",
     "access_zh": "公開可取得",
     "access_en": "Public access",
-    "formats": "genome assemblies / MLST / AMR tables",
+    "formats": "FASTA / ARG annotations / tables",
     "format_group": "amr",
-    "description_zh": "可公開瀏覽菌種基因組及 MLST、耐藥預測和親緣關係；上傳分析另有帳號要求。",
-    "description_en": "Public pathogen genomes, MLST and AMR predictions; user uploads use account workflows.",
-    "note_zh": "基因體抗藥預測不可直接視為臨床 AST 表型。",
-    "note_en": "Predicted resistance is distinct from phenotypic AST.",
-    "tags": "pathogen.watch genome surveillance AMR MLST"
+    "description_zh": "CLEVER v2.0 整合已驗證與預測的抗藥基因序列，按變異、家族與基因譜系分類，可公開瀏覽或下載。",
+    "description_en": "CLEVER v2.0 organizes verified and predicted resistance determinants by variants, families and lineages, with public browsing and downloads.",
+    "note_zh": "2026-07-26 發布 v2.0；來源部分使用 ResFinder、CARD 與 ResFinderFG。分析時留意引用關係，且預測 ARG 不等同表型抗藥。",
+    "note_en": "Version 2.0 released July 2026; includes evidence from ResFinder, CARD and ResFinderFG. Predicted ARGs are distinct from measured resistance.",
+    "tags": "CLEVER antibiotic resistance variants latent established ARG AMR FASTA"
   },
   {
     "id": "who-glass",
