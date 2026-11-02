@@ -11,12 +11,20 @@ permalink: /resources/search-index.json
 {% assign ref_type = "reference" %}{% if item.learning_format == "web" %}{% assign ref_type = "web" %}{% endif %}
 {% assign ref_path = ref_category.href | default: item.url %}
 {% if item.function_group == 'career' %}{% assign ref_path = '/resources/careers.html#career-' | append: item.career_group %}
-{% elsif item.function_group == 'clinical' %}{% assign ref_path = '/resources/clinical.html#clinical-' | append: item.learning_track %}
+{% elsif item.function_group == 'clinical' %}{% assign ref_path = '/resources/clinical.html#clinical-' | append: item.career_group %}
 {% elsif item.function_group == 'imaging' and item.learning_track %}{% assign ref_path = '/resources/imaging.html#imaging-' | append: item.learning_track %}
 {% elsif item.function_group == 'molecular' and item.learning_track == 'genetics' %}{% assign ref_path = '/resources/molecular.html#molecular-clinical-genetics' %}
 {% elsif item.function_group == 'molecular' and item.learning_track == 'forensics' %}{% assign ref_path = '/resources/molecular.html#molecular-forensics' %}
 {% endif %}
 {"id":"ref-{{ forloop.index }}","category":{{ item.function_group | jsonify }},"type":{{ ref_type | jsonify }},"title":{{ item.name | jsonify }},"subtitle":{{ item.title_zh | jsonify }},"description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.title_en | append: " · " | append: item.career_keywords | append: " · " | append: item.practice_track | append: " · " | append: item.practice_task_zh | jsonify }},"provider":{{ item.provider | jsonify }},"url":{{ item.url | jsonify }},"path":{{ ref_path | jsonify }}},
+{% endfor %}
+{% for item in site.data.research_databases %}
+{% assign db_path = '/resources/databases.html#database-' | append: item.id %}
+{"id":"database-{{ item.id }}","category":"databases","type":"reference","title":{{ item.name | jsonify }},"subtitle":{{ item.title_zh | jsonify }},"description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.title_en | append: " · " | append: item.tags | append: " · " | append: item.formats | append: " · " | append: item.group | jsonify }},"provider":{{ item.name | jsonify }},"url":{{ item.url | jsonify }},"path":{{ db_path | jsonify }}},
+{% endfor %}
+{% for item in site.data.database_examples %}
+{% assign example_path = '/resources/databases.html#example-' | append: item.id %}
+{"id":"dataset-{{ item.id }}","category":"databases","type":"reference","title":{{ item.title_zh | jsonify }},"subtitle":{{ item.title_en | jsonify }},"description":{{ item.task_zh | jsonify }},"description_en":{{ item.task_en | jsonify }},"tags":{{ item.formats | append: " · " | append: item.group | append: " · dataset example | 教學資料" | jsonify }},"provider":{{ item.provider | jsonify }},"url":{{ item.url | jsonify }},"path":{{ example_path | jsonify }}},
 {% endfor %}
 {% for item in site.data.microbiology_resources %}
 {% assign search_type = "reference" %}{% if item.mode == "web" %}{% assign search_type = "web" %}{% elsif item.mode == "desktop" %}{% assign search_type = "software" %}{% endif %}
