@@ -611,3 +611,47 @@
 .physio-practice-task span[lang=en]{display:block;font-size:10.5px;color:#6c879d;margin-top:4px}
 #clinical-ecg .reference-card[hidden],#clinical-eeg .reference-card[hidden],#clinical-ecg[hidden],#clinical-eeg[hidden]{display:none!important}
 @media(max-width:650px){.physio-route-guide{padding:17px 14px}.physio-route-buttons{gap:7px}.physio-route-buttons button{flex:1 1 96px;justify-content:center;padding:9px 8px}.physio-route-levels button{flex:1 1 calc(50% - 7px);align-items:center}.physio-route-heading h3{font-size:19px}}
+
+
+/* Open Biomedical Research Databases catalog: 2026-11-02 */
+.database-intro,.database-section,.database-teaching-section{scroll-margin-top:105px}
+.database-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:18px 0 5px}
+.database-legend>span{font-size:11px;line-height:1.6;padding:10px 12px;background:#f5f9fc;border:1px solid #d9e6ef;border-radius:9px;color:#57768b}
+.database-legend b{display:block;color:#2b597a;font-size:12px}
+.database-legend small[lang=en]{display:block;font-size:10px;color:#73899a}
+.database-filter-panel{padding:19px 21px;border:1px solid #cdddeb;background:#f8fbfd;border-radius:15px;margin:20px 0}
+.database-filter-fields{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px;align-items:end}
+.database-filter-fields label{display:flex;flex-direction:column;gap:6px;min-width:0;font-size:12px;font-weight:700;color:#345b79}
+.database-filter-fields label small{font-size:10px;font-weight:450;color:#70869a}
+.database-filter-fields input,.database-filter-fields select{box-sizing:border-box;width:100%;height:43px;font:400 12px/1.4 var(--sans);color:#264e6b;background:#fff;border:1px solid #bdd1df;border-radius:8px;padding:8px 11px}
+.database-filter-fields input:focus-visible,.database-filter-fields select:focus-visible{outline:2px solid #428bc3;outline-offset:2px}
+.database-filter-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:13px 0 0}
+.database-filter-bottom p{font-size:11px;color:#52718a;line-height:1.7;margin:0}
+.database-filter-bottom button{border:1px solid #b8cddd;border-radius:7px;background:#fff;color:#35658c;padding:8px 12px;cursor:pointer;font:650 11px/1.4 var(--sans)}
+.database-filter-bottom button:disabled{opacity:.45;cursor:default}
+.database-access{display:inline-flex;flex-direction:column;text-align:right;color:#285e85;font-size:10px;font-weight:700;line-height:1.5}
+.database-access small{color:#71889b;font-size:9px;font-weight:450}
+.database-access-limited{color:#985a27}
+.database-access-register,.database-access-mixed{color:#6f5b8b}
+.database-format-row{margin:8px 0 10px;padding:8px 10px;border-radius:7px;background:#f3f8fc;border:1px solid #e1ecf3;font-size:10.5px;line-height:1.6;color:#40647f}
+.database-format-row strong{display:block;color:#356a90;font-size:10.5px}
+.database-format-row small{color:#738fa2;font-size:9px;font-weight:450}
+.database-format-row span{word-break:break-word}
+.database-resource-card{scroll-margin-top:110px}
+.database-resource-card[hidden],.database-section[hidden]{display:none!important}
+.database-example-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.database-example-card{min-width:0;padding:18px 18px 15px;border:1px solid #d2e0eb;border-radius:12px;background:#fff;display:flex;flex-direction:column;gap:8px;scroll-margin-top:110px}
+.database-example-index{font-size:10px;letter-spacing:.08em;color:#4a83a8;font-weight:750}
+.database-example-card h3{margin:0;font:700 17px/1.5 var(--serif);color:#254d6c}
+.database-example-card h3 span[lang=en]{display:block;font:450 11px/1.6 var(--sans);color:#71869a;margin-top:2px}
+.database-example-source{margin:0;font-size:11px;color:#4a7391}
+.database-example-format{font-size:11px;line-height:1.7;color:#4e6b82;margin:0}
+.database-example-format small{display:block;color:#748ba0}
+.database-example-task{margin:3px 0;font-size:12px;line-height:1.8;color:#405f76}
+.database-example-task strong{display:block;color:#2e648c}
+.database-example-task strong small{font-size:10px;color:#718a9c;font-weight:450}
+.database-example-task span[lang=en]{display:block;font-size:11px;color:#7590a3}
+.database-example-note{font-size:11px;line-height:1.7;color:#926339;margin:3px 0 8px}
+.database-example-card>.resource-download{margin-top:auto}
+@media(max-width:900px){.database-legend{grid-template-columns:repeat(2,minmax(0,1fr))}.database-filter-fields{grid-template-columns:1fr 1fr}.database-filter-fields label:first-child{grid-column:1/-1}}
+@media(max-width:650px){.database-filter-panel{padding:16px 13px}.database-filter-fields{grid-template-columns:1fr;gap:10px}.database-filter-fields label:first-child{grid-column:auto}.database-legend,.database-example-grid{grid-template-columns:1fr}.database-example-card{padding:15px 14px}}
