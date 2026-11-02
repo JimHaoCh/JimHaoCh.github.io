@@ -15,7 +15,10 @@
     "description_en": "MIFlowCyt-annotated flow experiments and raw files.",
     "note_zh": "2026 年網站公告新實驗上傳暫停，既有下載可能受影響。",
     "note_en": "New deposits suspended; downloads may be affected.",
-    "tags": "flow gating FCS"
+    "tags": "flow gating FCS",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive"
   },
   {
     "id": "immport",
@@ -33,7 +36,12 @@
     "description_en": "Search immunophenotyping, CyTOF and vaccine studies; downloads require sign-in.",
     "note_zh": "2026 年 Aspera 舊版下載介面已退役，請使用新版下載工具。",
     "note_en": "Legacy Aspera download retired; use updated browser.",
-    "tags": "immunology flow FCS"
+    "tags": "immunology flow FCS",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive",
+    "related_topic_zh": "臨床免疫／多體學",
+    "related_topic_en": "Clinical immunology & multiomics"
   },
   {
     "id": "immunespace",
@@ -51,7 +59,12 @@
     "description_en": "Explore immune-study assays, donor metadata and vaccine responses.",
     "note_zh": "原站說明公開資料均可下載；部分分析介面及研究資料型別依站內說明使用。",
     "note_en": "Public data are downloadable; some tools and file modalities have their own workflows.",
-    "tags": "immune vaccine flow"
+    "tags": "immune vaccine flow",
+    "data_role": "portal",
+    "data_role_zh": "整合探索平台",
+    "data_role_en": "Discovery & analysis portal",
+    "related_topic_zh": "疫苗研究／跨組學",
+    "related_topic_en": "Vaccines & systems immunology"
   },
   {
     "id": "hdcytodata",
@@ -69,11 +82,14 @@
     "description_en": "Curated flow/CyTOF benchmarks with expression and reference cell labels.",
     "note_zh": "R 物件格式；原始 FCS 並非所有資料集都提供。",
     "note_en": "R/Bioconductor required; raw FCS not guaranteed.",
-    "tags": "CyTOF flow clustering benchmark"
+    "tags": "CyTOF flow clustering benchmark",
+    "data_role": "benchmark",
+    "data_role_zh": "教學／模型基準",
+    "data_role_en": "Annotated benchmark"
   },
   {
     "id": "cellxgene",
-    "group": "genomics",
+    "group": "singlecell",
     "name": "CZ CELLxGENE Discover",
     "title_zh": "單細胞轉錄體瀏覽及下載",
     "title_en": "Single-cell browser and open expression data",
@@ -87,11 +103,14 @@
     "description_en": "Browse scRNA-seq by tissue and cell type and download public expression data.",
     "note_zh": "資料集大小與授權依 collection 規定。",
     "note_en": "Datasets have varying sizes and licenses.",
-    "tags": "scRNA h5ad single cell"
+    "tags": "scRNA h5ad single cell",
+    "data_role": "portal",
+    "data_role_zh": "整合探索平台",
+    "data_role_en": "Discovery & analysis portal"
   },
   {
     "id": "hca",
-    "group": "genomics",
+    "group": "singlecell",
     "name": "Human Cell Atlas Data Portal",
     "title_zh": "人體組織與細胞圖譜",
     "title_en": "Human tissue and multiomic cell atlases",
@@ -105,7 +124,10 @@
     "description_en": "Discover organ-specific and multiomic human cell atlas studies.",
     "note_zh": "原始檔、處理檔及取用格式依各研究計畫而異。",
     "note_en": "Raw and processed file availability varies by project.",
-    "tags": "HCA immune scRNA"
+    "tags": "HCA immune scRNA",
+    "data_role": "portal",
+    "data_role_zh": "整合探索平台",
+    "data_role_en": "Discovery & analysis portal"
   },
   {
     "id": "geo",
@@ -123,11 +145,14 @@
     "description_en": "Search microarray and RNA-seq studies and practice differential expression with GEO2R.",
     "note_zh": "原始 reads 可能另外存於 SRA；差異分析須符合研究設計。",
     "note_en": "Raw reads may be in SRA; check study design.",
-    "tags": "GEO RNAseq transcriptomics"
+    "tags": "GEO RNAseq transcriptomics",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive"
   },
   {
     "id": "gdc",
-    "group": "genomics",
+    "group": "cancer",
     "name": "NCI GDC / TCGA",
     "title_zh": "癌症基因體與臨床資料",
     "title_en": "Cancer genomics and clinical datasets",
@@ -141,7 +166,12 @@
     "description_en": "Browse molecular and clinical data from cancer genomics projects.",
     "note_zh": "原始定序或敏感病人資料可能需要受控存取核准。",
     "note_en": "Some files require controlled-access authorization.",
-    "tags": "TCGA cancer mutations"
+    "tags": "TCGA cancer mutations",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive",
+    "related_topic_zh": "基因體／臨床變異",
+    "related_topic_en": "Genomics & clinical cohorts"
   },
   {
     "id": "idr",
@@ -159,7 +189,10 @@
     "description_en": "Microscopy screens with annotations and public raw-data links.",
     "note_zh": "大型原始影像可透過 FTP／Globus，應先測試單張影像。",
     "note_en": "Bulk transfer uses FTP/Globus; try single images first.",
-    "tags": "imaging fluorescence HCS IDR"
+    "tags": "imaging fluorescence HCS IDR",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive"
   },
   {
     "id": "bioimagearchive",
@@ -177,7 +210,10 @@
     "description_en": "Find original imaging submissions and download public files.",
     "note_zh": "容量、檔案格式與重用條件依研究而異。",
     "note_en": "Formats, sizes and reuse conditions vary.",
-    "tags": "microscopy archive EMBL"
+    "tags": "microscopy archive EMBL",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive"
   },
   {
     "id": "hpa",
@@ -195,7 +231,12 @@
     "description_en": "Browse histology stains, subcellular images and protein expression.",
     "note_zh": "公開引用或重製圖片須遵循原站授權規範。",
     "note_en": "Check original image reuse and attribution terms.",
-    "tags": "IHC tissue staining histology"
+    "tags": "IHC tissue staining histology",
+    "data_role": "reference",
+    "data_role_zh": "專業參考資料",
+    "data_role_en": "Curated reference",
+    "related_topic_zh": "蛋白質體／單細胞",
+    "related_topic_en": "Proteomics & single-cell"
   },
   {
     "id": "tcia",
@@ -213,7 +254,12 @@
     "description_en": "Cancer CT, MRI and some pathology image collections.",
     "note_zh": "下載工具與存取權限依 collection 不同。",
     "note_en": "Collection-specific access and tools may apply.",
-    "tags": "TCIA cancer DICOM"
+    "tags": "TCIA cancer DICOM",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive",
+    "related_topic_zh": "癌症影像／AI",
+    "related_topic_en": "Oncology imaging & AI"
   },
   {
     "id": "pride",
@@ -231,7 +277,12 @@
     "description_en": "Search deposited mass-spectrometry experiments and identified proteins.",
     "note_zh": "質譜原始檔通常容量大，可先下載 metadata 或整理表。",
     "note_en": "Raw data can be large; start with metadata.",
-    "tags": "LC-MS MS proteomics"
+    "tags": "LC-MS MS proteomics",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive",
+    "related_topic_zh": "LC-MS/MS 質譜",
+    "related_topic_en": "Mass spectrometry"
   },
   {
     "id": "uniprot",
@@ -249,7 +300,10 @@
     "description_en": "Search protein sequences, function and curated annotations.",
     "note_zh": "Swiss-Prot reviewed 與 TrEMBL unreviewed 條目須分別判讀。",
     "note_en": "Distinguish reviewed and unreviewed records.",
-    "tags": "FASTA protein sequences"
+    "tags": "FASTA protein sequences",
+    "data_role": "reference",
+    "data_role_zh": "專業參考資料",
+    "data_role_en": "Curated reference"
   },
   {
     "id": "rcsbpdb",
@@ -267,11 +321,14 @@
     "description_en": "Explore experimental protein and nucleic-acid structures.",
     "note_zh": "請核對解析度、實驗方法、缺失殘基及生物組裝狀態。",
     "note_en": "Inspect resolution, methods and biological assemblies.",
-    "tags": "PDB structural biology"
+    "tags": "PDB structural biology",
+    "data_role": "reference",
+    "data_role_zh": "專業參考資料",
+    "data_role_en": "Curated reference"
   },
   {
     "id": "megares",
-    "group": "micro",
+    "group": "amr",
     "name": "MEGARes AMR Database",
     "title_zh": "抗藥基因與高通量抗藥體分析參考資料庫",
     "title_en": "Curated resistance genes for resistome analysis",
@@ -285,11 +342,14 @@
     "description_en": "Curated AMR, biocide and metal-resistance reference sequences with hierarchical annotations for metagenomic resistome analysis.",
     "note_zh": "可從原站下載基因序列與註解；序列檢出不代表分離株已具臨床抗藥性表型。",
     "note_en": "Reference downloads are available; sequence evidence is not equivalent to clinical phenotypic resistance.",
-    "tags": "MEGARes resistome metagenomics antimicrobial resistance HTS FASTA"
+    "tags": "MEGARes resistome metagenomics antimicrobial resistance HTS FASTA",
+    "data_role": "reference",
+    "data_role_zh": "專業參考資料",
+    "data_role_en": "Curated reference"
   },
   {
     "id": "card-amr",
-    "group": "micro",
+    "group": "amr",
     "name": "CARD Resistance Database",
     "title_zh": "抗藥基因及耐藥機轉",
     "title_en": "Curated antimicrobial resistance determinants",
@@ -303,11 +363,14 @@
     "description_en": "Find resistance genes, variants, drugs and mechanism annotations.",
     "note_zh": "基因預測須與實測 AST 表型分開判讀。",
     "note_en": "Genotype predictions differ from measured phenotype.",
-    "tags": "AMR resistance RGI"
+    "tags": "AMR resistance RGI",
+    "data_role": "reference",
+    "data_role_zh": "專業參考資料",
+    "data_role_en": "Curated reference"
   },
   {
     "id": "ncbi-ast",
-    "group": "micro",
+    "group": "amr",
     "name": "NCBI Pathogen Detection AST Browser",
     "title_zh": "細菌菌株表型 AST 匯出",
     "title_en": "Isolate-level phenotypic AST exports",
@@ -316,12 +379,17 @@
     "access_zh": "公開可取得",
     "access_en": "Public",
     "formats": "CSV / TSV",
-    "format_group": "amr",
+    "format_group": "phenotype",
     "description_zh": "查詢菌株 MIC、抑菌圈、抗生素與關聯基因體記錄，可匯出表格。",
     "description_en": "Export submitted isolate-level MIC and disk diffusion results.",
     "note_zh": "提交者資料未經逐筆方法驗證；不要直接推估抗藥率。",
     "note_en": "Submitter results are not individually method-verified.",
-    "tags": "bacteria susceptibility AST"
+    "tags": "bacteria susceptibility AST",
+    "data_role": "reference",
+    "data_role_zh": "專業參考資料",
+    "data_role_en": "Curated reference",
+    "related_topic_zh": "臨床藥敏／細菌基因體",
+    "related_topic_en": "Phenotypic AST & bacterial genomics"
   },
   {
     "id": "physionet",
@@ -339,7 +407,12 @@
     "description_en": "Access publicly available and credentialed physiologic signal datasets.",
     "note_zh": "部分資料集需要申請、訓練或受控存取。",
     "note_en": "Some datasets require credentials and training.",
-    "tags": "ECG EEG physiology waveforms"
+    "tags": "ECG EEG physiology waveforms",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive",
+    "related_topic_zh": "臨床生理訊號／ECG",
+    "related_topic_en": "Clinical waveform data & ECG"
   },
   {
     "id": "bbbc",
@@ -357,7 +430,10 @@
     "description_en": "Freely downloadable microscopy image sets with reference annotations; BBBC009 provides five red-cell DIC images.",
     "note_zh": "資料集的標註方式各異；BBBC009 適合作為小型紅血球分割入門。",
     "note_en": "Annotation type varies; BBBC009 is a small RBC segmentation starter.",
-    "tags": "BBBC009 紅血球 RBC ground truth microscopy segmentation"
+    "tags": "BBBC009 紅血球 RBC ground truth microscopy segmentation",
+    "data_role": "benchmark",
+    "data_role_zh": "教學／模型基準",
+    "data_role_en": "Annotated benchmark"
   },
   {
     "id": "raabin-wbc",
@@ -375,7 +451,10 @@
     "description_en": "Approximately 40,000 white-cell and artifact images with classification labels and selected detection or segmentation ground truth.",
     "note_zh": "不同顯微鏡與標註子集須分開核對；依原始論文分割訓練與測試資料。",
     "note_en": "Check microscope-specific subsets and use original dataset splits.",
-    "tags": "WBC white blood cell 血球 neutrophil nucleus segmentation classification"
+    "tags": "WBC white blood cell 血球 neutrophil nucleus segmentation classification",
+    "data_role": "benchmark",
+    "data_role_zh": "教學／模型基準",
+    "data_role_en": "Annotated benchmark"
   },
   {
     "id": "metabolomicshub",
@@ -393,7 +472,10 @@
     "description_en": "Search harmonized public metabolomics studies across MetaboLights, Workbench and GNPS/MassIVE.",
     "note_zh": "2026-05 起為 Early Access；資料模型及功能可能調整；下載仍須查看原始來源。",
     "note_en": "Early access since May 2026; features may change and downloads depend on original repositories.",
-    "tags": "metabolomics LC-MS metabolomics hub early access integrated"
+    "tags": "metabolomics LC-MS metabolomics hub early access integrated",
+    "data_role": "portal",
+    "data_role_zh": "整合探索平台",
+    "data_role_en": "Discovery & analysis portal"
   },
   {
     "id": "nemar",
@@ -411,7 +493,12 @@
     "description_en": "Search, inspect and download EEG, MEG, iEEG and EMG datasets, including OpenNeuro mirrors.",
     "note_zh": "同一研究可能也出現在 OpenNeuro；請核對 accession、使用授權及資料版本。",
     "note_en": "Some datasets mirror OpenNeuro; compare accession IDs, licenses and versions.",
-    "tags": "EEG MEG EMG iEEG neuroscience BIDS NEMAR"
+    "tags": "EEG MEG EMG iEEG neuroscience BIDS NEMAR",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive",
+    "related_topic_zh": "OpenNeuro 鏡像／EEG",
+    "related_topic_en": "OpenNeuro-linked EEG"
   },
   {
     "id": "cellpainting",
@@ -429,7 +516,12 @@
     "description_en": "Broad Institute high-content microscopy images, morphological feature tables and metadata; publicly accessible AWS storage.",
     "note_zh": "部分批次僅含特徵或重分析資料；下載大型影像前先確認 dataset prefix 與原始文獻。",
     "note_en": "Some batches contain only features or reanalyses; inspect individual dataset inventories.",
-    "tags": "Cell Painting high content fluorescence image morphology HCS"
+    "tags": "Cell Painting high content fluorescence image morphology HCS",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive",
+    "related_topic_zh": "高內涵篩選／藥物表型",
+    "related_topic_en": "High-content screening & drug phenotypes"
   },
   {
     "id": "all-idb",
@@ -447,11 +539,14 @@
     "description_en": "ALL-IDB1 annotated blood-smear images and ALL-IDB2 cropped cell classification images.",
     "note_zh": "取得資料須填寫、簽署申請表並以電子郵件寄送維護者，獲准後取得下載指示；勿視為直接公開下載。",
     "note_en": "Access requires a signed application sent to maintainers; downloads are granted after approval.",
-    "tags": "ALL-IDB leukemic blasts white blood cells leukemia cell detection"
+    "tags": "ALL-IDB leukemic blasts white blood cells leukemia cell detection",
+    "data_role": "benchmark",
+    "data_role_zh": "教學／模型基準",
+    "data_role_en": "Annotated benchmark"
   },
   {
     "id": "10x-datasets",
-    "group": "genomics",
+    "group": "singlecell",
     "name": "10x Genomics Public Datasets",
     "title_zh": "單細胞、Visium 與 Xenium 公開示例",
     "title_en": "Single-cell and spatial omics example datasets",
@@ -465,7 +560,10 @@
     "description_en": "Public manufacturer examples covering single-cell and spatial transcriptomics with raw and processed artifacts.",
     "note_zh": "資料集內容依技術與樣本而異；大型 FASTQ 可先用預先整理的 count matrix。",
     "note_en": "Files vary by assay; begin with processed count matrices before large FASTQs.",
-    "tags": "10x Genomics 10x PBMC Visium Xenium single cell spatial"
+    "tags": "10x Genomics 10x PBMC Visium Xenium single cell spatial",
+    "data_role": "portal",
+    "data_role_zh": "整合探索平台",
+    "data_role_en": "Discovery & analysis portal"
   },
   {
     "id": "gtex",
@@ -483,7 +581,12 @@
     "description_en": "Explore human tissue expression and eQTLs and download public summary data.",
     "note_zh": "部分原始基因型及個人層級資料需 dbGaP 核准，公開表格與受控資料須區分。",
     "note_en": "Raw genotype and participant-level data may require dbGaP approval.",
-    "tags": "GTEx gene expression tissue eQTL QTL RNA"
+    "tags": "GTEx gene expression tissue eQTL QTL RNA",
+    "data_role": "reference",
+    "data_role_zh": "專業參考資料",
+    "data_role_en": "Curated reference",
+    "related_topic_zh": "正常組織表現／eQTL",
+    "related_topic_en": "Tissue expression & eQTL"
   },
   {
     "id": "encode",
@@ -496,16 +599,19 @@
     "access_zh": "公開可取得",
     "access_en": "Public access",
     "formats": "FASTQ / BAM / bigWig / peaks",
-    "format_group": "matrix",
+    "format_group": "sequence",
     "description_zh": "提供 ChIP-seq、ATAC-seq、RNA-seq 與多種組蛋白及調控元件研究數據。",
     "description_en": "Public functional genomic experiments including ChIP-seq, ATAC-seq and RNA-seq.",
     "note_zh": "資料檔有不同處理階段與品質標示；應對照 assay、reference genome 和 metadata。",
     "note_en": "Check assay stage, QC, reference genome and metadata.",
-    "tags": "ENCODE ATAC ChIP chromatin genome transcriptomics"
+    "tags": "ENCODE ATAC ChIP chromatin genome transcriptomics",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive"
   },
   {
     "id": "hubmap",
-    "group": "genomics",
+    "group": "singlecell",
     "name": "HuBMAP Data Portal",
     "title_zh": "人體器官空間多體學與組織資料",
     "title_en": "Human organ spatial multiomics",
@@ -519,11 +625,16 @@
     "description_en": "Human tissue atlases, spatial omics and images with metadata and data access workflows.",
     "note_zh": "公開瀏覽不需登入；部分處理後檔案使用 Globus；原始遺傳資料須經受控核准。",
     "note_en": "Browsing is public; Globus may be used for downloads; raw genetic data is controlled.",
-    "tags": "HuBMAP organ atlas spatial omics single cell imaging"
+    "tags": "HuBMAP organ atlas spatial omics single cell imaging",
+    "data_role": "portal",
+    "data_role_zh": "整合探索平台",
+    "data_role_en": "Discovery & analysis portal",
+    "related_topic_zh": "組織影像／器官圖譜",
+    "related_topic_en": "Tissue imaging & organ atlases"
   },
   {
     "id": "cbioportal",
-    "group": "genomics",
+    "group": "cancer",
     "name": "cBioPortal for Cancer Genomics",
     "title_zh": "癌症突變、基因表現及臨床資料探索",
     "title_en": "Cancer molecular alterations and study cohorts",
@@ -537,11 +648,16 @@
     "description_en": "Explore cancer mutations, expression, copy-number alterations and clinical cohorts.",
     "note_zh": "某些研究底層資料來自 GDC／TCGA；需以 cohort 和 accession 辨識重複研究。",
     "note_en": "Some cohorts mirror TCGA/GDC; use study identifiers to avoid double counting.",
-    "tags": "cBioPortal oncology mutation copy number survival TCGA"
+    "tags": "cBioPortal oncology mutation copy number survival TCGA",
+    "data_role": "portal",
+    "data_role_zh": "整合探索平台",
+    "data_role_en": "Discovery & analysis portal",
+    "related_topic_zh": "GDC／TCGA 資料重用",
+    "related_topic_en": "GDC/TCGA-linked cohorts"
   },
   {
     "id": "depmap",
-    "group": "genomics",
+    "group": "cancer",
     "name": "DepMap Portal / CCLE",
     "title_zh": "癌症細胞株基因依賴性資料",
     "title_en": "Cancer cell line dependency and expression",
@@ -555,7 +671,12 @@
     "description_en": "Cancer-cell-line CRISPR dependency, expression and related phenotypic annotations.",
     "note_zh": "記錄 release 日期；不同 cell line、screen、模型版本的比較須對齊。",
     "note_en": "Record dataset release and align cell-line and screening versions.",
-    "tags": "DepMap CCLE cell line cancer CRISPR drug sensitivity"
+    "tags": "DepMap CCLE cell line cancer CRISPR drug sensitivity",
+    "data_role": "reference",
+    "data_role_zh": "專業參考資料",
+    "data_role_en": "Curated reference",
+    "related_topic_zh": "藥物反應／功能基因體",
+    "related_topic_en": "Drug response & functional genomics"
   },
   {
     "id": "arrayexpress",
@@ -568,12 +689,15 @@
     "access_zh": "公開可取得",
     "access_en": "Public access",
     "formats": "FASTQ / processed matrices / metadata",
-    "format_group": "matrix",
+    "format_group": "sequence",
     "description_zh": "在 EMBL-EBI BioStudies 中檢索既有 ArrayExpress 基因表現與其他組學研究。",
     "description_en": "Archive for functional genomics submissions now accessed through EMBL-EBI BioStudies.",
     "note_zh": "舊 ArrayExpress 入口已整合至 BioStudies；與其他資料庫的 accession 可能互通。",
     "note_en": "ArrayExpress content is hosted in BioStudies; check cross-repository accession links.",
-    "tags": "ArrayExpress BioStudies microarray RNA-seq E-MTAB"
+    "tags": "ArrayExpress BioStudies microarray RNA-seq E-MTAB",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive"
   },
   {
     "id": "sra",
@@ -586,12 +710,15 @@
     "access_zh": "公開可取得",
     "access_en": "Public access",
     "formats": "SRA / FASTQ",
-    "format_group": "matrix",
+    "format_group": "sequence",
     "description_zh": "收錄公開 NGS 原始讀段及對應研究資訊，可做 RNA-seq、微生物 WGS 與 metagenomics 練習。",
     "description_en": "Public raw sequence reads linked to studies in genomics, microbial WGS and metagenomics.",
     "note_zh": "個別研究的授權及是否有公開原始檔需逐筆確認，大型 FASTQ 下載需預估儲存空間。",
     "note_en": "Check study-specific access; large raw reads require substantial storage.",
-    "tags": "SRA SRR FASTQ NGS sequence reads RNAseq bacterial"
+    "tags": "SRA SRR FASTQ NGS sequence reads RNAseq bacterial",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive"
   },
   {
     "id": "metabolomicsworkbench",
@@ -609,7 +736,10 @@
     "description_en": "Public metabolomics studies including assay metadata, processed tables and raw analytical files.",
     "note_zh": "每項研究可能僅提供部分原始檔；先核對 study ID 與測定平台。",
     "note_en": "Raw files differ by study; check study IDs and assay platforms.",
-    "tags": "metabolomics LCMS GCMS NMR metabolite metabolomics workbench"
+    "tags": "metabolomics LCMS GCMS NMR metabolite metabolomics workbench",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive"
   },
   {
     "id": "metabolights",
@@ -627,7 +757,10 @@
     "description_en": "Public metabolomics submissions with raw files, processed results and ISA metadata.",
     "note_zh": "代謝物鑑定與資料完整性依各研究而異；研究版本及授權須確認。",
     "note_en": "Annotation quality and formats vary by study; verify licenses and versions.",
-    "tags": "metabolights metabolomics LC-MS GC-MS NMR"
+    "tags": "metabolights metabolomics LC-MS GC-MS NMR",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive"
   },
   {
     "id": "massive",
@@ -645,7 +778,12 @@
     "description_en": "Public mass spectrometry archive and reanalysis entry points.",
     "note_zh": "同一實驗也可能經由 GNPS 或 MetabolomicsHub 查詢；請使用原始 dataset identifier 去重。",
     "note_en": "The same studies may appear in GNPS and MetabolomicsHub; deduplicate by accession.",
-    "tags": "MassIVE MSV mass spectrometry proteomics metabolomics"
+    "tags": "MassIVE MSV mass spectrometry proteomics metabolomics",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive",
+    "related_topic_zh": "蛋白質體／質譜",
+    "related_topic_en": "Proteomics & mass spectrometry"
   },
   {
     "id": "gnps",
@@ -663,7 +801,12 @@
     "description_en": "Public tandem mass spectra, spectral libraries and molecular networking workflows.",
     "note_zh": "部分分析工作流程需註冊；不同版本 GNPS／GNPS2 入口及存取方式不同。",
     "note_en": "Some workflows require accounts; GNPS/GNPS2 interfaces differ.",
-    "tags": "GNPS GNPS2 tandem mass spectra molecular networking mass spec"
+    "tags": "GNPS GNPS2 tandem mass spectra molecular networking mass spec",
+    "data_role": "portal",
+    "data_role_zh": "整合探索平台",
+    "data_role_en": "Discovery & analysis portal",
+    "related_topic_zh": "分子網路／光譜鑑定",
+    "related_topic_en": "Molecular networking & spectral libraries"
   },
   {
     "id": "hmdb",
@@ -681,11 +824,14 @@
     "description_en": "Human metabolite structures, biological context and MS/NMR reference spectra.",
     "note_zh": "商業用途的資料重用須向作者申請明確許可；研究使用須依來源引用。",
     "note_en": "Commercial reuse requires explicit permission; cite the source.",
-    "tags": "HMDB metabolite metabolomics clinical chemistry urine plasma"
+    "tags": "HMDB metabolite metabolomics clinical chemistry urine plasma",
+    "data_role": "reference",
+    "data_role_zh": "專業參考資料",
+    "data_role_en": "Curated reference"
   },
   {
     "id": "silva",
-    "group": "micro",
+    "group": "microbial",
     "name": "SILVA rRNA Database",
     "title_zh": "16S／18S 核糖體 RNA 序列分類",
     "title_en": "Curated ribosomal RNA sequences and taxonomy",
@@ -699,11 +845,16 @@
     "description_en": "Curated ribosomal RNA references and taxonomic alignments for community profiling.",
     "note_zh": "注意 release 版本、SSU／LSU 差別及與分類結果的一致性。",
     "note_en": "Track reference releases and SSU/LSU selection.",
-    "tags": "SILVA 16S 18S ribosomal RNA taxonomy microbiome"
+    "tags": "SILVA 16S 18S ribosomal RNA taxonomy microbiome",
+    "data_role": "reference",
+    "data_role_zh": "專業參考資料",
+    "data_role_en": "Curated reference",
+    "related_topic_zh": "16S／微生物分類",
+    "related_topic_en": "16S & microbial taxonomy"
   },
   {
     "id": "enterobase",
-    "group": "micro",
+    "group": "microbial",
     "name": "EnteroBase",
     "title_zh": "細菌基因體與 cgMLST／wgMLST",
     "title_en": "Bacterial genomic epidemiology and typing",
@@ -712,16 +863,21 @@
     "access_zh": "部分受控",
     "access_en": "Study-specific access",
     "formats": "assemblies / MLST profiles / metadata",
-    "format_group": "amr",
+    "format_group": "microbiome",
     "description_zh": "涵蓋 Salmonella、E. coli、結核桿菌等菌株，提供系統發育、cgMLST／wgMLST 與菌株資訊。",
     "description_en": "Genomic surveillance and typing resources for multiple bacterial genera.",
     "note_zh": "公開瀏覽菌株；建立帳號後可使用某些分析或個人資料功能。",
     "note_en": "Public browsing; certain analyses and personal collections require login.",
-    "tags": "EnteroBase Salmonella Ecoli cgMLST wgMLST outbreak"
+    "tags": "EnteroBase Salmonella Ecoli cgMLST wgMLST outbreak",
+    "data_role": "portal",
+    "data_role_zh": "整合探索平台",
+    "data_role_en": "Discovery & analysis portal",
+    "related_topic_zh": "菌株流行病學／AMR",
+    "related_topic_en": "Genomic epidemiology & AMR"
   },
   {
     "id": "clever-arg",
-    "group": "micro",
+    "group": "amr",
     "name": "CLEVER Antibiotic Resistance Database",
     "title_zh": "已驗證與預測抗藥基因變異資料庫",
     "title_en": "Verified and predicted antimicrobial resistance variants",
@@ -735,11 +891,14 @@
     "description_en": "CLEVER v2.0 organizes verified and predicted resistance determinants by variants, families and lineages, with public browsing and downloads.",
     "note_zh": "2026-07-26 發布 v2.0；來源部分使用 ResFinder、CARD 與 ResFinderFG。分析時留意引用關係，且預測 ARG 不等同表型抗藥。",
     "note_en": "Version 2.0 released July 2026; includes evidence from ResFinder, CARD and ResFinderFG. Predicted ARGs are distinct from measured resistance.",
-    "tags": "CLEVER antibiotic resistance variants latent established ARG AMR FASTA"
+    "tags": "CLEVER antibiotic resistance variants latent established ARG AMR FASTA",
+    "data_role": "reference",
+    "data_role_zh": "專業參考資料",
+    "data_role_en": "Curated reference"
   },
   {
     "id": "who-glass",
-    "group": "micro",
+    "group": "surveillance",
     "name": "WHO GLASS",
     "title_zh": "全球抗藥性與抗生素使用監測",
     "title_en": "Global AMR and antimicrobial use surveillance",
@@ -748,16 +907,21 @@
     "access_zh": "公開可取得",
     "access_en": "Public access",
     "formats": "CSV / dashboards / aggregate tables",
-    "format_group": "amr",
+    "format_group": "surveillance",
     "description_zh": "世界衛生組織彙整各國的 AMR／AMU 監測資料，提供趨勢及國別比較入口。",
     "description_en": "WHO national surveillance aggregates and dashboards for AMR and antimicrobial use.",
     "note_zh": "各國採樣策略及報告涵蓋不同；匯總百分比不等於研究代表性抽樣。",
     "note_en": "Country reporting and sampling differ; compare denominators and data coverage.",
-    "tags": "WHO GLASS antimicrobial resistance AMU surveillance"
+    "tags": "WHO GLASS antimicrobial resistance AMU surveillance",
+    "data_role": "surveillance",
+    "data_role_zh": "監測統計資料",
+    "data_role_en": "Surveillance statistics",
+    "related_topic_zh": "公共衛生／抗藥性",
+    "related_topic_en": "Public health & AMR"
   },
   {
     "id": "ecdc-atlas",
-    "group": "micro",
+    "group": "surveillance",
     "name": "ECDC Surveillance Atlas of Infectious Diseases",
     "title_zh": "歐洲感染症與抗藥性監測地圖",
     "title_en": "European surveillance indicators and data exports",
@@ -766,16 +930,21 @@
     "access_zh": "公開可取得",
     "access_en": "Public access",
     "formats": "CSV / map / tables",
-    "format_group": "amr",
+    "format_group": "surveillance",
     "description_zh": "歐洲疾病預防控制中心的監測地圖、疾病資料及 EARS-Net 抗藥性指標。",
     "description_en": "ECDC infectious-disease surveillance maps, summaries and resistance indicators.",
     "note_zh": "比較地區與年份時確認國家回報、菌株來源及方法差異。",
     "note_en": "Check country reporting coverage and methodological differences.",
-    "tags": "ECDC EARS-Net antimicrobial surveillance epidemiology"
+    "tags": "ECDC EARS-Net antimicrobial surveillance epidemiology",
+    "data_role": "surveillance",
+    "data_role_zh": "監測統計資料",
+    "data_role_en": "Surveillance statistics",
+    "related_topic_zh": "流行病學／抗藥性",
+    "related_topic_en": "Epidemiology & AMR"
   },
   {
     "id": "mgnify",
-    "group": "micro",
+    "group": "microbial",
     "name": "EMBL-EBI MGnify",
     "title_zh": "微生物群與 metagenomics 公開分析",
     "title_en": "Microbiome and metagenomic analyses",
@@ -789,7 +958,12 @@
     "description_en": "Public microbiome studies with functional and taxonomic annotations.",
     "note_zh": "不同流程版本會影響分類與豐度結果，應記錄 pipeline 版本。",
     "note_en": "Pipeline versions affect classifications and abundance estimates.",
-    "tags": "MGnify microbiome metagenomics MAGS"
+    "tags": "MGnify microbiome metagenomics MAGS",
+    "data_role": "portal",
+    "data_role_zh": "整合探索平台",
+    "data_role_en": "Discovery & analysis portal",
+    "related_topic_zh": "菌相／宏基因體學",
+    "related_topic_en": "Microbiome & metagenomics"
   },
   {
     "id": "openneuro",
@@ -807,7 +981,10 @@
     "description_en": "Open BIDS neuroimaging and EEG/MEG datasets with study metadata.",
     "note_zh": "與 NEMAR 有資料鏡像關係；分析時以 accession 及版本比對去重。",
     "note_en": "Some datasets are mirrored by NEMAR; deduplicate by accession and version.",
-    "tags": "OpenNeuro BIDS EEG MEG MRI data"
+    "tags": "OpenNeuro BIDS EEG MEG MRI data",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive"
   },
   {
     "id": "dandi",
@@ -825,7 +1002,10 @@
     "description_en": "Public electrophysiology, calcium imaging and behavioural time-series archives.",
     "note_zh": "不少研究為動物模型，下載前先核對物種、研究設計及 NWB 格式。",
     "note_en": "Many studies are animal-model recordings; inspect species and NWB metadata.",
-    "tags": "DANDI NWB iEEG calcium imaging neurophysiology"
+    "tags": "DANDI NWB iEEG calcium imaging neurophysiology",
+    "data_role": "archive",
+    "data_role_zh": "原始資料典藏",
+    "data_role_en": "Primary data archive"
   },
   {
     "id": "alphafold",
@@ -843,7 +1023,12 @@
     "description_en": "Predicted protein structures with confidence scores and downloadable coordinates.",
     "note_zh": "AI 模型與 PDB 實驗結構證據不同；低信心區域及複合體需另行驗證。",
     "note_en": "Predictions are distinct from PDB experiments; inspect confidence scores.",
-    "tags": "AlphaFold protein structure prediction pLDDT"
+    "tags": "AlphaFold protein structure prediction pLDDT",
+    "data_role": "reference",
+    "data_role_zh": "專業參考資料",
+    "data_role_en": "Curated reference",
+    "related_topic_zh": "AI 結構預測／蛋白研究",
+    "related_topic_en": "Predicted structures & proteomics"
   },
   {
     "id": "chembl",
@@ -856,11 +1041,16 @@
     "access_zh": "公開可取得",
     "access_en": "Public access",
     "formats": "SMILES / SDF / TSV / assay data",
-    "format_group": "protein",
+    "format_group": "bioactivity",
     "description_zh": "公開小分子、靶點、測試方法與 IC50／Ki 等生物活性數據，可分析藥物靶向性。",
     "description_en": "Curated compounds, targets and bioactivity assays for chemical biology.",
     "note_zh": "同一 assay 的活性值與條件不同，需確認實驗單位及測定方法。",
     "note_en": "Compare assay conditions, endpoints and concentration units.",
-    "tags": "ChEMBL drug target chemistry IC50 Ki screening"
+    "tags": "ChEMBL drug target chemistry IC50 Ki screening",
+    "data_role": "reference",
+    "data_role_zh": "專業參考資料",
+    "data_role_en": "Curated reference",
+    "related_topic_zh": "化學生物學／藥物活性",
+    "related_topic_en": "Chemical biology & bioactivity"
   }
 ]
