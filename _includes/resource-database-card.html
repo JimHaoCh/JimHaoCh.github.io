@@ -1,0 +1,14 @@
+<article class="reference-card database-resource-card" id="database-{{ include.item.id | escape }}" data-db-access="{{ include.item.access_type | escape }}" data-db-format="{{ include.item.format_group | escape }}" data-db-group="{{ include.item.group | escape }}" data-db-search="{{ include.item.name | append: ' ' | append: include.item.title_zh | append: ' ' | append: include.item.title_en | append: ' ' | append: include.item.tags | escape }}">
+  <div class="reference-card-top">
+    <span class="reference-external-badge">公開研究資料庫 <small lang="en">Research database</small></span>
+    <span class="database-access database-access-{{ include.item.access_type | escape }}">{{ include.item.access_zh | escape }}<small lang="en">{{ include.item.access_en | escape }}</small></span>
+  </div>
+  <h3>{{ include.item.name | escape }}</h3>
+  <p class="reference-title">{{ include.item.title_zh | escape }}<span lang="en">{{ include.item.title_en | escape }}</span></p>
+  <div class="database-format-row"><strong>資料格式 <small lang="en">Formats</small></strong><span>{{ include.item.formats | escape }}</span></div>
+  <p class="reference-description">{{ include.item.description_zh | escape }}<span lang="en">{{ include.item.description_en | escape }}</span></p>
+  <p class="reference-license">{{ include.item.note_zh | escape }}<span lang="en">{{ include.item.note_en | escape }}</span></p>
+  <a class="resource-download" href="{{ include.item.url | escape }}" target="_blank" rel="noopener noreferrer external">
+    <span>前往資料庫 <small lang="en">Open original database</small></span><span aria-hidden="true">↗</span>
+  </a>
+</article>
