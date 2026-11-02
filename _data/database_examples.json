@@ -54,5 +54,33 @@
     "task_zh": "先下載 metadata CSV 及單筆 records100 波形，繪製 12 導程訊號並理解病人分組切分。",
     "task_en": "Start with the metadata CSV and one records100 tracing; plot 12 leads and learn patient-wise splitting.",
     "note_zh": "資料集未壓縮約 3 GB，可先下載小量資料，避免整包下載。"
+  },
+  {
+    "id": "flow-fuchi-sudderick",
+    "group": "flow",
+    "title_zh": "Flow｜FuChi 細胞週期 FCS 與 gating 文件",
+    "title_en": "FuChi cell-cycle FCS files with gating documentation",
+    "provider": "Zenodo · Sudderick et al. (2026)",
+    "url": "https://zenodo.org/records/21995904",
+    "formats": "FCS / PDF / spreadsheet",
+    "access_zh": "免費公開下載",
+    "access_en": "Public data downloads",
+    "task_zh": "下載 FCS 與對應 gating PDF，核對細胞類型、培養條件與圖表，嘗試重建基本 gating 和細胞週期分群。",
+    "task_en": "Download FCS and gating PDFs, compare culture conditions and figure metadata, and reconstruct cell-cycle gating.",
+    "note_zh": "此為雞胚發育相關 FuChi 細胞週期資料；不是臨床白血球分型標準。可先選取小檔試作，原頁總量約 35 MB。"
+  },
+  {
+    "id": "flow-nk-immunophenotyping",
+    "group": "flow",
+    "title_zh": "Flow｜NK 細胞免疫表型與抗 PD-L1 研究",
+    "title_en": "NK-cell immunophenotyping FCS with gating figures",
+    "provider": "Zenodo · Liao et al. (2026)",
+    "url": "https://zenodo.org/records/19396187",
+    "formats": "FCS / RAR / gating images",
+    "access_zh": "免費公開下載；約 690 MB",
+    "access_en": "Public archive; ~690 MB",
+    "task_zh": "依原始論文抗體 panel，追蹤 CD3⁻CD56⁺ 細胞 gate、活化表型及處理組差異，練習辨認 gating 圖和 FCS 數據對應。",
+    "task_en": "Review the paper's antibody panels, locate CD3-negative CD56-positive events, and compare NK-cell gates across conditions.",
+    "note_zh": "原始 FCS 壓縮包約 689.8 MB；建議教師先下載並選取少量去識別教學檔案，課堂不要求學生完整下載。"
   }
 ]
