@@ -328,7 +328,7 @@
   },
   {
     "slug": "pathpresenter-public",
-    "function_group": "career",
+    "function_group": "imaging",
     "career_group": "pathology",
     "name": "PathPresenter Public",
     "title_zh": "免費數位病理玻片與病例",
@@ -342,11 +342,12 @@
     "notice_zh": "官方公開版可免費註冊；個人病例及原圖下載須符合原平台規範。",
     "notice_en": "A free account is needed; respect platform and patient-data restrictions.",
     "career_keywords": "數位病理 病理切片 virtual slide whole slide pathology",
-    "career_type": "practice"
+    "career_type": "practice",
+    "learning_track": "pathology"
   },
   {
     "slug": "leeds-histology",
-    "function_group": "career",
+    "function_group": "imaging",
     "career_group": "pathology",
     "name": "The Histology Guide",
     "title_zh": "虛擬組織鏡檢與形態測驗",
@@ -360,11 +361,12 @@
     "notice_zh": "圖像受來源使用條款保護，本站僅導引原始教材。",
     "notice_en": "Images remain subject to the provider's terms; link to the original material.",
     "career_keywords": "組織學 組織切片 histology microscopy virtual slide",
-    "career_type": "practice"
+    "career_type": "practice",
+    "learning_track": "pathology"
   },
   {
     "slug": "nus-pathweb",
-    "function_group": "career",
+    "function_group": "imaging",
     "career_group": "pathology",
     "name": "NUS Pathweb",
     "title_zh": "虛擬病理博物館與互動案例",
@@ -378,11 +380,12 @@
     "notice_zh": "部分教材需免費帳號；網站公告顯示部分功能維護中。",
     "notice_en": "Some sections require free registration; parts of the site may be under maintenance.",
     "career_keywords": "數位病理 組織學 pathology interactive cases",
-    "career_type": "practice"
+    "career_type": "practice",
+    "learning_track": "pathology"
   },
   {
     "slug": "bbguy",
-    "function_group": "career",
+    "function_group": "clinical",
     "career_group": "transfusion",
     "name": "Blood Bank Guy Education",
     "title_zh": "血型判讀與輸血醫學自學",
@@ -396,11 +399,12 @@
     "notice_zh": "屬專業教學網站；檢驗判讀及輸血決策須依所在地規範及院內 SOP。",
     "notice_en": "Educational content; local transfusion protocols govern clinical decisions.",
     "career_keywords": "輸血醫學 血庫 血型 blood bank transfusion immunohematology",
-    "career_type": "reference"
+    "career_type": "reference",
+    "learning_track": "transfusion"
   },
   {
     "slug": "cbs-transfusion-guide",
-    "function_group": "career",
+    "function_group": "clinical",
     "career_group": "transfusion",
     "name": "Canadian Blood Services Clinical Guide",
     "title_zh": "輸血醫學臨床指引與專家教材",
@@ -414,11 +418,12 @@
     "notice_zh": "內容以加拿大臨床實務為背景；需對照臺灣現行規定。",
     "notice_en": "Canadian clinical context; verify local protocols and regulations.",
     "career_keywords": "輸血醫學 血庫 輸血反應 transfusion blood bank",
-    "career_type": "reference"
+    "career_type": "reference",
+    "learning_track": "transfusion"
   },
   {
     "slug": "isac-cyto-u",
-    "function_group": "career",
+    "function_group": "imaging",
     "career_group": "flow",
     "name": "ISAC CYTO U",
     "title_zh": "流式細胞術與臨床免疫表型",
@@ -432,11 +437,12 @@
     "notice_zh": "公開資源與會員課程的權限可能不同，請依各課程頁面確認。",
     "notice_en": "Member, registration and fee conditions vary by module.",
     "career_keywords": "流式細胞 免疫表型 flow cytometry FACS immunophenotyping",
-    "career_type": "course"
+    "career_type": "course",
+    "learning_track": "flow"
   },
   {
     "slug": "clingen-learning",
-    "function_group": "career",
+    "function_group": "molecular",
     "career_group": "genetics",
     "name": "ClinGen Education & Training",
     "title_zh": "基因／變異證據分級訓練教材",
@@ -450,11 +456,12 @@
     "notice_zh": "教材供訓練與研究；個別變異解讀須納入臨床證據及適用標準。",
     "notice_en": "Training material; clinical interpretation requires case-specific evidence and applicable standards.",
     "career_keywords": "基因變異 臨床遺傳 genomics variant interpretation ACMG",
-    "career_type": "course"
+    "career_type": "course",
+    "learning_track": "genetics"
   },
   {
     "slug": "ncbi-clinvar",
-    "function_group": "career",
+    "function_group": "molecular",
     "career_group": "genetics",
     "name": "NCBI ClinVar",
     "title_zh": "臨床基因變異分類與證據資料庫",
@@ -468,12 +475,13 @@
     "notice_zh": "ClinVar 彙整提交者的分類，遇有衝突或不確定分類需逐一查證。",
     "notice_en": "ClinVar presents submitted assertions; examine conflicts and uncertain classifications.",
     "career_keywords": "臨床遺傳 NGS 基因變異 ClinVar genomics variant",
-    "career_type": "reference"
+    "career_type": "reference",
+    "learning_track": "genetics"
   },
   {
     "slug": "ascp-cytogenetics",
     "function_group": "career",
-    "career_group": "cytogenetics",
+    "career_group": "certifications",
     "name": "ASCP Scientist in Cytogenetics (CG)",
     "title_zh": "細胞遺傳學專業認證與資格",
     "title_en": "Cytogenetics credential & eligibility",
@@ -490,7 +498,7 @@
   },
   {
     "slug": "arizona-karyotype",
-    "function_group": "career",
+    "function_group": "imaging",
     "career_group": "cytogenetics",
     "name": "University of Arizona Karyotyping Activity",
     "title_zh": "三組患者染色體核型互動練習",
@@ -504,12 +512,13 @@
     "notice_zh": "1990 年代設計的舊版教學網頁；請先確認手機及瀏覽器相容性。",
     "notice_en": "Legacy teaching site; test current browser and mobile compatibility.",
     "career_keywords": "核型 配對 染色體 核型分析 Karyotyping interactive",
-    "career_type": "practice"
+    "career_type": "practice",
+    "learning_track": "cytogenetics"
   },
   {
     "slug": "ascp-histotechnology",
     "function_group": "career",
-    "career_group": "pathology",
+    "career_group": "certifications",
     "name": "ASCP Histotechnology HTL",
     "title_zh": "組織技術與病理檢驗專業認證",
     "title_en": "Histotechnology credential & training",
@@ -526,7 +535,7 @@
   },
   {
     "slug": "cap-case-challenge",
-    "function_group": "career",
+    "function_group": "imaging",
     "career_group": "pathology",
     "name": "CAP Pathology Case Challenge",
     "title_zh": "全玻片病理案例與三題測驗",
@@ -540,7 +549,8 @@
     "notice_zh": "病例與玻片屬原出版者內容；僅外部連結，請依其使用條款學習。",
     "notice_en": "Publisher-owned educational cases and images; follow reuse terms.",
     "career_keywords": "組織病理 histology whole slide digital pathology H&E quiz",
-    "career_type": "practice"
+    "career_type": "practice",
+    "learning_track": "pathology"
   },
   {
     "slug": "tssm-sleep-tech",
@@ -580,7 +590,7 @@
   },
   {
     "slug": "hpa-genetic-screening",
-    "function_group": "career",
+    "function_group": "clinical",
     "career_group": "newborn",
     "name": "國民健康署｜遺傳疾病與新生兒篩檢",
     "title_zh": "臺灣新生兒篩檢中心、合約實驗室與檢測項目",
@@ -594,11 +604,12 @@
     "notice_zh": "名單及補助項目依公告更新；進入後選擇「合約實驗室名單」。",
     "notice_en": "Provider lists and programmes change; locate the contracted-laboratory list.",
     "career_keywords": "新生兒篩檢 新生兒 先天代謝 質譜 DBS",
-    "career_type": "reference"
+    "career_type": "reference",
+    "learning_track": "newborn"
   },
   {
     "slug": "cdc-lcms-validation",
-    "function_group": "career",
+    "function_group": "clinical",
     "career_group": "newborn",
     "name": "CDC LC-MS/MS Biochemical Genetics Course",
     "title_zh": "臨床質譜方法建立與驗證（1.5 小時）",
@@ -612,11 +623,12 @@
     "notice_zh": "訓練內容用於方法學學習，臨床使用仍需院內驗證與品質系統。",
     "notice_en": "Educational method training; clinical implementation requires local validation.",
     "career_keywords": "新生兒篩檢 LCMS LC-MS/MS 質譜 方法驗證",
-    "career_type": "course"
+    "career_type": "course",
+    "learning_track": "newborn"
   },
   {
     "slug": "cdc-nsqap",
-    "function_group": "career",
+    "function_group": "clinical",
     "career_group": "newborn",
     "name": "CDC Newborn Screening Quality Assurance Program",
     "title_zh": "新生兒篩檢乾血點品質管理",
@@ -630,11 +642,12 @@
     "notice_zh": "供專業實驗室參考；計畫參與資格與材料提供依 CDC 規定。",
     "notice_en": "Programme participation and reference-material access require eligibility review.",
     "career_keywords": "新生兒篩檢 DBS dried blood spot NSQAP QC PT",
-    "career_type": "reference"
+    "career_type": "reference",
+    "learning_track": "newborn"
   },
   {
     "slug": "ashi-hla-education",
-    "function_group": "career",
+    "function_group": "clinical",
     "career_group": "hla",
     "name": "ASHI Educational Resources",
     "title_zh": "HLA、組織相容性與移植實驗室進修",
@@ -648,11 +661,12 @@
     "notice_zh": "各課程與錄影的存取權限依學會公告，須確認會員要求。",
     "notice_en": "Individual resources may have membership restrictions.",
     "career_keywords": "HLA 移植 組織相容 骨髓 配對 histocompatibility immunogenetics",
-    "career_type": "reference"
+    "career_type": "reference",
+    "learning_track": "hla"
   },
   {
     "slug": "ipd-imgt-hla",
-    "function_group": "career",
+    "function_group": "clinical",
     "career_group": "hla",
     "name": "IPD-IMGT/HLA Database",
     "title_zh": "HLA 等位基因與序列查詢",
@@ -666,7 +680,8 @@
     "notice_zh": "資料庫供研究與教學，臨床移植配對仍應依合格實驗室方法及品質規範。",
     "notice_en": "Reference database, not a substitute for validated clinical HLA typing.",
     "career_keywords": "HLA typing allele transplantation 移植 配對 免疫遺傳",
-    "career_type": "reference"
+    "career_type": "reference",
+    "learning_track": "hla"
   },
   {
     "slug": "isct-workforce",
@@ -706,7 +721,7 @@
   },
   {
     "slug": "nist-forensic-dna-standard",
-    "function_group": "career",
+    "function_group": "molecular",
     "career_group": "forensics",
     "name": "NIST｜Forensic DNA Reporting Training",
     "title_zh": "法醫 DNA 報告與複核訓練標準",
@@ -720,11 +735,12 @@
     "notice_zh": "標準摘要可公開查閱，正式標準全文的取得及授權依制訂組織。",
     "notice_en": "Full standard text may be subject to publisher access requirements.",
     "career_keywords": "法醫 鑑識 DNA STR report OSAC",
-    "career_type": "reference"
+    "career_type": "reference",
+    "learning_track": "forensics"
   },
   {
     "slug": "nist-osac-library",
-    "function_group": "career",
+    "function_group": "molecular",
     "career_group": "forensics",
     "name": "NIST OSAC Forensic Science Standards Library",
     "title_zh": "鑑識實驗室 DNA、證物與品質標準資料庫",
@@ -738,7 +754,8 @@
     "notice_zh": "請確認標準編號、版次、是否納入 OSAC registry 及適用目的。",
     "notice_en": "Check edition, registry status and applicability.",
     "career_keywords": "法醫 鑑識 STR DNA NIST OSAC quality",
-    "career_type": "reference"
+    "career_type": "reference",
+    "learning_track": "forensics"
   },
   {
     "slug": "tfda-ivd-laws",
@@ -779,7 +796,7 @@
   {
     "slug": "ascp-molecular-scientist",
     "function_group": "career",
-    "career_group": "genetics",
+    "career_group": "certifications",
     "name": "ASCP Scientist in Molecular Biology (MB)",
     "title_zh": "分子診斷技術專業認證與學習領域",
     "title_en": "Molecular biology credential & eligibility",
@@ -796,7 +813,7 @@
   },
   {
     "slug": "galaxy-variant-tutorials",
-    "function_group": "career",
+    "function_group": "molecular",
     "career_group": "genetics",
     "name": "Galaxy Training Network — Variant Analysis",
     "title_zh": "NGS 變異分析實作教材與範例資料",
@@ -810,6 +827,7 @@
     "notice_zh": "不同練習所需的資料量及線上運算配額可能不同；請依教材需求選擇。",
     "notice_en": "Compute requirements and hosted quotas vary by tutorial.",
     "career_keywords": "NGS 變異判讀 WES Galaxy genomics variant calling",
-    "career_type": "practice"
+    "career_type": "practice",
+    "learning_track": "genetics"
   }
 ]
