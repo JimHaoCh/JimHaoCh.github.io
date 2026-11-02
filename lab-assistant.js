@@ -8,6 +8,7 @@
   try { data = JSON.parse(dataNode.textContent); } catch (_) { return; }
   if (!data || !Array.isArray(data.groups) || !Array.isArray(data.entries)) return;
   const groups = new Map(data.groups.map(group => [group.id, group]));
+  const studentSections = new Map((data.student_sections || []).map(section => [section.id, section]));
   const entries = new Map(data.entries.map(entry => [entry.id, entry]));
   const $ = selector => root.querySelector(selector);
   const panel = $('.lab-helper__panel');
@@ -26,7 +27,8 @@
       choose:'選擇您想了解的問題：', related:'您可能也想了解', options:'找到幾個相關主題，請選擇：',
       empty:'目前沒有找到足夠吻合的內容。請換個關鍵字，或選擇下方主題、聯絡實驗室。',
       viewTopics:'查看所有主題', contact:'聯絡實驗室', link:'查看相關資訊',
-      research:'研究與資訊導覽', topics:'主題選單'
+      research:'研究與資訊導覽', topics:'主題選單', studentChoose:'請選擇學生常見問題分類，或直接查詢：',
+      studentPopular:'熱門學生問題', studentBack:'返回學生問題分類'
     },
     en: {
       title:'Lab guide', status:'● Research · techniques · collaboration', home:'Topics', reset:'Start over',
@@ -36,7 +38,8 @@
       choose:'Choose a question:', related:'You may also be interested in', options:'Here are some relevant topics. Please choose one:',
       empty:'No close match was found. Try another keyword, browse the topics or contact the lab.',
       viewTopics:'View all topics', contact:'Contact the lab', link:'Explore related information',
-      research:'LAB INFORMATION', topics:'Explore topics'
+      research:'LAB INFORMATION', topics:'Explore topics', studentChoose:'Choose a student topic or start with a frequent question:',
+      studentPopular:'Frequently asked', studentBack:'Back to student topics'
     }
   };
   const t = key => copy[lang][key];
@@ -105,10 +108,24 @@
       const group = groups.get(item.id);
       if (!group) return;
       bubble.append(el('strong','lab-helper__message-title',group.icon + '  ' + local(group)));
+      if (group.id === 'join' && studentSections.size) {
+        bubble.append(el('p','',t('studentChoose')));
+        choices(bubble, Array.from(studentSections.values()).map(section => ({label:section.icon+'  '+local(section),action:'student-section',id:section.id})), 'lab-helper__choices--groups');
+        bubble.append(el('span','lab-helper__related-label',t('studentPopular')));
+        resultChoices(bubble, ['join-overview','student-topic','student-hours','student-funding','student-graduation-rules']);
+      } else {
+        bubble.append(el('p','',t('choose')));
+        const questions = data.entries.filter(entry => entry.group === group.id).map(entry => entry.id);
+        if (group.id === 'papers') questions.push('ebc','sputum','bacteria','ausic');
+        resultChoices(bubble, questions);
+      }
+    } else if (item.type === 'student-section') {
+      const section = studentSections.get(item.id);
+      if (!section) return;
+      bubble.append(el('strong','lab-helper__message-title',section.icon+'  '+local(section)));
       bubble.append(el('p','',t('choose')));
-      const questions = data.entries.filter(entry => entry.group === group.id).map(entry => entry.id);
-      if (group.id === 'papers') questions.push('ebc','sputum','bacteria','ausic');
-      resultChoices(bubble, questions);
+      resultChoices(bubble,data.entries.filter(entry=>entry.group==='join' && entry.student_section===section.id).map(entry=>entry.id));
+      choices(bubble,[{label:t('studentBack'),action:'group',id:'join'}]);
     } else if (item.type === 'answer') {
       const entry = entries.get(item.id);
       if (!entry) return;
@@ -143,7 +160,12 @@
     language.setAttribute('aria-label',t('language'));
     log.replaceChildren();
     for (const item of history) renderItem(item);
-    log.scrollTop=log.scrollHeight;
+    // Start at the latest response so long menus remain readable from the top.
+    const latest=log.lastElementChild;
+    if (latest) {
+      const top=latest.getBoundingClientRect().top-log.getBoundingClientRect().top+log.scrollTop;
+      log.scrollTop=Math.max(0,top-8);
+    }
   }
   const norm = value => String(value || '').normalize('NFKC').toLocaleLowerCase().replace(/\s+/g,' ').trim();
   function matches(query, term) {
@@ -153,6 +175,8 @@
     }
     return query.includes(term);
   }
+  // Broad category words help with short searches but should not override a specific question.
+  const broadTerms = new Set(['加入','進實驗室','碩士','碩班','研究所','畢業','論文','老師','訓練','發表','準備什麼','join','masters','graduate','thesis','paper','papers','background']);
   function search(inputValue) {
     const query = norm(inputValue);
     const ambiguous = {
@@ -168,7 +192,7 @@
         const term=norm(word);
         if (!term || !matches(query,term)) continue;
         const chars=term.replace(/\s/g,'').length;
-        const score=10+Math.min(chars,24)*2+(query===term?15:0);
+        const score=10+Math.min(chars,24)*2+(query===term?15:0)-(query!==term && broadTerms.has(term)?12:0);
         if (score>best) best=score;
       }
       if (query===norm(entry.title.zh) || query===norm(entry.title.en)) best+=40;
@@ -224,6 +248,7 @@
     const keyboard=event.detail===0;
     if (kind==='home') push({type:'home'});
     else if (kind==='group' && groups.has(id)) push({type:'user',text:local(groups.get(id))},{type:'group',id});
+    else if (kind==='student-section' && studentSections.has(id)) push({type:'user',text:local(studentSections.get(id))},{type:'student-section',id});
     else if (kind==='answer' && entries.has(id)) push({type:'user',text:local(entries.get(id).title)},{type:'answer',id});
     if (keyboard) log.focus({preventScroll:true});
   });

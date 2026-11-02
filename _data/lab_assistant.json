@@ -1242,7 +1242,8 @@
         "background",
         "training",
         "masters"
-      ]
+      ],
+      "student_section": "student-apply"
     },
     {
       "id": "background",
@@ -1291,7 +1292,8 @@
       "related": [
         "join-overview",
         "training"
-      ]
+      ],
+      "student_section": "student-apply"
     },
     {
       "id": "training",
@@ -1335,7 +1337,8 @@
         "background",
         "masters",
         "student-ai"
-      ]
+      ],
+      "student_section": "student-research"
     },
     {
       "id": "masters",
@@ -1384,7 +1387,8 @@
         "join-overview",
         "training",
         "careers"
-      ]
+      ],
+      "student_section": "student-graduation"
     },
     {
       "id": "student-ai",
@@ -1424,7 +1428,8 @@
       "related": [
         "training",
         "background"
-      ]
+      ],
+      "student_section": "student-research"
     },
     {
       "id": "careers",
@@ -1464,7 +1469,8 @@
       "related": [
         "masters",
         "training"
-      ]
+      ],
+      "student_section": "student-graduation"
     },
     {
       "id": "papers-overview",
@@ -1705,6 +1711,1401 @@
       "related": [
         "contact"
       ]
+    },
+    {
+      "id": "student-openings",
+      "group": "join",
+      "student_section": "student-apply",
+      "title": {
+        "zh": "還有碩士生或專題生名額嗎？",
+        "en": "Are there openings for master’s or undergraduate students?"
+      },
+      "answer": {
+        "zh": "名額會隨學年度與研究安排變動，網站未列即時名額。請提供就讀系所、年級、感興趣的方向及預計加入時間，直接聯絡老師確認。",
+        "en": "Openings vary by academic year and project, and current availability is not listed on the site. Contact the PI with your program, year, interests and intended start date."
+      },
+      "keywords": [
+        "還有名額",
+        "有名額嗎",
+        "招生名額",
+        "碩班名額",
+        "研究生名額",
+        "專題生名額",
+        "碩士名額",
+        "缺人",
+        "招生中",
+        "收學生",
+        "招收學生",
+        "還有缺",
+        "名額",
+        "openings",
+        "available positions",
+        "accepting students",
+        "available spots",
+        "student vacancies"
+      ],
+      "links": [
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        },
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        }
+      ],
+      "related": [
+        "join-overview",
+        "student-meeting-prepare"
+      ]
+    },
+    {
+      "id": "student-meeting-prepare",
+      "group": "join",
+      "student_section": "student-apply",
+      "title": {
+        "zh": "第一次聯絡或面談要準備什麼？",
+        "en": "What should I prepare for an initial inquiry or meeting?"
+      },
+      "answer": {
+        "zh": "可以先了解研究方向，並準備簡短自我介紹、就讀背景、相關課程或專題經驗、研究興趣及可參與時間。是否需要履歷、成績單或其他資料，請事先向老師確認。",
+        "en": "Review the research areas and prepare a brief introduction, academic background, relevant courses or projects, interests and availability. Ask the PI in advance whether a CV, transcript or other materials are needed."
+      },
+      "keywords": [
+        "面談準備",
+        "面試準備",
+        "面談要準備",
+        "面試要準備",
+        "見老師",
+        "見教授",
+        "寄信怎麼寫",
+        "寄信給老師",
+        "第一次聯絡",
+        "自我介紹",
+        "準備履歷",
+        "prepare for the meeting",
+        "prepare for an interview",
+        "contact the professor",
+        "initial meeting",
+        "resume",
+        "curriculum vitae"
+      ],
+      "links": [
+        {
+          "zh": "研究方向",
+          "en": "Research",
+          "href": "/#research"
+        },
+        {
+          "zh": "著作與論文",
+          "en": "Publications",
+          "href": "/#publications"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "join-overview",
+        "student-openings",
+        "student-visit"
+      ]
+    },
+    {
+      "id": "student-visit",
+      "group": "join",
+      "student_section": "student-apply",
+      "title": {
+        "zh": "可以先參觀實驗室或和學生聊聊嗎？",
+        "en": "Can I visit the lab or speak with current students?"
+      },
+      "answer": {
+        "zh": "如想參觀或了解研究環境，可先透過聯絡表單詢問，並提供身分與方便時間；參觀與交流方式依實驗室安排確認。",
+        "en": "To request a visit or learn about the research environment, contact the lab with your background and availability. The visit and any student conversation depend on lab arrangements."
+      },
+      "keywords": [
+        "參觀實驗室",
+        "參觀研究室",
+        "實驗室參訪",
+        "想參觀",
+        "預約參觀",
+        "跟學長姐聊",
+        "詢問學長姐",
+        "找學長姐",
+        "參訪",
+        "visit the lab",
+        "lab tour",
+        "speak with students",
+        "talk to current students"
+      ],
+      "links": [
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        },
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        }
+      ],
+      "related": [
+        "student-meeting-prepare",
+        "student-openings"
+      ]
+    },
+    {
+      "id": "student-no-experience",
+      "group": "join",
+      "student_section": "student-apply",
+      "title": {
+        "zh": "沒有做過專題或實驗，也可以詢問加入嗎？",
+        "en": "Can I inquire without prior project or lab experience?"
+      },
+      "answer": {
+        "zh": "可以先說明目前的課程背景、研究興趣與可參與時間。網站介紹的基礎訓練包含實驗安全、研究紀錄及晶片或影像工具入門；實際是否錄取及訓練安排需與老師討論。",
+        "en": "You may inquire with your coursework, interests and availability. The website describes orientation in safety, documentation and introductory chip or imaging tools; admission and the actual training plan are discussed with the PI."
+      },
+      "keywords": [
+        "沒有做過專題",
+        "沒做過專題",
+        "沒有專題經驗",
+        "沒有研究經驗",
+        "沒有實驗經驗",
+        "沒做過實驗",
+        "沒有進過實驗室",
+        "新手",
+        "零基礎",
+        "no lab experience",
+        "no research experience",
+        "without research experience",
+        "no project experience"
+      ],
+      "links": [
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "background",
+        "student-foundation",
+        "join-overview"
+      ]
+    },
+    {
+      "id": "student-undergrad",
+      "group": "join",
+      "student_section": "student-apply",
+      "title": {
+        "zh": "大學生可以做專題嗎？什麼時候開始？",
+        "en": "Can undergraduates do a research project, and when?"
+      },
+      "answer": {
+        "zh": "網站提供學生專題洽詢入口。請說明目前年級、課程背景、感興趣的研究及預計投入時間；專題生名額、開始時間與工作安排請直接確認。",
+        "en": "The website accepts undergraduate project inquiries. Share your year, coursework, research interests and expected availability; confirm openings, start dates and responsibilities with the lab."
+      },
+      "keywords": [
+        "大學生可以",
+        "大學部",
+        "專題生",
+        "大學專題",
+        "大二",
+        "大三",
+        "大四",
+        "大學部專題",
+        "專題什麼時候",
+        "專題何時",
+        "undergraduate project",
+        "undergraduates",
+        "undergrad",
+        "bachelor student"
+      ],
+      "links": [
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-openings",
+        "student-no-experience"
+      ]
+    },
+    {
+      "id": "student-other-program",
+      "group": "join",
+      "student_section": "student-apply",
+      "title": {
+        "zh": "外系或跨領域背景可以申請嗎？",
+        "en": "Can students from another department or field inquire?"
+      },
+      "answer": {
+        "zh": "網站歡迎醫技、生科、生醫及相關領域學生洽詢，也介紹醫學工程背景的跨領域共同指導。實際申請、指導及系所資格請依個人情況確認。",
+        "en": "Students from medical laboratory science, biotechnology, biomedical science and related fields are welcome to inquire. The website also describes co-supervision for biomedical engineering students; program eligibility and arrangements require confirmation."
+      },
+      "keywords": [
+        "外系",
+        "別的科系",
+        "其他科系",
+        "跨系",
+        "跨校",
+        "非醫技",
+        "非醫檢",
+        "轉領域",
+        "跨領域申請",
+        "other department",
+        "different major",
+        "another department",
+        "other field",
+        "cross disciplinary"
+      ],
+      "links": [
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "background",
+        "student-cosupervision"
+      ]
+    },
+    {
+      "id": "student-summer",
+      "group": "join",
+      "student_section": "student-apply",
+      "title": {
+        "zh": "入學前暑假需要進實驗室嗎？",
+        "en": "Is pre-enrollment summer training required?"
+      },
+      "answer": {
+        "zh": "網站目前規劃暑假約 2–3 週的基礎設備與實驗流程訓練，內容包含安全、紀錄及工具入門。實際日期、參與方式和是否需要提前進實驗室，請與老師確認。",
+        "en": "The website describes a planned 2–3 week summer orientation in equipment and laboratory workflows, including safety, records and introductory tools. Confirm dates, participation and any pre-enrollment expectations with the PI."
+      },
+      "keywords": [
+        "暑假訓練",
+        "暑假要去",
+        "暑假要進",
+        "暑假進實驗室",
+        "碩零",
+        "碩0",
+        "碩一前",
+        "入學前",
+        "提前進實驗室",
+        "暑假實驗室",
+        "summer training",
+        "before enrollment",
+        "before starting",
+        "summer orientation",
+        "pre-enrollment"
+      ],
+      "links": [
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "碩士培訓路徑",
+          "en": "Master’s roadmap",
+          "href": "/#masters-roadmap-title"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-foundation",
+        "student-openings"
+      ]
+    },
+    {
+      "id": "student-foundation",
+      "group": "join",
+      "student_section": "student-apply",
+      "title": {
+        "zh": "加入前建議先學什麼？",
+        "en": "What can I study before joining?"
+      },
+      "answer": {
+        "zh": "可先認識實驗室的微流體、生物感測與體外診斷方向，練習閱讀相關論文及整理實驗紀錄。是否需要先修特定課程或工具，請與老師依研究方向討論。",
+        "en": "You can start with the lab’s microfluidics, biosensing and IVD topics and practice reading papers and keeping research notes. Discuss any project-specific courses or tools with the PI."
+      },
+      "keywords": [
+        "事先準備",
+        "事前準備",
+        "加入前",
+        "入學前準備",
+        "先學什麼",
+        "先修課",
+        "先修什麼",
+        "推薦閱讀",
+        "推薦論文",
+        "先讀什麼",
+        "看什麼paper",
+        "課前準備",
+        "study before joining",
+        "prepare before joining",
+        "prerequisite",
+        "recommended reading",
+        "read before joining"
+      ],
+      "links": [
+        {
+          "zh": "研究方向",
+          "en": "Research",
+          "href": "/#research"
+        },
+        {
+          "zh": "著作與論文",
+          "en": "Publications",
+          "href": "/#publications"
+        },
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        }
+      ],
+      "related": [
+        "training",
+        "student-summer"
+      ]
+    },
+    {
+      "id": "student-topic",
+      "group": "join",
+      "student_section": "student-research",
+      "title": {
+        "zh": "研究題目是自己選，還是老師安排？",
+        "en": "How is a research topic selected?"
+      },
+      "answer": {
+        "zh": "網站的碩士路徑從研究問題與檢測目標建立開始。題目如何形成、能否結合自己的興趣或既有計畫，請在面談時與老師討論；網站未列固定分配方式。",
+        "en": "The master’s roadmap begins with defining a research question and target. Discuss topic selection, personal interests and existing projects with the PI; the site does not specify a fixed allocation process."
+      },
+      "keywords": [
+        "題目怎麼選",
+        "題目如何決定",
+        "題目怎麼決定",
+        "題目自己",
+        "題目安排",
+        "研究題目",
+        "選題",
+        "選題目",
+        "碩論題目",
+        "自己提題目",
+        "自己想題目",
+        "thesis topic",
+        "choose a topic",
+        "research topic",
+        "topic assigned",
+        "choose my project"
+      ],
+      "links": [
+        {
+          "zh": "碩士培訓路徑",
+          "en": "Master’s roadmap",
+          "href": "/#masters-roadmap-title"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-topic-change",
+        "student-project-team",
+        "research-overview"
+      ]
+    },
+    {
+      "id": "student-project-team",
+      "group": "join",
+      "student_section": "student-research",
+      "title": {
+        "zh": "研究是一人一題，還是團隊合作？",
+        "en": "Are projects individual or team-based?"
+      },
+      "answer": {
+        "zh": "研究題目、分工與合作方式會依專題內容及人員安排討論。網站介紹了團隊協作與跨領域研究訓練；個別題目是否共同進行，請向老師確認。",
+        "en": "Topic ownership, responsibilities and collaboration depend on the project and team. The website describes teamwork and interdisciplinary training; confirm the arrangement for a particular project with the PI."
+      },
+      "keywords": [
+        "一人一題",
+        "一人一個",
+        "自己一個人",
+        "團隊合作",
+        "團隊分工",
+        "共同研究",
+        "專題分工",
+        "研究分工",
+        "自己做",
+        "individual project",
+        "team project",
+        "work alone",
+        "teamwork",
+        "project roles"
+      ],
+      "links": [
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        },
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-topic",
+        "student-supervision"
+      ]
+    },
+    {
+      "id": "student-supervision",
+      "group": "join",
+      "student_section": "student-research",
+      "title": {
+        "zh": "老師會怎麼指導？會有學長姐帶嗎？",
+        "en": "How does supervision work? Will senior students help?"
+      },
+      "answer": {
+        "zh": "網站介紹的訓練包含研究設計、實驗操作、紀錄與討論。老師、學長姐及合作夥伴的具體指導與分工方式，請在面談時直接確認。",
+        "en": "The website describes training in research design, laboratory work, documentation and discussion. Ask the PI about the specific roles of faculty, senior students and collaborators."
+      },
+      "keywords": [
+        "老師會帶",
+        "老師親自帶",
+        "教授親自帶",
+        "老師指導",
+        "怎麼指導",
+        "如何指導",
+        "誰帶",
+        "學長姐帶",
+        "學長帶",
+        "學姊帶",
+        "學姊教",
+        "指導方式",
+        "supervision",
+        "mentor",
+        "senior students",
+        "who supervises",
+        "who will teach"
+      ],
+      "links": [
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-meetings",
+        "student-project-team"
+      ]
+    },
+    {
+      "id": "student-cosupervision",
+      "group": "join",
+      "student_section": "student-research",
+      "title": {
+        "zh": "可以跨領域共同指導或合作嗎？",
+        "en": "Is interdisciplinary co-supervision possible?"
+      },
+      "answer": {
+        "zh": "網站介紹醫學工程背景學生可與原指導老師及本實驗室討論共同指導或專題合作，結合感測、電子、機構、材料與製程等專長；正式安排與資格須由相關老師及系所確認。",
+        "en": "The website describes a possible co-supervision or project collaboration model for biomedical engineering students, combining sensing, electronics, mechanics, materials or fabrication. The faculty and programs must confirm eligibility and formal arrangements."
+      },
+      "keywords": [
+        "共同指導",
+        "共同指導老師",
+        "共指",
+        "共同指導教授",
+        "跨領域合作",
+        "雙指導",
+        "跨系指導",
+        "co-supervision",
+        "co-supervisor",
+        "cosupervision",
+        "joint supervision",
+        "interdisciplinary collaboration"
+      ],
+      "links": [
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-other-program",
+        "student-topic"
+      ]
+    },
+    {
+      "id": "student-topic-change",
+      "group": "join",
+      "student_section": "student-research",
+      "title": {
+        "zh": "實驗不順利或題目不適合，可以調整嗎？",
+        "en": "Can a project be adjusted if experiments do not work?"
+      },
+      "answer": {
+        "zh": "網站的培訓路徑包含參數最佳化、對照組與結果限制檢討。若實驗遇到瓶頸，可整理紀錄、已嘗試的方法與問題，和老師討論下一步；題目調整需依研究進度確認。",
+        "en": "The roadmap includes parameter optimization, controls and review of limitations. If you encounter a problem, bring your records, attempted approaches and questions to the PI; topic changes depend on research progress."
+      },
+      "keywords": [
+        "實驗失敗",
+        "實驗做不出來",
+        "研究做不出來",
+        "遇到瓶頸",
+        "卡關",
+        "研究不順",
+        "換題目",
+        "更換題目",
+        "改題目",
+        "調整題目",
+        "experiments fail",
+        "project not working",
+        "change topic",
+        "change my project",
+        "research difficulties"
+      ],
+      "links": [
+        {
+          "zh": "碩士培訓路徑",
+          "en": "Master’s roadmap",
+          "href": "/#masters-roadmap-title"
+        },
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-topic",
+        "student-supervision"
+      ]
+    },
+    {
+      "id": "student-wet-chip",
+      "group": "join",
+      "student_section": "student-research",
+      "title": {
+        "zh": "會同時做生物實驗和晶片製作嗎？",
+        "en": "Will I work on both biological experiments and chips?"
+      },
+      "answer": {
+        "zh": "網站介紹的訓練包含檢驗流程、晶片設計製作、生物感測與系統驗證。實際接觸哪些技術、各部分投入時間，會依研究題目與分工而定。",
+        "en": "The website describes training in laboratory workflows, chip design and fabrication, biosensing and validation. The techniques and time spent on each depend on the project and responsibilities."
+      },
+      "keywords": [
+        "濕實驗",
+        "乾實驗",
+        "生物實驗和晶片",
+        "wet lab",
+        "wetlab",
+        "dry lab",
+        "生物和工程",
+        "做生物還是工程",
+        "晶片跟生物",
+        "wet and dry"
+      ],
+      "links": [
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        },
+        {
+          "zh": "技術介紹",
+          "en": "Techniques",
+          "href": "/techniques.html"
+        }
+      ],
+      "related": [
+        "training",
+        "student-project-team"
+      ]
+    },
+    {
+      "id": "student-safety",
+      "group": "join",
+      "student_section": "student-research",
+      "title": {
+        "zh": "進實驗室會有安全訓練嗎？",
+        "en": "Is safety training included?"
+      },
+      "answer": {
+        "zh": "學生 FAQ 將實驗安全列入預計的基礎訓練；具體課程、設備操作與樣本處理要求，須依實驗室及校方規範確認。涉及人體研究或可識別檢體時，依適用規定辦理審查。",
+        "en": "The student FAQ includes laboratory safety in the planned orientation. Confirm specific training, equipment and sample-handling requirements under lab and university procedures. Human research and identifiable specimens follow applicable review requirements."
+      },
+      "keywords": [
+        "實驗安全",
+        "實驗室安全",
+        "安全訓練",
+        "生物安全",
+        "安全課程",
+        "生安訓練",
+        "實驗風險",
+        "人體檢體",
+        "倫理審查",
+        "irb",
+        "safety training",
+        "lab safety",
+        "biosafety",
+        "human specimens",
+        "ethics approval"
+      ],
+      "links": [
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "碩士培訓路徑",
+          "en": "Master’s roadmap",
+          "href": "/#masters-roadmap-title"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-summer",
+        "student-wet-chip"
+      ]
+    },
+    {
+      "id": "student-meetings",
+      "group": "join",
+      "student_section": "student-daily",
+      "title": {
+        "zh": "多久開一次 meeting？怎麼報告？",
+        "en": "How often are lab meetings held, and what is presented?"
+      },
+      "answer": {
+        "zh": "網站尚未公布固定開會頻率或報告形式。可在面談時詢問是個別或團體討論、報告研究進度或論文，以及時間如何安排。",
+        "en": "The website does not state a fixed meeting schedule or format. Ask whether meetings are individual or group-based, cover research progress or papers, and how they are scheduled."
+      },
+      "keywords": [
+        "多久開會",
+        "多久開一次",
+        "會議頻率",
+        "開會頻率",
+        "討論頻率",
+        "咪挺",
+        "開meeting",
+        "meeting",
+        "lab meeting",
+        "lab meetings",
+        "weekly meeting",
+        "進度報告",
+        "組會",
+        "meeting頻率"
+      ],
+      "links": [
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-supervision",
+        "student-presentation"
+      ]
+    },
+    {
+      "id": "student-presentation",
+      "group": "join",
+      "student_section": "student-daily",
+      "title": {
+        "zh": "報告和論文閱讀需要全英文嗎？",
+        "en": "Are presentations and paper discussions entirely in English?"
+      },
+      "answer": {
+        "zh": "網站將中英文簡報、文獻閱讀及論文寫作列為研究訓練。會議實際使用的語言、報告形式與學習安排，請直接詢問老師。",
+        "en": "The website lists bilingual presentations, literature reading and scientific writing as part of training. Ask the PI about the language, format and support used in actual meetings."
+      },
+      "keywords": [
+        "全英文",
+        "用英文報告",
+        "英文報告",
+        "英文簡報",
+        "英文不好",
+        "英文程度",
+        "讀英文論文",
+        "英文論文",
+        "英文能力",
+        "英文要很好",
+        "中文報告",
+        "in english",
+        "english presentation",
+        "english ability",
+        "language of meetings",
+        "paper presentation"
+      ],
+      "links": [
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-meetings",
+        "student-foundation"
+      ]
+    },
+    {
+      "id": "student-hours",
+      "group": "join",
+      "student_section": "student-daily",
+      "title": {
+        "zh": "每天要幾點到實驗室？需要打卡嗎？",
+        "en": "What are the expected lab hours and attendance rules?"
+      },
+      "answer": {
+        "zh": "網站尚未公布固定到離時間或打卡規定。建議在面談時討論修課、實驗安排、進度與出席期待，確認適合個人的時程。",
+        "en": "The website does not publish fixed arrival, departure or attendance rules. Discuss coursework, experiments, progress and attendance expectations during the meeting."
+      },
+      "keywords": [
+        "作息",
+        "上班時間",
+        "下班時間",
+        "上班幾點",
+        "每天幾點",
+        "幾點到",
+        "幾點走",
+        "打卡",
+        "出勤",
+        "待多久",
+        "每天多久",
+        "規定工時",
+        "出席時間",
+        "lab hours",
+        "working hours",
+        "attendance",
+        "clock in",
+        "schedule"
+      ],
+      "links": [
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-weekends",
+        "student-course-balance"
+      ]
+    },
+    {
+      "id": "student-weekends",
+      "group": "join",
+      "student_section": "student-daily",
+      "title": {
+        "zh": "週末、國定假日或晚上要進實驗室嗎？",
+        "en": "Are evenings, weekends or holidays required?"
+      },
+      "answer": {
+        "zh": "網站尚未列出固定的晚上、週末或假日出勤規定。不同實驗可能有時間限制；請在安排研究前，與老師確認實際出席和假日安排。",
+        "en": "The website does not state fixed evening, weekend or holiday attendance requirements. Experiments may have timing constraints; discuss expectations and scheduling with the PI."
+      },
+      "keywords": [
+        "週末",
+        "周末",
+        "假日",
+        "假期",
+        "國定假日",
+        "晚上",
+        "加班",
+        "星期六",
+        "星期日",
+        "六日",
+        "weekend",
+        "weekends",
+        "holidays",
+        "holiday",
+        "evenings",
+        "overtime"
+      ],
+      "links": [
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-hours",
+        "student-course-balance"
+      ]
+    },
+    {
+      "id": "student-course-balance",
+      "group": "join",
+      "student_section": "student-daily",
+      "title": {
+        "zh": "碩一修課和研究進度怎麼安排？",
+        "en": "How can first-year coursework and research be balanced?"
+      },
+      "answer": {
+        "zh": "網站的碩士規劃以碩一上建立研究目標與基本能力、碩一下建立方法及原型為方向。實際修課、進實驗室時間及研究進度，請依系所規定與老師討論。",
+        "en": "The roadmap places initial goal-setting and basic skills in the first semester, followed by methods and prototypes in the second. Discuss the actual coursework, lab time and research plan under your program’s requirements."
+      },
+      "keywords": [
+        "修課",
+        "課業",
+        "課表",
+        "上課",
+        "碩一時間",
+        "修課與研究",
+        "修課和研究",
+        "課業與研究",
+        "學分與研究",
+        "coursework",
+        "class schedule",
+        "classes and research",
+        "first-year schedule",
+        "course load"
+      ],
+      "links": [
+        {
+          "zh": "碩士培訓路徑",
+          "en": "Master’s roadmap",
+          "href": "/#masters-roadmap-title"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "masters",
+        "student-hours"
+      ]
+    },
+    {
+      "id": "student-paper-reading",
+      "group": "join",
+      "student_section": "student-daily",
+      "title": {
+        "zh": "需要讀多少篇論文？如何開始？",
+        "en": "How much literature reading is expected?"
+      },
+      "answer": {
+        "zh": "網站將文獻搜尋與判讀列入學生訓練，也提供研究成果與論文連結。閱讀篇數、討論方式及起始文獻，請依題目與老師確認。",
+        "en": "The website includes literature search and appraisal in student training and links to research publications. Ask the PI about the expected reading, discussion format and starting papers for your topic."
+      },
+      "keywords": [
+        "讀幾篇",
+        "看幾篇",
+        "論文閱讀",
+        "文獻閱讀",
+        "讀paper",
+        "看paper",
+        "讀文章",
+        "閱讀文獻",
+        "paper reading",
+        "how many papers",
+        "literature reading",
+        "journal club"
+      ],
+      "links": [
+        {
+          "zh": "著作與論文",
+          "en": "Publications",
+          "href": "/#publications"
+        },
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-presentation",
+        "student-foundation"
+      ]
+    },
+    {
+      "id": "student-funding",
+      "group": "join",
+      "student_section": "student-support",
+      "title": {
+        "zh": "研究生或專題生有薪水、獎學金或補助嗎？",
+        "en": "Is there a stipend, salary or scholarship?"
+      },
+      "answer": {
+        "zh": "網站尚未公布固定薪資或補助金額。是否有研究計畫助理、獎學金或其他補助，以及申請資格、金額與期間，請直接向老師或相關單位確認。",
+        "en": "The website does not publish a fixed stipend or salary. Ask the PI or relevant office about research assistantships, scholarships or other support, including eligibility, amount and duration."
+      },
+      "keywords": [
+        "薪水",
+        "薪資",
+        "研究助理費",
+        "助理費",
+        "有錢",
+        "給錢",
+        "領錢",
+        "津貼",
+        "補助",
+        "獎學金",
+        "生活費",
+        "研究生待遇",
+        "專題生有薪",
+        "有薪水嗎",
+        "stipend",
+        "salary",
+        "paid",
+        "scholarship",
+        "funding",
+        "financial support",
+        "assistantship"
+      ],
+      "links": [
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-costs",
+        "student-internship"
+      ]
+    },
+    {
+      "id": "student-internship",
+      "group": "join",
+      "student_section": "student-support",
+      "title": {
+        "zh": "暑假可以到企業實習或參與產學合作嗎？",
+        "en": "Can I take an industry internship or join a collaboration?"
+      },
+      "answer": {
+        "zh": "網站介紹產學合作與研究系統整合。個人的暑期實習或參與合作計畫，須依研究進度、合作條件及校系規定，事先與老師討論確認。",
+        "en": "The website describes industry collaboration and research integration. An individual internship or project role should be discussed with the PI in advance, considering research progress, collaboration terms and program rules."
+      },
+      "keywords": [
+        "企業實習",
+        "業界實習",
+        "暑假實習",
+        "暑期實習",
+        "去實習",
+        "可以實習",
+        "可以打工",
+        "兼職",
+        "企業合作",
+        "internship",
+        "industry internship",
+        "summer internship",
+        "part-time",
+        "part time"
+      ],
+      "links": [
+        {
+          "zh": "產學合作",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-funding",
+        "careers"
+      ]
+    },
+    {
+      "id": "student-costs",
+      "group": "join",
+      "student_section": "student-support",
+      "title": {
+        "zh": "研究耗材、軟體或設備需要自己付費嗎？",
+        "en": "Will students need to pay for materials, software or equipment?"
+      },
+      "answer": {
+        "zh": "網站尚未公布統一的個人支出或研究費用安排。關於耗材、軟體授權、設備使用及自備物品，請在加入或購買前向老師確認。",
+        "en": "The website does not state a general policy on personal research expenses. Ask the PI about consumables, software licenses, equipment access and personal supplies before joining or purchasing."
+      },
+      "keywords": [
+        "自己付錢",
+        "自費",
+        "自己買",
+        "耗材費",
+        "材料費",
+        "軟體費",
+        "設備費",
+        "要付錢",
+        "要買設備",
+        "自備電腦",
+        "研究費用",
+        "pay for materials",
+        "personal expenses",
+        "equipment costs",
+        "software costs",
+        "pay myself",
+        "lab fees"
+      ],
+      "links": [
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-funding",
+        "student-conference"
+      ]
+    },
+    {
+      "id": "student-conference",
+      "group": "join",
+      "student_section": "student-support",
+      "title": {
+        "zh": "有機會參加研討會或投稿嗎？",
+        "en": "Are there opportunities to attend conferences or publish?"
+      },
+      "answer": {
+        "zh": "網站的碩士路徑包含整理研討會資料，並依研究成果安排論文投稿或合作。參與機會、經費與投稿時程須依成果、計畫及指導安排確認。",
+        "en": "The master’s roadmap includes preparing conference materials and, depending on results, considering publications or collaboration. Opportunities, funding and timing depend on results, projects and supervision."
+      },
+      "keywords": [
+        "研討會",
+        "國際研討會",
+        "國內研討會",
+        "會議補助",
+        "會議經費",
+        "出國",
+        "出國補助",
+        "發表機會",
+        "海報發表",
+        "conference",
+        "conferences",
+        "attend a conference",
+        "present a poster",
+        "travel grant",
+        "conference funding"
+      ],
+      "links": [
+        {
+          "zh": "碩士培訓路徑",
+          "en": "Master’s roadmap",
+          "href": "/#masters-roadmap-title"
+        },
+        {
+          "zh": "著作與論文",
+          "en": "Publications",
+          "href": "/#publications"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-publication",
+        "student-funding"
+      ]
+    },
+    {
+      "id": "student-graduation-rules",
+      "group": "join",
+      "student_section": "student-graduation",
+      "title": {
+        "zh": "畢業需要符合哪些規定？",
+        "en": "What are the graduation requirements?"
+      },
+      "answer": {
+        "zh": "網站將兩年列為研究規劃目標，正式畢業仍須符合所屬系所的修課、學分、論文及審查規定，並依研究進度調整。請查詢所屬系所最新規範並與老師確認。",
+        "en": "The website describes a two-year planning goal. Graduation requires the applicable program’s coursework, credit, thesis and examination requirements and depends on research progress. Check the current program rules and discuss them with the PI."
+      },
+      "keywords": [
+        "畢業規定",
+        "畢業要求",
+        "畢業條件",
+        "畢業門檻",
+        "畢業標準",
+        "畢業學分",
+        "畢業口試",
+        "畢業要什麼",
+        "怎麼畢業",
+        "需要幾年畢業",
+        "graduation requirements",
+        "degree requirements",
+        "graduation criteria",
+        "graduate requirements",
+        "thesis defense"
+      ],
+      "links": [
+        {
+          "zh": "碩士培訓路徑",
+          "en": "Master’s roadmap",
+          "href": "/#masters-roadmap-title"
+        },
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "masters",
+        "student-publication",
+        "student-course-balance"
+      ]
+    },
+    {
+      "id": "student-publication",
+      "group": "join",
+      "student_section": "student-graduation",
+      "title": {
+        "zh": "畢業一定要投稿或發表期刊論文嗎？",
+        "en": "Is a journal submission or publication required for graduation?"
+      },
+      "answer": {
+        "zh": "網站介紹會依研究成果安排論文投稿，但未列出固定的期刊投稿、接受或發表門檻。請以所屬系所最新畢業規範與指導老師確認的要求為準。",
+        "en": "The roadmap discusses publication depending on research results, but the site does not state a fixed journal submission, acceptance or publication requirement. Confirm current program rules and the PI’s expectations."
+      },
+      "keywords": [
+        "一定要發論文",
+        "一定要投稿",
+        "畢業要投稿",
+        "畢業要發論文",
+        "畢業要發paper",
+        "畢業要發表",
+        "畢業一定要發表",
+        "期刊門檻",
+        "發表門檻",
+        "畢業要paper",
+        "論文accept",
+        "paper acceptance",
+        "publication required",
+        "publish to graduate",
+        "journal requirement",
+        "submission required"
+      ],
+      "links": [
+        {
+          "zh": "碩士培訓路徑",
+          "en": "Master’s roadmap",
+          "href": "/#masters-roadmap-title"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-graduation-rules",
+        "student-conference"
+      ]
+    },
+    {
+      "id": "student-clinical-path",
+      "group": "join",
+      "student_section": "student-graduation",
+      "title": {
+        "zh": "醫技背景或醫檢師經驗對研究有幫助嗎？",
+        "en": "How does a medical laboratory science background contribute?"
+      },
+      "answer": {
+        "zh": "網站指出醫技背景可運用在檢體處理、檢驗流程、品質控制與臨床需求的理解，再結合微流體、生物感測及系統設計。實際研究訓練依題目安排。",
+        "en": "The website describes how medical laboratory knowledge supports sample handling, laboratory workflows, quality control and clinical requirements alongside microfluidics, biosensing and system design. Training depends on the project."
+      },
+      "keywords": [
+        "醫技背景有幫助",
+        "醫檢背景",
+        "醫檢師經驗",
+        "醫事檢驗師",
+        "臨床經驗",
+        "醫技可以做什麼",
+        "醫檢師研究",
+        "medical laboratory background",
+        "medical laboratory scientist",
+        "clinical laboratory background",
+        "medical technologist"
+      ],
+      "links": [
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        },
+        {
+          "zh": "主持人介紹",
+          "en": "PI profile",
+          "href": "/#pi"
+        }
+      ],
+      "related": [
+        "background",
+        "training",
+        "careers"
+      ]
+    },
+    {
+      "id": "student-admissions",
+      "group": "join",
+      "student_section": "student-apply",
+      "title": {
+        "zh": "想念碩士班，報考與指導老師怎麼安排？",
+        "en": "How do graduate admissions and finding an advisor work?"
+      },
+      "answer": {
+        "zh": "可先了解所屬系所的招生簡章、報考資格與時程，並向老師詢問研究方向及指導安排。實際錄取、報名與共同指導程序，以當年度系所公告為準。",
+        "en": "Review your prospective program’s admissions notice, eligibility and schedule, then contact the PI about research and supervision. Admissions and co-supervision procedures follow the program’s current official announcements."
+      },
+      "keywords": [
+        "怎麼報考",
+        "如何報考",
+        "碩士報名",
+        "研究所報名",
+        "碩班推甄",
+        "推甄",
+        "考研究所",
+        "招生簡章",
+        "指導教授怎麼找",
+        "graduate admission",
+        "graduate admissions",
+        "apply for a masters",
+        "application deadline",
+        "admission requirements"
+      ],
+      "links": [
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-openings",
+        "student-meeting-prepare",
+        "student-cosupervision"
+      ]
+    }
+  ],
+  "student_sections": [
+    {
+      "id": "student-apply",
+      "zh": "申請與加入",
+      "en": "Applying and joining",
+      "icon": "✉️"
+    },
+    {
+      "id": "student-research",
+      "zh": "研究題目與指導",
+      "en": "Research and supervision",
+      "icon": "🔬"
+    },
+    {
+      "id": "student-daily",
+      "zh": "會議與日常安排",
+      "en": "Meetings and schedule",
+      "icon": "📅"
+    },
+    {
+      "id": "student-support",
+      "zh": "補助、實習與資源",
+      "en": "Funding and opportunities",
+      "icon": "💡"
+    },
+    {
+      "id": "student-graduation",
+      "zh": "畢業與未來",
+      "en": "Graduation and careers",
+      "icon": "🎓"
     }
   ]
 }
