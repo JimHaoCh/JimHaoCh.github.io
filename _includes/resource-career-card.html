@@ -1,4 +1,4 @@
-<article class="reference-card career-resource-card">
+<article class="reference-card career-resource-card" data-career-type="{{ include.item.career_type | default: 'reference' | escape }}">
   <div class="reference-card-top">
     <span class="reference-external-badge">外部專業資源 <small lang="en">External reference</small></span>
     <span class="career-access">{{ include.item.access_zh | escape }}<small lang="en">{{ include.item.access_en | escape }}</small></span>
