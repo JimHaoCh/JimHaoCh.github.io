@@ -29,7 +29,7 @@
   },
   {
     "id": "amr-ast",
-    "group": "micro",
+    "group": "amr",
     "title_zh": "AST｜細菌表型敏感性資料匯出",
     "title_en": "Isolate-level phenotypic MIC and disk diffusion",
     "provider": "NCBI · Pathogen Detection AST Browser",
