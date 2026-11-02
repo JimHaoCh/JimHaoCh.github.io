@@ -47,7 +47,10 @@
     ["腦波", "腦電圖", "癲癇波形", "腦波判讀", "eeg", "electroencephalography", "seizure", "electrode montage"],
     ["肺功能", "肺功能檢查", "肺活量", "流量容積", "pft", "spirometry", "pulmonary function", "flow volume", "fev1", "fvc", "tlc"],
     ["動脈血氣", "血氣分析", "酸鹼", "abg", "arterial blood gas", "paco2", "bicarbonate"],
-    ["聽力檢查", "聽力圖", "純音測聽", "聽力計", "audiometry", "audiogram", "hearing test", "pure tone"]
+    ["聽力檢查", "聽力圖", "純音測聽", "聽力計", "audiometry", "audiogram", "hearing test", "pure tone"],
+    ["基礎辨識", "入門練習", "初學者", "foundation", "foundations", "beginner", "beginner ecg", "basic ecg"],
+    ["臨床案例", "案例判讀", "病例題", "cases", "clinical cases", "ecg quiz", "eeg quiz"],
+    ["動態模擬", "互動模擬", "模擬器", "simulation", "simulator", "dynamic rhythm", "interactive eeg"]
   ];
   const CATEGORIES = {
     exam: "國考與專業學習", career: "專科職涯與進階學習", imaging: "顯微、細胞與影像分析",
@@ -227,7 +230,7 @@
       category.value="all";type.value="all";update();input.focus();
     }));
     try{
-      const response=await fetch("/resources/search-index.json?v=20261102-physiology1",{cache:"no-cache"});
+      const response=await fetch("/resources/search-index.json?v=20261102-learning4",{cache:"no-cache"});
       if(!response.ok)throw new Error("HTTP "+response.status);
       const data=await response.json();
       if(!Array.isArray(data))throw new Error("Search index malformed");
