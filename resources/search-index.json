@@ -20,7 +20,7 @@ permalink: /resources/search-index.json
 {% endfor %}
 {% for item in site.data.research_databases %}
 {% assign db_path = '/resources/databases.html#database-' | append: item.id %}
-{"id":"database-{{ item.id }}","category":"databases","type":"reference","title":{{ item.name | jsonify }},"subtitle":{{ item.title_zh | jsonify }},"description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.title_en | append: " · " | append: item.tags | append: " · " | append: item.formats | append: " · " | append: item.group | jsonify }},"provider":{{ item.name | jsonify }},"url":{{ item.url | jsonify }},"path":{{ db_path | jsonify }}},
+{"id":"database-{{ item.id }}","category":"databases","type":"reference","title":{{ item.name | jsonify }},"subtitle":{{ item.title_zh | jsonify }},"description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.title_en | append: " · " | append: item.tags | append: " · " | append: item.formats | append: " · " | append: item.group | append: " · " | append: item.data_role_zh | append: " · " | append: item.data_role_en | append: " · " | append: item.related_topic_zh | jsonify }},"provider":{{ item.name | jsonify }},"url":{{ item.url | jsonify }},"path":{{ db_path | jsonify }}},
 {% endfor %}
 {% for item in site.data.database_examples %}
 {% assign example_path = '/resources/databases.html#example-' | append: item.id %}
