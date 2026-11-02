@@ -1,0 +1,60 @@
+/* Self-contained lab guide. The return-to-top button remains at the lower right. */
+.lab-helper,.lab-helper *{box-sizing:border-box}
+.lab-helper{position:fixed;right:20px;bottom:80px;z-index:90;font-family:"Noto Sans TC",system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.55;color:#20354b}
+.lab-helper button,.lab-helper input{font:inherit}
+.lab-helper button{cursor:pointer}
+.lab-helper button:focus-visible,.lab-helper a:focus-visible,.lab-helper input:focus-visible{outline:3px solid #e99747;outline-offset:2px}
+.lab-helper__launcher{display:flex;align-items:center;gap:10px;min-height:58px;padding:7px 17px 7px 8px;border:1px solid rgba(255,255,255,.8);border-radius:40px;background:#214f87;color:white;box-shadow:0 8px 26px #183a6542;text-align:left;transition:transform .18s,box-shadow .18s}
+.lab-helper__launcher:hover{transform:translateY(-2px);box-shadow:0 12px 30px #183a6555}
+.lab-helper__launcher-icon{display:grid;place-items:center;width:43px;height:43px;border-radius:50%;background:#ffffff20}
+.lab-helper__launcher-icon svg{width:29px;height:29px}
+.lab-helper__launcher-label{font-weight:700;font-size:14px;line-height:1.2;letter-spacing:.03em;white-space:nowrap}
+.lab-helper__launcher-label small{display:block;color:#dce9f7;font-size:10px;font-weight:500;letter-spacing:.08em;margin-top:4px}
+.lab-helper[data-open="true"] .lab-helper__launcher{visibility:hidden;pointer-events:none}
+.lab-helper__panel{position:absolute;right:0;bottom:0;width:min(410px,calc(100vw - 32px));height:min(690px,calc(100dvh - 104px));min-height:360px;display:flex;flex-direction:column;background:#f4f7fa;border:1px solid #d4e0ed;border-radius:18px;box-shadow:0 20px 65px #142e4d48;overflow:hidden}
+.lab-helper__panel[hidden]{display:none!important}
+.lab-helper__top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex:none;padding:15px 16px;background:#183f70;color:white}
+.lab-helper__identity{display:flex;align-items:center;gap:10px;min-width:0}
+.lab-helper__mark{display:grid;place-items:center;flex:0 0 36px;height:36px;color:#ffe5ce;background:#ffffff1a;border:1px solid #ffffff36;border-radius:12px;font-size:20px}
+.lab-helper__title{display:block;font-size:16px;font-weight:700;line-height:1.3;color:white}
+.lab-helper__subtitle{display:block;margin-top:3px;font-size:9px;letter-spacing:.075em;color:#d5e3f4}
+.lab-helper__tools{display:flex;gap:5px;align-items:center}
+.lab-helper__tools button{display:grid;place-items:center;min-height:36px;min-width:36px;padding:0;border:1px solid #ffffff55;border-radius:9px;background:#ffffff12;color:white}
+.lab-helper__tools button:hover{background:#ffffff2b}
+.lab-helper__tools .lab-helper__language{font-size:12px;font-weight:700}
+.lab-helper__tools .lab-helper__close{font-size:25px;line-height:1}
+.lab-helper__bar{flex:none;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 15px;background:#eaf0f7;border-bottom:1px solid #d9e4ef;font-size:12px;color:#536b83}
+.lab-helper__bar .lab-helper__status{color:#496986}
+.lab-helper__bar-actions{display:flex;align-items:center;gap:8px}.lab-helper__home,.lab-helper__reset{padding:2px 4px;border:0;background:transparent;color:#285b90;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.lab-helper__messages{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:17px 15px 18px;scrollbar-width:thin;scrollbar-color:#a7bfd7 transparent}
+.lab-helper__messages:focus-visible{outline:2px solid #e99747;outline-offset:-3px}
+.lab-helper__message{margin-bottom:14px;max-width:100%;overflow-wrap:anywhere}
+.lab-helper__message--bot{margin-right:14px}
+.lab-helper__message--user{display:flex;justify-content:flex-end;margin-left:32px}
+.lab-helper__bubble{display:block;padding:12px 14px;border:1px solid #dce6ef;background:white;border-radius:4px 15px 15px 15px;box-shadow:0 2px 8px #1b405909;line-height:1.65;font-size:15px}
+.lab-helper__message--user .lab-helper__bubble{padding:9px 13px;border-color:#315e92;background:#315e92;color:white;border-radius:15px 4px 15px 15px}
+.lab-helper__bubble p{margin:0;font-size:15px;line-height:1.7}
+.lab-helper__bubble p+p{margin-top:8px}
+.lab-helper__eyebrow{display:block;margin-bottom:6px;color:#587999;font-size:10px;font-weight:700;letter-spacing:.09em}
+.lab-helper__message-title{display:block;margin-bottom:7px;color:#183f70;font-weight:700;font-size:14px;line-height:1.45}
+.lab-helper__choices,.lab-helper__links{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.lab-helper__choices button,.lab-helper__links a{display:inline-flex;align-items:center;justify-content:flex-start;min-height:36px;max-width:100%;padding:7px 10px;border:1px solid #c9d9e9;border-radius:9px;background:#f8fbff;color:#285785;font-size:14px;font-weight:600;line-height:1.45;text-align:left;text-decoration:none;white-space:normal}
+.lab-helper__choices button:hover,.lab-helper__links a:hover{border-color:#769dc6;background:#eaf3fc;color:#183f70}
+.lab-helper__choices--groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.lab-helper__choices--groups button{width:100%;min-height:47px;padding:9px 10px}
+.lab-helper__choices--questions{display:grid;grid-template-columns:1fr}
+.lab-helper__choices--questions button{width:100%}
+.lab-helper__links a{background:#eef5fc;border-color:#c6dced}
+.lab-helper__related-label{display:block;margin-top:13px;color:#6c7f91;font-size:11px}
+.lab-helper__bottom{flex:none;padding:11px 13px max(10px,env(safe-area-inset-bottom));border-top:1px solid #dbe4ed;background:white}
+.lab-helper__form{display:flex;align-items:center;gap:6px;margin:0;padding:4px 4px 4px 11px;border:1px solid #cbdbe9;border-radius:11px;background:#fff}
+.lab-helper__form:focus-within{border-color:#5183b4;box-shadow:0 0 0 2px #cddff3}
+.lab-helper__form input{min-width:0;width:100%;height:37px;padding:0;border:0!important;outline:0!important;background:transparent;color:#20354b;font-size:14px;box-shadow:none!important}
+.lab-helper__form input::placeholder{color:#8798a8;opacity:1}
+.lab-helper__send{display:grid;place-items:center;flex:0 0 36px;width:36px;height:36px;border:0;border-radius:8px;background:#285b90;color:white}
+.lab-helper__send:hover{background:#183f70}
+.lab-helper__send svg{width:20px;height:20px}
+.lab-helper__note{margin:7px 1px 0;color:#687d90;font-size:11px;line-height:1.45}
+.lab-helper__sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:600px){.lab-helper{right:14px;bottom:72px}.lab-helper__launcher{width:52px;height:52px;min-height:52px;padding:4px;justify-content:center}.lab-helper__launcher-icon{width:42px;height:42px}.lab-helper__launcher-label{display:none}.lab-helper__panel{position:fixed;left:10px;right:10px;bottom:max(10px,env(safe-area-inset-bottom));width:auto;height:min(690px,calc(100dvh - 20px));min-height:0;border-radius:16px}.lab-helper__top{padding:13px 14px}.lab-helper__messages{padding:15px 13px}.lab-helper__bubble,.lab-helper__bubble p{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.lab-helper__launcher{transition:none}.lab-helper__launcher:hover{transform:none}}

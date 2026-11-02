@@ -1,0 +1,1710 @@
+{
+  "groups": [
+    {
+      "id": "research",
+      "zh": "研究方向",
+      "en": "Research",
+      "icon": "🔬"
+    },
+    {
+      "id": "tech",
+      "zh": "技術與儀器",
+      "en": "Techniques & instruments",
+      "icon": "🛠"
+    },
+    {
+      "id": "collab",
+      "zh": "產學與研究合作",
+      "en": "Collaborate",
+      "icon": "🤝"
+    },
+    {
+      "id": "join",
+      "zh": "加入與學生訓練",
+      "en": "Join & training",
+      "icon": "🎓"
+    },
+    {
+      "id": "papers",
+      "zh": "論文與成果",
+      "en": "Publications",
+      "icon": "📄"
+    },
+    {
+      "id": "contact",
+      "zh": "聯絡與其他",
+      "en": "Contact & more",
+      "icon": "📍"
+    }
+  ],
+  "entries": [
+    {
+      "id": "research-overview",
+      "group": "research",
+      "title": {
+        "zh": "實驗室研究什麼？",
+        "en": "What does the lab study?"
+      },
+      "answer": {
+        "zh": "實驗室以微流體、生物感測與體外診斷為核心，從檢驗需求出發，研究檢體前處理、分離濃縮、反應、訊號讀取與系統驗證。",
+        "en": "The lab focuses on microfluidics, biosensing and in vitro diagnostics, from sample preparation and separation to detection, readout and system validation."
+      },
+      "keywords": [
+        "研究方向",
+        "研究主題",
+        "研究領域",
+        "研究什麼",
+        "做什麼研究",
+        "研究內容",
+        "研究項目",
+        "實驗室做什麼",
+        "research areas",
+        "research topics",
+        "what does the lab study",
+        "what do you study"
+      ],
+      "links": [
+        {
+          "zh": "查看研究方向",
+          "en": "Explore research",
+          "href": "/#research"
+        }
+      ],
+      "related": [
+        "microfluidics",
+        "biosensing",
+        "bacteria"
+      ]
+    },
+    {
+      "id": "microfluidics",
+      "group": "research",
+      "title": {
+        "zh": "什麼是微流體？實驗室如何應用？",
+        "en": "What is microfluidics and how is it used?"
+      },
+      "answer": {
+        "zh": "微流體利用微小流道或腔室處理液體、細胞與分子，可用於檢體輸送、混合、分離與反應；實驗室研究其在生醫檢測的應用。",
+        "en": "Microfluidics controls liquids, cells and molecules in small channels or chambers for sample transport, mixing, separation and reactions. The lab explores biomedical testing applications."
+      },
+      "keywords": [
+        "微流體是什麼",
+        "什麼是微流體",
+        "微流控",
+        "微流體",
+        "微流道",
+        "microfluidics",
+        "microfluidic",
+        "microchannel"
+      ],
+      "links": [
+        {
+          "zh": "微流體介紹",
+          "en": "About microfluidics",
+          "href": "/#what-is-microfluidics"
+        },
+        {
+          "zh": "查看研究方向",
+          "en": "Explore research",
+          "href": "/#research"
+        },
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        }
+      ],
+      "related": [
+        "research-overview",
+        "chip-design",
+        "fabrication"
+      ]
+    },
+    {
+      "id": "biosensing",
+      "group": "research",
+      "title": {
+        "zh": "什麼是生物感測與體外診斷？",
+        "en": "What are biosensing and in vitro diagnostics?"
+      },
+      "answer": {
+        "zh": "生物感測將生物作用轉換成可讀取的訊號；實驗室結合微流體與感測、訊號讀取，研究體外診斷流程與系統。",
+        "en": "Biosensing converts biological interactions into measurable signals. The lab integrates microfluidics, sensing and readout for in vitro diagnostic workflows."
+      },
+      "keywords": [
+        "生物感測",
+        "生物感測器",
+        "感測器",
+        "感測技術",
+        "體外診斷",
+        "快篩",
+        "biosensor",
+        "biosensing",
+        "in vitro diagnostic",
+        "ivd",
+        "sensor"
+      ],
+      "links": [
+        {
+          "zh": "感測器介紹",
+          "en": "About biosensors",
+          "href": "/#what-is-a-sensor"
+        },
+        {
+          "zh": "查看研究方向",
+          "en": "Explore research",
+          "href": "/#research"
+        }
+      ],
+      "related": [
+        "research-overview",
+        "chip-design"
+      ]
+    },
+    {
+      "id": "ebc",
+      "group": "research",
+      "title": {
+        "zh": "呼氣冷凝液研究是什麼？",
+        "en": "What is the exhaled breath condensate study?"
+      },
+      "answer": {
+        "zh": "主持人於實驗室成立前參與的研究，將冷凝微流體與親水薄膜整合於口罩，收集呼氣冷凝液以分析代謝物。詳細設計與結果請參考原論文。",
+        "en": "Before the lab was established, the PI participated in work integrating cooling microfluidics and a hydrophilic film into a mask to collect exhaled breath condensate for metabolite analysis. See the original paper for details."
+      },
+      "keywords": [
+        "呼氣",
+        "呼吸",
+        "呼出氣",
+        "呼氣冷凝液",
+        "呼吸檢測",
+        "ebc",
+        "exhaled",
+        "breath condensate",
+        "breath collection"
+      ],
+      "links": [
+        {
+          "zh": "研究介紹",
+          "en": "Research story",
+          "href": "/#ebc"
+        },
+        {
+          "zh": "閱讀原論文",
+          "en": "Original paper",
+          "href": "https://doi.org/10.1016/j.cej.2024.155994"
+        }
+      ],
+      "related": [
+        "papers-overview",
+        "research-overview"
+      ]
+    },
+    {
+      "id": "sputum",
+      "group": "research",
+      "title": {
+        "zh": "聲學微流體與痰液處理是什麼？",
+        "en": "What is the acoustic microfluidic sputum study?"
+      },
+      "answer": {
+        "zh": "主持人於實驗室成立前參與的研究，利用聲波驅動氣泡產生微流，協助痰液混合與液化，並整合液體輸送及控制。臨床診斷效益仍需相應驗證。",
+        "en": "Before the lab was established, the PI participated in a study using acoustically driven bubbles to mix and liquefy sputum with integrated fluid handling and control. Clinical diagnostic benefit requires appropriate validation."
+      },
+      "keywords": [
+        "痰液",
+        "痰",
+        "液化",
+        "聲學",
+        "聲波",
+        "氣泡",
+        "acoustic",
+        "sputum",
+        "liquefaction",
+        "microstreaming"
+      ],
+      "links": [
+        {
+          "zh": "研究介紹",
+          "en": "Research story",
+          "href": "/#acoustic"
+        },
+        {
+          "zh": "閱讀原論文",
+          "en": "Original paper",
+          "href": "https://doi.org/10.1016/j.snb.2023.134356"
+        }
+      ],
+      "related": [
+        "papers-overview",
+        "research-overview"
+      ]
+    },
+    {
+      "id": "bacteria",
+      "group": "research",
+      "title": {
+        "zh": "有細菌檢測相關研究嗎？",
+        "en": "Is there research on bacterial detection?"
+      },
+      "answer": {
+        "zh": "網站介紹主持人於實驗室成立前參與的研究：以濾膜、離心微流體與比色反應偵測水中活菌。若有其他菌種或檢體需求，歡迎討論可行性。",
+        "en": "The website describes a study the PI participated in before the lab was established: membrane concentration, centrifugal microfluidics and colorimetry for viable bacteria in water. Other organisms and samples require project-specific discussion."
+      },
+      "keywords": [
+        "細菌檢測",
+        "活菌",
+        "細菌偵測",
+        "細菌",
+        "病原",
+        "微生物檢測",
+        "菌落",
+        "bacteria",
+        "bacterial detection",
+        "bacterial",
+        "viable bacteria",
+        "pathogen",
+        "microorganism"
+      ],
+      "links": [
+        {
+          "zh": "活菌研究介紹",
+          "en": "Bacteria research",
+          "href": "/#bacteria"
+        },
+        {
+          "zh": "閱讀原論文",
+          "en": "Original paper",
+          "href": "https://doi.org/10.1016/j.bios.2023.115403"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "microbial",
+        "research-overview"
+      ]
+    },
+    {
+      "id": "ausic",
+      "group": "research",
+      "title": {
+        "zh": "Au/SiC 光催化微流體是什麼？",
+        "en": "What is the Au/SiC photocatalytic microfluidics study?"
+      },
+      "answer": {
+        "zh": "主持人於實驗室成立前參與的研究，將雷射製備的 Au/SiC 材料與微流道整合，並以模型污染物評估光催化反應。",
+        "en": "Before the lab was established, the PI participated in research integrating laser-fabricated Au/SiC materials with microchannels and evaluating photocatalysis using a model pollutant."
+      },
+      "keywords": [
+        "sic",
+        "au/sic",
+        "光催化",
+        "雷射熔覆",
+        "水污染",
+        "photocatalysis",
+        "photocatalytic",
+        "laser cladding"
+      ],
+      "links": [
+        {
+          "zh": "研究介紹",
+          "en": "Research story",
+          "href": "/#ausic"
+        },
+        {
+          "zh": "閱讀原論文",
+          "en": "Original paper",
+          "href": "https://doi.org/10.1021/acssuschemeng.3c07451"
+        }
+      ],
+      "related": [
+        "papers-overview",
+        "research-overview"
+      ]
+    },
+    {
+      "id": "molecular",
+      "group": "research",
+      "title": {
+        "zh": "有核酸、免疫檢測相關研究嗎？",
+        "en": "Is nucleic-acid or immunoassay integration a research topic?"
+      },
+      "answer": {
+        "zh": "網站列出的研究方向包含核酸與免疫檢測整合、樣本處理模組化、生物感測與訊號讀取；特定標的與方法需依研究或合作需求討論。",
+        "en": "The research topics on the site include integrating nucleic-acid and immunoassay testing, modular sample handling, biosensing and readout. Specific targets and methods are discussed per project."
+      },
+      "keywords": [
+        "核酸",
+        "核酸檢測",
+        "dna",
+        "rna",
+        "pcr",
+        "免疫檢測",
+        "抗體",
+        "抗原",
+        "immunoassay",
+        "nucleic acid",
+        "antibody",
+        "antigen"
+      ],
+      "links": [
+        {
+          "zh": "查看研究方向",
+          "en": "Explore research",
+          "href": "/#research"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "biosensing",
+        "chip-design"
+      ]
+    },
+    {
+      "id": "fabrication",
+      "group": "tech",
+      "title": {
+        "zh": "可以用哪些方式製作晶片？",
+        "en": "How are chips and prototypes fabricated?"
+      },
+      "answer": {
+        "zh": "網站介紹 CNC 微銑切、晶圓級母模規劃與 3D 列印等方式。實際製程依材料、幾何形狀、尺寸、深度與加工條件評估。",
+        "en": "The site describes CNC micromilling, wafer-level master mold planning and 3D printing. The process depends on material, geometry, feature size, depth and fabrication conditions."
+      },
+      "keywords": [
+        "製作晶片",
+        "晶片製作",
+        "晶片製程",
+        "如何製作晶片",
+        "晶片怎麼做",
+        "微製程",
+        "微加工",
+        "母模",
+        "製造晶片",
+        "chip fabrication",
+        "fabricate a chip",
+        "make a chip",
+        "fabrication",
+        "master mold",
+        "micromachining"
+      ],
+      "links": [
+        {
+          "zh": "技術介紹",
+          "en": "Techniques",
+          "href": "/techniques.html"
+        },
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "cnc",
+        "printing",
+        "pdms",
+        "wafer"
+      ]
+    },
+    {
+      "id": "cnc",
+      "group": "tech",
+      "title": {
+        "zh": "有 CNC 加工嗎？精度如何？",
+        "en": "Is CNC machining available and what is the feature size?"
+      },
+      "answer": {
+        "zh": "網站列有桌上型 CNC 加工，並以 0.1 mm（100 μm）作為微銑切最小特徵線寬參考；實際尺寸、公差與表面品質需依材料、深度、刀具及幾何形狀評估。",
+        "en": "The site lists desktop CNC machining and gives 0.1 mm (100 μm) as a reference minimum feature width for micromilling. Dimensions, tolerances and surface finish depend on material, depth, tooling and geometry."
+      },
+      "keywords": [
+        "cnc",
+        "微銑",
+        "銑床",
+        "銑切",
+        "100微米",
+        "100 μm",
+        "100um",
+        "0.1mm",
+        "0.1 mm",
+        "加工精度",
+        "machining",
+        "milling"
+      ],
+      "links": [
+        {
+          "zh": "實驗儀器",
+          "en": "Instruments",
+          "href": "/instruments.html"
+        },
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "fabrication",
+        "wafer",
+        "materials"
+      ]
+    },
+    {
+      "id": "wafer",
+      "group": "tech",
+      "title": {
+        "zh": "可以規劃晶圓級母模嗎？",
+        "en": "Are wafer-level master molds supported?"
+      },
+      "answer": {
+        "zh": "合作頁面列有晶圓級母模規劃，20 μm 為特徵線寬參考；實際製作需依光罩、光阻厚度、深度與製程條件確認。",
+        "en": "The collaboration page describes wafer-level master mold planning, with a reference feature width of 20 μm. Feasibility depends on mask design, resist thickness, depth and process conditions."
+      },
+      "keywords": [
+        "晶圓",
+        "光罩",
+        "光阻",
+        "微影",
+        "光刻",
+        "20微米",
+        "20 μm",
+        "20um",
+        "0.02mm",
+        "wafer",
+        "lithography",
+        "photolithography",
+        "photomask"
+      ],
+      "links": [
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "fabrication",
+        "cnc",
+        "pdms"
+      ]
+    },
+    {
+      "id": "printing",
+      "group": "tech",
+      "title": {
+        "zh": "有 3D 列印或雷射直寫嗎？",
+        "en": "Are 3D printing and laser direct writing available?"
+      },
+      "answer": {
+        "zh": "設備頁列有光固化 3D 列印機與紫外雷射直寫系統，可依結構與材料評估模具、接頭、治具或微結構試作。",
+        "en": "The instrument page lists a resin 3D printer and UV laser direct-writing system. Molds, connectors, fixtures and microstructure prototypes are evaluated by geometry and material."
+      },
+      "keywords": [
+        "3d列印",
+        "3d 列印",
+        "3d打印",
+        "列印",
+        "打印",
+        "樹脂",
+        "雷射",
+        "紫外",
+        "雷射直寫",
+        "3d print",
+        "3d printing",
+        "resin",
+        "uv laser",
+        "laser"
+      ],
+      "links": [
+        {
+          "zh": "實驗儀器",
+          "en": "Instruments",
+          "href": "/instruments.html"
+        },
+        {
+          "zh": "技術介紹",
+          "en": "Techniques",
+          "href": "/techniques.html"
+        },
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        }
+      ],
+      "related": [
+        "fabrication",
+        "materials"
+      ]
+    },
+    {
+      "id": "pdms",
+      "group": "tech",
+      "title": {
+        "zh": "可以製作或接合 PDMS 晶片嗎？",
+        "en": "Can you make or bond PDMS chips?"
+      },
+      "answer": {
+        "zh": "網站將 PDMS 列為彈性晶片與微結構翻模材料，也介紹氧電漿協助 PDMS 與玻璃接合。幾何、材料和製作可行性依需求討論。",
+        "en": "The site lists PDMS for elastomeric chips and replication, and oxygen plasma for assisting PDMS–glass bonding. Geometry, materials and feasibility are discussed per project."
+      },
+      "keywords": [
+        "pdms",
+        "翻模",
+        "軟微影",
+        "電漿接合",
+        "氧電漿",
+        "鍵合",
+        "plasma",
+        "bonding",
+        "soft lithography"
+      ],
+      "links": [
+        {
+          "zh": "技術介紹",
+          "en": "Techniques",
+          "href": "/techniques.html"
+        },
+        {
+          "zh": "實驗儀器",
+          "en": "Instruments",
+          "href": "/instruments.html"
+        },
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        }
+      ],
+      "related": [
+        "materials",
+        "fabrication"
+      ]
+    },
+    {
+      "id": "materials",
+      "group": "tech",
+      "title": {
+        "zh": "可以使用哪些晶片材料？",
+        "en": "Which chip and mold materials are listed?"
+      },
+      "answer": {
+        "zh": "合作頁面列有壓克力 PMMA、PDMS、鋁製模具及耐高溫樹脂模具。選材會考量試劑相容性、光學需求、溫度與接合方式。",
+        "en": "The collaboration page lists PMMA, PDMS, aluminum molds and high-temperature resin molds. Selection considers reagent compatibility, optics, temperature and bonding."
+      },
+      "keywords": [
+        "材料",
+        "壓克力",
+        "壓克力板",
+        "pmma",
+        "acrylic",
+        "鋁模",
+        "鋁製模具",
+        "耐高溫樹脂",
+        "material",
+        "materials",
+        "aluminum mold"
+      ],
+      "links": [
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "pdms",
+        "fabrication"
+      ]
+    },
+    {
+      "id": "pumps",
+      "group": "tech",
+      "title": {
+        "zh": "有幫浦、閥件或流體控制嗎？",
+        "en": "Are pumps, valves or fluid controls available?"
+      },
+      "answer": {
+        "zh": "網站列有程式控制多通道針筒泵浦；合作頁也介紹依流量、壓力、通道數及操作時序規劃幫浦、閥件與管路整合。",
+        "en": "The instrument page lists programmable multichannel syringe pumps. Collaboration may include pumps, valves and tubing scoped to flow, pressure, channels and timing."
+      },
+      "keywords": [
+        "幫浦",
+        "泵浦",
+        "針筒泵",
+        "針筒幫浦",
+        "閥",
+        "流體控制",
+        "灌流",
+        "流量控制",
+        "pump",
+        "syringe",
+        "valve",
+        "perfusion",
+        "flow control"
+      ],
+      "links": [
+        {
+          "zh": "實驗儀器",
+          "en": "Instruments",
+          "href": "/instruments.html"
+        },
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        }
+      ],
+      "related": [
+        "system-integration",
+        "instruments-overview"
+      ]
+    },
+    {
+      "id": "microscope",
+      "group": "tech",
+      "title": {
+        "zh": "有哪些顯微鏡與影像設備？",
+        "en": "What microscopy and imaging equipment is listed?"
+      },
+      "answer": {
+        "zh": "儀器頁列有倒立式及正立式顯微鏡，分別介紹細胞與晶片觀察、玻片明場觀察等用途；影像擷取配置請依個案確認。",
+        "en": "The instrument page lists inverted and upright microscopes for applications including cells, chips and bright-field slides. Imaging configurations should be confirmed for each project."
+      },
+      "keywords": [
+        "顯微鏡",
+        "影像",
+        "倒立",
+        "正立",
+        "鏡檢",
+        "顯微",
+        "microscope",
+        "microscopy",
+        "imaging",
+        "image acquisition"
+      ],
+      "links": [
+        {
+          "zh": "實驗儀器",
+          "en": "Instruments",
+          "href": "/instruments.html"
+        },
+        {
+          "zh": "技術介紹",
+          "en": "Techniques",
+          "href": "/techniques.html"
+        }
+      ],
+      "related": [
+        "instruments-overview",
+        "cell-culture"
+      ]
+    },
+    {
+      "id": "microbial",
+      "group": "tech",
+      "title": {
+        "zh": "有微生物培養與生物實驗嗎？",
+        "en": "Does the lab conduct microbial culture and biological experiments?"
+      },
+      "answer": {
+        "zh": "技術頁介紹微生物培養與檢測，以及生物實驗操作空間。菌種、樣本風險、設備與執行範圍須依實驗室規範及個案確認。",
+        "en": "The techniques page describes microbial culture, testing and biological laboratory work. Organisms, sample risks, facilities and scope must be confirmed under laboratory procedures."
+      },
+      "keywords": [
+        "菌種",
+        "培菌",
+        "培養細菌",
+        "細菌培養",
+        "微生物培養",
+        "無菌",
+        "wet bench",
+        "microbial culture",
+        "bacterial culture",
+        "microbiology",
+        "biological laboratory"
+      ],
+      "links": [
+        {
+          "zh": "技術介紹",
+          "en": "Techniques",
+          "href": "/techniques.html"
+        },
+        {
+          "zh": "實驗儀器",
+          "en": "Instruments",
+          "href": "/instruments.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "bacteria",
+        "cell-culture"
+      ]
+    },
+    {
+      "id": "cell-culture",
+      "group": "tech",
+      "title": {
+        "zh": "有細胞培養設施嗎？",
+        "en": "Are cell culture facilities available?"
+      },
+      "answer": {
+        "zh": "技術頁介紹共同細胞培養空間，可支援細胞維護與實驗準備；使用與排程依共同空間規範辦理，具體合作範圍另行確認。",
+        "en": "The techniques page describes a shared cell culture facility for cell maintenance and preparation. Access follows shared-facility rules, and project scope is confirmed separately."
+      },
+      "keywords": [
+        "細胞培養",
+        "培養細胞",
+        "細胞室",
+        "細胞實驗",
+        "細胞",
+        "cell culture",
+        "cell laboratory",
+        "cells"
+      ],
+      "links": [
+        {
+          "zh": "技術介紹",
+          "en": "Techniques",
+          "href": "/techniques.html"
+        },
+        {
+          "zh": "實驗儀器",
+          "en": "Instruments",
+          "href": "/instruments.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "microbial",
+        "microscope",
+        "organ-chip"
+      ]
+    },
+    {
+      "id": "instruments-overview",
+      "group": "tech",
+      "title": {
+        "zh": "實驗室有哪些儀器？",
+        "en": "What instruments are available?"
+      },
+      "answer": {
+        "zh": "網站列出的儀器涵蓋 CNC、3D 列印、顯微鏡、針筒泵浦、氧電漿、生物列印及生物實驗設備。實際可使用的配置與時程請洽詢。",
+        "en": "Listed instruments include CNC, 3D printing, microscopes, syringe pumps, oxygen plasma, bioprinting and biological laboratory equipment. Confirm configurations and availability with the lab."
+      },
+      "keywords": [
+        "設備",
+        "儀器",
+        "實驗儀器",
+        "實驗設備",
+        "儀器清單",
+        "有哪些儀器",
+        "equipment",
+        "instrument",
+        "instruments",
+        "facilities"
+      ],
+      "links": [
+        {
+          "zh": "實驗儀器",
+          "en": "Instruments",
+          "href": "/instruments.html"
+        }
+      ],
+      "related": [
+        "cnc",
+        "pumps",
+        "microscope"
+      ]
+    },
+    {
+      "id": "chip-design",
+      "group": "collab",
+      "title": {
+        "zh": "可以協助設計微流體晶片嗎？",
+        "en": "Can the lab help design a microfluidic chip?"
+      },
+      "answer": {
+        "zh": "合作頁介紹依樣本、試劑與操作需求規劃流道、混合、分離或反應結構，並可討論材料、製作和初步測試。",
+        "en": "The collaboration page describes planning channels, mixing, separation and reaction structures around samples, reagents and operating needs, with materials, fabrication and testing discussed per project."
+      },
+      "keywords": [
+        "晶片設計",
+        "設計晶片",
+        "想做晶片",
+        "想做微流體",
+        "做微流體晶片",
+        "客製晶片",
+        "晶片開發",
+        "生醫晶片",
+        "chip design",
+        "design a chip",
+        "design microfluidic",
+        "custom chip",
+        "develop a chip"
+      ],
+      "links": [
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "fabrication",
+        "project-info",
+        "materials"
+      ]
+    },
+    {
+      "id": "existing-design",
+      "group": "collab",
+      "title": {
+        "zh": "已經有圖面，可以委託加工嗎？",
+        "en": "Can you fabricate from an existing design?"
+      },
+      "answer": {
+        "zh": "網站列有圖面與規格明確的簡單加工項目。請提供材料、尺寸、線寬、深度、數量及圖面，以便討論製作可行性。",
+        "en": "The site lists defined fabrication based on existing drawings and specifications. Share the material, dimensions, feature width, depth, quantity and drawings for a feasibility discussion."
+      },
+      "keywords": [
+        "有圖面",
+        "已有圖",
+        "現有圖",
+        "圖面加工",
+        "代工",
+        "委託加工",
+        "來圖加工",
+        "已有設計",
+        "existing design",
+        "existing drawing",
+        "fabricate my design",
+        "fabrication service"
+      ],
+      "links": [
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "cnc",
+        "fabrication",
+        "project-info"
+      ]
+    },
+    {
+      "id": "organ-chip",
+      "group": "collab",
+      "title": {
+        "zh": "可以討論器官晶片嗎？",
+        "en": "Can we discuss organ-on-chip prototypes?"
+      },
+      "answer": {
+        "zh": "合作頁列有器官晶片原型的培養腔室、灌流與連接介面設計；細胞模型和功能驗證範圍依合作需求另行界定。",
+        "en": "The collaboration page includes culture chambers, perfusion and interfaces for organ-on-chip prototypes. Cell models and functional validation are scoped separately."
+      },
+      "keywords": [
+        "器官晶片",
+        "器官芯片",
+        "器官芯片",
+        "organ on chip",
+        "organ-on-chip",
+        "organ chip",
+        "tissue chip"
+      ],
+      "links": [
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "chip-design",
+        "cell-culture"
+      ]
+    },
+    {
+      "id": "system-integration",
+      "group": "collab",
+      "title": {
+        "zh": "可以整合幫浦與控制系統嗎？",
+        "en": "Can fluid handling and controls be integrated?"
+      },
+      "answer": {
+        "zh": "合作頁介紹依流量、壓力、通道數及操作時序，規劃幫浦、閥件、管路接頭與控制介面。具體配置依合作需求設計。",
+        "en": "The collaboration page describes pumps, valves, tubing and controls scoped around flow, pressure, channels and timing. Configurations are project-specific."
+      },
+      "keywords": [
+        "幫浦整合",
+        "泵浦整合",
+        "電控",
+        "閥件整合",
+        "自動化控制",
+        "系統整合",
+        "integrate pumps",
+        "control system",
+        "system integration",
+        "automated flow"
+      ],
+      "links": [
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        },
+        {
+          "zh": "實驗儀器",
+          "en": "Instruments",
+          "href": "/instruments.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "pumps",
+        "project-info"
+      ]
+    },
+    {
+      "id": "testing",
+      "group": "collab",
+      "title": {
+        "zh": "可以協助原型測試嗎？",
+        "en": "Can prototypes be tested?"
+      },
+      "answer": {
+        "zh": "合作頁列有依範圍討論流動、混合、漏液及初步生物實驗測試；測試樣本、方法與交付結果於立案前確認。",
+        "en": "The collaboration page describes flow, mixing, leakage and preliminary biological tests within an agreed scope. Samples, methods and deliverables are confirmed before the project."
+      },
+      "keywords": [
+        "測試",
+        "驗證",
+        "漏液",
+        "生物測試",
+        "流動測試",
+        "原型測試",
+        "test a chip",
+        "leak test",
+        "testing",
+        "validation",
+        "biological testing"
+      ],
+      "links": [
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "chip-design",
+        "project-info"
+      ]
+    },
+    {
+      "id": "project-info",
+      "group": "collab",
+      "title": {
+        "zh": "洽談合作前需要準備什麼？",
+        "en": "What should I prepare for a project inquiry?"
+      },
+      "answer": {
+        "zh": "建議提供用途、樣本與試劑、尺寸／線寬／深度、材料、數量、圖面準備狀態、期望功能及預計時程。尚未確定的項目可以先說明。",
+        "en": "Please share the application, samples and reagents, dimensions and feature width/depth, material, quantity, drawing status, desired functions and timeline. Unknown items can be discussed."
+      },
+      "keywords": [
+        "合作流程",
+        "怎麼合作",
+        "如何合作",
+        "洽談",
+        "詢問合作",
+        "合作需求",
+        "合作怎麼開始",
+        "沒有圖",
+        "只有想法",
+        "沒有圖面",
+        "準備什麼",
+        "project inquiry",
+        "collaborate",
+        "collaboration process",
+        "no drawing",
+        "project idea",
+        "project requirements"
+      ],
+      "links": [
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "chip-design",
+        "existing-design",
+        "fees"
+      ]
+    },
+    {
+      "id": "fees",
+      "group": "collab",
+      "title": {
+        "zh": "合作費用如何計算？",
+        "en": "How are collaboration fees determined?"
+      },
+      "answer": {
+        "zh": "合作頁說明：圖面與規格明確的簡單加工，參考數千元至數萬元起；設計、試作、整合或生物測試依範圍另行報價，實際費用以正式報價及校方程序為準。",
+        "en": "The collaboration page gives several thousand to tens of thousands of NTD as a starting reference for straightforward fabrication with defined drawings. Design, prototyping, integration and biological testing are quoted separately; formal quotations and university procedures govern."
+      },
+      "keywords": [
+        "報價",
+        "費用",
+        "價格",
+        "價錢",
+        "多少錢",
+        "收費",
+        "cost",
+        "price",
+        "pricing",
+        "quotation",
+        "quote",
+        "fee"
+      ],
+      "links": [
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "project-info",
+        "ip"
+      ]
+    },
+    {
+      "id": "ip",
+      "group": "collab",
+      "title": {
+        "zh": "合作成果與專利如何約定？",
+        "en": "How are intellectual property and ownership handled?"
+      },
+      "answer": {
+        "zh": "合作成果可依陽明交大相關規定與契約，洽議授權、共有或技術移轉等安排；具體權利依經費來源、貢獻及校方審核，於契約確認。",
+        "en": "Licensing, joint ownership or technology transfer may be negotiated under NYCU rules and the agreement. Rights depend on funding, contributions and university review, and are specified in the contract."
+      },
+      "keywords": [
+        "專利",
+        "智慧財產",
+        "智慧財產權",
+        "技轉",
+        "技術移轉",
+        "歸屬",
+        "ip",
+        "patent",
+        "intellectual property",
+        "ownership",
+        "technology transfer"
+      ],
+      "links": [
+        {
+          "zh": "產學合作頁面",
+          "en": "Collaboration",
+          "href": "/collaboration.html"
+        },
+        {
+          "zh": "洽談合作",
+          "en": "Discuss a project",
+          "href": "/?inquiry=industry#contact"
+        }
+      ],
+      "related": [
+        "fees",
+        "project-info"
+      ]
+    },
+    {
+      "id": "join-overview",
+      "group": "join",
+      "title": {
+        "zh": "如何加入實驗室或詢問專題？",
+        "en": "How can I join the lab or inquire about a project?"
+      },
+      "answer": {
+        "zh": "請透過聯絡表單選擇加入實驗室或學生專題，簡述目前就讀單位、背景、研究興趣與希望參與的時間。名額與安排請直接洽詢。",
+        "en": "Select joining the lab or student project in the contact form and describe your institution, background, research interests and intended timeframe. Contact the lab about availability."
+      },
+      "keywords": [
+        "加入實驗室",
+        "加入研究室",
+        "加入",
+        "進實驗室",
+        "碩士申請",
+        "研究生申請",
+        "找老師",
+        "專題申請",
+        "大學生專題",
+        "做專題",
+        "申請加入",
+        "join the lab",
+        "join lab",
+        "join your lab",
+        "student project",
+        "apply to the lab",
+        "join"
+      ],
+      "links": [
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "background",
+        "training",
+        "masters"
+      ]
+    },
+    {
+      "id": "background",
+      "group": "join",
+      "title": {
+        "zh": "沒有工程或程式背景可以加入嗎？",
+        "en": "Can I join without engineering or programming experience?"
+      },
+      "answer": {
+        "zh": "網站歡迎醫技、生科、生醫與相關背景學生洽詢。晶片設計、基礎製程、影像分析及程式工具可透過研究訓練循序學習；請與老師討論適合的研究方向。",
+        "en": "Students from medical laboratory science, biotechnology, biomedical science and related fields are welcome to inquire. Chip design, fabrication, imaging and programming can be developed during training."
+      },
+      "keywords": [
+        "沒有工程背景",
+        "沒工程背景",
+        "不會程式",
+        "沒有程式",
+        "醫技背景",
+        "生科背景",
+        "跨領域",
+        "不會寫程式",
+        "沒有背景",
+        "without engineering",
+        "without programming",
+        "no programming",
+        "background",
+        "non engineering"
+      ],
+      "links": [
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "join-overview",
+        "training"
+      ]
+    },
+    {
+      "id": "training",
+      "group": "join",
+      "title": {
+        "zh": "加入後會學到哪些技術？",
+        "en": "What skills can students learn?"
+      },
+      "answer": {
+        "zh": "依研究題目，可能接觸微流體設計、CNC 或 3D 列印、晶片測試、生物感測、訊號量測、影像處理、資料分析與科學寫作。",
+        "en": "Depending on the project, training may include microfluidic design, CNC or 3D printing, chip testing, biosensing, signal measurement, imaging, data analysis and scientific writing."
+      },
+      "keywords": [
+        "學什麼",
+        "學到什麼",
+        "學哪些",
+        "訓練",
+        "學生訓練",
+        "技術訓練",
+        "研究訓練",
+        "技能",
+        "會學",
+        "skills",
+        "training",
+        "learn",
+        "what will i learn"
+      ],
+      "links": [
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        },
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        }
+      ],
+      "related": [
+        "background",
+        "masters",
+        "student-ai"
+      ]
+    },
+    {
+      "id": "masters",
+      "group": "join",
+      "title": {
+        "zh": "碩士班的研究與畢業路徑如何規劃？",
+        "en": "What is the master’s training and graduation pathway?"
+      },
+      "answer": {
+        "zh": "網站規劃從研究問題、原型建立與測試，進入參數最佳化、整合驗證及論文準備。兩年為研究規劃目標；畢業仍須符合校系規定並依進度調整。",
+        "en": "The website describes progression from research questions and prototypes through optimization, integrated validation and thesis preparation. Two years is a planning goal; graduation follows university and department rules and actual progress."
+      },
+      "keywords": [
+        "碩士",
+        "碩班",
+        "研究所",
+        "畢業",
+        "碩士訓練",
+        "兩年",
+        "碩士班",
+        "master",
+        "masters",
+        "graduate",
+        "graduation",
+        "thesis",
+        "two years"
+      ],
+      "links": [
+        {
+          "zh": "碩士培訓路徑",
+          "en": "Master’s roadmap",
+          "href": "/#masters-roadmap-title"
+        },
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "join-overview",
+        "training",
+        "careers"
+      ]
+    },
+    {
+      "id": "student-ai",
+      "group": "join",
+      "title": {
+        "zh": "每位學生都需要做 AI 嗎？",
+        "en": "Is AI required for every project?"
+      },
+      "answer": {
+        "zh": "網站說明是否使用 AI 或深度學習，取決於研究問題、資料量與驗證方式；學生的技術訓練依專題內容安排。",
+        "en": "The student FAQ states that AI or deep-learning use depends on the research question, available data and validation needs. Training is tailored to the project."
+      },
+      "keywords": [
+        "學生ai",
+        "一定要ai",
+        "都要ai",
+        "深度學習",
+        "yolo",
+        "cnn",
+        "人工智慧",
+        "ai 必須",
+        "is ai required",
+        "deep learning"
+      ],
+      "links": [
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        }
+      ],
+      "related": [
+        "training",
+        "background"
+      ]
+    },
+    {
+      "id": "careers",
+      "group": "join",
+      "title": {
+        "zh": "畢業後有哪些方向？",
+        "en": "What are possible career paths?"
+      },
+      "answer": {
+        "zh": "網站介紹的方向包含體外診斷與醫材研發、生物感測和微流體產業、研究機構及博士進修；實際機會依個人技能與職缺條件而定。",
+        "en": "The website describes possible paths in IVD and medical-device R&D, biosensing, microfluidics, research institutes and doctoral study. Opportunities depend on individual skills and job requirements."
+      },
+      "keywords": [
+        "出路",
+        "畢業後",
+        "工作機會",
+        "職涯",
+        "未來工作",
+        "就業",
+        "career",
+        "careers",
+        "job prospects",
+        "after graduation"
+      ],
+      "links": [
+        {
+          "zh": "學生常見問題",
+          "en": "Student FAQ",
+          "href": "/#questions"
+        },
+        {
+          "zh": "加入實驗室",
+          "en": "Join the lab",
+          "href": "/#join"
+        }
+      ],
+      "related": [
+        "masters",
+        "training"
+      ]
+    },
+    {
+      "id": "papers-overview",
+      "group": "papers",
+      "title": {
+        "zh": "在哪裡看論文與研究成果？",
+        "en": "Where can I find publications and research?"
+      },
+      "answer": {
+        "zh": "網站的著作區列出主持人相關論文與 DOI；首頁研究故事也整理四項研究的背景、圖示與原始論文。",
+        "en": "The publications section lists the PI’s papers and DOI links. The research stories introduce four studies with background, figures and links to the original papers."
+      },
+      "keywords": [
+        "論文",
+        "著作",
+        "發表",
+        "文獻",
+        "期刊",
+        "成果",
+        "paper",
+        "papers",
+        "publication",
+        "publications",
+        "article",
+        "journal"
+      ],
+      "links": [
+        {
+          "zh": "著作與論文",
+          "en": "Publications",
+          "href": "/#publications"
+        },
+        {
+          "zh": "查看研究方向",
+          "en": "Explore research",
+          "href": "/#research"
+        }
+      ],
+      "related": [
+        "ebc",
+        "sputum",
+        "bacteria",
+        "ausic"
+      ]
+    },
+    {
+      "id": "pi",
+      "group": "contact",
+      "title": {
+        "zh": "主持人是誰？研究背景是什麼？",
+        "en": "Who is the principal investigator?"
+      },
+      "answer": {
+        "zh": "百洑傳息實驗室由陽明交通大學醫學生物技術暨檢驗學系張鈞豪助理教授主持，研究專長包含微流體、生物感測及體外診斷相關技術。",
+        "en": "Bioflumen & Xensor Lab is led by Assistant Professor Chun-Hao Chang at NYCU’s Department of Biotechnology and Laboratory Science in Medicine, with expertise in microfluidics, biosensing and diagnostics."
+      },
+      "keywords": [
+        "主持人",
+        "老師",
+        "教授",
+        "張鈞豪",
+        "張老師",
+        "實驗室負責人",
+        "chun-hao",
+        "chun hao",
+        "chang",
+        "principal investigator",
+        "professor",
+        "pi"
+      ],
+      "links": [
+        {
+          "zh": "主持人介紹",
+          "en": "PI profile",
+          "href": "/#pi"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "research-overview",
+        "join-overview"
+      ]
+    },
+    {
+      "id": "contact",
+      "group": "contact",
+      "title": {
+        "zh": "如何聯絡實驗室？",
+        "en": "How can I contact the lab?"
+      },
+      "answer": {
+        "zh": "您可使用網站聯絡表單，或來信 jimhao@nycu.edu.tw；請簡述您的背景、需求與希望討論的內容。",
+        "en": "Use the website contact form or email jimhao@nycu.edu.tw. Please briefly introduce your background, request and discussion topic."
+      },
+      "keywords": [
+        "聯絡",
+        "聯繫",
+        "信箱",
+        "郵件",
+        "寄信",
+        "email",
+        "e-mail",
+        "contact",
+        "get in touch",
+        "reach"
+      ],
+      "links": [
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        },
+        {
+          "zh": "寄信給實驗室",
+          "en": "Email the lab",
+          "href": "mailto:jimhao@nycu.edu.tw"
+        }
+      ],
+      "related": [
+        "location",
+        "project-info",
+        "join-overview"
+      ]
+    },
+    {
+      "id": "location",
+      "group": "contact",
+      "title": {
+        "zh": "實驗室在哪裡？",
+        "en": "Where is the lab located?"
+      },
+      "answer": {
+        "zh": "實驗室位於國立陽明交通大學陽明校區生醫工程館 223 室，地址為 112 臺北市北投區立農街二段 155 號。到訪前建議先聯絡確認。",
+        "en": "The lab is in Room 223, Biomedical Engineering Building, NYCU Yangming Campus, No. 155, Sec. 2, Li-Nong Street, Beitou District, Taipei 112, Taiwan. Please contact the lab before visiting."
+      },
+      "keywords": [
+        "地址",
+        "位置",
+        "在哪",
+        "地點",
+        "地圖",
+        "怎麼去",
+        "陽明校區",
+        "生醫工程館",
+        "location",
+        "address",
+        "where is the lab",
+        "visit",
+        "directions"
+      ],
+      "links": [
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "contact"
+      ]
+    },
+    {
+      "id": "resources",
+      "group": "contact",
+      "title": {
+        "zh": "課程、線上工具與學習資源在哪裡？",
+        "en": "Where are teaching resources and online tools?"
+      },
+      "answer": {
+        "zh": "網站的線上資源頁收錄教學工具、外部學習資源與下載項目，可依用途搜尋。",
+        "en": "The Online Resources page contains teaching tools, external learning materials and downloads, with search by purpose."
+      },
+      "keywords": [
+        "線上資源",
+        "線上工具",
+        "教學工具",
+        "課程",
+        "講義",
+        "教材",
+        "學習資源",
+        "教學資源",
+        "online resources",
+        "teaching",
+        "course",
+        "courses",
+        "online tools",
+        "learning resources"
+      ],
+      "links": [
+        {
+          "zh": "線上資源",
+          "en": "Online Resources",
+          "href": "/courses.html"
+        }
+      ],
+      "related": [
+        "contact"
+      ]
+    },
+    {
+      "id": "news",
+      "group": "contact",
+      "title": {
+        "zh": "如何查看最新消息和實驗室生活？",
+        "en": "Where are lab news and activities?"
+      },
+      "answer": {
+        "zh": "您可以查看實驗室最新消息與生活剪影頁面，了解已公開的活動資訊。",
+        "en": "Visit the lab news and moments pages for published updates and activities."
+      },
+      "keywords": [
+        "最新消息",
+        "消息",
+        "實驗室生活",
+        "活動",
+        "近況",
+        "news",
+        "updates",
+        "lab life",
+        "moments"
+      ],
+      "links": [
+        {
+          "zh": "最新消息",
+          "en": "Lab news",
+          "href": "/news.html"
+        },
+        {
+          "zh": "生活剪影",
+          "en": "Lab moments",
+          "href": "/moments.html"
+        }
+      ],
+      "related": [
+        "contact"
+      ]
+    }
+  ]
+}
