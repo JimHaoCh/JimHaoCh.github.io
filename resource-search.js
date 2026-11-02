@@ -50,11 +50,17 @@
     ["聽力檢查", "聽力圖", "純音測聽", "聽力計", "audiometry", "audiogram", "hearing test", "pure tone"],
     ["基礎辨識", "入門練習", "初學者", "foundation", "foundations", "beginner", "beginner ecg", "basic ecg"],
     ["臨床案例", "案例判讀", "病例題", "cases", "clinical cases", "ecg quiz", "eeg quiz"],
-    ["動態模擬", "互動模擬", "模擬器", "simulation", "simulator", "dynamic rhythm", "interactive eeg"]
+    ["動態模擬", "互動模擬", "模擬器", "simulation", "simulator", "dynamic rhythm", "interactive eeg"],
+    ["公開資料庫", "公開資料", "研究資料庫", "公開研究資料庫", "open database", "dataset", "datasets", "research data", "repository"],
+    ["流式資料", "流式數據", "fcs", "flowrepository", "immport", "immunespace", "cytof", "cytometry data"],
+    ["單細胞資料", "單細胞資料庫", "scRNA-seq", "h5ad", "cellxgene", "human cell atlas"],
+    ["公開影像資料", "顯微影像資料", "bioimage archive", "image data resource", "idr", "tcia"],
+    ["公開抗藥資料", "mic distribution", "antimicrobial resistance database", "ncbi ast", "card"],
+    ["生理訊號資料庫", "波形資料", "physionet", "ptb-xl", "ecg dataset", "physiological signals"]
   ];
   const CATEGORIES = {
     exam: "國考與專業學習", career: "專科職涯與進階學習", imaging: "顯微、細胞與影像分析",
-    diagnostics: "微生物與檢驗判讀", clinical: "臨床專科技術與檢驗判讀", molecular: "分子檢驗與生物資訊",
+    diagnostics: "微生物與檢驗判讀", clinical: "臨床專科技術與檢驗判讀", molecular: "分子檢驗與生物資訊", databases: "公開研究資料庫",
     engineering: "微流體與工程設計", templates: "簡報與海報",
     apps: "科學研究學遊App"
   };
@@ -230,7 +236,7 @@
       category.value="all";type.value="all";update();input.focus();
     }));
     try{
-      const response=await fetch("/resources/search-index.json?v=20261102-learning4",{cache:"no-cache"});
+      const response=await fetch("/resources/search-index.json?v=20261102-databases1",{cache:"no-cache"});
       if(!response.ok)throw new Error("HTTP "+response.status);
       const data=await response.json();
       if(!Array.isArray(data))throw new Error("Search index malformed");
@@ -241,7 +247,7 @@
       ready=true;
       render();
     }catch(err){
-      status.textContent="搜尋資料暫時無法載入，仍可使用下方九大分類瀏覽。請稍後重新整理。";
+      status.textContent="搜尋資料暫時無法載入，仍可使用下方十大分類瀏覽。請稍後重新整理。";
       more.hidden=true;
       clear.hidden=true;
       results.replaceChildren();
