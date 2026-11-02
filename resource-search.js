@@ -241,7 +241,7 @@
       ready=true;
       render();
     }catch(err){
-      status.textContent="搜尋資料暫時無法載入，仍可使用下方七大分類瀏覽。請稍後重新整理。";
+      status.textContent="搜尋資料暫時無法載入，仍可使用下方九大分類瀏覽。請稍後重新整理。";
       more.hidden=true;
       clear.hidden=true;
       results.replaceChildren();
