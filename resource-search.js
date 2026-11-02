@@ -45,8 +45,8 @@
     ["醫療器材法規", "醫材法規", "體外診斷", "臨床試驗", "ivd regulatory", "gcp", "clinical trial", "regulatory affairs"]
   ];
   const CATEGORIES = {
-    exam: "國考與專業學習", career: "專科職涯與進階學習", imaging: "顯微與影像分析",
-    diagnostics: "微生物與檢驗判讀", molecular: "分子檢驗與生物資訊",
+    exam: "國考與專業學習", career: "專科職涯與進階學習", imaging: "顯微、細胞與影像分析",
+    diagnostics: "微生物與檢驗判讀", clinical: "臨床專科技術與檢驗判讀", molecular: "分子檢驗與生物資訊",
     engineering: "微流體與工程設計", templates: "簡報與海報",
     apps: "科學研究學遊App"
   };
@@ -222,7 +222,7 @@
       category.value="all";type.value="all";update();input.focus();
     }));
     try{
-      const response=await fetch("/resources/search-index.json?v=20261102-2",{cache:"no-cache"});
+      const response=await fetch("/resources/search-index.json?v=20261102-reorg1",{cache:"no-cache"});
       if(!response.ok)throw new Error("HTTP "+response.status);
       const data=await response.json();
       if(!Array.isArray(data))throw new Error("Search index malformed");
