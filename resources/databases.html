@@ -89,6 +89,12 @@ intro_en: Find biomedical research databases by discipline, verify access condit
         <div class="reference-grid database-resource-grid">
           {% for item in section_items %}{% include resource-database-card.html item=item %}{% endfor %}
         </div>
+        {% if section.id == 'micro' %}
+        <div class="career-related-links">
+          <strong>既有臨床檢驗資料 <small lang="en">Related resources already on this site</small></strong>
+          <p>EUCAST MIC／抑菌圈分布及臨床折點等專業資源已收錄於 <a href="/resources/diagnostics.html">微生物與檢驗判讀</a>，請由原頁前往，並區分分布資料與臨床判讀標準。</p>
+        </div>
+        {% endif %}
       </section>
       {% endfor %}
 
