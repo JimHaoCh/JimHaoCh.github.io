@@ -655,3 +655,25 @@
 .database-example-card>.resource-download{margin-top:auto}
 @media(max-width:900px){.database-legend{grid-template-columns:repeat(2,minmax(0,1fr))}.database-filter-fields{grid-template-columns:1fr 1fr}.database-filter-fields label:first-child{grid-column:1/-1}}
 @media(max-width:650px){.database-filter-panel{padding:16px 13px}.database-filter-fields{grid-template-columns:1fr;gap:10px}.database-filter-fields label:first-child{grid-column:auto}.database-legend,.database-example-grid{grid-template-columns:1fr}.database-example-card{padding:15px 14px}}
+
+
+/* Database taxonomy: primary roles and secondary topics, 2026-11-02 */
+.database-role-legend{margin:19px 0 4px;padding:12px 15px;background:#f5f9fc;border-left:3px solid #8cb2d0;border-radius:0 10px 10px 0}
+.database-role-legend p{font-size:11.5px;line-height:1.8;color:#4a6880;margin:4px 0 7px}
+.database-role-legend p strong{color:#285d82}
+.database-role-legend p[lang=en]{font-size:10.5px;color:#70899f}
+.database-filter-fields{grid-template-columns:minmax(160px,1.4fr) repeat(3,minmax(135px,1fr))}
+.database-role-row{margin:7px 0 8px}
+.database-role-pill{display:inline-flex;align-items:center;flex-wrap:wrap;gap:5px;color:#275b80;background:#edf5fb;border:1px solid #cadfec;border-radius:7px;padding:5px 8px;font:700 10.5px/1.4 var(--sans)}
+.database-role-pill small[lang=en]{font-size:10px;color:#667f96;font-weight:450}
+.database-role-surveillance{background:#f2f4fc;border-color:#d1d6ee;color:#565b91}
+.database-role-benchmark{background:#eef8f3;border-color:#c8e6d5;color:#2f775c}
+.database-role-archive{background:#f1f7fc}
+.database-role-reference{background:#f7f4ed;border-color:#e8ddbf;color:#78622a}
+.database-role-portal{background:#edf7f9;border-color:#cde4e7;color:#3c777b}
+.database-secondary-topics{margin:6px 0 12px;padding:8px 9px;border-radius:7px;border:1px solid #e1e8ef;background:#fbfdfe;color:#52718b;font-size:11px;line-height:1.75}
+.database-secondary-topics strong{display:block;font-size:10.5px;color:#356a8c}
+.database-secondary-topics strong small{font-size:10px;font-weight:450;color:#748a9e}
+.database-secondary-topics span[lang=en]{display:block;font-size:10px;color:#7a92a5}
+@media(max-width:980px){.database-filter-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.database-filter-fields label:first-child{grid-column:1/-1}}
+@media(max-width:650px){.database-filter-fields{grid-template-columns:1fr}.database-filter-fields label:first-child{grid-column:auto}.database-role-legend{padding:11px 12px}}
