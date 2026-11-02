@@ -42,7 +42,12 @@
     ["移植配對", "hLA", "組織相容", "移植免疫", "hla typing", "histocompatibility"],
     ["細胞治療", "細胞製備", "gmp", "cell therapy", "cell manufacturing", "car-t"],
     ["法醫", "鑑識", "法醫dna", "forensic dna", "str profiling", "human identification"],
-    ["醫療器材法規", "醫材法規", "體外診斷", "臨床試驗", "ivd regulatory", "gcp", "clinical trial", "regulatory affairs"]
+    ["醫療器材法規", "醫材法規", "體外診斷", "臨床試驗", "ivd regulatory", "gcp", "clinical trial", "regulatory affairs"],
+    ["心電圖", "心律", "心電圖判讀", "十二導程", "12導程", "ecg", "ekg", "electrocardiogram", "arrhythmia", "heart rhythm"],
+    ["腦波", "腦電圖", "癲癇波形", "腦波判讀", "eeg", "electroencephalography", "seizure", "electrode montage"],
+    ["肺功能", "肺功能檢查", "肺活量", "流量容積", "pft", "spirometry", "pulmonary function", "flow volume", "fev1", "fvc", "tlc"],
+    ["動脈血氣", "血氣分析", "酸鹼", "abg", "arterial blood gas", "paco2", "bicarbonate"],
+    ["聽力檢查", "聽力圖", "純音測聽", "聽力計", "audiometry", "audiogram", "hearing test", "pure tone"]
   ];
   const CATEGORIES = {
     exam: "國考與專業學習", career: "專科職涯與進階學習", imaging: "顯微、細胞與影像分析",
@@ -222,7 +227,7 @@
       category.value="all";type.value="all";update();input.focus();
     }));
     try{
-      const response=await fetch("/resources/search-index.json?v=20261102-reorg1",{cache:"no-cache"});
+      const response=await fetch("/resources/search-index.json?v=20261102-physiology1",{cache:"no-cache"});
       if(!response.ok)throw new Error("HTTP "+response.status);
       const data=await response.json();
       if(!Array.isArray(data))throw new Error("Search index malformed");
