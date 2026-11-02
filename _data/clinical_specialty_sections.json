@@ -30,21 +30,21 @@
     "id": "ecg",
     "name_zh": "心電圖與心律判讀",
     "name_en": "ECG & Cardiac Rhythm Interpretation",
-    "intro_zh": "從 P 波、PR/QRS、心率與心軸開始，利用動態波形、心律辨識遊戲及 12 導程臨床案例練習。",
-    "intro_en": "Learn ECG rhythm, intervals, heart rate and axis through animated tracings, timed games and clinical 12-lead cases.",
-    "path_zh": "動態心律觀察 → 六秒心律辨識 → 臨床 12 導程與案例測驗",
-    "path_en": "Animated rhythms → six-second rhythm game → clinical 12-lead case quizzes",
+    "intro_zh": "依學生程度從心律基礎辨識、12 導程臨床案例到動態模擬；資源卡標明建議操作與教學模式。",
+    "intro_en": "Start with ECG rhythm fundamentals, then clinical interpretation cases, and explore live simulations with resource-specific practice prompts.",
+    "path_zh": "基礎：SkillStat 心律辨識 → 案例：TracingsMD／Wave-Maven／LITFL → 模擬：ECG Sweep",
+    "path_en": "Foundation: SkillStat → Cases: TracingsMD / Wave-Maven / LITFL → Simulation: ECG Sweep",
     "access_note_zh": "以一般教學練習為主；心電圖形態與實際診斷需配合病史、導程及專業訓練。"
   },
   {
     "id": "eeg",
     "name_zh": "腦波與癲癇波形判讀",
     "name_en": "EEG & Clinical Neurophysiology",
-    "intro_zh": "透過虛擬 EEG 導程、正常／異常腦波、睡眠階段、干擾訊號及癲癇案例，理解腦波訊號判讀。",
-    "intro_en": "Explore EEG montages, background patterns, artifacts, sleep stages and epileptiform activity using interactive simulations and cases.",
-    "path_zh": "10–20 電極與正常波 → 操作虛擬腦波機 → 逐章測驗 → 註冊閱讀 EEG Atlas",
-    "path_en": "10–20 electrodes and normal EEG → simulator → chapter quizzes → EEG Atlas cases",
-    "access_note_zh": "EEG Atlas 需註冊；合成腦波與病例教材用途不同，請依資源卡說明使用。"
+    "intro_zh": "將電極與正常背景教材、臨床案例圖譜及動態 EEG／DSA 模擬分開整理，兼顧波形判讀與儀器操作。",
+    "intro_en": "Separate electrode and normal-EEG teaching, annotated case atlases, and dynamic EEG/DSA simulations.",
+    "path_zh": "基礎：Learning EEG → 案例：EEG Atlas → 模擬：EEG Machine／DSATrainer",
+    "path_en": "Foundation: Learning EEG → Cases: EEG Atlas → Simulation: EEG Machine / DSATrainer",
+    "access_note_zh": "DSATrainer 以麻醉 EEG 頻譜監測為主，並使用去識別研究紀錄與部分模擬參數；EEG Atlas 需註冊。"
   },
   {
     "id": "pft",
