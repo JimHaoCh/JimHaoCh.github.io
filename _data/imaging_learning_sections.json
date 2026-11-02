@@ -1,0 +1,23 @@
+[
+  {
+    "id": "pathology",
+    "name_zh": "數位病理與組織病理技術",
+    "name_en": "Digital Pathology & Histotechnology",
+    "intro_zh": "透過虛擬全玻片與病例，練習組織形態、病理診斷觀察與 H&E 病理學習。",
+    "intro_en": "Explore virtual whole slides, histology, tissue morphology and case-based pathology."
+  },
+  {
+    "id": "cytogenetics",
+    "name_zh": "細胞遺傳與染色體核型練習",
+    "name_en": "Cytogenetics & Karyotyping",
+    "intro_zh": "利用染色體排列教材練習核型與非整倍體辨識。",
+    "intro_en": "Practice karyotype assembly and recognizing aneuploidy with chromosome images."
+  },
+  {
+    "id": "flow",
+    "name_zh": "流式細胞與免疫表型",
+    "name_en": "Flow Cytometry & Immunophenotyping",
+    "intro_zh": "認識流式細胞儀、螢光補償、門控及臨床免疫表型。",
+    "intro_en": "Explore cytometry, fluorescence compensation, gating and immunophenotyping."
+  }
+]
