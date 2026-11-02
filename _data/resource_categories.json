@@ -17,20 +17,20 @@
     "href": "/resources/careers.html",
     "icon": "◈",
     "eyebrow": "SPECIALIZED CAREERS & ADVANCED LEARNING",
-    "intro_zh": "細胞醫檢師、胚胎師、數位病理、輸血醫學、流式細胞與臨床遺傳的職涯及進修入口。",
-    "intro_en": "Career pathways, credentials and learning materials in cytotechnology, embryology, pathology, transfusion, cytometry and clinical genetics.",
-    "sample_zh": "細胞醫檢 · 胚胎師 · 數位病理 · 輸血醫學 · 流式細胞 · 遺傳"
+    "intro_zh": "細胞醫檢師、胚胎師、睡眠技師、細胞治療、醫材法規與國際專業認證的培訓入口。",
+    "intro_en": "Career pathways, training requirements and credentials for cytotechnologists, embryologists, sleep technologists, cell therapy and regulatory specialties.",
+    "sample_zh": "細胞醫檢師 · 胚胎師 · 睡眠技師 · 專業認證"
   },
   {
     "id": "imaging",
-    "name_zh": "顯微與影像分析",
-    "name_en": "Microscopy & Image Analysis",
+    "name_zh": "顯微、細胞與影像分析",
+    "name_en": "Microscopy, Cells & Image Analysis",
     "href": "/resources/imaging.html",
     "icon": "◎",
-    "eyebrow": "IMAGE & CELL ANALYSIS",
-    "intro_zh": "細胞計數、白血球分類、精子運動、存活率與影像定量。",
-    "intro_en": "Cell counting, WBC differential, sperm motion, viability and image measurements.",
-    "sample_zh": "顯微鏡影像 · 細胞分析 · ImageJ"
+    "eyebrow": "MICROSCOPY · CELLS · IMAGING",
+    "intro_zh": "顯微影像分析、血球及組織切片、數位病理、染色體核型與流式細胞學習。",
+    "intro_en": "Microscopy tools, blood and tissue images, digital pathology, karyotyping and flow cytometry.",
+    "sample_zh": "血球形態 · 數位病理 · 染色體 · 流式細胞"
   },
   {
     "id": "diagnostics",
@@ -50,9 +50,20 @@
     "href": "/resources/molecular.html",
     "icon": "⌁",
     "eyebrow": "MOLECULAR & BIOINFORMATICS",
-    "intro_zh": "PCR／qPCR、LAMP、RPA、NASBA、RCA／Padlock、HDA／SDA 與 NUPACK 核酸設計資源。",
-    "intro_en": "PCR/qPCR, LAMP, RPA, NASBA, RCA/padlock, HDA/SDA and NUPACK resources.",
-    "sample_zh": "LAMP · RPA · NASBA · RCA · HDA／SDA · NUPACK"
+    "intro_zh": "PCR、恆溫擴增、核酸設計、臨床變異判讀、NGS 實作與法醫 DNA 標準。",
+    "intro_en": "PCR and isothermal designs, clinical variants, NGS exercises and forensic DNA references.",
+    "sample_zh": "PCR · NUPACK · ClinVar · Galaxy · 法醫 DNA"
+  },
+  {
+    "id": "clinical",
+    "name_zh": "臨床專科技術與檢驗判讀",
+    "name_en": "Specialized Clinical Laboratory Practice",
+    "href": "/resources/clinical.html",
+    "icon": "▦",
+    "eyebrow": "SPECIALIZED CLINICAL LABORATORY PRACTICE",
+    "intro_zh": "輸血醫學、HLA 移植配對、新生兒篩檢與臨床質譜的專業教材及資料庫。",
+    "intro_en": "Professional learning resources for blood banking, HLA matching, newborn screening and clinical mass spectrometry.",
+    "sample_zh": "輸血醫學 · HLA · 新生兒篩檢 · LC-MS/MS"
   },
   {
     "id": "engineering",
