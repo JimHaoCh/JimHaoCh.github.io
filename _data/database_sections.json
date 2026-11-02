@@ -21,11 +21,25 @@
     "intro_en": "Microscopy, histology, IHC, radiology and high-content imaging with dataset-specific annotations and licenses."
   },
   {
+    "id": "blood",
+    "name_zh": "血球影像與細胞 AI",
+    "name_en": "Blood Cell Imaging & AI",
+    "intro_zh": "公開紅血球、白血球與白血病顯微影像，依標註類型挑選細胞分割、分類或物件偵測資料。",
+    "intro_en": "Blood-cell and leukemia image datasets with segmentation, detection or classification labels; inspect ground truth and access rules."
+  },
+  {
     "id": "proteins",
     "name_zh": "蛋白質體與分子結構",
     "name_en": "Proteomics & Structures",
     "intro_zh": "質譜原始檔、蛋白序列、功能註解和實驗解析三維結構。",
     "intro_en": "Mass-spectrometry studies, protein sequences, functional annotations and experimental structures."
+  },
+  {
+    "id": "metabolomics",
+    "name_zh": "代謝體與臨床化學",
+    "name_en": "Metabolomics & Clinical Chemistry",
+    "intro_zh": "LC-MS、GC-MS、NMR 原始檔與代謝物結構／譜庫。整合搜尋平台可能引用相同底層研究，分析時核對原始 accession。",
+    "intro_en": "Mass spectrometry, NMR, metabolite records and integrated discovery portals; track source accessions to avoid duplicate studies."
   },
   {
     "id": "micro",
