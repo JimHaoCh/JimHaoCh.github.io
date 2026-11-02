@@ -25,5 +25,45 @@
     "intro_en": "Dried blood spots, newborn screening, LC-MS/MS assay validation and quality assurance with official training.",
     "path_zh": "臺灣合約篩檢實驗室 → LC-MS/MS 方法與驗證 → CDC NSQAP 品質管理",
     "path_en": "Taiwan screening labs → LC-MS/MS validation → CDC NSQAP quality assurance"
+  },
+  {
+    "id": "ecg",
+    "name_zh": "心電圖與心律判讀",
+    "name_en": "ECG & Cardiac Rhythm Interpretation",
+    "intro_zh": "從 P 波、PR/QRS、心率與心軸開始，利用動態波形、心律辨識遊戲及 12 導程臨床案例練習。",
+    "intro_en": "Learn ECG rhythm, intervals, heart rate and axis through animated tracings, timed games and clinical 12-lead cases.",
+    "path_zh": "動態心律觀察 → 六秒心律辨識 → 臨床 12 導程與案例測驗",
+    "path_en": "Animated rhythms → six-second rhythm game → clinical 12-lead case quizzes",
+    "access_note_zh": "以一般教學練習為主；心電圖形態與實際診斷需配合病史、導程及專業訓練。"
+  },
+  {
+    "id": "eeg",
+    "name_zh": "腦波與癲癇波形判讀",
+    "name_en": "EEG & Clinical Neurophysiology",
+    "intro_zh": "透過虛擬 EEG 導程、正常／異常腦波、睡眠階段、干擾訊號及癲癇案例，理解腦波訊號判讀。",
+    "intro_en": "Explore EEG montages, background patterns, artifacts, sleep stages and epileptiform activity using interactive simulations and cases.",
+    "path_zh": "10–20 電極與正常波 → 操作虛擬腦波機 → 逐章測驗 → 註冊閱讀 EEG Atlas",
+    "path_en": "10–20 electrodes and normal EEG → simulator → chapter quizzes → EEG Atlas cases",
+    "access_note_zh": "EEG Atlas 需註冊；合成腦波與病例教材用途不同，請依資源卡說明使用。"
+  },
+  {
+    "id": "pft",
+    "name_zh": "肺功能與血氣分析",
+    "name_en": "Pulmonary Function & Blood Gas Interpretation",
+    "intro_zh": "利用 PFT 模擬題與肺功能曲線，練習 FEV1/FVC、TLC、阻塞與限制型態；再用 ABG 數值練習酸鹼判讀。",
+    "intro_en": "Interpret spirometry and lung volumes, distinguish obstructive/restrictive patterns, and practice arterial blood gas acid-base classification.",
+    "path_zh": "肺功能量測參數 → PFT 模式判讀 → 流量容積曲線 → ABG 酸鹼練習",
+    "path_en": "Spirometry measures → PFT pattern quiz → flow-volume loops → ABG practice",
+    "access_note_zh": "Apex 練習題使用簡化界線；臨床判讀仍需採用適用的參考值、LLN 與完整檢查資料。"
+  },
+  {
+    "id": "hearing",
+    "name_zh": "聽力檢查與聽力圖",
+    "name_en": "Audiometry & Audiogram Interpretation",
+    "intro_zh": "模擬純音測聽及閾值記錄，學習氣導、骨導、遮蔽及聽力圖符號與呈現。",
+    "intro_en": "Practice pure-tone threshold testing and audiogram documentation, including air/bone conduction and notation.",
+    "path_zh": "測聽儀操作概念 → 模擬病人閾值測試 → 聽力圖繪製與結果核對",
+    "path_en": "Audiometer basics → virtual patient thresholds → audiogram plotting and review",
+    "access_note_zh": "Resonic 採瑞典標準聽力圖符號；訓練前請與臺灣或使用場域規範對照。"
   }
 ]
