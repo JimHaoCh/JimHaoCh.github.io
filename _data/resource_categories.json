@@ -66,6 +66,17 @@
     "sample_zh": "ECG · EEG · PFT／ABG · 聽力 · HLA · 輸血"
   },
   {
+    "id": "databases",
+    "name_zh": "公開研究資料庫",
+    "name_en": "Open Biomedical Research Databases",
+    "href": "/resources/databases.html",
+    "icon": "▥",
+    "eyebrow": "PUBLIC RESEARCH DATA & REANALYSIS",
+    "intro_zh": "Flow FCS、單細胞、顯微影像、蛋白質體、細菌 AST 與 ECG 等公開資料來源及課堂資料範例。",
+    "intro_en": "Open flow cytometry, single-cell, imaging, proteomics, antimicrobial susceptibility and physiological signal data.",
+    "sample_zh": "FlowRepository · GEO · IDR · CARD · PhysioNet"
+  },
+  {
     "id": "engineering",
     "name_zh": "微流體與工程設計",
     "name_en": "Microfluidics & Engineering",
