@@ -1,58 +1,86 @@
 [
   {
     "id": "flow",
-    "name_zh": "流式細胞與免疫學",
+    "name_zh": "流式細胞與免疫學資料",
     "name_en": "Flow Cytometry & Immunology",
-    "intro_zh": "尋找 FCS、CyTOF、免疫細胞表型與多組學資料；核對原始檔、gating 註記和人體研究存取條件。",
-    "intro_en": "Find FCS, CyTOF and immunophenotyping datasets with clear notes on raw files, annotations and human-study access."
-  },
-  {
-    "id": "genomics",
-    "name_zh": "基因體、轉錄體與單細胞",
-    "name_en": "Genomics & Single-Cell",
-    "intro_zh": "搜尋 RNA-seq、細胞類型、變異與癌症基因體，區分公開矩陣與受控原始定序檔。",
-    "intro_en": "Find gene expression, single-cell and cancer data, distinguishing public matrices from controlled sequence or clinical files."
-  },
-  {
-    "id": "imaging",
-    "name_zh": "生醫影像與組織病理",
-    "name_en": "Bioimaging & Pathology",
-    "intro_zh": "螢光顯微、全玻片、IHC、放射影像及高內涵篩選資料，檢查影像授權與標註。",
-    "intro_en": "Microscopy, histology, IHC, radiology and high-content imaging with dataset-specific annotations and licenses."
+    "intro_zh": "FCS、CyTOF、gating 和免疫學研究。FlowRepository 著重原始流式實驗，ImmPort／ImmuneSpace 涵蓋多種免疫檢驗，HDCytoData 提供演算法基準。",
+    "intro_en": "FCS, CyTOF, gating and immune studies: raw flow experiments, multi-assay immune portals and curated cytometry benchmarks."
   },
   {
     "id": "blood",
     "name_zh": "血球影像與細胞 AI",
     "name_en": "Blood Cell Imaging & AI",
-    "intro_zh": "公開紅血球、白血球與白血病顯微影像，依標註類型挑選細胞分割、分類或物件偵測資料。",
-    "intro_en": "Blood-cell and leukemia image datasets with segmentation, detection or classification labels; inspect ground truth and access rules."
+    "intro_zh": "紅血球／白血球影像、血液抹片與細胞形態標註，用於分割、定位及分類模型。ALL-IDB 有資料申請程序。",
+    "intro_en": "Red- and white-cell images, smears and ground-truth labels for counting, detection and classification. ALL-IDB has access requirements."
+  },
+  {
+    "id": "imaging",
+    "name_zh": "顯微影像、組織病理與數位病理",
+    "name_en": "Bioimaging & Digital Pathology",
+    "intro_zh": "通用螢光顯微、組織 IHC／IF、高內涵細胞影像及放射影像。Human Protein Atlas 跨蛋白體，Cell Painting 跨藥物表型。",
+    "intro_en": "Microscopy, tissue IHC/IF, high-content cell imaging and cancer radiology, including cross-disciplinary protein and compound phenotypes."
+  },
+  {
+    "id": "genomics",
+    "name_zh": "基因表現與原始定序",
+    "name_en": "Gene Expression & Sequencing Archives",
+    "intro_zh": "Microarray、RNA-seq、ATAC/ChIP、正常組織表現和 FASTQ 原始讀段；GEO、GTEx、ENCODE、ArrayExpress、SRA 可依研究設計選擇。",
+    "intro_en": "Expression arrays, RNA-seq, epigenomics, tissue eQTLs and raw reads: GEO, GTEx, ENCODE, ArrayExpress and SRA."
+  },
+  {
+    "id": "singlecell",
+    "name_zh": "單細胞與空間多體學",
+    "name_en": "Single-Cell & Spatial Omics",
+    "intro_zh": "CELLxGENE、Human Cell Atlas、10x 公開示範資料及 HuBMAP，涵蓋單細胞表現、空間分布與器官圖譜。",
+    "intro_en": "CELLxGENE, Human Cell Atlas, 10x examples and HuBMAP for single-cell matrices, spatial omics and organ atlases."
+  },
+  {
+    "id": "cancer",
+    "name_zh": "癌症基因體與細胞株篩選",
+    "name_en": "Cancer Genomics & Functional Screens",
+    "intro_zh": "區分 GDC 的癌症原始／臨床檔案、cBioPortal 的隊列整合查詢，以及 DepMap 的細胞株 CRISPR 依賴性與藥物反應。",
+    "intro_en": "GDC cancer cohorts, cBioPortal study exploration and DepMap cancer cell-line dependencies and phenotypes."
   },
   {
     "id": "proteins",
     "name_zh": "蛋白質體、結構與藥物活性",
-    "name_en": "Proteomics, Structures & Drug Bioactivity",
-    "intro_zh": "原始質譜、蛋白序列、實驗／AI 預測結構及藥物分子生物活性，需核對證據類型與 assay 條件。",
-    "intro_en": "Raw mass spectrometry, protein sequences, experimental and predicted structures, and drug bioactivity; inspect evidence types and assay conditions."
+    "name_en": "Proteomics, Structure & Drug Bioactivity",
+    "intro_zh": "PRIDE 質譜、UniProt 註解、PDB 實驗結構、AlphaFold 預測結構及 ChEMBL 藥物／靶點活性，資料證據類型各異。",
+    "intro_en": "MS archives, protein annotations, experimental versus predicted structures, and curated compound–target bioactivity."
   },
   {
     "id": "metabolomics",
-    "name_zh": "代謝體與臨床化學",
-    "name_en": "Metabolomics & Clinical Chemistry",
-    "intro_zh": "LC-MS、GC-MS、NMR 原始檔與代謝物結構／譜庫。整合搜尋平台可能引用相同底層研究，分析時核對原始 accession。",
-    "intro_en": "Mass spectrometry, NMR, metabolite records and integrated discovery portals; track source accessions to avoid duplicate studies."
+    "name_zh": "代謝體、質譜與臨床化學",
+    "name_en": "Metabolomics & Mass Spectrometry",
+    "intro_zh": "LC-MS／GC-MS／NMR 原始實驗、參考光譜與代謝物註解；MetabolomicsHub 整合搜尋，MassIVE 與 GNPS 可能索引相同研究。",
+    "intro_en": "LC-MS, GC-MS, NMR studies, metabolite references and spectral networking; integrated portals may index the same deposited experiments."
   },
   {
-    "id": "micro",
-    "name_zh": "微生物與抗藥性",
-    "name_en": "Microbiology & AMR",
-    "intro_zh": "MIC 分布、抗藥性基因與表型 AST；分析前確認資料單位及報告限制。",
-    "intro_en": "MIC distributions, resistance genes and phenotypic AST; review measurement units and provenance."
+    "id": "microbial",
+    "name_zh": "微生物基因體與菌相",
+    "name_en": "Microbial Genomics & Microbiome",
+    "intro_zh": "SILVA 為 16S／18S rRNA 分類參考，MGnify 提供微生物群定序分析，EnteroBase 為菌株基因體與 MLST；三者用途不同。",
+    "intro_en": "SILVA rRNA reference taxonomy, MGnify microbiome analyses, and EnteroBase bacterial genomes and sequence typing."
+  },
+  {
+    "id": "amr",
+    "name_zh": "抗藥基因與表型 AST",
+    "name_en": "AMR Determinants & Phenotypic AST",
+    "intro_zh": "CARD／MEGARes／CLEVER 屬抗藥基因及變異參考；NCBI AST Browser 供查詢提交的菌株 MIC／抑菌圈。基因推測與實測表型須分開解釋。",
+    "intro_en": "CARD, MEGARes and CLEVER gene/variant references alongside NCBI isolate-level phenotypic AST; genotype and phenotype are distinct evidence."
+  },
+  {
+    "id": "surveillance",
+    "name_zh": "感染症與抗藥性監測統計",
+    "name_en": "Infection & AMR Surveillance",
+    "intro_zh": "WHO GLASS 及 ECDC 提供監測統計、國家或年度比較。匯總指標會受回報涵蓋、抽樣與分母定義影響。",
+    "intro_en": "WHO GLASS and ECDC surveillance summaries, with reporting-coverage, sampling and denominator caveats."
   },
   {
     "id": "signals",
-    "name_zh": "生理訊號與臨床波形",
-    "name_en": "Physiological Signals",
-    "intro_zh": "ECG、EEG、PPG 及相關資料，區分公開與需申請的臨床檔案。",
-    "intro_en": "ECG, EEG, PPG and physiological signal datasets with public and credentialed access."
+    "name_zh": "生理訊號與神經電生理",
+    "name_en": "Physiological & Neural Signals",
+    "intro_zh": "PhysioNet 包含 ECG／臨床生理訊號；NEMAR、OpenNeuro 著重 EEG／MEG 等資料，DANDI 包含 NWB 神經電生理與鈣影像。",
+    "intro_en": "PhysioNet clinical signals, OpenNeuro/NEMAR EEG and MEG, plus DANDI NWB neurophysiology and calcium-imaging series."
   }
 ]
