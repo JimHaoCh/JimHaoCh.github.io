@@ -34,7 +34,15 @@
     ["數位病理", "組織病理", "組織學", "虛擬玻片", "digital pathology", "histology", "pathology", "whole slide"],
     ["輸血醫學", "血庫", "交叉試驗", "transfusion", "blood bank", "immunohematology"],
     ["流式細胞", "流式細胞儀", "免疫表型", "flow cytometry", "facs", "immunophenotyping"],
-    ["臨床遺傳", "基因變異", "變異判讀", "clingen", "clinvar", "variant interpretation"]
+    ["臨床遺傳", "基因變異", "變異判讀", "clingen", "clinvar", "variant interpretation"],
+    ["細胞遺傳", "染色體", "核型", "核型分析", "cytogenetics", "karyotype", "karyotyping", "fish"],
+    ["組織技術", "組織染色", "組織切片", "histotechnology", "histotechnologist", "microtomy", "ihc"],
+    ["睡眠技師", "睡眠檢查", "多項睡眠生理檢查", "睡眠", "sleep technologist", "psg", "polysomnography"],
+    ["新生兒篩檢", "乾血點", "新生兒", "newborn screening", "dbs", "lc-ms/ms", "臨床質譜"],
+    ["移植配對", "hLA", "組織相容", "移植免疫", "hla typing", "histocompatibility"],
+    ["細胞治療", "細胞製備", "gmp", "cell therapy", "cell manufacturing", "car-t"],
+    ["法醫", "鑑識", "法醫dna", "forensic dna", "str profiling", "human identification"],
+    ["醫療器材法規", "醫材法規", "體外診斷", "臨床試驗", "ivd regulatory", "gcp", "clinical trial", "regulatory affairs"]
   ];
   const CATEGORIES = {
     exam: "國考與專業學習", career: "專科職涯與進階學習", imaging: "顯微與影像分析",
