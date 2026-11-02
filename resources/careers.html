@@ -6,7 +6,7 @@ title: 專科職涯與進階學習 Specialized Careers & Advanced Learning
 title_zh: 專科職涯與進階學習
 title_en: Specialized Careers & Advanced Learning
 section_label: SPECIALIZED CAREERS & ADVANCED LEARNING
-description: 醫技系進階專業職涯與學習入口，涵蓋細胞醫檢師、胚胎師、數位病理、血庫輸血、流式細胞與臨床遺傳，附官方訓練管道與學習網站。
+description: 醫技系進階專業職涯與學習入口，涵蓋細胞醫檢師、胚胎師、染色體、病理技術、睡眠檢查、HLA、細胞治療及臨床遺傳等專業，附官方訓練管道與學習網站。
 intro_zh: 以醫技專業知識為起點，認識不同專科工作、臺灣培訓途徑、國際認證與自主學習材料。依領域選擇官方入口，核對現行資格並開始學習。
 intro_en: Explore specialist pathways beyond foundational medical laboratory training. Find Taiwan training information, international credentials, public learning sites and case-based resources.
 ---
@@ -14,7 +14,8 @@ intro_en: Explore specialist pathways beyond foundational medical laboratory tra
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261101-career1">
+  <link rel="stylesheet" href="/online-tools.css?v=20261102-career2">
+  <script defer src="/career-resources.js?v=20261102-1"></script>
 </head>
 <body>
   <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
@@ -26,7 +27,7 @@ intro_en: Explore specialist pathways beyond foundational medical laboratory tra
         <div class="catalogue-heading">
           <p class="eyebrow">CAREER PATHWAYS · WHERE TO START</p>
           <h2 id="career-overview-heading">從專業認識到實際培訓<span lang="en">From career exploration to professional training</span></h2>
-          <p>每個領域整理工作主題、入門順序與官方學習資源。職業名稱、訓練資格、國際證書和法定執業資格各有規範，請以對應主管機關現行公告為準。</p>
+          <p>目前整理 13 個專業領域、37 筆學習資源。每個領域提供工作主題、入門順序與官方學習資源。職業名稱、訓練資格、國際證書和法定執業資格各有規範，請以對應主管機關現行公告為準。</p>
           <p lang="en" class="career-overview-en">Explore the work, follow a suggested learning pathway and review original sources. Check statutory eligibility and institution-specific training requirements separately from international professional credentials.</p>
         </div>
         <div class="career-feature-grid">
@@ -45,6 +46,21 @@ intro_en: Explore specialist pathways beyond foundational medical laboratory tra
             <a href="#career-embryology">查看學習路徑 <small lang="en">Explore embryology</small> ↗</a>
           </article>
         </div>
+      </section>
+      <section class="career-filter-panel" aria-labelledby="career-filter-heading" id="career-filter">
+        <div class="catalogue-heading">
+          <p class="eyebrow">FILTER BY RESOURCE TYPE</p>
+          <h2 id="career-filter-heading">依學習方式篩選資源<span lang="en">Browse by learning resource type</span></h2>
+          <p>每張資源卡標示免費、註冊或付費等使用條件；以下按教材用途篩選，不影響既有搜尋功能。</p>
+        </div>
+        <div class="career-filter-options" role="group" aria-label="資源形式 / Resource type">
+          <button type="button" data-career-filter="all" aria-pressed="true">全部 <small lang="en">All</small></button>
+          <button type="button" data-career-filter="practice" aria-pressed="false">互動實作 <small lang="en">Practice</small></button>
+          <button type="button" data-career-filter="course" aria-pressed="false">線上課程 <small lang="en">Courses</small></button>
+          <button type="button" data-career-filter="credential" aria-pressed="false">證照與訓練資格 <small lang="en">Credentials</small></button>
+          <button type="button" data-career-filter="reference" aria-pressed="false">專業資料 <small lang="en">References</small></button>
+        </div>
+        <p class="career-filter-status" id="career-filter-status" role="status" aria-live="polite">顯示全部專業資源 <span lang="en">Showing all specialist resources</span></p>
       </section>
       <nav class="career-jump-nav" aria-label="專科職涯類別 / Career specializations">
         {% for section in site.data.career_sections %}
@@ -74,8 +90,8 @@ intro_en: Explore specialist pathways beyond foundational medical laboratory tra
         </section>
       {% endfor %}
       <p class="tools-note career-disclaimer">
-        資源最後核對：2026-11-01。本站僅提供官方或原出版者入口及教育性摘要；外部網站的課程費用、訓練名額與資格可能更新。國際學會證書不自動取得臺灣執業資格。任何臨床資訊、影像或案例使用都應遵守個資及著作權規範。
-        <span lang="en">Links checked: 1 Nov 2026. Verify current access, training places, regulations and fees with each provider. International certification does not automatically confer Taiwanese authorization to practise. Respect patient privacy and publisher copyright.</span>
+        資源最後核對：2026-11-02。本站僅提供官方或原出版者入口及教育性摘要；外部網站的課程費用、訓練名額與資格可能更新。國際學會證書不自動取得臺灣執業資格。任何臨床資訊、影像或案例使用都應遵守個資及著作權規範。
+        <span lang="en">Links reviewed: 2 Nov 2026. Verify current access, training places, regulations and fees with each provider. International certification does not automatically confer Taiwanese authorization to practise. Respect patient privacy and publisher copyright.</span>
       </p>
     </div>
   </main>
