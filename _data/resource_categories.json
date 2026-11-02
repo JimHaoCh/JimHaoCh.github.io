@@ -61,9 +61,9 @@
     "href": "/resources/clinical.html",
     "icon": "▦",
     "eyebrow": "SPECIALIZED CLINICAL LABORATORY PRACTICE",
-    "intro_zh": "輸血醫學、HLA 移植配對、新生兒篩檢與臨床質譜的專業教材及資料庫。",
-    "intro_en": "Professional learning resources for blood banking, HLA matching, newborn screening and clinical mass spectrometry.",
-    "sample_zh": "輸血醫學 · HLA · 新生兒篩檢 · LC-MS/MS"
+    "intro_zh": "ECG 心電圖、EEG 腦波、肺功能、血氣分析與聽力檢查練習，加上輸血、HLA、新生兒篩檢教材。",
+    "intro_en": "Interactive ECG, EEG, spirometry, ABG and audiometry practice alongside transfusion, HLA and newborn screening resources.",
+    "sample_zh": "ECG · EEG · PFT／ABG · 聽力 · HLA · 輸血"
   },
   {
     "id": "engineering",
