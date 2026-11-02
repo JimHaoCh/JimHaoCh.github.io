@@ -6,15 +6,15 @@ title: 臨床專科技術與檢驗判讀 Specialized Clinical Laboratory Practic
 title_zh: 臨床專科技術與檢驗判讀
 title_en: Specialized Clinical Laboratory Practice
 section_label: CLINICAL LABORATORY · SPECIALIST LEARNING
-description: 血庫輸血、HLA 移植配對與新生兒篩檢臨床質譜的專業學習資源與案例教材。
-intro_zh: 依檢驗工作項目探索專科教材、官方資料庫與品質管理資源。生理檢查、心電圖、肺功能等互動練習將於後續擴充。
-intro_en: Explore transfusion science, HLA matching, newborn screening and clinical mass spectrometry through specialized learning references. Physiological testing and ECG exercises are planned for a later round.
+description: 臨床專科技術與生理檢查練習：ECG 心電圖、EEG 腦波、肺功能 PFT、ABG、聽力檢查，以及輸血醫學、HLA 與新生兒篩檢教材。
+intro_zh: 新增生理檢查與訊號判讀專區，收錄可操作的 ECG 心律、EEG 波形、肺功能／血氣及純音聽力測驗；原有輸血醫學、HLA 與新生兒篩檢資源完整保留。
+intro_en: Explore interactive ECG, EEG, pulmonary function, arterial blood gas and audiometry learning sites, alongside transfusion medicine, HLA matching and newborn screening references.
 ---
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261102-reorg1">
+  <link rel="stylesheet" href="/online-tools.css?v=20261102-physiology1">
 </head>
 <body>
   <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
@@ -27,9 +27,39 @@ intro_en: Explore transfusion science, HLA matching, newborn screening and clini
         <div class="catalogue-heading">
           <p class="eyebrow">SPECIALIZED LABORATORY TRAINING</p>
           <h2 id="clinical-overview-heading">從檢驗技術開始學習<span lang="en">Explore clinical laboratory techniques</span></h2>
-          <p>目前收錄 {{ references.size }} 筆資源，涵蓋三個臨床專科主題。各資源標示使用條件並連結原維護單位，適合課堂案例與自主學習。</p>
-          <p class="career-section-en" lang="en">A curated set of {{ references.size }} external references across three clinical laboratory topics. Follow the original source for current availability and access terms.</p>
+          <p>目前收錄 {{ references.size }} 筆資源，涵蓋 {{ site.data.clinical_specialty_sections.size }} 個臨床專科技術與生理檢查主題。各資源標示使用條件並連結原維護單位，適合課堂案例與自主學習。</p>
+          <p class="career-section-en" lang="en">A curated set of {{ references.size }} external references across {{ site.data.clinical_specialty_sections.size }} clinical and physiological-testing topics. Follow the original source for current availability and access terms.</p>
         </div>
+      </section>
+      <section class="functional-section physiological-feature" id="physiology-practice" aria-labelledby="physiology-practice-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">INTERACTIVE PHYSIOLOGICAL TESTING · BROWSER PRACTICE</p>
+          <h2 id="physiology-practice-heading">生理檢查與訊號判讀練習<span lang="en">Physiological Testing &amp; Signal Interpretation</span></h2>
+          <p>以免安裝的外部教學網頁為主，按檢查類型選擇模擬器、波形練習與病例題。免費資源、註冊需求及 Beta 功能都在卡片中註明。</p>
+          <p class="career-section-en" lang="en">Browser-based simulations and practice cases, grouped by examination type. Each source card states registration needs, beta limitations and educational use.</p>
+        </div>
+        <nav class="physiology-quick-grid" aria-label="生理檢查練習入口 / Physiological practice shortcuts">
+          <a href="#clinical-ecg">
+            <span class="physiology-quick-index">01 · CARDIAC</span>
+            <strong>心電圖與心律判讀</strong><small lang="en">ECG &amp; Rhythm</small>
+            <span>動態心電圖、27 種辨識遊戲與病例測驗</span>
+          </a>
+          <a href="#clinical-eeg">
+            <span class="physiology-quick-index">02 · NEUROPHYSIOLOGY</span>
+            <strong>腦波與癲癇波形</strong><small lang="en">EEG &amp; Neurophysiology</small>
+            <span>EEG 模擬器、雜訊與波形教學</span>
+          </a>
+          <a href="#clinical-pft">
+            <span class="physiology-quick-index">03 · RESPIRATORY</span>
+            <strong>肺功能與血氣分析</strong><small lang="en">PFT &amp; ABG</small>
+            <span>FEV1／FVC、流量容積曲線及酸鹼判讀</span>
+          </a>
+          <a href="#clinical-hearing">
+            <span class="physiology-quick-index">04 · AUDIOLOGY</span>
+            <strong>聽力檢查與聽力圖</strong><small lang="en">Audiometry &amp; Audiogram</small>
+            <span>虛擬純音測聽、閾值回饋與聽力圖製作</span>
+          </a>
+        </nav>
       </section>
       <nav class="career-jump-nav clinical-jump-nav" aria-label="臨床專科技術主題 / Clinical laboratory topics">
         {% for section in site.data.clinical_specialty_sections %}
@@ -47,6 +77,7 @@ intro_en: Explore transfusion science, HLA matching, newborn screening and clini
         <div class="career-pathway">
           <strong>建議學習順序 <small lang="en">Suggested learning sequence</small></strong>
           <p>{{ section.path_zh | escape }}<span lang="en">{{ section.path_en | escape }}</span></p>
+          {% if section.access_note_zh %}<p class="career-pathway-note">{{ section.access_note_zh | escape }}</p>{% endif %}
         </div>
         <div class="reference-grid" aria-label="{{ section.name_zh | escape }} 參考資源">
           {% for item in section_refs %}{% include resource-professional-card.html item=item %}{% endfor %}
@@ -57,7 +88,7 @@ intro_en: Explore transfusion science, HLA matching, newborn screening and clini
         <strong>想了解資格與職涯？ <small lang="en">Related career pathways</small></strong>
         <p>請前往 <a href="/resources/careers.html">專科職涯與進階學習</a> 查看專業培訓、職涯認識及認證資訊。</p>
       </div>
-      <p class="tools-note">資源分類更新：2026-11-02。本站提供外部教育連結；實際檢驗須符合臨床單位標準作業流程、現行品質及法規要求。外部醫學圖片及患者資料請遵守授權與隱私規定。<span lang="en">Resources reorganized on 2 Nov 2026. Educational references only; clinical practice must follow current validated institutional protocols, regulations, copyright and patient privacy.</span></p>
+      <p class="tools-note">資源更新：2026-11-02。本站提供外部教育連結；實際檢驗須符合臨床單位標準作業流程、現行品質及法規要求。外部醫學圖片及患者資料請遵守授權與隱私規定。<span lang="en">Resources expanded on 2 Nov 2026. Educational references only; clinical practice must follow current validated institutional protocols, regulations, copyright and patient privacy.</span></p>
     </div>
   </main>
   {% include footer.html %}
