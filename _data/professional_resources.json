@@ -846,7 +846,10 @@
     "notice_zh": "教育模擬波形，臨床判讀與實際設備波形仍需依課程及臨床指引確認。",
     "notice_en": "Teaching-only simulated traces; not for clinical decisions.",
     "career_keywords": "ecg ekg 心電圖 12導程 心律判讀 arrhythmia 心電圖模擬 rhythm simulator",
-    "learning_format": "web"
+    "learning_format": "web",
+    "practice_track": "simulation",
+    "practice_task_zh": "調整心律、心率與波形，先觀察 P–QRS–T，再比對模擬器的解說。",
+    "practice_task_en": "Adjust rhythms and heart rate; inspect waves before consulting explanations."
   },
   {
     "slug": "skillstat-ecg",
@@ -864,7 +867,10 @@
     "notice_zh": "免費模擬器與該公司付費課程分開；請以原站最新安排為準。",
     "notice_en": "The free simulator is separate from SkillStat paid courses.",
     "career_keywords": "ecg ekg 心律 心電圖 教學遊戲 rhythm game",
-    "learning_format": "web"
+    "learning_format": "web",
+    "practice_track": "foundation",
+    "practice_task_zh": "先完成 Explore／Review，再使用 Play 辨識常見心律。",
+    "practice_task_en": "Use Explore and Review before the timed rhythm game."
   },
   {
     "slug": "harvard-ecg-wave-maven",
@@ -882,7 +888,10 @@
     "notice_zh": "網站介面較舊；原站明示需要開啟 Cookie 與 JavaScript。",
     "notice_en": "Legacy site design; cookies and JavaScript required.",
     "career_keywords": "ecg 心電圖 Harvard waveform 心肌梗塞 臨床案例 case-based",
-    "learning_format": "web"
+    "learning_format": "web",
+    "practice_track": "cases",
+    "practice_task_zh": "先看病史並獨立判讀 12 導程，再用診斷索引核對。",
+    "practice_task_en": "Read the clinical vignette and ECG before checking the diagnosis index."
   },
   {
     "slug": "litfl-ecg-150",
@@ -900,7 +909,10 @@
     "notice_zh": "病例難度跨度大，宜搭配基礎心電圖教材及教師討論。",
     "notice_en": "Case complexity varies; complement with foundational ECG training.",
     "career_keywords": "ecg 心電圖 12lead 臨床病例 心肌梗塞 quiz",
-    "learning_format": "web"
+    "learning_format": "web",
+    "practice_track": "cases",
+    "practice_task_zh": "在查看解析之前，先描述心律、軸向、間期與 ST–T 變化。",
+    "practice_task_en": "Describe rhythm, axis, intervals and ST–T features before viewing explanations."
   },
   {
     "slug": "eeg-machine",
@@ -918,7 +930,10 @@
     "notice_zh": "以合成波形練習辨識及儀器概念，不能作為臨床 EEG 量測或診斷依據。",
     "notice_en": "Synthetic learning signals; not patient-data interpretation.",
     "career_keywords": "eeg 腦波 腦電圖 癲癇 睡眠波形 artifact montage simulation",
-    "learning_format": "web"
+    "learning_format": "web",
+    "practice_track": "simulation",
+    "practice_task_zh": "變換 Montage、EMG 與眼動雜訊，觀察訊號如何受設定影響。",
+    "practice_task_en": "Change montages and EMG/eye-artifact settings; compare visible effects."
   },
   {
     "slug": "learning-eeg",
@@ -936,7 +951,10 @@
     "notice_zh": "內容偏醫學判讀，初學者可先從電極位置與正常腦波章節開始。",
     "notice_en": "Start with electrode placement and normal EEG before advanced cases.",
     "career_keywords": "eeg 腦波 1020 電極 睡眠 EEG quiz seizure",
-    "learning_format": "web"
+    "learning_format": "web",
+    "practice_track": "foundation",
+    "practice_task_zh": "依序完成 10–20 電極、正常背景、睡眠和偽影等章節題。",
+    "practice_task_en": "Work through electrode placement, normal background, sleep and artifact questions."
   },
   {
     "slug": "eeg-atlas-online",
@@ -954,7 +972,10 @@
     "notice_zh": "原站明示須登入或註冊才能使用病例圖譜，請勿在本站上傳臨床資料。",
     "notice_en": "Account required; follow provider access and patient-privacy rules.",
     "career_keywords": "eeg 腦波 癲癇 electroencephalogram atlas",
-    "learning_format": "web"
+    "learning_format": "web",
+    "practice_track": "cases",
+    "practice_task_zh": "先看病例及原始波形，再核對專家報告和參考資料。",
+    "practice_task_en": "Interpret the clinical case and trace before reading the expert report."
   },
   {
     "slug": "apex-pft-pattern-quiz",
@@ -1045,5 +1066,47 @@
     "notice_en": "Uses Swedish TeMA audiogram symbols; compare conventions before use.",
     "career_keywords": "聽力圖 audiogram audiometry 氣導 骨導 masking hearing",
     "learning_format": "web"
+  },
+  {
+    "slug": "tracingsmd-ecg-interpretation",
+    "function_group": "clinical",
+    "career_group": "ecg",
+    "name": "TracingsMD — ECG Interpretation Practice",
+    "title_zh": "三難度心電圖案例與逐步標記判讀",
+    "title_en": "Graded ECG interpretation with annotated answers",
+    "description_zh": "提供 27 個心律條與 12 導程模擬案例，可選 Beginner、Intermediate、Advanced；答題後可查看波形標記與指引來源。",
+    "description_en": "Twenty-seven simulated rhythm-strip and 12-lead cases across three levels, with annotated ECG review and guideline references.",
+    "provider": "TracingsMD",
+    "url": "https://www.tracingsmd.com/learn/interpretation/",
+    "access_zh": "免費・需 JavaScript",
+    "access_en": "Free; JavaScript required",
+    "notice_zh": "波形由模型產生，屬教育性練習，網站分數不代表臨床判讀能力。",
+    "notice_en": "Engine-generated educational tracings; scores do not establish clinical proficiency.",
+    "career_keywords": "心電圖 ECG EKG ECG判讀 基礎 中階 進階 病例 案例 12-lead ECG interpretation theory",
+    "learning_format": "web",
+    "practice_track": "cases",
+    "practice_task_zh": "先從 Beginner 完成案例，再嘗試 Intermediate／Advanced，留意逐段標記的解析。",
+    "practice_task_en": "Start with Beginner, then try Intermediate/Advanced and read annotated answers."
+  },
+  {
+    "slug": "dsa-trainer-eeg",
+    "function_group": "clinical",
+    "career_group": "eeg",
+    "name": "DSATrainer — EEG/DSA Simulator",
+    "title_zh": "真實研究腦波的 DSA 麻醉監測模擬",
+    "title_en": "EEG spectrogram and anaesthesia-monitor simulation",
+    "description_zh": "使用去識別研究紀錄衍生之 EEG／ECG 訊號，在瀏覽器中操控 DSA、CSA、功率頻譜、目標濃度及爆發抑制模擬參數。",
+    "description_en": "Browser simulator using de-identified research EEG/ECG signals with adjustable DSA, CSA, spectra, propofol effect-site targets and simulated burst suppression.",
+    "provider": "DSATrainer",
+    "url": "https://dsatrainer.org/app/DSATrainer.html",
+    "access_zh": "免費・免登入・首次約 6 MB",
+    "access_en": "Free; no account; ~6 MB initial load",
+    "notice_zh": "主要展示麻醉深度的 EEG／DSA 監測；爆發抑制含模擬成分，屬進階教學，不能作為診斷工具。",
+    "notice_en": "Focused on anaesthesia EEG monitoring; burst suppression is partly simulated and not for diagnosis.",
+    "career_keywords": "腦波 EEG EEG DSA CSA 頻譜 麻醉監測 脑波 spectrogram propofol burst suppression",
+    "learning_format": "web",
+    "practice_track": "simulation",
+    "practice_task_zh": "比較原始 EEG、DSA、CSA，調整麻醉目標濃度並觀察頻譜變化。",
+    "practice_task_en": "Compare raw EEG, DSA and CSA while varying the simulated effect-site concentration."
   }
 ]
