@@ -571,3 +571,15 @@
 .career-related-grid a:hover,.career-related-grid a:focus-visible{border-color:#568dbc;background:#f5faff}
 @media(max-width:840px){.career-related-grid{grid-template-columns:1fr}.career-related-grid a{padding:15px 16px}}
 @media(max-width:600px){.career-related-links{padding:14px 13px}.reference-access-note{padding:9px 10px}}
+
+
+/* Physiological examination teaching resources — 2026-11-02 */
+.physiological-feature{scroll-margin-top:108px}
+.physiology-quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:20px 0 5px}
+.physiology-quick-grid a{min-width:0;display:flex;flex-direction:column;gap:5px;padding:18px 19px;border:1px solid #cbddeb;background:#f8fbfe;border-radius:13px;text-decoration:none;color:#295e87;transition:border-color .15s,background-color .15s}
+.physiology-quick-grid a:focus-visible,.physiology-quick-grid a:hover{border-color:#729fc5;background:#ecf5fc}
+.physiology-quick-index{font-size:10px;line-height:1.6;letter-spacing:.09em;font-weight:700;color:#527b9e}
+.physiology-quick-grid strong{font-family:var(--serif);font-size:18px;line-height:1.45;color:#244b6a}
+.physiology-quick-grid small[lang=en]{font-size:11px;line-height:1.5;color:#617f95}
+.physiology-quick-grid a>span:last-child{font-size:12px;line-height:1.7;color:#4e7187;margin-top:6px}
+@media(max-width:650px){.physiology-quick-grid{grid-template-columns:1fr;gap:9px}.physiology-quick-grid a{padding:16px 15px}.physiology-quick-grid strong{font-size:17px}}
