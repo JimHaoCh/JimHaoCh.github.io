@@ -7,14 +7,15 @@ title_zh: 臨床專科技術與檢驗判讀
 title_en: Specialized Clinical Laboratory Practice
 section_label: CLINICAL LABORATORY · SPECIALIST LEARNING
 description: 臨床專科技術與生理檢查練習：ECG 心電圖、EEG 腦波、肺功能 PFT、ABG、聽力檢查，以及輸血醫學、HLA 與新生兒篩檢教材。
-intro_zh: 新增生理檢查與訊號判讀專區，收錄可操作的 ECG 心律、EEG 波形、肺功能／血氣及純音聽力測驗；原有輸血醫學、HLA 與新生兒篩檢資源完整保留。
-intro_en: Explore interactive ECG, EEG, pulmonary function, arterial blood gas and audiometry learning sites, alongside transfusion medicine, HLA matching and newborn screening references.
+intro_zh: 收錄 ECG 心律、EEG 波形、肺功能／血氣與純音聽力練習；ECG／EEG 依基礎辨識、臨床案例及動態模擬三條學習路徑整理，原有輸血、HLA 與新生兒篩檢資源保留。
+intro_en: Explore interactive ECG, EEG, pulmonary function, arterial blood gas and audiometry learning. ECG and EEG have three suggested learning routes: foundations, clinical cases and simulations.
 ---
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261102-physiology1">
+  <link rel="stylesheet" href="/online-tools.css?v=20261102-learning4"
+  <script defer src="/physiology-learning.js?v=20261102-1"></script>>
 </head>
 <body>
   <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
@@ -37,6 +38,32 @@ intro_en: Explore interactive ECG, EEG, pulmonary function, arterial blood gas a
           <h2 id="physiology-practice-heading">生理檢查與訊號判讀練習<span lang="en">Physiological Testing &amp; Signal Interpretation</span></h2>
           <p>以免安裝的外部教學網頁為主，按檢查類型選擇模擬器、波形練習與病例題。免費資源、註冊需求及 Beta 功能都在卡片中註明。</p>
           <p class="career-section-en" lang="en">Browser-based simulations and practice cases, grouped by examination type. Each source card states registration needs, beta limitations and educational use.</p>
+        </div>
+        <div class="physio-route-guide" id="physiology-route-filter" aria-labelledby="physio-route-heading">
+          <div class="physio-route-heading">
+            <p class="eyebrow">ECG &amp; EEG · GUIDED LEARNING</p>
+            <h3 id="physio-route-heading">依學習階段挑選心電圖與腦波教材<span lang="en">ECG &amp; EEG Learning Routes</span></h3>
+            <p>三種路徑由本站依教材主要用途整理，供學生自主練習。選擇領域與路徑後，下方 ECG／EEG 卡片會同步篩選；肺功能與聽力資料不受影響。</p>
+            <p lang="en">Select a subject and route to filter the ECG/EEG cards below. These are editorial learning categories, not validated difficulty ratings.</p>
+          </div>
+          <div class="physio-route-group">
+            <strong>練習領域 <small lang="en">Subject</small></strong>
+            <div class="physio-route-buttons" role="group" aria-label="選擇心電圖或腦波">
+              <button type="button" data-physio-subject="all" aria-pressed="true">ECG + EEG</button>
+              <button type="button" data-physio-subject="ecg" aria-pressed="false">心電圖 <small lang="en">ECG</small></button>
+              <button type="button" data-physio-subject="eeg" aria-pressed="false">腦波 <small lang="en">EEG</small></button>
+            </div>
+          </div>
+          <div class="physio-route-group">
+            <strong>學習路徑 <small lang="en">Learning route</small></strong>
+            <div class="physio-route-buttons physio-route-levels" role="group" aria-label="選擇學習路徑">
+              <button type="button" data-physio-track="all" aria-pressed="true"><strong>全部教材</strong><small lang="en">All resources</small></button>
+              <button type="button" data-physio-track="foundation" aria-pressed="false"><strong>基礎辨識</strong><small lang="en">Foundations</small></button>
+              <button type="button" data-physio-track="cases" aria-pressed="false"><strong>臨床案例</strong><small lang="en">Clinical cases</small></button>
+              <button type="button" data-physio-track="simulation" aria-pressed="false"><strong>動態模擬</strong><small lang="en">Simulations</small></button>
+            </div>
+          </div>
+          <p id="physio-route-status" class="physio-route-status" role="status" aria-live="polite">ECG 與 EEG 教材均已列出。</p>
         </div>
         <nav class="physiology-quick-grid" aria-label="生理檢查練習入口 / Physiological practice shortcuts">
           <a href="#clinical-ecg">
