@@ -6,15 +6,15 @@ title: 分子檢驗與恆溫擴增資源 Molecular & Isothermal Primer Resources
 title_zh: 分子檢驗與生物資訊
 title_en: Molecular Testing & Bioinformatics
 section_label: MOLECULAR DIAGNOSTICS & NUCLEIC ACID DESIGN
-description: PCR/qPCR、LAMP、RPA/RAA、NASBA/TMA、RCA/Padlock、HDA/SDA 引子設計與 NUPACK 核酸結構工具、開源程式及官方指南。
-intro_zh: 整合 PCR／qPCR、LAMP、RPA／RAA、NASBA／TMA、RCA／Padlock 與 HDA／SDA 的核酸設計資源，並保留 NUPACK 和二級結構工具。依實際功能分辨網頁設計器、開源程式、資料庫及原廠指南。
-intro_en: Design resources for PCR/qPCR, LAMP, RPA/RAA, NASBA/TMA, RCA/padlock probes, HDA/SDA and NUPACK. Clearly labeled web tools, local-install source projects, curated databases and manufacturer guidance.
+description: PCR/qPCR、LAMP、RPA、NASBA、RCA、HDA／SDA 核酸設計、ClinGen/ClinVar、NGS Galaxy 變異分析及法醫 DNA 專業標準。
+intro_zh: 整合核酸引子設計與擴增方法，延伸至 ClinGen／ClinVar 臨床變異判讀、Galaxy NGS 實作及法醫 DNA 品質標準；依資源形式區分設計器、教材與資料庫。
+intro_en: Molecular testing resources for PCR, isothermal methods and nucleic acid design, plus ClinGen, ClinVar, Galaxy variant analysis and forensic DNA laboratory standards.
 ---
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261026-7">
+  <link rel="stylesheet" href="/online-tools.css?v=20261102-reorg1">
   <script defer src="/assets/js/molecular-filter.js?v=20261026-1"></script>
 </head>
 <body>
@@ -30,6 +30,8 @@ intro_en: Design resources for PCR/qPCR, LAMP, RPA/RAA, NASBA/TMA, RCA/padlock p
         <a href="#molecular-{{ method.id | escape }}">{{ method.name_zh | escape }} <small lang="en">{{ method.name_en | escape }}</small></a>
         {% endfor %}
         <a href="#molecular-sequence">序列資料庫 <small lang="en">Sequence references</small></a>
+        <a href="#molecular-clinical-genetics">臨床基因變異 <small lang="en">Clinical variants</small></a>
+        <a href="#molecular-forensics">法醫 DNA <small lang="en">Forensic DNA</small></a>
       </nav>
 
       <div class="molecular-design-guide">
@@ -46,7 +48,7 @@ intro_en: Design resources for PCR/qPCR, LAMP, RPA/RAA, NASBA/TMA, RCA/padlock p
 
       <div class="molecular-resource-filter">
         <div>
-          <label for="molecular-type-filter">依資源類型篩選 <small lang="en">Filter by resource type</small></label>
+          <label for="molecular-type-filter">核酸設計器類型篩選 <small lang="en">Filter nucleic acid design tools</small></label>
           <select id="molecular-type-filter">
             <option value="all">全部資源 / All resources</option>
             <option value="web">線上設計器 / Web tools</option>
@@ -56,7 +58,7 @@ intro_en: Design resources for PCR/qPCR, LAMP, RPA/RAA, NASBA/TMA, RCA/padlock p
             <option value="analysis">核酸結構分析 / Structure analysis</option>
           </select>
         </div>
-        <p id="molecular-filter-count" role="status" aria-live="polite">請選擇資源類型，或使用上方方法捷徑。</p>
+        <p id="molecular-filter-count" role="status" aria-live="polite">此篩選適用上方核酸設計工具；下方臨床遺傳與法醫 DNA 教材維持顯示。</p>
       </div>
       <noscript><p class="tools-note">此頁在未啟用 JavaScript 時仍完整列出所有資源。<span lang="en">All resources remain visible without JavaScript.</span></p></noscript>
 
@@ -96,6 +98,33 @@ intro_en: Design resources for PCR/qPCR, LAMP, RPA/RAA, NASBA/TMA, RCA/padlock p
         </div>
       </section>
 
+      {% assign molecular_references = site.data.professional_resources | where: "function_group", "molecular" %}
+      {% assign genetics_resources = molecular_references | where: "learning_track", "genetics" %}
+      {% assign forensic_resources = molecular_references | where: "learning_track", "forensics" %}
+      <section class="functional-section molecular-specialty-section" id="molecular-clinical-genetics" aria-labelledby="molecular-clinical-genetics-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">CLINICAL GENETICS · VARIANT ANALYSIS</p>
+          <h2 id="molecular-clinical-genetics-heading">臨床遺傳與變異判讀<span lang="en">Clinical Genetics &amp; Variant Interpretation</span></h2>
+          <p>利用 ClinGen、ClinVar 和 Galaxy 開放教材，從變異資料查詢、證據分級到 NGS 變異分析練習。<span lang="en" class="career-section-en">Learn clinical variant evidence evaluation, ClinVar interpretation and Galaxy NGS workflows.</span></p>
+        </div>
+        <div class="reference-grid">
+          {% for item in genetics_resources %}{% include resource-professional-card.html item=item %}{% endfor %}
+        </div>
+      </section>
+      <section class="functional-section molecular-specialty-section" id="molecular-forensics" aria-labelledby="molecular-forensics-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">FORENSIC MOLECULAR TESTING</p>
+          <h2 id="molecular-forensics-heading">法醫 DNA 與鑑識標準<span lang="en">Forensic DNA &amp; Laboratory Standards</span></h2>
+          <p>查詢 NIST／OSAC 法醫生物與 DNA 品質標準，認識 STR 分析、結果報告及複核。<span lang="en" class="career-section-en">Explore DNA profiling, reporting, review and quality standards.</span></p>
+        </div>
+        <div class="reference-grid">
+          {% for item in forensic_resources %}{% include resource-professional-card.html item=item %}{% endfor %}
+        </div>
+      </section>
+      <div class="career-related-links">
+        <strong>想了解專業認證？ <small lang="en">Professional credentials</small></strong>
+        <p>ASCP 分子生物學 MB 認證途徑已整理於 <a href="/resources/careers.html#career-certifications">專科職涯與進階學習</a>。</p>
+      </div>
       <p class="tools-note">※ 所有連結均前往原始維護單位，本站不託管第三方演算法或序列。請特別區分可即用的「線上設計器」、須安裝套件的「開源程式」、只提供設計原則的「指南」，以及不能產生新引子的「資料庫」。公開 GitHub 程式碼不必然表示允許重製，移植前請查驗授權。NUPACK 新工作可能需要訂閱，IDT 需登入；Eiken PrimerExplorer 請勿使用已遭仿冒警告的舊網址。任何 primer、probe、padlock 與多股設計均需實驗驗證，不作為臨床診斷依據。<span lang="en">All resources link to their original providers. Browser designers, locally installed code, method guides and curated primer databases are distinct. Public code is not automatically redistribution-licensed. NUPACK jobs may require a subscription; IDT requires login; use Eiken's current official domain. All designs require experimental validation and are not clinical diagnostic tools.</span></p>
     </div>
   </main>
