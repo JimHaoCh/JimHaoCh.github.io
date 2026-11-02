@@ -1,0 +1,44 @@
+[
+  {
+    "id": "flow",
+    "name_zh": "流式細胞與免疫學",
+    "name_en": "Flow Cytometry & Immunology",
+    "intro_zh": "尋找 FCS、CyTOF、免疫細胞表型與多組學資料；核對原始檔、gating 註記和人體研究存取條件。",
+    "intro_en": "Find FCS, CyTOF and immunophenotyping datasets with clear notes on raw files, annotations and human-study access."
+  },
+  {
+    "id": "genomics",
+    "name_zh": "基因體、轉錄體與單細胞",
+    "name_en": "Genomics & Single-Cell",
+    "intro_zh": "搜尋 RNA-seq、細胞類型、變異與癌症基因體，區分公開矩陣與受控原始定序檔。",
+    "intro_en": "Find gene expression, single-cell and cancer data, distinguishing public matrices from controlled sequence or clinical files."
+  },
+  {
+    "id": "imaging",
+    "name_zh": "生醫影像與組織病理",
+    "name_en": "Bioimaging & Pathology",
+    "intro_zh": "螢光顯微、全玻片、IHC、放射影像及高內涵篩選資料，檢查影像授權與標註。",
+    "intro_en": "Microscopy, histology, IHC, radiology and high-content imaging with dataset-specific annotations and licenses."
+  },
+  {
+    "id": "proteins",
+    "name_zh": "蛋白質體與分子結構",
+    "name_en": "Proteomics & Structures",
+    "intro_zh": "質譜原始檔、蛋白序列、功能註解和實驗解析三維結構。",
+    "intro_en": "Mass-spectrometry studies, protein sequences, functional annotations and experimental structures."
+  },
+  {
+    "id": "micro",
+    "name_zh": "微生物與抗藥性",
+    "name_en": "Microbiology & AMR",
+    "intro_zh": "MIC 分布、抗藥性基因與表型 AST；分析前確認資料單位及報告限制。",
+    "intro_en": "MIC distributions, resistance genes and phenotypic AST; review measurement units and provenance."
+  },
+  {
+    "id": "signals",
+    "name_zh": "生理訊號與臨床波形",
+    "name_en": "Physiological Signals",
+    "intro_zh": "ECG、EEG、PPG 及相關資料，區分公開與需申請的臨床檔案。",
+    "intro_en": "ECG, EEG, PPG and physiological signal datasets with public and credentialed access."
+  }
+]
