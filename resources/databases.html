@@ -6,16 +6,16 @@ title: 公開研究資料庫 Open Biomedical Research Databases
 title_zh: 公開研究資料庫
 title_en: Open Biomedical Research Databases
 section_label: PUBLIC DATA · RESEARCH · REANALYSIS
-description: 醫檢與生醫研究公開資料庫，涵蓋 Flow Cytometry FCS、RNA-seq、單細胞、顯微影像、質譜、細菌抗藥性及 ECG 等生理訊號。
-intro_zh: 依研究領域尋找資料庫，查看原始資料格式、取得條件與使用限制。另附四組可作為課堂練習的官方資料案例，連結至原始資料提供者。
-intro_en: Find biomedical research databases by discipline, verify access conditions and data formats, and explore four teaching dataset examples linked to their original sources.
+description: 收錄 Flow Cytometry FCS、白血球影像 AI、單細胞與空間多體學、代謝體 LC-MS、微生物抗藥性、ECG／EEG 等公開資料庫及可取得的課堂資料範例。
+intro_zh: 依八個研究領域尋找公開資料庫，包含血球影像、代謝體與神經生理訊號。每筆標示格式、下載與申請條件，並附六組可作課堂練習的原始資料案例。
+intro_en: Browse eight biomedical data fields, including blood-cell AI, metabolomics and neurophysiology. Check access conditions and formats, and explore six teaching datasets linked to their original sources.
 ---
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261102-databases1">
-  <script defer src="/research-databases.js?v=20261102-1"></script>
+  <link rel="stylesheet" href="/online-tools.css?v=20261102-databases2">
+  <script defer src="/research-databases.js?v=20261102-2"></script>
 </head>
 <body>
   <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
@@ -46,7 +46,7 @@ intro_en: Find biomedical research databases by discipline, verify access condit
           <p>可輸入中英文名稱及方法，或依取得方式、資料格式進行篩選。所有搜尋均在瀏覽器端執行。</p>
         </div>
         <div class="database-filter-fields">
-          <label>關鍵字 <small lang="en">Keyword</small><input id="database-keyword" type="search" placeholder="Flow, FCS, MIC, ECG, RNA-seq..." autocomplete="off"></label>
+          <label>關鍵字 <small lang="en">Keyword</small><input id="database-keyword" type="search" placeholder="Flow, FCS, WBC, LC-MS, MIC, EEG..." autocomplete="off"></label>
           <label>取得方式 <small lang="en">Access</small>
             <select id="database-access-filter">
               <option value="all">全部 / All</option>
@@ -61,8 +61,10 @@ intro_en: Find biomedical research databases by discipline, verify access condit
               <option value="all">全部 / All</option>
               <option value="fcs">Flow / FCS / CyTOF</option>
               <option value="matrix">矩陣 / RNA / Genomics</option>
-              <option value="image">影像 / Imaging</option>
-              <option value="protein">蛋白 / Proteomics</option>
+              <option value="image">顯微／血球影像 / Imaging</option>
+              <option value="protein">蛋白與藥物 / Protein &amp; Drug</option>
+              <option value="metabolome">代謝體／臨床化學 / Metabolomics</option>
+              <option value="microbiome">微生物序列／菌相 / Microbiome</option>
               <option value="amr">MIC / AST / AMR</option>
               <option value="signal">生理訊號 / Waveforms</option>
             </select>
@@ -89,6 +91,18 @@ intro_en: Find biomedical research databases by discipline, verify access condit
         <div class="reference-grid database-resource-grid">
           {% for item in section_items %}{% include resource-database-card.html item=item %}{% endfor %}
         </div>
+        {% if section.id == 'blood' %}
+        <div class="career-related-links">
+          <strong>血球影像入門 <small lang="en">Blood cell image starters</small></strong>
+          <p>初次操作可先下載 <a href="https://bbbc.broadinstitute.org/BBBC009" target="_blank" rel="noopener noreferrer external">BBBC009 五張紅血球 DIC 影像及輪廓標註</a>（影像壓縮檔約 1.2 MB），練習分割；需白血球辨識模型可參考 Raabin-WBC 的分批影像與標籤。ALL-IDB 必須事先簽署申請表並透過電子郵件取得資料。</p>
+        </div>
+        {% endif %}
+        {% if section.id == 'metabolomics' %}
+        <div class="career-related-links">
+          <strong>資料來源去重 <small lang="en">Avoid duplicate studies</small></strong>
+          <p>MetabolomicsHub 提供跨平台整合搜尋；MetaboLights、Metabolomics Workbench 與 GNPS／MassIVE 仍是底層研究的原始典藏，重新分析時應保留原始 accession、實驗方法與版本資訊。</p>
+        </div>
+        {% endif %}
         {% if section.id == 'micro' %}
         <div class="career-related-links">
           <strong>既有臨床檢驗資料 <small lang="en">Related resources already on this site</small></strong>
@@ -100,8 +114,8 @@ intro_en: Find biomedical research databases by discipline, verify access condit
 
       <section class="functional-section database-teaching-section" id="database-teaching-examples" aria-labelledby="database-teaching-heading">
         <div class="catalogue-heading">
-          <p class="eyebrow">DATA FOR THE CLASSROOM · FOUR STARTING POINTS</p>
-          <h2 id="database-teaching-heading">四組可取得資料的課堂練習範例<span lang="en">Four Teaching Dataset Examples</span></h2>
+          <p class="eyebrow">DATA FOR THE CLASSROOM · REUSABLE STARTING POINTS</p>
+          <h2 id="database-teaching-heading">{{ site.data.database_examples.size }} 組可取得資料的課堂練習範例<span lang="en">{{ site.data.database_examples.size }} Teaching Dataset Examples</span></h2>
           <p>每個範例都連至資料提供者的原始頁面。學生可先下載單筆資料，完成初步視覺化及資料品質檢查，再自行延伸分析。</p>
           <p class="career-section-en" lang="en">Each link opens the original data-provider page. Start with manageable individual files before attempting full dataset downloads.</p>
         </div>
