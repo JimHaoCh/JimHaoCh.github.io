@@ -1,12 +1,25 @@
-<article class="reference-card"{% if include.molecular_kind %} data-molecular-kind="{{ include.molecular_kind | escape }}"{% endif %}>
+<article class="reference-card"{% if include.molecular_kind %} data-molecular-kind="{{ include.molecular_kind | escape }}"{% endif %}{% if include.item.practice_track %} data-practice-track="{{ include.item.practice_track | escape }}" data-practice-subject="{{ include.item.career_group | escape }}"{% endif %}>
   <div class="reference-card-top">
     <span class="reference-external-badge">{% if include.item.learning_format == "web" %}線上練習 <small lang="en">Interactive learning</small>{% else %}外部專業資源 <small lang="en">External reference</small>{% endif %}</span>
     <span class="reference-provider">{{ include.item.provider | escape }}</span>
   </div>
   <h3>{{ include.item.name | escape }}</h3>
+  {% if include.item.practice_track %}
+  <div class="physio-track-meta">
+    <span class="physio-track-pill">
+      {% if include.item.practice_track == 'foundation' %}基礎辨識 <small lang="en">Foundations</small>
+      {% elsif include.item.practice_track == 'cases' %}臨床案例 <small lang="en">Clinical cases</small>
+      {% elsif include.item.practice_track == 'simulation' %}動態模擬 <small lang="en">Simulations</small>
+      {% endif %}
+    </span>
+  </div>
+  {% endif %}
   <p class="reference-title">{{ include.item.title_zh | escape }}<span lang="en">{{ include.item.title_en | escape }}</span></p>
   {% if include.item.access_zh %}<p class="reference-access-note">{{ include.item.access_zh | escape }}<span lang="en">{{ include.item.access_en | escape }}</span></p>{% endif %}
   <p class="reference-description">{{ include.item.description_zh | escape }}<span lang="en">{{ include.item.description_en | escape }}</span></p>
+  {% if include.item.practice_task_zh %}
+  <p class="physio-practice-task"><strong>建議操作 <small lang="en">Suggested practice</small></strong>{{ include.item.practice_task_zh | escape }}<span lang="en">{{ include.item.practice_task_en | escape }}</span></p>
+  {% endif %}
   <p class="reference-license">{{ include.item.notice_zh | escape }}<span lang="en">{{ include.item.notice_en | escape }}</span></p>
   <a class="resource-download" href="{{ include.item.url | escape }}" target="_blank" rel="noopener noreferrer external">
     <span>{% if include.item.learning_format == 'web' %}開啟練習網站<small lang="en">Open learning tool · External site</small>{% else %}前往原始資源<small lang="en">Visit original source · External site</small>{% endif %}</span><span aria-hidden="true">↗</span>
