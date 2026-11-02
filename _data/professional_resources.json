@@ -161,7 +161,8 @@
     "access_en": "Official notices",
     "notice_zh": "年度公告會更新；進入後可搜尋「細胞公告」或「細胞醫檢師」。",
     "notice_en": "News changes by year; search the cytology notices and current intake requirements.",
-    "career_keywords": "細胞醫檢師 細胞病理 cytotechnology cytotechnologist training"
+    "career_keywords": "細胞醫檢師 細胞病理 cytotechnology cytotechnologist training",
+    "career_type": "credential"
   },
   {
     "slug": "eurocytology",
@@ -178,7 +179,8 @@
     "access_en": "Free access",
     "notice_zh": "教學圖片及虛擬玻片屬原站內容，連結使用並遵守來源及圖片授權。",
     "notice_en": "Credit the site; follow its image and virtual-slide reuse terms.",
-    "career_keywords": "細胞醫檢師 cytology cytopathology pap smear cervical"
+    "career_keywords": "細胞醫檢師 cytology cytopathology pap smear cervical",
+    "career_type": "course"
   },
   {
     "slug": "asc-global-cytology",
@@ -195,7 +197,8 @@
     "access_en": "Free program; registration may apply",
     "notice_zh": "實際梯次及教材取得方式以課程公告為準。",
     "notice_en": "Confirm cohort schedules and access requirements with the provider.",
-    "career_keywords": "細胞醫檢師 cytology cytopathology education webinars"
+    "career_keywords": "細胞醫檢師 cytology cytopathology education webinars",
+    "career_type": "course"
   },
   {
     "slug": "iac-cytotechnology",
@@ -212,7 +215,8 @@
     "access_en": "Certification; fees apply",
     "notice_zh": "國際資格與各國職業准入分開審核，應確認所在地最新要求。",
     "notice_en": "International credentials and statutory authorization are separate; confirm local rules.",
-    "career_keywords": "細胞醫檢師 國際認證 IAC cytotechnologist exam"
+    "career_keywords": "細胞醫檢師 國際認證 IAC cytotechnologist exam",
+    "career_type": "credential"
   },
   {
     "slug": "tw-art-training",
@@ -229,7 +233,8 @@
     "access_en": "Official institution list",
     "notice_zh": "機構名單按年度公告；需選擇「技術員訓練機構」附件。",
     "notice_en": "Lists are year-specific; select the ART technician attachment.",
-    "career_keywords": "胚胎師 人工生殖技術員 IVF ART 台灣 培訓"
+    "career_keywords": "胚胎師 人工生殖技術員 IVF ART 台灣 培訓",
+    "career_type": "credential"
   },
   {
     "slug": "tsrm",
@@ -246,7 +251,8 @@
     "access_en": "Public information",
     "notice_zh": "學會資訊提供交流入口，未必提供實際訓練名額或證照。",
     "notice_en": "Society resources do not themselves establish available training positions or licences.",
-    "career_keywords": "胚胎師 生殖醫學 IVF ART reproductive medicine"
+    "career_keywords": "胚胎師 生殖醫學 IVF ART reproductive medicine",
+    "career_type": "reference"
   },
   {
     "slug": "eshre-embryology-tracks",
@@ -263,7 +269,8 @@
     "access_en": "Paid educational tracks",
     "notice_zh": "課程依會員類別收費，實際費用以 ESHRE 官方價格及稅費說明為準。",
     "notice_en": "Paid tracks; fees depend on membership class and applicable taxes.",
-    "career_keywords": "胚胎師 IVF ART embryo development embryology"
+    "career_keywords": "胚胎師 IVF ART embryo development embryology",
+    "career_type": "course"
   },
   {
     "slug": "eshre-certification",
@@ -280,7 +287,8 @@
     "access_en": "Membership and certification fees",
     "notice_zh": "國際專業認證不能取代臺灣人工生殖技術員的法規及機構認定。",
     "notice_en": "ESHRE certification is distinct from Taiwanese statutory ART-laboratory requirements.",
-    "career_keywords": "胚胎師 國際認證 ESHRE clinical embryologist"
+    "career_keywords": "胚胎師 國際認證 ESHRE clinical embryologist",
+    "career_type": "credential"
   },
   {
     "slug": "who-semen-6",
@@ -297,7 +305,8 @@
     "access_en": "Free publication",
     "notice_zh": "手冊提供標準方法參考；臨床操作仍應遵循合格機構的作業規範。",
     "notice_en": "A methods reference; clinical work follows validated institutional procedures.",
-    "career_keywords": "胚胎師 精液 精子 semen andrology IVF CASA"
+    "career_keywords": "胚胎師 精液 精子 semen andrology IVF CASA",
+    "career_type": "reference"
   },
   {
     "slug": "asrm-embryology-essentials",
@@ -314,7 +323,8 @@
     "access_en": "Paid; enrollment varies",
     "notice_zh": "ASRM Academy 2026 年冬季有暫停新報名的公告；報名前請確認最新開放時段。",
     "notice_en": "ASRM announced a late-2026 enrollment pause; check current course availability.",
-    "career_keywords": "胚胎師 IVF embryology embryo grading ASRM course"
+    "career_keywords": "胚胎師 IVF embryology embryo grading ASRM course",
+    "career_type": "course"
   },
   {
     "slug": "pathpresenter-public",
@@ -331,7 +341,8 @@
     "access_en": "Free account required",
     "notice_zh": "官方公開版可免費註冊；個人病例及原圖下載須符合原平台規範。",
     "notice_en": "A free account is needed; respect platform and patient-data restrictions.",
-    "career_keywords": "數位病理 病理切片 virtual slide whole slide pathology"
+    "career_keywords": "數位病理 病理切片 virtual slide whole slide pathology",
+    "career_type": "practice"
   },
   {
     "slug": "leeds-histology",
@@ -348,7 +359,8 @@
     "access_en": "Free web access",
     "notice_zh": "圖像受來源使用條款保護，本站僅導引原始教材。",
     "notice_en": "Images remain subject to the provider's terms; link to the original material.",
-    "career_keywords": "組織學 組織切片 histology microscopy virtual slide"
+    "career_keywords": "組織學 組織切片 histology microscopy virtual slide",
+    "career_type": "practice"
   },
   {
     "slug": "nus-pathweb",
@@ -365,7 +377,8 @@
     "access_en": "Free registration for full access",
     "notice_zh": "部分教材需免費帳號；網站公告顯示部分功能維護中。",
     "notice_en": "Some sections require free registration; parts of the site may be under maintenance.",
-    "career_keywords": "數位病理 組織學 pathology interactive cases"
+    "career_keywords": "數位病理 組織學 pathology interactive cases",
+    "career_type": "practice"
   },
   {
     "slug": "bbguy",
@@ -382,7 +395,8 @@
     "access_en": "Free materials; course terms vary",
     "notice_zh": "屬專業教學網站；檢驗判讀及輸血決策須依所在地規範及院內 SOP。",
     "notice_en": "Educational content; local transfusion protocols govern clinical decisions.",
-    "career_keywords": "輸血醫學 血庫 血型 blood bank transfusion immunohematology"
+    "career_keywords": "輸血醫學 血庫 血型 blood bank transfusion immunohematology",
+    "career_type": "reference"
   },
   {
     "slug": "cbs-transfusion-guide",
@@ -399,7 +413,8 @@
     "access_en": "Free public reference",
     "notice_zh": "內容以加拿大臨床實務為背景；需對照臺灣現行規定。",
     "notice_en": "Canadian clinical context; verify local protocols and regulations.",
-    "career_keywords": "輸血醫學 血庫 輸血反應 transfusion blood bank"
+    "career_keywords": "輸血醫學 血庫 輸血反應 transfusion blood bank",
+    "career_type": "reference"
   },
   {
     "slug": "isac-cyto-u",
@@ -416,7 +431,8 @@
     "access_en": "Some content requires access",
     "notice_zh": "公開資源與會員課程的權限可能不同，請依各課程頁面確認。",
     "notice_en": "Member, registration and fee conditions vary by module.",
-    "career_keywords": "流式細胞 免疫表型 flow cytometry FACS immunophenotyping"
+    "career_keywords": "流式細胞 免疫表型 flow cytometry FACS immunophenotyping",
+    "career_type": "course"
   },
   {
     "slug": "clingen-learning",
@@ -433,7 +449,8 @@
     "access_en": "Free learning materials",
     "notice_zh": "教材供訓練與研究；個別變異解讀須納入臨床證據及適用標準。",
     "notice_en": "Training material; clinical interpretation requires case-specific evidence and applicable standards.",
-    "career_keywords": "基因變異 臨床遺傳 genomics variant interpretation ACMG"
+    "career_keywords": "基因變異 臨床遺傳 genomics variant interpretation ACMG",
+    "career_type": "course"
   },
   {
     "slug": "ncbi-clinvar",
@@ -450,7 +467,8 @@
     "access_en": "Free public database",
     "notice_zh": "ClinVar 彙整提交者的分類，遇有衝突或不確定分類需逐一查證。",
     "notice_en": "ClinVar presents submitted assertions; examine conflicts and uncertain classifications.",
-    "career_keywords": "臨床遺傳 NGS 基因變異 ClinVar genomics variant"
+    "career_keywords": "臨床遺傳 NGS 基因變異 ClinVar genomics variant",
+    "career_type": "reference"
   },
   {
     "slug": "ascp-cytogenetics",
@@ -467,7 +485,8 @@
     "access_en": "Certification has fees",
     "notice_zh": "臺灣醫檢師執照與 ASCP 國際專業資格分別審核；請確認適用申請途徑。",
     "notice_en": "Certification and Taiwan medical laboratory licensure have separate rules.",
-    "career_keywords": "細胞遺傳 染色體 karyotype cytogenetics FISH 遺傳檢查"
+    "career_keywords": "細胞遺傳 染色體 karyotype cytogenetics FISH 遺傳檢查",
+    "career_type": "credential"
   },
   {
     "slug": "arizona-karyotype",
@@ -484,7 +503,8 @@
     "access_en": "Free legacy website",
     "notice_zh": "1990 年代設計的舊版教學網頁；請先確認手機及瀏覽器相容性。",
     "notice_en": "Legacy teaching site; test current browser and mobile compatibility.",
-    "career_keywords": "核型 配對 染色體 核型分析 Karyotyping interactive"
+    "career_keywords": "核型 配對 染色體 核型分析 Karyotyping interactive",
+    "career_type": "practice"
   },
   {
     "slug": "ascp-histotechnology",
@@ -501,7 +521,8 @@
     "access_en": "Certification has fees",
     "notice_zh": "資格途徑受學歷及實務經驗限制；ASCP／ASCPi 分別確認。",
     "notice_en": "Check route-specific education and training requirements.",
-    "career_keywords": "組織病理 組織技術 microtome histotechnologist IHC H&E"
+    "career_keywords": "組織病理 組織技術 microtome histotechnologist IHC H&E",
+    "career_type": "credential"
   },
   {
     "slug": "cap-case-challenge",
@@ -518,7 +539,8 @@
     "access_en": "Public educational cases",
     "notice_zh": "病例與玻片屬原出版者內容；僅外部連結，請依其使用條款學習。",
     "notice_en": "Publisher-owned educational cases and images; follow reuse terms.",
-    "career_keywords": "組織病理 histology whole slide digital pathology H&E quiz"
+    "career_keywords": "組織病理 histology whole slide digital pathology H&E quiz",
+    "career_type": "practice"
   },
   {
     "slug": "tssm-sleep-tech",
@@ -535,7 +557,8 @@
     "access_en": "Application and course fees apply",
     "notice_zh": "2026 年甄審範例有 100 例實務、40 學分與有效 CPR／BLS；須以當年度資格公告為準。",
     "notice_en": "The 2026 examination requires documented experience, education credits and CPR/BLS; confirm the current cycle.",
-    "career_keywords": "睡眠技師 PSG 睡眠多項生理檢查 腦波 EOG EMG"
+    "career_keywords": "睡眠技師 PSG 睡眠多項生理檢查 腦波 EOG EMG",
+    "career_type": "credential"
   },
   {
     "slug": "brpt-rpsgt",
@@ -552,7 +575,8 @@
     "access_en": "International exam fees",
     "notice_zh": "國際申請第 5 途徑規定至少 960 小時 PSG 臨床經驗，另含學歷及 CPR／BLS 要件。",
     "notice_en": "International pathway 5 requires 960 clinical hours and additional education and CPR/BLS documentation.",
-    "career_keywords": "睡眠技師 PSG polysomnography RPSGT certification"
+    "career_keywords": "睡眠技師 PSG polysomnography RPSGT certification",
+    "career_type": "credential"
   },
   {
     "slug": "hpa-genetic-screening",
@@ -569,7 +593,8 @@
     "access_en": "Free government information",
     "notice_zh": "名單及補助項目依公告更新；進入後選擇「合約實驗室名單」。",
     "notice_en": "Provider lists and programmes change; locate the contracted-laboratory list.",
-    "career_keywords": "新生兒篩檢 新生兒 先天代謝 質譜 DBS"
+    "career_keywords": "新生兒篩檢 新生兒 先天代謝 質譜 DBS",
+    "career_type": "reference"
   },
   {
     "slug": "cdc-lcms-validation",
@@ -586,7 +611,8 @@
     "access_en": "Free online course",
     "notice_zh": "訓練內容用於方法學學習，臨床使用仍需院內驗證與品質系統。",
     "notice_en": "Educational method training; clinical implementation requires local validation.",
-    "career_keywords": "新生兒篩檢 LCMS LC-MS/MS 質譜 方法驗證"
+    "career_keywords": "新生兒篩檢 LCMS LC-MS/MS 質譜 方法驗證",
+    "career_type": "course"
   },
   {
     "slug": "cdc-nsqap",
@@ -603,7 +629,8 @@
     "access_en": "Free programme information",
     "notice_zh": "供專業實驗室參考；計畫參與資格與材料提供依 CDC 規定。",
     "notice_en": "Programme participation and reference-material access require eligibility review.",
-    "career_keywords": "新生兒篩檢 DBS dried blood spot NSQAP QC PT"
+    "career_keywords": "新生兒篩檢 DBS dried blood spot NSQAP QC PT",
+    "career_type": "reference"
   },
   {
     "slug": "ashi-hla-education",
@@ -620,7 +647,8 @@
     "access_en": "Some materials require access",
     "notice_zh": "各課程與錄影的存取權限依學會公告，須確認會員要求。",
     "notice_en": "Individual resources may have membership restrictions.",
-    "career_keywords": "HLA 移植 組織相容 骨髓 配對 histocompatibility immunogenetics"
+    "career_keywords": "HLA 移植 組織相容 骨髓 配對 histocompatibility immunogenetics",
+    "career_type": "reference"
   },
   {
     "slug": "ipd-imgt-hla",
@@ -637,7 +665,8 @@
     "access_en": "Free open database",
     "notice_zh": "資料庫供研究與教學，臨床移植配對仍應依合格實驗室方法及品質規範。",
     "notice_en": "Reference database, not a substitute for validated clinical HLA typing.",
-    "career_keywords": "HLA typing allele transplantation 移植 配對 免疫遺傳"
+    "career_keywords": "HLA typing allele transplantation 移植 配對 免疫遺傳",
+    "career_type": "reference"
   },
   {
     "slug": "isct-workforce",
@@ -654,7 +683,8 @@
     "access_en": "Many courses are paid",
     "notice_zh": "課程依會員身份、學員類別與開課時間計費，報名前確認費用。",
     "notice_en": "Confirm membership-based fees and course availability.",
-    "career_keywords": "細胞治療 細胞製備 GMP CAR-T QC QA"
+    "career_keywords": "細胞治療 細胞製備 GMP CAR-T QC QA",
+    "career_type": "course"
   },
   {
     "slug": "tw-celltherapy-regulations",
@@ -671,7 +701,8 @@
     "access_en": "Free official regulation",
     "notice_zh": "本法規規範特定醫療技術；細胞產品製造及其他療法可能有另外的適用規範。",
     "notice_en": "Other cell therapy products and pathways may follow additional legal frameworks.",
-    "career_keywords": "細胞治療 GMP 法規 再生醫療 特管辦法"
+    "career_keywords": "細胞治療 GMP 法規 再生醫療 特管辦法",
+    "career_type": "reference"
   },
   {
     "slug": "nist-forensic-dna-standard",
@@ -688,7 +719,8 @@
     "access_en": "Free summary; full text varies",
     "notice_zh": "標準摘要可公開查閱，正式標準全文的取得及授權依制訂組織。",
     "notice_en": "Full standard text may be subject to publisher access requirements.",
-    "career_keywords": "法醫 鑑識 DNA STR report OSAC"
+    "career_keywords": "法醫 鑑識 DNA STR report OSAC",
+    "career_type": "reference"
   },
   {
     "slug": "nist-osac-library",
@@ -705,7 +737,8 @@
     "access_en": "Free index; standards may vary",
     "notice_zh": "請確認標準編號、版次、是否納入 OSAC registry 及適用目的。",
     "notice_en": "Check edition, registry status and applicability.",
-    "career_keywords": "法醫 鑑識 STR DNA NIST OSAC quality"
+    "career_keywords": "法醫 鑑識 STR DNA NIST OSAC quality",
+    "career_type": "reference"
   },
   {
     "slug": "tfda-ivd-laws",
@@ -722,7 +755,8 @@
     "access_en": "Free government reference",
     "notice_zh": "法規專區可能保留舊文件；實際申請應再查當期有效法規與主管機關公告。",
     "notice_en": "Some documents may be historical; consult current effective rules.",
-    "career_keywords": "IVD 體外診斷 醫材上市 TFDA RA 法規"
+    "career_keywords": "IVD 體外診斷 醫材上市 TFDA RA 法規",
+    "career_type": "reference"
   },
   {
     "slug": "gcp-e6r3-training",
@@ -739,7 +773,8 @@
     "access_en": "Free course; registration",
     "notice_zh": "修課證明是否符合臺灣 IRB 或院所學分要求，須由相關機構認定。",
     "notice_en": "Institutional IRB training credit recognition is determined locally.",
-    "career_keywords": "臨床試驗 GCP E6R3 clinical trials regulatory"
+    "career_keywords": "臨床試驗 GCP E6R3 clinical trials regulatory",
+    "career_type": "course"
   },
   {
     "slug": "ascp-molecular-scientist",
@@ -756,7 +791,8 @@
     "access_en": "Certification fees apply",
     "notice_zh": "需符合學歷、臨床訓練或工作年資等資格；各路徑規定不同。",
     "notice_en": "Route-specific educational and experience requirements apply.",
-    "career_keywords": "分子檢驗 分子診斷 NGS molecular ASCP"
+    "career_keywords": "分子檢驗 分子診斷 NGS molecular ASCP",
+    "career_type": "credential"
   },
   {
     "slug": "galaxy-variant-tutorials",
@@ -773,6 +809,7 @@
     "access_en": "Free open learning",
     "notice_zh": "不同練習所需的資料量及線上運算配額可能不同；請依教材需求選擇。",
     "notice_en": "Compute requirements and hosted quotas vary by tutorial.",
-    "career_keywords": "NGS 變異判讀 WES Galaxy genomics variant calling"
+    "career_keywords": "NGS 變異判讀 WES Galaxy genomics variant calling",
+    "career_type": "practice"
   }
 ]
