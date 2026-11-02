@@ -72,9 +72,9 @@
     "href": "/resources/databases.html",
     "icon": "▥",
     "eyebrow": "PUBLIC RESEARCH DATA & REANALYSIS",
-    "intro_zh": "Flow FCS、單細胞、顯微影像、蛋白質體、細菌 AST 與 ECG 等公開資料來源及課堂資料範例。",
-    "intro_en": "Open flow cytometry, single-cell, imaging, proteomics, antimicrobial susceptibility and physiological signal data.",
-    "sample_zh": "FlowRepository · GEO · IDR · CARD · PhysioNet"
+    "intro_zh": "Flow FCS、WBC 血球影像、RNA-seq、單細胞、LC-MS 代謝體、抗藥性及 ECG／EEG 公開研究資料。",
+    "intro_en": "Open FCS, blood-cell images, genomics, single-cell, metabolomics, AMR and ECG/EEG research data.",
+    "sample_zh": "FlowRepository · BBBC · GEO · MetaboLights · PhysioNet"
   },
   {
     "id": "engineering",
