@@ -7,7 +7,15 @@ permalink: /resources/search-index.json
 {"id":"tool-{{ forloop.index }}","category":{{ item.function_group | jsonify }},"type":"web","title":{{ item.name | jsonify }},"subtitle":{{ item.title | jsonify }},"description":{{ item.description | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.category | append: " · " | append: item.subtitle | jsonify }},"provider":{{ item.provider | default: "Bioflumen & Xensor Lab" | jsonify }},"url":{{ item.url | jsonify }},"path":{{ item.url | jsonify }}},
 {% endfor %}
 {% for item in site.data.professional_resources %}
-{"id":"ref-{{ forloop.index }}","category":{{ item.function_group | jsonify }},"type":"reference","title":{{ item.name | jsonify }},"subtitle":{{ item.title_zh | jsonify }},"description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.title_en | append: " · " | append: item.career_keywords | jsonify }},"provider":{{ item.provider | jsonify }},"url":{{ item.url | jsonify }},"path":{{ item.url | jsonify }}},
+{% assign ref_category = site.data.resource_categories | where: "id", item.function_group | first %}
+{% assign ref_path = ref_category.href | default: item.url %}
+{% if item.function_group == 'career' %}{% assign ref_path = '/resources/careers.html#career-' | append: item.career_group %}
+{% elsif item.function_group == 'clinical' %}{% assign ref_path = '/resources/clinical.html#clinical-' | append: item.learning_track %}
+{% elsif item.function_group == 'imaging' and item.learning_track %}{% assign ref_path = '/resources/imaging.html#imaging-' | append: item.learning_track %}
+{% elsif item.function_group == 'molecular' and item.learning_track == 'genetics' %}{% assign ref_path = '/resources/molecular.html#molecular-clinical-genetics' %}
+{% elsif item.function_group == 'molecular' and item.learning_track == 'forensics' %}{% assign ref_path = '/resources/molecular.html#molecular-forensics' %}
+{% endif %}
+{"id":"ref-{{ forloop.index }}","category":{{ item.function_group | jsonify }},"type":"reference","title":{{ item.name | jsonify }},"subtitle":{{ item.title_zh | jsonify }},"description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.title_en | append: " · " | append: item.career_keywords | jsonify }},"provider":{{ item.provider | jsonify }},"url":{{ item.url | jsonify }},"path":{{ ref_path | jsonify }}},
 {% endfor %}
 {% for item in site.data.microbiology_resources %}
 {% assign search_type = "reference" %}{% if item.mode == "web" %}{% assign search_type = "web" %}{% elsif item.mode == "desktop" %}{% assign search_type = "software" %}{% endif %}
