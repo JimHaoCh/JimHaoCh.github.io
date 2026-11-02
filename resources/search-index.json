@@ -16,7 +16,7 @@ permalink: /resources/search-index.json
 {% elsif item.function_group == 'molecular' and item.learning_track == 'genetics' %}{% assign ref_path = '/resources/molecular.html#molecular-clinical-genetics' %}
 {% elsif item.function_group == 'molecular' and item.learning_track == 'forensics' %}{% assign ref_path = '/resources/molecular.html#molecular-forensics' %}
 {% endif %}
-{"id":"ref-{{ forloop.index }}","category":{{ item.function_group | jsonify }},"type":{{ ref_type | jsonify }},"title":{{ item.name | jsonify }},"subtitle":{{ item.title_zh | jsonify }},"description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.title_en | append: " · " | append: item.career_keywords | jsonify }},"provider":{{ item.provider | jsonify }},"url":{{ item.url | jsonify }},"path":{{ ref_path | jsonify }}},
+{"id":"ref-{{ forloop.index }}","category":{{ item.function_group | jsonify }},"type":{{ ref_type | jsonify }},"title":{{ item.name | jsonify }},"subtitle":{{ item.title_zh | jsonify }},"description":{{ item.description_zh | jsonify }},"description_en":{{ item.description_en | jsonify }},"tags":{{ item.title_en | append: " · " | append: item.career_keywords | append: " · " | append: item.practice_track | append: " · " | append: item.practice_task_zh | jsonify }},"provider":{{ item.provider | jsonify }},"url":{{ item.url | jsonify }},"path":{{ ref_path | jsonify }}},
 {% endfor %}
 {% for item in site.data.microbiology_resources %}
 {% assign search_type = "reference" %}{% if item.mode == "web" %}{% assign search_type = "web" %}{% elsif item.mode == "desktop" %}{% assign search_type = "software" %}{% endif %}
