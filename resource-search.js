@@ -56,7 +56,15 @@
     ["單細胞資料", "單細胞資料庫", "scRNA-seq", "h5ad", "cellxgene", "human cell atlas"],
     ["公開影像資料", "顯微影像資料", "bioimage archive", "image data resource", "idr", "tcia"],
     ["公開抗藥資料", "mic distribution", "antimicrobial resistance database", "ncbi ast", "card"],
-    ["生理訊號資料庫", "波形資料", "physionet", "ptb-xl", "ecg dataset", "physiological signals"]
+    ["生理訊號資料庫", "波形資料", "physionet", "ptb-xl", "ecg dataset", "physiological signals"],
+    ["血球影像資料庫", "紅血球影像", "白血球影像", "WBC dataset", "RBC segmentation", "raabin", "bbbc", "all-idb"],
+    ["代謝體", "代謝物", "代謝體學", "metabolomics", "metabolome", "metabolites", "LC-MS", "GC-MS", "NMR"],
+    ["高內涵影像", "cell painting", "cellpainting", "morphological profiling", "high content microscopy"],
+    ["空間轉錄體", "空間多體", "spatial transcriptomics", "visium", "xenium", "hubmap"],
+    ["藥物活性", "藥物靶點", "bioactivity", "drug target", "chembl", "ic50"],
+    ["微生物群", "微生物群資料", "microbiome", "metagenomics", "silva", "mgnify"],
+    ["腦波原始資料", "腦波資料庫", "openneuro", "nemar", "dandi", "bids", "nwb"],
+    ["公共衛生抗藥性", "全球抗藥性", "who glass", "ecdc", "surveillance", "antibiotic use"]
   ];
   const CATEGORIES = {
     exam: "國考與專業學習", career: "專科職涯與進階學習", imaging: "顯微、細胞與影像分析",
@@ -236,7 +244,7 @@
       category.value="all";type.value="all";update();input.focus();
     }));
     try{
-      const response=await fetch("/resources/search-index.json?v=20261102-databases1",{cache:"no-cache"});
+      const response=await fetch("/resources/search-index.json?v=20261102-databases2",{cache:"no-cache"});
       if(!response.ok)throw new Error("HTTP "+response.status);
       const data=await response.json();
       if(!Array.isArray(data))throw new Error("Search index malformed");
