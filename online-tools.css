@@ -583,3 +583,31 @@
 .physiology-quick-grid small[lang=en]{font-size:11px;line-height:1.5;color:#617f95}
 .physiology-quick-grid a>span:last-child{font-size:12px;line-height:1.7;color:#4e7187;margin-top:6px}
 @media(max-width:650px){.physiology-quick-grid{grid-template-columns:1fr;gap:9px}.physiology-quick-grid a{padding:16px 15px}.physiology-quick-grid strong{font-size:17px}}
+
+
+/* Fourth-round guided ECG and EEG learning routes — 2026-11-02 */
+.physio-route-guide{margin:21px 0 24px;padding:21px 22px;background:#f7fafe;border:1px solid #cbdfee;border-radius:15px}
+.physio-route-heading h3{margin:8px 0 10px;font:750 clamp(19px,2vw,24px)/1.4 var(--serif);color:var(--ink)}
+.physio-route-heading h3 span[lang=en]{display:block;font:450 12px/1.7 var(--sans);color:var(--muted);margin:3px 0 0}
+.physio-route-heading>p:not(.eyebrow){font-size:12px;line-height:1.85;color:#4a667c;margin:7px 0}
+.physio-route-heading>p[lang=en]{font-size:11px;color:#70869b}
+.physio-route-group{margin-top:19px}
+.physio-route-group>strong{font-size:13px;color:#2e5e81;display:block;margin-bottom:8px}
+.physio-route-group>strong small{font-size:10px;color:#6d8599;font-weight:450}
+.physio-route-buttons{display:flex;flex-wrap:wrap;gap:8px}
+.physio-route-buttons button{font:700 12px/1.45 var(--sans);display:inline-flex;align-items:center;gap:5px;min-height:42px;padding:9px 13px;color:#356483;border:1px solid #bdd3e3;border-radius:9px;background:#fff;cursor:pointer}
+.physio-route-buttons button strong{font:inherit}
+.physio-route-buttons button small{color:#658399;font-size:10px;font-weight:450}
+.physio-route-buttons button[aria-pressed=true]{background:#e6f1fc;border-color:#3275a9;color:#195784;box-shadow:inset 0 0 0 1px #79b0d8}
+.physio-route-buttons button:hover,.physio-route-buttons button:focus-visible{border-color:#2b709e;outline-offset:2px}
+.physio-route-levels button{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:118px;gap:2px}
+.physio-route-status{margin:15px 0 0;border-top:1px solid #d8e6f0;padding-top:12px;font-size:11.5px;line-height:1.8;color:#4f7089}
+.physio-track-meta{margin:8px 0 9px}
+.physio-track-pill{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;border:1px solid #c9d9ec;border-radius:7px;padding:4px 8px;color:#2e628d;background:#eef5fd;font-size:11px;line-height:1.5;font-weight:750}
+.physio-track-pill small[lang=en]{font-size:10px;font-weight:450;color:#6586a1}
+.physio-practice-task{background:#f7fafc;border-left:2px solid #83afce;border-radius:0 7px 7px 0;color:#426279;font-size:12px!important;line-height:1.8!important;padding:10px 12px;margin:6px 0 12px}
+.physio-practice-task strong{display:block;font-size:11px;color:#2b638a;margin-bottom:3px}
+.physio-practice-task strong small{font-size:10px;color:#738da1;font-weight:450}
+.physio-practice-task span[lang=en]{display:block;font-size:10.5px;color:#6c879d;margin-top:4px}
+#clinical-ecg .reference-card[hidden],#clinical-eeg .reference-card[hidden],#clinical-ecg[hidden],#clinical-eeg[hidden]{display:none!important}
+@media(max-width:650px){.physio-route-guide{padding:17px 14px}.physio-route-buttons{gap:7px}.physio-route-buttons button{flex:1 1 96px;justify-content:center;padding:9px 8px}.physio-route-levels button{flex:1 1 calc(50% - 7px);align-items:center}.physio-route-heading h3{font-size:19px}}
