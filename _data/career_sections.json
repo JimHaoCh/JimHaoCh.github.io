@@ -20,52 +20,6 @@
     "note_zh": "臺灣《人工生殖機構許可辦法》第 4 條：人工生殖機構專任技術員需符合至少一年認定機構實務訓練，訓練期間至少二十人次體外受精操作等規定。ESHRE 為另一套國際認證制度。"
   },
   {
-    "id": "pathology",
-    "name_zh": "數位病理與組織病理技術",
-    "name_en": "Digital Pathology & Histotechnology",
-    "intro_zh": "結合虛擬全玻片、組織固定與包埋、切片、H&E、特殊染色、免疫組織化學與案例判讀。",
-    "intro_en": "Combine virtual slides and pathology cases with fixation, embedding, microtomy, H&E, special stains and immunohistochemistry.",
-    "path_zh": "正常組織與虛擬玻片 → 病理病例 → 固定、包埋、切片與染色 → 組織技術資格。",
-    "path_en": "Normal tissue and virtual slides → pathology cases → tissue processing and stains → histotechnology credentials."
-  },
-  {
-    "id": "cytogenetics",
-    "name_zh": "細胞遺傳與染色體分析",
-    "name_en": "Cytogenetics & Chromosome Analysis",
-    "intro_zh": "結合核型分析、G-banding 與 FISH，認識產前遺傳及血液腫瘤染色體檢驗工作。",
-    "intro_en": "Explore karyotyping, G-banding, FISH, prenatal genetics and hematologic cytogenetic laboratories.",
-    "path_zh": "認識染色體形態與命名 → 完成三個 Karyotyping 虛擬案例 → 學習 FISH → 查看細胞遺傳專業資格。",
-    "path_en": "Learn chromosome morphology → complete three karyotype cases → study FISH → review professional credentials.",
-    "note_zh": "University of Arizona 互動教材屬舊版網頁，建議先在課堂設備上測試。"
-  },
-  {
-    "id": "transfusion",
-    "name_zh": "輸血醫學與血庫",
-    "name_en": "Transfusion Medicine & Blood Banking",
-    "intro_zh": "針對血型抗原、抗體篩檢、交叉試驗、血液製品及輸血反應建立臨床學習路徑。",
-    "intro_en": "Study blood groups, antibody screens, crossmatching, components and transfusion reactions.",
-    "path_zh": "複習 ABO／Rh → 學習交叉試驗和不規則抗體 → 判讀輸血反應案例。",
-    "path_en": "Review ABO/Rh → explore crossmatching and antibodies → study transfusion reaction cases."
-  },
-  {
-    "id": "flow",
-    "name_zh": "流式細胞與免疫表型",
-    "name_en": "Flow Cytometry & Immunophenotyping",
-    "intro_zh": "認識流式細胞儀、補償、門控及臨床免疫表型，適合血液與免疫檢驗延伸學習。",
-    "intro_en": "Explore cytometer fundamentals, compensation, gating and clinical immunophenotyping.",
-    "path_zh": "儀器原理 → 螢光與補償 → Gating／圖譜解讀 → 臨床免疫表型案例。",
-    "path_en": "Instrument basics → fluorescence and compensation → gating → clinical applications."
-  },
-  {
-    "id": "genetics",
-    "name_zh": "臨床遺傳與分子診斷",
-    "name_en": "Clinical Genetics & Molecular Diagnostics",
-    "intro_zh": "以 ClinGen、ClinVar、Galaxy 與 ASCP 分子生物學資格，連結臨床變異解讀、次世代定序及分子檢驗專業。",
-    "intro_en": "Connect clinical variant curation, NGS analysis and molecular laboratory careers with ClinGen, ClinVar, Galaxy and ASCP.",
-    "path_zh": "變異標註與 ClinVar → ClinGen 證據整理 → Galaxy NGS 分析 → 分子檢驗資格與報告限制。",
-    "path_en": "Learn ClinVar and HGVS → ClinGen curation → Galaxy NGS workflows → molecular credentials and reporting limits."
-  },
-  {
     "id": "sleep",
     "name_zh": "睡眠檢查與睡眠技師",
     "name_en": "Sleep Technology & Polysomnography",
@@ -74,24 +28,6 @@
     "path_zh": "了解 PSG 訊號與導程 → 認識睡眠事件與記錄品質 → 查詢臺灣學會訓練與甄審 → 評估國際 RPSGT 路徑。",
     "path_en": "Study PSG signals → learn recording quality and events → check Taiwan certification → review RPSGT pathways.",
     "note_zh": "睡眠技師甄審時程、實務時數及考試費用可能逐年更新。"
-  },
-  {
-    "id": "newborn",
-    "name_zh": "新生兒篩檢與臨床質譜",
-    "name_en": "Newborn Screening & Clinical Mass Spectrometry",
-    "intro_zh": "了解乾血點採集、LC-MS/MS 代謝物檢測、篩檢流程及實驗室品管。",
-    "intro_en": "Learn dried-blood-spot analysis, tandem mass spectrometry, biochemical genetics and screening QC.",
-    "path_zh": "先查臺灣新生兒篩檢實驗室 → 學習 LC-MS/MS 方法建立 → 認識 CDC NSQAP 品質管理。",
-    "path_en": "Identify Taiwan screening labs → learn LC-MS/MS assay validation → explore CDC NSQAP quality assurance."
-  },
-  {
-    "id": "hla",
-    "name_zh": "HLA 與移植配對",
-    "name_en": "Histocompatibility & Transplantation",
-    "intro_zh": "從 HLA 等位基因與免疫遺傳出發，學習組織相容性檢測及移植配對實驗室基礎。",
-    "intro_en": "Study HLA allele nomenclature, immunogenetics, histocompatibility and transplant laboratory practice.",
-    "path_zh": "先理解 HLA Ⅰ／Ⅱ 類與配對 → 使用 IPD-IMGT/HLA 查詢等位基因 → 讀取 ASHI 學習資料。",
-    "path_en": "Review HLA class I/II and matching → query alleles using IPD → follow ASHI educational resources."
   },
   {
     "id": "celltherapy",
@@ -103,15 +39,6 @@
     "path_en": "Cell processing foundations → QC and GMP → professional training → current Taiwan regulations."
   },
   {
-    "id": "forensics",
-    "name_zh": "法醫 DNA 與鑑識科學",
-    "name_en": "Forensic DNA & Human Identification",
-    "intro_zh": "從 STR、DNA 身分鑑定與污染控管，認識鑑識實驗室的報告、複核與品質標準。",
-    "intro_en": "Learn STR profiling, forensic DNA identification, contamination control and reporting standards.",
-    "path_zh": "DNA 鑑識方法概念 → 檢視 NIST OSAC 法醫生物標準 → 學習報告與複核要求。",
-    "path_en": "Review DNA profiling → explore NIST OSAC forensic biology standards → study reporting and review."
-  },
-  {
     "id": "regulatory",
     "name_zh": "醫療器材法規與臨床試驗",
     "name_en": "Medical Device Regulatory Affairs & Clinical Trials",
@@ -119,5 +46,15 @@
     "intro_en": "Understand IVD regulatory pathways, product documentation, clinical studies and GCP learning.",
     "path_zh": "閱讀 TFDA IVD 法規 → 了解技術與查驗登記資料 → 完成 ICH GCP E6(R3) 教材。",
     "path_en": "Start with TFDA IVD rules → understand technical documentation → complete ICH GCP E6(R3) learning."
+  },
+  {
+    "id": "certifications",
+    "name_zh": "其他專業認證與資格",
+    "name_en": "Additional Specialist Credentials",
+    "intro_zh": "補充介紹組織技術 HTL、細胞遺傳 CG 與分子生物 MB 的 ASCP 專業認證途徑，認識不同專科的能力要求。",
+    "intro_en": "Explore ASCP credential pathways in histotechnology, cytogenetics and molecular biology; review each route's education and laboratory-experience requirements.",
+    "path_zh": "選擇專科方向 → 查閱 ASCP 最新資格途徑 → 確認學歷、訓練及經驗 → 區分國際認證與臺灣法定執業資格。",
+    "path_en": "Choose a specialty → check current ASCP eligibility routes → review education and experience → distinguish certification from Taiwan's statutory practice rules.",
+    "note_zh": "各認證名稱及申請方式以 ASCP 當期公告為準，部分資格另有國際版本。"
   }
 ]
