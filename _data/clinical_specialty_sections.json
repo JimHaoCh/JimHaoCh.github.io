@@ -1,0 +1,29 @@
+[
+  {
+    "id": "transfusion",
+    "name_zh": "輸血醫學與血庫",
+    "name_en": "Transfusion Medicine & Blood Banking",
+    "intro_zh": "以 ABO／Rh、抗體篩檢、交叉試驗、血液製品及輸血反應為核心的專業參考與案例教材。",
+    "intro_en": "Guides and cases on ABO/Rh, antibody screening, crossmatching, blood components and transfusion reactions.",
+    "path_zh": "血型抗原與抗體基礎 → 交叉試驗與不規則抗體 → 輸血反應案例",
+    "path_en": "ABO/Rh basics → antibody identification and crossmatching → transfusion reaction cases"
+  },
+  {
+    "id": "hla",
+    "name_zh": "HLA 與移植配對",
+    "name_en": "Histocompatibility & Transplantation",
+    "intro_zh": "從 HLA 等位基因命名、免疫遺傳延伸至組織相容性檢查與移植實驗室。",
+    "intro_en": "HLA allele nomenclature, immunogenetics, histocompatibility testing and transplantation laboratories.",
+    "path_zh": "HLA I／II 類與命名 → IPD-IMGT/HLA 資料庫 → ASHI 教學資源",
+    "path_en": "HLA class I/II and alleles → IPD-IMGT/HLA → ASHI education"
+  },
+  {
+    "id": "newborn",
+    "name_zh": "新生兒篩檢與臨床質譜",
+    "name_en": "Newborn Screening & Clinical Mass Spectrometry",
+    "intro_zh": "乾血點（DBS）、新生兒篩檢、LC-MS/MS 方法驗證與品質保證，兼顧臺灣官方制度及 CDC 教材。",
+    "intro_en": "Dried blood spots, newborn screening, LC-MS/MS assay validation and quality assurance with official training.",
+    "path_zh": "臺灣合約篩檢實驗室 → LC-MS/MS 方法與驗證 → CDC NSQAP 品質管理",
+    "path_en": "Taiwan screening labs → LC-MS/MS validation → CDC NSQAP quality assurance"
+  }
+]
