@@ -3,15 +3,15 @@ layout: null
 permalink: /courses.html
 resource_group: home
 title: 線上資源 Online Resources
-description: 醫技學習資源：國考與專科職涯、ECG 心電圖／EEG／肺功能／聽力網頁練習、顯微影像、分子檢驗、微流體工具與科學 App。
+description: 醫技學習資源：國考、專科職涯、生理檢查與 ECG、顯微影像、公開研究資料庫、Flow FCS、RNA-seq、微生物 AST、微流體及科研 App。
 ---
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261026-micro1">
+  <link rel="stylesheet" href="/online-tools.css?v=20261102-databases1">
   <link rel="stylesheet" href="/resource-search.css?v=20261028-1">
-  <script defer src="/resource-search.js?v=20261102-learning4"></script>
+  <script defer src="/resource-search.js?v=20261102-databases1"></script>
 </head>
 <body>
   <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
@@ -24,14 +24,14 @@ description: 醫技學習資源：國考與專科職涯、ECG 心電圖／EEG／
         <h1>線上資源<span lang="en">Online Resources</span></h1>
       </div>
       <div class="resource-hub-intro">
-        <p>依學習與研究目的選擇資源：醫事檢驗師國考、細胞醫檢師與胚胎師等專科職涯、顯微細胞與影像、臨床專科技術與生理檢查（ECG／EEG／肺功能／聽力）、臨床微生物、分子檢驗、微流體工程、研究簡報及科學研究學遊App。本站工具、外部專業資源與下載素材均清楚標示來源。</p>
-        <span lang="en">Choose resources by purpose: MLS exams, specialist career pathways, clinical physiology exercises (ECG, EEG, PFT, audiometry), microscopy, microbiology, molecular testing, engineering, research templates and science apps. Official references, lab-developed applications and downloads are labeled by origin.</span>
+        <p>依學習與研究目的選擇資源：醫事檢驗師國考、細胞醫檢師與胚胎師等專科職涯、顯微細胞與影像、臨床專科技術與生理檢查（ECG／EEG／肺功能／聽力）、臨床微生物、分子檢驗、公開研究資料庫、微流體工程、研究簡報及科學研究學遊App。本站工具、外部專業資源與下載素材均清楚標示來源。</p>
+        <span lang="en">Choose resources by purpose: MLS exams, specialist career pathways, clinical physiology exercises (ECG, EEG, PFT, audiometry), microscopy, microbiology, molecular testing, open biomedical data repositories, engineering, research templates and science apps. Official references, lab-developed applications and downloads are labeled by origin.</span>
       </div>
       <section class="resource-search-panel" id="resource-search" aria-labelledby="resource-search-heading">
         <div class="resource-search-heading">
           <p class="eyebrow">FIND YOUR TOOL · SMART RESOURCE SEARCH</p>
           <h2 id="resource-search-heading">直接搜尋想做的事<span lang="en">Search all scientific resources</span></h2>
-          <p>輸入工具名稱、研究需求或中英文關鍵字，跨九大分類找到對應的工具、軟體、App、資料庫與研究模板。<span lang="en">Describe a task or enter a keyword to find relevant resources across all categories.</span></p>
+          <p>輸入工具名稱、研究需求或中英文關鍵字，跨十大分類找到對應的工具、軟體、App、資料庫與研究模板。<span lang="en">Describe a task or enter a keyword to find relevant resources across all categories.</span></p>
         </div>
         <div class="resource-search-controls" role="search" aria-label="全站線上資源搜尋 / Resource search">
           <div class="resource-search-field">
@@ -79,6 +79,10 @@ description: 醫技學習資源：國考與專科職涯、ECG 心電圖／EEG／
           <button type="button" data-resource-query="腦波">腦波</button>
           <button type="button" data-resource-query="肺功能">肺功能</button>
           <button type="button" data-resource-query="聽力檢查">聽力檢查</button>
+          <button type="button" data-resource-query="Flow FCS">Flow FCS</button>
+          <button type="button" data-resource-query="單細胞資料庫">單細胞資料庫</button>
+          <button type="button" data-resource-query="AST 資料庫">AST 資料庫</button>
+          <button type="button" data-resource-query="PTB-XL">PTB-XL</button>
         </div>
         <div class="resource-search-result-head">
           <p class="resource-search-status" id="resource-search-status" role="status" aria-live="polite">正在準備搜尋資料；下方仍可依分類瀏覽所有資源。</p>
@@ -96,6 +100,7 @@ description: 醫技學習資源：國考與專科職涯、ECG 心電圖／EEG／
         {% assign number_items = grouped_tools.size | plus: grouped_software.size | plus: grouped_references.size %}
         {% if category.id == 'diagnostics' %}{% assign number_items = number_items | plus: site.data.microbiology_resources.size %}{% endif %}
         {% if category.id == 'molecular' %}{% assign number_items = number_items | plus: site.data.molecular_design_tools.size %}{% endif %}
+        {% if category.id == 'databases' %}{% assign number_items = site.data.research_databases.size | plus: site.data.database_examples.size %}{% endif %}
         {% if category.id == 'engineering' %}{% assign number_items = number_items | plus: site.data.lab_software.size | plus: site.data.engineering_resources.size | plus: 1 %}{% endif %}
         {% if category.id == 'exam' %}{% assign number_items = number_items | plus: 2 %}{% endif %}
         {% if category.id == 'templates' %}{% assign number_items = site.data.download_resources.size %}{% endif %}
