@@ -7,15 +7,15 @@ title_zh: 公開研究資料庫
 title_en: Open Biomedical Research Databases
 section_label: PUBLIC DATA · RESEARCH · REANALYSIS
 description: 收錄 Flow Cytometry FCS、白血球影像 AI、單細胞與空間多體學、代謝體 LC-MS、微生物抗藥性、ECG／EEG 等公開資料庫及可取得的課堂資料範例。
-intro_zh: 依八個研究領域尋找公開資料庫，包含血球影像、代謝體與神經生理訊號。每筆標示格式、下載與申請條件，並附六組可作課堂練習的原始資料案例。
-intro_en: Browse eight biomedical data fields, including blood-cell AI, metabolomics and neurophysiology. Check access conditions and formats, and explore six teaching datasets linked to their original sources.
+intro_zh: 依十二個研究主題分別查找 Flow、血球影像、基因體、單細胞、癌症、蛋白質、代謝體、微生物、AST、監測統計及生理訊號。每個資料庫標明主要用途與跨領域關聯。
+intro_en: Explore twelve scientific data themes with unique primary placement and cross-disciplinary tags. Review data roles, file formats, access conditions and teaching datasets.
 ---
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   {% include page-head.html %}
-  <link rel="stylesheet" href="/online-tools.css?v=20261102-databases2">
-  <script defer src="/research-databases.js?v=20261102-2"></script>
+  <link rel="stylesheet" href="/online-tools.css?v=20261102-taxonomy3">
+  <script defer src="/research-databases.js?v=20261102-taxonomy3"></script>
 </head>
 <body>
   <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
@@ -27,9 +27,9 @@ intro_en: Browse eight biomedical data fields, including blood-cell AI, metabolo
       <section class="functional-section database-intro" aria-labelledby="database-intro-heading">
         <div class="catalogue-heading">
           <p class="eyebrow">CURATED PUBLIC RESEARCH DATA</p>
-          <h2 id="database-intro-heading">從資料搜尋到原始檔重新分析<span lang="en">Explore, Download &amp; Reanalyse</span></h2>
-          <p>目前整理 {{ database_items.size }} 個研究資料庫、{{ site.data.database_sections.size }} 個研究領域及 {{ site.data.database_examples.size }} 組課堂練習範例。各來源的「公開」可能只適用部分檔案，請依原站實際下載條件與使用授權為準。</p>
-          <p lang="en" class="career-section-en">The catalogue contains {{ database_items.size }} databases in {{ site.data.database_sections.size }} fields, plus {{ site.data.database_examples.size }} teaching examples. Access, format and reuse permissions vary by dataset.</p>
+          <h2 id="database-intro-heading">依研究問題尋找正確資料來源<span lang="en">Match Research Questions to Data Sources</span></h2>
+          <p>目前整理 {{ database_items.size }} 個研究資料庫、{{ site.data.database_sections.size }} 個專業子分類及 {{ site.data.database_examples.size }} 組課堂練習範例。每個來源只顯示一次，跨領域用途另加標註；下載權限以原站與個別資料集為準。</p>
+          <p lang="en" class="career-section-en">The catalogue has {{ database_items.size }} databases across {{ site.data.database_sections.size }} primary scientific topics and {{ site.data.database_examples.size }} teaching examples. Cross-disciplinary uses are tagged, while access and reuse vary by dataset.</p>
         </div>
         <div class="database-legend" aria-label="資料取得方式說明">
           <span><b>公開可取得</b> 可依原站條款下載 <small lang="en">Public</small></span>
@@ -37,16 +37,30 @@ intro_en: Browse eight biomedical data fields, including blood-cell AI, metabolo
           <span><b>部分受控</b> 須逐資料集確認 <small lang="en">Variable</small></span>
           <span><b>下載可能受限</b> 原站有已知限制 <small lang="en">Limited</small></span>
         </div>
+        <div class="database-role-legend" aria-label="研究資料庫類型說明">
+          <p><strong>資料類型怎麼選？</strong> 原始資料典藏包含作者提交的研究檔；整合探索平台偏重跨研究查詢與分析；專業參考資料提供整理過的標準、註解或結構；模型基準具有教學／訓練標註；監測統計則以公共衛生匯總指標為主。</p>
+          <p lang="en">Archives host study files; portals integrate and explore studies; references curate annotations or structures; benchmarks supply reusable evaluation datasets; surveillance platforms report aggregate public-health indicators.</p>
+        </div>
       </section>
 
       <section class="database-filter-panel" id="database-filter" aria-labelledby="database-filter-heading">
         <div class="catalogue-heading">
           <p class="eyebrow">BROWSE · SEARCH · FILTER</p>
           <h2 id="database-filter-heading">搜尋與篩選研究資料庫<span lang="en">Find a research database</span></h2>
-          <p>可輸入中英文名稱及方法，或依取得方式、資料格式進行篩選。所有搜尋均在瀏覽器端執行。</p>
+          <p>每個資料庫只歸一個主題；依「資料來源角色、取用限制、主要資料型態」篩選，跨領域用途會在卡片中註明。搜尋在瀏覽器端進行。</p>
         </div>
         <div class="database-filter-fields">
           <label>關鍵字 <small lang="en">Keyword</small><input id="database-keyword" type="search" placeholder="Flow, FCS, WBC, LC-MS, MIC, EEG..." autocomplete="off"></label>
+          <label>資料來源角色 <small lang="en">Resource role</small>
+            <select id="database-role-filter">
+              <option value="all">全部 / All</option>
+              <option value="archive">原始資料典藏 / Archive</option>
+              <option value="portal">整合探索平台 / Portal</option>
+              <option value="reference">專業參考資料 / Reference</option>
+              <option value="benchmark">教學與模型基準 / Benchmark</option>
+              <option value="surveillance">監測統計 / Surveillance</option>
+            </select>
+          </label>
           <label>取得方式 <small lang="en">Access</small>
             <select id="database-access-filter">
               <option value="all">全部 / All</option>
@@ -56,16 +70,20 @@ intro_en: Browse eight biomedical data fields, including blood-cell AI, metabolo
               <option value="limited">下載可能受限 / Limited</option>
             </select>
           </label>
-          <label>主要資料格式 <small lang="en">Data type</small>
+          <label>主要資料型態 <small lang="en">Data modality</small>
             <select id="database-format-filter">
               <option value="all">全部 / All</option>
               <option value="fcs">Flow / FCS / CyTOF</option>
-              <option value="matrix">矩陣 / RNA / Genomics</option>
+              <option value="matrix">表現矩陣 / Omics matrices</option>
+              <option value="sequence">原始定序 / FASTQ / BAM</option>
               <option value="image">顯微／血球影像 / Imaging</option>
-              <option value="protein">蛋白與藥物 / Protein &amp; Drug</option>
+              <option value="protein">蛋白序列／結構 / Protein &amp; structures</option>
+              <option value="bioactivity">藥物活性 / Bioactivity</option>
               <option value="metabolome">代謝體／臨床化學 / Metabolomics</option>
-              <option value="microbiome">微生物序列／菌相 / Microbiome</option>
-              <option value="amr">MIC / AST / AMR</option>
+              <option value="microbiome">微生物基因體／菌相 / Microbial &amp; microbiome</option>
+              <option value="amr">抗藥基因 / AMR genes</option>
+              <option value="phenotype">表型 AST / Phenotypic AST</option>
+              <option value="surveillance">監測統計 / Surveillance</option>
               <option value="signal">生理訊號 / Waveforms</option>
             </select>
           </label>
@@ -100,7 +118,7 @@ intro_en: Browse eight biomedical data fields, including blood-cell AI, metabolo
         {% if section.id == 'metabolomics' %}
         <div class="career-related-links">
           <strong>資料來源去重 <small lang="en">Avoid duplicate studies</small></strong>
-          <p>MetabolomicsHub 提供跨平台整合搜尋；MetaboLights、Metabolomics Workbench 與 GNPS／MassIVE 仍是底層研究的原始典藏，重新分析時應保留原始 accession、實驗方法與版本資訊。</p>
+          <p>MetabolomicsHub 是跨庫搜尋平台；MetaboLights、Metabolomics Workbench 與 MassIVE 是研究典藏，GNPS 提供光譜庫與分析工具。跨平台可能出現相同研究，請以原始 accession 去重。</p>
         </div>
         {% endif %}
         {% if section.id == 'micro' %}
