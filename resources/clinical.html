@@ -1,0 +1,65 @@
+---
+layout: null
+permalink: /resources/clinical.html
+resource_group: clinical
+title: 臨床專科技術與檢驗判讀 Specialized Clinical Laboratory Practice
+title_zh: 臨床專科技術與檢驗判讀
+title_en: Specialized Clinical Laboratory Practice
+section_label: CLINICAL LABORATORY · SPECIALIST LEARNING
+description: 血庫輸血、HLA 移植配對與新生兒篩檢臨床質譜的專業學習資源與案例教材。
+intro_zh: 依檢驗工作項目探索專科教材、官方資料庫與品質管理資源。生理檢查、心電圖、肺功能等互動練習將於後續擴充。
+intro_en: Explore transfusion science, HLA matching, newborn screening and clinical mass spectrometry through specialized learning references. Physiological testing and ECG exercises are planned for a later round.
+---
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  {% include page-head.html %}
+  <link rel="stylesheet" href="/online-tools.css?v=20261102-reorg1">
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
+  {% include header.html %}
+  <main class="subpage" id="main">
+    <div class="wrap">
+      {% include resource-page-hero.html %}
+      {% assign references = site.data.professional_resources | where: "function_group", "clinical" %}
+      <section class="functional-section" aria-labelledby="clinical-overview-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">SPECIALIZED LABORATORY TRAINING</p>
+          <h2 id="clinical-overview-heading">從檢驗技術開始學習<span lang="en">Explore clinical laboratory techniques</span></h2>
+          <p>目前收錄 {{ references.size }} 筆資源，涵蓋三個臨床專科主題。各資源標示使用條件並連結原維護單位，適合課堂案例與自主學習。</p>
+          <p class="career-section-en" lang="en">A curated set of {{ references.size }} external references across three clinical laboratory topics. Follow the original source for current availability and access terms.</p>
+        </div>
+      </section>
+      <nav class="career-jump-nav clinical-jump-nav" aria-label="臨床專科技術主題 / Clinical laboratory topics">
+        {% for section in site.data.clinical_specialty_sections %}
+        <a href="#clinical-{{ section.id | escape }}"><strong>{{ section.name_zh | escape }}</strong><small lang="en">{{ section.name_en | escape }}</small></a>
+        {% endfor %}
+      </nav>
+      {% for section in site.data.clinical_specialty_sections %}
+      {% assign section_refs = references | where: "career_group", section.id %}
+      <section class="functional-section clinical-specialty-section" id="clinical-{{ section.id | escape }}" aria-labelledby="clinical-heading-{{ section.id | escape }}">
+        <div class="catalogue-heading">
+          <p class="eyebrow">CLINICAL PRACTICE · {{ forloop.index }}</p>
+          <h2 id="clinical-heading-{{ section.id | escape }}">{{ section.name_zh | escape }}<span lang="en">{{ section.name_en | escape }}</span></h2>
+          <p>{{ section.intro_zh | escape }}<span lang="en" class="career-section-en">{{ section.intro_en | escape }}</span></p>
+        </div>
+        <div class="career-pathway">
+          <strong>建議學習順序 <small lang="en">Suggested learning sequence</small></strong>
+          <p>{{ section.path_zh | escape }}<span lang="en">{{ section.path_en | escape }}</span></p>
+        </div>
+        <div class="reference-grid" aria-label="{{ section.name_zh | escape }} 參考資源">
+          {% for item in section_refs %}{% include resource-professional-card.html item=item %}{% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+      <div class="career-related-links" aria-label="專科職涯相關連結">
+        <strong>想了解資格與職涯？ <small lang="en">Related career pathways</small></strong>
+        <p>請前往 <a href="/resources/careers.html">專科職涯與進階學習</a> 查看專業培訓、職涯認識及認證資訊。</p>
+      </div>
+      <p class="tools-note">資源分類更新：2026-11-02。本站提供外部教育連結；實際檢驗須符合臨床單位標準作業流程、現行品質及法規要求。外部醫學圖片及患者資料請遵守授權與隱私規定。<span lang="en">Resources reorganized on 2 Nov 2026. Educational references only; clinical practice must follow current validated institutional protocols, regulations, copyright and patient privacy.</span></p>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>
