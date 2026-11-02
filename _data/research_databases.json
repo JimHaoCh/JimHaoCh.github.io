@@ -270,22 +270,22 @@
     "tags": "PDB structural biology"
   },
   {
-    "id": "bv-brc",
+    "id": "megares",
     "group": "micro",
-    "name": "Bacterial and Viral Bioinformatics Resource Center (BV-BRC)",
-    "title_zh": "細菌／病毒基因體與抗藥性資料整合",
-    "title_en": "Pathogen genome and antimicrobial resistance data",
-    "url": "https://www.bv-brc.org/",
+    "name": "MEGARes AMR Database",
+    "title_zh": "抗藥基因與高通量抗藥體分析參考資料庫",
+    "title_en": "Curated resistance genes for resistome analysis",
+    "url": "https://www.meglab.org/megares/",
     "access_type": "open",
     "access_zh": "公開可取得",
     "access_en": "Public",
-    "formats": "Genomes / FASTA / metadata / AMR phenotype",
+    "formats": "FASTA / hierarchical annotations",
     "format_group": "amr",
-    "description_zh": "NIAID 支持的整合病原體平台，提供細菌基因體、抗藥性表型／基因及相關搜尋匯出功能。",
-    "description_en": "Integrated pathogen genomes, antimicrobial resistance phenotype/genotype data and genome-linked metadata.",
-    "note_zh": "公開搜尋資料可直接取得；上傳自有資料或執行個人分析需登入，且預測 AMR 與實測表型須區分。",
-    "note_en": "Public data browsing; private analysis requires login. Predicted resistance differs from measured phenotype.",
-    "tags": "BV-BRC PATRIC pathogen genomes bacterial virus AMR phenotype"
+    "description_zh": "公開抗微生物藥物、消毒劑及金屬抗性基因參考序列與分類架構，適合 HTS 抗藥體及族群比較。",
+    "description_en": "Curated AMR, biocide and metal-resistance reference sequences with hierarchical annotations for metagenomic resistome analysis.",
+    "note_zh": "可從原站下載基因序列與註解；序列檢出不代表分離株已具臨床抗藥性表型。",
+    "note_en": "Reference downloads are available; sequence evidence is not equivalent to clinical phenotypic resistance.",
+    "tags": "MEGARes resistome metagenomics antimicrobial resistance HTS FASTA"
   },
   {
     "id": "card-amr",
