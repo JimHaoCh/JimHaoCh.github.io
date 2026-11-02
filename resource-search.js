@@ -222,7 +222,7 @@
       category.value="all";type.value="all";update();input.focus();
     }));
     try{
-      const response=await fetch("/resources/search-index.json?v=20261028-2",{cache:"no-cache"});
+      const response=await fetch("/resources/search-index.json?v=20261102-2",{cache:"no-cache"});
       if(!response.ok)throw new Error("HTTP "+response.status);
       const data=await response.json();
       if(!Array.isArray(data))throw new Error("Search index malformed");
