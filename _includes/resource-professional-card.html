@@ -1,6 +1,6 @@
 <article class="reference-card"{% if include.molecular_kind %} data-molecular-kind="{{ include.molecular_kind | escape }}"{% endif %}>
   <div class="reference-card-top">
-    <span class="reference-external-badge">外部專業資源 <small lang="en">External reference</small></span>
+    <span class="reference-external-badge">{% if include.item.learning_format == "web" %}線上練習 <small lang="en">Interactive learning</small>{% else %}外部專業資源 <small lang="en">External reference</small>{% endif %}</span>
     <span class="reference-provider">{{ include.item.provider | escape }}</span>
   </div>
   <h3>{{ include.item.name | escape }}</h3>
@@ -9,6 +9,6 @@
   <p class="reference-description">{{ include.item.description_zh | escape }}<span lang="en">{{ include.item.description_en | escape }}</span></p>
   <p class="reference-license">{{ include.item.notice_zh | escape }}<span lang="en">{{ include.item.notice_en | escape }}</span></p>
   <a class="resource-download" href="{{ include.item.url | escape }}" target="_blank" rel="noopener noreferrer external">
-    <span>前往官方資源<small lang="en">Visit official source · External site</small></span><span aria-hidden="true">↗</span>
+    <span>{% if include.item.learning_format == 'web' %}開啟練習網站<small lang="en">Open learning tool · External site</small>{% else %}前往原始資源<small lang="en">Visit original source · External site</small>{% endif %}</span><span aria-hidden="true">↗</span>
   </a>
 </article>
