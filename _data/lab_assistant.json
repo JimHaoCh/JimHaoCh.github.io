@@ -2589,7 +2589,14 @@
         "request leave",
         "sick leave",
         "family matters",
-        "travel leave"
+        "travel leave",
+        "如何請假",
+        "請假方式",
+        "請假規定",
+        "幾點進實驗室",
+        "幾點進研究室",
+        "幾點進來",
+        "幾點到實驗室"
       ],
       "links": [
         {
