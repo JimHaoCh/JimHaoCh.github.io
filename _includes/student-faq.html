@@ -8,6 +8,7 @@
 {% for lab_policy_id in lab_policy_ids %}{% assign lab_policy = site.data.lab_assistant.entries | where: "id", lab_policy_id | first %}{% if lab_policy %}
 <details id="faq-{{ lab_policy.id | escape }}"><summary>{{ lab_policy.title.zh | escape }}<span lang="en">{{ lab_policy.title.en | escape }}</span></summary><p lang="zh-Hant">{{ lab_policy.answer.zh | escape }}</p><p lang="en">{{ lab_policy.answer.en | escape }}</p></details>
 {% endif %}{% endfor %}
+</div>
 <script>
 (() => {
   function revealStudentFaq(hash) {
@@ -25,4 +26,3 @@
   });
 })();
 </script>
-</div>
