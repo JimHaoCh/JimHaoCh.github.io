@@ -46,8 +46,8 @@
         "en": "What does the lab study?"
       },
       "answer": {
-        "zh": "實驗室以微流體、生物感測與體外診斷為核心，從檢驗需求出發，研究檢體前處理、分離濃縮、反應、訊號讀取與系統驗證。",
-        "en": "The lab focuses on microfluidics, biosensing and in vitro diagnostics, from sample preparation and separation to detection, readout and system validation."
+        "zh": "實驗室以微流體、生物感測與體外診斷為核心，研究檢體處理、反應、訊號讀取與系統驗證。目前的研究方向之一，是整合微生物抗藥性的表現型與基因型檢測。",
+        "en": "The lab focuses on microfluidics, biosensing and in vitro diagnostics, including sample handling, reactions, signal readout and system validation. One current direction integrates phenotypic and genotypic microbial resistance detection."
       },
       "keywords": [
         "研究方向",
@@ -65,14 +65,19 @@
       ],
       "links": [
         {
+          "zh": "查看目前研究",
+          "en": "Current research",
+          "href": "/#current-amr"
+        },
+        {
           "zh": "查看研究方向",
           "en": "Explore research",
           "href": "/#research"
         }
       ],
       "related": [
+        "amr-overview",
         "microfluidics",
-        "biosensing",
         "bacteria"
       ]
     },
@@ -248,8 +253,8 @@
         "en": "Is there research on bacterial detection?"
       },
       "answer": {
-        "zh": "網站介紹主持人於實驗室成立前參與的研究：以濾膜、離心微流體與比色反應偵測水中活菌。若有其他菌種或檢體需求，歡迎討論可行性。",
-        "en": "The website describes a study the PI participated in before the lab was established: membrane concentration, centrifugal microfluidics and colorimetry for viable bacteria in water. Other organisms and samples require project-specific discussion."
+        "zh": "目前研究探索將微生物抗藥性的表現型與基因型檢測整合於微流體平台。網站也介紹主持人於實驗室成立前參與、以濾膜與離心微流體偵測水中活菌的研究。",
+        "en": "Current work explores microfluidic phenotypic and genotypic detection of microbial antimicrobial resistance. The website also describes the PI’s earlier study using membrane concentration and centrifugal microfluidics to detect viable bacteria in water before the lab was established."
       },
       "keywords": [
         "細菌檢測",
@@ -268,22 +273,23 @@
       ],
       "links": [
         {
+          "zh": "目前抗藥性研究",
+          "en": "Current resistance research",
+          "href": "/#current-amr"
+        },
+        {
           "zh": "活菌研究介紹",
-          "en": "Bacteria research",
+          "en": "Viable-bacteria research",
           "href": "/#bacteria"
         },
         {
           "zh": "閱讀原論文",
           "en": "Original paper",
           "href": "https://doi.org/10.1016/j.bios.2023.115403"
-        },
-        {
-          "zh": "洽談合作",
-          "en": "Discuss a project",
-          "href": "/?inquiry=industry#contact"
         }
       ],
       "related": [
+        "amr-overview",
         "microbial",
         "research-overview"
       ]
@@ -3224,6 +3230,197 @@
         "student-funding",
         "student-internship",
         "student-conference"
+      ]
+    },
+    {
+      "id": "amr-overview",
+      "group": "research",
+      "title": {
+        "zh": "實驗室目前有微生物抗藥性研究嗎？",
+        "en": "Is the lab studying antimicrobial resistance?"
+      },
+      "answer": {
+        "zh": "目前研究探索將微生物多重抗藥性檢測整合於微流體平台，分為表現型與基因型兩個方向；並規劃結合光譜或機器視覺進行定性與定量分析。",
+        "en": "Current research explores microfluidic detection of microbial multidrug resistance through phenotypic and genotypic approaches, with spectral readout or computer vision for qualitative and quantitative analysis."
+      },
+      "keywords": [
+        "微生物抗藥性",
+        "微生物抗藥",
+        "多重抗藥性",
+        "多重抗藥",
+        "多重耐藥",
+        "抗藥性檢測",
+        "抗藥性研究",
+        "抗藥性",
+        "抗藥",
+        "抗生素抗藥性",
+        "抗生素耐藥",
+        "抗菌藥物抗藥性",
+        "抗藥性晶片",
+        "amr",
+        "antimicrobial resistance",
+        "antibiotic resistance",
+        "multidrug resistance",
+        "drug resistant bacteria",
+        "resistance detection"
+      ],
+      "links": [
+        {
+          "zh": "目前抗藥性研究",
+          "en": "Current AMR research",
+          "href": "/#current-amr"
+        },
+        {
+          "zh": "聯絡研究合作",
+          "en": "Discuss research",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "amr-phenotype",
+        "amr-genotype",
+        "amr-readout"
+      ]
+    },
+    {
+      "id": "amr-phenotype",
+      "group": "research",
+      "title": {
+        "zh": "什麼是表現型抗藥性檢測研究？",
+        "en": "What is the phenotypic resistance research direction?"
+      },
+      "answer": {
+        "zh": "表現型方向著重微生物在不同抗菌藥物條件下的生長或反應變化，探索以微流體分析抗藥性表現與多種藥物的反應。實際方法與驗證依研究進度調整。",
+        "en": "The phenotypic direction examines microbial growth or response under different antimicrobial conditions and explores microfluidic analysis of resistance phenotypes and responses to multiple agents. Methods and validation evolve with the research."
+      },
+      "keywords": [
+        "抗藥性表現型",
+        "表現型抗藥性",
+        "表現型藥敏",
+        "表現型檢測",
+        "表型檢測",
+        "表型藥敏",
+        "抗藥表現",
+        "藥敏實驗",
+        "藥敏檢測",
+        "藥物敏感性",
+        "細菌對藥物反應",
+        "phenotypic resistance",
+        "phenotypic susceptibility",
+        "phenotypic ast",
+        "susceptibility testing"
+      ],
+      "links": [
+        {
+          "zh": "表現型研究方向",
+          "en": "Phenotypic direction",
+          "href": "/#amr-phenotype"
+        },
+        {
+          "zh": "目前抗藥性研究",
+          "en": "Current AMR research",
+          "href": "/#current-amr"
+        }
+      ],
+      "related": [
+        "amr-genotype",
+        "amr-readout"
+      ]
+    },
+    {
+      "id": "amr-genotype",
+      "group": "research",
+      "title": {
+        "zh": "什麼是基因型抗藥性檢測研究？",
+        "en": "What is the genotypic resistance research direction?"
+      },
+      "answer": {
+        "zh": "基因型方向以抗藥性相關基因為研究標的，探索核酸檢測與微流體整合，分析基因訊號並評估定性或定量檢測。實際標的與方法依研究進度調整。",
+        "en": "The genotypic direction targets resistance-associated genes and explores integrating nucleic acid detection with microfluidics for qualitative or quantitative assessment. Specific targets and methods evolve with the research."
+      },
+      "keywords": [
+        "抗藥性基因",
+        "抗藥基因",
+        "抗性基因",
+        "抗藥性基因型",
+        "基因型抗藥性",
+        "基因型檢測",
+        "基因型藥敏",
+        "抗藥性核酸",
+        "抗藥性dna",
+        "resistance gene",
+        "resistance genes",
+        "genotypic resistance",
+        "genotypic detection",
+        "genetic resistance",
+        "antimicrobial resistance gene"
+      ],
+      "links": [
+        {
+          "zh": "基因型研究方向",
+          "en": "Genotypic direction",
+          "href": "/#amr-genotype"
+        },
+        {
+          "zh": "目前抗藥性研究",
+          "en": "Current AMR research",
+          "href": "/#current-amr"
+        }
+      ],
+      "related": [
+        "amr-phenotype",
+        "amr-readout"
+      ]
+    },
+    {
+      "id": "amr-readout",
+      "group": "research",
+      "title": {
+        "zh": "抗藥性研究會如何讀取訊號？",
+        "en": "How are resistance research signals read?"
+      },
+      "answer": {
+        "zh": "研究規劃依反應特性使用光譜或機器視覺進行定性與定量分析，並整合自動化二維掃描與影像擷取。AI 模型訓練與驗證將視學生研究進度及影像資料準備情形評估。",
+        "en": "The research explores spectral measurements or computer vision for qualitative and quantitative analysis and plans automated two-dimensional scanning and imaging. AI model training and validation will be evaluated according to student progress and image-data readiness."
+      },
+      "keywords": [
+        "抗藥性光譜",
+        "抗藥性影像",
+        "抗藥性機器視覺",
+        "抗藥性ai",
+        "抗藥性掃描",
+        "自動化二維掃描",
+        "自動掃描影像",
+        "二維掃描",
+        "xy掃描",
+        "晶片影像掃描",
+        "機器視覺讀取",
+        "光譜讀取",
+        "抗藥性定量",
+        "抗藥性定性",
+        "automated scanning",
+        "two-dimensional imaging",
+        "resistance imaging",
+        "amr imaging",
+        "spectral readout",
+        "computer vision for resistance"
+      ],
+      "links": [
+        {
+          "zh": "訊號讀取與影像系統",
+          "en": "Readout and imaging",
+          "href": "/#amr-readout"
+        },
+        {
+          "zh": "目前抗藥性研究",
+          "en": "Current AMR research",
+          "href": "/#current-amr"
+        }
+      ],
+      "related": [
+        "amr-overview",
+        "amr-phenotype",
+        "amr-genotype"
       ]
     }
   ],

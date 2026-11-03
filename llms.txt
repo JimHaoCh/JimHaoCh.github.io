@@ -5,7 +5,7 @@ layout: null
 
 > An interdisciplinary research laboratory at National Yang Ming Chiao Tung University (NYCU), Taiwan, led by Dr. Chun-Hao Chang (張鈞豪博士), Assistant Professor. Research focuses on microfluidics, biosensing and in vitro diagnostics.
 
-This is a factual directory of public website content. Updated 2026-10-26. The website presents Traditional Chinese and English together.
+This is a factual directory of public website content. Updated 2026-11-03. The website presents Traditional Chinese and English together.
 
 ## Identity and contact
 - Laboratory: 百洑傳息實驗室 / Bioflumen & Xensor Lab
@@ -17,7 +17,8 @@ This is a factual directory of public website content. Updated 2026-10-26. The w
 
 ## Website sections
 - [Lab philosophy](https://jimhaoch.github.io/#about): Fluid science, life science and signal technology.
-- [Research](https://jimhaoch.github.io/#research): Exhaled breath condensate collection, acoustic microfluidics for sputum liquefaction, centrifugal live-bacteria detection and Au/SiC photocatalytic microfluidics.
+- [Research](https://jimhaoch.github.io/#research): Current microfluidic antimicrobial resistance research alongside previous studies in breath condensate collection, acoustic microfluidics, live-bacteria detection and Au/SiC photocatalysis.
+- [Current research: antimicrobial resistance](https://jimhaoch.github.io/#current-amr): Microfluidic phenotypic and genotypic approaches; spectral or computer-vision readout; planned automated two-dimensional imaging; AI model training and validation considered as student research and data progress.
 - [Principal investigator](https://jimhaoch.github.io/#pi): Education, experience, expertise and official faculty profile.
 - [Lab members](https://jimhaoch.github.io/#people): Current member names and roles are listed on the People page.
 - [Publications](https://jimhaoch.github.io/#publications): Selected publications with DOI links.
@@ -26,7 +27,7 @@ This is a factual directory of public website content. Updated 2026-10-26. The w
 - [Contact](https://jimhaoch.github.io/#contact): Industry–academia collaboration, research collaboration, joining the lab and student projects. The form requests name, email, organization, inquiry type and message.
 
 ## Research context
-The four featured research stories describe work completed with the PI's participation before this lab was established. AI-generated conceptual illustrations are labeled on the website. Original paper figures and DOI-linked publications document exact device structures and experimental results.
+The antimicrobial resistance project is a current research direction, not a claim of completed clinical validation. The four featured prior research stories describe work completed with the PI's participation before this lab was established. AI-generated conceptual illustrations are labeled on the website. Original paper figures and DOI-linked publications document exact device structures and experimental results.
 
 ## Selected publications
 {% for paper in site.data.publications %}{% unless paper.published == false %}- [{{ paper.title }}]({{ paper.doi }}) ({{ paper.year | round }}).
@@ -47,3 +48,4 @@ The four featured research stories describe work completed with the PI's partici
 
 Industry collaboration: https://jimhaoch.github.io/collaboration.html
 Biomedical microfluidic design, CNC and 3D-printed prototypes, wafer-level master molds, fluid handling and control integration. Scope, fees and IP are agreed per project under NYCU procedures.
+

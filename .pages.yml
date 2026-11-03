@@ -360,6 +360,54 @@ content:
       message: 請填寫 https://doi.org/ 開頭的完整 DOI 網址。
   - *id008
   list: true
+- name: current_amr
+  label: 目前研究 · 抗藥性微流體
+  type: file
+  path: _data/current_amr.json
+  format: json
+  fields:
+  - name: title_zh
+    label: 主題名稱（中文）
+    type: string
+  - name: title_en
+    label: 主題名稱（英文）
+    type: string
+  - name: intro_zh
+    label: 研究總覽（中文）
+    type: text
+  - name: intro_en
+    label: 研究總覽（英文）
+    type: text
+  - name: phenotype_zh
+    label: 表現型方向（中文）
+    type: text
+  - name: phenotype_en
+    label: 表現型方向（英文）
+    type: text
+  - name: genotype_zh
+    label: 基因型方向（中文）
+    type: text
+  - name: genotype_en
+    label: 基因型方向（英文）
+    type: text
+  - name: readout_zh
+    label: 光譜與影像讀出（中文）
+    type: text
+  - name: readout_en
+    label: 光譜與影像讀出（英文）
+    type: text
+  - name: automation_zh
+    label: 二維掃描與 AI（中文）
+    type: text
+  - name: automation_en
+    label: 二維掃描與 AI（英文）
+    type: text
+  - name: status_zh
+    label: 研究狀態（中文）
+    type: text
+  - name: status_en
+    label: 研究狀態（英文）
+    type: text
 - name: home
   label: 首頁與研究文字
   type: file
@@ -1270,3 +1318,4 @@ content:
     - name: en
       label: en
       type: text
+

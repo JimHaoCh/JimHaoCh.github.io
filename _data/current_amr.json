@@ -1,0 +1,16 @@
+{
+  "title_zh": "微流體整合微生物抗藥性檢測",
+  "title_en": "Microfluidic approaches to antimicrobial resistance detection",
+  "intro_zh": "我們正探索將微生物多重抗藥性檢測整合於微流體平台，從表現型與基因型兩個方向出發，結合訊號讀取及資料分析，建立可延伸的檢測研究架構。",
+  "intro_en": "We are exploring the integration of multidrug resistance detection into microfluidic platforms. Phenotypic and genotypic approaches are developed alongside signal readout and data analysis as complementary research directions.",
+  "phenotype_zh": "在不同抗菌藥物條件下觀察微生物的生長或反應變化，探索以微流體分析微生物抗藥性表現及多種藥物的反應。",
+  "phenotype_en": "Observe changes in microbial growth or response under different antimicrobial conditions, exploring microfluidic analysis of resistance phenotypes and responses to multiple agents.",
+  "genotype_zh": "以抗藥性相關基因為研究標的，探索核酸檢測與微流體平台的整合，分析基因訊號，並評估定性或定量檢測的可能性。",
+  "genotype_en": "Target resistance-associated genes and explore integration of nucleic acid detection with microfluidic platforms, analyzing genetic signals for qualitative or quantitative assessment.",
+  "readout_zh": "依反應與樣本特性，探索以光譜量測或機器視覺讀取晶片訊號，進行定性判讀與定量分析。表現型與基因型提供不同層次的資訊，解讀方式依研究設計與驗證結果確認。",
+  "readout_en": "Depending on the assay and sample, spectral measurement or computer vision may be used to read chip signals for qualitative interpretation and quantitative analysis. Phenotypic and genotypic results provide different layers of information and require interpretation in the context of the study and validation.",
+  "automation_zh": "規劃整合自動化二維掃描與影像擷取設備，讀取晶片上不同位置的反應訊號；再依同學的研究進度、影像資料量與標註情形，逐步評估 AI 模型訓練及驗證。",
+  "automation_en": "We plan to integrate automated two-dimensional scanning and image acquisition to read signals across the chip. AI model training and validation will be evaluated progressively in light of student research progress, the available images and annotation readiness.",
+  "status_zh": "本項目為進行中的研究方向；檢測方法、設備配置與驗證範圍將依研究進度調整。示意圖呈現研究概念，不代表既有設備規格或實驗結果。",
+  "status_en": "This project is an ongoing research direction. Assays, instrument configuration and validation scope will evolve with the work. The illustration depicts a concept, not an existing device specification or experimental result."
+}

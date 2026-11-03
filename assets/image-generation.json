@@ -39,6 +39,13 @@
       "prompt": "Use case: scientific-educational. Create one sophisticated scientific process illustration for laser-fabricated Au/SiC photocatalytic microfluidics, wide landscape aspect ratio 2:1, cohesive blue #2b61ab/navy #183a65/orange #ffad55 on warm ivory #fef9f5. Three linked, balanced technical vignettes in coherent isometric perspective: left, finely textured reclaimed gray-blue SiC powder placed on a rectangular glass substrate, with a precisely focused restrained orange laser beam fixing a small patterned layer; middle, a large close-up cutaway of the substrate surface with irregular blue-gray SiC microparticles decorated with tiny orange/gold nanoparticles, a subtle second laser-processing cue and detailed thin-film surface texture; right, the resulting Au/SiC plate integrated as the floor of a transparent serpentine microfluidic reactor. Gentle visible illumination reaches the catalyst through the transparent device; the inlet liquid is blue and the outlet is pale, representing degradation of a model dye, not drinking-water certification. Include a small magnified circular material inset with Au nanoparticles on SiC. High-end semi-realistic scientific rendering, clean glass edges, fine surface relief and natural soft shadows. Modest thin directional links, ample breathing room. No text, letters, numbers, labels, real plots, logos, water-safety symbols, arrows piercing materials, or dense decorative molecular formulas. Avoid clipart, fantasy lasers, thick outlines and glowing sci-fi styling.",
       "output": "assets/ausic-workflow-v3.webp",
       "source_png": "exec-a73ef89a-860b-4317-8c1a-91030d3547f8.png"
+    },
+    {
+      "key": "current-amr-concept",
+      "created": "2026-11-03",
+      "prompt": "Wide scientific editorial concept illustration for a biomedical microfluidics website: transparent cartridge with distinct microbial-response and resistance-related DNA motifs on a motorized two-axis imaging stage under an optical readout, soft ivory, lab blue and orange. No text or quantitative claims; depiction is conceptual.",
+      "output": "assets/current-amr-concept.webp",
+      "source_png": "exec-6e80576c-5519-47b1-a3b6-3c8058045998.png"
     }
   ]
 }
