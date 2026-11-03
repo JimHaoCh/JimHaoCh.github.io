@@ -4,4 +4,25 @@
 <details><summary>會學到哪些技術？每個人都要做 AI 嗎？<span lang="en">Which technical skills are taught? Is AI required for every project?</span></summary><p lang="zh-Hant">可能接觸微流體設計、簡易晶片製程（如 CNC、3D 列印與模具製作）、生物感測與檢驗試劑開發、訊號量測、影像處理、資料分析，以及 Python 或 AI 輔助程式開發（Vibe Coding）。若研究包含影像辨識，可進一步評估 ImageJ、CNN、ResNet、YOLO 或公開資料集；是否使用深度學習取決於研究問題、資料量與所需的驗證方式。</p><p lang="en">Depending on the project, training may include microfluidics, CNC/3D-printed prototypes, biosensing, reagents, signal acquisition, imaging, and Python/AI-assisted coding. Deep learning tools such as CNN, ResNet, or YOLO are selected when appropriate to the question and available data.</p></details>
 <details><summary>除了實驗技術，還會培養哪些軟實力？<span lang="en">Which transferable skills will I develop?</span></summary><p lang="zh-Hant">訓練包含文獻搜尋與判讀、研究假說與實驗設計、對照組與資料品質管理、專案進度追蹤、團隊協作、問題排查，以及中英文簡報、圖表製作和論文撰寫。學生需要能解釋實驗結果及其限制，並將下一步工作轉化為可執行的計畫。</p><p lang="en">Students practice literature review, hypothesis-driven experimental design, controls, data quality, project tracking, troubleshooting, teamwork, scientific presentations, figures, and manuscript writing, including clear interpretation of study limitations.</p></details>
 <details><summary>畢業後可以從事哪些工作或繼續升學？<span lang="en">What careers or further study paths are available?</span></summary><p lang="zh-Hant">研究訓練可銜接體外診斷（IVD）與臨床檢驗設備公司、醫療器材研發、生物感測與微流體相關企業、半導體和生醫交叉領域的研發職務、研究機構，以及國內外博士班。實際職缺仍取決於個人專題、技能組合、求職條件與產業需求。具轉譯潛力的成果可另評估產學合作、專利或技術移轉。</p><p lang="en">Potential paths include IVD and laboratory equipment companies, medical-device R&amp;D, biosensing/microfluidics, biomedical–semiconductor engineering, research institutes, and doctoral study. Opportunities depend on each graduate’s skills and the job market; suitable projects may also lead to industry collaboration or IP evaluation.</p></details>
+{% assign lab_policy_ids = "student-funding,student-internship,student-hours,student-meetings,student-publication" | split: "," %}
+{% for lab_policy_id in lab_policy_ids %}{% assign lab_policy = site.data.lab_assistant.entries | where: "id", lab_policy_id | first %}{% if lab_policy %}
+<details id="faq-{{ lab_policy.id | escape }}"><summary>{{ lab_policy.title.zh | escape }}<span lang="en">{{ lab_policy.title.en | escape }}</span></summary><p lang="zh-Hant">{{ lab_policy.answer.zh | escape }}</p><p lang="en">{{ lab_policy.answer.en | escape }}</p></details>
+{% endif %}{% endfor %}
+<script>
+(() => {
+  function revealStudentFaq(hash) {
+    if (!/^#faq-student-[a-z-]+$/.test(hash)) return;
+    const details = document.getElementById(hash.slice(1));
+    if (details && details.tagName === 'DETAILS') details.open = true;
+  }
+  revealStudentFaq(location.hash);
+  window.addEventListener('hashchange', () => revealStudentFaq(location.hash));
+  document.addEventListener('click', event => {
+    const anchor = event.target instanceof Element ? event.target.closest('a[href*="#faq-student-"]') : null;
+    if (!anchor) return;
+    const url = new URL(anchor.href, location.href);
+    if (url.origin === location.origin && (url.pathname === '/' || url.pathname === '/index.html')) revealStudentFaq(url.hash);
+  });
+})();
+</script>
 </div>

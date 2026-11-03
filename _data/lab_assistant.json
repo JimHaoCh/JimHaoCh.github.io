@@ -1348,8 +1348,8 @@
         "en": "What is the master’s training and graduation pathway?"
       },
       "answer": {
-        "zh": "網站規劃從研究問題、原型建立與測試，進入參數最佳化、整合驗證及論文準備。兩年為研究規劃目標；畢業仍須符合校系規定並依進度調整。",
-        "en": "The website describes progression from research questions and prototypes through optimization, integrated validation and thesis preparation. Two years is a planning goal; graduation follows university and department rules and actual progress."
+        "zh": "研究規劃從研究問題、原型建立與測試，進入參數最佳化、整合驗證及論文準備；碩士論文研究以達到具備期刊投稿水準為基本要求。兩年為研究規劃目標，畢業仍須符合校系規定並依研究進度調整。",
+        "en": "The research plan progresses from a research question and prototypes through optimization, validation and thesis preparation; master’s thesis research is expected to reach a standard suitable for journal submission. Two years is a planning goal; graduation follows university and department rules and actual progress."
       },
       "keywords": [
         "碩士",
@@ -2439,8 +2439,8 @@
         "en": "How often are lab meetings held, and what is presented?"
       },
       "answer": {
-        "zh": "網站尚未公布固定開會頻率或報告形式。可在面談時詢問是個別或團體討論、報告研究進度或論文，以及時間如何安排。",
-        "en": "The website does not state a fixed meeting schedule or format. Ask whether meetings are individual or group-based, cover research progress or papers, and how they are scheduled."
+        "zh": "實驗室會議原則上安排在每週一上午，約 2 小時。如有額外的研究問題需要討論，可以再與 PI 另約時間；報告主題及形式可依需要與老師確認。",
+        "en": "Lab meetings are generally held on Monday mornings and last about two hours. Students can arrange additional time with the PI when research questions need further discussion; presentation topics and formats can be confirmed with the PI."
       },
       "keywords": [
         "多久開會",
@@ -2456,13 +2456,27 @@
         "weekly meeting",
         "進度報告",
         "組會",
-        "meeting頻率"
+        "meeting頻率",
+        "星期一",
+        "週一",
+        "每週一",
+        "禮拜一",
+        "周一",
+        "兩小時",
+        "2小時",
+        "約時間討論",
+        "額外討論",
+        "面談討論",
+        "monday",
+        "monday meeting",
+        "two hours",
+        "meeting schedule"
       ],
       "links": [
         {
-          "zh": "學生常見問題",
-          "en": "Student FAQ",
-          "href": "/#questions"
+          "zh": "查看完整問答",
+          "en": "Read the full FAQ",
+          "href": "/#faq-student-meetings"
         },
         {
           "zh": "聯絡實驗室",
@@ -2527,12 +2541,12 @@
       "group": "join",
       "student_section": "student-daily",
       "title": {
-        "zh": "每天要幾點到實驗室？需要打卡嗎？",
-        "en": "What are the expected lab hours and attendance rules?"
+        "zh": "實驗室的作息與請假方式是什麼？",
+        "en": "What are the lab’s expected hours and leave arrangements?"
       },
       "answer": {
-        "zh": "網站尚未公布固定到離時間或打卡規定。建議在面談時討論修課、實驗安排、進度與出席期待，確認適合個人的時程。",
-        "en": "The website does not publish fixed arrival, departure or attendance rules. Discuss coursework, experiments, progress and attendance expectations during the meeting."
+        "zh": "實驗室原則上以 10:00–18:00 為在實驗室的時段，主要配合學校公務與日常研究安排。管理採高信任方式，不強迫每位同學準時抵達，但希望大家培養規律作息。如有家庭事務、病假、特殊節日或出國安排，可直接向 PI 請假；多數情況會彈性核准。",
+        "en": "The general expected time in the lab is 10:00–18:00, coordinated with university duties and research activities. The lab operates on trust: exact arrival at 10:00 is not enforced, while students are encouraged to develop a regular routine. For family matters, illness, special occasions or travel, students can request leave directly from the PI; requests are usually accommodated flexibly."
       },
       "keywords": [
         "作息",
@@ -2552,9 +2566,37 @@
         "working hours",
         "attendance",
         "clock in",
-        "schedule"
+        "schedule",
+        "請假",
+        "怎麼請假",
+        "可以請假",
+        "休假",
+        "病假",
+        "生病",
+        "家中有事",
+        "特殊節日",
+        "出國請假",
+        "出國旅遊",
+        "出國玩",
+        "旅行請假",
+        "10點",
+        "十點",
+        "18點",
+        "六點下班",
+        "10:00",
+        "18:00",
+        "leave",
+        "request leave",
+        "sick leave",
+        "family matters",
+        "travel leave"
       ],
       "links": [
+        {
+          "zh": "查看完整問答",
+          "en": "Read the full FAQ",
+          "href": "/#faq-student-hours"
+        },
         {
           "zh": "聯絡實驗室",
           "en": "Contact the lab",
@@ -2563,7 +2605,8 @@
       ],
       "related": [
         "student-weekends",
-        "student-course-balance"
+        "student-meetings",
+        "student-internship"
       ]
     },
     {
@@ -2575,8 +2618,8 @@
         "en": "Are evenings, weekends or holidays required?"
       },
       "answer": {
-        "zh": "網站尚未列出固定的晚上、週末或假日出勤規定。不同實驗可能有時間限制；請在安排研究前，與老師確認實際出席和假日安排。",
-        "en": "The website does not state fixed evening, weekend or holiday attendance requirements. Experiments may have timing constraints; discuss expectations and scheduling with the PI."
+        "zh": "實驗室原則上的在室時段為 10:00–18:00，採高信任管理。週末、假日或晚間是否需要配合實驗，請依研究安排與 PI 討論；如有家庭事務、病假、特殊節日或出國安排，也可直接向 PI 請假，多數情況會彈性核准。",
+        "en": "The general expected time in the lab is 10:00–18:00 under a trust-based arrangement. Discuss any weekend, holiday or evening experimental needs with the PI. For family matters, illness, special occasions or travel, students may request leave directly; requests are usually accommodated flexibly."
       },
       "keywords": [
         "週末",
@@ -2706,12 +2749,12 @@
       "group": "join",
       "student_section": "student-support",
       "title": {
-        "zh": "研究生或專題生有薪水、獎學金或補助嗎？",
-        "en": "Is there a stipend, salary or scholarship?"
+        "zh": "研究生或專題生有薪資、獎學金或補助嗎？",
+        "en": "What stipend or scholarship support is available?"
       },
       "answer": {
-        "zh": "網站尚未公布固定薪資或補助金額。是否有研究計畫助理、獎學金或其他補助，以及申請資格、金額與期間，請直接向老師或相關單位確認。",
-        "en": "The website does not publish a fixed stipend or salary. Ask the PI or relevant office about research assistantships, scholarships or other support, including eligibility, amount and duration."
+        "zh": "系上有依規定發放的普發獎學金；實驗室的獎助則依國科會計畫預算彈性調整，適用對象及實際金額請向老師或系上確認。我們也鼓勵同學積極爭取校外獎學金。主持人就讀博士班期間，曾累計獲得超過新臺幣 50 萬元的業界獎學金；各項獎學金仍須依資格與評選結果申請。",
+        "en": "The department offers generally available scholarships under its applicable rules. Additional lab support may vary with the National Science and Technology Council (NSTC) project budget; please confirm eligibility and the actual amount with the PI or department. Students are encouraged to apply for external scholarships. During his doctoral studies, the PI received more than NT$500,000 in industry scholarships in total; each award depends on its own eligibility and selection process."
       },
       "keywords": [
         "薪水",
@@ -2734,9 +2777,25 @@
         "scholarship",
         "funding",
         "financial support",
-        "assistantship"
+        "assistantship",
+        "實驗室獎學金",
+        "基本獎學金",
+        "普發獎學金",
+        "國科會",
+        "國科會獎學金",
+        "系上獎學金",
+        "研究獎助",
+        "獎助學金",
+        "nstc",
+        "department scholarship",
+        "departmental scholarship"
       ],
       "links": [
+        {
+          "zh": "查看完整問答",
+          "en": "Read the full FAQ",
+          "href": "/#faq-student-funding"
+        },
         {
           "zh": "聯絡實驗室",
           "en": "Contact the lab",
@@ -2744,8 +2803,9 @@
         }
       ],
       "related": [
-        "student-costs",
-        "student-internship"
+        "student-external-scholarships",
+        "student-internship",
+        "student-costs"
       ]
     },
     {
@@ -2753,12 +2813,12 @@
       "group": "join",
       "student_section": "student-support",
       "title": {
-        "zh": "暑假可以到企業實習或參與產學合作嗎？",
-        "en": "Can I take an industry internship or join a collaboration?"
+        "zh": "可以打工或到企業實習嗎？",
+        "en": "Can students take a part-time job or industry internship?"
       },
       "answer": {
-        "zh": "網站介紹產學合作與研究系統整合。個人的暑期實習或參與合作計畫，須依研究進度、合作條件及校系規定，事先與老師討論確認。",
-        "en": "The website describes industry collaboration and research integration. An individual internship or project role should be discussed with the PI in advance, considering research progress, collaboration terms and program rules."
+        "zh": "如果打工或實習機會不影響研究工作，同學可先與 PI 討論，由 PI 視研究進度、工作或實習安排及相關規定評估同意。我們也鼓勵同學積極爭取校外獎學金。",
+        "en": "Students may discuss part-time work or an internship with the PI in advance. The PI may approve it depending on research progress, the proposed schedule and applicable rules, provided it does not interfere with research. Students are also encouraged to pursue external scholarships."
       },
       "keywords": [
         "企業實習",
@@ -2774,13 +2834,25 @@
         "industry internship",
         "summer internship",
         "part-time",
-        "part time"
+        "part time",
+        "打工",
+        "校外打工",
+        "外面打工",
+        "工讀",
+        "兼職工作",
+        "可以打工嗎",
+        "外出實習",
+        "實習機會",
+        "outside work",
+        "part time job",
+        "part-time job",
+        "work outside"
       ],
       "links": [
         {
-          "zh": "產學合作",
-          "en": "Collaboration",
-          "href": "/collaboration.html"
+          "zh": "查看完整問答",
+          "en": "Read the full FAQ",
+          "href": "/#faq-student-internship"
         },
         {
           "zh": "聯絡實驗室",
@@ -2790,7 +2862,8 @@
       ],
       "related": [
         "student-funding",
-        "careers"
+        "student-external-scholarships",
+        "student-hours"
       ]
     },
     {
@@ -2845,8 +2918,8 @@
         "en": "Are there opportunities to attend conferences or publish?"
       },
       "answer": {
-        "zh": "網站的碩士路徑包含整理研討會資料，並依研究成果安排論文投稿或合作。參與機會、經費與投稿時程須依成果、計畫及指導安排確認。",
-        "en": "The master’s roadmap includes preparing conference materials and, depending on results, considering publications or collaboration. Opportunities, funding and timing depend on results, projects and supervision."
+        "zh": "碩士培訓路徑包含整理研討會資料；參與機會與經費依研究成果、計畫及指導安排確認。論文投稿依個人需求與 PI 討論，有交換、留學或就業規劃者，強烈建議將研究成果投稿期刊。",
+        "en": "The master’s roadmap includes preparing conference materials; participation and funding depend on results, projects and supervision. Journal submission is discussed with the PI based on individual goals and is strongly encouraged for students planning an exchange, further study abroad or employment."
       },
       "keywords": [
         "研討會",
@@ -2896,8 +2969,8 @@
         "en": "What are the graduation requirements?"
       },
       "answer": {
-        "zh": "網站將兩年列為研究規劃目標，正式畢業仍須符合所屬系所的修課、學分、論文及審查規定，並依研究進度調整。請查詢所屬系所最新規範並與老師確認。",
-        "en": "The website describes a two-year planning goal. Graduation requires the applicable program’s coursework, credit, thesis and examination requirements and depends on research progress. Check the current program rules and discuss them with the PI."
+        "zh": "實驗室以碩士論文研究達到具備期刊投稿水準為基本要求；實際是否投稿與發表，依個人需求與 PI 討論。網站以兩年為研究規劃目標，畢業仍須符合所屬系所的修課、學分、論文及審查規定，並依研究進度調整。",
+        "en": "The lab expects master’s thesis research to reach a standard suitable for journal submission; actual submission and publication are discussed with the PI according to the student’s goals. Two years is a planning goal. Graduation also requires the applicable program’s coursework, credits, thesis and examination requirements and depends on research progress."
       },
       "keywords": [
         "畢業規定",
@@ -2948,8 +3021,8 @@
         "en": "Is a journal submission or publication required for graduation?"
       },
       "answer": {
-        "zh": "網站介紹會依研究成果安排論文投稿，但未列出固定的期刊投稿、接受或發表門檻。請以所屬系所最新畢業規範與指導老師確認的要求為準。",
-        "en": "The roadmap discusses publication depending on research results, but the site does not state a fixed journal submission, acceptance or publication requirement. Confirm current program rules and the PI’s expectations."
+        "zh": "碩士論文的研究內容以達到具備期刊投稿水準為基本要求；實際投稿與發表依個人需求與 PI 討論安排。有交換、留學或就業需求的同學，強烈建議將研究成果投稿期刊。AI 工具可協助文獻整理、圖表及文字撰寫，但研究原創性、資料可靠度、學術倫理與期刊審查仍須嚴謹把關；畢業也須符合系所規定。",
+        "en": "The master’s thesis research is expected to reach a standard suitable for journal submission. Actual submission and publication are arranged with the PI according to each student’s goals. Students planning an exchange, further study abroad or employment are strongly encouraged to submit their work to a journal. AI can assist with literature review, figures and writing, while research originality, reliable data, academic integrity and journal review remain essential. Program graduation requirements also apply."
       },
       "keywords": [
         "一定要發論文",
@@ -2967,13 +3040,35 @@
         "publication required",
         "publish to graduate",
         "journal requirement",
-        "submission required"
+        "submission required",
+        "投稿水準",
+        "投稿標準",
+        "可投稿",
+        "碩論水準",
+        "碩士論文",
+        "一定要發表",
+        "可發期刊",
+        "碩士論文發表",
+        "要發期刊",
+        "發期刊",
+        "期刊投稿",
+        "交換",
+        "留學",
+        "研究論文",
+        "journal submission",
+        "publish a paper",
+        "master thesis",
+        "journal standard",
+        "畢業一定要發表期刊",
+        "畢業一定要發期刊",
+        "畢業一定要投稿期刊",
+        "畢業需要發表期刊"
       ],
       "links": [
         {
-          "zh": "碩士培訓路徑",
-          "en": "Master’s roadmap",
-          "href": "/#masters-roadmap-title"
+          "zh": "查看完整問答",
+          "en": "Read the full FAQ",
+          "href": "/#faq-student-publication"
         },
         {
           "zh": "聯絡實驗室",
@@ -2983,7 +3078,8 @@
       ],
       "related": [
         "student-graduation-rules",
-        "student-conference"
+        "student-conference",
+        "masters"
       ]
     },
     {
@@ -3073,6 +3169,54 @@
         "student-openings",
         "student-meeting-prepare",
         "student-cosupervision"
+      ]
+    },
+    {
+      "id": "student-external-scholarships",
+      "group": "join",
+      "student_section": "student-support",
+      "title": {
+        "zh": "可以申請校外或業界獎學金嗎？",
+        "en": "Can I apply for external or industry scholarships?"
+      },
+      "answer": {
+        "zh": "我們鼓勵同學積極爭取校外獎學金，並依各獎項的資格、時程與研究成果準備申請。主持人就讀博士班期間，曾累計獲得超過新臺幣 50 萬元的業界獎學金；此為個人經驗，各項獎學金是否獲得仍取決於申請資格與評選結果。",
+        "en": "Students are encouraged to pursue external scholarships and prepare applications according to each award’s eligibility, deadlines and research requirements. During his doctoral studies, the PI received more than NT$500,000 in industry scholarships in total. This is a personal example; awards depend on individual eligibility and selection."
+      },
+      "keywords": [
+        "校外獎學金",
+        "業界獎學金",
+        "企業獎學金",
+        "外部獎學金",
+        "外部補助",
+        "申請獎學金",
+        "獎學金怎麼申請",
+        "五十萬",
+        "50萬",
+        "50 萬",
+        "external scholarship",
+        "external scholarships",
+        "industry scholarships",
+        "industry scholarship",
+        "outside scholarships",
+        "apply for scholarship"
+      ],
+      "links": [
+        {
+          "zh": "研究生獎助與資源",
+          "en": "Funding and support",
+          "href": "/#faq-student-funding"
+        },
+        {
+          "zh": "聯絡實驗室",
+          "en": "Contact the lab",
+          "href": "/#contact"
+        }
+      ],
+      "related": [
+        "student-funding",
+        "student-internship",
+        "student-conference"
       ]
     }
   ],

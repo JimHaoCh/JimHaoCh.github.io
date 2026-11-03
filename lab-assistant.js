@@ -176,7 +176,7 @@
     return query.includes(term);
   }
   // Broad category words help with short searches but should not override a specific question.
-  const broadTerms = new Set(['加入','進實驗室','碩士','碩班','研究所','畢業','論文','老師','訓練','發表','準備什麼','join','masters','graduate','thesis','paper','papers','background']);
+  const broadTerms = new Set(['加入','進實驗室','碩士','碩班','研究所','畢業','論文','老師','訓練','發表','準備什麼','出國','獎學金','join','masters','graduate','thesis','paper','papers','background']);
   function search(inputValue) {
     const query = norm(inputValue);
     const ambiguous = {
@@ -258,3 +258,4 @@
   root.hidden=false;
   render();
 })();
+
