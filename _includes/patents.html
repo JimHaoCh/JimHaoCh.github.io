@@ -1,0 +1,20 @@
+{% assign patents = site.data.patents | where_exp: "item", "item.published != false" %}
+<div class="cv-section" id="patents">
+  <h3>專利 <span lang="en">Patents</span></h3>
+  <p class="result-count">共 {{ patents | size }} 件專利 / {{ patents | size }} granted patents</p>
+  <div class="cv-list">
+    {% for patent in patents %}
+    <article class="cv-row">
+      <div class="date">{{ patent.jurisdiction_zh | escape }}<span lang="en">{{ patent.jurisdiction_en | escape }}</span><span>{{ patent.number | escape }}</span></div>
+      <div>
+        <div class="bilingual">
+          <div lang="zh-Hant"><strong>{{ patent.title_zh | escape }}</strong><br/>發明人：{{ patent.inventors_zh | escape }}<br/>公告／核准日：{{ patent.grant_date | escape }}</div>
+          <div lang="en"><strong>{{ patent.title_en | escape }}</strong><br/>Inventors: {{ patent.inventors_en | escape }}<br/>Granted: {{ patent.grant_date | escape }}</div>
+        </div>
+        <a class="text-link small" href="{{ patent.url | escape }}" target="_blank" rel="noopener">查看專利 <span lang="en">View patent ↗</span></a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <p class="result-count">同一發明於不同法域取得的專利權，依法域分列。<span lang="en">Patent rights granted in different jurisdictions are listed separately.</span></p>
+</div>

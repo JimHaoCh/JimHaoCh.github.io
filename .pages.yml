@@ -360,6 +360,52 @@ content:
       message: 請填寫 https://doi.org/ 開頭的完整 DOI 網址。
   - *id008
   list: true
+- name: patents
+  label: 專利
+  type: file
+  path: _data/patents.json
+  format: json
+  fields:
+  - name: jurisdiction_zh
+    label: 法域（中文）
+    type: string
+    required: true
+  - name: jurisdiction_en
+    label: 法域（英文）
+    type: string
+    required: true
+  - name: number
+    label: 專利號
+    type: string
+    required: true
+  - name: title_zh
+    label: 專利名稱（中文）
+    type: string
+    required: true
+  - name: title_en
+    label: Patent title (English)
+    type: string
+    required: true
+  - name: inventors_zh
+    label: 發明人（中文）
+    type: text
+    required: true
+  - name: inventors_en
+    label: Inventors (English)
+    type: text
+    required: true
+  - name: grant_date
+    label: 公告／核准日期
+    type: date
+    required: true
+    options:
+      format: yyyy-MM-dd
+  - name: url
+    label: 專利資料網址
+    type: string
+    required: true
+  - *id008
+  list: true
 - name: current_amr
   label: 目前研究 · 抗藥性微流體
   type: file
@@ -948,24 +994,6 @@ content:
           media: images
     - name: pi_14
       label: 主持人介紹 · 段落 14
-      type: object
-      fields:
-      - name: zh
-        label: 中文
-        type: rich-text
-        options:
-          format: html
-          switcher: false
-          media: images
-      - name: en
-        label: 英文
-        type: rich-text
-        options:
-          format: html
-          switcher: false
-          media: images
-    - name: pi_15
-      label: 主持人介紹 · 段落 15
       type: object
       fields:
       - name: zh
