@@ -6,6 +6,11 @@ on:
       - "_data/engineering_resources.json"
       - "resources/engineering.html"
       - "resources/microfluidic-calculator.html"
+      - "resources/equipment-queue.html"
+      - "resources/medical-resource-calculator.html"
+      - "assets/js/equipment-queue-*.js"
+      - "assets/css/equipment-queue.css"
+      - "tests/equipment-queue.test.cjs"
       - "assets/js/microfluidic-physics.js"
       - "assets/js/microfluidic-calculator.js"
       - "_includes/engineering-reference-card.html"
@@ -23,5 +28,10 @@ jobs:
         run: |
           node --check assets/js/microfluidic-physics.js
           node --check assets/js/microfluidic-calculator.js
+          node --check assets/js/equipment-queue-model.js
+          node --check assets/js/equipment-queue-data.js
+          node --check assets/js/equipment-queue-worker.js
+          node --check assets/js/equipment-queue-ui.js
       - name: Verify physics, resource schema, and existing links
-        run: node --test tests/engineering-resources.test.cjs
+        run: node --test tests/engineering-resources.test.cjs tests/equipment-queue.test.cjs
+

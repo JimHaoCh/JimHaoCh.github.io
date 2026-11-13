@@ -47,11 +47,11 @@ test('invalid, zero, missing and nonfinite inputs rejected',()=>{
    }
  }
 });
-test('seven engineering teaching references are logically grouped and all URLs HTTPS',()=>{
+test('engineering teaching references are logically grouped and all URLs HTTPS',()=>{
  const sections=data('engineering_sections.json');
  const items=data('engineering_resources.json');
  assert.deepEqual(sections.map(s=>s.id),['mechanical','microfabrication','manufacturing','simulation','automation']);
- assert.equal(items.length,17);
+ assert.equal(items.length,21);
  assert.equal(new Set(items.map(i=>i.slug)).size,items.length);
  for(const item of items){
   assert.ok(sections.some(s=>s.id===item.group),'Invalid group '+item.slug);
@@ -72,3 +72,4 @@ test('existing CAD, third-party education software, lab NE501 and calculator are
  assert.ok(calc.includes('microfluidic-physics.js'));
  assert.ok(calc.includes('microfluidic-calculator.js'));
 });
+
