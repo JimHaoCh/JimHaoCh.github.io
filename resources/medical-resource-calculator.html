@@ -16,7 +16,7 @@ intro_en: "Explore emergency and respiratory-clinic workflows through test deman
   <link rel="stylesheet" href="/assets/css/equipment-queue.css?v=20261114-2">
   <script defer src="/assets/js/equipment-queue-model.js?v=20261114-2"></script>
   <script defer src="/assets/js/equipment-queue-data.js?v=20261114-2"></script>
-  <script defer src="/assets/js/equipment-queue-ui.js?v=20261114-2"></script>
+  <script defer src="/assets/js/equipment-queue-ui.js?v=20261114-3"></script>
 </head><body>
 <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
 {% include header.html %}
@@ -42,7 +42,7 @@ intro_en: "Explore emergency and respiratory-clinic workflows through test deman
 <section class="qe-panel"><h3>檢體在哪裡等？<span class="qe-en" lang="en">One-hour arrival replay</span></h3><p class="qe-hint">藍色 A 類、橘棕色 B 類。回放僅示範一小時來件，不代表整體統計。</p><div class="qe-timeline-controls"><button type="button" class="qe-button" id="qe-play" aria-pressed="false">播放</button><label for="qe-time" class="qe-sr">回放時間（分鐘）</label><input id="qe-time" type="range" min="0" max="90" step="0.1" value="0"><output id="qe-clock" for="qe-time">0.0 分</output></div><div id="qe-timeline"></div><p class="qe-statline" id="qe-timeline-status"></p><p class="qe-hint" id="qe-timeline-tail"></p></section>
 </div></div></div><p class="qe-live" id="qe-live" role="status" aria-live="polite"></p>
 <section class="qe-section qe-panel"><h2>兩類工作的用途<span class="qe-en" lang="en">Know what each result is for</span></h2><div class="qe-process" style="grid-template-columns:repeat(2,minmax(0,1fr))"><article><b id="qe-class-a"></b><p id="qe-desc-a"></p></article><article><b id="qe-class-b"></b><p id="qe-desc-b"></p></article></div></section>
-<section class="qe-lesson qe-panel"><h2 id="qe-lesson-title"></h2><p class="qe-hint" id="qe-lesson-intro"></p><ol id="qe-questions"></ol><p><a href="/resources/equipment-queue.html">回到包子與燒餅入門版 →</a></p></section>
+<section class="qe-lesson qe-panel"><h2 id="qe-lesson-title"></h2><p class="qe-hint" id="qe-lesson-intro"></p><ol id="qe-questions"></ol><p class="qe-context" id="qe-quick" hidden></p><p><a href="/resources/equipment-queue.html">回到包子與燒餅入門版 →</a></p></section>
 <section class="qe-methods qe-panel qe-section"><h2>模型、假設與資料來源<span class="qe-en" lang="en">Model assumptions &amp; sources</span></h2><details id="model-details"><summary>這裡計算的是哪一段 TAT？</summary><div class="details-content"><div class="formula">本工具 TAT＝排隊＋占機時間＋設定的分析外固定延遲</div><p>起點為檢體已就緒，終點為結果可用。若要描述醫囑至臨床決策，還要另計採檢、運送、前處理、結果審核及醫師判讀。固定延遲只增加交付時間，不占用分析位置，也沒有另建人力排隊。</p><p>分析時間與占機時間未必相同。本例假設反應全程占用單一分析位置；若可離機孵育、批次處理或平行讀取，需另建資源模型。</p></div></details>
 <details><summary>排隊、成本與達標如何計算？</summary><div class="details-content"><p>兩類工作依獨立 Poisson 來件模擬，每類占機時間固定，先到先做、不搶占。共用設備任一空閒位置皆可處理 A 或 B；專用設備各有獨立隊列。</p><p>每次採固定亂數種子 20261113，暖機 10,000 件後統計 60,000 件；各方案使用相同來件序列。P90 與準時率屬抽樣估計，接近門檻時需更長模擬與現場資料核對。</p><div class="formula">需求負荷＝每小時占機分鐘 ÷ 可用分析分鐘<br>年度成本＝年化固定成本＋每小時件數 × 每日工時 × 每年工作日 × 單件耗材成本</div><p>任一工作隊列負荷 ≥100%，視為無穩定的長期等待分布，不顯示其長期 TAT。低於 100% 仍可能因來件波動而超時。</p><p>各有需求的檢驗類別 P90 均未超過其時限，即標為達標；再從 15 種候選中找年度總成本最低者。沒有需求的類別顯示「無需求」。零需求時不推薦購置設備。</p></div></details>
 <details id="scenario-source-details"><summary>真實產品資料與本例假設</summary><div class="details-content" id="qe-sources"></div></details>
