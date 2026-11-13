@@ -2,21 +2,21 @@
 layout: null
 permalink: "/resources/equipment-queue.html"
 resource_group: "engineering"
-title: "包子與燒餅：設備該買幾台？ Equipment Capacity & Waiting Time"
-title_zh: "包子與燒餅：設備該買幾台？"
-title_en: "Equipment Capacity & Waiting Time"
+title: "早餐蒸、午餐烤：設備怎麼配？ Equipment Mix Across the Day"
+title_zh: "早餐蒸、午餐烤：設備怎麼配？"
+title_en: "Equipment Mix Across the Day"
 section_label: "BIOFLUMEN ENGINEERING TEACHING TOOL"
-description: "包子蒸 5 分鐘、燒餅烤 10 分鐘。調整來客量與取餐時限，比較共用或專用設備，再思考多買一台的成本。"
-intro_zh: "包子蒸 5 分鐘、燒餅烤 10 分鐘。調整來客量與取餐時限，比較共用或專用設備，再思考多買一台的成本。"
-intro_en: "Compare shared and dedicated equipment using steamed buns and baked flatbread, then connect capacity decisions to clinical testing."
+description: "早上包子客人多，中午燒餅客人多。用同一天的需求，比較專用機、兩用機與混合配置，找出符合等候時限的低成本組合。"
+intro_zh: "早上包子客人多，中午燒餅客人多。用同一天的需求，比較專用機、兩用機與混合配置，找出符合等候時限的低成本組合。"
+intro_en: "Compare dedicated, flexible and hybrid equipment under changing demand. Meet the waiting-time target before comparing annualized fixed costs."
 ---
 <!doctype html><html lang="zh-Hant"><head>
   {% include page-head.html %}
   <link rel="stylesheet" href="/online-tools.css?v=20261026-eng1">
   <link rel="stylesheet" href="/assets/css/equipment-queue.css?v=20261114-2">
-  <script defer src="/assets/js/equipment-queue-model.js?v=20261114-2"></script>
-  <script defer src="/assets/js/equipment-queue-data.js?v=20261114-2"></script>
-  <script defer src="/assets/js/equipment-queue-ui.js?v=20261114-3"></script>
+  <link rel="stylesheet" href="/assets/css/food-shift.css?v=20261114-4">
+  <script defer src="/assets/js/food-shift-model.js?v=20261114-4"></script>
+  <script defer src="/assets/js/food-shift-ui.js?v=20261114-4"></script>
 </head><body>
 <a class="skip" href="#main">跳至主要內容 / Skip to content</a>
 {% include header.html %}
@@ -26,22 +26,78 @@ intro_en: "Compare shared and dedicated equipment using steamed buns and baked f
   <div class="section-title"><p class="eyebrow">{{ page.section_label }}</p><h1>{{ page.title_zh }}<span lang="en">{{ page.title_en }}</span></h1></div>
   <div class="tools-intro bilingual-tools-intro"><p>{{ page.intro_zh }}</p><p lang="en">{{ page.intro_en }}</p></div>
   <div class="engineering-tool-back"><a href="/resources/engineering.html">← 工程資源首頁 <span lang="en">Engineering resources</span></a> · <a href="/resources/medical-resource-calculator.html">臨床版：急診／呼吸道門診 →</a></div>
-<div class="equipment-tool" id="equipment-tool" data-mode="food">
-<noscript><p class="qe-context">請啟用 JavaScript 以使用本機互動計算。Enable JavaScript to use this tool.</p></noscript>
-<div class="qe-process"><article><b>① 每小時多少客人？</b><p>尖峰時段會增加排隊。</p></article><article><b>② 願意等多久？</b><p>排隊加製作，才是取餐時間。</p></article><article><b>③ 多一台值得嗎？</b><p>先滿足時限，再比較成本。</p></article></div>
-<p class="qe-context" id="qe-context"></p>
-<div class="qe-layout">
-<form class="qe-panel qe-inputs" id="qe-form" novalidate><h2>先設定你的早餐店<span class="qe-en" lang="en">Inputs</span></h2><div id="qe-fields"></div><div class="qe-actions"><button type="button" class="qe-button" id="qe-reset">還原範例</button><button type="button" class="qe-button" id="qe-peak">需求增加 50%</button><button type="submit" class="qe-button primary">重新計算</button></div><p class="qe-hint" id="qe-preset-note"></p><p id="qe-error" class="qe-error" role="alert" hidden></p>
-<details id="qe-cost-details"><summary>設備成本（教學點數）</summary><p class="qe-hint">以單槽設備為比較單位，固定成本已年化。點數是教學假設，並非市場報價。</p><div class="qe-costs" id="qe-cost-fields"></div><div class="qe-actions"><button type="button" class="qe-button" id="qe-cheap">試試專用設備降價</button></div><p class="qe-hint">未計入人力、品管、維護、故障、重測、耗材過期與外送成本。</p></details></form>
-<div class="qe-results" id="qe-results" data-state="pending" aria-busy="true"><p id="qe-state" class="qe-state" role="status">正在更新計算結果…</p><div class="qe-output" id="qe-output" aria-hidden="true">
-<section class="qe-rec" aria-label="最低成本達標候選"><h3 id="qe-rec-title">正在計算…</h3><p id="qe-rec-note"></p><button type="button" class="qe-button" id="qe-rec-view" hidden>檢視此建議配置</button></section>
-<section class="qe-panel"><h3 id="qe-selected-title">目前檢視配置</h3><div class="qe-inspect"><label for="qe-config">切換設備方案</label><select id="qe-config" aria-label="切換設備方案"></select></div>
-<div class="qe-kpis"><div><span>每小時占機需求</span><strong id="qe-workload">—</strong><span>每個位置供給 60 分／時</span></div><div><span>此配置最高需求負荷</span><strong id="qe-load">—</strong><span id="qe-load-note"></span></div><div><span>此配置年度成本</span><strong id="qe-cost">—</strong><span id="qe-cost-note"></span></div></div>
-<h3>客人要等多久？<span class="qe-en" lang="en">Queueing + processing time</span></h3><div class="qe-switch" role="group" aria-label="時間指標"><button type="button" data-metric="p90" aria-pressed="true">九成時間（P90）</button><button type="button" data-metric="mean" aria-pressed="false">平均時間</button></div><p class="qe-hint" id="qe-metric-note"></p><div class="qe-bars" id="qe-bars"></div><p class="qe-hint">直線為各類時間上限。達標一律依 P90 判斷；成本與負荷對應上方「目前檢視」配置。</p></section>
-<section class="qe-panel"><div class="qe-table-head"><h3>比較設備方案<span class="qe-en" lang="en">Configuration comparison</span></h3><button type="button" class="qe-button" id="qe-show-all">顯示全部 15 種</button></div><p class="qe-scroll-hint">選取方案可同步查看成本與時間；窄螢幕可左右滑動表格。</p><div class="qe-table-scroll" tabindex="0" role="region" aria-label="設備方案比較，可左右捲動"><table><caption>所有欄位使用同一組有效輸入；各有需求類別均符合 P90 上限才視為達標。</caption><thead><tr><th scope="col">設備配置</th><th scope="col">最高負荷</th><th scope="col" id="qe-table-a">A P90</th><th scope="col" id="qe-table-b">B P90</th><th scope="col">年度成本</th><th scope="col">結果</th></tr></thead><tbody id="qe-table-body"></tbody></table></div><p class="qe-hint">共用設備 1–6 台；A、B 專用設備各 1–3 台，共 15 種候選。未達標時不標示最低成本建議。</p><div class="qe-actions"><button type="button" class="qe-button" id="qe-export" hidden>匯出這組結果 CSV</button></div></section>
-<section class="qe-panel" hidden><h3>檢體在哪裡等？<span class="qe-en" lang="en">One-hour arrival replay</span></h3><p class="qe-hint">藍色 A 類、橘棕色 B 類。回放僅示範一小時來件，不代表整體統計。</p><div class="qe-timeline-controls"><button type="button" class="qe-button" id="qe-play" aria-pressed="false">播放</button><label for="qe-time" class="qe-sr">回放時間（分鐘）</label><input id="qe-time" type="range" min="0" max="90" step="0.1" value="0"><output id="qe-clock" for="qe-time">0.0 分</output></div><div id="qe-timeline"></div><p class="qe-statline" id="qe-timeline-status"></p><p class="qe-hint" id="qe-timeline-tail"></p></section>
-</div></div></div><p class="qe-live" id="qe-live" role="status" aria-live="polite"></p>
-<section class="qe-section qe-panel"><h2>兩類工作的用途<span class="qe-en" lang="en">Know what each result is for</span></h2><div class="qe-process" style="grid-template-columns:repeat(2,minmax(0,1fr))"><article><b id="qe-class-a"></b><p id="qe-desc-a"></p></article><article><b id="qe-class-b"></b><p id="qe-desc-b"></p></article></div></section>
-<section class="qe-lesson qe-panel"><h2 id="qe-lesson-title"></h2><p class="qe-hint" id="qe-lesson-intro"></p><ol id="qe-questions"></ol><p><a href="/resources/medical-resource-calculator.html">進入臨床版：急診／呼吸道門診 →</a></p></section>
-<section class="qe-methods qe-panel qe-section"><h2>模型、假設與資料來源<span class="qe-en" lang="en">Model assumptions &amp; sources</span></h2><details><summary>本例假設與計算方式</summary><p>每台一次只做一份，蒸與烤不能同時進行；製作途中不插單。客人隨機到達、先到先做，每份製作時間固定。</p><p>每小時的占機需求＝包子客人數 × 5 分鐘＋燒餅客人數 × 10 分鐘。每台每小時供給 60 分鐘。負荷達 100% 時，沒有穩定的長期等待分布；低於 100% 仍可能排隊。</p><p>暖機 10,000 份後統計 60,000 份，固定種子 20261113。各有需求餐點的 P90 都不超過取餐上限，才視為達標。各方案製作品質假設相同。</p><p>設備成本採年化教學點數，省略人力、水電、耗材、故障、批次與模式切換。不是餐飲設備採購建議。</p></details><details><summary>平均與「九成時間」為何不同？</summary><p>平均時間會被所有訂單共同影響；九成時間（P90）回答「約九成這類客人，多久可以取餐」。平均值達標，不代表九成客人都在時限內完成。</p><div id="qe-sources"></div></details></section>
+<div class="equipment-tool food-shift" id="food-shift-tool">
+<noscript><p class="qe-context">請啟用 JavaScript 以使用互動計算。</p></noscript>
+<section class="qe-panel fs-story" aria-labelledby="fs-story-title">
+<p class="fs-kicker">故事提要 · 一家營業到下午兩點的店</p>
+<h2 id="fs-story-title">早上忙蒸包子，中午忙烤燒餅。老闆該怎麼買設備？</h2>
+<p>店裡接單後才製作：一份包子蒸 <b>5 分鐘</b>，一份燒餅烤 <b>10 分鐘</b>。專用蒸機只蒸、專用烤箱只烤；兩用機能換模式，但<b>同一時間只做一份、不能蒸烤並行</b>。三種設備的製作速度相同。</p>
+<p>你要決定：全買專用設備、全買兩用機，或用專用機承接基本需求，再讓兩用機支援不同時段的尖峰？目標是<b>每個時段、每種餐點的九成客人，都能在時限內取餐</b>，再比較年化固定成本。</p>
+<div class="fs-presets" role="group" aria-label="切換故事情節">
+<button type="button" class="qe-button" data-preset="shift" aria-pressed="true">① 早午尖峰互換<small>早餐包子多，午餐燒餅多</small></button>
+<button type="button" class="qe-button" data-preset="steady" aria-pressed="false">② 兩類全天都忙<small>蒸與烤持續有大量需求</small></button>
+<button type="button" class="qe-button" data-preset="small" aria-pressed="false">③ 小店量少品項多<small>仍有早午差異，總量較低</small></button>
+</div>
+<p class="qe-context" id="fs-story-note"></p>
+<div class="qe-process fs-periods" id="fs-periods" aria-label="三個時段的來客需求"></div>
+<p class="qe-hint">這是單份、單槽的教學模型，沒有批次蒸籠、預先備餐與多人共用一份的情況。來客量、成本點數與取餐上限均為假設，並非餐飲設備規格或報價。</p>
+</section>
+<div class="qe-layout qe-section">
+<form class="qe-panel qe-inputs" id="fs-form" novalidate>
+<h2>調整今天的生意<span class="qe-en" lang="en">Demand &amp; service target</span></h2>
+<div id="fs-fields"></div>
+<div class="qe-actions"><button type="button" class="qe-button" id="fs-reset">還原情節①</button><button type="submit" class="qe-button primary">重新計算</button></div>
+<p class="qe-hint">輸入後自動更新。來客量是每小時平均，實際到店時間會隨機波動。</p>
+<p class="qe-error" id="fs-error" role="alert" hidden></p>
+<details><summary>轉場需求、設備價格與模式切換</summary>
+<p>專用蒸機、烤箱各預設 100 點／年；兩用機 160 點／年。兩用機較有彈性，也有價格溢價。可以直接改價，觀察決策是否翻轉。</p>
+<div id="fs-advanced"></div>
+<p class="qe-hint">切換耗時只發生在同一台兩用機由蒸轉烤、或由烤轉蒸時；預設 0 分鐘，首次開機不計。沒有預知未來來客或提前換模式。</p>
+</details>
+</form>
+<div class="qe-results" id="qe-results" data-state="pending" aria-busy="true">
+<p id="qe-state" class="qe-state" role="status">正在模擬早餐到午餐的排隊…</p>
+<div class="qe-output" id="qe-output" aria-hidden="true" inert>
+<section class="qe-rec" aria-label="最低固定成本達標候選"><h3 id="qe-rec-title">正在計算…</h3><p id="qe-rec-note"></p><button type="button" class="qe-button" id="fs-rec-view" hidden>檢視此配置</button></section>
+<section class="qe-panel">
+<h3>同一天的需求，三種設備策略</h3>
+<p class="qe-hint">各策略列出本次候選中「達標且固定成本最低」的組合；若該策略沒有達標方案，就明確標示。不是預先指定誰會贏。</p>
+<div class="fs-strategies" id="fs-strategies"></div>
+<div class="qe-table-head qe-section"><h3>再比較幾個具體組合</h3><button type="button" class="qe-button" id="fs-all">顯示全部候選</button></div>
+<p class="qe-scroll-hint">點選配置可查看各時段；窄螢幕可左右滑動表格。</p>
+<div class="qe-table-scroll" tabindex="0" role="region" aria-label="設備配置比較，可左右捲動"><table><caption>早餐與午餐欄為該時段兩種餐點中較慢的 P90；達標另須通過轉場與供餐能力檢查。</caption><thead><tr><th scope="col">蒸機／烤箱／兩用</th><th scope="col">早餐 P90</th><th scope="col">午餐 P90</th><th scope="col">固定成本／年</th><th scope="col">結果</th></tr></thead><tbody id="fs-table"></tbody></table></div>
+<p class="qe-hint" id="fs-candidate-note"></p>
+</section>
+<section class="qe-panel">
+<h3 id="qe-selected-title">目前檢視配置</h3>
+<div class="qe-inspect"><label for="qe-config">自行選擇設備數量</label><select id="qe-config" aria-label="自行選擇設備數量"></select></div>
+<div class="qe-kpis"><div><span>此配置固定成本</span><strong id="fs-cost">—</strong><span>教學點數／年</span></div><div><span>最慢時段／餐點 P90</span><strong id="fs-worst">—</strong><span id="fs-worst-label"></span></div><div><span>14:00 尚未完成</span><strong id="fs-backlog">—</strong><span>份／日，跨日平均</span></div></div>
+<h3>客人在各時段等多久？</h3>
+<div class="qe-switch" role="group" aria-label="檢視時間指標"><button type="button" data-metric="p90" aria-pressed="true">九成時間（P90）</button><button type="button" data-metric="mean" aria-pressed="false">平均時間</button></div>
+<p class="qe-hint" id="fs-metric-note"></p><div id="fs-bars"></div>
+<div id="fs-allocation"></div>
+<p class="qe-context" id="fs-selected-explain"></p>
+<div class="qe-actions"><button type="button" class="qe-button" id="fs-export">匯出本次比較 CSV</button></div>
+</section>
+</div></div></div>
+<p class="qe-live" id="fs-live" role="status" aria-live="polite"></p>
+<section class="qe-panel qe-lesson">
+<h2>從結果回頭問：哪些條件改變了決策？</h2>
+<div class="qe-process"><article><b>需求錯開，彈性較有價值</b><p>早上蒸、午餐烤，兩用機能支援不同尖峰。若專用機各自照最大尖峰採購，另一時段可能閒置。混合配置值得比較。</p></article><article><b>需求持續，專用設備可能較省</b><p>兩類全天都忙時，專用產能也能持續被使用。若兩用機較貴或切換較慢，彈性未必抵得過額外成本。</p></article><article><b>來客少，共用可能就足夠</b><p>只為少量訂單各買一台，可能多付固定成本。一台兩用機若已達標，增加設備不一定划算；時限變嚴也可能改變答案。</p></article></div>
+<ol><li>先不要看建議：你認為情節①的兩用機，早餐與午餐會分別忙什麼？查看所選配置的工作分配，是否符合預期？</li><li>如果兩用機變便宜、或每次換模式多花 3 分鐘，你原本的選擇還成立嗎？請用每個時段的 P90 與固定成本說明。</li><li>同樣一天的總來客數，若集中在同一時段，設備需求會一樣嗎？全天平均時間可能藏住哪一群等待較久的客人？</li></ol>
+<p><a href="/resources/medical-resource-calculator.html">接到臨床版：急診／呼吸道門診 →</a></p><p class="qe-hint">思考檢驗平台時，可把餐點換成不同檢驗流程：先確認需求時段、占機時間、共享哪些模組，以及結果何時需要用來決策。這裡的單槽排隊假設不能直接套用到能並行、批次或有共用前處理的真實檢驗平台。</p>
+</section>
+<section class="qe-panel qe-methods qe-section"><h2>模型與讀圖方式<span class="qe-en" lang="en">Assumptions &amp; interpretation</span></h2>
+<details><summary>如何計算？為何不能只看一整天的平均？</summary>
+<p>模擬 240 個獨立營業日，07:00 空機開店，14:00 停止接單。三個時段的來客各自按固定平均率隨機到達（分段 Poisson）；所有候選使用同一批訂單，種子為 20261114。每份製作時間固定，設備間的速度與品質視為相同。</p>
+<p>先由空閒的專用機接相容訂單，再由空閒兩用機接最早到店的待做訂單。工作不可中斷；兩用機換模式時占用設備。時段交界不清空隊伍，14:00 後繼續完成已接訂單。短期需求高於產能會留下積單，不能因此宣稱有限營業日的等待時間無限大。</p>
+<p>取餐時間（此例的 TAT）＝排隊＋模式切換＋製作。依「到店時段 × 餐點」分成六組計算；每個有需求組別的 P90 都不超過設定上限，且所有餐點皆有設備可做，才視為達標。P90 使用樣本排序第 ⌈0.9n⌉ 個值；它不是每位客人的最長等候保證。</p>
+<p>固定種子的抽樣結果是教學估計，未提供信賴區間；極少量需求的小組樣本較少，臨界結果需另做敏感度分析。平均值視圖只改變讀圖，建議配置與達標判斷仍使用六組 P90。</p>
+</details>
+<details><summary>設備範圍、固定成本與稼動率怎麼讀？</summary>
+<p>候選為專用蒸機 0–3 台、專用烤箱 0–3 台、兩用機 0–4 台，合計 1–6 台，包含混合配置。僅在這個範圍內比較年化固定成本；同成本時先選台數少，再選最慢組別 P90 較低者。沒有達標候選就不給採購建議；沒有來客就不建議買機台。</p>
+<p>每時段占機需求＝包子來客／時 × 5＋燒餅來客／時 × 10，單位為設備分鐘／小時，不含切換。它用於理解工作量，不能直接代表排隊時間。實際稼動率以該時段被製作或切換占用的設備分鐘，除以所有設備可供分鐘計算；低稼動率也可能有局部瓶頸。</p>
+<p>年化固定成本＝蒸機台數 × 蒸機年成本＋烤箱台數 × 烤箱年成本＋兩用機台數 × 兩用機年成本。未計入人力、水電、耗材、批次、預製、故障、維修、營業結束後的人事成本與收入。14:00 尚未完成不等於違反 P90，若要求準時打烊，需要另加限制。</p>
+</details>
+</section>
 </div></div></main>{% include footer.html %}</body></html>
