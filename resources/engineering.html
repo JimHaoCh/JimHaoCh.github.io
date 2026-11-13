@@ -43,6 +43,22 @@ intro_en: A curated engineering toolkit for microfluidic CAD, mask layout, digit
         </a>
       </section>
 
+      <section class="functional-section" aria-labelledby="equipment-queue-heading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">EQUIPMENT DESIGN · CAPACITY · TURNAROUND TIME</p>
+          <h2 id="equipment-queue-heading">設備配置與等待時間<span lang="en">Equipment Capacity &amp; Turnaround Time</span></h2>
+          <p>從包子與燒餅的早餐店情境出發，觀察來件量、共用／專用設備、排隊及成本如何影響選擇，再延伸到急診與呼吸道檢驗。時間與成本為教學假設。</p>
+        </div>
+        <a class="engineering-calculator-feature" href="/resources/equipment-queue.html">
+          <span class="engineering-calculator-icon" aria-hidden="true">5 / 10</span>
+          <span><strong>入門版：包子與燒餅，設備該買幾台？</strong><small lang="en">A simple queueing and equipment-cost teaching tool</small><small>包子 5 分鐘 · 燒餅 10 分鐘 · 平均與九成客人的等待時間</small></span><span aria-hidden="true">→</span>
+        </a>
+        <a class="engineering-calculator-feature" href="/resources/medical-resource-calculator.html">
+          <span class="engineering-calculator-icon" aria-hidden="true">TAT</span>
+          <span><strong>臨床版：醫療檢驗設備配置計算機</strong><small lang="en">Emergency and respiratory-clinic resource scenarios</small><small>急診／CRP 與病原核酸 · 15 種配置 · 成本與 P90 TAT · 僅供教學</small></span><span aria-hidden="true">→</span>
+        </a>
+      </section>
+
       {% assign grouped_tools = site.data.online_tools | where: "function_group", "engineering" %}
       {% assign engineering_software = site.data.external_software | where: "function_group", "engineering" %}
       {% for section in site.data.engineering_sections %}
