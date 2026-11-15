@@ -1,0 +1,10 @@
+{
+  "title_zh": "microLED 驅動的無光罩核酸合成",
+  "title_en": "microLED-driven maskless nucleic acid synthesis",
+  "mechanism_zh": "本技術結合臺灣 microLED 面板技術與原位光導向核酸合成，以可個別定址的發光像素決定晶片上的合成位置。選定像素照光後，移除對應區域的光敏感保護基，再接合核苷酸；反覆執行照光與接合循環，即可在不同位置建立各自設計的核酸探針序列，省去實體光罩的製作與更換。",
+  "mechanism_en": "This approach combines Taiwan’s microLED panel technology with in situ, light-directed nucleic acid synthesis. Individually addressable light-emitting pixels select synthesis sites on the chip. Illumination removes photolabile protecting groups at selected sites, followed by nucleotide coupling. Repeated illumination and coupling cycles build designed probe sequences at different locations without fabricating or exchanging physical masks.",
+  "application_zh": "技術目標為超高密度、快速客製化的核酸探針陣列製作。針對新興疾病、新發現基因及新突變，可依研究標的更新探針設計，支援序列辨識與分析方法的研究，並作為後續量產晶片製程開發的銜接基礎。量產導入仍需確認合成品質、晶片均一性與批次再現性。",
+  "application_en": "The technology targets ultra-high-density probe arrays and rapid customization. Probe designs can be updated for emerging diseases, newly identified genes and novel mutations, supporting sequence-recognition and assay research and providing a basis for subsequent chip manufacturing development. Manufacturing transfer requires verification of synthesis quality, array uniformity and batch-to-batch reproducibility.",
+  "note_zh": "概念示意，未依比例繪製；圖中像素數不代表實際密度。應用方向依主持人提供的技術說明整理，未呈現已驗證的診斷效能、合成速度或量產規格。",
+  "note_en": "Conceptual schematic, not to scale; the illustrated pixel count does not indicate actual density. Applications reflect the PI’s technical overview, not validated diagnostic performance, synthesis speed or manufacturing specifications."
+}

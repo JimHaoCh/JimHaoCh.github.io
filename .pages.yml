@@ -360,6 +360,36 @@ content:
       message: 請填寫 https://doi.org/ 開頭的完整 DOI 網址。
   - *id008
   list: true
+- name: patent_overview
+  label: 專利技術簡介
+  type: file
+  path: _data/patent_overview.json
+  format: json
+  fields:
+  - name: title_zh
+    label: title_zh
+    type: string
+  - name: title_en
+    label: title_en
+    type: string
+  - name: mechanism_zh
+    label: mechanism_zh
+    type: text
+  - name: mechanism_en
+    label: mechanism_en
+    type: text
+  - name: application_zh
+    label: application_zh
+    type: text
+  - name: application_en
+    label: application_en
+    type: text
+  - name: note_zh
+    label: note_zh
+    type: text
+  - name: note_en
+    label: note_en
+    type: text
 - name: patents
   label: 專利
   type: file
